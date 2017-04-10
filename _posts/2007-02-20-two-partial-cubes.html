@@ -1,0 +1,19 @@
+---
+layout: post
+title:  'Two partial cubes from one antimatroid'
+date:   2007-02-20 10:02:00
+tags:   [antimatroids, media theory, permutohedron]
+---
+The lattice of feasible sets of an antimatroid embeds isometrically into the hypercube of all sets on the same elements, of course. So that&#x27;s one partial cube from an antimatroid. But there&#x27;s another: its set of basic words (the maximal words in the formal language interpretation of the antimatroid) with two words adjacent if they differ by a single transposition. Each basic word is a permutation on the elements of the antimatroid, so can be viewed as a vertex of the <i>permutohedron</i> describing all permutations connected by transpositions; it turns out that the basic words of an antimatroid always form an isometric subgraph of the permutohedron.
+<br />
+
+<br />
+The proof is straightforward, and involves showing that one can connect two any basic words by a path of transpositions. One way to do this is to find the position of the first symbol at which the two words differ, and perform a sequence of transpositions that makes the two sequences the same at that position; each such transposition can be shown to reduce the number of inversions separating the two basic words, and the antimatroid axioms can be used to show that each transposition produces another basic word.
+<br />
+
+<br />
+For instance, in the case of antimatroids over a three-element set, the permutohedron on three elements is a hexagon. It has 25 isometric subsets. 19 of these correspond to the sets of linear extensions of a partial order: six single vertices correspond to the six total orders on three elements, six edges correspond to the six partial orders in which one element is larger than or smaller than the other two, six two-edge paths correspond to the six partial orders in which only two elements are comparable, and the whole hexagon corresponds to the partial order in which no two elements are comparable. Each of these partial orders can be viewed as an antimatroid, but there are three more antimatroids that do not come from partial orders, and that correspond to three of the six possible length-three paths in the hexagon. Finally, the remaining three length-three paths do not correspond to antimatroids directly, but rather, are the reverses of sets of basic words of antimatroids.
+<br />
+
+<br />
+I have no idea what, if any, algorithmic consequences this may have.

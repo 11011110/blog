@@ -1,0 +1,39 @@
+---
+layout: post
+title:  'LP-type problem'
+date:   2012-02-09 18:14:00
+tags:   [computational geometry, wikipedia, algorithms]
+---
+It&#x27;s been a few weeks since I did any big new Wikipedia-writing projects, but yesterday in my graduate algorithms class I had a lecture on LP-type problems (a type of optimization problem that includes both linear programs and some related problems such as finding the smallest circle that surrounds a set of points) and discovered that Wikipedia was missing any information on them. So today I added <a href="http://en.wikipedia.org/wiki/LP-type_problem">a new article on LP-type problems</a>.
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>ext_1039177</b>: <br />
+<b>2012-02-11T06:06:11Z</b><br />
+Hi David,
+
+what about <a href="http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.55.215">this</a> &#x27;Largest Placement of One Convex Polygon Inside Another&#x27; (section 2)is that also an LP-type problem (and worthy of wikipedia-mention)? In the top right corner of page 3 you see that the space of possiblities is a convex polyhedron (the linear inequalities for this problem get presented there), but i&#x27;m not sure what the function to be minimized over this polyhdron is and what still counts as &#x27;LP-type&#x27;.
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2012-02-11T07:27:43Z</b><br />
+Thanks, but I&#x27;m not sure I see where in section 2 that it shows that the problem considered there (finding a largest similar copy of one convex polygon that can be placed inside another one) is actually LP-type. They say something hinting that it might be when they write that the space of possible placements can be represented as a four-dimensional convex polytope with O(mn) facets, but then they solve the problem by listing all vertices of the polytope rather than say minimizing a convex objective function.
+
+The same paper you linked to also has a brief reference to using LP algorithms to compute the largest homothetic copy of one convex polygon inside another (that is, not allowing rotations) from Sharir &amp; Toledo CGTA 1994, but when I looked at that one it was just doing low-dimensional linear programming itself, not any kind of generalization of linear programming.
+</div>
+<div style="margin-left: 6em; padding-top: 1em;">
+<b>ext_1039177</b>: <br />
+<b>2012-02-11T19:04:20Z</b><br />
+The &#x27;Largest Placement of One Convex Polygon Inside Another&#x27; just seems very similar to the smallest enclosing circle problem, which is LP-type. The smallest enclosing circle problem is also viewable as the largest placement of a convex polygon (= the convex hull of the points) inside a circle. So the only difference is that we replace the circle with another convex polygon and it&#x27;s remarkable to me that then we don&#x27;t have an LP-type problem anymore.
+</div>
+<div style="margin-left: 9em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2012-02-11T19:11:01Z</b><br />
+Without rotation, placing the largest copy of one polygon inside another is LP-type, and can actually be formulated as an LP; that&#x27;s in the CGTA 1994 paper. But if you allow rotation, you get multiple local optima rather than a single global optimum: for instance if both the inner and outer polygons are slightly distorted regular n-gons, then there are n different locally optimal placements (the ones where the two n-gons line up with each other). That&#x27;s a phenomenon that doesn&#x27;t happen in linear programs and it suggests to me that the problem is probably not LP-type.
+</div>
+<div style="margin-left: 12em; padding-top: 1em;">
+<b>ext_1039177</b>: <br />
+<b>2012-02-11T19:36:15Z</b><br />
+Alright thanks.
+</div>
+

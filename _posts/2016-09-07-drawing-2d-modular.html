@@ -1,0 +1,39 @@
+---
+layout: post
+title:  'Drawing 2d modular lattices'
+date:   2016-09-07 00:17:00
+tags:   [partial orders, graph drawing]
+---
+It&#x27;s pretty well known that a finite <a href="https://en.wikipedia.org/wiki/Lattice_(order)">lattice</a> has <a href="https://en.wikipedia.org/wiki/Order_dimension">order dimension</a> ≤ 2 if and only if its Hasse diagram is an <a href="https://en.wikipedia.org/wiki/St-planar_graph"><i>st</i>-planar graph</a> (below left), and every <a href="https://en.wikipedia.org/wiki/Transitive_reduction">transitively reduced</a> <i>st</i>-planar graph defines a 2-dimensional lattice in this way. The reference I know of for this is Platt, &quot;Planar lattices and planar graphs&quot;, <i>J. Comb. Th.</i> 1976. And I don&#x27;t know who first observed that the 2-dimensional finite <a href="https://en.wikipedia.org/wiki/Distributive_lattice">distributive lattices</a> are the ones that can be drawn as grid graphs (below right) but my guess would be Garrett Birkhoff.
+<br />
+
+<br />
+<div align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/stplanar+grid.png" /></div>
+<br />
+
+<br />
+My own paper &quot;<a href="http://arxiv.org/abs/cs.CG/0607094">Upright-quad drawing of st-planar learning spaces</a>&quot; described an analogous geometric representation for <a href="https://en.wikipedia.org/wiki/Antimatroid">antimatroids</a> (which in this context can be seen as another special type of lattice). So <a href="http://cstheory.stackexchange.com/questions/36510/subclasses-or-characterizations-of-modular-or-pseudo-modular-planar-graphs">a recent CS-theory stack-exchange question about planar modular graphs</a> got me wondering: what do the graphs of 2-dimensional <a href="https://en.wikipedia.org/wiki/Modular_lattice">modular lattices</a> (a subclass of the planar modular graphs) look like?
+<br />
+
+<br />
+As it turns out there is a nice answer. They are the graphs that can be drawn as grid graphs (like the distributive lattices) but then adding extra vertices within some of the grid squares, connected only to the top and bottom of the square. Like this:
+<br />
+
+<br />
+<div align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/2d-modular.png" /></div>
+<br />
+
+<br />
+In one direction, it&#x27;s straightforward to verify that the lattices drawn this way satisfy the <a href="https://en.wikipedia.org/wiki/Semimodular_lattice">semimodular law</a>. But they have the same shape when you flip them upside down, so they&#x27;re both upper and lower semimodular and therefore modular.
+<br />
+
+<br />
+In the other direction, we need to show that 2d modular lattices always form subdivided grids. Any 2d modular lattice (ignoring the modularity) comes from an <i>st</i>-planar graph, and in any <i>st</i>-planar graph the faces are partially ordered from left to right. So we can construct the graph by first drawing its leftmost path and then adding faces one at a time. The fact that the graph has a drawing as a grid with subdivided squares follows by induction on the number of faces we add. Each face must be a quadrilateral, adding a two-edge path to the right of an existing path of the same length, for if one side of the face were shorter the graph would not be transitively reduced and if one were longer then the elements of that face would violate modularity. If the path on the left side of the new face is concave, we can add the face as a new grid square. If it is convex, we can make it the new right side of a grid square by moving the previous right corner into the square. And if either edge of the left side of the face was previously a bridge, we can shift the grid below it to make the left side concave or convex, reducing to a previous case. So the only case that causes trouble is when the left side of the new face is straight, and has two grid squares on the opposite side of it. But when this happens, these squares together with the new face form a seven-element non-modular sublattice. So in all cases, we can either form a subdivided grid drawing as described, or find a violation of modularity.
+<br />
+
+<br />
+What about modular graphs more generally? Does the same operation of subdividing a quadrilateral by adding a degree-two vertex inside it preserve modularity? Unfortunately, no. <i>K</i><sub>2,3</sub> (a grid with one square and one subdivision point) is modular. But adding a horizontal subdivision to each of its three quadrilaterals (the outer one too) produces a non-modular graph: the three new subdivision points have no median.
+<br />
+
+<br />
+<div align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/non-modular.png" /></div>

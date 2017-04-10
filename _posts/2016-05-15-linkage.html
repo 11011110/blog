@@ -1,0 +1,42 @@
+---
+layout: post
+title:  'Linkage'
+date:   2016-05-15 20:27:00
+tags:   [feminism, computational geometry, combinatorics, wikipedia, conferences, open access, music, geometry, algorithms, origami]
+---
+<ul><li><p><a href="http://arxiv.org/abs/1604.08657">Andrew Suk solves the happy ending problem</a> (<a href="https://plus.google.com/100003628603413742554/posts/T5wa8wGjqhh">G+</a>)</p></li>
+<li><p><a href="http://www.sfu.ca/~shermer/CCCG2016/">CCCG is in Vancouver this year</a>; submission deadline is this Tuesday, May 17 (<a href="https://plus.google.com/100003628603413742554/posts/5vi9GNQ4bh4">G+</a>)</p></li>
+<li><p><a href="http://www.itsoc.org/news-events/recent-news/sol-golomb-passes-away">Solomon W. Golomb dies</a> (<a href="https://plus.google.com/100003628603413742554/posts/hJmqzQMQJkQ">G+</a>)</p></li>
+<li><p><a href="http://www.thisiscolossal.com/2016/05/a-sculptural-geometric-pop-up-book-by-tauba-auerbach/">A sculptural geometric pop-up book by Tauba Auerbach</a> (<a href="https://plus.google.com/100003628603413742554/posts/FyA5z7VKvrR">G+</a>)</p></li>
+<li><p><a href="https://blog.vellumatlanta.com/2016/05/04/apple-stole-my-music-no-seriously/">Apple's cloud music storage can wipe your local copies</a> and replace them with ersatz substitutes (<a href="https://plus.google.com/100003628603413742554/posts/hySWEjyD583">G+</a>)</p></li>
+<li><p><a href="http://www.metafilter.com/159295/Changing-the-game-at-Harvard">Harvard penalizes members of gender-exclusive organizations</a> (<a href="https://plus.google.com/100003628603413742554/posts/UJmNTJysy7y">G+</a>)</p></li>
+<li><p><a href="http://corner.mimuw.edu.pl/?p=811">Matching reviewers to submissions still needs some human attention</a> (<a href="https://plus.google.com/100003628603413742554/posts/4abKgsQRsvY">G+</a>)</p></li>
+<li><p><a href="https://twitter.com/dynarski/status/728776167776489472">Removed from a plane for doing mathematics</a> (<a href="https://plus.google.com/100003628603413742554/posts/RyXBm2CEqUp">G+</a>)</p></li>
+<li><p><a href="http://chronicle.com/article/No-I-Am-Not-Pregnant/236395">"No, I am not pregnant"</a>: yet another example of everyday sexism in academia, mostly invisible to men (<a href="https://plus.google.com/100003628603413742554/posts/MasdGs8fJe5">G+</a>)</p></li>
+<li><p><a href="http://boingboing.net/2016/05/09/australian-government-issues-r.html">Australian government issues report calling for copyright and patent liberalisation</a> (<a href="https://plus.google.com/100003628603413742554/posts/Tr2Be3ttrDm">G+</a>)</p></li>
+<li><p><a href="https://en.wikipedia.org/wiki/Binary_search_algorithm">Binary search</a>, now another Wikipedia good article (<a href="https://plus.google.com/100003628603413742554/posts/1K5RnhuXbBA">G+</a>)</p></li>
+<li><p><a href="http://boingboing.net/2016/05/12/researchers-demonstrate-edible.html">Origami robots that can perform surgery on your digestive system after you eat them</a> (<a href="https://plus.google.com/100003628603413742554/posts/9UPp9cgakTb">G+</a>)</p>
+<p align="center"><iframe width="560" height="315" src="https://www.youtube.com/embed/3Waj08gk7v8" frameborder="0" allowfullscreen></iframe></p></li>
+<li><p><a href="http://www.slate.com/blogs/bad_astronomy/2016/05/13/eleanor_lutz_created_a_medieval_style_map_of_mars.html">Here Be Robots: A Medieval Map of Mars</a> (<a href="https://plus.google.com/100003628603413742554/posts/bnV6iXcMv9m">G+</a>)</p></li>
+<li><p><a href="http://f1000research.com/articles/5-222/v1">New uses for blockchain: ensuring the integrity of medical experiments</a> (<a href="https://plus.google.com/100003628603413742554/posts/cknMhpVyiVZ">G+</a>)</p></li>
+<li><p><a href="http://perl.plover.com/yak/Elmo/">An amusing 10-minute talk about NP-completeness and its application to Sesame Street</a> (<a href="http://perl.plover.com/yak/Elmo/">G+</a>)</p></li></ul>
+
+<br /><br /><hr /><h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: P vs NP<br />
+<b>2016-05-21T00:37:37Z</b><br />
+<p>A major complexity class is NL. NL is the class of languages that are decidable on a nondeterministic logspace machine. A logspace machine is a Turing machine with a read-only input tape, a write-only output tape, and a read/write work tapes. The work tapes may contain at most \( O(\log n) \) symbols. In addition, Sanjeev Arora described in his book "Computational complexity: A modern approach" the certificate-based definition for NL.</p> 
+
+<p>The certificate-based definition of NL assumes that a deterministic logspace machine verifies the elements in a NL language using another separated read-only tape for the certificate. On each step of the machine the machine's head on that tape can either stay in place or move to the right. In particular, it cannot reread any bit to the left of where the head currently is. For that reason this kind of special tape is called ``read once".</p>
+
+<p>CLIQUE is a well-known NP-complete problem. We show that a certificate u which represents a clique V' of size k on a graph G can be verified by a deterministic logspace machine M using an additional special read-once input tape, and thereby CLIQUE will be in NL as a direct consequence of this previous definition. If any single NP-complete problem can be solved in polynomial time, then every NP problem has a polynomial time algorithm. However, every problem in NL is in P too. Consequently, we can conclude that P = NP.</p>
+
+<p>You can understand more this idea and debug my verifier algorithm in</p>
+
+<p>https://hal.archives-ouvertes.fr/hal-01316353/document</p>
+
+<p>Any suggestion will be welcome,<br />
+Thanks in advance,<br />
+Frank.</p>
+</div>
+

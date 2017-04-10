@@ -1,0 +1,31 @@
+---
+layout: post
+title:  'Graph drawing, day two'
+date:   2006-09-20 00:43:00
+tags:   [graph drawing, conferences, talks]
+---
+It&#x27;s late, so I don&#x27;t want to spend a lot of time going into detail, but:
+
+<ul>
+<li>David Wood started the day with the best paper talk, on his results on crossing numbers. The key tool is to &quot;blow up&quot; planar graphs by replacing vertices with constant sized cliques and edges by constant sized bicliques, and then take minors. Let P(k) denote the family of n-vertex graphs that are minors of k-blowups of n-vertex planar graphs; then he showed that any minor-closed family is a subset of some P(k), and that a bounded degree graph has linear crossing number if and only if it&#x27;s in some P(k) (with k depending on the constant of linearity and the degree). Therefore, bounded degree graphs excluding a fixed minor have linear crossing number. I&#x27;m probably not doing the results justice so <a href="http://arxiv.org/abs/math/0604467">go read the paper</a>.</li>
+<li>Helen Purchase gave a nice talk on usability studies for graph animations. I would like to see more work like this; it&#x27;s good to see some grounding for all our theory.</li>
+<li>Oliver Deussen gave an invited presentation with many beautiful computer-generated plant pictures, including some amazing 3d watercolor non-photorealistic renderings.</li>
+<li>We had a very pleasant banquet filled with too much good food of too many different types at the city palace, not letting out until around midnight.</li>
+<li>Oh, and I gave two back-to-back talks, on <a href="http://www.ics.uci.edu/~eppstein/pubs/Epp-GD-06-talk.pdf">drawing learning spaces</a> and <a href="http://www.ics.uci.edu/~eppstein/pubs/DilEppGoo-GD-06-talk.pdf">selecting colors for vertices in graph drawings</a>. The color one seems likely to have many other possible applications, for instance for coloring lines in metro map layout (the subject of the other two talks in the same session) and I heard later from Ulrik Brandes some very interesting ideas about using spectral methods for the color choice.</li></ul>
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: selecting colors ...<br />
+<b>2006-09-28T11:23:15Z</b><br />
+Couldn&#x27;t you use semidefinite programming to embed a graph in a color space ? In poly time you can embed the vertices in a n-dimensional sphere such that adjacent vertices are far away from each other (the first step of the Goemans-Williamson algorithm for maxcut), then maybe by projecting on a (random ? principal axes ?) 3-dimensional space you can obtain an optimality guarantee on the result. This might be related to the spectral methods you mention.
+
+
+
+ 
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: Re: selecting colors ...<br />
+<b>2006-09-28T16:18:13Z</b><br />
+Maybe. But the detailed shape of color space is relevant (a parallelepiped for RGB, something rather more complicated for Lab). It&#x27;s important to generate colors that take advantage of the whole gamut and are well spaced throughout it, and I don&#x27;t immediately see how to guarantee that by methods such as you describe. The eigenvector approach that Brandes suggested at least has the advantage that it can immediately generate points in a parallelepiped, by picking three of the eigenvectors as coordinates).
+</div>
+

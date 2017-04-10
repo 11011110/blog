@@ -1,0 +1,52 @@
+---
+layout: post
+title:  'Workshop on Theory and Many-Cores'
+date:   2009-04-14 08:48:00
+tags:   [conferences, algorithms]
+---
+<p>Longtime algorithms researchers will remember that in the 1980s, parallel algorithms used to be a hot topic, but that it faded as <a href="http://en.wikipedia.org/wiki/Moore%27s_law">Moore&#x27;s law</a> caused new single-processor machines to be faster (and much easier to program) than parallel computers made with many older and cheaper processors. Nowadays, Moore&#x27;s law itself has faded (or, more accurately, stopped leading to single-processor speedups) and parallel computing has been making a comeback, especially as many researchers have realized that we already have powerful and highly parallel processors cheaply available to us in the graphics coprocessors of our home video game systems. Researchers such as (at UCI) graduating student <a href="http://www.ics.uci.edu/~nodari/spaa_08_pem.pdf">Nodari Sitchinava</a> and his advisor Mike Goodrich have been hard at work on developing analysis models and algorithms for these new systems and figuring out how many of the <a href="http://www.ics.uci.edu/~eppstein/pubs/EppGal-ICALP-89.pdf">old PRAM-algorithm techniques</a> can be carried over to them. But there has also been a lot of work in this area in non-theory communities that could benefit from our theoretical expertise. In part, this is one of the themes of the <a href="http://www.madalgo.au.dk/socg2009/Html/Sattelite%20Events/Workshop_Massive_Data.html">Workshop on Massive Data Algorithmics</a> to be held in conjunction with SoCG in Aarhus this summer, and older parallel algorithms conferences such as <a href="http://www.spaa-conference.org/">SPAA</a> have also adapted to these new directions.</p>
+
+<p>Uzi Vishkin has asked me to publicize another workshop, even more focused on this subject, to be held a little closer to (my) home.  The <a href="http://www.umiacs.umd.edu/conferences/tmc2009/">Workshop on Theory and Many-Cores</a> is to be held in College Park, Maryland, on May 29, 2009, the day before STOC and in the same state. There&#x27;s an abstract submission deadline of April 27 (less than two weeks away). As the conference announcement states,</p>
+
+<blockquote><p>The sudden shift from single-processor computer systems to many-processor parallel computing systems requires reinventing much of Computer Science (CS): how to actually build and program the new parallel systems. Indeed, the programs of many mainstream computer science conferences,  such as ASPLOS, DAC, ISCA, PLDI and POPL are heavily populated with papers on parallel computing and in particular on many-core computing. In contrast, the recent programs of flagship theory conferences, such as FOCS, SODA and STOC, hardly have any such paper. This low level of activity should be a concern to the theory community, for it is not clear, for example, what validity the theory of algorithms will have if the main model of computation supported by the vendors is allowed to evolve away from any studied by the theory. The low level of current activity in the theory community is not compatible with past involvement of theorists in parallel computing, and to their representation in the technical discourse. For example, 19 out of 38 participants in a December 1988 NSF-IBM Workshop on Opportunities and Constraints of Parallel Computing in IBM Almaden had theory roots. The lack of involvement of theorists should also concern vendors that build many-core computers: theorists are often the instructors of courses on algorithms and data-structures, and without their cooperation it will be difficult to introduce parallelism into the curriculum.</p>
+
+<p>The main objective of the workshop will be to explore opportunities for theoretical computer science research and education in the emerging era of many-core computing, and develop understanding of the role that theory should play in it.</p></blockquote>
+
+There&#x27;s still time to get something together for this, so get working! And I&#x27;m sure Uzi would appreciate workshop participants who want to learn more about this subject but are not ready to speak on it themselves, as well.
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>quadibloc</b>: <br />
+<b>2009-04-26T21:57:05Z</b><br />
+Since chipmakers are resorting to ingenious techniques to reduce feature sizes without having to cope with the problems of using ultraviolet or even X-rays for lithography, that Moores&#x27; Law is running out of steam seems reasonable enough. And if chips can&#x27;t be made bigger, then the way to go is to use more of them.
+
+But while much of the technical media links the end of Moores&#x27; Law with the renewed interest in parallel processing, the real story isn&#x27;t that simple. Instead, we may need to consider another law: Grosch&#x27;s Law.
+
+Named after Herb Grosch, this law said that a computer that is four times as powerful will cost twice as much, and one that&#x27;s nine times as powerful will cost three times as much. This law was illustrated by the line of IBM 360 mainframes, from the IBM 360/30 on up to the IBM 360/195.
+
+Despite computers back then being much more expensive than computers today, there would have been people willing to pay twice the price of an IBM 360/195 for a computer four times as powerful. Why wasn&#x27;t anyone making one in 1969? The answer was that Grosch&#x27;s Law only applied over a limited range of computer sizes; it didn&#x27;t go on forever, as there was a largest size of computer that it was practical to build given the technology of the day.
+
+A computer that only has hardware to add 8-bit integers will have to go through a lot of steps to perform 64-bit floating-point division. Hardware to do multiplication and division can be built in a number of ways; one can perform these operations step by step in an adder, or one can improve performance using a large number of extra gates through techniques like Williams Tree multiplication and Goldschmidt division.
+
+Once you are using techniques like that, you can&#x27;t obtain further improvement through the use of more transistors; you need faster transistors.
+
+The IBM 360/195 applied techniques of this type; and so did the Intel Pentium. They also both used pipelining, and they both had cache memory.
+
+This is why, even with Moores&#x27; Law still working for the moment, we have quad-core microprocessors instead of microprocessors with one bigger, more powerful core. The upper limit of how many transistors can be usefully applied to a computer working on the datatypes that are normally useful has been achieved. If someone wanted to build a computer that worked on 1000-digit numbers directly, in the most efficient way, they would need more transistors, but such a computer wouldn&#x27;t be useful enough to be worth building.
+
+The ILLIAC IV computer was a parallel computer which was completed in 1976 with a SIMD architecture. The Cray-1, which was heavily pipelined, and gave better serial performance, won out as the preferred architectural approach.
+
+Pipelining is really a form of parallel processing, but one that can be implemented partly &quot;for free&quot;. A computer has to perform the different steps of an instruction from start to finish, and so has to have the hardware for all of them; pipelining has the computer performing the first part of one instruction in parallel with later parts of other instructions.
+
+Parallel processing works when one instruction doesn&#x27;t depend on the result of the instruction before. Not every problem can be broken up into a lot of independent steps; theoretical advances may help us to break up more problems in new ways to take better advantage of parallel systems.
+
+Right now, exotic materials like indium phosphide can&#x27;t yet be used to build microprocessors with as many transistors as even the original Pentium. When that does happen, advanced parallel processing algorithms would still be the only way to get even more performance yet than such chips would provide directly.
+
+For many applications, of course, throughput rather than latency is what matters. For them, parallel computing is already a reality without as much need for new algorithms (although keeping large databases consistent when many different computers might be updating them is still a research issue). But for some applications, whether or not massively-parallel computing does become the wave of the future will depend on whether or not the effort to find new algorithms proves successful.
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: <br />
+<b></b><br />
+
+</div>
+

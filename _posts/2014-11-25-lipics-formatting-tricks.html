@@ -1,0 +1,93 @@
+---
+layout: post
+title:  'LIPIcs formatting tricks'
+date:   2014-11-25 00:12:00
+tags:   [tools]
+---
+If, like me, you&#x27;re working on a SoCG submission, and this is the first time you&#x27;ve tried using the LIPIcs format that SoCG is now using, you may run into some minor formatting issues (no worse than the issues with the LNCS or ACM formats, but new and different). Here are the ones I&#x27;ve encountered, with workarounds where I have them:
+<br />
+<ul><li>The LIPIcs format automatically includes several standard LaTeX packages including <tt>babel</tt>, <tt>amsmath</tt>, <tt>amsthm</tt>, <tt>amssymb</tt>, and <tt>hyperref</tt>. So there&#x27;s no point in including them yourself and (if you specify incompatible options) it may cause an error to include them yourself. I haven&#x27;t needed to change the <tt>hyperref</tt> options, but if you do, see <a href="http://tex.stackexchange.com/questions/75542/incompatibility-between-lipics-and-hyperref">here</a>.</li>
+<br />
+<li>You may like to use the <tt>lineno</tt> package so that, when reviewers give you comments on your submission, they can tell you more accurately which line they&#x27;re referring to. If you try this with the LIPIcs format, you will notice that you don&#x27;t get line numbers in the last paragraph of a proof, nor in a paragraph that contains a displayed equation (even if you correctly delimit the equation with <tt>\[...\]</tt> instead of using the obsolete <tt>$$...$$</tt>, which can also cause problems with <tt>lineno</tt>). The solution to the proof problem is to change the proof termination symbol (a triangle instead of the usual Halmos box) to use an explicit <tt>$...$</tt> instead of <tt>\ensuremath</tt>):
+<br />
+
+<br />
+<tt>\renewcommand\qedsymbol{\textcolor{darkgray}{$\blacktriangleleft$}}</tt>
+<br />
+
+<br />
+The solution to the displayed equation problem is more complicated, but is given in <a href="http://phaseportrait.blogspot.com/2007/08/lineno-and-amsmath-compatibility.html">this blog post from 2007</a> (the update near the start of that post). Why this incompatibility hasn&#x27;t been fixed in the last seven years is a different question.</li>
+<br />
+<li>If you use the <tt>numberwithinsect</tt> document class option (pronounced &quot;number with insect&quot;), then the LIPIcs format numbers theorems, lemmas, etc by what section they are in: Lemma 2.1 for the first lemma in Section 2, etc. But if you also run past the page limit and use appendices, you may notice that the lemmas are being given numbers that re-use previously used numbers, because although the appendices have letters rather than numbers the lemmas use numbers: the first lemma in Appendix B is also called Lemma 2.1. The problem is that the LIPIcs style expands the <tt>\thesection</tt> macro (the one that gives the number or letter of the current section) at the time it defines <tt>\thetheorem</tt> (the one that gives the name of the current theorem or lemma). So when you use <tt>\appendix</tt> (or <tt>\begin{appendix}</tt> if you like to pretend that non-environment commands are really environments), <tt>\thesection</tt> gets changed but it&#x27;s too late to make a difference to <tt>\thetheorem</tt>. The fix is to add the following lines after <tt>\appendix</tt>:
+<br />
+
+<br />
+<tt>\makeatletter
+<br />
+\edef\thetheorem{\expandafter\noexpand\thesection\@thmcountersep\@thmcounter{theorem}}
+<br />
+\makeatother</tt></li>
+<br />
+<li>I&#x27;ve <a href="https://plus.google.com/100003628603413742554/posts/Fy34Vv4Xk6y">already written</a> about the problems with using the <tt>\autoref</tt> command of the <tt>hyperref</tt> package: because LIPIcs wants to use a shared numeric sequence for theorems, lemmas, etc., <tt>\autoref</tt> thinks they are all theorems. <a href="http://tex.stackexchange.com/questions/213821/using-cleveref-with-lipics-documentclass-fails-for-theorem-environments-sharing">Someone else also recently asked about this problem</a>. This is a more general incompatibilty between <tt>amsthm</tt> and <tt>hyperref</tt>, but LIPIcs also includes some of its own code for theorem formatting, which seems to be causing the fixes one can find for <tt>amsthm</tt> not to work. The solution is to fall back to the non-<tt>hyperref</tt> way of doing things: <tt>Lemma~\ref{lem:my-lemma-name}</tt> etc.</li>
+<br />
+<li>Speaking of theorems: if you use <tt>\newtheorem</tt>, you probably want to have a previous line <tt>\theoremstyle{definition}</tt> so that whatever you&#x27;re defining looks like the other theorems and lemmas.</li>
+<br />
+<li>On the first page of a LIPIcs paper, the last line of text may be uncomfortably close to the Creative Commons licencing icon. I haven&#x27;t found a direct workaround for this (although probably it&#x27;s possible) but you can obtain better spacing by having a footnote (for instance one listing your grant acknowledgements) or a bottom figure on that page.</li>
+<br />
+<li>If you&#x27;re used to trying to fit things into a page limit with LNCS format, you may have learned to use <tt>\paragraph</tt> as a trick to save space over subsections. That doesn&#x27;t work very well in LIPIcs, for two reasons. First, because it will give you an ugly paragraph number like 6.0.0.1 (the first numbered paragraph in an un-numbered subsubsection of an un-numbered subsection of section 6). You can work around this by using <tt>\paragraph*</tt>. But second, because unlike in LNCS the paragraph heading won&#x27;t be folded into the paragraph that follows it, so you save a lot less space. I don&#x27;t want to try to work around this one. And fortunately I haven&#x27;t yet seen my coauthors adding code like <tt>\noindent{\bfseries Paragraph heading.} Paragraph text...</tt> (or worse <tt>\bf ...</tt>). Solution: find different tricks for your space-saving efforts. Like maybe write more tersely.</li></ul>
+<br />
+Anyone else have any timely tips?
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>q_pheevr</b>: <br />
+<b>2014-11-25T14:06:09Z</b><br />
+<blockquote>(pronounced &quot;number with insect&quot;)</blockquote>
+<p>Is that a feature, or a bug?</p>
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>ext_2893121</b>: For the paragraph issue...<br />
+<b>2014-11-25T15:30:59Z</b><br />
+For the paragraph issue, I use:
+<pre>\InNotSoCGVer{
+   \newcommand{\myparagraph}[1]{\paragraph*{#1}}
+}
+\InSoCGVer{
+   \newcommand{\myparagraph}[1]{\bigskip\noindent{\textbf{#1}}}
+}
+</pre>
+Its a bit clanky, because you have to make sure there is no empty line. So I do:
+<pre>
+\myparagraph{Bogi.} %
+%
+bla bal bla
+</pre>
+The advantage is that one can replace \bigskip with \smallskip or \medskip, depending on much space one wants.
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: RE: For the paragraph issue...<br />
+<b>2014-11-25T17:22:43Z</b><br />
+On <a href="https://plus.google.com/100003628603413742554/posts/67Lg6TVfkZQ">the G+ post</a>, there&#x27;s a suggestion to use <tt>\subparagraph</tt>.
+</div>
+<div style="margin-left: 6em; padding-top: 1em;">
+<b>ext_2893121</b>: RE: For the paragraph issue...<br />
+<b>2014-11-25T17:31:20Z</b><br />
+You dont get the spacing control. I use this whenever I need to compress a little bit more text into the page limit.
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>None</b>: RE: For the paragraph issue...<br />
+<b>2016-01-15T08:19:51Z</b><br />
+You should use \subparagraph*{&lt;heading&gt;.}
+
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>ext_2893863</b>: <br />
+<b>2014-11-26T03:29:28Z</b><br />
+Like like like the last sentence of the final bullet item (but perhaps I might have said &quot;concisely&quot; rather than &quot;tersely&quot; since I think the latter has a bit of a negative connotation).
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>nrydino</b>: <br />
+<b></b><br />
+
+</div>
+

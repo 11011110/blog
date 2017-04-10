@@ -1,0 +1,39 @@
+---
+layout: post
+title:  'Even greedy expansion'
+date:   2007-01-23 11:56:00
+tags:   [egyptian fractions, number theory]
+---
+My recent <a href="http://11011110.livejournal.com/86988.html">subgreedy conjecture</a> on Egyptian fractions implies, not just that the <a href="http://en.wikipedia.org/wiki/Odd_greedy_expansion">odd greedy algorithm</a> terminates, but also that the corresponding even greedy algorithm (in which at each step we subtract the smallest even unit fraction from the remaining value to be expanded) produces finite expansions. But there&#x27;s a much simpler proof for this case:
+<br />
+
+<br />
+.
+<br />
+
+<br />
+.
+<br />
+
+<br />
+.
+<br />
+
+<br />
+Spoiler:
+<br />
+
+<br />
+.
+<br />
+
+<br />
+.
+<br />
+
+<br />
+.
+<br />
+
+<br />
+The even greedy Egyptian fraction for q can be found by halving every fraction in the greedy expansion of 2q. Since the greedy algorithm produces a finite expansion for 2q, the even greedy algorithm produces a finite expansion for q.

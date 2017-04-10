@@ -1,0 +1,27 @@
+---
+layout: post
+title:  'Metroville: the confluent drawing puzzle'
+date:   2009-06-19 10:19:00
+tags:   [rectangles, confluence, talks]
+---
+I just returned from a pleasant post-SoCG visit to Bettina Speckmann in the Netherlands. While there, she presented me with a copy of <a href="http://www.smart.be/en/products/puzzles-games/smartgames/SG320">Metroville</a>, a puzzle based on confluent drawing. (Image below stolen from the manufacturer&#x27;s web site.)
+<br />
+
+<br />
+<div align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/Metroville.jpg" /></div>
+<br />
+
+<br />
+Metroville consists of a game board with nine rotating pieces on it, each containing a section of train track with turns and junctions. The pieces can be permuted to form eight different &quot;cities&quot;, and for each city there are eight puzzles, in which one must rotate the pieces so that the resulting configuration of track can allow a train to pass through a given sequence of cities in order without reversals.
+<br />
+
+<br />
+I haven&#x27;t worked out the details, but I&#x27;m pretty sure that larger versions of the game would be NP-complete (that is, it should be NP-complete to test, for a fixed city, whether there exists a set of rotations that allows a given train route to work) by a reduction from 3-SAT very similar to the one in <a href="http://arxiv.org/abs/cs.CC/0008025">my Phutball paper</a> in which the train zigzags horizontally across the board through tracks representing variables and then zigzags again vertically through tracks representing clauses.
+<br />
+
+<br />
+Regardless, it&#x27;s a fun puzzle. Thanks, Bettina!
+<br />
+
+<br />
+Also, <a href="http://www.ics.uci.edu/~eppstein/pubs/EppMumSpe-SCG-09-slides.pdf">slides from Elena Mumford&#x27;s talk</a> on <a href="http://arxiv.org/abs/0901.3924">area-universal cartograms</a> (my SoCG paper with Bettina, Elena, and Bettina&#x27;s student Kevin Verbeek) are now online.

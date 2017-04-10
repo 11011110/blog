@@ -1,0 +1,28 @@
+---
+layout: post
+title:  'Minimum Weight Triangulation is NP-hard'
+date:   2006-01-02 22:22:00
+tags:   [complexity theory, computational geometry]
+---
+I just saw a new paper by Mulzer and Rote: <a href="http://arxiv.org/abs/cs.CG/0601002">Minimum-weight triangulation is NP-hard</a>. This closes off one of a very small number of open problems from Garey and Johnson&#x27;s book on NP-completeness, still open until now. It&#x27;s in distinguished company, as the other questions left on the list include integer factorization and graph isomorphism; compared to these, MWT is more of a curiosity (other triangulations are more useful in applications) but one with a long history, and it&#x27;s good to see it finally solved.
+<br />
+
+<br />
+The proof is apparently a standard gadget-based reduction from a planar 3-SAT variant, using known MWT heuristics to prove that certain edges must be used in any MWT of each gadget, as had been suggested by Beirouti and Snoeyink in 1998; Snoeyink had found a gadget that could be used as a wire in a 3-SAT reduction, but not enough other gadgets to complete the proof.  However, in contrast to most gadget-based NP-completeness proofs, the new gadgets are extremely complex.  As with the proofs of the four-color theorem for coloring planar graphs and Kepler&#x27;s conjecture for densest sphere packing, the new proof involves some computer calculations to check that the intended triangulations of the gadgets have lengths less than those of any erroneous triangulation, so it doesn&#x27;t look like it&#x27;s in a state to be verified purely by hand yet.
+<br />
+
+<br />
+<b>ETA:</b> <a href="http://geomblog.blogspot.com/2006/01/minimum-weight-triangulation-is-np.html">Suresh weighs in</a>, and points out that Lance points out that factorization was not on Garey and Johnson&#x27;s original list. But it should have been.
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>geomblog</b>: <br />
+<b>2006-01-03T07:20:03Z</b><br />
+Interesting. MWT is not even known to be in NP because of the edge weight representations, no ? so does the new reduction create edges of bizarre lengths ? 
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>geomblog</b>: <br />
+<b>2006-01-03T07:26:18Z</b><br />
+Oops. should have read the paper first. I see that they show NP-completeness for the &quot;rounded&quot; variant of the problem. Very interesting though...
+</div>
+

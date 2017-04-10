@@ -1,0 +1,52 @@
+---
+layout: post
+title:  'SoCG day 1'
+date:   2013-06-17 23:27:00
+tags:   [computational geometry, conferences, talks, exponential algorithms]
+---
+I&#x27;m in Rio (my first visit to South America!) for the annual <a href="http://zeus.mat.puc-rio.br/~socg2013/">Symposium on Computational Geometry</a>.
+<br />
+
+<br />
+Your out-of-context quote of the day:<blockquote>&quot;I don&#x27;t care about geometry.&quot; — Jeff Erickson</blockquote>(as part of a nice talk exactly characterizing the three-dimensional manifolds-with-quadmeshed-boundary that can be partitioned into a mesh of topological hexahedra).
+<br />
+
+<br />
+I think my favorite talk of the day was the first one, by Raimund Seidel, on exact exponential-time algorithms in computational geometry. Raimund was looking at the problem of counting the number of triangulations of a point set (not known to be #P-hard, but not previously known to be solvable faster than listing them all). He showed that it could be solved by a simple and implementable algorithm with running time O(2<sup><i>n</i></sup><i>n</i><sup>2</sup>), by building a DAG in which the vertices represent monotone polygonal chains that could be part of a triangulation, and the edges represent one chain being above another, and differing from it by a single triangle, and then counting paths in this graph.
+<br />
+
+<br />
+Another talk I quite enjoyed was by Elyot Grant, who pulled off the rare trick of making me interested in a topic I didn&#x27;t think I would be interested in: compressive sensing of images.  The idea is to reconstruct sparse image data (here sparse means few nonzero pixels, like for instance photos of star fields) using optical equipment that scrambles the image before sensing it, and using many fewer pixel sensors that you would need without the scrambling. If you could scramble the pixels of the image to pixels of the sensor completely at random, it would work well, but then your scrambling device would need to be as complicated as the larger sensor array that you&#x27;re trying to avoid, so that&#x27;s no good. Instead, Grant and his coauthor Piotr Indyk showed that a simpler geometric scrambling method based on cutting the image into squares, linearly distorting each square, and then overlaying them all on top of each other is good enough. So far I think he&#x27;s a strong candidate for the best student presentation award, but this is from a sample of about 1/4 of the student presentations so it may not mean much yet.
+<br />
+
+<br />
+SoCG has an unusual organization this year in which the morning consists of SoCG talks and the afternoons consist of several parallel satellite workshops. I haven&#x27;t seen the numbers yet but to confirm that it&#x27;s a success, but I like it: it gives me a bigger selection of topics to learn about and, I think, a bigger collection of people interested in geometry all in one place.
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>michiexile</b>: <br />
+<b>2013-06-18T02:32:10Z</b><br />
+I seem to remember the same setup for the morning/afternoon distinction from NCSU; right?
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2013-06-18T02:37:57Z</b><br />
+That&#x27;s possible; I didn&#x27;t go to that one.
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>4da</b>: <br />
+<b>2013-06-18T02:33:25Z</b><br />
+any chances they would put videos somewhere on the internet?
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2013-06-18T02:38:31Z</b><br />
+I don&#x27;t think they&#x27;re being recorded. At least, I haven&#x27;t seen any evidence of it.
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>ext_2027124</b>: <br />
+<b>2013-06-18T17:14:57Z</b><br />
+Yes, we used the split format at UNC Chapel Hill with success (200 in attendance). 
+Wish I was there, but I couldn&#x27;t get my Brazil visa in time and had to cancel this year. 
+</div>
+

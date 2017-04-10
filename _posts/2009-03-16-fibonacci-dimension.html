@@ -1,0 +1,24 @@
+---
+layout: post
+title:  'Fibonacci dimension'
+date:   2009-03-16 21:24:00
+tags:   [media theory, papers]
+---
+The <a href="http://en.wikipedia.org/wiki/Fibonacci_cube">Fibonacci cube</a> is, as its Wikipedia article says, a graph that is in many respects like a hypercube but with a Fibonacci number of vertices. Its vertices are binary strings with no two consecutive ones, and its edges link pairs of strings at Hamming distance one from each other. The Fibonacci cube formed from bitstrings of length <i>d</i> is an isometric subgraph of a <i>d</i>-dimensional hypercube (the graph of all length-<i>d</i> bitstrings), but it also contains as an isometric subgraph a hypercube of dimension ceiling(<i>d</i>/2) (the binary strings in which only the bits in the even positions can be nonzero). Therefore, the graphs that can be isometrically embedded into Fibonacci cubes are the same as the ones that can be embedded into hypercubes, that is, the partial cubes.
+<br />
+
+<br />
+A preprint I recently wrote on this subject with Sergio Cabello and Sandi Klavžar <a href="http://arxiv.org/abs/0903.2507">just came out on the arXiv</a> (it&#x27;s been on the <a href="http://www.imfm.si/preprinti/index.php?langID=1">IMFM preprint server</a> for a little longer — if you&#x27;re interested in graph theory, do check this link out, as it has over 1000 other papers, many of them on graphs). The idea is to investigate the lengths of the bitstrings needed to label a given graph so that graph distance equals Hamming distance and so that no label contains two consecutive ones. That is, we wish to embed graphs isometrically into Fibonacci cubes of minimum dimension. The problem turns out to be NP-hard — it is related to a version of the traveling salesman problem — but can solved exactly in some cases, such as 2d grid graphs. There are also some pretty good approximation algorithms, one of them based on <a href="http://arxiv.org/abs/cs/0402028">lattice dimension</a>, another based on <a href="http://11011110.livejournal.com/133469.html">the xkcd algorithm for traveling salesmen</a>.
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: The approximation algorithm<br />
+<b>2009-03-17T19:48:08Z</b><br />
+I don&#x27;t think selling the problem on ebay works in the RAM model. Is it stronger or weaker than a quantum Turing machine with a Wigderson oracle?
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: Re: The approximation algorithm<br />
+<b>2009-03-17T19:50:07Z</b><br />
+Heh. Not that xkcd algorithm, the other xkcd algorithm.
+</div>
+

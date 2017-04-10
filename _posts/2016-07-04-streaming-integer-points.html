@@ -1,0 +1,43 @@
+---
+layout: post
+title:  'Streaming integer points in smaller space'
+date:   2016-07-04 18:11:00
+tags:   [computational geometry]
+---
+Here&#x27;s an update to the <a href="http://11011110.livejournal.com/332029.html">streaming integer point puzzle</a> that I posted yesterday. Recall that the puzzle was to generate all the integer points in the plane, in constant amortized time per point, using as little space as possible. In the post, I gave a solution whose space is proportional to the square root of the number of points generated so far. In the comments to <a href="https://plus.google.com/100003628603413742554/posts/21StgVRfqX1">my G+ link to the post</a>, Sariel Har-Peled suggested an improvement, but without much detail. So, here is some detail for Sariel&#x27;s idea.
+<br />
+
+<br />
+As before, we use a <a href="https://en.wikipedia.org/wiki/Bucket_queue">bucket queue</a> of candidates for the next point to generate, but with fewer candidates. To make the space small, we should implement the bucket queue as hash table of buckets (as I implemented it) rather than an array of buckets (as it is usually described).
+<br />
+
+<br />
+Instead of maintaining a pixelated curve representing the frontier between generated and not-yet-generated points, we maintain the <a href="https://en.wikipedia.org/wiki/Convex_hull">convex hull</a> of the generated points, together with a candidate point for the next point to generate, beyond each hull edge. Each edge&#x27;s candidate is the closest point to the origin that has not yet been generated and that lies on the far side of the edge from the origin. As before, the priorities of each candidate are just their squared Euclidean distances from the origin.
+<br />
+
+<br />
+In most cases, a convex hull edge will not have any interior grid points. Then it turns out that the candidate for each such edge must form a triangle of area 1/2 with that edge, by <a href="https://en.wikipedia.org/wiki/Pick%27s_theorem">Pick&#x27;s theorem</a>, or else there would be a better candidate inside the triangle. That means that it must lie on a line parallel to the edge, the one closest to the edge that passes through at least one integer point. On this line, there are infinitely many grid points, but in most cases only one or two lie within a rectangle having the given edge as one side and the line through the candidate as the other side. The candidate must be one of these one or two rectangle points.
+<br />
+
+<br />
+<div align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/disk-hull-candidates.png" /></div>
+<br />
+
+<br />
+When a convex hull edge has interior grid points, its candidate will still lie on the closest grid line, but the rectangle defined by the edge and the line may have more than one grid point on it. In these cases we can still find a single best candidate point but it will be helpful also to store a pair of closest points along the edge, in order to make it easier to construct future candidates.
+<br />
+
+<br />
+When we generate a new point, we can subdivide the convex hull edge that it comes from (the one that it is a candidate for) into two edges through the new point, and compute the new candidates for these two new edges, in constant time, by looking at small integer combinations of the edge endpoints, the generated point, and (in cases where the edge has interior points) the vector difference between consecutive points along the edge. But the problem is that the  polygon resulting from this subdivided step might not be convex. So, as long as one of the two new edges has a nonconvex angle, we have to merge it and its adjacent edge, popping out a triangle and making the polygon closer to its convex hull. In each of these merge steps, the candidate point for the merged edge can be taken as the better of the two candidates for the edges being merged (these candidates have not been generated yet, so they must still be outside the convex hull and outside the merged edge, and if one of them was the closest outside point before the merge then it remains so after the merge). Each merge step reduces the hull complexity and can be charged against an earlier step that increased the complexity. So the total time per generated point still remains constant amortized.
+<br />
+
+<br />
+The remaining question is, how much space does this structure use? Equivalently, when the disk of a given radius centered at the origin has <i>n</i> points in it, how many edges can its convex hull have? Conveniently, this question has already been answered by Balog and Bárány, in their paper &quot;<a href="http://doi.org/10.1145/109648.109666">On the convex hull of the integer points in a disc</a>&quot; in SoCG 1991. They show that the answer is Θ(<i>n</i><sup>1/3</sup>). Therefore, the same <i>O</i>(<i>n</i><sup>1/3</sup>) bound holds for the space of this point-generation algorithm.
+<br />
+
+<br />
+ETA 7/7: It might not actually be the case that the closest point beyond a hull edge is inside the rectangle. For instance, when the squared distance is 481, we might have a hull edge (16,15)–(18,12) (with point (20,9), on the same line and also at squared distance 481, not yet generated). In that case the point in the rectangle is (17,14) at squared distance 485, but there is a closer point beyond the edge, (19,11) at squared distance 482. Nevertheless, it seems to work correctly for each edge to maintain as its candidate the unique rectangle point (or, in the case that the two corners of the rectangle are both lattice points, so that it&#x27;s actually a lattice square, the one of these two points that is closest to the origin) and let other hull edges worry about other points that might be closer.
+<br />
+
+<br />
+ETA2, 7/8: <a href="http://www.ics.uci.edu/~eppstein/PADS/IntegerPoints.py">Implemented and tested up to radius 100</a>.

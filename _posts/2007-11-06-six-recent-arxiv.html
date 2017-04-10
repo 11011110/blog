@@ -1,0 +1,44 @@
+---
+layout: post
+title:  'Six recent arXiv papers'
+date:   2007-11-06 10:57:00
+tags:   [xyz graphs, python, geometry, papers]
+---
+Some recent uploads to <a href="http://arxiv.org">arxiv.org</a> that have caught my attention:
+<br />
+
+<br />
+<b>Lens sequences</b>, by J. Kocik, <a href="http://arxiv.org/abs/0710.3226">arXiv:0710.3226</a>. Considers problems in which the lens-shaped space between two equal-radius circles is filled by a sequence of other circles, so that each circle inside the lens is tangent to the lens boundaries and to two other circles. The reciprocals of the radii of these circles form bi-infinite sequences in which the values are in many cases all integers; when this happens, the sequence is formed by products of consecutive values in some simpler &quot;underground&quot; integer sequence. For instance, one example has radii 1/3, 1/15, 1/35, 1/63, ...; the denominators of these numbers are products of consecutive odd numbers, so the underground sequence is the sequence of odd numbers. Other underground sequences involve Fibonacci numbers and Lucas numbers, or the sequences formed by shuffling pairs of such sequences.
+<br />
+
+<br />
+<b>Generalizations of Schöbi&#x27;s tetrahedral dissection</b>, by Sloane and Vaishampayan, <a href="http://arxiv.org/abs/0710.3857">arXiv:0710.3857</a>.  If you start with a triangle with vertices (0,0), (0,1), and (1,1), cut off a corner, and reattach the cut corner to the remaining part along the diagonal, you get a 1/2 × 1 rectangle. If you start with a tetrahedron with vertices (0,0,0), (0,0,1), (0,1,1), and (1,1,1), and make two cuts perpendicular to the main diagonal passing through the two non-main-diagonal vertices, the pieces can be rearranged to form an equilateral-triangle prism. (These two cuts partition the main diagonal of the tetrahedron into three equal pieces that become the edges of the prism, and partition the shorter diagonals into two equal pieces.) This paper generalizes this to a family of n-piece dissections of n-dimensional simplices (affine transforms of the &quot;orthoschemes&quot;, simplices with 0-1 coordinates as above), into (n-1)-dimensional prisms. Iterating the construction leads to an n!-piece dissection of an orthoscheme into a parallelepiped.
+<br />
+
+<br />
+<b>Simple, linear-time modular decomposition</b>, by Tedder, Corneil, Habib, and Paul, <a href="http://arxiv.org/abs/0710.3901">arxiv:0710.3901</a>. A module in a graph is a set of vertices that all have the same pattern of connections to the rest of the graph: they may have an arbitrary set of edges among themselves, but if one vertex in the set has an edge to a vertex outside the set, the rest of them must also have an edge to the same vertex. If a graph is disconnected or co-disconnected, the components are trivial modules, but one can also have modules of more complex types; in the nontrivial case the maximal modules form a partition of the graph (counting a single vertex as a module). Modular decomposition is what you get when you repeatedly form this partition, then look for submodules within each maximal module, etc. There have been linear time algorithms known for finding modular decompositions for over ten years now, and I&#x27;ve thought about adding them to <a href="http://www.ics.uci.edu/~eppstein/PADS/">PADS</a>, but they&#x27;re rather complicated. This paper seems a step in the right direction: still linear time, but closer to being implementable.
+<br />
+
+<br />
+<b>The lonely vertex problem</b>, by D. Frettlöh and A. Glazyrin, <a href="http://arxiv.org/abs/0710.4870">arxiv:0710.4870</a>. It&#x27;s possible to surround a point in the plane by finitely many convex polygons in such a way that it&#x27;s the vertex of only two of them: for instance, consider the vertices of the standard &quot;brick wall&quot; tiling of the plane by dominos. But it&#x27;s not possible to surround a point by convex polygons in such a way that it&#x27;s a vertex of just one, because the complement of the polygon would form an angle strictly between 180 and 360 degrees, which cannot be filled by the 180 degree angles of nonvertex boundary points of polygons. But what about in higher dimensions? Can one surround a point of some higher dimensional Euclidean space by finitely many convex polytopes in such a way that one of the polytopes has a vertex that&#x27;s not also a vertex of any other polytope? As the authors show, the answer is no. The 3d result can also be phrased in terms of partitions of a sphere surrounding the point: if one defines a &quot;wedge&quot; to be the shape bounded between two longitudes on a globe, one can&#x27;t partition the globe into finitely many wedges and one leftover convex region.
+<br />
+
+<br />
+<b>Triangular peg solitaire unlimited</b>, by G. I. Bell, <a href="http://arxiv.org/abs/0711.0486">arxiv:0711.0486</a>. You all know what peg solitaire is, right? Start with a grid of pegs, all but one empty, and then repeatedly jump one peg over another, removing the jumped peg, until all are gone or (more likely) you get stuck with a few scattered pegs and have to try again. If not, go to <a href="http://www.geocities.com/gibell.geo/pegsolitaire/tindex.html">George Bell&#x27;s triangular peg solitaire page</a> and try playing his <a href="http://www.geocities.com/gibell.geo/pegsolitaire/Tools/Triangular/Triang.htm">javascript peg solitaire applet</a>. In this paper, Bell studies two problems related to this puzzle: how few moves are possible (if one counts a sequence of jumps by the same peg as a single move), and how many jumps are possible on the last move? In a single jump sequence, the points that can be positions of the jumping peg and the points that can be jumped turn out to be disjoint, so the problem of maximizing jump sequence length is related to forming Eulerian subgraphs of the triangular grid, but not every graph of this type can be formed as part of a valid solution to the whole puzzle.
+<br />
+
+<br />
+<b>Permutations defining convex permutominoes</b>, by Bernini, Disanto, Pinzani, and Rinaldi, <a href="http://arxiv.org/abs/0711.0582">arxiv:0711.0582</a>. A permutomino is just a polyomino (polygon with axis-aligned sides and integer vertex coordinates) with the property that no two sides lie on the same line, the vertical sides lie on a contiguous sequence of vertical integer grid lines, and the horizontal sides lie on a contiguous sequence of horizontal integer grid lines. The authors describe a way of encoding a permutomino with two permutations, but not every pair of permutations works: some give disconnected boundaries or self-crossing boundaries. They characterize the permutations that do lead to simple polygons. This caught my attention because it seems relevant for xyz graphs, and specifically for the problem of finding three permutations of the coordinates that eliminate all crossings of an xyz graph representation, if possible.
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>two_star</b>: <br />
+<b>2007-11-07T06:11:59Z</b><br />
+I get &quot;Quantum Spin Hall Insulator State in HgTe Quantum Wells&quot; when I click on the permutomino link.
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2007-11-07T06:13:44Z</b><br />
+Oops, fixed.
+</div>
+

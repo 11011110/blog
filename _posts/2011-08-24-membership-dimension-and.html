@@ -1,0 +1,50 @@
+---
+layout: post
+title:  'Membership Dimension and the Small-World Phenomenon'
+date:   2011-08-24 15:36:00
+tags:   [social networks]
+---
+I have a new preprint up on the arXiv, <a href="http://arxiv.org/abs/1108.4675">Category-Based Routing in Social Networks: Membership Dimension and the Small-World Phenomenon</a> (with Goodrich, Löffler, Strash, and Trott, arXiv:1108.4675). We presented it at the Workshop on Graph Algorithms and Applications, a satellite workshop of ICALP without a proceedings, last month, and it will appear in the proceedings of the International Conference on Computational Aspects of Social Networks (CASoN 2011) in October.
+<br />
+
+<br />
+The actual math in the paper is not particularly difficult, but I think in other ways it&#x27;s more ambitious than a lot of my other recent papers, in that it attempts to bridge two big but largely separate lines of research.
+<br />
+
+<br />
+The first line is in sociology and psychology, and comes from the <a href="http://en.wikipedia.org/wiki/Small_world_experiment">small world experiment</a> from the 1960s in which Stanley Milgram and his co-authors gave a set of letters to randomly chosen people in Kansas and Nebraska, addressed to a target person in Boston, and asked the people receiving the letters to help them on towards their destination by forwarding them to an acquaintance. Not all of the initial letters reached their destination, but those that did used only short sequences of steps averaging between five and six hops, giving rise to the phrase &quot;six degrees of separation&quot;. So this experiment showed two things: first, that social networks have short paths between most or all pairs of nodes (now known as the small world phenomenon), and secondly, that humans participating in these networks are capable of finding these paths. Since then there has been a lot of research on modeling the small world phenomenon in real and artificial networks, and on determining how people can successfully route messages in these networks. The consensus seems to be that the people in the experiment largely think categorically. Part of what they were told about the destination was categorical (his occupation), and although the other geographic part could be modeled as a numerical latitude-longitude pair, it fits better with human thought patterns to also model it categorically: he lives in Boston, which is in the state of Massachusetts, which is in New England. The hypothesis is that people tend to forward messages to other people who share many categories with the destination, in contrast with alternative routing strategies that might choose an intermediary who is well-connected but not similar to the destination.
+<br />
+
+<br />
+Separately, there has been a lot of recent research in computer science and electrical engineering on methods of maintaining communications in &quot;ad hoc networks&quot; consisting of small and/or dynamic pieces of computer hardware. This model of networking makes sense for large networks of sensors scattered over a geographic area, for networks formed by nearby pairs of cell phones or smart badges connecting the participants of a meeting or organization as they move around in some area, or even for networks connecting the many pieces of space hardware that NASA and others have put up. Because of the lightweight nature of the nodes, the possible high number of them, and the dynamic shifting of relationships between them, it might not make sense to perform the sorts of routing protocols that are used in the more static parts of the internet, in which every node knows about every other node and they all get together to decide on the best paths to route messages between each pair of nodes. Instead, researchers have settled on simple routing schemes that are (in strong contrast to the social network routing) based primarily on numerical coordinates representing the location of each node. A &quot;greedy routing&quot; procedure forwards each message another node that is closer in physical space to the destination, possibly with some fallback routing procedure for those rare cases where this leads to a dead end. In a refined version of the same method, the coordinates of the node don&#x27;t represent true latitude and longitude, but rather are &quot;virtual coordinates&quot; that are chosen specifically to make greedy routing work. It&#x27;s not always possible to find good virtual coordinates in low-dimensional Euclidean spaces, but in <a href="http://dx.doi.org/10.1109/INFCOM.2007.221">an INFOCOM 2007 paper</a> Bobby Kleinberg showed that the hyperbolic plane is better: no matter what communication network one is given, it is always possible to find virtual coordinates in the hyperbolic plane for which greedy routing can be guaranteed to succeed. This result could be seen as a bit of a cheat, since the coordinates might need to be represented to an accuracy of as many bits as it would take to store a full routing table, in which case why not just use the routing table and forget the coordinates. But in <a href="http://arxiv.org/abs/0806.0341">a followup paper at GD 2008</a>, Mike Goodrich and I showed that it is possible to use a hyperbolic coordinate system with only a logarithmic number of bits per coordinate. With this system, the amount of information each processor has to store is quite small: just its own coordinates, the coordinates of its neighbors, and the coordinates of each message&#x27;s destination.
+<br />
+
+<br />
+So this is where our new paper comes in. Our starting point was the observation that, though based on symbolic categorical information rather than numeric coordinate information, the method that the sociologists had suggested as an explanation for how people pass messages in a social network was a lot like the greedy routing scheme that nodes in an ad-hoc network use: in both cases there is some definition of how close a node is to the destination, and one simply forwards a message to a node that&#x27;s closer to the destination. Based on this analogy, and the idea from our GD 2008 paper that a compact routing scheme should maintain significantly less information per node than a full routing table, we defined the &quot;membership dimension&quot; of a system of categories to be the maximum number of categories that any individual person belongs to. If the membership dimension is k, then you can perform the proposed categorical routing method while knowing only k things about yourself, your acquaintances, and the destination of the message you&#x27;re trying to forward. It&#x27;s entirely likely that the total number of categories in the world equals or exceeds the number of people in the world, but you shouldn&#x27;t have to remember billions of pieces of information in order to participate in society. So, for a category system to make sense as part of a real-world social network, it needs to have a small membership dimension.
+<br />
+
+<br />
+Our main mathematical result is a surprising equivalence between the membership dimension and the small world phenomenon. If a social network does not obey the small world phenomenon, that is, if some pairs of people are many steps apart from each other, then any good category system for that network (one that allows greedy routing to work correctly) necessarily has high membership dimension. And conversely, if a social network does obey the small world phenomenon, then there exists a category system for it that has small membership dimension and for which greedy routing is guaranteed to work. More precisely the diameter of a network is <a href="http://en.wikipedia.org/wiki/Polylogarithmic">polylogarithmic</a> if and only if the same is true of the minimum possible membership dimension of a category system that supports greedy routing on the network.
+<br />
+
+<br />
+The biggest weakness with this paper (which I think is also the biggest opportunity for more research in the same direction) is that the category system we construct for a given network is very artificial. Our result should be seen as a kind of existence proof: it explains that real-world social networks can have category systems that would allow Milgram&#x27;s experiment to work, and that the small-world phenomenon is the only property required of these networks for this to be true, but it doesn&#x27;t explain why the actual real-world category systems people have developed support greedy routing, and it doesn&#x27;t answer the chicken-and-egg question of whether the categories spring up from the pairwise connections in the network or whether the connections develop from the categories.
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>tolko_ne</b>: <br />
+<b>2011-08-25T04:00:19Z</b><br />
+Thank you, excellent story and review. Will dig into mentioned papers. 
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>ext_439202</b>: <br />
+<b>2011-08-25T16:25:21Z</b><br />
+Lattanzi and Sivakumar&#x27;s work (for example http://dl.acm.org/citation.cfm?doid=1963405.1963507) seems related.
+
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2011-08-25T16:35:13Z</b><br />
+Thanks, that does look relevant.
+</div>
+

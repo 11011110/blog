@@ -1,0 +1,38 @@
+---
+layout: post
+title:  'Too many or too few ways to make change'
+date:   2016-05-30 12:09:00
+tags:   [python, wikipedia, dynamic programming, number theory]
+---
+<p><a href="https://en.wikipedia.org/wiki/Ivan_Pervushin">Ivan Pervushin</a> was a 19th-century Russian amateur mathematician, employed as a cleric, who factored two Fermat numbers and discovered the ninth Mersenne prime 2<sup>61</sup> − 1 = 2305843009213693951. But despite these obvious reasons for fame, his Wikipedia article was in such bad shape (e.g. completely unsourced) that it was recently put up for a deletion discussion, which it survived.</p>
+
+<p>While looking for more sources for this article, I ran across what Google numbers as <a href="https://books.google.com/books?id=zBkpLyUTOjoC&pg=PT140">page 140 of <i>Ripley&#x27;s Believe It or Not!: In Celebration... A special reissue of the original!</i></a> (Simon and Schuster 2011), which seems to describe a different reason for Pervushin&#x27;s number 2<sup>61</sup> − 1 to be interesting. It writes (in somewhat hyperbolic language) that this is the number of different ways of making change for $5, using U.S. currency (&quot;cents, nickels, dimes, quarters, halves, and dollars&quot;). Not convinced, I wrote a Python program based on a simple dynamic programming algorithm to compute the number of ways of making change for $5 (also allowing a $5 bill to be used itself, but that only changes the answer by one):</p>
+
+{% highlight python %}
+N = [0]*501
+N[0] = 1
+
+for c in [500,100,50,25,10,5,1]:
+    for i in range(501-c):
+        N[i+c] += N[i]
+
+print N[500]
+{% endhighlight %}
+
+<p>The output was 98412 (Tacoma), much smaller than the number in the book. (The problem is also briefly discussed <a href="https://primes.utm.edu/curios/page.php/2305843009213693951.html">here</a> with essentially the same answer, 98411 if the $5 bill is not counted as a solution.) In retrospect, the small size of this number should not have been a surprise. To make change for <i>n</i> cents using a fixed set of <i>c</i> different coins, the number of possible solutions is asymptotically <i>O</i>(<i>n</i><sup><i>c</i> − 1</sup>): each solution can be represented as a <i>c</i>-dimensional vector of how many coins of each value to use, but the coefficient for the pennies is determined by all the other coefficients. And the leading constant in the <i>O</i>-notation is very small (much smaller than 1) because you can&#x27;t use anywhere near <i>n</i> of the larger denomination coins. So a polynomial bound with a moderate exponent and a small constant shouldn&#x27;t generate huge numbers.</p>
+
+<p>But then I thought: maybe they have a different definition of what it means for two ways of making change to differ. It couldn&#x27;t be that the coins of the same value are distinguishable (different years or mint marks, or different state-by-state obverse designs on the quarters) because then the answer wouldn&#x27;t be well defined: it would depend on how many different coins of each type you happen to have and not merely on the value of the amount to be changed and the fixed system of coin values. But maybe the order in which I hand you the change matters: if I give you four dollar bills and then four quarters, it&#x27;s a different way of making change than giving you the quarters first and then the dollars? To test this, I made a small modification to my program to calculate the number of distinct sequences of coins and bills (rather than the number of distinct multisets) that would add to the given amount:</p>
+
+{% highlight python %}
+N = [0]*501
+N[0] = 1
+
+for i in range(501):
+    for c in [500,100,50,25,10,5,1]:
+        if (i-c >= 0):
+            N[i] += N[i-c]
+
+print N[500]
+{% endhighlight %}
+
+<p>But this time the output was much higher than the published amount: It was 1296142333713114950908964121341365887827473814688245139610006400624. Asymptotically the number of solutions is exponential (because what we are computing is just a linear recurrence) but even with a low base, exponentiating 500 produces big numbers. So this raises a puzzle: can anyone come up with a reasonable definition of the problem for which the Ripley answer is correct?</p>

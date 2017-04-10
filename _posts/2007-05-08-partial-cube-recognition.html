@@ -1,0 +1,15 @@
+---
+layout: post
+title:  'Partial cube recognition'
+date:   2007-05-08 17:49:00
+tags:   [graph algorithms, bit parallelism, media theory, papers]
+---
+I have a new paper on arxiv today, <a href="http://arxiv.org/abs/0705.1025">Recognizing Partial Cubes in Quadratic Time</a>. The previous time bound (for an n-vertex m-edge graph) was O(mn); this paper improves it to O(n<sup>2</sup>) via a combination of bit-parallelism and a fast all-pairs shortest path algorithm I&#x27;d <a href="http://arxiv.org/abs/cs/0206033">previously written about</a>.
+<br />
+
+<br />
+Although the new paper is written mostly in the terminology of graph theory, in order to make sense of the shortest path part I needed to import some terminology from <i>media theory</i>, a way of looking at structures equivalent to partial cubes in terms more closely related to finite state machines. Media theory was initially developed by my UCI colleague in social science, Jean-Claude Falmagne, for applications including modeling voter preferences and states of knowledge of human learners; I&#x27;ve been working with Falmagne and Sergei Ovchinnikov on a monograph describing this theory. I have to view this new result as a success for the media theoretic viewpoint, as I think that viewpoint was crucial in coming up with the shortest path component of the algorithm.
+<br />
+
+<br />
+(The previous paper, &quot;Algorithms for media&quot;, has a mildly convoluted history, by the way: after failing to interest my fellow algorithms researchers in its results, I presented it at a mathematical social sciences conference, the International Conference on Ordinal and Symbolic Data Analysis (OSDA), held at UCI in 2003, but that conference didn&#x27;t have a proceedings; instead, there was a special issue of a journal devoted to the papers from the conference, to which it was submitted and duly accepted. But then the journal&#x27;s editor died, and the complications from the resulting backlog have led to a situation where it may be another two years before the special issue actually appears...)

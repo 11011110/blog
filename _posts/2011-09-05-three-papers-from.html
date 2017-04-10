@@ -1,0 +1,43 @@
+---
+layout: post
+title:  "Three papers from this year's Graph Drawing symposium"
+date:   2011-09-05 23:01:00
+tags:   [confluence, graph drawing, lombardi, papers]
+---
+It&#x27;s Graph Drawing proceedings deadline time, and not coincidentally my own papers from GD have all recently been uploaded to the arXiv.
+<br />
+
+<br />
+<a href="http://arxiv.org/abs/1108.4705">Hardness of Approximate Compaction for Nonplanar Orthogonal Graph Drawings</a> (arXiv:1108.4705, with Michael Bannister) is on the problem of reducing the area requirements of grid drawings. The input is a drawing of a graph on an integer grid (with the edges running along paths through the grid edges) and the output is another grid drawing with a smaller bounding box, formed by moving the vertices either row-by-row or individually. It&#x27;s not actually clear that this is a useful thing to do — it tends to make the drawings more cluttered looking — but it is at least a standard thing to do. Anyway this paper shows that it&#x27;s also a hard thing to do: one can&#x27;t get within even a √n factor of the optimal compaction in polynomial time, unless P=NP. The proof is a straightforward reduction from approximate graph coloring, but it turns out to be tight: there&#x27;s a matching upper bound based on a greedy coloring algorithm. Here&#x27;s a figure Michael had some fun drawing, of a 3d variant of the reduction:
+<br />
+
+<br />
+<div align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/3gd/3d-grid-compaction.png" /></div>
+<br />
+
+<br />
+<a href="http://arxiv.org/abs/1109.0345">Planar and Poly-Arc Lombardi Drawings</a> (arXiv:1109.0345, with Duncan, Goodrich, Kobourov, and Löffler) is a followup to our two papers from the previous year on Lombardi drawing, graph drawings with circular-arc edges and equally spaced angles at the vertices. Not every graph has a drawing of this type, so in this paper we relax the requirement that the edges be circular arcs, instead letting them be curves formed by joining two or more arcs. This turns out to make it much easier to construct the drawings and doesn&#x27;t seem to hurt their aesthetics too much. The figure below illustrates one of our techniques, of constructing drawings with two smoothly-connected non-crossing arcs per edge for cubic planar graphs based on tangent circle representations of the input graph.
+<br />
+
+<br />
+<div align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/3gd/2-lombardi-example.png" /></div>
+<br />
+
+<br />
+<a href="http://arxiv.org/abs/1108.5361">Confluent Hasse diagrams</a> (arXiv:1108.5361, with Joe Simons) combines the ideas of upward drawing (drawing a directed acyclic graph in such a way that all edges go upwards) and confluent drawing (eliminating crossings by routing edges together on train tracks). One difficulty with confluent drawing is that we haven&#x27;t had good algorithms to tell which graphs can be drawn in this way, so instead we&#x27;ve had to rely on special cases that may only give a small subset of the confluently drawable graphs. But in the upward case, everything is much cleaner: it&#x27;s possible to tell in polynomial time whether a transitively reduced DAG is upward confluent, and if so it&#x27;s also possible to find a drawing that uses as few confluent junctions as possible. These results use some machinery from order theory: <a href="http://en.wikipedia.org/wiki/Order_dimension">order dimension</a> and the <a href="http://en.wikipedia.org/wiki/Dedekind%E2%80%93MacNeille_completion">Dedekind–MacNeille completion</a>. And as well as taking from order theory we give back to it with an efficient algorithm for completing two-dimensional partial orders. For instance, this technique can automatically turn a conventional drawing with crossings such as this:
+<br />
+
+<br />
+<div align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/3gd/quartic-crossings.png" /></div>
+<br />
+
+<br />
+into a confluent drawing such as this:
+<br />
+
+<br />
+<div align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/3gd/upward-confluent.png" /></div>
+<br />
+
+<br />
+I think these are the first published research papers for UCI grad students Bannister and Simons, though Simons also has another one that just came out on <a href="http://arxiv.org/abs/1109.0312">retroactive range searching data structures</a>, to appear at ISAAC.

@@ -1,0 +1,47 @@
+---
+layout: post
+title:  'Recognizing xyz graphs is hard'
+date:   2007-05-25 16:57:00
+tags:   [complexity theory, xyz graphs]
+---
+I can now prove that recognizing whether a given 3-regular graph is an xyz graph (that is, whether it can be embedded in a 3d integer grid so that each grid line contains at most two points and so that all edges are oriented along grid lines) is NP-complete. The same reduction also shows that it is NP-complete to determine whether an arbitrary graph may be embedded in a 3d grid so that two vertices are adjacent if and only if they lie on a common grid line, because the xyz graphs are exactly the triangle-free cubic graphs of this type.
+<br />
+
+<br />
+The proof is a reduction from graph 3-colorability, using gadgets of several types. The key new gadget is shown below:
+<br />
+
+<br />
+<center><img src="http://www.ics.uci.edu/~eppstein/0xDE/xyz-connector.png" /></center>
+<br />
+
+<br />
+By considering cases for how each of the three hexagons formed by the left six, middle six, and right six vertices of the gadget could be embedded in space, and how this affects the corresponding <a href="http://11011110.livejournal.com/57024.html">3-colored surface coming from an xyz graph representation</a>, one can show that, in any embedding of this gadget, the three edges coming into it from the left must be mutually perpendicular and coincident, as must the three edges exiting from the right. Additionally, the colored surface will have exactly three faces connecting each of these three triples of the edges, and the coloring of the right three faces (or equivalently the orientation of its three edges) can be determined uniquely from the coloring and orientation on the left. We call this a &quot;connector gadget&quot;.
+<br />
+
+<br />
+Colors of nodes in a 3-colorable graph will be represented in our reduction by the orientations of triples of edges of connector gadgets. Specifically, if we label the three edges of a connector gadget A, B, and C, then orientations with A parallel to the x axis will correspond to one color, orientations with A parallel to the y axis will correspond to a second color, and orientations with A parallel to the z axis will correspond to a third color. Thus, each color can be represented by two possible orientations, as we do not care which orientation is assigned to B and which to C.
+<br />
+
+<br />
+To represent a vertex, we will use a vertex gadget formed by a cube, in which some or all of the cube vertices will be replaced by one of the ends of a connector gadget. The cube has a unique embedding, up to permutation of edge orientations, and the perpendicular and coincident property of connector gadgets forces the replaced cube to still only have a single embedding. Thus, any connector gadgets connected to a single vertex gadget must carry the same color information.
+<br />
+
+<br />
+Connector gadgets can force the triples of edges at each end to represent the same color as each other but to complete our reduction we need edge gadgets that force the colors represented by two triples of edges to be different from each other. To make this we use the <a href="http://11011110.livejournal.com/58638.html">32-vertex ambiguous xyz graph</a> previously described here. If u and v are two adjacent vertices of this graph, not part of the same square, and if (A,B,C) is an orientation of edges in the connector gadget at u, with A corresponding to the edge connecting u to v, then the connector gadget at v has edges that can be oriented either as (A,B,C) or (A,C,B); that is, we can convert between the two different representations of the same color using this gadget. We call the gadget formed by replacing u and v by connectors a flip gadget.
+<br />
+
+<br />
+Our overall edge gadget is formed by the sequential attachment of a connector, flip gadget, connector, flip gadget, and connector. The edges representing the color at the two ends of the edge gadget are the ones that are not part of the flip in their respective flip gadgets. This sequence of gadgets allows the triples of edges at its two ends to take on any two triples of orientations that do not represent the same color as each other.
+<br />
+
+<br />
+To reduce 3-colorability of a graph G to xyz graph recognition of a graph G', we form a vertex gadget for each vertex in G of degree at most eight (or set of vertex gadgets, connected by connector gadgets, for higher degree vertices), and an edge gadget connecting two vertex gadgets for each edge in G. If the resulting G' is an xyz graph, the orientations of the edges in its vertex gadgets can be decoded to form a coloring of G. And conversely, if G is 3-colorable, one can assign orientations to its edges from the 3-coloring in such a way that we get a properly colored collection of faces forming a surface, and use the equivalence of surface coloring and xyz embedding to find a representation of G' as an xyz graph. Thus, G is 3-colorable if and only if G' is an xyz graph.
+<br />
+
+<br />
+Since <a href="http://11011110.livejournal.com/57254.html">xyz graph recognition is in NP</a> and has a reduction from a known NP-complete problem, it is also NP-complete.
+<br />
+
+<br />
+<b>ETA:</b> Relatedly, the graphs embeddable in a 2d grid such that two vertices are adjacent if and only if they share a row or column are the line graphs of bipartite graphs, known to be polynomially recognizable and one of the important building blocks of perfect graphs. Of course, as xyz graphs are triangle-free and not always bipartite, they cannot all be perfect. The line graphs of tripartite graphs (NP-complete to recognize via 3-coloring) can be realized geometrically as intersection graphs of axis-aligned lines in 3d.

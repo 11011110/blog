@@ -1,0 +1,42 @@
+---
+layout: post
+title:  'Cayley Permutations'
+date:   2013-03-13 15:57:00
+tags:   [combinatorial enumeration]
+---
+<p>A Cayley permutation of order \( n \) (so named by <a href="http://dx.doi.org/10.1016/0012-365X(84)90136-5">Mor and Fraenkel in 1984</a>) is a sequence of \( n \) positive integers whose set of values forms an interval \( [1,k] \) for some \( k \le n \); for instance the ones for which \( k=n \) are just the usual permutations. The number of Cayley permutations is counted by the <a href="http://en.wikipedia.org/wiki/Ordered_Bell_number">ordered Bell numbers</a>, but how can the permutations themselves be generated efficiently?</p>
+
+<p>A Cayley permutation of order \( n \) may be transformed into one of order \( n-1 \) by removing its largest value (breaking ties by choosing the last copy of the largest value). This transformation may be viewed as the parent relation of an infinite tree, and traversing this tree recursively leads to the following algorithm:</p>
+
+{% highlight python %}
+def CayleyPermutations(n):
+    """Generate sequence of Cayley permutations of length n"""
+    if n < 2:
+        yield [1]*n
+        return
+    for P in CayleyPermutations(n-1):
+        m = max(P)
+        i = n-1
+        P = P + [m+1]
+        pastMax = False
+        yield P
+        while i > 0:
+            if not pastMax:
+                P[i] = m
+                yield P
+                if P[i-1] == m:
+                    pastMax = True
+            P[i] = P[i-1]
+            P[i-1] = m+1
+            i -= 1
+            yield P
+{% endhighlight %}
+
+<p>For instance, for \( n=3 \) it produces as output the sequence of 13 Cayley permutations [1, 2, 3], [1, 2, 2], [1, 3, 2], [3, 1, 2], [1, 1, 2], [1, 1, 1], [1, 2, 1], [2, 1, 1], [2, 1, 3], [2, 1, 2], [2, 3, 1], [2, 2, 1], [3, 2, 1].  Each of the smaller permutations it generates leads to \( n \) or more output permutations, so the linear amount of work that it does when it finds the max of the smaller permutation and then copies it can be amortized away, showing that this algorithm takes constant average time per output. But the time per output is not constant in the worst case: in some of the steps of the algorithm there is a big delay between one output and the next.</p>
+
+<p>For ordinary permutations, constant worst-case time per output is achieved by the <a href="http://en.wikipedia.org/wiki/Steinhaus%E2%80%93Johnson%E2%80%93Trotter_algorithm">Steinhaus–Johnson–Trotter algorithm</a>, which generates the permutations in a Gray code (meaning that two consecutive permutations differ by a single swap of adjacent elements).</p>
+
+<p>For Cayley permutations, swaps are not enough for a Gray code (they don&#x27;t change \( k \)). And although the Cayley permutations can be given the structure of a connected graph by operations that change a single value by one, those also don&#x27;t form a Gray code (each ordinary permutation has degree one in this graph). But maybe swaps together with adding or subtracting one together are enough to define a Gray code. If so, can it be used to generate the Cayley permutations in constant time per permutation?</p>
+
+<p>The obvious idea is to emulate the Steinhaus–Johnson–Trotter algorithm by sweeping the largest value back and forth across the sequence, recursing whenever this sweep reaches one of the ends of the sequence, but this doesn&#x27;t work; I implemented it using similar but messier code to the one above, but it gave me the non-Gray-code sequence [1, 2, 3], [1, 2, 2], [1, 3, 2], [3, 1, 2], [2, 1, 1], [1, 1, 1], [1, 2, 1], [1, 1, 1], [1, 1, 2], [2, 1, 3], [2, 1, 2], [2, 3, 1], [2, 2, 1], [3, 2, 1]. The problem is that when it recurses, the max of the sequence might be forced to change as well, leading to more than one change in a single step.</p>
+

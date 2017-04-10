@@ -1,0 +1,67 @@
+---
+layout: post
+title:  'Updated bibtex style for easy hyperlinking of articles'
+date:   2009-10-01 15:57:00
+tags:   [tools, bibliography]
+---
+In conjunction with <a href="http://blog.computationalcomplexity.org/2009/10/journal-manifesto-20.html">Bill Gasarch&#x27;s call for including as many links as possible in the bibliographies of our papers</a> (and for us to take some other more important steps towards open access; see also <a href="http://www.daniel-lemire.com/blog/archives/2009/10/01/a-simplified-open-publishing-manifesto/">here</a>) I&#x27;ve updated a BibTeX style file, <a href="http://www.ics.uci.edu/~eppstein/bibs/abuser.bst">abuser.bst</a>, that I&#x27;ve been using in conjunction with pdflatex and the <s><a href="http://www.ctan.org/tex-archive/help/Catalogue/entries/url.html">url package</a></s> <a href="http://www.ctan.org/tex-archive/help/Catalogue/entries/hyperref.html">hyperref package</a> in order to make hyperlinks in my papers&#x27; bibliographies.
+<br />
+
+<br />
+Basically, you use this package very much like the standard BibTeX abbrv style, with the following changes:<ul><li>For book series, such as LNCS, it is preferable to use number={nnnn} rather than volume={nnnn} to indicate the number of the book within the series; this frees the volume to indicate the volume of a multivolume work (which might exist within a differently numbered series). The formatting is also a little more compact; e.g. series={LNCS}, number={1234} produces &quot;LNCS 1234&quot; rather than &quot;vol. 1234, other information, LNCS&quot;.</li>
+<br />
+<li>url={...} includes the given url within the formatted reference, as a hyperlink for TeX systems that support hyperlinking.</li>
+<br />
+<li>eprint={...} includes the arxiv paper with the given eprint number, as a hyperlink for TeX systems that support hyperlinking.</li>
+<br />
+<li>doi={...} includes the given doi, as a hyperlink for TeX systems that support hyperlinking. If you&#x27;re not familiar with the doi system, it&#x27;s a way to provide links to the publisher&#x27;s web site for journal and conference papers that is supposedly more permanent than just using a url (as publishers often change their url schema but are not supposed to change their dois). So this doesn&#x27;t do anything about the open access issue but does allow easy hyperlinking of online published content. The doi is usually included somewhere on the publisher&#x27;s web page for an article but can also be looked up using <a href="http://www.crossref.org/guestquery/">crossref.org</a>.</li>
+<br />
+<li>There&#x27;s a note at the top of the file about Dutch names being sorted correctly (that is, &quot;van Kreveld&quot; should be sorted under &quot;K&quot;), but I no longer remember what I did to achieve this.</li></ul>
+<p>If you need something other than abbrv, you&#x27;re on your own, but I hope this is helpful to at least a few other people than myself.</p>
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: url -&gt; hyperref<br />
+<b>2009-10-01T23:19:50Z</b><br />
+If you use hyperref.sty instead of url.sty, together with pdflatex, you get actual links in the PDF files (as well as properly formatted URLs).
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: Re: url -&gt; hyperref<br />
+<b>2009-10-01T23:23:49Z</b><br />
+I am getting actual links in the PDF files when I use this, so probably one of the other packages in my latex source is invoking hyperref somehow.
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: BST style files with doi+eprint<br />
+<b>2009-10-01T23:44:23Z</b><br />
+There is also a simple script &quot;urlbst&quot; available that converts most standard bibliography style files to similar ones with eprint, doi and url links.
+
+http://nxg.me.uk/dist/urlbst/
+
+
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: Re: BST style files with doi+eprint<br />
+<b>2009-10-01T23:45:54Z</b><br />
+Thanks! Should come in handy the next time I want this effect in a different style.
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>brooksmoses</b>: <br />
+<b>2009-10-03T04:59:33Z</b><br />
+Pretty sure that what one does to get names to be sorted correctly for the cases where normal alpha-on-lastname-field doesn&#x27;t do it is putting a sortkey field in the BibTeX database; BibTeX alpha sorting uses that to sort by if it exists, and the lastname if it doesn&#x27;t.  I don&#x27;t recall what the exact name of the field is, though.
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: Underscores in DOIs<br />
+<b>2009-10-15T02:37:43Z</b><br />
+Thanks very much for this.  Using abuser.bst, I&#x27;m getting a problem with DOIs that have underscores---the hyperlink goes to the right place, but LaTeX tries to treat this as a subscript in the displayed text.
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: Re: Underscores in DOIs<br />
+<b>2009-10-15T02:54:33Z</b><br />
+For instance, DOIs to chapters in Springer&#x27;s Lecture Notes in... series? You need to use \_ instead of _. Then they should both look right and link right.
+</div>
+<div style="margin-left: 6em; padding-top: 1em;">
+<b>None</b>: Re: Underscores in DOIs<br />
+<b>2009-10-15T03:22:30Z</b><br />
+Oh, of course.  (I&#x27;ve been adding the backslashes by hand for the displayed versions of LNCS chapters, but didn&#x27;t realize---or, foolishly, check---that these wouldn&#x27;t break the links.)  Thanks very much, and my apologies for missing the obvious.
+</div>
+

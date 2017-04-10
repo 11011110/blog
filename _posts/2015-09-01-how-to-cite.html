@@ -1,0 +1,73 @@
+---
+layout: post
+title:  'How to cite conference proceedings published as journal issues'
+date:   2015-09-01 13:37:00
+tags:   [tools, bibliography]
+---
+Publishing conference proceedings and other kinds of edited collections as special issues of journals has a long history. But lately (partly as a reaction to perceived shortcomings of the more traditional CS system of publishing a preliminary version of a paper in a conference and then a full version in a journal) there&#x27;s been <a href="http://cacm.acm.org/magazines/2013/1/158767-conference-journal-hybrids/fulltext">increasing</a> <a href="http://blog.computationalcomplexity.org/2015/08/pacm.html">pressure</a> to do this for more conferences. Which raises the question: how are we supposed to format these things in our bibliographies and bibtex files?
+<br />
+
+<br />
+Some standard but not-very-satisfactory solutions include: pretending the journal is a book series and using the series= parameter of an @inproceedings bibtex entry (but where does the journal issue number go?); formatting it as a normal conference proceedings paper and omitting the journal name and volume/issue data; formatting it as a normal journal paper and omitting the conference name and editors; or putting the data that doesn&#x27;t fit into a note, formatted manually, and forgoing the uniform and flexible formatting provided by bibtex.
+<br />
+
+<br />
+I recently ran across an intriguing alternative used for some entries in MathSciNet: use @inproceedings, but with the journal= parameter giving the journal name (in place of series=), and with volume= and number= parameters again used as you would for a journal paper. Here&#x27;s an example (not the one from MathSciNet):<pre>@inproceedings{FAvKSCM,
+<br />
+  title = {Meta-representation of shape families},
+<br />
+  author = {Fish, Noa and Averkiou, Melinos and van Kaick, Oliver and Sorkine-Hornung, Olga and Cohen-Or, Daniel and Mitra, Niloy J.},
+<br />
+  booktitle = {Proceedings of ACM SIGGRAPH 2014},
+<br />
+  doi = {10.1145/2601097.2601185},
+<br />
+  editor = {Adam Finkelstein},
+<br />
+  issn = {0730-0301},
+<br />
+  journal = {ACM Transactions on Graphics},
+<br />
+  month = Jul,
+<br />
+  number = {4},
+<br />
+  pages = {34:1--34:11},
+<br />
+  volume = {33},
+<br />
+  year = {2014}}</pre>If that worked, I&#x27;d expect it to be formatted something like:<ul><li>Fish, Noa; Averkiou, Melinos; van Kaick, Oliver; Sorkine-Hornung, Olga; Cohen-Or, Daniel; Mitra, Niloy J. (July 2014), &quot;Meta-representation of shape families&quot;, in Finkelstein, Adam, ed., Proceedings of ACM SIGGRAPH 2014, <i>ACM Transactions on Graphics</i> 33 (4): 34:1–34:11, doi:<a href="http://doi.org/10.1145/2601097.2601185">10.1145/2601097.2601185</a></li></ul>But sadly, it doesn&#x27;t work with any of the standard bibliography styles I tried it on (abbrv, splncs, and amsplain). In all cases it gives a warning and then produces a citation that is missing the journal name and issue number.
+<br />
+
+<br />
+Pretending the journal is a book series and using series= instead of journal= worked significantly better, although not perfectly. From abbrv, splncs, and amsplain I got respectively<ul><li>N. Fish, M. Averkiou, O. van Kaick, O. Sorkine-Hornung, D. Cohen-Or, and N. J. Mitra. Meta-representation of shape families. In A. Finkelstein, editor, <i>Proceedings of ACM SIGGRAPH 2014</i>, volume 33 of <i>ACM Transactions on Graphics</i>, pages 34:1–34:11, July 2014.</li>
+<br />
+<li>Fish, N., Averkiou, M., van Kaick, O., Sorkine-Hornung, O., Cohen-Or, D., Mitra, N.J.: Meta-representation of shape families. In Finkelstein, A., ed.: Proceedings of ACM SIGGRAPH 2014. Volume 33 of ACM Transactions on Graphics. (July 2014) 34:1–34:11</li></ul>and<ul><li>Noa Fish, Melinos Averkiou, Oliver van Kaick, Olga Sorkine-Hornung, Daniel Cohen-Or, and Niloy J. Mitra, <i>Meta-representation of shape families</i>, Proceedings of ACM SIGGRAPH 2014 (Adam Finkelstein, ed.), vol. 33, ACM Transactions on Graphics, no. 4, July 2014, pp. 34:1–34:11.</li></ul>(with a warning from both abbrv and splncs about using both volume and number together).
+<br />
+
+<br />
+I don&#x27;t normally use biblatex, but I also tried it (with its default settings), with similar results. It didn&#x27;t complain about journal=, but it didn&#x27;t show the journal name in the reference when I used it. With series=, I got the output<ul><li>Noa Fish et al. “Meta-representation of shape families”. In: <i>Proceedings of ACM SIGGRAPH 2014</i>. Ed. by Adam Finkelstein. Vol. 33. ACM Transactions on Graphics 4. July 2014, 34:1–34:11. <small>DOI:</small> <tt>10.1145/2601097.2601185</tt>.</li></ul>which is a bit mixed up, but at least has all the information visible. If you do plan on using biblatex only, there is a better option available through its additional fields:<pre>@article{FAvKSCM,
+<br />
+  title = {Meta-representation of shape families},
+<br />
+  author = {Fish, Noa and Averkiou, Melinos and van Kaick, Oliver and Sorkine-Hornung, Olga and Cohen-Or, Daniel and Mitra, Niloy J.},
+<br />
+  issuetitle = {Proceedings of ACM SIGGRAPH 2014},
+<br />
+  doi = {10.1145/2601097.2601185},
+<br />
+  editor = {Adam Finkelstein},
+<br />
+  issn = {0730-0301},
+<br />
+  journal = {ACM Transactions on Graphics},
+<br />
+  month = Jul,
+<br />
+  number = {4},
+<br />
+  pages = {34:1--34:11},
+<br />
+  volume = {33},
+<br />
+  year = {2014}}</pre>produces the output<ul><li>Noa Fish et al. “Meta-representation of shape families”. In: <i>ACM Transactions on Graphics</i> 33.4 (July 2014): <i>Proceedings of ACM SIGGRAPH 2014</i>. Ed. by Adam Finkelstein. 34:1–34:11. <small>ISSN:</small> 0730-0301. <small>DOI:</small> <tt>10.1145/2601097.2601185</tt>.</li></ul>So it looks like, for now, despite its shortcomings, series= is the way to go. But biblatex is promising and might (with styles that better match publisher requirements) be a better eventual solution.

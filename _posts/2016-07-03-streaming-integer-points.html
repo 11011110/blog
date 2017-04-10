@@ -1,0 +1,106 @@
+---
+layout: post
+title:  'Streaming integer points sorted by distance'
+date:   2016-07-03 16:14:00
+---
+Here&#x27;s a puzzle in streaming algorithms: suppose you want to generate a stream of all the (infinitely many) integer points (<i>x</i>,<i>y</i>) in the plane, in sorted order by their Euclidean distance from the origin. How little space do you need?
+<br />
+
+<br />
+The answer is <i>O</i>(1), if you assume that a single variable can store any number whose size is comparable to the coordinates output so far and you&#x27;re willing to do it slowly enough. First, observe that you can avoid non-integer arithmetic by using the squared distance <i>x</i><sup>2</sup> + <i>y</i><sup>2</sup> in place of the distance itself. Maintain a current squared distance <i>d</i> and a number <i>r</i> equal to the square root of <i>d</i> rounded up to an integer (both initially zero). Search a square of radius <i>r</i>, outputting all points at distance <i>d</i>, then increment <i>d</i> and update <i>r</i> and repeat.
+<br />
+
+<br />
+But now suppose you want to do it much more quickly, constant (amortized) time per point. In this case it&#x27;s still possible to achieve sublinear space (as a function of the output length so far) with a little data structural help. The idea is to observe that if <i>n</i> points have been output so far, then they form a pixelated disk whose boundary length is proportional to √<i>n</i>. By maintaining a priority queue of boundary points, each can be found quickly. A suitable priority queue is the <a href="https://en.wikipedia.org/wiki/Bucket_queue">bucket queue</a> (new Wikipedia article): an array of buckets, indexed by squared distance, where bucket <i>i</i> stores all the boundary points at squared distance <i>i</i>. Conveniently, the maximum squared distance seen at any time will be proportional to the number of points output, so the total time spent scanning the array for the next nonempty bucket can be amortized out to constant time per point.
+<br />
+
+<br />
+Is less than √<i>n</i> space possible? I don&#x27;t know, but I also don&#x27;t know any streaming lower bound techniques powerful enough to prove that it isn&#x27;t possible. Most of the lower bounds I know of are information theoretic, but the slow constant-space method shows that information theory alone won&#x27;t prove anything nontrivial for this problem.
+<br />
+
+<br />
+Along with the Wikipedia article, I added to my <a href="http://www.ics.uci.edu/~eppstein/PADS/">PADS library of Python implementations</a> three new modules: <a href="http://www.ics.uci.edu/~eppstein/PADS/BucketQueue.py">BucketQueue.py</a> (bucket queues), <a href="http://www.ics.uci.edu/~eppstein/PADS/IntegerPoints.py">IntegerPoints.py</a> (the fast streaming integer point algorithm), and <a href="http://www.ics.uci.edu/~eppstein/PADS/GraphDegeneracy.py">GraphDegeneracy.py</a> (another application of bucket queues for <a href="https://en.wikipedia.org/wiki/Degeneracy_(graph_theory)">graph degeneracy</a> and triangle finding).
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>brooksmoses</b>: <br />
+<b>2016-07-04T00:55:02Z</b><br />
+I note that you can also do the O(1)-space algorithm in O(√n) time for the next point, by following a path around the edge of the disk (start at y=0, go up until you cross, go left until you cross, repeat) rather than searching the whole square in O(n) time.
+
+A slight improvement on that is to also store the next higher value of d that you find as you make that pass, so that you&#x27;re never searching for a d that doesn&#x27;t exist in the set.  Although it would appear that that&#x27;s just a constant-factor improvement, by the same argument that your cost of retrieving the values from the bucket queue can be amortized to constant-per-point.
+
+I notice that there are also ways to trade off space for time -- when you do the pass around the boundary, store the points for the next m distances (or points in some range, or whatever) in some suitable data structure so that you get O(m) points per pass.
+
+And then I got stuck trying to find an appropriate data structure to show that with suitable values of m we can recover your O(1)-time algorithm....
+
+Here&#x27;s my confusion: How do you get sublinear space there?  The bucket queue for up to n points will need to cover lengths up to O(√n), so it will need to cover squared lengths up to O(n).  Thus it needs O(n) buckets, no?
+
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2016-07-04T01:14:34Z</b><br />
+Re the sublinear space part: use a hash table of buckets instead of an array of buckets (that&#x27;s what my implementation does). Or, observe that all the frontier distances will be within a narrow range and use an array that only covers that range.
+</div>
+<div style="margin-left: 6em; padding-top: 1em;">
+<b>brooksmoses</b>: <br />
+<b>2016-07-04T05:39:06Z</b><br />
+Oh!  Okay, I see, you only need an O(√n) portion of the queue at any one time.
+
+So that&#x27;s then basically exactly the space-for-time tradeoff I was thinking of.  You&#x27;re making m proportional to O(√n), and so the per-point cost of doing the edge-traversal drops to O(1) since both the cost per traversal and the number of points per traversal are O(√n).
+
+Given that, you could also look at a frontier of width 1/(√√n) on each edge traversal, and thus get something that is O(√√n) in both space and time.
+
+In any case, given that this maps both of the known &quot;best&quot; solutions -- the O(1) space one and the O(1) time one -- into a single class of solutions, I wonder if that might make it easier to prove whether that&#x27;s the limit on how good your solution is.  Another way of looking at this class of solutions is that it appears that, given no other information but the last point found, we can find the next point in no better than O(√n) time -- but, in that O(√n) time, we can also find the next O(√n) points, and with clever sorting using a bucket queue, we can sort them in O(1) time.
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>itman</b>: <br />
+<b>2016-07-04T01:05:59Z</b><br />
+Interesting, thank you! Can we adopt a Bresenham&#x27;s algorithm to plot quarter circles of ever increasing radii? If the algorithm produces overlaps, then you can probably draw circles of radius r, r + 1 and r+2 in sync and somehow deal with overlaps using a priority queue of O(1) size. This is a general idea, if a Bresenham&#x27;s does produce overlapping circles, the gory details of ensuring that a point is output only once might be non-trivial.
+PS: does the bucket queue beat the standard binary-heap queue? 
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2016-07-04T01:16:45Z</b><br />
+The binary heap takes log time per point, slower than the constant amortized time of the bucket queue for this problem. As for using Bresenham: the problem is that the quarter circles will include points of slightly different distances so outputting them in curve order will be different from outputting them in distance-sorted order.
+</div>
+<div style="margin-left: 6em; padding-top: 1em;">
+<b>itman</b>: <br />
+<b>2016-07-04T01:55:45Z</b><br />
+Thanks, got it regarding bucket queue.
+
+Regarding, Bresenham: this seems to be fine. Wouldn&#x27;t all the interesting points be contained in the small size area around each point? (Bresenham guarantees that the plotted point is located as closely as possible to the true point. Doesn&#x27;t it mean that the maximum deviation is just one?)
+
+</div>
+<div style="margin-left: 9em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2016-07-04T04:50:05Z</b><br />
+The distances from the origin of the points within the plotted curve differ by at most one, but that doesn&#x27;t mean they are all equal. Their squared distances vary by up to the current radius.
+</div>
+<div style="margin-left: 12em; padding-top: 1em;">
+<b>itman</b>: <br />
+<b></b><br />
+
+</div>
+<div style="margin-left: 9em; padding-top: 1em;">
+<b>brooksmoses</b>: <br />
+<b>2016-07-04T06:00:37Z</b><br />
+I think with Bresenham&#x27;s algorithm you&#x27;re thinking of roughly the same class of algorithms I was.  There are O(√n) squares in the rasterized quarter-circle, so at best it takes you O(√n) time to draw it, and it covers O(√n) points.  Given that, you&#x27;ve now got choices of what to do.  Either you can take all of those points and put them in a O(√n)-sized container -- and with some good choices of container and little cleverness involving keeping only the constant fraction of them [1] rather than actually all of them, you can then dump them out of that container in the right order in O(√n) time, or amortized O(1) time per point.  Or, alternately, since you know the next point is within that band somewhere, you can keep the best point you find that&#x27;s farther out than the last one you reported which only takes O(1) storage, but since you have to traverse the whole quarter-circle over again for every new point, you&#x27;re taking O(√n) time per point.
+
+[1] Basically, the trick there is that you ensure that your rasterized band entirely covers all points whose distance from the origin is between i and i+1.  And then you only store the points in [i, i+1) when you go around the quarter-circle.  The fact that your band covers that range means you know that you can report the points you found without missing any others that should go between them, and the fact that the ranges are non-overlapping means you don&#x27;t have duplicates.
+</div>
+<div style="margin-left: 12em; padding-top: 1em;">
+<b>itman</b>: <br />
+<b>2016-07-04T06:12:32Z</b><br />
+Yes, you are right. However, I somehow missed the fact that we need to carry out O(√n) traversals when the radius increases from r to r + 1. Doing O(√n) operations for each value of the squared radius is still better than search the square in O(n) time.
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>brooksmoses</b>: <br />
+<b>2016-07-04T05:46:36Z</b><br />
+On a different note, your description of the bucket queue in the new article was reminding me of radix sorts, and while I was chasing that down I came across the Wikipedia articles for <a href="https://en.wikipedia.org/wiki/Bucket_sort">&quot;bucket sort&quot;</a> and <a href="https://en.wikipedia.org/wiki/Pigeonhole_sort">&quot;pigeonhole sort&quot;</a>, which both look like they might be worth linking to from the &quot;bucket queue&quot; article, and both could be significantly improved by linking back to it (and could likely use some other love as well).
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2016-07-04T05:55:57Z</b><br />
+Thanks for the suggestion. While researching the new article I also ran across references to a priority queue structure called a radix heap, but that seems to be something different (related to radix sort).
+</div>
+

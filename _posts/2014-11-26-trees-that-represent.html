@@ -1,0 +1,31 @@
+---
+layout: post
+title:  'Trees that represent bandwidth'
+date:   2014-11-26 23:25:00
+tags:   [graph algorithms, papers]
+---
+In my algorithms class today, I covered minimum spanning trees, one property of which is that they (or rather maximum spanning trees) can be used to find the bottleneck in communications bandwidth between any two vertices in a network. Suppose the network edges are labeled by bandwidth, and we compute the maximum spanning tree using these labels. Then between any two vertices the path in this tree has the maximum bandwidth possible, among all paths in the network that connect the same two vertices. (There may also be other equally good paths that aren&#x27;t part of the tree.) So if you want to send all of your data on a single route in the network, and you&#x27;re not worried about other people using the same links at the same time, and bandwidth is your main quality issue (a lot of ifs) then that&#x27;s the best path to take. The bandwidth of the path is controlled by its weakest link, the edge on the path with the smallest bandwidth. If you want to quickly look up the bandwidth between pairs of vertices, you can do it in constant time using the nearest common ancestor in a <a href="https://en.wikipedia.org/wiki/Cartesian_tree">Cartesian tree</a> derived from the maximum spanning tree.
+<br />
+
+<br />
+Ok, but if you&#x27;re so concerned about bandwidth then maybe you should use a more clever routing scheme that spreads your messages across multiple paths to get even more bandwidth. This can be modeled as a network flow, and the bottleneck to getting the most bandwidth is no longer a single edge. Instead, the <a href="https://en.wikipedia.org/wiki/Max-flow_min-cut_theorem">max-flow min-cut theorem</a> tells you that the bottleneck takes the form of a cut: a partition of the graphs into two disjoint subsets, whose bandwidth is the sum of the bandwidths of the edges crossing the cut.
+<br />
+
+<br />
+Despite all this added complexity, it turns out that the bandwidth in this sort of multi-path routing scheme can still be described by a single tree. That is, there&#x27;s a tree whose vertices are the vertices of your graph (but whose edges and edge weights are no longer those of the graph) such that the bandwidth you can get from one vertex to another by routing data along multiple paths in the graph is the same as the bandwidth of the single path between the same two vertices in the tree. More, the edges of the tree can be labeled by cuts in the graph such that the weakest link in the tree path between any two vertices is labeled by the minimum cut that separates those vertices in the original graph. This tree is called the <a href="https://en.wikipedia.org/wiki/Gomory%E2%80%93Hu_tree">Gomory–Hu tree</a> of the given (undirected and edge-weighted) graph. Using the same Cartesian tree ancestor technique, you can look up the bandwidth between any pair of vertices, in constant time per query.
+<br />
+
+<br />
+My latest arXiv preprint, <a href="http://arxiv.org/abs/1411.7055">All-Pairs Minimum Cuts in Near-Linear Time for Surface-Embedded Graphs</a> (arXiv:1411.7055, with Cora Borradaile and new co-authors Amir Nayyeri and Christian Wulff-Nilsen) is on exactly these trees. For arbitrary graphs they can be found in polynomial time, but slowly, because the computation involves multiple flow computations. For planar graphs it was known how to find the Gomory–Hu tree much more quickly, in O(<i>n</i> log<sup>3</sup> <i>n</i>) time; we shave a log off this time bound. Then, we extend this result to a larger class of graphs, the graphs of bounded genus, by showing how to slice the bounded-genus surface up (in a number of ways that&#x27;s exponential in the genus) into planar pieces such that, for every pair of vertices, one of the pieces contains the minimum cut. That gives us exponentially many Gomory-Hu trees, one for each piece, but it turns out that these can all be combined into a single tree for the whole graph.
+<br />
+
+<br />
+One curious difference between the planar and higher-genus graphs is that, for planar graphs, the set of cuts given by the Gomory–Hu tree also solves a different problem: it&#x27;s the minimum-weight <a href="https://en.wikipedia.org/wiki/Cycle_basis">cycle basis</a> of the dual graph. In higher-genus graphs, we don&#x27;t quite have enough cuts to generate the dual cycle space (we&#x27;re off by the genus) but more importantly some of the optimal cycle basis members might not be cuts. So although the new preprint also improves the time for finding cycle bases in planar graphs, making a similar improvement in the higher genus case remains open.
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>nrydino</b>: <br />
+<b></b><br />
+
+</div>
+

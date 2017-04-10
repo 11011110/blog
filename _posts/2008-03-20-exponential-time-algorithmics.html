@@ -1,0 +1,27 @@
+---
+layout: post
+title:  'Exponential time algorithmics in popular webcomics'
+date:   2008-03-20 22:16:00
+tags:   [exponential algorithms]
+---
+<a href="http://xkcd.com/399/">xkcd mentions the faster-than-factorial dynamic programming solution to the traveling salesman problem</a>!
+<br />
+
+<br />
+The quick explanation: if you try to solve the <a href="http://en.wikipedia.org/wiki/Traveling_salesman_problem">traveling salesman</a> by trying all cyclic permutations of the input, it will take time O(n!) (there are (n-1)! cyclic permutations, and it takes time O(n) to test each one). Or maybe O((n-1)!) if you use some sort of Gray code on permutations to reduce the time to test each one to a constant. In either case, you won&#x27;t be able to solve problems with more than a dozen or so vertices.
+<br />
+
+<br />
+In 1962, <a href="http://en.wikipedia.org/wiki/Richard_Bellman">Richard Bellman</a>, and independently Held and Karp, observed that the problem can be solved much more efficiently by <a href="http://en.wikipedia.org/wiki/Dynamic_programming">dynamic programming</a>. Pick one of the n vertices (arbitrarily) as a start, and call it s. Then compute, for each subset A of the remaining vertices, and each additional node t in A, the shortest path that starts at s, runs through each vertex of A, and ends at t: if we let P(A,t) denote the length of this path, then P(A,t) = min<sub>x in A\{t}</sub> P(A\{t},x) + d(x,t). There are O(n2<sup>n</sup>) choices of A and t, and each one takes time O(n) to run through the choices of x, so the total time is O(n<sup>2</sup>2<sup>n</sup>), the bound stated in the xkcd comic.
+<br />
+
+<br />
+The drawback of this algorithm, though, is that it also uses a lot of space. Say you&#x27;re a little bit careful about this, and run through all the choices of A in order by size, so that while you&#x27;re computing solutions for sets of size k+1 you only need to remember all the solutions you&#x27;ve already computed for sets of size k. (This will only let you find the length of the shortest tour, but the tour itself can likely be constructed in similar space using tricks similar to Hirschberg&#x27;s 1975 space-saving technique for longest common subsequences). Then the algorithm requires the most space when k is around n/2, at which point it will need to store O(n<sup>1/2</sup>2<sup>n</sup>) solutions. Say each solution is a 32-bit floating point number; then, when n is 20, you&#x27;d need roughly 20 megabytes of memory to run the algorithm. If you have a computer with a gigabyte of memory, the largest n you&#x27;d be able to solve is n=25. <a href="http://arxiv.org/abs/cs.DS/0302030">Some of my own research</a> concerns special cases of the traveling salesman problem where these space limitations can be removed, and the problem solved by a simpler backtracking algorithm; the time for my algorithm is still exponential, though, so it&#x27;s still limited to relatively small inputs (up to maybe 100 vertices).
+<br />
+
+<br />
+Fortunately, these limitations are primarily theoretical. If you really need fast exact solutions to large traveling salesman problems, <a href="http://en.wikipedia.org/wiki/Branch_and_bound">branch and bound</a> algorithms based on <a href="http://en.wikipedia.org/wiki/Linear_programming">linear programming</a> can solve much larger problems. The <a href="http://www.tsp.gatech.edu/concorde.html">Concorde</a> code by Chvatal et al seems to be a good example of this technique. It claims to have solved to optimality inputs of size up to 15,112 vertices. A lot more than you can get from Johnson&#x27;s algorithm, but maybe still not as good as the O(1) &quot;sell it on ebay&quot; solution suggested in xkcd.
+<br />
+
+<br />
+ETA: <a href="http://11011110.livejournal.com/189445.html">See this later post</a> for algorithms that trade off between the 2<sup><i>n</i></sup> time and space of the dynamic program above and the 4<sup><i>n</i></sup> time and polynomial space of the divide and conquer algorithm mentioned in the comments.

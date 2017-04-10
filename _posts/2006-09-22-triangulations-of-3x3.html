@@ -1,0 +1,23 @@
+---
+layout: post
+title:  'Triangulations of a 3x3 grid'
+date:   2006-09-22 00:25:00
+tags:   [media theory, triangulation]
+---
+Following up my recent post on <a href="http://11011110.livejournal.com/71727.html">triangulations of points on two lines</a>, I spent some time on the plane home today thinking about the next simplest case: a 3x3 grid. It turns out that the triangulations of these 9 points can be labeled by 12-dimensional bitvectors in such a way as to make them a partial cube.
+<br />
+
+<br />
+To see this, observe that each triangulation will always have four <i>diagonal</i> edges, with length sqrt(2). Four of the bits go to describing which of these edges exists in each corner of the grid. The triangulation may also have some <i>knight</i> edges, with length sqrt(5). There are eight possible knight edges, and we use eight bits to describe the set of them in the obvious way. These twelve bits together completely determine the triangulation. To find an isometric flip sequence between two triangulations A and B, first unflip any knight edges that belong to A but not to B, then flip any diagonal edges that are different between the two triangulations, then flip any knight edges that belong to B but not to A.
+<br />
+
+<br />
+If I&#x27;ve counted correctly there are 64 different triangulations:
+<br />
+
+<br />
+<div align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/3x3flips.png" /></div>
+<br />
+
+<br />
+This still seems a small enough example that I&#x27;m not willing to guess whether the partial cube property generalizes to larger grids.

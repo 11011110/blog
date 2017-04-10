@@ -1,0 +1,105 @@
+---
+layout: post
+title:  'Version control'
+date:   2012-02-19 15:20:00
+tags:   [tools]
+---
+Although originally developed for managing large software systems, <a href="http://en.wikipedia.org/wiki/Revision_control">version control systems</a> can be very helpful in writing scientific papers: they provide mechanisms for managing and tracking revisions to papers, allow multiple authors to work on the same files at once without having to take turns playing &quot;who has the token&quot; email games, provide easy mobility of content between different machines at home and in the office, and by replicating your content on multiple machines provide a form of backup making data losses less likely. And anyone who&#x27;s recently written an NSF proposal knows that the NSF now requires a data management plan, and version control is an important part of any such plan.
+<br />
+
+<br />
+Until now, I&#x27;ve been using a <a href="http://en.wikipedia.org/wiki/Concurrent_Versions_System">CVS</a> for version control for my single-author papers and most of my within-UCI collaborations, and <a href="http://en.wikipedia.org/wiki/Apache_Subversion">SVN</a> for some collaborations with other co-authors who have set up their own SVN repositories. But both CVS and SVN are getting old and creaky, so this weekend I started playing with <a href="http://en.wikipedia.org/wiki/Git_(software)">Git</a> instead.
+<br />
+
+<br />
+In the context of academic writing, I think switching to Git will have some important advantages:
+<br />
+
+<br />
+- The <a href="http://en.wikipedia.org/wiki/Distributed_revision_control">distributed version control</a> model means that it will be possible to work offline (e.g. in an airplane) and still have access to the whole version history, not just the latest version. And for the same reason the whole history is backed up by multiple replicated copies, not just the most recent version. The distributed model also solves the problem of &quot;do we host this at my institution or yours&quot;: we can do both!
+<br />
+
+<br />
+- Software such as <a href="http://sitaramc.github.com/gitolite/">Gitolite</a> should make it possible to manage co-authors from other institutions and give them access to shared master copies of Git repositories without having to create departmental logins for them and without having to deal with managing an Apache installation. And tools such as <a href="http://cvs2svn.tigris.org/cvs2git.html">cvs2git</a> should make it possible to transfer all our old history to the new system seamlessly.
+<br />
+
+<br />
+- The default setup for Git repositories doesn&#x27;t have the cumbersome branches/tags/trunk subdirectory structure that SVN has, which I never found to be particularly useful. Instead tags are handled as separate first-class objects in Git. I hadn&#x27;t been using tags much in CVS/SVN but I think in Git they should be a good way of tracking major events in the lifetime of a paper such as submission to a journal or uploading to a preprint server.
+<br />
+
+<br />
+- Git is being actively maintained by the open source community and is growing in popularity (e.g. see <a href="http://blog.wikimedia.org/2012/02/15/wikimedia-engineering-moving-from-subversion-to-git/">Wikimedia&#x27;s move from SVN to Git</a>) making it likely that it will continue to work well on whatever platforms I&#x27;m likely to use in the near to mid future.
+<br />
+
+<br />
+I also looked at Mercurial and Bazaar, which are in many ways similar, but the greater popularity of Git was a winning factor for me.
+<br />
+
+<br />
+ETA: See also a post by Thore Husfeldt on <a href="http://thorehusfeldt.net/2011/05/13/including-git-revision-identifiers-in-latex/">getting Git metadata into TeX</a>, and (via a comment on that post) the <a href="http://www.ctan.org/pkg/gitinfo">gitinfo package</a> for doing the same thing.
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>scriptum</b>: <br />
+<b>2012-02-20T03:13:15Z</b><br />
+Well, how do you the diffs and the merges?
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2012-02-20T04:13:01Z</b><br />
+You mean in my old workflow with cvs? Checkin usually does a reasonable job of merging changes from more than one editor as long as they&#x27;re working on different lines of the same files, and on the rare occasion when it gives up and forces you to do the merge by hand it&#x27;s usually not too difficult. And there&#x27;s a cvs diff command.
+
+As for how to view diffs etc in git, there are similar commands, but I&#x27;ve also been looking at <a href="http://www.sourcetreeapp.com/">SourceTree</a> for a graphical user interface which among other things can show the diffs for all checkins.
+</div>
+<div style="margin-left: 6em; padding-top: 1em;">
+<b>scriptum</b>: <br />
+<b>2012-02-20T04:20:58Z</b><br />
+I meant source control in general: how do you do merges on something like a word document, not simply a text file. I&#x27;ve never done it, but it seems it will be unpleasant.
+</div>
+<div style="margin-left: 9em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2012-02-20T04:24:50Z</b><br />
+Well, I don&#x27;t write my papers in Word, I write them in LaTeX. So just as in computer programming the source code is just a text file.
+
+Figures are more of a problem but they don&#x27;t tend to change much. And the compiled output of the LaTeX source code (a PDF file) is binary and does change frequently, but I usually leave it out of the version control because of that.
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>mcfnord</b>: <br />
+<b>2012-02-20T05:56:32Z</b><br />
+I wanna learn Mercurial. It doesn&#x27;t have a central repository. It&#x27;s magical!
+
+
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>cp_poster</b>: <br />
+<b>2012-02-20T06:57:11Z</b><br />
+Yeah, it&#x27;s like git, but simpler.
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>ext_933347</b>: <br />
+<b>2012-02-20T07:46:49Z</b><br />
+I’ve been using Git for quite a while myself. Conceptually, it’s an amazing system. It baffles me how they could mess up the documentation and command line interface so much. Using Git pleases me as a computer science person and annoys me as an educator.
+
+It took me a while to understand how to keep revision identifiers visible in my Latex documents: 
+<a href="http://thorehusfeldt.net/2011/05/13/including-git-revision-identifiers-in-latex/">http://thorehusfeldt.net/2011/05/13/including-git-revision-identifiers-in-latex/</a> This is useful for identifying which revision of your source code produced the PDF you’re looking at. (Or, more realistically, you co-autor is looking at, or your students.) “Oh, you mean exercise 5b in revision 5ac25…? No, that doesn’t work, it’s actually NP-complete. Sorry. You need to redownload the exercises from the course web page.” or “I think the reviewer is looking at 34af35…. That contains the version of lemma 5 where Bob used Foo’s reduction in the wrong direction.”
+
+An invaluable emacs hack is at <a href="https://thingsthatpassforknowledge.wordpress.com/2011/10/08/emacs-prettifies-plain-text-files-for-version-control/">thingsthatpassforknowledge.wordpress.com/2011/10/08/emacs-prettifies-plain-text-files-for-version-control/</a>: Get auto-fill-mode to line break at sentence end. This way, minor edits affect only the current line, which increases the usefulness of Git’s diff (and other version control systems).
+
+And, whimsically, for beginning Git users: <a href="http://benjamin-meyer.blogspot.com/2010/03/git-achievements.html">Git achievements</a> is a tiny wrapper that provides encouraging feedback when you start learning Git, levelling you up like in a video game.
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2012-02-20T20:40:49Z</b><br />
+Thanks for all the information and pointers. I mostly use <a href="http://pages.uoregon.edu/koch/texshop/">TeXShop</a> for my paper editing these days, rather than emacs — as well as having a user interface that&#x27;s more native to the OS X look and feel, it has automatic synchronization between source and preview allowing me to click on one and get sent to the same position in the other. But it also ends up meaning that most paragraphs are formatted as a single line of text. Still, that means that re-filling doesn&#x27;t cause spurious changes.
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>michiexile</b>: <br />
+<b>2012-02-20T10:43:01Z</b><br />
+I don&#x27;t know whether you noticed, but I blogged on my own platform choices for collaborations just the other day: http://blog.mikael.johanssons.org/archive/2012/02/collaborative-tools/
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2012-02-20T16:47:25Z</b><br />
+No, I missed that one — thanks for the link.
+</div>
+

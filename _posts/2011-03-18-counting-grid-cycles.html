@@ -1,0 +1,58 @@
+---
+layout: post
+title:  'Counting grid cycles using transfer matrices'
+date:   2011-03-18 23:30:00
+tags:   [python, combinatorial enumeration]
+---
+On <a href="http://cstheory.stackexchange.com/">cstheory.stackexchange.com</a>, I recently asked a question about <a href="http://cstheory.stackexchange.com/questions/5443/random-self-avoiding-lattice-cycle-within-a-given-bounding-box">random generation of simple cycles in a grid</a>. But that led naturally to the question: how many cycles are we choosing among, anyway? If it&#x27;s a <a href="http://en.wikipedia.org/wiki/Smooth_number">smooth number</a>, there might be hope of a random generation algorithm that picks a bunch of small random integers and does something with them (much as one can build a random graph by independently flipping a coin for each possible edge). But if the number of cycles has large prime factors then such a direct generation algorithm seems unlikely. In OEIS I could only find the numbers of cycles in <a href="http://oeis.org/A059020">2xn grids</a> and (with the help of mjqxxxx) in <a href="http://oeis.org/A140517">nxn grids</a>. So I wrote a little program to generate the rest, at least in the cases when one side of the grid is small.
+<br />
+
+<br />
+The method is standard in enumerative combinatorics (and it&#x27;s the method already used for the OEIS nxn table): make a list of the possible states that a single column of the pattern could have, set up a recurrence for the partial patterns ending in each possible column, and then calculate the values of the recurrence. The recurrence is represented as a <i>transfer matrix</i>; the rows and columns of the matrix are indexed by states, and a cell is 1 if two states can be adjacent in a pattern and 0 otherwise. Then, if we start with a vector that has a one in the position indexed by a state that describes an empty column to the left of the cycle, multiply it by a power of this matrix, and look at the resulting value in the position indexed by a state that describes an empty column to the right of the cycle, we get the number of cycles as desired.
+<br />
+
+<br />
+Rather than thinking of states within a single column as sets of edges, I instead represent them as sets of squares (the squares inside the cycle, forming a simply-connected polyomino). And as well as keeping track of which squares are empty or nonempty, each state has to also keep track of how the nonempty ones are connected, and the transfer matrix has to connect only those pairs of states that have compatible connectivity information, which is a bit messy to calculate. In any case, it seems to work – at least, it generates equal numbers to the ones already in OEIS.
+<br />
+
+<br />
+For 3xn grids, the numbers of different cycles for n=1, 2, 3, ... are: 6, 40, 213, 1049, 5034, 23984, 114069, 542295, 2577870, 12253948, 58249011, 276885683, 1316170990, 6256394122, 29739651711, 141366874247, 671984773580, 3194266961582, 15183887824311, 72176324719925, ...
+<br />
+
+<br />
+For 4xn grids, the numbers are: 10, 108, 1049, 9349, 80626, 692194, 5948291, 51139577, 439673502, 3779989098, 32497334055, 279386435639, 2401945965628, 20650054358200, 177533025653767, 1526290165248783, 13121849649571820, 112811405309454694, 969864273118112913, 8338134834111643373, ...
+<br />
+
+<br />
+For 5xn grids, they are: 15, 275, 5034, 80626, 1222363, 18438929, 279285399, 4237530095, 64300829449, 975566486675, 14800469958185, 224540402345213, 3406558215857382, 51681816786790684, 784078741397570677, 11895467318139343215, 180469294422664219486, 2737947622842077799930, 41538131208455762235922, 630186031186654155280020, ...
+<br />
+
+<br />
+This approach uses an amount of memory proportional to the square of the number of states, and the number of states needed to generate an mxn grid is something higher than 2<sup>m</sup> (it would be only 2<sup>m</sup> + 1 without the connectivity information, but with that information it is larger), so even if you optimized the program to store the matrix as a bitvector and used a more efficient language than my choice (Python), it would be hard to get above 20xn or so. Which, coincidentally or not, is where the OEIS table of square grid cycle counts leaves off.
+<br />
+
+<br />
+The outcome of the original motivating question is that these are not particularly smooth numbers, by the way. For instance, the last number in the 5xn list, 630186031186654155280020, has the large prime factor 34663698085074485989. Anyway, if anyone else wants to play with this, my code is <a href="http://www.ics.uci.edu/~eppstein/0xDE/gridcycles.py">here</a>.
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>ext_87671</b>: <br />
+<b>2011-03-19T21:32:32Z</b><br />
+BTW, classical transfer matrix method like above can be thought of as an application of Path Decomposition, and variation based on Tree Decomposition recently came up under name &quot;tree-decomposed transfer matrix&quot; method, http://arxiv.org/abs/1003.4847 Also, chapter 7 in &quot;Polygons, Polyominoes and Polycubes&quot; goes over another method of counting simple cycles in square grid, which uses symmetry to speed up calculation
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2011-03-19T21:44:06Z</b><br />
+Interesting. <a href="http://dx.doi.org/10.1137%2FS0097539702419649">Fomin and Thilikos</a> claim that branch-decomposition works better than tree-decomposition for some dynamic programming problems on planar graphs (in part because an optimal branch decomposition can be constructed efficiently, while for tree decomposition one often has to resort to approximations); I wonder how that relates to the transfer matrix method. On the other hand, for grid graphs it seems unlikely to make much difference.
+</div>
+<div style="margin-left: 6em; padding-top: 1em;">
+<b>ext_87671</b>: <br />
+<b>2011-03-19T22:04:53Z</b><br />
+I haven&#x27;t looked into branch decomposition because I haven&#x27;t seen any counting/generation problems solved with branch decomposition.....for square grid, indeed, I&#x27;ve actually compared total cost of counting independent sets in square grid using path and tree decomposition, the difference was about 50% for 5x5 grids, but for larger grids, runtime of two methods actually become more and more similar
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2011-03-28T21:00:47Z</b><br />
+I found some time to look at the book you mention. Beyond symmetry, there&#x27;s another big speedup in their calculation: instead of transferring a whole column to the whole next column, they do it one square at a time. The advantage of doing it that way is that the transfer matrix is very sparse (two nonzeros per column) so its effect can be calculated in time proportional to the number of states rather than the square of the number of states. The increased number of times one has to do a transfer, and the increased complexity of having different transfers for different squares within the column, are both more than made up for by the reduction in the cost of each transfer.
+</div>
+

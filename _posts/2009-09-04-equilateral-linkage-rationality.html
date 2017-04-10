@@ -1,0 +1,35 @@
+---
+layout: post
+title:  'Equilateral linkage rationality'
+date:   2009-09-04 19:48:00
+tags:   [linkages, geometry]
+---
+Connect the corners of six unit equilateral triangles by hinges in the pattern shown below (so that the graph formed by the edges and hinges is the Cartesian product of two triangles).
+<br />
+
+<br />
+<div align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/EquilateralLinkage.png" /></div>
+<br />
+
+<br />
+The resulting linkage system of triangles and hinges has (up to symmetry of the plane) a single degree of freedom: if we add a single bar restricting the distance between two hinges on one of the axes of symmetry of the system, it becomes rigid. Therefore, as it flexes, the hinges will remain in a pattern like the one shown, in which they are arranged to form three more concentric equilateral triangles of varying sizes.
+<br />
+
+<br />
+It&#x27;s possible for at least two of these variable-sized equilateral triangles to have side lengths that are rational numbers. For instance, in the illustration above, the triangles and hinges were placed in such a way that the triangle formed by the three innermost hinges has side length 2/7, and the triangle formed by the three outermost hinges has side length 13/7. What about the middle triangle? Is it rational? In general, can all three of these nested triangles be rational?
+<br />
+
+<br />
+Yes and yes. It&#x27;s possible to show this by manipulating formulas for the length (I had this all worked out, starting from some trigonometric formulas in terms of the angles of the hinges and converting them into complex number arithmetic), but there&#x27;s a much simpler geometric demonstration. Look at the figure above, which is arranged to have a vertical axis of symmetry. Suppose that the side length of the largest equilateral triangle is a rational number <i>q</i>, and the side length of the smallest equilateral triangle is a rational number <i>r</i>. Place the figure so that the axis of symmetry lies on the <i>y</i>-axis of the plane. Then the leftmost and rightmost vertices have <i>x</i>-coordinates −<i>q</i>/2 and <i>q</i>/2, respectively. Similarly the left and right vertices of the inner triangle have <i>x</i>-coordinates −<i>r</i>/2 and <i>r</i>/2, respectively. The left and right vertices of the middle triangle are connected to the leftmost and rightmost vertices by edges that are translates of edges from the bottom vertex (on the center line) to the left and right inner vertices; therefore the <i>x</i>-coordinates of the middle triangle are −<i>q</i>/2 + <i>r</i>/2 and <i>q</i>/2 − <i>r</i>/2, and the side length of the middle triangle is <i>q</i> − <i>r</i>. If <i>q</i> and <i>r</i> are both rational, so is their difference. In the case of the configuration shown in the drawing, the middle length is 11/7.
+<br />
+
+<br />
+In general there are infinitely many angles for which all three nested triangles have rational side length, dense in the set of all such angles. The technique for generating them resembles that for generating Pythagorean triples.
+<br />
+
+<br />
+Incidentally, there&#x27;s a four-dimensional convex polytope (the Cartesian product of two equilateral triangles) that has this same graph as its skeleton. It has six triangular 2-faces, nine square 2-faces, and six triangular-prism facets. Can you see them all in the drawing above?
+<br />
+
+<br />
+<b>ETA:</b> <a href="http://konradswanepoel.wordpress.com/2009/09/23/3-x-3-reuleaux-triangles/">Konrad Swanepoel uses a similar arrangement of Reuleaux triangles</a> to show that three nonoverlapping translates of a convex body can overlap three nonoverlapping 180-degree rotations of the same body.

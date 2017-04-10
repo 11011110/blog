@@ -1,0 +1,45 @@
+---
+layout: post
+title:  'Line arrangements'
+date:   2008-12-15 10:43:00
+tags:   [arrangements, configurations, wikipedia]
+---
+My latest addition to Wikipedia is an article about <a href="http://en.wikipedia.org/wiki/Arrangement_of_lines">arrangements of lines</a>. It includes combinatorial bounds on zones, levels, and many faces, algorithms for constructing arrangements, simplicial arrangements, relations to periodic and aperiodic tiling, and related objects such as pseudoline arrangements and hyperbolic line arrangements. As always, feedback or constructive edits by others would be appreciated.
+<br />
+
+<br />
+In writing this, I learned of an interesting connection between arrangements, <a href="http://en.wikipedia.org/wiki/Configuration_(geometry)">configurations</a>, the <a href="http://en.wikipedia.org/wiki/Sylvester%E2%80%93Gallai_theorem">Sylvester–Gallai theorem</a>, and algebraic geometry. It seems that the nine <a href="http://en.wikipedia.org/wiki/Inflection_point">inflection points</a> of a <a href="http://en.wikipedia.org/wiki/Cubic_curve">cubic curve</a>, in the <a href="http://en.wikipedia.org/wiki/Complex_projective_plane">complex projective plane</a>, have the property that the line through any two inflection points also passes through a third, forming a 9<sub>4</sub>12<sub>3</sub> configuration that involves all the lines through pairs of points in the configuration. The Sylvester–Gallai theorem implies that no such configuration can be given real planar coordinates, because every (non-collinear) set of points in the Euclidean plane or real projective plane has a line passing through only two points, or dually in the language of arrangements, every arrangement of real lines that do not all pass through a common point has a vertex where only two lines cross. Kelly <small>[<a href="http://dx.doi.org/10.1007%2FBF02187687">DCG 1:101–104, 1986</a>]</small> argues that this example must have been the motivation for Sylvester to pose the problem that eventually became the Sylvester–Gallai theorem.
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: <br />
+<b>2008-12-16T00:20:17Z</b><br />
+Some more fun facts about arrangements of lines:
+
+An i-level has at most i+1 local minima; this can be used to prove the upper bound theorem for simple d-polytopes with d+2 facets (or is it d+1?)
+
+Even the sum of the squares of the cell complexities is O(n^2).
+
+Approximate k-levels exist; I think centerpoints are equivalent to lines between the (n/3)- and (2n/3)-levels.
+
+Point location can be done using cuttings, as well as other planar techniques.
+
+-Ken
+
+
+
+
+
+
+
+
+
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2008-12-16T16:05:18Z</b><br />
+Thanks! I added a reference to the Agarwal-Matousek-Sharir paper on sums of squares, but in 2d it&#x27;s just an easy consequence of the zone theorem.
+
+I knew about the bound on local minima in levels, but not the connection to the upper bound theorem. Is this described somewhere? The upper bound theorem also deserves its own article on Wikipedia, I think, and doesn&#x27;t have one.
+</div>
+

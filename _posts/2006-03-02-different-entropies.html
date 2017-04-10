@@ -1,0 +1,87 @@
+---
+layout: post
+title:  'Different entropies'
+date:   2006-03-02 13:27:00
+tags:   [bibliography, squarepants, mathematics, entropy]
+---
+Suppose we have a random variable X, which may take on n distinct values 0, 1, 2, ... n-1 with probability p<sub>i</sub> for taking value i. If we don&#x27;t care about the ordering of the values, we may as well assume they are sorted in descending order by probability: p<sub>i</sub> <u>&gt;</u> p<sub>i+1</sub>. The Shannon entropy of this system, E = -Σ p<sub>i</sub> log<sub>2</sub> p<sub>i</sub>, gives a lower bound on the expected path length of a binary code for X, that is, a binary tree having X&#x27;s values at its leaves (in any order).
+<br />
+
+<br />
+But there is another formula we can use that defines an entropy based on ranks: R = Σ p<sub>i</sub>log<sub>2</sub>(i+1).
+<br />
+
+<br />
+It turns out that E <u>&gt;</u> R <u>&gt;</u> E/2.  The first inequality follows trivially from the fact that 1/(i+1) <u>&gt;</u> p<sub>i</sub>; the second, from the entropy lower bound on path length together with the existence of a binary code with expected path length bounded by 2R:
+<br />
+
+<br />
+<div align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/ranktree.png" /></div>
+<br />
+
+<br />
+The same inequalities also hold with the same proof if one takes floors of the logs in the definition of R. I imagine that this must all be well known to the statistical physicists: the rank entropy must have some kind of name, and the inequality between rank entropy and Shannon entropy must be in the literature somewhere and probably also has a name. But, not being a statistical physicist myself, I&#x27;m having trouble finding any of this literature. Google searches for combinations of &quot;rank&quot;, &quot;entropy&quot;, and &quot;inequality&quot; lead to lots of interesting material but not (yet) anything describing this.  Is anyone else familiar with this kind of rank entropy, and, if so, where do I find out about it?
+<br />
+
+<br />
+<b>ETA:</b> <a href="/2006/04/10/squarepants-in-tree.html">Why I care about this</a>.
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: <br />
+<b>2006-03-02T23:22:16Z</b><br />
+David:
+
+I&#x27;ve send email, and called you on the phone, and couldn&#x27;t get through either way (your voice mail gives an error message). This is about your paper &quot;Quasiconvex Analysis of Backtracking Algorithms&quot; for TALG. Send me email if you get this.
+
+Alex Lopez-Ortiz
+alopez-oATuwaterlooATca
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: cool pic<br />
+<b>2006-03-02T23:50:55Z</b><br />
+Cool picture! I&#x27;m assuming you made it. What tool did you use?
+
+Julian
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: Re: cool pic<br />
+<b>2006-03-03T00:02:47Z</b><br />
+Thanks... Adobe Illustrator.
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: <br />
+<b>2006-03-03T08:33:57Z</b><br />
+Your entropy is strictly related to the average lenght of &quot;one-to-one codes&quot; (in case one uses the floor of the logs in your definition of R). There are two kind of such a codes, the ones more strictly related to your quantity R are those in which the &quot;empty word&quot; is allowed in the encoding. There are several papers in IEEE Transactions on Information Theory about that. General one-to-one codes were introduced in the paper S. K. Leung-Yan-Cheong and T. M. Cover, &quot;Some equivalences between Shannon entropy and Kolmogorov complexity,&quot; IEEE Trans. Info. Theory, vol. IT-24, pp. 331 - 338, May 1978. The last paper I am aware of is C. Blundo and R. de Prisco, &quot;New bounds on the expected length of one-to-one codes,&quot; IEEE Trans. Info. Theory, vol. IT-42, pp. 246 - 250, January 1996. 
+Hope it helps.
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2006-03-03T21:38:39Z</b><br />
+The definition with the floor is more relevant to me, actually, so these references look very helpful. Thanks!
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: Working set structure<br />
+<b>2006-03-04T22:52:32Z</b><br />
+Your tree makes me think of the working set structure in:
+John Iacono. Alternatives to splay trees with $O(\log n)$ worst-case access times. In Symposium on Discrete Algorithms (SODA), pages 516-522, 2001.
+-- Stefan.
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: <br />
+<b>2006-03-06T09:16:13Z</b><br />
+Do you know the following papers?
+
+Peter Elias, Interval and recency rank source coding: two on-line adaptive variable-length schemes, IEEE Transactions on Information Theory, v.33 n.1, p.3-10, January 2, 1987.
+
+Jon Louis Bentley , Daniel D. Sleator , Robert E. Tarjan , Victor K. Wei, A locally adaptive data compression scheme, Communications of the ACM, v.29 n.4, p.320-330, April 1986.
+
+
+
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2006-03-06T16:38:39Z</b><br />
+I didn&#x27;t know them before, but after seeing your comment I looked them up — thanks! Both look relevant, as they use something resembling the rank coding described above as part of broader coding schemes, and prove bounds on it, though it seems their bounds aren&#x27;t quite the simple one above that I&#x27;m interested in (I&#x27;m more interested in the entropy inequality itself, in that form, and less in applications of it to coding techniques or more accurate but more complex inequalities for R). Elias does point to an earlier paper by Wyner as the source of the easy direction of the inequality.
+</div>
+

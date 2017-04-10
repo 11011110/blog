@@ -1,0 +1,19 @@
+---
+layout: post
+title:  'Automata-theoretic algorithms in online gaming'
+date:   2006-10-12 23:14:00
+tags:   [unsolved, reset sequences, algorithms]
+---
+A long time ago, I did <a href="http://www.ics.uci.edu/~eppstein/pubs/Epp-SJC-90.pdf">some research on reset sequences</a>, words that, when given as input to a finite automaton in an unknown state, force it into a known state. The supposed application involved the design of factory machinery, and these sequences can also be used to synchronize transmitters and receivers using certain kinds of communication codes (so they&#x27;re also called synchronizing sequences).
+<br />
+
+<br />
+I recently found that <b><a href="http://atheorist.livejournal.com/"><img src="http://stat.livejournal.com/img/userinfo.gif" alt="[info]" width="17" height="17" style="vertical-align: bottom; border: 0;" />atheorist</a></b> is using them for a different and interesting purpose: exploring from an unknown location in a known environment. Specifically, <a href="http://atheorist.livejournal.com/114836.html">automating dungeon exploration in online adventure games</a>. I guess for these purposes these games can be viewed abstractly as automata: you tell it to do something, you end up in a different state. So if you can find a reset sequence, you can program it as a sequence of actions to be performed to get you through the boring parts that you already know how to handle so you can get to where you actually want to go, even if you&#x27;re teleported to some random spot in the dungeon. If you were entering the actions manually you might adapt to what you see, rather than blindly following a preset sequence of actions, but apparently programmed actions aren&#x27;t allowed to be so sophisticated, so reset sequences are the right solution.
+<br />
+
+<br />
+Anyway, apparently using actual algorithms to find these sequences <a href="http://atheorist.livejournal.com/115375.html">leads to a two-order-of-magnitude speedup</a> over a heuristic search. Always gratifying when that happens.
+<br />
+
+<br />
+There&#x27;s still some interesting unsolved math related to these sequences, by the way: <a href="http://www.liafa.jussieu.fr/~jep/Problemes/Cerny.html">Černý&#x27;s conjecture</a> states that every automaton that has a reset sequence at all has one with length quadratic in its number of states, but this is still not proven.

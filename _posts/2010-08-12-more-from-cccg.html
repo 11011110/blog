@@ -1,0 +1,51 @@
+---
+layout: post
+title:  'More from CCCG'
+date:   2010-08-12 13:00:00
+tags:   [computational geometry, conferences, talks]
+---
+As I suspected in <a href="http://11011110.livejournal.com/202250.html">my previous post from the Canadian Conference on Computational Geometry</a>, Tuesday went by in a bit of a blur after my own talk on <a href="http://www.cs.umanitoba.ca/~cccg2010/electronicProceedings/invitedpaper2.pdf">regular labelings</a> (the slides for which are now online <a href="http://www.ics.uci.edu/~eppstein/pubs/Epp-CCCG-10.pdf">here</a>). So though I enjoyed several of the talks I went to I don&#x27;t think I am ready to write at length about any of them.
+<br />
+
+<br />
+I skipped the business meeting, but I heard later that it was unusually contentious this year. One issue that attracted a surprising amount of attention: should papers be allowed to appear both at EuroCG and at CCCG? Both conferences have only short (four page) papers, both publish a collection of their papers online and/or as a printed handout to attendees, both accept most but not all of their submissions (I think the acceptance rate for CCCG this year was around 70%), but somehow EuroCG gets to declare that its publications are not a real proceedings, allowing EuroCG papers to be sent to other selective conferences, while publication at CCCG prevents the same paper from being presented elsewhere. The net effect is that good papers that might be sent to SODA or SoCG (especially in years when SoCG is not in Europe) may also show up at EuroCG, while CCCG consists more of papers that are too small to make the cut at the more selective conferences. But I have to confess that I don&#x27;t understand what this &quot;not a real proceedings&quot; thing means when the EuroCG looks like the CCCG proceedings in <a href="http://en.wikipedia.org/wiki/Duck_test">all ways except for its name</a>.
+<br />
+
+<br />
+Wednesday morning presented me with a tough choice of two parallel sessions both of which I wanted to go to, including two talks on <a href="http://en.wikipedia.org/wiki/Straight_skeleton">straight skeletons</a> unfortunately scheduled opposite each other. I ended up going to the more theoretical of the two, <a href="http://www.cs.umanitoba.ca/~cccg2010/electronicProceedings/paper24.pdf">an O(n log n) algorithm for straight skeletons of monotone polygons</a>. There was some question at the talk about whether one of their main lemmas (showing that certain of the events that happen over the course of the algorithm all involve features from both sides of the polygon) was correct, but I think it may be. The same session also had a nice talk by Bill Steiger involving applications of a continuous variant of Tukey depth contours to <a href="http://www.cs.umanitoba.ca/~cccg2010/electronicProceedings/paper31.pdf">the statistical properties of convex hulls of random point sets</a> (Steiger is one of the last holdouts using overhead transparencies instead of computer projectors), a very entertaining talk on <a href="http://www.cs.umanitoba.ca/~cccg2010/electronicProceedings/paper48.pdf">polyhedron unfolding</a> by Marty Demaine, Anna Lubiw, and their three children, and an intriguing attempt by Ryuhei Uehara to apply complexity-theoretic concepts to the analysis of the set of <a href="http://www.cs.umanitoba.ca/~cccg2010/electronicProceedings/paper07.pdf">folded states of a 1xn rectangular polyomino the edges of which are labeled with mountain and valley folds</a>. Uehara views the number of layers of paper inside any fold as being analogous to space complexity, and asks for folded states that minimize this quantity.
+<br />
+
+<br />
+The third David (Kirkpatrick)&#x27;s invited talk Wednesday was on some interesting questions involving distances in arrangements of circles. One can define the distance between two cells of the arrangement in three different ways: the number of circles that contain one cell and do not contain the other (let&#x27;s call this &quot;containment distance&quot;), the minimum number of times one has to cross a circle on a path from one cell to the other (&quot;thickness&quot;), and the minimum number of circles one has to cross on a path from one cell to the other (&quot;resilience&quot;). Containment distance and thickness are easy to compute, but resilience is both more significant (it measures the robustness of a set of sensors that are supposed to detect moving objects crossing some region of the plane) and more difficult to compute. To make one of many possible connections to Avis&#x27; talk, when every two cells have thickness equal to their containment distance, the dual graph of the arrangement can be isometrically embedded into a hypercube, and in this case the thickness also equals the resilience. The work Kirkpatrick spoke about was based on <a href="http://cast.cse.ohio-state.edu/exscal/content/Publications/BarrierCoverage.pdf">a paper by Kumar et al</a>, which showed that for unit disks in a rectangle, the thickness and resilience are equal for paths between two uncovered points on the top and bottom of the rectangle. More, in this case, the thickness is the same as the number of &quot;barriers&quot;, disjoint sets of disks that form chains connecting the left and right sides of the rectangle. For less restricted pairs of uncovered points in the plane, this nice equality is no longer true, but as Kirkpatrick described, it is still possible to use thickness as a <a href="http://algo2.iti.kit.edu/schiefer/seminar_ws09/bk-abrwsn-09.pdf">constant factor approximation to resilience</a>.
+<br />
+
+<br />
+There were probably as many good talks that I saw but haven&#x27;t posted about as those I have, and I&#x27;m sure at least as many that I didn&#x27;t have to see. It was a very enjoyable conference, definitely enough to make me want to find an excuse to come back for future offerings.
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>ext_241606</b>: &quot;Real proceedings&quot;<br />
+<b>2010-08-12T21:15:26Z</b><br />
+<em>...somehow EuroCG gets to declare that its publications are not a real proceedings, allowing EuroCG papers to be sent to other selective conferences...</em>
+
+Isn&#x27;t that up to the other selective conferences?
+
+Or is this an issue of reciprocity?  Would the CCCG program committee consider a paper that appeared at SOCG (when it&#x27;s in Paris) or SODA (when it&#x27;s in Tokyo)?
+
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: Re: &quot;Real proceedings&quot;<br />
+<b>2010-08-12T21:21:25Z</b><br />
+You would think it would be the other conference&#x27;s call, rather than EuroCG&#x27;s, but e.g. in the 2008 EuroCG call for papers it says &quot;<a href="http://eurocg08.loria.fr/">There will be no other proceedings, so the presented work may later appear in a more complete form at another conference.</a>&quot; In this case, although there is not a &quot;proceedings&quot;, there is a &quot;<a href="http://eurocg08.loria.fr/EuroCG08Abstracts.pdf">collection of abstracts</a>&quot;, but these abstracts are four pages each and as well as being available to participants they are publicly online as a 260-page pdf file. So de facto there seems to be no difference from the CCCG proceedings.
+</div>
+<div style="margin-left: 6em; padding-top: 1em;">
+<b>None</b>: Re: &quot;Real proceedings&quot;<br />
+<b>2010-08-12T23:00:56Z</b><br />
+I think there are many conferences which consider short papers to be &quot;reports of work in progress&quot; and not proceedings. To me the question is why CCCG chooses to call such short notes proceedings when nearly all granting agencies don&#x27;t.
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: <br />
+<b>2010-08-13T08:11:47Z</b><br />
+I have the same concern. I do not know why the current proceedings of EuroCG should not be considered proceedings. I think it is a matter of tradition. Moreover, if SoCG or SODA would decide to do not accept papers that appear at EuroCG, then there is not much that EuroCG can do. The same applies to the Fall Workshop in CG. It is up to each conference to decide if they are fine with repeating content, and how much repetition they allow. I recall hearing that in some journals they will not publish a paper that has been publicly available on the internet because they consider it already published. 
+</div>
+

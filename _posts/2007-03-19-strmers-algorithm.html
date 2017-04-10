@@ -1,0 +1,7 @@
+---
+layout: post
+title:  "Størmer's algorithm"
+date:   2007-03-19 20:58:00
+tags:   [continued fractions, python, smooth numbers, stormer's theorem, pell equation, number theory]
+---
+<a href="http://en.wikipedia.org/wiki/St%C3%B8rmer%27s_theorem">Størmer&#x27;s theorem</a> is really not so much a theorem but an algorithm, for finding pairs of consecutive smooth numbers. <a href="http://www.ics.uci.edu/~eppstein/0xDE/stormer.py">I implemented Lehmer&#x27;s improved algorithm</a>, in Python, as I needed an implementation to generate some examples while expanding the WP article (and maybe more importantly, to check my understanding of Lehmer&#x27;s paper). It includes some careful bignum implementation of rounding quadratic irrationals, finding continued fraction expansions of them, and solving Pell&#x27;s equation, which might be useful for other purposes.

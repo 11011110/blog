@@ -1,0 +1,66 @@
+---
+layout: post
+title:  'Useless graph theory result #421965'
+date:   2006-11-01 11:51:00
+tags:   [line graph, graph theory]
+---
+A graph <i>G</i> is isomorphic to the <a href="http://en.wikipedia.org/wiki/Line_graph">line graph</a> <i>L</i>(<i>G</i>) if and only if <i>G</i> is the disjoint union of cycles.
+<br />
+
+<br />
+Proof:
+<br />
+
+<br />
+(1) If <i>G</i> has a connected component with two or more cycles in it, <i>L</i>(<i>G</i>) has a corresponding component with a greater number of vertices and two or more cycles. Therefore, in this case, repeating the line graph construction from <i>G</i> must eventually lead to arbitrarily large graphs, so <i>L</i>(<i>G</i>) cannot be isomorphic to <i>G</i>.
+<br />
+
+<br />
+(2) If <i>G</i> does not have a component with two cycles, it is a pseudoforest. If some component of this pseudoforest has both a cycle and some edges not in the cycle, then the corresponding component of <i>L</i>(<i>G</i>) has at least two cycles (one for the cycle itself and one for where the other edges meet the cycle). Therefore, again, repeated line graphs grow arbitrarily large and <i>L</i>(<i>G</i>) cannot be isomorphic to <i>G</i>.
+<br />
+
+<br />
+(3) In the remaining case, <i>G</i> is a union of disjoint cycles and trees. If any component of <i>G</i> is a tree, <i>L</i>(<i>G</i>) would have fewer vertices than <i>G</i>. So, if <i>L</i>(<i>G</i>) is isomorphic to <i>G</i>, each component of <i>G</i> must be a cycle.
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>atheorist</b>: <br />
+<b>2006-11-02T02:39:36Z</b><br />
+I think you are talking about finite graphs (which is fine).
+
+If you were talking about infinite graphs, then the graph of the predecessor/successor relation on the integers would be isomorphic to its line graph. 
+
+If you were talking about an embedded graph, you could define a different L, where nodes become cycles instead of cliques. Your proof would still hold for finite graphs and the graph of the predecessor/successor relation. However, the infinite grid graph would be isomorphic to its L.
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2006-11-02T03:41:30Z</b><br />
+Yeah, I was only thinking about finite graphs.
+
+<i>If you were talking about infinite graphs, then the graph of the predecessor/successor relation on the integers would be isomorphic to its line graph.</i>
+
+It&#x27;s tempting to think of that as being the infinite cyclic graph, analogously to <b>Z</b> being the infinite cyclic group. But a similar graph on the nonnegative integers is also isomorphic to its line graph, and nonisomorphic to your example.
+
+<i>If you were talking about an embedded graph, you could define a different L, where nodes become cycles instead of cliques. Your proof would still hold for finite graphs and the graph of the predecessor/successor relation. However, the infinite grid graph would be isomorphic to its L.</i>
+
+You mean the medial graph, I think. Interesting example with the grid, since the isomorphism involves a surprising 45 degree rotation and sqrt(2) scaling.
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: <br />
+<b>2006-11-23T16:41:46Z</b><br />
+I think that this theorem is stated and proved in Harary&#x27;s Graph Theory Book, 1969 - chapter on line graphs.
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2006-11-23T16:52:16Z</b><br />
+Thanks. I don&#x27;t have his book to check, but there&#x27;s also something similar to it on the <a href="http://mathworld.wolfram.com/LineGraph.html">MathWorld line graph page</a>.
+</div>
+<div style="margin-left: 6em; padding-top: 1em;">
+<b>None</b>: Here is the online reference<br />
+<b>2007-02-08T01:43:14Z</b><br />
+Please look at page 72
+
+http://books.google.com/books?hl=en&amp;dq=Graph+Theory&amp;vid=ISBN0201410338&amp;id=9nOljWrLzAAC&amp;lpg=PP1&amp;pg=PP1&amp;ots=9-ohrFrqWe&amp;sig=2cSmSelAKxfLmsD-7C3DpVhVbew#PPA72,M1
+
+</div>
+

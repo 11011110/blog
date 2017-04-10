@@ -1,0 +1,27 @@
+---
+layout: post
+title:  'Two new papers'
+date:   2015-06-16 20:30:00
+tags:   [topology, graph drawing, data structures, papers]
+---
+Somehow I seem to have two new papers online that I haven&#x27;t mentioned here before.
+<br />
+
+<br />
+First, among the many newly-online papers of the newly-open-source (yay!) <a href="http://drops.dagstuhl.de/portals/extern/index.php?semnr=15005">Proceedings of the 31st International Symposium on Computational Geometry</a>, I have one with Drago Bokal and Sergio Cabello, &quot;<a href="http://drops.dagstuhl.de/opus/volltexte/2015/5113/pdf/30.pdf">Finding All Maximal Subsequences with Hereditary Properties</a>&quot;. Despite the abstract name, this is really about a concrete problem: given trajectory data (a sequence of points describing the motion of someone or something), answer questions about the shape of different parts of the trajectory. For instance, in the path below, one part is pretty much straight, a second part is nearly stationary, and the third part is moving in one general direction but not by a straight line. We want to be able to figure that out.
+<br />
+
+<br />
+<div align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/WindowedFootprints.png" /></div>
+<br />
+
+<br />
+More technically, we set up a data structure that can query whether any subsequence of the trajectory has one of these three properties, formalized as having low convex hull area, having low diameter, or having a direction with respect to which it is monotone. The data structure itself is very simple — just store for each starting point of a subsequence the farthest ending point that gives a yes answer — but the harder part is building the data structure by finding all of these farthest ending points, efficiently. That&#x27;s what the &quot;maximal subsequences&quot; in the title means, and where I&#x27;ll leave you here, to read the paper if you want to find more.
+<br />
+
+<br />
+Second, over on the arXiv, I have a new preprint &quot;<a href="http://arxiv.org/abs/1506.04380">Genus, Treewidth, and Local Crossing Number</a>&quot;, arXiv:1506.04380, with Vida Dujmović and David Wood. Here local crossing number means the maximum number of crossings per edge, related to but not the same as the global crossing number (proportional to average crossings per edge). For instance, a <a href="https://en.wikipedia.org/wiki/1-planar_graph">1-planar graph</a> is a graph with local crossing number one. It was known that, like planar graphs, the graphs of low crossing number obey a <a href="https://en.wikipedia.org/wiki/Planar_separator_theorem">separator theorem</a> (they can be recursively partitioned into small pieces with few vertices appearing on the boundary between the pieces) but the functional dependence of the separator size on the local crossing number wasn&#x27;t known before. Now it is, even when we consider embeddings on surfaces of high genus instead of the plane.
+<br />
+
+<br />
+A second result in the same paper involves finding low-crossing-number embeddings of arbitrary graphs. It was known that any graph with <i>m</i> edges can be embedded onto a surface of your favorite genus <i>g</i> in such a way that the average crossings per edge is nearly (within a polylog factor of) <i>m</i>/<i>g</i>, as good as one could hope to get. We strengthen this to get the same bounds for local crossing number instead of global crossing number. Like the previous result for global crossing number, the proof uses a method of Leighton and Rao for routing paths on expanders, but with some additional machinery: a load-balancing preprocessing phase that helps avoid problems with irregularities in the degree distribution of the graph.

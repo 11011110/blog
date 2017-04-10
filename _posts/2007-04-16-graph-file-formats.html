@@ -1,0 +1,9 @@
+---
+layout: post
+title:  'Graph file formats'
+date:   2007-04-16 22:21:00
+tags:   [graph algorithms, python]
+---
+Someone emailed me about a problem that involved reading graphs from files and running one of the algorithms in PADS on them, that led me to realize that I hadn&#x27;t included any I/O functionality in PADS. So I dug up a module I&#x27;d written a few years ago for reading graphs in various formats, and added it to PADS as <a href="http://www.ics.uci.edu/~eppstein/PADS/ReadUndirectedGraph.py">ReadUndirectedGraph.py</a>. The formats it knows about are <a href="http://loki.cs.brown.edu/geomNet/gds/formats.shtml">MALF, edge list, node list</a> (possibly broken link? <a href="http://64.233.167.104/search?q=cache:4ewvwWKlBf4J:loki.cs.brown.edu:8081/geomNet/gds/formats.shtml">cached on Google</a>), <a href="http://graphml.graphdrawing.org/">GraphML</a>, <a href="http://cs.anu.edu.au/~bdm/data/formats.txt">graph6, sparse6</a>, and <a href="http://www.algorithmic-solutions.info/leda_guide/graphs/leda_native_graph_fil
+
+eformat.html">LEDA.GRAPH</a>. Fortunately, they all look different enough from each other that it can distinguish them without having to be told which format to use...

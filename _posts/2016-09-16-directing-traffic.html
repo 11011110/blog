@@ -1,0 +1,23 @@
+---
+layout: post
+title:  'Directing traffic'
+date:   2016-09-16 16:55:00
+tags:   [dynamic programming, algorithms, parametric optimization, papers]
+---
+I have another new arXiv preprint: &quot;Scheduling Autonomous Vehicle Platoons Through an Unregulated Intersection&quot;, <a href="http://arxiv.org/abs/1609.04512">arXiv:1609.04512</a>, with Juan Besa, Will Devanny, and Mike Goodrich. The same paper also <a href="http://doi.org/10.4230/OASIcs.ATMOS.2016.5">appeared at ATMOS 2016</a>; the two versions differ only in formatting and their theorem numbering scheme.
+<br />
+
+<br />
+The paper is on how to direct vehicle traffic through a road intersection while minimizing the longest waiting time. We assume that the traffic comes in variable-length platoons, and that we shouldn&#x27;t try to break up these platoons. We also assume (perhaps less reasonably) that we know about all of the traffic that will cross the intersection in advance. This turns out to be susceptible to dynamic programming, but for a different optimization criterion: minimize the completion time of a given prefix of the schedule, subject to a fixed limit on the waiting time. But then, using the magic of <a href="https://en.wikipedia.org/wiki/Parametric_search">parametric search</a> we can turn this algorithm for the wrong criterion into one for the right criterion.
+<br />
+
+<br />
+Some of the time bounds, although polynomial, have high exponents, and we didn&#x27;t succeed in handling some common types of intersections. For instance, there&#x27;s one that I walk through most days, which at times of light traffic is a four-way stop and at other times has a human traffic director (one of the student jobs on my campus). In the more major of the two roads that cross there, each direction has a through lane and a separate left turn pocket. On the other road, each direction only has one lane, which combines cross traffic and left-turning traffic. Here&#x27;s a screenshot from Google Earth; the building at the top is the one I work in, and at the bottom is the edge of the housing complex I live in.
+<br />
+
+<br />
+<div align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/PeltasonLosTrancos.png" /></div>
+<br />
+
+<br />
+The difficulty is that, for this type of intersection, one can direct traffic in such a way that there is no &quot;synchronization point&quot; when nobody is crossing the intersection, for instance by allowing through traffic in both directions on the main road interleaved with phases where one of those two directions has both through traffic and left-turning traffic. Our dynamic programming algorithm relies on these synchronization points. And of course it would be a better fit to the real-world problem to allow the input to be online instead of known in advance. So I think there&#x27;s still a lot more to do on these problems.

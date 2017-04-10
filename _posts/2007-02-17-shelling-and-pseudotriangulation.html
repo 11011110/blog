@@ -1,0 +1,35 @@
+---
+layout: post
+title:  'Shelling and pseudotriangulation'
+date:   2007-02-17 18:49:00
+tags:   [antimatroids, triangulation]
+---
+<p>Random observation that I don&#x27;t recall seeing before: the edges from the sequence of <a href="http://en.wikipedia.org/wiki/Image:Convex_shelling.svg">convex hulls of a shelling of a point set</a> forms a pointed pseudotriangulation: that is, it&#x27;s a planar graph in which each interior face has three convex vertices and each vertex has one reflex angle.</p>
+
+<p>But not every pointed pseudotriangulation can come from a shelling in this way: one can only have pseudotriangles with a single chain of reflex vertices, and there&#x27;s some sort of acyclicity condition on the direction these chains can point. So the pseudotriangulations below do not come from shellings:</p>
+
+<p align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/unshell-pptri.png" /></p>
+
+Since shellings are closely related to <a href="http://en.wikipedia.org/wiki/Antimatroid">antimatroids</a>, and antimatroids are related to certain kinds of greedy algorithms, perhaps this connection can lead to some algorithms for finding optimal pseudotriangulations...
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: <br />
+<b>2007-02-18T03:49:19Z</b><br />
+Check out this <a href="http://valis.cs.uiuc.edu/~sariel/papers/02/ptriang/">writeup</a> - it might be remotely related. --S
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2007-02-18T04:49:43Z</b><br />
+I would have found this had you used the word &quot;shelling&quot;...
+
+The degree restriction you use stops your version of this shelling process from forming an antimatroid, though: a point can be admissable, then stop being admissable because the removal of some other points increases its degree.
+
+Also note that your tents are not exactly the same things as pseudotriangles; e.g. the central pseudotriangle in the pentagon in the left side of my figure is not a tent for any subset of the point set.
+</div>
+<div style="margin-left: 6em; padding-top: 1em;">
+<b>None</b>: <br />
+<b>2007-02-19T06:43:44Z</b><br />
+I said &quot;remotely related&quot; ;). Anyway, you can choose the vertex randomly, and then the result holds in expectation, removing the degree restriction.
+</div>
+

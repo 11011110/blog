@@ -1,0 +1,54 @@
+---
+layout: post
+title:  'Database privacy'
+date:   2009-04-27 14:17:00
+tags:   [algorithms, papers]
+---
+The next of my <a href="http://11011110.livejournal.com/168152.html">WADS acceptances</a> to have a preprint ready is <a href="http://arxiv.org/abs/0904.3756">On the Approximability of Geometric and Geographic Generalization and the Min-Max Bin Covering Problem</a> (with Kevin Du, Mike Goodrich, and George Lueker, arXiv:0904.3756). It&#x27;s about methods for allowing databases to be used for research without violating the privacy of the people whose records they contain, and by writing it we unwittingly stepped into a big political battle of a type that we are unused to seeing in algorithms research.
+<br />
+
+<br />
+The general problem is that there are nowadays many large databases of medical records, DVD rentals, telephone calls, cell-phone physical locations, automobile traffic patterns, credit card bills, etc., that, if published, would reveal far more information about any individual person in the database than should be revealed (or, in places that unlike the US have proper data privacy laws, than is allowed to be revealed). Nevertheless, there are good reasons for making that data available for purposes that have nothing to do with violating the privacy of individual people: for instance, Netflix would like researchers to be able to study the correlations among DVD rentals so that they might be able to come up with a more accurate recommendation system; disease researchers need to study patterns in disease spread in order to forestall or cope with global pandemics; etc. One can, of course, anonymize a database by removing people&#x27;s names or other blatantly identifying information from the records, but that is not generally good enough; for instance, by correlating a set of anonymized Netflix DVD rentals with the signed reviews of movies the same person has left on IMDB, one might be able to identify the person who made those rentals, and deduce what other movies he or she has rented but not reviewed, despite their name being stripped from the Netflix data.
+<br />
+
+<br />
+In order to further reduce the problem of privacy leakage from databases, researchers have developed various additional anonymization techniques, beyond merely stripping off the names, for cleaning a database to a point where it can be publically released. The techniques we study in our paper fall under the general heading of k-anonymization, one of these techniques in which one aggregates groups of k or more records from the database into a single public record, with the intent being that anyone viewing the anonymized database would not be able to attribute any of the aggregated information to any specific person with better than a 1/k probability. There are two (highly reasonable) criticisms of this approach:<ul><li>As in the battles in cryptography between ad-hoc systems and threat models on the one hand, and zero-knowledge on the other, k-anonymity is too unprincipled. It relies on a hope that this kind of aggregation will be enough to protect the privacy of its records, rather than an information-theoretic proof that an attacker gains nothing more than what is desired to be revealed. (For an interesting approach based on such information theoretic ideas, see <a href="http://research.microsoft.com/en-us/projects/databaseprivacy/dwork.pdf">differential privacy</a>).</li>
+<br />
+<li>K-anonymity doesn&#x27;t actually achieve its goal of preventing information from being attributed to a particular person with better than 1/k probability. If some group of k records is aggregated together, all of them have the same value for  sensitive attribute X, and other information allows one to conclude that the record for person Y is included in that group, then we reveal with certainty the value of attribute X for person Y.</li></ul>This has apparently become a heated issue to the point where some reviewers will try to torpedo any submission that involves k-anonymity; fortunately, we didn&#x27;t run into any of those in our WADS review. Despite these criticisms, we feel that k-anonymity can lead to interesting theory and that this theory should be relevant for any more sophisticated aggregation-based approach that forms sufficiently diverse groups of records to counter the attack described above.
+<br />
+
+<br />
+Our actual results concern databases in which there is a single attribute that controls how the records may be aggregated: records with the same attribute value must be grouped together, and groups should consist of records with similar attribute values. We look at several variations of the problem depending on the type of data in this controlling attribute, but the one that appeals most to me is the simplest, in which its values come from an unordered set. The input can then be abstracted as a collection of numbers (the numbers of records with each attribute value) and the task is to partition these numbers into subsets such that the sum of the numbers within each subset is at least k and such that the largest sum is minimized. As we show, this bin covering problem is NP-hard to optimize, and NP-hard to approximate within better than a 4/3 approximation ratio (for the case relevant to k-anonymization in which the numbers are expressed in unary), but it can be approximated with the larger constant factor 5/2. In terms of database privacy, this means that even the simplest case of k-anonymization, in which there is a single controlling attribute with unordered values, is hard to optimize; previous hardness results for k-anonymization used unreasonably large numbers of attributes, so this is a step forwards in making the theory a better fit to the practice.
+<br />
+
+<br />
+<b>ETA 5/12:</b> This one went down to the wire. Just before the proceedings submission deadline we realized that it&#x27;s possible to improve the 5/2 approximation ratio for bin covering to 2+ε, matching the inapproximability lower bound of 2 for the binary case. The unary case is the one that&#x27;s important for k-anonymization, though, and there&#x27;s still a gap there between the upper bound and the 4/3 lower bound. The arXiv version has been updated with the new results, which will also be included in the WADS proceedings version.
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>arvindn</b>: <br />
+<b>2009-04-27T21:48:44Z</b><br />
+interesting results. thanks for posting.
+
+did you forget to take out a comment on page 6?
+
+also, if you didn&#x27;t run into any of these reviewers who will try to &#x27;torpedo&#x27; submissions that involve k-anonymity, what political battle did you unwittingly step on?
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2009-04-27T21:51:55Z</b><br />
+Re the comment on page 6: thanks for catching this! It was left over from a previous draft of the paper. We&#x27;ll remove it.
+
+Re the reviewers: this is not the first conference we submitted this paper to.
+</div>
+<div style="margin-left: 6em; padding-top: 1em;">
+<b>ext_94919</b>: <br />
+<b>2009-04-28T07:52:16Z</b><br />
+Even modulo the political battles, there&#x27;s been a ton of work since the original k-anonymity work (I myself have been guilty of one such paper), and there are all kinds of variants on the original measure. Personally, I prefer the differential privacy approaches now (private core sets!), but there&#x27;s a wide spectrum of approaches. Is there any particular reason you reverted back to vanilla k-anonymity ? 
+</div>
+<div style="margin-left: 9em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2009-04-28T15:21:29Z</b><br />
+No reason that makes sense from the application point of view, I think. It&#x27;s more that we found some somewhat-interesting theory there. I agree, differential privacy seems like a better way to go, but I didn&#x27;t know about it when we started this work and it has its own issues (seems to require smoothing the data to the point that only the really gross correlations remain).
+</div>
+

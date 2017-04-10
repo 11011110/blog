@@ -1,0 +1,79 @@
+---
+layout: post
+title:  'Shut out'
+date:   2008-02-12 07:57:00
+tags:   [conferences, papers]
+---
+I got some good news last week: one of my papers was accepted to <a href="http://www.cs.sunysb.edu/smi08/">Shape Modeling International</a>. But that was tempered by some very bad news today, as all of my submissions to <a href="http://www.umiacs.umd.edu/conferences/socg2008/">the Symposium on Computational Geometry</a> were rejected (0 for 5!). See the accepted paper list, e.g., <a href="http://valis.cs.uiuc.edu/blog/?p=608">here</a>. I suppose that at least simplifies my travel plans and improves my ability to afford to travel to <a href="http://www.gd2008.org/">Graph Drawing</a> later this summer...
+<br />
+
+<br />
+The accepted paper and one of the rejects come from some work I and Mike Goodrich did with Disney over the summer, on quadrilateral meshes. We wrote (with Ethan Kim, a student of Sue Whitesides who was interning at Disney, and Disney graphics researcher Rasmus Tamstorf) two papers on unstructured quadrilateral meshes, one on partitioning them into structured submeshes and another on finding large approximately matching regions within them. The partitioning one was rejected, the matching one was accepted.
+<br />
+
+<br />
+The other rejected papers were: one by me on xyz graphs, one with Elena Mumford on <a href="http://portal.acm.org/citation.cfm?id=73838">self-overlapping curves</a>, one with Goodrich on nonplanarity in road network graphs, and one with Goodrich and Gil Barequet on three-dimensional <a href="http://en.wikipedia.org/wiki/Straight_skeleton">straight skeletons</a>. The last one is the one that most surprises me, actually, as the rest are arguably not completely on-topic.
+<br />
+
+<br />
+I&#x27;m sure all of these will find decent homes eventually, and I&#x27;m hopeful that the minimal feedback one gets from these things will help explain the rejections, but it&#x27;s a pretty big disappointment for now.
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>mcfnord</b>: <br />
+<b>2008-02-13T03:46:08Z</b><br />
+you&#x27;ve got the goods
+stay hungry and you will prevail
+
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2008-02-13T05:11:45Z</b><br />
+Thanks. I&#x27;m fine — I didn&#x27;t get here by having thin skin — but the Talking Heads song is good advice.
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: <br />
+<b>2008-02-13T17:11:35Z</b><br />
+Thats too bad... Such things are random, as you well know... I think almost all of these papers could have make it in if randomness was working for you instead of against you. 
+
+And SWAT deadline is coming up...
+
+--S
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2008-02-16T04:43:10Z</b><br />
+I do know. Though there&#x27;s also often some hysteresis built in: once a paper has been rejected, the next committee has a good chance of knowing about it as &quot;that paper that was rejected from SoCG&quot; and thinking more critically about it...
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: <br />
+<b>2008-02-15T20:46:31Z</b><br />
+I just had one rejected by SoCG and it was surprisingly painful. Ouch. Perhaps this is what drives mad scientists mad.
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2008-02-16T04:41:50Z</b><br />
+You get used to it. Five at a time is still a bit of a shock, though.
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: <br />
+<b>2008-02-16T03:44:14Z</b><br />
+Any additional information on the paper regarding nonplanarity in road networks? That one sounds intriguing...
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2008-02-16T04:19:01Z</b><br />
+Sure. We looked at US road map data and observed that it contains a large number of crossings, despite much of the transportation literature assuming they are planar (e.g. by defining notions of how densely a region is connected that involve counting faces of the planar embedding). If these maps really were planar, one could compute various important network optimization problems efficiently: <a href="http://en.wikipedia.org/wiki/Bor%C5%AFvka's_algorithm">Borůvka&#x27;s algorithm</a> computes minimum spanning trees in linear time, and a more complex algorithm also computes <a href="http://portal.acm.org/citation.cfm?id=195092">shortest paths in linear time</a>. So we wanted to generalize the properties of planar graphs to a broader class of graphs in which similar algorithms could be applied.
+
+We approached this problem using separator theorems, such as the old Lipton-Rose-Tarjan one that planar graphs may be partitioned into two subgraphs of at most 2n/3 vertices each by removing a set of O(sqrt n) vertices. A recursive decomposition formed by repeating this partition in each subgraph helps speed up many other problems. This was the main use of planarity in the planar graph shortest path algorithm, and for minimum spanning trees a paper of mine on <a href="http://dx.doi.org/10.1006/jcss.1996.0002">sparsification</a> leads to a linear time algorithm for any graph for which a separator hierarchy has been found.
+
+For planar graphs, <a href="http://portal.acm.org/citation.cfm?id=129762">an old algorithm of Goodrich</a> constructs a separator hierarchy in linear time. But, although linear time construction of a single separator was known for many more general classes of graphs, that&#x27;s not good enough to compute the whole hierarchy as efficiently. We looked at two different approaches to computing these separators. First, we tried planarizing the network by adding a vertex at each crossing; one can then map a separator hierarchy on the planarized network back into the original nonplanar network. To get this to work, though, we needed to introduce a lot of seemingly ad-hoc restrictions on the kind of networks that the method could apply to. Our second approach was based on the &quot;neighborhood graph&quot; approach of Shang-Hua Teng (e.g. in his Ph.D. thesis): a neighborhood graph is the <a href="http://en.wikipedia.org/wiki/Intersection_graph">intersection graph</a> of a family of disks such that no point in the plane is covered by more than a constant number of disks. <a href="http://www.ics.uci.edu/~eppstein/pubs/EppMilTen-FI-95.ps.gz">These graphs have good separators</a>, and the randomized version of the separator algorithm is simple enough that it can be made to produce a whole separator hierarchy quickly. The problem with this second approach, though, is that when we tried to find a family of disks for the actual road network data (by setting the radius of a disk around each intersection to be half the length of the longest adjacent road segment) it didn&#x27;t look like it had the constant covering property. But we realized that most of this bad behavior was coming from a small number of large disks, so we could find separators by forcing these disks to be part of the separator and applying the Teng randomized separator idea to the rest.
+
+The weakness of this paper, I think was that it didn&#x27;t know whether to be a theory paper or an applied paper. Much of the theory was of the turn-the-crank apply-someone-else&#x27;s-algorithm variety, so the larger contribution was in trying to get a more realistic model of real road networks, and the committee didn&#x27;t seem to believe that we&#x27;d done that part well enough. Additionally, as we are outsiders to transportation, the committee seemed to think that our criticism of the literature for not considering nonplanar networks could have been partly based on ignorance of the literature. Our current plan involves splitting the paper into two parts, one based on the more theoretical algorithmic parts of the paper but beefed up with some new results (that we haven&#x27;t finished proving yet), and a second one with the more practical road network modeling parts adding another author who has a more established reputation in transportation studies (Amelia Regan) who can help us get it in shape for that community.
+</div>
+<div style="margin-left: 6em; padding-top: 1em;">
+<b>None</b>: <br />
+<b>2008-02-16T19:09:57Z</b><br />
+Thanks for this description. I personally think your &quot;criticism of the literature for not considering nonplanar networks&quot; is completely valid, which is exactly why I was intrigued with this idea in the first place. Good luck with this research.
+</div>
+

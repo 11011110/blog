@@ -1,0 +1,37 @@
+---
+layout: post
+title:  'Surfaces for symmetric groups'
+date:   2007-09-27 13:14:00
+tags:   [xyz graphs, permutohedron]
+---
+Inspired by my <a href="http://11011110.livejournal.com/116782.html">previous post</a> on a truncated-cube Cayley graph for permutations on four elements, I tried looking at similar presentations for larger permutation groups.
+<br />
+
+<br />
+In the permutation group <i>S<sub>n</sub></i> on <i>n</i> items, let <i>x</i> denote the operation that swaps the first two elements of a permutation, and <i>y</i> denote the operation that rotates the remaining <i>n</i> − 1 elements. Then <i>xy</i> rotates all <i>n</i> elements by one position, so these operations satisfy the relations <i>x</i><sup>2</sup> = 1, <i>y</i><sup><i>n</i> − 1</sup> = 1, and (<i>xy</i>)<sup><i>n</i></sup> = 1. One can transpose any two adjacent elements by a composition of these operations of the form (<i>xy</i>)<sup><i>k</i></sup><i>x</i>(<i>xy</i>)<sup><i>n</i> − <i>k</i></sup>, so <i>x</i> and <i>y</i> generate the whole symmetric group.
+<br />
+
+<br />
+The group presentation &lt;<i>x</i>, <i>y</i> | <i>x</i><sup>2</sup>, <i>y</i><sup><i>n</i> − 1</sup>, (<i>xy</i>)<sup><i>n</i></sup>&gt; can be interpreted for <i>n</i> &gt; 4 as defining a <a href="http://www.hadron.org/~hatch/HyperbolicTesselations/5_5_omnitrunc_512x512.gif">tiling of the hyperbolic plane by (<i>n</i> − 1)-gons and 2<i>n</i>-gons, meeting at vertices with one (<i>n</i> − 1)-gon and two 2<i>n</i>-gons per vertex</a>. Since this is an infinite tiling, the group presentation defines an infinite Cayley graph of an infinite group, but <i>S<sub>n</sub></i> is a quotient of this group, and inherits from it a structure as a Cayley graph embedded on a manifold. This embedded Cayley graph for <i>S<sub>n</sub></i> has the same types of vertices and faces as the hyperbolic tiling, but finitely many of them.
+<br />
+
+<br />
+When <i>n</i> is even (as in the case of the truncated cube for permutations on four items) the (<i>n</i> − 1)-gons of this surface embedding form odd faces, preventing the surface from being an <i>xyz</i> surface in the sense defined in <a href="http://11011110.livejournal.com/117543.html">my recent paper</a>. But when <i>n</i> is odd, we do get an <i>xyz</i> surface, as we may three-color the faces of the embedding. The (<i>n</i> − 1)-gons all get a single color. Each 2<i>n</i>-gon consists of the <i>n</i> cyclic rotations of some permutation π, together with a set of <i>n</i> additional permutations that are not cyclic rotations of each other; we may choose π to be the permutation among these cyclic rotations that fixes the first element. With this choice, we can describe the 2<i>n</i>-gons that are adjacent to the 2<i>n</i>-gon defined by π: they are formed either by transposing adjacent pairs of elements in π other than the first element, or by applying <i>y</i><sup>-1</sup> to π and cyclically rotating the elements other than the first. When <i>n</i> is odd, each of these operations changes the parity of the permutation representing the cycle, so the adjacency structure of the 2<i>n</i>-gons is bipartite and we may two-color these faces.
+<br />
+
+<br />
+We may determine the surface formed by <i>S<sub>n</sub></i> by checking the bipartiteness of the Cayley graph and the Euler characteristic of the surface. <i>S<sub>n</sub></i> forms a bipartite Cayley graph when <i>n</i> is odd (as each operation changes the permutation parity) and not when <i>n</i> is even (as the cycles <i>y</i><sup><i>n</i> − 1</sup> are odd). It has <i>n</i>! vertices, 3/2 <i>n</i>! edges, <i>n</i>!/(<i>n</i> − 1) (<i>n</i> − 1)-gonal faces, and (<i>n</i> − 1)! 2<i>n</i>-gonal faces.
+<br />
+
+<br />
+For instance, for permutations on 5 elements, we get a nice map on a genus-4 oriented surface with 120 vertices, 180 edges, 30 quadrilaterals, and 24 decagons. It is the <a href="http://en.wikipedia.org/wiki/Truncation_%28geometry%29">truncation</a> of an even nicer map, with 30 vertices, 60 edges, and 24 pentagons meeting four pentagons per vertex. Geometrically, the surface for the Cayley graph of <i>S</i><sub>5</sub> also appears to be the graph-encoded map (GEM) of the <a href="http://en.wikipedia.org/wiki/Small_stellated_dodecahedron">small stellated dodecahedron</a> or <a href="http://en.wikipedia.org/wiki/Great_dodecahedron">great dodecahedron</a>, and to be represented itself geometrically as the <a href="http://en.wikipedia.org/wiki/Truncated_dodecadodecahedron">truncated_dodecadodecahedron</a>:
+<br />
+
+<br />
+<div align="center"><img src="http://upload.wikimedia.org/wikipedia/commons/2/2d/Truncated_dodecadodecahedron.png" width="500" height="500" /><br />
+<br />
+<small>(This image, copied from Wikipedia, is by <a href="http://www.software3d.com/Stella.html">Robert C. Webb</a>.)</small></div>
+<br />
+
+<br />
+In this geometric representation, the <i>xyz</i>-surface faces&#x27; 3-coloring is clear: we have yellow squares, large blue decagons, and small red 10/3 stars.

@@ -1,0 +1,77 @@
+---
+layout: post
+title:  'A game of cop and robber'
+date:   2016-08-18 18:33:00
+tags:   [game theory, wikipedia, graph theory]
+---
+Suppose we play the following game. We place a bunch of hexagonal game board tiles on a table, edge-to-edge, to form our playing field. On the field, we place two game pieces, a cop (blue) and a robber (red). The cop and robber take turns, either moving to an adjacent hex or passing (staying put). The cop wins if he can end a turn on the same hex as the robber. The robber wins by evading the cop forever. Who has the advantage?</p>
+
+<p align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/polyhex-cop-win.png" /></</p>
+
+<p>It turns out to depend on what game board shapes are allowed. If the hexes of the board can completely surround a hole (a shape where one or more hexes could have been placed, but weren't) then the robber can win by keeping the hole between himself and the robber. But if there are no holes, then the cop always wins.</p>
+
+<p>Probably there is a direct strategy that shows this, but it's also possible to prove that the cop wins by using the theory of <a href="https://en.wikipedia.org/wiki/Cop-win_graph">cop-win graphs</a>, graphs in which the cop wins a generalized version of this game, with the players moving on the vertices of a graph rather than the hexes of a game board. Cop-win graphs are the same as dismantlable graphs, the graphs that can be reduced to a single vertex by repeatedly removing a vertex whose closed neighborhood is a subset of another vertex's closed neighborhood. And the adjacency graphs of systems of hexes with no holes are always dismantlable.</p>
+
+<p>To see this, consider the tree of 2-vertex-connected components of the adjacency graph of the hexes. For instance, the example above has five 2-connected components: the hexagonal shape formed by the seven hexes in the lower left, a big mass of 18 hexes in the center and right, and three single-hex components in the upper left. (Two of these single hexes are connected to the rest of the board only by a single edge; the other single-hex component lies between the two big components.) Choose arbitrarily a single leaf component of this tree (the 18-vertex component, or the two single-hex components connected to the rest by a single edge). If this component is a single hex, then its closed neighborhood is a two-hex set, consisting of itself and its one neighbor. In this case, its neighborhood is always a subset of its neighbor's component.</p>
+
+<p>Otherwise, if the leaf component that you picked is a nontrivial 2-connected component, such as the 18-vertex component of the example, walk counterclockwise around its boundary. The angles that you turn always have to add up to \( 2\pi \), so you must have passed at least three points where your walk turns counterclockwise by an angle of \( \pi/3 \) (a boundary hex adjacent to two others, such as the starting point of the cop in the example) or \( 2\pi/3 \) (a boundary hex adjacent to three others). In particular, one of these three hexes is not the one that connects your component to the rest of the game board. If it has two neighbors, its neighborhood is a subset of either of its neighbors' neighborhoods. And if it has three neighbors, its neighborhood is a subset of its middle neighbor's neighborhood. So either way, we can find a hex to remove. By repeating this process, we can show that the adjacency graph of the hexes is always dismantlable. More strongly, it's dismantlable with any distinguished vertex (such as the cop's starting location) as its final vertex.</p>
+
+<p>Unfortunately, I don't know of a simple explicit strategy for the cop, even on a polyhex board rather than a general graph. The cop's strategy in the publications on this subject is: remove a removable vertex, and then follow the optimal strategy (recursively) for the remaining graph, pretending that the robber is on the parent of the removed vertex whenever it is actually on the removed vertex. Then, when you think you've won according to this strategy, you will either have actually won, or achieved a position where the robber is on the removed vertex and you're on its parent (where you're pretending that the robber is). But in this case, you can win in one more move.</p>
+
+<p>One way to visualize this strategy is to draw a tree representing the parent of each removed vertex, together with numbers indicating the order in which the vertices were removed:</p>
+
+<p align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/polyhex-cop-tree.png" /></p>
+
+<p>Then, at each turn, add back one more vertex (in the reverse of the order that they were removed) and move to the lowest-numbered ancestor of the robber's current position among the ones that have been added back so far. For instance, in the position shown, to figure out what to do on your first move, you would add back hex 28, realize that the lowest-numbered ancestor of the robber's position is hex 29 (the one you're already on), and pass. After the robber moves, you would add back hex 27, and (since all moves for the robber land in the subtree of hex 27) move there. Etc.</p>
+
+<p>But this strategy involves keeping track of a spanning tree, a numbering, and a current set of added-back tiles. Maybe for the hex board there's a simpler strategy based only on your position and the position of the robber?</p>
+
+<p>And finally, what about other kinds of game tiles? Square tiles don't work with edge-to-edge adjacency: the robber can evade the cop by staying on the opposite side of a 4-cycle. But for squares with corner adjacency (and no holes) the cop can always win; for instance, consider cops and robbers that move like kings on a chessboard. Being planar with only three game tiles meeting at a corner isn't good enough for the cop to win: the robber always wins on a dodecahedron by staying as far as possible from the cop. Maybe some other polyforms than polyhexes will also allow the cop to always win.
+
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: <br />
+<b>2016-08-19T08:45:42Z</b><br />
+<p>What about the following strategy: first move to the root. Then at each turn move to the neighbour which is closest to the robber in the tree. Then cop will either move down the tree or jump from one branch to another but in a "monotone" way.</p>
+
+<p>Pom</p>
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2016-08-19T17:52:09Z</b><br />
+I can prove that if the cop is at an ancestor of the robber in the tree and the robber moves then the cop can always move to another ancestor of the new position, but I was unable to prove that this strategy always converges. It is not true that the robber is confined to a subtree and that the cop only has to move down the tree into that subtree. It is also not true that the ancestor the cop can move to is always lower-numbered than the one he was on.
+</div>
+<div style="margin-left: 6em; padding-top: 1em;">
+<b>None</b>: <br />
+<b>2016-08-19T18:24:29Z</b><br />
+I agree that the robber can jump from one to subtree to an "adjacent" one, and that the cop will not always move to lower-numbered. 
+Nevertheless, it seems to me that the cop can always follow the jumps, and that he can move in such a way that (except in the case the cop catches the robber) the number of the new position will be lower than the numbers of the positions *comparable in the tree* the cop occupied before (since he left the root). This would imply that the set of accessible positions for the robber will be strictly decreasing.
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>brooksmoses</b>: <br />
+<b>2016-08-19T19:28:54Z</b><br />
+<p>This analysis isn't entirely baked, but it seems to me that a simple cop strategy of "find all of the shortest paths from the cop to the robber, pick one, and follow the first step of it" should be sufficient.</p>
+
+<p>Suppose the cop is currently N moves (minimum) away from the robber.</p>
+
+<p>Define the robber's "running space 1" as all the tiles that they can move to in one turn that are \( N+1 \) moves away from the cop, "running space 2" as the tiles that they can move to from those tiles in one turn that are \( N+2 \) moves away from the cop, and so forth.  The "running space" (unnumbered) is the union of these sets.</p>
+
+<p>Now, the cop moves one step closer to the robber.  This is always possible; there has to be a shortest path between them.</p>
+
+<p>To regain the status quo of a distance of \( N \), the robber must run to a tile in running space 1.  Assume, for the moment, that this space is nonempty.  At this point, we know that there is a path from the cop through the robber's old position to all tiles in the old "running space 1" in \( N \) moves (it's \( N-1 \) to the old position, \( +1 \) from there), and so forth; therefore, they have been removed from the robber's running space.  Further, under our assumption that the space is nonempty, that's at least one tile removed.</p>
+
+<p>Thus the running space has tiles being removed from it.  In order for the robber to evade capture indefinitely, tiles must be added to their running space by the cop's movement.</p>
+
+<p>How does that happen?  That happens if there is a tile that is currently \( k \) or \( k+1 \) steps away from the robber and \( N+k-1 \) steps away from the cop, which will be \( N+k \) steps from the cop after the cop moves (and then \( k \) steps away from the robber after the robber moves towards it).  If \( k \) is 0, then we have a tile that is currently \( N-1 \) steps from the cop and 1 step from the robber -- i.e., there's a path from the cop through the tile to the robber, of length \( N \), but it's not the one that the cop chooses.  Thus, there's a loop of length \( 2N \) joining that path with the one that the cop does choose, and I'm pretty sure that we can follow this logic to show that there can't be any shortcuts across the loop -- i.e., that there's a hole of circumference \( 2N \) in the graph.</p>
+
+<p>The other partially-baked part is that I haven't yet generalized that to address the \( k \gt 0 \) set, but I <i>think</i> that you can prove there are no such tiles or else that they require at least \( 2N \)-sized loops.</p>
+
+<p>Anyway, assuming the \( k \gt 0 \) case works out, we then get a situation where either there is a hole of circumference \( 2N \) in the graph, or the robber's running space is shrinking and eventually runs out, such that they cannot remain \( N \) steps away from the cop.  Repeat for \( N-1 \), and eventually either there's a hole of circumference at least 4 in the graph (or a higher limit; 4 isn't geometrically possible on hex tiles, but is geometrically impossible to avoid on square non-corner-connected tiles unless it's a pure tree) or the cop catches the robber.</p>
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: game of cop n robber<br />
+<b>2016-09-16T12:33:50Z</b><br />
+Can you make a paper model that illustrates this problem???discuss...
+</div>
+

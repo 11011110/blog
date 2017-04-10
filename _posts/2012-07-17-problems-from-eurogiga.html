@@ -1,0 +1,35 @@
+---
+layout: post
+title:  'Problems from EuroGIGA'
+date:   2012-07-17 17:52:00
+tags:   [prague, unsolved, conferences, geometry, graph theory]
+---
+Here are some open problems (and one closed one) involving graphs and geometry that caught my attention at the EuroGIGA conference that I just attended.
+<br />
+
+<br />
+Many attendees quickly became obsessed by Stefan Felsner&#x27;s &quot;beer problem&quot;: given a square array of numbers, find a tiling of a convex quadrilateral by smaller convex quadrilaterals, having the topology of the square grid, such that the area of each quadrilateral is the given number.
+<br />
+
+<br />
+<div align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/FelsnerBeerProblem.png" /></div>
+<br />
+
+<br />
+The general consensus seemed to be that it should always be possible to do this for 2 × <i>n</i> grids, although I don&#x27;t think I saw a complete solution even for that case. For larger grid sizes, it&#x27;s not possible to use degrees of freedom to rule out a solution, so maybe a solution always exists.
+<br />
+
+<br />
+Sergio Cabello said during his talk &quot;I don&#x27;t know any nontrivial family of graphs for which deciding 1-planarity is polynomial&quot;. Here 1-planarity means that you can draw it in the plane in such a way that each edge is crossed at most once. And &quot;nontrivial&quot; should probably be taken to mean that it&#x27;s a natural family of graphs for which the decision problem isn&#x27;t trivially solvable; otherwise it&#x27;s not hard to come up with contrived examples.
+<br />
+
+<br />
+In Sasha Wolff&#x27;s talk, he mentioned as an open problem the approximation of rectilinear Steiner arborescences in higher dimensions. Here one is given a set of points in three or more dimensions, and must find a set of line segments connecting them together. Each segment should be parallel to one of the coordinate axes, and every point in the network of segments (other than the origin) should be touched by a segment that extends towards the origin in one of the coordinate directions. The goal is to minimize the total length of the segments. A logarithmic approximation algorithm is known, but maybe constant is possible.
+<br />
+
+<br />
+Csaba Tóth&#x27;s invited talk covered quite a few open problems, including some famous ones, but the following one was new to me. If we are given a simple polygon with unit perimeter, and <i>n</i> circular disks with disjoint interiors, all touching the boundary of the polygon, how big can the sum of disk radii be, as a function of n? Toth stated a lower bound proportional to log <i>n</i> / log log <i>n</i> and an upper bound proportional to log <i>n</i>, so there&#x27;s still a nonconstant gap in what we know.
+<br />
+
+<br />
+Finally, nearly three years ago I posted here <a href="http://11011110.livejournal.com/184816.html">a set of open problems</a> that included one from Erdős: how many colors are needed to color a set of line segments, no three of which all cross each other? Now it has been solved: Oswin Aichholzer announced that the team of A. Pawlik, J. Kozik, T. Krawczyk, M. Lasoń, P. Micek, W. Trotter, and B. Walczak have constructed triangle-free line segment arrangements that require arbitrarily large numbers of colors.

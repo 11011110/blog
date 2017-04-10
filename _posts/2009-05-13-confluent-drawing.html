@@ -1,0 +1,81 @@
+---
+layout: post
+title:  'A confluent drawing'
+date:   2009-05-13 15:31:00
+tags:   [confluence, graph drawing]
+---
+In the revisions of one of my papers, I needed an illustration of the graph shown below, which comes from an NP-completeness reduction. This is a confluent drawing: two vertices are connected by an edge whenever there is a smooth path between them. (The paths are allowed to self-intersect, so for instance all 30 outer vertices form a clique.)
+<br />
+
+<br />
+<div align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/confluent-37-536.png" /></div>
+<br />
+
+<br />
+I think it&#x27;s a great illustration of the power of confluent graph drawing: the graph has 37 vertices, 536 edges, and an average degree of nearly 29, but despite being so dense the graph has a lot of structure and the drawing makes the structure apparent.
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: Smooth paths<br />
+<b>2009-05-14T15:52:40Z</b><br />
+I guess you need for the smooth path between two adjacent vertices to not go through any other vertex?
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: Re: Smooth paths<br />
+<b>2009-05-14T16:02:29Z</b><br />
+Right.
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: Any practical use?<br />
+<b>2009-05-14T17:02:35Z</b><br />
+Hello,
+I&#x27;m so attractive to this graph at the first sight. It&#x27;s incredibly beautiful!
+Please forgive me without knowing much about graph drawing and your previous work...and allow me to quote a question of my CS friend after showing this drawing to her:
+it looks more like an artwork, what&#x27;s the practical use of this drawing?
+
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: Re: Any practical use?<br />
+<b>2009-05-14T17:14:26Z</b><br />
+This drawing (or rather a less symmetrically arranged and less colorful but otherwise similar drawing) was added to one of my papers, as a way to describe an NP-completeness reduction visually, after a referee complained that the text description was difficult to understand. So the use of this specific drawing is to communicate a research idea.
+</div>
+<div style="margin-left: 6em; padding-top: 1em;">
+<b>None</b>: Re: Any practical use?<br />
+<b>2009-05-15T06:42:35Z</b><br />
+Thanks for your reply. 
+Though the reduction might be complicated...this visualization is enjoyable :)
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: Puzzling!<br />
+<b>2009-05-15T20:24:24Z</b><br />
+Reminds me of &quot;Railway Mazes&quot; invented by Roger Penrose, I believe.  He wrote a chapter on the subject in the recently published book: A lifetime of Puzzles.
+
+http://www.amazon.com/Lifetime-Puzzles-Collection-Gardners-Birthday/dp/1568812450/
+
+These mazes are effectively confluent drawings with only &quot;Start&quot; and &quot;Exit&quot; nodes but you have to figure out how to get from one to the other smoothly.
+
+Very pretty!
+
+-George Bell
+
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: Re: Puzzling!<br />
+<b>2009-05-15T20:29:37Z</b><br />
+Thanks for the reference. There&#x27;s a variant of confluent drawing (which I&#x27;m not using here) in which the smooth paths are not allowed to travel along the same part of a curve twice (not even in opposite directions); it&#x27;s still possible in polynomial time to test whether two vertices are connected in such a drawing but it&#x27;s somewhat nontrivial, enough to make for an interesting puzzle. Now I&#x27;m wondering whether that&#x27;s part of the difficulty in the puzzles you refer to.
+</div>
+<div style="margin-left: 6em; padding-top: 1em;">
+<b>None</b>: Re: Puzzling!<br />
+<b>2009-05-15T20:53:19Z</b><br />
+Roger Penrose&#x27;s article contains lots of nice hand-drawn mazes which he invented (as a child, as I recall).  He discusses several techniques he devised to make them harder, but I don&#x27;t remember anything about traversing curves only once.  There is some switching variation he discusses at the end.
+
+It is too bad the book is rather expensive.  There doesn&#x27;t seem to be much (anything?) on the web on the subject.
+
+-George
+</div>
+<div style="margin-left: 9em; padding-top: 1em;">
+<b>11011110</b>: Re: Puzzling!<br />
+<b>2009-05-15T20:55:36Z</b><br />
+There is also a closely related concept in topology: <a href="http://en.wikipedia.org/wiki/Train_track">train tracks</a>.
+</div>
+

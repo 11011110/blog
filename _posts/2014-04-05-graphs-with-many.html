@@ -1,0 +1,45 @@
+---
+layout: post
+title:  'Graphs with many cycles and doubled cycle minors'
+date:   2014-04-05 00:18:00
+tags:   [graph theory]
+---
+<p>This one isn&#x27;t my problem – it came from MathOverflow – but it&#x27;s frustrating me that I haven&#x27;t been able to solve it, so I hope by reposting it here I can get some more attention to it and maybe even a solution.</p>
+
+<p>The question is: <a href="http://mathoverflow.net/questions/161006/do-graphs-with-large-number-of-cycles-always-contain-large-necklace-minor">let \( F_k \) be the family of graphs having no  minor in the form of a cycle with doubled edges, of length \( k \). Do the graphs in this family have a polynomial number of cycles (with the exponent of the polynomial depending on \( k \), ideally linear in \( k \))?</a></p>
+
+<p>Here are some examples of graphs for which the number of cycles is large relative to the size of the largest doubled cycle minor:</p>
+
+<p>A biconnected graph with no length-3 doubled cycle minor must be either a subdivision of \( K_4 \) or a series-parallel graph in which one of the two arguments to each series composition is a path. All such graphs have \( O(n^2) \) cycles.</p>
+
+<p align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/bicycle-minor/3-bicycle-free.png" /></p>
+
+<p>In outerplanar graphs, the length \( k \) of a doubled cycle minor is the number of leaves of the dual tree. Each cycle can be formed by pruning some branches of the tree, and there are at most \( k \) branches to prune, so there are \( O(n^k) \) cycles in the outerplanar graphs with no doubled \( k \)-cycle minor. For instance, the outerplanar graph below has four leaves.</p>
+
+<p align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/bicycle-minor/outerplanar.png" /></p>
+
+<p>The complete bipartite graph \( K_{k,n} \) (for  \( k \le 2n \)) has maximum doubled cycle minor length \( k \) and \( O(n^k) \) cycles.</p>
+
+<p align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/bicycle-minor/bipartite.png" /></p>
+
+<p>In complete graphs, the length of a doubled cycle minor is approximately \( 2/3 \) the number of vertices. (Each edge contraction can double only two of the edges of a cycle.) The number of cycles is factorial in the number of vertices, so the exponent of the number of cycles (as a polynomial in \( n \)) is also linear in \( n \).</p>
+
+<p align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/bicycle-minor/complete2bicycle.png" /></p>
+
+<p>Form a tree with height \( \log_2 k \) and branching factor \( b \) (possibly much larger than \( k \)). Connect each node to all its ancestors and connect the set the children of each node by a spanning tree. If we didn&#x27;t include the spanning trees, the result would have low tree-depth, causing all of its cycles to have length at most \( k \), from which it follows that there are \( O(n^k) \) cycles and maximum doubled cycle length \( k \). The spanning trees don&#x27;t significantly increase the number of cycles (you can use at most one path per spanning tree in a cycle, and each cycle touches at most \( k \) of these trees) and for the same reason doesn&#x27;t significantly increase the length of the longest doubled cycle minor.</p>
+
+<p align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/bicycle-minor/tree-depth.png" /></p>
+
+<p>Somehow I have the feeling that the last example, based on tree-depth, is on the right track. For minor-closed graph families, having no large cycle minor is the same as each biconnected component having bounded tree-depth, so having no large doubled cycle minor should be the same as having some structure like tree-depth but a little more complicated. But I can&#x27;t prove anything of the sort.</p>
+
+
+ETA 2014-04-10: Solved, negatively, by a <a href="http://11011110.livejournal.com/259176.html">planar bipartite permutation graph</a>.
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: <b>2014-04-05T20:16:01Z</b>May I ask with which program do you generate these beautiful graph figures? 
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <b>2014-04-05T20:34:42Z</b>Thanks — I drew them using Adobe Illustrator. The vertex placement was done by hand rather than automatically.
+</div>
+

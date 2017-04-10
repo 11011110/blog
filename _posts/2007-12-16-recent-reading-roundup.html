@@ -1,0 +1,84 @@
+---
+layout: post
+title:  'Recent reading roundup'
+date:   2007-12-16 15:56:00
+tags:   [dissection, bibliography, interdigitating trees, media theory, permutohedron, graph theory, security, papers]
+---
+I&#x27;m far behind on my reading, so consider this as the first installment in my attempts to catch up.
+<br />
+
+<br />
+<b>The absence of efficient dual pairs of spanning trees in planar graphs</b>, T. R. Riley and W. P. Thurston, <a href="http://arxiv.org/abs/math/0511493">arXiv:math/0511493</a>, <a href="http://www.combinatorics.org/Volume_13/Abstracts/v13i1n13.html">Elect. J. Combin. 13: N13, 2006</a>.
+<br />
+
+<br />
+Several of my papers have used the idea of <a href="http://www.ics.uci.edu/~eppstein/junkyard/euler/interdig.html">interdigitating trees</a>: if T is a spanning tree of a plane graph G, then the edges of the dual G* that are not crossed by T also form a spanning tree T*. For instance, in natural landscapes, the tree of water drainage and the tree of ridgelines and hilltops tend to interdigitate in this way; <a href="http://arxiv.org/abs/cs.DS/0207082">similar relations between primal and dual trees</a> can also be applied on higher genus surfaces. If T is a minimum spanning tree of the primal, T* is a maximum spanning tree of the dual, a fact that is useful in <a href="http://www.ics.uci.edu/~eppstein/pubs/p-eittwy.html">certain dynamic graph algorithms</a>. But what if T is a breadth first search tree, or an approximation to it? Can T and T* be chosen in such a way that both of them have height within a constant factor of the true breadth first search tree? The authors state their motivation as concerning the geometry of van Kampen diagrams in geometric group theory, which I know nothing about, but it seems a natural enough question on its own. Unfortunately, the answer is no: the authors show that, for any k, there are graphs in which the diameter of G and G* is both O(k) but the sum of the diameters of any two complementary spanning trees is Ω(k<sup>2</sup>). The construction involves replacing each edge of a complete ternary tree of height k by a k by k grid and each node by a similar-sized triangulation, and then surrounding the boundary of the construction with a hyperbolic tiling to reduce the primal and dual diameters to O(k). The size of this graph is exponential in k, so it&#x27;s still plausible that one might find two trees that approximate the primal and dual diameters to within a small but nonconstant factor. I have a feeling that the &quot;filling width&quot; used in the proof is almost the same as pathwidth, and that the same construction produces a planar graph with treewidth O(k) and pathwidth &amp;Omega(k<sup>2</sup>) (since the graph is so large, this is not inconsistent with <a href="http://dx.doi.org/10.1016/0166-218X(93)90171-J">known results that pathwidth is within a logarithmic factor of treewidth</a>), but I&#x27;m not sure of the details.
+<br />
+
+<br />
+<b>Robust de-anonymization of large datasets (how to break anonymity of the Netflix Prize dataset)</b>, A. Narayanan and V. Shmatikov, <a href="http://arxiv.org/abs/cs/0610105">arXiv:cs/0610105</a>.
+<br />
+
+<br />
+As <a href="http://it.slashdot.org/article.pl?sid=07/11/27/1334244">featured on Slashdot</a>, the authors show that the naive anonymization techniques used by Netflix when they made their data available — basically, stripping off names, randomly sampling only 10% of the data, and applying some perturbations — are insufficient to guard the privacy of the individuals whose movie preferences the data describes. I&#x27;m not sure why this is news now when the paper was originally uploaded over a year ago, but the version now available is a recent update. As the authors show, cross-correlation with IMDB reviews is sufficient to identify with high probability the Netflix purchasing history of subscribers who have made such reviews. The technical contribution consists of a scoring function that matches known information about an individual with the information in the database, but my interest is more on this as a case study of an attempt at anonymizing data that went badly wrong. The moral, I think, is the same one Knuth cited so long ago in regard to pseudorandom number generators: naively piling on more and more layers of manipulation (strip the names, sample the data, perturb the data) is not good enough if you don&#x27;t know what each of those layers is actually accomplishing. What&#x27;s needed instead are clearer threat models, and anonymization techniques that can provably stand up to those models. K-anonymization (aggregating data into groups of k items, so that it becomes impossible to narrow down the information about an individual to any smaller granularity) is a good step towards this goal, but as the authors describe it doesn&#x27;t work well for the Netflix data, because most of the data items are so highly individual that aggregating them loses too much information.
+<br />
+
+<br />
+<b>The importance of being first: position-dependent citation rates on arxiv: astro-ph</b>, by J. P. Dietrich, <a href="http://arxiv.org/abs/0712.1037">arXiv:0712.1037</a>, and <b>Ranking forestry journals using the h-index</b>, by J. K. Vanclay, <a href="http://arxiv.org/abs/0712.1916">arXiv:0712.1916</a>.
+<br />
+
+<br />
+It&#x27;s not an area I have any interest in doing research in myself, but I sometimes find it interesting to read about quantifying scientific impact. Dietrich shows some unexpected biases in citation frequency: in papers listed in the astro-ph section of the arxiv, papers appearing earlier in the daily list are more likely to be cited. This complements other studies showing that uploading to the arxiv helps gain citations. He observes that authors appear to be competing for the first-in-listing slots by submitting their papers to the arxiv immediately after the previous day&#x27;s deadlines, and suggests that this attempted self-promotion may correlate with other reasons that these papers have more citations; however, he tests other possible explanations as well.
+<br />
+
+<br />
+The h-index measures the biggest square one can find in one&#x27;s citation counts: a set of h papers, each having at least h citations. In computer science, at least, it&#x27;s often measured using Google scholar, despite some problems with that data (it often includes multiple items for what are really the same publication, and doesn&#x27;t exclude self-cites) since the only other alternative, ISI&#x27;s Web of Science, excludes too many important publication venues. It can be used to compare individual faculty, departments, or (in this case) journals, although due to differing citation patterns in different fields it works better within a single field. Although I like the idea of balancing quantity and impact, I&#x27;m not at all convinced that the h-index strikes the right balance (it&#x27;s the very highly cited papers that most impress me, rather than simply having a large number of pretty-well-cited papers). But, by comparing the results to a more careful human ranking, Vanclay&#x27;s paper makes a convincing case that the h-index at least makes a better quality measure for journals than the &quot;Impact Factor&quot; used by ISI.
+<br />
+
+<br />
+<b>Hinged dissections exist</b>, by Abbott et al., <a href="http://arxiv.org/abs/0712.2094">arXiv:0712.2094</a>
+<br />
+
+<br />
+The problem of dissection, cutting one shape up so that it can be reassembled into another shape, is seen as largely recreational nowadays, but it was important enough in 19th century mathematics that Hilbert used it as the basis of his axioms for area in his famous &quot;<a href="http://www.gutenberg.org/etext/17384">Grundlagen der Geometrie</a>&quot;, and asked about generalizations to three dimensions in the <a href="http://en.wikipedia.org/wiki/Hilbert's_third_problem">third of his famous set of 23 open problems</a> from his address to the International Congress of Mathematicians in 1900 (answered by Dehn in the negative: the Dehn invariant characterizes dissectability of polyhedra, is zero for cubes and nonzero for regular tetrahedra; therefore, a tetrahedron cannot be dissected into a cube). It has long been known that two polygons may be so dissected if and only if they have equal area. But some of these dissections may be &quot;hinged&quot;: that is, connected by hinged joints at the vertices of the cut-up pieces, so that the rearrangement may be performed without pulling the joints apart. Hinged dissections were the subject of Frederickson&#x27;s 2002 book &quot;<a href="http://books.google.com/books?id=pW_0EisSP4IC">Hinged Dissections: Swinging &amp; Twisting</a>&quot;, and researchers before and since have struggled to determine whether hinged dissections exist. This paper, as the title suggests, closes out that problem completely, even in the seemingly much harder three dimensional case (with hinges connecting edges of pieces, allowing one degree of rotational freedom): hinged dissections exist between any two equal area polygons in two dimensions and between any two polyhedra with equal volume and equal Dehn invariant in three dimensions.
+<br />
+
+<br />
+Two of the previous papers on hinged dissection, <a href="http://arxiv.org/abs/cs.CG/9907018">Hinged dissections of polyominos and polyforms</a> and <a href="http://arxiv.org/abs/cs.CG/0106032">Hinged kite mirror dissection</a> were (in part, in the former case) mine, and I&#x27;m pleased to see some ideas from them return here. I&#x27;m a bit sad, though, that I never figured out what to do with the mirror dissection paper, other than uploading it to the arxiv; it always seemed too small for a journal or major conference. I suppose it would have made a decent CCCG paper, were I a more frequent participant at CCCG.
+<br />
+
+<br />
+<b>Tribes of cubic partial cubes</b>, by S. Klavžar and S. Shpectorov, <a href="http://www.dmtcs.org/dmtcs-ojs/index.php/dmtcs/article/view/734">DMTCS 9(1), 2007</a>.
+<br />
+
+<br />
+An online journal edition of a paper that had previously been available in preprint form from Klavžar&#x27;s home page, this paper attempts to classify 3-regular partial cube graphs by grouping them into &quot;tribes&quot;, families of graphs that can be formed from each other by contracting or uncontracting Djokovic equivalence classes of edges. Since only one nonplanar cubic partial cube is known, the main results concern planar graphs, where these contractions and uncontractions occur along zones of faces that alternate between quadrilaterals and non-quadrilaterals. For instance, applying this procedure to the permutohedron (B1, in their notation) forms a family of 17 different cubic partial cubes, nine of which were not previously known, and eight other new graphs are formed from an omnitruncated icosahedron. The paper also provides a complete listing of the known cubic partial cubes prior to <a href="http://www.combinatorics.org/Volume_13/Abstracts/v13i1r79.html">my own work on finding cubic partial cubes from line and pseudoline arrangements</a>.
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>arvindn</b>: <br />
+<b>2007-12-17T00:23:18Z</b><br />
+haha, i&#x27;m not sure why it&#x27;s news now either, we certainly didn&#x27;t expect it when we updated the paper :)
+
+actually, the types of datasets on which k-anonymity *does* work are rather limited, and for reasons beyond the one in this paper. vitaly and justin brickell who is another student of his have been working also on this issue. we have have more to say soon.
+
+thanks for your periodic roundup posts.
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2007-12-17T05:01:48Z</b><br />
+I&#x27;d be interested to hear more about the limitations on k-anonymity, as it&#x27;s something I&#x27;ve been thinking about a little.
+
+As for the roundup posts, you&#x27;re welcome — it&#x27;s a good excuse to get myself to take some of these papers a little more seriously, rather than just thinking &quot;that&#x27;s an interesting title&quot;, skimming the paper quickly, and then forgetting about it.
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: H-index<br />
+<b>2007-12-17T18:09:25Z</b><br />
+The h-index properly ignores the &quot;small-papers low-citation&quot; chaff, but it gives no weight to the gems at the top. 
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: Re: H-index<br />
+<b>2007-12-17T18:17:54Z</b><br />
+Yes, that summarizes my own misgivings about it as well.
+</div>
+

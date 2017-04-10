@@ -1,0 +1,19 @@
+---
+layout: post
+title:  'Telephone primes'
+date:   2015-11-23 11:27:00
+tags:   [prime numbers, number theory]
+---
+This weekend I helped add a new sequence to OEIS, <a href="https://oeis.org/A264737">A264737</a> of the prime numbers that divide at least one <a href="https://en.wikipedia.org/wiki/Telephone_number_(mathematics)">telephone number</a> (the numbers of matchings in a complete graph etc).
+<br />
+
+<br />
+The telephone numbers obey a simple recurrence T(n) = T(n-1) + (n-1)T(n-2), and it&#x27;s easy to test whether a prime number p divides at least one telephone number by running this recurrence modulo p. Whenever n is 1 mod p, the right hand side of the recurrence simplifies to T(n-1) mod p, and we get two consecutive numbers that are equal mod p; After that point, the recurrence continues as it would from its initial conditiions (two consecutive ones), multiplied mod p by some unknown factor. Therefore, the recurrence mod p either repeats exactly with period p, or it becomes identically zero (as it does for p=2), or it repeats with a higher period that is a multiple of p and a divisor of p(p–1), where all sub-periods of length p are multiples of each other. In particular, if p divides at least one telephone number, it divides infinitely many of them, whose positions are periodic with period p.
+<br />
+
+<br />
+All primes divide at least one Fibonacci number (a sequence of numbers with an even simpler recurrence) but that is not true for the telephone numbers. For instance, the telephone numbers mod 3 form the infinite repeating sequence 1,1,2,1,1,2,... with no zeros. So how many of the prime numbers are in the new sequence? A heuristic estimate suggests that the telephone primes should form a 1–1/e fraction of all primes (around 63.21%): p is a telephone prime when there is a zero in the first p terms of the recurrence sequence mod p, and if we use random numbers instead of the actual recurrence then the probability of not getting a zero is approximately 1/e. With this estimate in mind, I tried some computational experiments and found that among the first 10000 primes, 6295 of them (approximately 63%) are in the sequence. Pretty accurate, I think! But I have no idea how to approach a rigorous proof that this estimate should be correct.
+<br />
+
+<br />
+Incidentally, while looking up background material for this I ran into a paper by Rote in 1992 that observes a relationship between the telephone number and another sequence, <a href="https://oeis.org/A086828">A086828</a>. A086828 counts the number of states in a dynamic programming algorithm for the traveling salesman problem on graphs of bandwidth k, for a parameter k. So its calculation, in the mid-1980s, can be seen as an early example of the parameterized analysis of algorithms. It has the same recurrence relation as the telephone numbers, but with different initial conditions, so we can consider using this sequence instead of the telephone numbers. But the same analysis above showing that all subperiods of length p are similar applies equally well to this sequence, showing that after an initial transient of length p, all subperiods are either identically zero or similar to the corresponding subperiods of the telephone numbers. So if we ask which primes divide at least one member of A086828, we get almost the same answer, except possibly for some additional primes that either divide one of the first p numbers of A086828 (and then no other members of A086828 later in the sequence) or that divide all but finitely many members of A086828.

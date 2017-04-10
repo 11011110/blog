@@ -1,0 +1,41 @@
+---
+layout: post
+title:  'Ramified rectilinear polygons'
+date:   2010-05-11 18:20:00
+tags:   [media theory, papers]
+---
+I have a new preprint on arXiv: <a href="http://arxiv.org/abs/1005.1721">Ramified Rectilinear Polygons: Coordinatization by Dendrons</a> (with Hans-Jürgen Bandelt and Victor Chepoi; arXiv:1005.1721).
+<br />
+
+<br />
+This is a study of the graphs that can be embedded in a distance-preserving way into the <a href="http://en.wikipedia.org/wiki/Cartesian_product_of_graphs">Cartesian products</a> of two trees, and the cell complexes that one gets by filling in the quadrilaterals of such a graph by rectangles. The title refers to the fact that any orthogonal polygon can be formed in this way, leading to a system of coordinates in which the usual Cartesian x and y axis lines are replaced by trees; geodesic Manhattan distance within the polygon is just the sum of the coordinatewise distances.
+<br />
+
+<br />
+A graph that is an isometric subgraph of the product of two trees must be a cube-free <a href="http://en.wikipedia.org/wiki/Median_graph">median graph</a>, but in some ways these graphs are simpler than the class of all cube-free median graphs: for instance, they can be recognized in linear time using <a href="http://en.wikipedia.org/wiki/Lexicographic_breadth-first_search">LexBFS</a>, whereas recognition of cube-free median graphs is provably equivalent to testing for the existence of triangles in sparse graphs, a problem that is not known to be solvable more quickly than O(n<sup>1.41</sup>)
+<br />
+
+<br />
+Why only two trees? Because the theory becomes very messy very quickly beyond that. In particular, k-coloring a graph is almost the same thing as embedding its <a href="http://en.wikipedia.org/wiki/Simplex_graph">simplex graph</a> onto a product of k trees, so it&#x27;s NP-complete to tell whether a graph is an isometric subgraph of three trees.
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>justinwsmith</b>: <br />
+<b></b><br />
+
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: Unrelated to anything, maybe<br />
+<b>2010-08-05T03:43:32Z</b><br />
+Point P is inside a tetrahedron, so it has a line to each vertex. Those four lines determine 6 angles. I am trying to prove that of the six angles, at least three must be obtuse. I&#x27;m not asking for a proof but if you know where one is, I&#x27;d like to know. Thanks!
+
+stevebg@roadrunner.com
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: Re: Unrelated to anything, maybe<br />
+<b>2010-08-05T04:04:45Z</b><br />
+I assume by &quot;inside&quot; you mean strictly interior to the tetrahedron; otherwise, not all the angles are necessarily well defined.
+
+Suppose that APB, APC, and APD were all non-obtuse. Then B, C, and D would all belong to a halfspace whose boundary passes through P, perpendicular to line AP. But then, because all the points belong to a halfspace, P would at best be on the boundary of the halfspace rather than interior to it. Therefore, at least one of the angles involving A must be obtuse. Same with the other four points. So this at least proves that there must be two obtuse angles (say APB and CPD). It looks likely that a similar argument involving looking at the angles of lines AC and AD with respect to plane APB finishes the proof.
+</div>
+

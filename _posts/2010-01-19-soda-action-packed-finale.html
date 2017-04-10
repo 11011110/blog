@@ -1,0 +1,35 @@
+---
+layout: post
+title:  'SODA: the action-packed finale'
+date:   2010-01-19 22:35:00
+tags:   [conferences, talks]
+---
+The drawback to being scheduled for the third day of SODA is that everyone is tired and much of the audience has departed, either physically or mentally. Despite that, there were still several talks that were good enough to catch and keep my attention.
+<br />
+
+<br />
+Sadly, I slept through fellow UCI faculty Mike Goodrich&#x27;s <a href="http://arxiv.org/abs/0909.1037">50th-anniversary-of-shellsort</a> talk. Mike provides a not-too-complicated variant of shellsort that sorts with high probability in O(n log n) time. Unlike most other O(n log n) sorts, but like the (too complicated to be practical) AKS sorting network, the pattern in which items are compared does not depend on their values, making this method suitable as a building block in certain cryptographic protocols.
+<br />
+
+<br />
+<a href="http://en.wikipedia.org/wiki/Emmanuel_Candès">Emmanuel Candès</a> gave what I thought was the best of three good invited talks. The main theme was an analogy between compressed sensing (solving underdetermined linear systems using the assumption that the solution has sparse support), matrix completion (filling out the missing entries in a sparsely sampled matrix using the assumption that the matrix has low rank), and robust dimensionality reduction (representing a matrix by a low-rank substitute under the assumption that a small number of matrix entries have been corrupted).<ul><li>In compressed sensing what one wants to find is the solution to the linear system with minimum L<sub>0</sub> norm (the number of nonzeros) but what one actually does is to solve a linear program minimizing the L<sub>1</sub> norm. L<sub>1</sub> is the closest convex function to the L<sub>0</sub> norm, the L<sub>1</sub> unit ball is the convex hull of the 1-sparse vectors, and for sufficiently well-behaved linear systems the L<sub>0</sub> and L<sub>1</sub> solutions coincide.</li><li>In matrix completion what one wants to find is the completed matrix with minimum rank but what one actually does is to solve a semidefinite program minimizing the nuclear norm, the sum of singular values of the matrix. Two examples that he described for this problem are the Netflix prize problem (completing a matrix indexed by customers and movies, containing the ratings for each movie) and finding Euclidean embeddings of sensor networks given information only on the distances between nearby pairs of sensors. The nuclear norm is the closest convex function to the rank and its unit ball is the convex hull of the rank-1 matrices.</li><li>To reduce a high-dimensional data set to a low-dimensional set that is somehow still representative of the data, what one usually does is to take the principle components of the singular value decomposition, but this is highly sensitive to outliers. Instead, Candes was proposing to perform an algorithm called &quot;principal component pursuit&quot; (that he didn&#x27;t have time to describe) that minimizes a weighted sum of the nuclear norm of the low-rank part and the  L<sub>1</sub> norm of the sparse part.</li></ul>
+<br />
+
+<br />
+Seth Pettie gave a nice talk, appropriately heavy on pictures and light on text for the late position in the schedule. The point of <a href="http://www.eecs.umich.edu/~pettie/papers/Forbidden.pdf">his paper</a> was to push a method for analyzing data structures, in which one makes a 0-1 matrix indexed by the sequence of operations and by the data structure objects with a 1 for each object touched by each operation. These matrices often obey certain simple patterns: some (non-contiguous) submatrices are disallowed, and that allows one to bound the total number of 1&#x27;s in the matrix, which is the total running time. If an a×b all-ones matrix is forbidden then the <a href="http://en.wikipedia.org/wiki/Zarankiewicz_problem">Kövári–Sós–Turán theorem</a> implies that there are O(nm<sup>1 − 1/b</sup> + m) ones in an m×n matrix. If a permutation matrix is forbidden, the number of 1&#x27;s can be only linear, and so on. Although there were no new results, Pettie described many existing ones where this point of view could be used to simplify or unify the analysis, including all the standard applications of Davenport-Schinzel sequences in computational geometry and several data-structural examples such as splay trees and union-find. Apparently he also had <a href="http://www.eecs.umich.edu/~pettie/papers/FH.pdf">another forbidden matrix paper</a> the previous day that I missed due to seeing something on k shortest paths at the same time.
+<br />
+
+<br />
+The talk by Panagiotis Voulgaris on his work with Daniele Micciancio on <a href="http://eccc.hpi-web.de/report/2009/065/">finding shortest lattice vectors</a> by repeatedly replacing members of a large enough sample of small vectors by their differences somehow reminded me of the Gröbner basis algorithm for monomial ideals, but by then I was too tired to think clearly so this could be a very superficial impression.
+<br />
+
+<br />
+Some other SODA links: my own previous posts from this year&#x27;s ALENEX and SODA are <a href="http://11011110.livejournal.com/189421.html">here</a>, <a href="http://11011110.livejournal.com/189445.html">here</a>, and <a href="http://11011110.livejournal.com/189735.html">here</a>. <a href="http://agtb.wordpress.com/2010/01/19/report-from-soda/">Noam Nisan</a> and <a href="http://geomblog.blogspot.com/2010/01/soda-day-1.html">Suresh Venkatasubramanian</a> also have conference reports. Cora posted on <a href="http://www.glencora.org/silent-glen-speaks/soda-20-minute-talks/">talk formats</a> and <a href="http://www.glencora.org/silent-glen-speaks/soda-2012-to-be-in-kyoto-japan/">future location</a>. And there was a lot of activity on twitter, especially concerning the business meeting and the decision to host SODA 2012 in Kyoto; <a href="http://twitter.com/search?q=%23soda10">most of it was under the #soda10 hashtag</a> but I&#x27;m probably failing to link to additional tweets that weren&#x27;t.
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>pupziik</b>: <br />
+<b></b><br />
+
+</div>
+

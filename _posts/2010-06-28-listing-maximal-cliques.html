@@ -1,0 +1,36 @@
+---
+layout: post
+title:  'Listing maximal cliques'
+date:   2010-06-28 21:35:00
+tags:   [graph algorithms, papers]
+---
+I don&#x27;t have to list all the reasons why it&#x27;s important to <a href="http://en.wikipedia.org/wiki/Clique_problem#Listing_all_maximal_cliques">find all the maximal cliques in a graph</a>, I think, but I heard a new one today (a form of social network analysis): one of the lecturers in my department wants to find cliques in a graph representing similarities between homework assignments of different students in the same class. You can guess why...
+<br />
+
+<br />
+Anyway, I have a new preprint out with Maarten Löffler and Darren Strash on exactly this problem: &quot;<a href="http://arxiv.org/abs/1006.5440">Listing All Maximal Cliques in Sparse Graphs in Near-optimal Time</a>&quot;, arXiv:1006.5440. The main piece of background for our paper is the <a href="http://en.wikipedia.org/wiki/Bron-Kerbosch_algorithm">Bron–Kerbosch algorithm</a>, a simple recursive backtracking procedure for listing all maximal cliques which works well in practice but which has only limited theoretical bounds on its performance. As the original Bron &amp; Kerbosch paper already observed, a strategy known as &quot;pivoting&quot; helps to control the number of recursive calls at each step of the algorithm, and Tomita, Tanaka, and Takahashi showed that with careful choices of pivots the algorithm could be made to run in time at most equal to the worst-case bound on the number of maximal cliques in an <i>n</i>-node graph, 3<sup><i>n</i>/3</sup>.
+<br />
+
+<br />
+The new paper suggests a different strategy for improving the running time of the Bron–Kerbosch algorithm: choose the order of the recursive calls carefully. In particular it works well (according to our analysis) to add vertices to a partial clique in order by their degrees: first try adding the vertex with the smallest degree, second try the vertex whose degree in the remaining subgraph is smallest, etc. Doing this at the top level of the recursion (without pivoting), and then switching to the Tomita et al. pivoting strategy at lower levels, leads to a time bound that is linear in any sparse family of graphs (such as the planar graphs) and that has near-optimal dependence on the <a href="http://en.wikipedia.org/wiki/Degeneracy_(graph_theory)">degeneracy</a> of the graph, a standard measure of its sparseness.
+<br />
+
+<br />
+The modified version of the Bron–Kerbosch algorithm is still very simple, and (we hope) practical, but we have not yet had a chance to perform any experimental tests to determine how much the vertex ordering helps the algorithm in practice.
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>ext_238629</b>: Cliquer<br />
+<b>2010-07-07T03:15:35Z</b><br />
+At least for dense graphs, cliquer was a nice utility back in 2003 if you wanted to enumerate maximal cliques:
+
+http://users.tkk.fi/pat/cliquer.html
+
+The cliquer trick of caching the sizes of previously found cliques is probably more applicable to max-clique though.  
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: Re: Cliquer<br />
+<b>2010-07-07T03:25:13Z</b><br />
+Thanks, I didn&#x27;t know about that one. It seems more oriented around finding high-weight cliques, rather than all the maximal cliques, but still it looks very relevant.
+</div>
+

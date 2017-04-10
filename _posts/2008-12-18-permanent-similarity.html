@@ -1,0 +1,171 @@
+---
+layout: post
+title:  'Permanent similarity'
+date:   2008-12-18 16:26:00
+tags:   [plagiarism]
+---
+While poking around some stuff about permanents for <a href="http://en.wikipedia.org/wiki/Wikipedia:Articles_for_deletion/Permanent_is_sharp-P-complete">this Wikipedia deletion debate</a>, I found:
+<br />
+
+<br />
+<a href="http://dx.doi.org/10.1137/0218077">Jerrum and Sinclair, <i>SICOMP</i> 1989</a>.
+<br />
+
+<br />
+<a href="http://dx.doi.org/10.1002/rsa.3240050208">Rasmussen, <i>Random Structures and Algorithms</i> 1992</a> (I don&#x27;t have subscription access, so I used <a href="http://www.lfcs.informatics.ed.ac.uk/reports/92/ECS-LFCS-92-201/ECS-LFCS-92-201.ps">this 1992 tech rep. version</a>.)
+<br />
+
+<br />
+<a href="http://dx.doi.org/10.1007/BF01294460">Frieze and Jerrum, <i>Combinatorica</i> 1995</a> (substantially similar to <a href="http://www.lfcs.inf.ed.ac.uk/reports/91/ECS-LFCS-91-164/">a 1991 tech report</a> single-authored by Jerrum).
+<br />
+
+<br />
+<a href="http://dx.doi.org/10.1007/BF01940871">Jerrum and Vazirani, <i>Algorithmica</i> 1996</a>.
+<br />
+
+<br />
+All four start with one or two similarly-phrased sentences defining a matrix A and its permanent using very similar formulas: (in three of the papers) an inline one of the form \( A = \{ a_{i,j}: 0 \le i,j \le n-1 \} \) and a displayed formula
+\[
+\mathrm{per}(A) = \sum_{\pi} \prod_{i=0}^{n-1} a_{i,\pi(i)},
+\]
+with Rasmussen using 1-based indexing and the three Jerrum papers using 0-based indexing; the SICOMP paper substitutes \( \sum \) for \( \prod \). In the two later Jerrum papers these two sentences are identical, and the Rasmussen paper has similar phrasing: (first Jerrum paper) “The permanent of an \( n \times n \) matrix \( A \) with 0-1 entries \( a_{i,j} \) is defined by (displayed formula) where the sum is over all permutations \( \sigma \) of \( [n] = \{0,\dots,n-1\} \).” (two later Jerrum papers) “The permanent of an \( n \times n \) matrix (formula) is defined by (displayed formula) where the sum is over all permutations \( \pi \) of \( [n] = \{0,\dots,n-1\} \).” vs (Rasmussen) “Let (formula) be an \( n \times n \) (0-1) matrix. The permanent of \( A \), \( \mathrm{per}(A) \), is defined by (displayed formula) where the sum is over all permutations \( \pi \) of \( [n] = \{1,...,n\} \).”
+<br />
+
+<br />
+All four in the next sentences describe the application to counting matchings in bipartite graphs. Again, the second two Jerrum papers use the identical sentences, while the other two diverge a little more here. All four then go on to mention the existence of other applications and past study; Jerrum/Sinclair, Rasmussen, and Frieze/Jerrum both use the exact phrase “has been an object of study by mathematicians since first appearing in 1812 in the work of Cauchy and Binet.” while the wording is similar but not identical in Jerrum/Vazirani. All four then cite a survey by Minc.
+<br />
+
+<br />
+Next, all four mention past failures to find efficient algorithms for the permanent. The three Jerrum papers write “Despite considerable effort, and in contrast with the syntactically very similar determinant, no efficient procedure for computing the permanent is known.” Rasmussen uses very similar wording: “Despite this effort and its syntactical similarity with the determinant, no efficient procedure for computing this function is known.” Rasmussen then goes on to cite an algorithm of Ryser, not mentioned here by the other three.
+<br />
+
+<br />
+After this, all four cite Valiant&#x27;s proof of hardness of computing the permanent (the result discussed in the AfD). Rasmussen: “In the late 1970&#x27;s, Valiant provided convincing evidence for the inherent intractability of the permanent, by demonstrating the problem to be complete for the class #P of enumeration problems. It is thus as hard to compute the permanent as it is, say, to  count the number of satisfying assignments to a CNF formula.” Frieze/Jerrum: “Convincing evidence for the inherent intractability of the permanent was provided in the late 1970s by Valiant, who demonstrated that it is complete for the class #P of enumeration problems, and thus as hard as counting the number of satisfying assignments to a CNF formula.” Jerrum/Sinclair is the same up to the final noun phrase, which is replaced by “any NP-structures.” Jerrum/Vazirani: “Valiant provided convincing evidence for the inherent intractability of the permanent, by demonstrating that it is complete for the class #P of enumeration problems, and thus as hard as counting the number of satisfying assignments to a CNF formula.” Jerrum and Vazirani then go on to cite the algorithm of Ryser.
+<br />
+
+<br />
+At this point the Jerrum/Vazirani paper diverges from the other three. However, the other three then have a substantially similar paragraph defining randomized approximation schemes and fully polynomial time approximation schemes and describing the idea of using medians of multiple runs to boost the success probability of these schemes. Rasmussen then interpolates a paragraph about unbiased estimators, and then Rasmussen and Frieze/Jerrum again have substantially similar paragraphs stating that it&#x27;s unknown whether there is a fpras for permanent and describing a weakening of the problem to one in which the algorithm need only work for most inputs.
+<br />
+
+<br />
+I don&#x27;t think this is a clear-cut case of plagiarism, in the classic sense of taking someone else&#x27;s words without their knowledge or permission: three of the papers share an author, and the fourth is by someone at the same institution. But is this level of textual similarity in the introductory material of distinct published journal papers considered acceptable? What about (as in one of these cases) when the sets of authors do not overlap?
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>brooksmoses</b>: <br />
+<b>2008-12-19T00:53:54Z</b><br />
+I find the case where the sets of authors do not overlap to be somewhat problematic, personally, yes.
+
+The problem is not something I would consider plagiarism in the full sense; as you say, it is presumably something done with a reasonable degree of assent by the original authors of the material -- and, being introductory material, it doesn&#x27;t create a situation where someone is claiming results that they were not responsible for.  However, I would feel that some degree of acknowledgement would be useful -- perhaps a footnote or endnote to the effect of, &quot;The author acknowledges the contributions of Other Author to the introductory material,&quot; or something along those lines.  This is especially true of text is copied verbatim; less so if what is copied is merely structure and content -- but, even in the latter case, there should certainly at least be a clear citation of that content to the previous paper.
+
+In cases where the authors do overlap, it generally isn&#x27;t something I&#x27;d find problematic -- the acknowledgement is redundant (unless there&#x27;s a specific reason to acknowledge a coauthor of the previous paper who does not appear on the current paper).  And in things such as the introductory material where there is generally no scholarly benefit to having them differ, it&#x27;s not something that causes detriments for the reader.
+
+However, there is a separate matter of copyright assignment; if one has published the first article in a journal that requires an assignment of copyright (as most do), then it may be a violation of that copyright to reprint the material in a new article.  Personally, as neither the author nor either of the copyright holders, I don&#x27;t consider that my business to worry about, but it does seem part of a trend among scholarly authors to treat copyright assignments rather more frivolously than I think is appropriate.
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>None</b>: Hmmm<br />
+<b>2008-12-19T01:12:40Z</b><br />
+The problem is that it is not acceptable to have an introduction that says - for background see [XXX]. Instead, you are suppose to repeat what to people working in this subsubsubsubsub field might be by now standard and obvious. It is natural to &quot;copy&quot; then from previous articles, since they already figured out how to present it in the most natural way. Introductions are a bit of a space filler and I would not worry too much about similarity with other papers in the field, as long as the results are original. 
+
+The main negative here is that the authors did not bother to optimiza their introduction to their results. They probably described things they should have not bothered with, or missed relevant things that should be included. I guess the acceptable way to do that, would be to have section of background, and start it with a sentence like: &quot;the following is by now standard \cite[relevant papers}, and is included here only for the sake of completeness.
+</div>
+<div style="margin-left: 6em; padding-top: 1em;">
+<b>11011110</b>: Re: Hmmm<br />
+<b>2008-12-19T01:41:26Z</b><br />
+It might have been acceptable to preface the introductions of the later papers with a sentence like “We follow Jerrum and Sinclair [] in outlining the history of permanents and their approximation.” That&#x27;s the approach my co-authors and I took in incorporating some material from past papers into our Media Theory book. But I think of that as a different type of publication, just like I think of a journal revision as being different from a conference extended abstract or technical report. It&#x27;s accepted and even encouraged to re-use material from one of these types of publications in a different type of publication (with some timing constraints: no conference publication of material that has already appeared in a journal). But I think of journal articles (and, separately, peer-reviewed conference proceedings papers) as obeying something more like the Pauli exclusion principle: each should be distinct from each other.
+</div>
+<div style="margin-left: 9em; padding-top: 1em;">
+<b>None</b>: Re: Hmmm<br />
+<b>2008-12-19T02:23:47Z</b><br />
+This is something I&#x27;ve been wondering about recently as well.  And I have to admit that I&#x27;m much more of a stickler about these things than I imagine is average.  But it seems like no-matter the copyright issues, it&#x27;s self-plagiarism at the least (except in the case of turning a conference paper into a journal paper).  On the other hand, I don&#x27;t see a good way around this, since there&#x27;s only so many ways you can rephrase introductory material before it gets ridiculous.
+
+- Sorelle
+</div>
+<div style="margin-left: 9em; padding-top: 1em;">
+<b>None</b>: Re: Hmmm<br />
+<b>2008-12-19T16:33:00Z</b><br />
+We use this approach as well. In certain situations one wants to lift the entire definitions and notation that have been very nicely set up elsewhere (and there is absolutely no value in duplicating) so we say &quot;we follow the set up of XYZ [] which we include here for completeness&quot;.
+
+Lifting the introduction or motivation from somebody else is a different thing.
+
+I think part of the problem is that we are using a single word (plagiarism) to describe a variety of situations.
+
+- In its worst case is verbatim, unacknowledged, malicious copying of other people&#x27;s work.
+
+- In non-fiction writing there have been examples of careless quoting, where a sentence made it into personal notes of the author and later on the author forgot that this was source material rather than his/her own penned thoughts. Still not allowed, but different from above.
+
+- Quoting of definitions and notation, which IMHO should be perfectly legal provided that it is fully credited. Something like &quot;Definition[Fellows et al, pp.34] An FPTA is ...&quot;
+
+- Self-quoting of results (unacknowledged): not allowed.
+
+- Self-quoting of results (acknowledged): make it as brief as possible, as one would quote another author&#x27;s result.
+
+- Self-quoting of introduction and motivation: generally ok, provided that in each instance changes are made to reflect the peculiarities of the paper (interestingly the ACM survey reported people being evenly split for and against this one).
+
+- Quoting of other people&#x27;s introduction and motivation: not ok. If a paragraph is particularly inspired, blockquote it with full citation.
+
+- Compilations and compendia. This is an established, very useful form that is in danger of being swept over in the plagiarism debate. It consists of reading, digesting and distilling the best ideas from a variety of sources. Verbatim unattributed quoting is still not allowed, but substantial similarities may peek through. Sources should be acknowledged in footnotes. The author attribution should be understood as a &quot;summarized and compiled by&quot; rather than &quot;written by&quot; and the title should acknowledge this fact with &quot;Cookie cutting theory: a compendium&quot; or &quot;A survey of cookie cutting theory&quot;.
+
+- Textbooks. Most results in a textbook appear without attribution. This is ok because there is no implicit claim of research authorship. Presentation might follow that of a paper on the area, but again verbatim quoting is not allowed unless permission is sought and fully attributed in the notes at the end of the chapter: the proof of theorem 4.5 is that of XYZ (save minor changes), we thank the authors for allowing us to include it in this text.
+
+- Industry Research/Executive reports (not for circulation/publication). These are extreme cases. Pretty much everything in them comes from an external source, timeliness is an important consideration and no claim of originality is being made. Unattributed, direct lifting is allowed. Bibliography might be scant or altogether non-existent. The point is to get information across, not to track academic lineage. Authorship is understood to mean  &quot;every relevant and important fact that I could find on subject X&quot;.
+
+- Speeches. Lately we have seen people trying to apply academic citation standards to speeches. This is silly. A speech is collected wisdom, not unlike the internal report above. In the case of a politician it signifies &quot;this is what I believe in&quot; not &quot;this is what I personally discovered&quot;. Standing up and reading an entire text from someone is not allowed, but a sentence from here and a sentence from there is ok. E.g. Obama&#x27;s &quot;A more perfect union&quot;, no one would expect &quot;A more perfect union [Jefferson et al., 1787 Philadelphia Free Press]&quot;.
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>t_mobile_whore</b>: <br />
+<b>2008-12-19T02:55:10Z</b><br />
+<em>But is this level of textual similarity in the introductory material of distinct published journal papers considered acceptable?</em>
+
+Why in the world not? Is anyone harmed by this similarity? If so, who is it? 
+
+Other disciplines have their own plagiarism codes which do not apply here. In history, for example, it may be difficult to separate routine introductory material from original research, so it makes sense to say that similarities such as the one you&#x27;ve pointed out are unacceptable. In the context of math or computer science, I see no reason why we should care about &quot;plagiarism&quot; not involving original research results.
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>None</b>: <br />
+<b>2008-12-20T05:03:40Z</b><br />
+There would be no problem if people would just admit it in the paper, as suggested above.  However, my guess is that most people who do this would be a little embarrassed to admit it: they would rather share in the (small) credit for the nice introduction than be publicly identified as being too lazy to write their own.  Their dishonesty doesn&#x27;t hurt anyone very much, but I do think it causes a little harm to the community.  
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: similarity?<br />
+<b>2008-12-19T05:39:40Z</b><br />
+This is silly.  Plagiarism is about essence.  As opposed to literature, where the exact use of language is the essence, in science a standard recounting of the background is not the essence.  Re-using parts of your introductory material is really not very different than re-using your LaTeX macros. 
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: Re: similarity?<br />
+<b>2008-12-19T05:47:54Z</b><br />
+It&#x27;s more like reusing the entire introduction. And in one case it wasn&#x27;t the author&#x27;s own introductory material that was re-used.
+</div>
+<div style="margin-left: 6em; padding-top: 1em;">
+<b>None</b>: Re: similarity?<br />
+<b>2008-12-19T06:04:36Z</b><br />
+Plus, the original author did actually have to write it.  It&#x27;s not right for future authors to get away with just copying it.  Especially since the paper probably wouldn&#x27;t be accepted if it had no introduction...
+
+- Sorelle
+</div>
+<div style="margin-left: 9em; padding-top: 1em;">
+<b>None</b>: Re: similarity?<br />
+<b>2008-12-19T10:27:28Z</b><br />
+Surely the important thing in the introduction to a paper containing a mathematical result is to explain things as clearly as possible and the place where originality is important is in the actual result itself. 
+The original paper (Jerrum and Sincalir 1989) is a paragon of mathematical writing, so it is understandable that their introduction to the problem is re-used in future publications.
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: Self-plagiarism?<br />
+<b>2008-12-20T14:23:38Z</b><br />
+Just so we&#x27;re clear, Lars Rasmussen was Alistair Sinclair&#x27;s student, and Alistair would have seen (and advised and commented on) the specific drafts you&#x27;re seeing.  In this sense, it&#x27;s not clear that Rasmussen is a &quot;distinct author&quot; from Jerrum/Sinclair in the sense you wish to say.  That is, Rasmussen may have had permission to use the same essential wording.  
+
+I, personally, think it&#x27;s fine for authors to loosely self-plagiarize in the introductory material -- although I do admit it&#x27;s somewhat better if they give a reference to their first description in some way.  Let&#x27;s say Jerrum and Sinclair spent several hours optimizing the introduction/definitions for their first paper.  Why should they then spend several additional hours setting up a different version with the same essential information just to satisfy some arbitrary notion of &quot;differentness&quot; that has nothing to do with the actual content of the paper?  So I find nothing wrong with this, personally, if the authors themselves don&#x27;t.  
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>None</b>: Re: Self-plagiarism?<br />
+<b>2008-12-20T14:51:12Z</b><br />
+So maybe Aliston at some point contributed to the paper and later on decided to decline authorship, but the &quot;borrowed&quot; unattributed parts were already there. 
+
+I can easily see this happening. I&#x27;ve withdrawn my name from papers due to too small a contribution and not once did I check if what was left had borrowed paragraphs from other of my papers in the introduction. 
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: Re: Self-plagiarism?<br />
+<b>2008-12-20T22:01:08Z</b><br />
+I had guessed that Rasmussen was one of the other authors&#x27; students, but couldn&#x27;t tell from a quick Google whose — thanks for the clarification. It seems likely from this that both Sinclair and Jerrum approved the copying in the later papers, then, not just Jerrum alone.
+</div>
+

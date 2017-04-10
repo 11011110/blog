@@ -1,0 +1,54 @@
+---
+layout: post
+title:  'Fixed radius near neighbors'
+date:   2009-05-30 21:08:00
+tags:   [computational geometry, wikipedia]
+---
+Someone recently added <a href="http://en.wikipedia.org/wiki/Fixed-Radius_Near_Neighbors">this new Wikipedia article</a> on the fixed-radius near-neighbor search problem. I cleaned it up a little (it obviously needs a lot more work); in the process of the cleanup I changed the definition of the problem to better match the one in the Bentley reference. But before I got to it, the definition was that one should report all pairs with distance at most Δ in a given point set.
+<br />
+
+<br />
+It occurred to me that the all-pairs fixed radius problem of the original version of the article has a simple solution with time linear in the input and output size (for any fixed dimension, assuming constant time integer truncation and hash table operations): use a hash table to group the points into cubical buckets with side length Δ, and for each point look at all potential neighbors in adjacent buckets. If some bucket contains many points, you might spend a lot of time examining pairs of points that are too far apart, but in that case there are many nearby close pairs against which the time can be charged: both the time and the number of reported pairs are proportional to the sum of the square of the bucket sizes.
+<br />
+
+<br />
+This must have been known, probably in the 1960s or 1970s; it&#x27;s a close relative of several <a href="http://rjlipton.wordpress.com/2009/03/01/rabin-flips-a-coin/">linear-time randomized bucketing closest-pair algorithms</a>, but even simpler. <a href="http://www.slac.stanford.edu/cgi-wrap/getdoc/slac-r-186.pdf">Bentley&#x27;s 1975 survey</a> mentions this sort of approach to nearest neighbor problems under the heading of &quot;cell techniques&quot;, but without the hashing, without any analysis, and with a claim that these techniques require uniformly distributed points. Anyone know a reference for the linear time analysis?
+<br />
+
+<br />
+In contrast, by the way, there can be no linear-time bucketing algorithm for finding the nearest neighbor of every point unless one is using a model of computation that can sort in linear time. The reason is that, if one can find all nearest neighbors, one can use something like <a href="http://en.wikipedia.org/wiki/Boruvka's_algorithm">Borůvka&#x27;s algorithm</a> to sort in one dimension: the <a href="http://en.wikipedia.org/wiki/Nearest_neighbor_graph">nearest neighbor graph</a> forms a set of non-overlapping paths, and one may replace each path by a single representative point and continue recursively.
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>akurdia</b>: sorry, I don&#x27;t know the reference...<br />
+<b>2009-05-31T06:01:59Z</b><br />
+but David Mount might know, since he talks about this in the second of his CG lectures (http://www.cs.umd.edu/~mount/754/Lects/754lects.pdf)...
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: Re: sorry, I don&#x27;t know the reference...<br />
+<b>2009-05-31T06:08:53Z</b><br />
+Thanks! It may not be the reference, but at least it&#x27;s a reference. Before posting this, I did find a reference the 1977 IPL paper he mentions, but I didn&#x27;t find an online copy to look at; maybe it&#x27;s in there.
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: Useful!<br />
+<b>2009-05-31T15:09:15Z</b><br />
+Posts like this make me very happy I&#x27;m reading your blog. I have exactly this problem in a graphics program I&#x27;m writing. I had briefly considered the cell-based approach, gone &quot;oh, but then _obviously_ there&#x27;s no lower bound if they are not uniformly distributed&quot;, and instead started coding an elaborate Kd-tree based scheme. Which I can now throw away -- yay!
+
+Vilhelm S
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: Re: Useful!<br />
+<b>2009-05-31T17:31:05Z</b><br />
+kD-trees can handle a wider class of problems quickly, though. So your code could still very likely be useful.
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: <br />
+<b>2009-05-31T21:52:04Z</b><br />
+This problem is related to LSH. In particular, an approximate NN query can be reduced to logarithmic number of queries in such a data structure with different radiuses. 
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2009-05-31T22:03:29Z</b><br />
+...and one can store enough different versions of this data structure to handle the approximate NN queries, implicitly in linear total space, as a compressed quadtree.
+</div>
+

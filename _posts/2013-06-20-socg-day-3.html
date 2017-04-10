@@ -1,0 +1,27 @@
+---
+layout: post
+title:  'SoCG day 3'
+date:   2013-06-20 00:36:00
+tags:   [computational geometry, conferences, talks]
+---
+Today I finally started skipping some sessions, so apologies to anyone whose talk I missed because of that. The ones I didn&#x27;t skip included the second invited talk, by Ken Goldberg, and a nice session on geometric combinatorics.
+<br />
+
+<br />
+The main subject of Ken&#x27;s talk was on trying to put automated manufacturing on the sort of firm mathematical foundations that Turing&#x27;s work has done for computing: as he put it, putting the &quot;Turing&quot; into &quot;manufacturing&quot;. Much of his talk concerned parts orienters, devices that through sequences of (often sensor-less) mechanical actions move a part into a known position, ready to be included in an assembly. This was something of a flashback for me, as it was the subject of <a href="http://www.ics.uci.edu/~eppstein/pubs/Epp-SJC-90.pdf">one of my first papers</a>, although I think my own work in this area gets cited less for its manufacturing applications and more for its connection to the <a href="http://en.wikipedia.org/wiki/Synchronizing_word">Černý conjecture</a> in automata theory. Ken&#x27;s talk also included some material on part fixturing: designing devices to hold a part in place while something is done to it.
+<br />
+
+<br />
+János Pach gave a nice talk on geometric Ramsey theory. He spoke of passionately hating the theory of semialgebraic sets in the 1990s, when he was hearing a lot about it from Saugata Basu and others, but it somehow soaked in anyway until now it has become the obviously right tool for defining geometric graphs and uniform multigraphs, and studying Ramsey theory on these graphs. In this formulation, a geometric graph has as its vertices a set of points in a vector space of bounded dimension <i>d</i> (possibly interpreted as parameters describing more complicated geometric objects) and as its edges the pairs of points belonging to a 2<i>d</i>-dimensional semialgebraic set of bounded complexity. This framework allows one to represent any kind of intersection graph of line segments or other sets of bounded description complexity, for instance, by making the semialgebraic edge set describe the condition that two line segments intersect. It also generalizes immediately to uniform hypergraphs. Ramsey theory tells us that every graph (or uniform hypergraph) has a large subset of its vertices that is either complete (all possible edges are present) or independent (none are present); large means logarithmic for graphs and an iterated logarithm for <i>k</i>-uniform hypergraphs, but we still don&#x27;t know whether we should iterate the log <i>k</i> or <i>k</i> − 1 times. For geometric graphs and hypergraphs, as János shows, it&#x27;s always <i>k</i> − 1.
+<br />
+
+<br />
+In early 2009 I wrote here about <a href="http://11011110.livejournal.com/160040.html">Gabriel Nivasch getting tight bounds</a> on the length of <a href="http://en.wikipedia.org/wiki/Davenport%E2%80%93Schinzel_sequence">Davenport–Schinzel sequences</a> of even order. Now Seth Pettie has found similarly tight bounds on the sequences of odd order, effectively closing out the problem. There are some surprises: the order five case has a nice simple new form, smaller than the previous bound, and for order seven and higher, the length is the same as the next smaller even order. Here&#x27;s a vaguely related puzzle: suppose that a string <i>s</i> is formed from an alphabet of <i>n</i> letters, with no contiguous substring <i>t</i> of length two or more in which the maximum number of occurrences of a letter in <i>t</i> is greater than or equal to the number of distinct letters in <i>t</i>. For instance, &quot;abcabc&quot; is one such string, because each substring with two copies of one of the letters has all three letters in it. But &quot;abbac&quot; and &quot;abcbca&quot; are not allowed, because their substrings &quot;bb&quot; and &quot;bcbc&quot; violate the condition (as they might also in a DS-sequence). How long can <i>s</i> be? The answer is a nice formula, but it&#x27;s much larger than the length of a Davenport–Schinzel sequence. For a spoiler, see Lemma 9 of <a href="http://arxiv.org/abs/1304.5591">this paper</a>.
+<br />
+
+<br />
+Although I don&#x27;t think I&#x27;ve highlighted any of them in my posts here, there have also been a lot of good talks in the satellite workshops. I ended the day with a late session including three of them: a survey of range searching by Pankaj Agarwal, a rant about how we should be developing online animations of geometric algorithms for teaching purposes by Suresh Venkatasubramanian (with some helpful hints about how we might go about doing it), and a talk by Jonathan Shewchuk about how new powerful mesh improvement techniques make it possible to simulate fluids using Lagrangian methods (where the mesh moves with the fluid) instead of Eulerian methods (where the fluid flows through a static mesh) and why doing it that way gives much more accurate simulations.
+<br />
+
+<br />
+We were supposed to hear about the best student presentation tonight at the banquet, but we ended up in a room that wasn&#x27;t really conducive to making announcements, so it didn&#x27;t happen. I guess we&#x27;ll find out the results tomorrow.

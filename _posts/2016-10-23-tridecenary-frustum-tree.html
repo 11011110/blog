@@ -1,0 +1,54 @@
+---
+layout: post
+title:  'Tridecenary frustum tree'
+date:   2016-10-23 17:51:00
+tags:   [cellular automata, geometry]
+---
+<p>In <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">Conway&#x27;s Game of Life</a>, and <a href="https://en.wikipedia.org/wiki/Life-like_cellular_automaton">other cellular automata with the same neighborhood structure</a>, you can determine the values of the cells in any 2<i>x</i> × 2<i>x</i> square of cells from their values <i>x</i> steps earlier in a bigger 4<i>x</i> × 4<i>x</i> square. If we view this as a time-space diagram, with two of the dimensions as the spatial dimensions of the Life grid and the third dimension as time, we can view the bigger starting square and the smaller resulting square as the bottom and top of a sort of stepped pyramid formed by stacking concentric squares. The values of the cells in each layer of the pyramid are determined by the ones in the layer below. The squares shrink inward as they rise upward, because the other cells outside the pyramid need more information (outside the base of the pyramid) to determine their values. The image below shows this construction for <i>x</i> = 1, 2, and 4, with each time-space state of a cell represented as a cube.</p>
+
+<p align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/Stepped-Pyramids.svg" style="background-color:white;" /></p>
+
+<p>The shape that these stepped pyramids approximate, for large values of <i>x</i>, is a square pyramid with its top point chopped off. It&#x27;s called a <a href="https://en.wikipedia.org/wiki/Frustum">frustum</a> (plural frusta).</p>
+
+<p>The <a href="https://en.wikipedia.org/wiki/Hashlife">Hashlife</a> algorithm for simulating Conway&#x27;s Game of Life is often described as being based on a quadtree, a two-dimensional structure of squares divided into smaller squares, but really it&#x27;s a three-dimensional recursive decomposition based on these shapes. The hash table that gives the algorithm its name stores a collection of these frusta of different sizes (all powers of two), with their initial state (the values of the cells in the bottom face) as their hash keys and with their final state (the values in the top face) as the associated hash values. With this structure you can quickly jump from a square of cells whose values form one of the keys to the resulting state some number of steps later, without having to simulate all the steps in between.</p>
+
+<p>What about when you encounter an initial state that you don&#x27;t recognize, because it&#x27;s not already in the hash table? Then you need to make a new frustum and store it in the hash table. To do so, divide the top face of the new frustum into four smaller squares, and divide the bottom face into sixteen smaller squares (all smaller by a factor of two than the top square of the new frustum).
+Place four overlapping small frusta under the four small squares on the top face, connecting them to nine small squares in the middle plane of the new frustum, and nine more small frusta connecting these nine squares to the base.
+Then the top face values for the new frustum can be found by looking up the values of the nine smaller frusta on the bottom, and then using the results to look up the values for the four smaller frusta on top. In this way, we have decomposed one big frustum into 13 smaller frusta, which can in turn be decomposed recursively in the same way.</p>
+
+<p align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/13-Frusta.svg" style="background-color:white;" /></p>
+
+<p>In fact, you don&#x27;t need to know the actual values of any of the cells, except in the smallest frusta (the ones with 16 inputs and 4 outputs) to make this all work. At any higher level, you can represent each square of inputs or outputs symbolically, by a pointer to the frusta that have each of its four quarters as their bottom faces. In this way, each different frustum in the hash table can be represented by only a constant number of pointers, without also needing to store any big grids of cells.</p>
+
+<p>The conventional wisdom, I think, is that Hashlife is good only for automata whose patterns begin in a sparse state and then stay that way (with lots of repeated substructures that the hash table can take advantage of). But actually, even for an automaton whose evolution is chaotic and structureless, Hashlife can provide a speedup. If you stop building new frusta when they become too big (where too big means that the surface area is logarithmic in the size of the grid you&#x27;re simulating) then the total number of distinct frusta in the hash table is linear, no bigger than the grid itself. This method lets you simulate an <i>n</i> × <i>n</i> grid by decomposing it into only <i>O</i>(<i>n</i><sup>2</sup>/log <i>n</i>) overlapping frusta, whose height (number of time steps jumped) is proportional to the square root of the logarithm. Therefore, the algorithm time per cellular automaton time step is <i>O</i>(<i>n</i><sup>2</sup>/log<sup>3/2</sup> <i>n</i>), which compares favorably to the <i>O</i>(<i>n</i><sup>2</sup>/<i>w</i>) time per step of a conventional bit-parallel simulation on a machine with <i>w</i> bits per word. Of course, the random memory access pattern of the hash table could eat up most of the savings, making the comparison less clear in practice than it is in theory...</p>
+
+<p>This 13-way decomposition of frusta into overlapping smaller frusta seems like it could also be useful in some scientific simulation problems, when there is a fixed speed at which information from one part of the simulation can propagate to another. But I don&#x27;t know of any actual uses of this structure outside of cellular automaton simulation.</p>
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>brooksmoses</b>: <br />
+<b>2016-10-24T06:29:11Z</b><br />
+Interesting question implied in your last paragraph!
+
+I think a large part of why this decomposition works for Hashlife is that it can be paired with the hashing to get that speedup.  The hash-based speedup happens because the values in each cell have a very limited number of possible states (2, usually), so your total number of distinct frusta is bounded in practice as well as theory -- whereas most scientific simulations use floating-point data, where the number of possible values for a single cell exceeds <i>n</i> by many orders of magnitude, so you don&#x27;t get the hash-based speedup.
+
+Without the hash-based speedup, the decomposition is rather less useful for dense-grid-based computations.  Presuming that one&#x27;s decomposing things at all in order to do a parallel implementation, the two (usually-competing) limitations on speed are the number of individual calculations, and the bandwidth of transmitting information to neighboring &quot;blocks&quot;.  The volume of the frustum is conveniently measured in units of the number of computations; for 2-D it would be 2.5 times as many, and for 3-D it would be 4.5 times as many -- which is a lot, but potentially might not worth it if this sped up transmission.  However, in 2-D it increases the number of cells that need to be transmitted by 1.5 times, and in 3-D it increases it by a factor of 7/3.  There is the fact that the blocks only need to communicate on a fraction of the iterations as so if number of overall communications (or latency of communications) is a critical factor it could be useful, but that seems unlikely.
+
+(continued next comment)
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>brooksmoses</b>: <br />
+<b>2016-10-24T06:29:26Z</b><br />
+(continuation)
+
+So, what assumptions are baked into that analysis that we could remove to maybe find a spot where this is useful?
+
+There are occasional works by people trying to use cellular automata for physical simulation, usually with something that looks rather like a discretized molecular dynamics.  Those tend to have a limited number of states per cell, and thus might be amenable.  On the other hand, I&#x27;m dubious that that subfield is going to produce something of practical usefulness, so there&#x27;s that.  (I could easily be wrong, though; CGI effects don&#x27;t particularly need <i>accuracy</i> in their simulations, and can profitably use a lot of things that are quite bad as engineering models.)
+
+And there&#x27;s the assumption that all the grids are the same size.  Imagine that we&#x27;re simulating a continuous problem, so the grid size is an artifact of our simulation rather than inherent.  We could imagine a grid that divides our original simulation domain into a 2x2 grid with a layer of &quot;virtual&quot; cells around the boundary (to produce boundary conditions), making a 4x4 grid overall.  In that case, your 13-frustum decomposition is effectively a 2-step numerical integration that calculates half-timestep points at the midpoints between the full-timestep data points.  Not the most usual, but not at all unheard-of.  So, suppose that we then look at each individual frustum, and estimate the numerical error in that computation based on the smoothness of the data points on it.  If the estimated error is above a threshold, we subdivide that frustum into 13 smaller frusta, and repeat the computation on those.  And so on.
+
+Or, in short, we use this decomposition as a basis for a numerical <a href="https://en.wikipedia.org/wiki/Multigrid_method">multigrid method</a>.  It&#x27;s a bit of an unusual one, though, in part because of the half-timestep offset, and in part because it&#x27;s multigrid both in space and time.  (Although that may not be that unusual really; the multigrid methods I used in my fluid-simulation work were ones where the iteration was effectively in a &quot;virtual time&quot; to reach a &quot;steady state&quot; that was the next timestep in real time, and those all use the equivalent of multigrid-in-time methods.  But this variant would be useful in real time, where you actually care about time passing uniformly.)
+
+So, yeah, I could easily see this being used for something like a simulation of heat flow in a uniform (or non-uniform!) square of substance, where you store the data on a sequence of grids by making the coarsest grid contain the best approximation to the true state that it can hold, and then each respectively finer grid only stores corrections to the values interpolated from the next-coarsest grid.  And then each frustum-calculation only updates the values on the grids of its coarseness or higher, leaving the corrections on the finer grids to simply remain as they are (or to decay in some simple manner).  Probably been done already, but I haven&#x27;t seen it.
+</div>
+

@@ -1,0 +1,54 @@
+---
+layout: post
+title:  'New disjoint paths algorithm'
+date:   2014-05-08 23:57:00
+tags:   [graph algorithms]
+---
+Via the <a href="http://processalgebra.blogspot.com/2014/05/best-paper-awards-at-icalp-2014.html">Process Algebra Diary</a>, I learned of a recent paper by Andreas Björklund and Thore Husfeldt, <a href="http://thorehusfeldt.files.wordpress.com/2010/08/spdp-e5d5661.pdf">Shortest Two Disjoint Paths in Polynomial Time</a>, which just won the Track A best paper award at ICALP. It looks like a very interesting paper; I can see why it won the award.
+<br />
+
+<br />
+Here&#x27;s the problem it solves: you&#x27;re given a graph with two pairs of terminals <i>s</i><sub>1</sub>–<i>t</i><sub>1</sub> and <i>s</i><sub>2</sub>–<i>t</i><sub>2</sub>. The goal is to find disjoint paths connecting the two pairs of terminals with minimum total cost. It almost sounds like the problem solved by <a href="https://en.wikipedia.org/wiki/Suurballe's_algorithm">Suurballe&#x27;s algorithm</a>, but that one allows either <i>s</i> to be connected to either <i>t</i>, while here we have to connect the correct pairs. The specific version of this problem they solve is for undirected and unweighted graphs, with disjointness meaning either that the paths share no vertices or that they can share vertices but not edges. The unweighted part could easily be modified to paths weighted by small integers. Directed or real-weighted versions would also be natural but I don&#x27;t know what&#x27;s known about them and I don&#x27;t think this paper&#x27;s ideas are likely to work for them.
+<br />
+
+<br />
+My understanding of this all is still a bit vague, but here&#x27;s a summary.
+<br />
+
+<br />
+The techniques are algebraic rather than combinatorial, meaning that rather than working with paths directly it works with matrices and polynomials and things like that. This is a bit unusual for graph algorithms but not unprecedented; for instance there are standard maximum matching algorithms that work this way. The number of perfect matchings is a matrix permanent, and permanents are difficult (#P-complete) to compute. But if there&#x27;s only one matching, the permanent is the same as the determinant: both are just the number one. By using random edge weights from a suitable range of integers (large enough to make it work, small enough not to blow up the computation time) one can <a href="https://en.wikipedia.org/wiki/Isolation_lemma">&quot;isolate&quot;</a> a single matching with smaller weight than the others, compute a determinant of a matrix constructed from the weighted graph, and use it to find the matching you isolated. The coefficients of the matrix are powers of two and the lowest nonzero power of two in the binary representation of the determinant can be used to read off the matching.
+<br />
+
+<br />
+The new algorithm is similar in flavor, but trickier, and is inspired by Valiant&#x27;s work on <a href="https://en.wikipedia.org/wiki/Holographic_algorithm">holographic algorithms</a>. Again, it uses permanents. You can compute them modulo 2 because in that case it&#x27;s the same as the determinant, and what the authors show is that this can be extended in two ways, simultaneously: to modulo 4 instead of modulo 2, and to matrices whose coefficients are polynomials mod 4 instead of just numbers. The short summary of this part of the algorithm is that it performs a sequence of pivots to make one column of the matrix even, computes the permanent of a minor of the matrix eliminating the even column, and then does some stuff to get from that result to the permanent of the whole matrix. &quot;Some stuff&quot; involves using permanents of matrices of modulo 2-polynomials in order to compute some correction terms to add to the subpermanent.
+<br />
+
+<br />
+With these fancy modular permanents in hand, a disjoint paths problem that has a single optimal solution can be found in a very similar way to the matching solution: cook up a matrix of mod-4 polynomials, such that the lowest-degree nonzero coefficient in its permanent can be used to read off the answer. In the general case, when there might be more than one optimal solution, a random weighting (again, from a range of integers that&#x27;s not too big and not too small) isolates one of them and allows the rest of the algorithm to work.
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>ext_2575131</b>: <br />
+<b>2014-05-09T08:53:30Z</b><br />
+From my understanding, detecting the existence of two disjoint paths in a directed graph is NP-hard, even without weight restrictions. (This is of course to contrast with the Disjoint Paths problem in undirected graphs, which is FPT parameterized by the number of paths.)
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>ext_2575523</b>: <br />
+<b>2014-05-09T14:27:48Z</b><br />
+Yes, the directed 2 disjoint paths problem is NP-Complete. Result due to Fortune, Hopcroft, Wylie.
+http://www.sciencedirect.com/science/article/pii/0304397580900092
+
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: <br />
+<b>2014-05-09T09:07:14Z</b><br />
+Great result! Thanks for the short summary.
+
+
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: <br />
+<b></b><br />
+
+</div>
+

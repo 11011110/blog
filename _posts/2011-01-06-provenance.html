@@ -1,0 +1,23 @@
+---
+layout: post
+title:  'Provenance'
+date:   2011-01-06 18:28:00
+tags:   [papers]
+---
+Because of the numerical decimal-binary coincidence of names, I promised myself I&#x27;d take a closer look at <a href="http://arxiv.org/abs/1101.1110">arXiv:1101.1110</a> when it came out, as it finally did today.
+<br />
+
+<br />
+I can at least describe the general topic, which I think is an important one: when you store a piece of information in a database, it&#x27;s important in many cases to store with it metadata about where you got that information and how certain you are of it. To pick a somewhat recreational example that I have a personal interest in: suppose you&#x27;re building a database of genealogical information about your ancestors. There are all sorts of sources of bad data in genealogy, from incorrect dates on official documents to multiple people with similar names to well-meaning relatives whose research you would like to copy, but who are more interested in finding plausible connections to old royal families than they are in accuracy. Only by storing the metadata about where you got the information can you have a hope of keeping straight which parts of your data are certain or nearly so and which are guesswork.
+<br />
+
+<br />
+What the paper, &quot;Provenance for Aggregate Queries&quot; by Yael Amsterdamer, Daniel Deutch, Val Tannen is about, is the next step: now that you have this metadata, and you do a database query, what should be returned? The data answering the query comes back as a table, and the metadata in the database records needs to be combined somehow to produce metadata attached to the query results, that can be used to judge e.g. how certain one is of those results. The authors study what this &quot;combined somehow&quot; should mean, in a highly algebraic abstraction of the problem.
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: <br />
+<b></b><br />
+
+</div>
+

@@ -1,0 +1,11 @@
+---
+layout: post
+title:  'Flow Maps'
+date:   2006-06-15 09:00:00
+tags:   [information visualization, confluence, graph drawing]
+---
+Via <a href="http://placemap.mit.edu/press/index.php/2006/06/01/flow-map-layout-algorithm/">placemap</a>: <a href="http://placemap.mit.edu/press/index.php/2006/06/01/flow-map-layout-algorithm/">Flow Map Layout</a>, Phan et al., InfoVis&#x27;05. 
+<br />
+
+<br />
+The idea seems to be to visually express how much movement there is from different geographically placed sources to a single sink, by drawing the movement as a confluent tree in which physically nearby sources are merged together, and the thickness of a confluent edge indicates the amount of movement along that edge. So it&#x27;s closely related to confluent graph drawing, but not the same, because the initial data is not so much a graph as a spatial numeric field (the amount of movement from each site) and the confluent tracks merge but don&#x27;t unmerge. However, there is some graph drawing involved, in placing the edges and merge nodes of the resulting tree so that it doesn&#x27;t cross itself.

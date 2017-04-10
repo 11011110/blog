@@ -1,0 +1,51 @@
+---
+layout: post
+title:  'Graphs without long odd cycles'
+date:   2013-11-09 14:08:00
+tags:   [graph theory]
+---
+I&#x27;ve been working lately on the Wikipedia <a href="https://en.wikipedia.org/wiki/Line_graph">line graph</a> article, and am only a few [citation needed]s away from clearing all its cleanup tags. In doing so, I ran across a neat result in structural graph theory by Frédéric Maffray, <a href="http://dx.doi.org/10.1016%2F0095-8956%2892%2990028-V">describing the graphs in which the only odd simple cycles are triangles</a>.
+<br />
+
+<br />
+These graphs had previously been known as the ones whose line graphs are perfect (and are therefore called &quot;line perfect graphs&quot;), but neither of those descriptions is really satisfactory mathematically, because they say what the graphs are not (they don&#x27;t have long odd cycles) or what some derived objects do, rather than anything about the graphs themselves. And they&#x27;re not satisfactory from my point of view as an algorithm designer because they don&#x27;t tell you how to recognize these graphs efficiently.
+<br />
+
+<br />
+Instead, what Maffray showed is that these graphs are exactly the graphs for which each <a href="https://en.wikipedia.org/wiki/Biconnected_component">biconnected component</a> is one of three possibilities. It can be <a href="https://en.wikipedia.org/wiki/Bipartite_graph">bipartite</a>, the complete graph <i>K</i><sub>4</sub>, or a book of one or more triangles sharing a common edge (<i>K</i><sub>1,1,<i>n</i></sub>).
+<br />
+
+<br />
+<div align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/Line_perfect_graph.png" alt="decomposition of a line perfect graph" /></div>
+<br />
+
+<br />
+How did Maffray do it?
+<br />
+
+<br />
+Well, I don&#x27;t know, because math papers are generally written in a style that presents only the final results and their polished proofs, not their derivation. But I can at least say how I did it, before finding Maffray&#x27;s paper.
+<br />
+
+<br />
+The usual way I would attack such a problem is to run through several standard structural decompositions that apply to arbitrary graphs, to see whether any of them can be simplified when they are applied to the subset of graphs in question. These include decompositions based on connectivity (biconnected components, bridgeless components, the <a href="https://en.wikipedia.org/wiki/SPQR_tree">SPQR tree</a>), decompositions that exist once enough connectivity has been forced (several types of <a href="https://en.wikipedia.org/wiki/Ear_decomposition">ear decomposition</a>), decompositions based on adjacency (<a href="https://en.wikipedia.org/wiki/Modular_decomposition">modular decomposition</a>, decompositions into sums of graphs), etc.
+<br />
+
+<br />
+In this case, because the simpler of the two original descriptions of these graphs involves cycles, the first thing to try is a decomposition into biconnected components. A simple cycle can only live inside a single biconnected component, so a graph is line perfect if and only if its biconnected components all are.
+<br />
+
+<br />
+Once we have reduced to biconnected graphs in this way, this frees up two more of the decompositions, which only apply to biconnected graphs: SPQR trees and open ear decompositions. I happened to try ear decompositions first, and I think it ended up being the right choice. Every biconnected graph has an open ear decomposition, which is a partition of its edges into a sequence of subgraphs called ears. The first subgraph must be a simple cycle, and subsequent subgraphs must be simple paths whose two endpoints belong to earlier ears. The interior vertices of each path must be new, not in any earlier ear. These decompositions can be constructed relatively easily by a greedy algorithm that starts from an arbitrary cycle and then adds ears one at a time.
+<br />
+
+<br />
+So what do these decompositions look like for line perfect graphs? Well, in a bipartite biconnected component they could be anything, there isn&#x27;t any more information to be gained by additional decomposition, so let&#x27;s ignore that case and assume that the graph we&#x27;re decomposing is line perfect, biconnected, and non-bipartite. To be non-bipartite, it must contain an odd cycle, and to be line perfect, this cycle must be a triangle, so it seems like a good enough choice to start the ear decomposition. We can classify the subsequent ears into two types: paths of length two or more (that add new vertices to the graph) and paths of length one (that only add new edges) and it will simplify things to delay the length-one ears as long as possible, handling the longer ears earlier in the decomposition. But some simple case analysis shows that each longer ear must have length exactly two and they must all connect to the same two endpoints; anything else leads to a long odd cycle. If all ears are of this type, then we have exactly a book of triangles.
+<br />
+
+<br />
+But what about the short ears? They can only attach to two of the degree-two vertices in our book of triangles, because all the other edge placements are already occupied. If we have two or more long ears, giving us a book of three or more triangles, and then we add a short ear, we get a graph with a 5-cycle in it, so this can&#x27;t happen. The only remaining possibility is that we add an edge to the <a href="https://en.wikipedia.org/wiki/Diamond_graph">diamond graph</a> (a book of two triangles), giving <i>K</i><sub>4</sub>. And this completes the decomposition and the characterization.
+<br />
+
+<br />
+This also points the way to some additional results. In particular, for an arbitrary class of graphs, having a constant upper bound on the length of the longest cycle is equivalent to having a constant upper bound on the maximum <a href="https://en.wikipedia.org/wiki/Tree-depth">tree-depth</a> of a biconnected component, and having a bound on the length of the longest odd cycle is equivalent to having a bound on the maximum tree-depth of a non-bipartite biconnected component. Some useful lemmas: bounded tree-depth is equivalent to a bound on the longest path; in a biconnected graph, any path can be extended to an outerpath (a planar graph for which the adjacencies of the bounded faces form a path); in every outerpath one of the faces has at least roughly square root its size; in a non-bipartite biconnected graph, every cycle can be extended to a non-bipartite theta-graph; every non-bipartite theta graph contains an odd cycle of at least roughly half its size.

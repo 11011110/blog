@@ -1,0 +1,68 @@
+---
+layout: post
+title:  'Meaningfulness'
+date:   2014-03-01 17:51:00
+tags:   [meaning]
+---
+Many of the talks at the Conference on Meaningfulness and Learning Spaces that I recently attended concerned (surprise!) meaningfulness. The basic idea is to provide a crude filter for bad science and bad statistics by determining whether applying a formula to data could possibly make any sense. For instance, in many computer science conference program committees, we score papers on a scale from -3 to +3 (say) and then rank the papers by averaging the scores of different reviewers (possibly weighted to counter reviewer bias). Is this aggregation operation a meaningful thing to perform on this kind of data? Is it meaningful to say &quot;it&#x27;s twice as hot today as it was yesterday&quot;? When we use an algorithm to solve a problem, how can we tell whether the result is meaningful?
+<br />
+
+<br />
+The quick answer is that, for something to be meaningful, it should depend only on inherent properties of the data and not on arbitrary scales that we might be using to assign numerical values to the data. We can formalize this in terms of a group of transformations that can be applied to a data and that preserve its meaning. The Fahrenheit and Celsius temperature scales are fairly arbitrary, for instance, so any linear transformation mapping <i>x</i> to <i>ax</i> + <i>b</i> (for positive values of <i>a</i>) is reasonable: it would give you a different temperature scale but preserve the relationships between the data values. We call data of this type &quot;interval data&quot;. For interval temperature data, &quot;twice as hot&quot; is not meaningful: it depends on the arbitrary scale you&#x27;re using, not just on the actual temperatures. Temperatures that are twice as hot as each other in Fahrenheit are not generally twice as hot in Celsius, and vice versa. In contrast, &quot;ratio data&quot; comes from a scale with an absolute zero point, as temperatures in Kelvin do; for ratio data, the only allowable transformations are scalar multiplications. If you&#x27;re dealing with very cold temperatures near absolute zero, and using Kelvin, &quot;twice as hot&quot; does have a meaning. Some of the other data types for this sort of analysis include &quot;ordinal data&quot; which allows any order-preserving transformation, &quot;nominal data&quot; which allows any bijective transformation, and &quot;absolute data&quot; (such as probabilities or percentages) which allows only the identity transformation. An important basic principle is that any meaningful operation on the data must respect these transformations: if one applies a transformation to the inputs of the operation, the outputs must also be transformed in an allowable way. This naturally leads to the ubiquity of power laws for ratio data, because products of powers are the only kinds of formulae whose outputs scale by a constant factor when the input is scaled by a (possibly different) constant factor.
+<br />
+
+<br />
+In graph theory, we have long had a very similar idea, that a meaningful <a href="https://en.wikipedia.org/wiki/Graph_property">graph property</a> is something preserved by any isomorphism of the graph. Another example of this, of even more direct relevance to the study of algorithms, was given by Fred Roberts in his talk on meaningfulness in epidemiology. He mentioned that shortest path algorithms are used very widely, but are only applicable when the edge weights of a graph are given by ratio data: if you can perform more general linear transformations on the edge weights, such as adding the same number to each of them, you can change the result of the shortest path computation. In contrast, minimum spanning trees, despite their very similar definition, are much more broadly meaningful. They make sense even when the edge weights are ordinal, because they depend only on the pairwise ordering of the weights, something that does not change when you apply a monotonic transformation to the weights.
+<br />
+
+<br />
+The study of meaningfulness is where the <a href="http://11011110.livejournal.com/284935.html">associative law example</a> I posted yesterday comes from. If you have an operation that obeys a law such as commutativity or associativity either automatically by its design (e.g. it involves testing reactions to a sequence of stimuli and the grouping of these into smaller subsequences is arbitrary) or as an experimentally verified outcome, then combining this law with meaningfulness places very strong constraints on the form of the operation. For instance, the only meaningful associative combinations of scaling data have the form (<i>x</i><sup>1/<i>p</i></sup> + <i>y</i><sup>1/<i>p</i></sup>)<sup><i>p</i></sup> for some constant <i>p</i> &gt; 0. Associativity forces a decomposition of a two-variable associative operation into a combination of a single-variable function with addition, and meaningfulness forces the single-variable function to be a power.
+<br />
+
+<br />
+To get back to the conference program committee question: If we believe that &quot;on a scale from -3 to 3&quot; is ordinal data, then averaging is definitely not meaningful. Changing the scale from {-3,-2,-1,0,1,2,3} to {1,2,4,8,16,32,64}, for instance, would be a valid order-preserving transformation. It would not change the order of any program committee member&#x27;s scores for any papers. But it would possibly change the order of the averages, something that should not be allowed. On the other hand, it is not entirely clear that this replacement is a valid one: maybe it would also cause respondents to spread their scores among the scale values in a different distribution. Many cases of &quot;on a scale of&quot; data can be modeled as having a continuous range of values that gets divided evenly into buckets, but sometimes people will do that division in such a way that the differences between pairs of adjacent buckets are equal and sometimes they will do it in such a way that the ratios are equal. The median is always meaningful, but making a meaningful choice among the average, geometric mean, or other similar alternatives depends on having an accurate psychological model for what the data means, which may depend on subtle issues in the procedure that we use when we gather the data.
+<br />
+
+<br />
+Further reading:
+<br />
+R. D. Luce, &quot;Dimensionally invariant numerical laws correspond to meaningful qualitative relations&quot;, <a href="http://philpapers.org/rec/LUCDIN"><i>Phil. Sci.</i> 1978</a>.
+<br />
+J.-Cl. Falmagne and L. Narens, &quot;Scales and meaningfulness of quantitative laws&quot;, <a href="http://www.jstor.org/stable/20115875"><i>Synthese</i> 1983</a>.
+<br />
+J.-Cl. Falmagne, &quot;Meaningfulness and order-invariance: two fundamental principles for scientific laws&quot;, <a href="http://dx.doi.org/10.1023/B:FOOP.0000044096.50863.8e"><i>Found. Phys.</i> 2004</a>.
+<br />
+F. S. Roberts, &quot;On Luce&#x27;s theory of meaningfulness&quot;, <a href="http://www.jstor.org/stable/186953"><i>Phil. Sci.</i> 1980</a>.
+<br />
+F. S. Roberts, &quot;Applications of the theory of meaningfulness to psychology&quot;, <a href="http://www.sciencedirect.com/science/article/pii/0022249685900112"><i>J. Math. Psych.</i> 1985</a>.
+<br />
+F. S. Roberts, &quot;Meaningfulness of conclusions from combinatorial optimization&quot;, <a href="http://www.sciencedirect.com/science/article/pii/0166218X90901464"><i>Discr. Appl. Math.</i> 1990</a>.
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>ext_132046</b>: <br />
+<b>2014-03-02T17:27:33Z</b><br />
+Of course, this road can also be traveled in the other direction - what transformation on the data should be made so that certain stuff we want to do on the data becomes meaningful. For example, FFT, generating functions, etc...
+
+In the good old days, one can give any real number as a score for a paper - that was very useful in that it was possible to encode a ranking of the papers assigned to you, together with some quality measure. Aggregating the score never made too much sense, but that is why the PC would discuss papers, etc... No?
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2014-03-02T18:01:51Z</b><br />
+There&#x27;s lots of research on how to aggregate combinatorial descriptions of orderings. Probably some of that would be applicable here and make more sense than averaging.
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>ext_2460544</b>: <br />
+<b>2014-03-02T19:43:46Z</b><br />
+See also: voting theory and the Borda count.
+I showed in &quot;Ensuring every candidate wins under positional voting&quot;, Social Choice and Welfare. Vol 33, pp 311–333. (2009), <a href="http://people.qc.cuny.edu/faculty/christopher.hanusa/research/Documents/papers/Borda.pdf">available here</a> that for almost any number of voters and almost any number <i>n</i> of candidates, the voters can vote in such a way that for different scoring rules, any of the <i>n</i> candidates can win.
+
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2014-03-03T05:22:21Z</b><br />
+It&#x27;s a good point — averaging scores and computing Borda counts are almost the same thing. But a preference ballot is made a little different than a scoring by the fact that you can have only one first choice etc., which may make a difference to what is meaningful for it.
+
+Incidentally the conference was run by Don Saari, who is quite outspoken as an advocate of the Borda count over other preference balloting methods.
+</div>
+

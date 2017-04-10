@@ -1,0 +1,54 @@
+---
+layout: post
+title:  'Colored squares'
+date:   2011-09-29 17:34:00
+tags:   [graph drawing, wikipedia, graph theory]
+---
+While working on a new Wikipedia entry for <a href="http://en.wikipedia.org/wiki/Angular_resolution_(graph_drawing)">angular resolution</a>, I ran across a curious connection between coloring, degeneracy, degree, and graph squaring.
+<br />
+
+<br />
+The square of a graph G is the graph on the same vertex set, with two vertices connected by an edge in the square whenever they have distance at most two in G. <a href="http://dx.doi.org/10.1137%2F0222063">The original paper on angular resolution by Formann et al</a> showed that the chromatic number of the square is closely related to the angular resolution: if the square can be colored with k colors, then place the vertices of G in a circular layout, with each vertex near the corner of a regular k-gon that corresponds to its color. The resulting layout will have angular resolution around pi/k, although it will likely be bad in other ways — for instance, pairs of edges that connect vertices of the same color will be drawn very close to each other. Square-coloring has also been used for <a href="http://dx.doi.org/10.1016/j.tcs.2005.03.013">frequency assignment in wireless networks</a>: one wants nodes two hops from each other to have different frequencies so that their common neighbor can hear both of them without interference.
+<br />
+
+<br />
+In an unpublished paper from 1977 by Wegner, cited in a more recent <a href="http://dx.doi.org/10.1016/j.disc.2006.11.059">survey by Kramer and Kramer</a>, he conjectures that the squares of planar graphs have chromatic number at most max(Δ+5, 3Δ/2+1) where Δ is the maximum degree of the graph. Formann et al rediscovered the problem independently and and showed that the chromatic number of the square is at most 13Δ/7+O(Δ<sup>2/3</sup>); a better bound of 5Δ/3+O(1) proven by Molloy and Salavatipour is mentioned by Kramer and Kramer. Because of these bounds, planar graphs may be drawn (nonplanarly) with angular resolution inversely proportional to Δ, whereas nonplanar graphs may need angular resolution closer to 1/Δ<sup>2</sup>.
+<br />
+
+<br />
+The argument of Formann et al uses careful analysis of the numbers of vertices of degrees near the maximum, based on the Euler characteristic of the graph. But if you just want a bound that&#x27;s linear in Δ, it can be done much more easily based on the <a href="http://en.wikipedia.org/wiki/Degeneracy_(graph_theory)">degeneracy</a> of the graph, a number d such that every subgraph has a vertex of degree at most d. Planar graphs have degeneracy at most five, and the chromatic number of any graph is at most one more than its degeneracy. It turns out that, for any graph G with degeneracy d and maximum degree Δ, the degeneracy of G<sup>2</sup> is at most 2dΔ. For, if the vertices of G are placed into a sequence so that each vertex has at most d later neighbors in the sequence (an equivalent definition of degeneracy) then each path of length at most two from a vertex v to a later vertex must have at least one forward-going edge. There are at most dΔ paths that start with a forward edge and at most Δd paths that end with a forward edge, and adding them together gives the bound on the number of later neighbors in G<sup>2</sup>.
+<br />
+
+<br />
+This bound shows only that the chromatic number of the square of a planar graph is at most 10Δ, very far from Wegner&#x27;s conjecture, but it generalizes to any family of graphs in which all subgraphs are sparse and shows that they all have drawings with angular resolution linear in their degree.
+<br />
+
+<br />
+Unrelatedly, I was inspired by the visit of Mike Goodrich&#x27;s academic sibling Marina Blanton (who is giving a colloquium here tomorrow on privacy-preserving computations for biometrics) to add another article on their common advisor, <a href="http://en.wikipedia.org/wiki/Mikhail_Atallah">Mike Atallah</a>. And while I&#x27;m at it, even more unrelatedly, an earlier algorithms researcher:  <a href="http://en.wikipedia.org/wiki/Selmer_M._Johnson">Selmer M. Johnson</a>.
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>ext_812567</b>: <br />
+<b>2011-09-30T14:44:23Z</b><br />
+Thanks for posting this proof... it is of a nice size to go with a morning coffee!
+
+PS: I couldn&#x27;t post a reply with openid (my preference), even though LJ could see what mine was; did you disable openid comments perchance?
+
+- daveagp
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2011-09-30T14:55:16Z</b><br />
+I didn&#x27;t disable it intentionally, and I thought I&#x27;d received openid comments within the last few days, but when I checked I realized they were actually from LJ users. Sometimes on other sites I&#x27;ve also had difficulty with using openid to comment. I don&#x27;t think it&#x27;s entirely reliable. Or perhaps LJ stopped allowing openid to count as registered users? I&#x27;ll try enabling anonymous comments again but the last time I did that I had to stop quickly because of the spam.
+</div>
+<div style="margin-left: 6em; padding-top: 1em;">
+<b>ext_73227</b>: <br />
+<b>2011-09-30T19:31:42Z</b><br />
+Who knows, perhaps I also should have tried a different browser and perhaps in French. Merci! 
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2011-10-03T05:31:46Z</b><br />
+I&#x27;m still getting too much spam (eight different posts were hit in the short time since I tried turning anonymous comments on) so I&#x27;m setting it back to registered users only. Sorry if that makes it difficult to comment.
+</div>
+

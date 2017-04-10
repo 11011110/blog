@@ -1,0 +1,81 @@
+---
+layout: post
+title:  'Egyptian fractions'
+date:   2005-08-23 13:10:00
+tags:   [egyptian fractions, number theory]
+---
+<p>Just spent some time cleaning up broken links on my page about <a href="http://www.ics.uci.edu/~eppstein/numth/egypt/">Egyptian Fractions</a> (that is, the problem of representing rational numbers as sums of distinct unit fractions).  Only had to resort to <a href="http://www.archive.org/">the Internet Archive</a> once, so not too bad compared to the Augaean task that is the Geometry Junkyard.  Added three new links:</p>
+
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Egyptian_fraction">Wikipedia: Egyptian fractions</a>.  It doesn&#x27;t have a lot of detail or outside references, but it&#x27;s a useful basic introduction to the problem.</li>
+
+<li><a href="http://www.maa.org/editorial/mathgames/mathgames_07_19_04.html">Math Games: Egyptian Fractions</a>.  Ed Pegg describes the Rhind Papyrus and the 4/n problem, including a pretty density plot of the number of terms required in the shortest egyptian fraction representation of rationals with small numerators and denominators.  I wish he&#x27;d add an RSS feed to this sequence of articles or his other <a href="http://mathpuzzle.com/">mathpuzzle.com</a> site, though, as I miss too many interesting updates due to checking back there too infrequently.</li>
+
+<li><a href="http://www.math.gatech.edu/~ecroot/papers.html">Ernie Croot&#x27;s papers</a>.  I&#x27;d already seen the one on binary Egyptian fractions, but there are several more there, including an interesting one showing that, <a href="http://www.math.gatech.edu/~ecroot/color.pdf">for any <i>r</i>-coloring of the unit fractions, some color class contains a representation of one with maximum denominator at most exponential in <i>r</i></a>.</li>
+</ul>
+
+
+To keep this entry from being content-free, here&#x27;s a curiosity involving the 4/n problem.  Suppose that, as the denominators of our fractions, we allow not just integers but Gaussian integers (with positive real part).  Then, e.g.
+<p align="center">
+1/(2+i) + 1/(2-i) = 4/5<br />
+1/(2+3i) + 1/(2-3i) = 4/13<br />
+1/(2+5i) + 1/(2-5i) = 4/29<br />
+1/(2+7i) + 1/(2-7i) = 4/53
+</p>
+etc.  So all of these fractions have two-term Gaussian Integer Egyptian Fraction representations, while with standard Egyptian Fractions they all require three terms.  More generally, consider any rational number 4/n.  If n is divisible by two, or has a factor equal to 3 mod 4, then <a href="http://www.ics.uci.edu/~eppstein/numth/egypt/smallnum.html">there is a two-term expansion in ordinary unit fractions</a>.  Otherwise, n has only factors congruent to 1 mod 4, and so is known to be expressible as a sum of squares, one of which must be even: n=(2a)<sup>2</sup>+b<sup>2</sup>.  Then 4/n = 1/a(2a+bi) + 1/a(2a-bi).  E.g.
+<p align="center">
+1801 = 24<sup>2</sup> + 35<sup>2</sup> = (2*12)<sup>2</sup> + 35<sup>2</sup>
+</p>
+<p align="center">
+4/1801 = 1/12(24+35i) + 1/12(24-35i)<br />
+            = 1/(288+420i) + 1/(288-420i)
+</p>
+That is, for every natural number n &gt; 1, the equation 4/n = 1/x + 1/y has a solution with x and y both positive Gaussian integers.
+
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>bilmiyorum</b>: <br />
+<b>2006-02-12T03:55:33Z</b><br />
+I&#x27;m a recent math graduate and just started teaching algebra at high school level. I&#x27;m working with one of my students (10th grade) on egyptian fractians and we&#x27;re trying to make a math project out of this for the regional science fair. Could you give me some tips on how to do this? I&#x27;m not much familiar with egyptian fractions, I just came across with those on the net and thought it&#x27;d be an intereting topic to work on. What do you think we should mainly focus on? and also whatever resources you can provide me will be highly appreciated. I&#x27;m already checking your website and getting some information on egyptian fractions. Looks like there&#x27;s enough information I&#x27;d need but still I&#x27;m hoping that you could give me some pointers with what direction to go and such. Thanks in advance!
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: Egyptian fractions with denominators in a.p.<br />
+<b>2005-09-15T20:24:49Z</b><br />
+I&#x27;m not a mathematician, but have been thinking recently about Egyptian fractions. I&#x27;ve found answers online or in books to most of my questions. I&#x27;m wondering if there is any interesting structure to the set 
+efap(a,b) = { q | q = 1/a + 1/(a+b) + 1/(a+2b) + ... + 1/(a+kb) }
+I don&#x27;t have any of the tools such as MATLAB or Mathematica, MS Excel is nice but not particularly helpful.
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b></b><br />
+
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: Re: Egyptian fractions with denominators in a.p.<br />
+<b>2005-09-19T00:47:04Z</b><br />
+Re tools, I use python these days, although it requires some programming expertise compared to the others you mention. The script I use to expand numbers into Egyptian fractions is at http://www.ics.uci.edu/~eppstein/numth/egypt/egypt.py.
+
+Re the arithmetic progressions, I think the partial sums of the harmonic series are messy enough that it won&#x27;t be possible to say much about this more general set.  I had some reply involving secondary series of continued fractions, which I deleted -- the secondary series is a sequence of fractions in which the numerators and denominators are in arithmetic progression, that starts at one term of the continued fraction expansion of a rational, and continues until it reaches the next term.  It&#x27;s related to Egyptian fractions in that the differences between successive terms are unit fractions, so it can be used to form Egyptian fraction representaions, but the Egyptian fractions derived from it have denominators that aren&#x27;t themselves in progression.
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: <br />
+<b></b><br />
+
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: <br />
+<b></b><br />
+
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: <br />
+<b></b><br />
+
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: <br />
+<b></b><br />
+
+</div>
+

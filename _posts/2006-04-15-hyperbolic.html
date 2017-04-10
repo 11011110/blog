@@ -1,0 +1,105 @@
+---
+layout: post
+title:  'Hyperbolic'
+date:   2006-04-15 12:16:00
+tags:   [bibliography, computational geometry, squarepants, talks, papers]
+---
+I added a category in my online pub list for <a href="http://www.ics.uci.edu/~eppstein/pubs/geom-hyperbolic.html">hyperbolic geometry</a>. Not a lot there yet: three research papers (including the new squarepants one), commentary on another paper, and a survey talk (with slides and streaming video). But it&#x27;s convenient to have it all in one place, and it&#x27;s an area I&#x27;d like to do more in — I don&#x27;t think it&#x27;s been very thoroughly explored by the computational geometry community.
+<br />
+
+<br />
+To keep this from being content-free, here&#x27;s a research problem I don&#x27;t know the answer to: does there exist a polynomial time (1+ε) approximation to the TSP for hyperbolic point sets, for any ε&gt;0? Or to other related approximation problems such as the minimum Steiner tree? An obvious approach would be to try something similar to the approximation for a different problem in my squarepants paper: group the points into bounded-diameter subsets, apply known quadtree-based approximation methods to each group, and connect the groups somehow. It&#x27;s the &quot;connect the groups somehow&quot; part that I don&#x27;t see how to do...
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>helger</b>: <br />
+<b>2006-04-15T20:37:19Z</b><br />
+Without knowing too much about this area: is it in principle possible that some (real) problems can be efficiently solved in the case of Euclidean geometry and cannot be efficiently solved in the case of hyperbolic geometry?
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2006-04-15T20:48:31Z</b><br />
+In principle, yes. I could imagine the existence of problems with efficient exact solutions, or approximation schemes, in the Euclidean case, but for which there&#x27;s some kind of hardness of approximation result in the hyperbolic case. I don&#x27;t know of any examples, though.
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>geomblog</b>: <br />
+<b>2006-04-15T23:07:07Z</b><br />
+The geometry of gaussians is a hyperbolic space. specifically, if you parametrize Gaussians by a correctly chosen function of mean and variance, you get a space whose curvature matches that of hyperbolic space. 
+
+another reason to study hyperbolic spaces !
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>geomblog</b>: <br />
+<b>2006-04-15T23:10:54Z</b><br />
+dang. i should have read your webpage first, specifically the JASA note, before pointing this out...
+</div>
+<div style="margin-left: 6em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2006-04-15T23:33:15Z</b><br />
+Yes, that&#x27;s what&#x27;s happening in that paper. I think more generally than Gaussians it makes a lot of sense to view a pair (Euclidean point, scale factor) as a point in a halfspace model of hyperbolic geometry. Then if one extends Euclidean similarities in the obvious way to the scale parameter, one gets hyperbolic isometries. In the case of Gaussians, the variance is the scale factor.
+
+Do you have in mind some other references on this or were you thinking of Mizera&#x27;s work when you posted it?
+</div>
+<div style="margin-left: 9em; padding-top: 1em;">
+<b>geomblog</b>: <br />
+<b>2006-04-16T01:52:29Z</b><br />
+i had some other references. I&#x27;ve been thinking about the geometry of distributions for a while now, and this came up in passing.
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: <br />
+<b>2006-04-16T12:20:26Z</b><br />
+For what it&#x27;s worth, a few other places where hyperbolic geometry and computation have been mentioned, though I understand them only dimly:
+
+<a href="http://www.math.uiuc.edu/~ghrist/talks/hyperbolicrobots.ppt">This talk</a> discusses cat(0) spaces arising in motion planning.  Here cat(0) seems to mean that when you look at a triangle abc in the cat(0) space, and a triangle ABC in Euclidean space with the same edge lengths, the distance between two edge midpoints in abc is less than the distance between endpoints in ABC (and similarly for other corresponding points on edges).  I think maybe the points on the edges of a simple polygon form a cat(0) space, under shortest path distance inside the polygon: triangles in that space are pseudo-triangles, as in &quot;pseudo-triangulations&quot;.
+
+The papers <a href="http://eudoxus.usc.edu/CHAOS/traffic.html">here</a> that refer to geometry, also talk a lot about hyperbolic, or nearly-hyperbolic, spaces that arise in networks.  There seems to be the claim that, in such spaces, there is a constant k such that, if all the k-hop subpaths of a path are shortest, then the whole path is shortest.
+
+Finally, as a novelty at least, I&#x27;ve shown that the distance measure inside a disk
+D&#x27;(x,y) := D(x,y)/[D(x,y) + min_{a in C} D(x,a)+D(y,a)] ,
+where D(x,y) is Euclidean distance, and C is the bounding circle, gives a metric space that &quot;looks&quot; hyperbolic, but is not the same as the Poincaire model.
+
+-Ken Clarkson
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>None</b>: <br />
+<b>2006-04-16T16:06:40Z</b><br />
+sorry,
+&quot;distance between two edge midpoints in abc is less than the distance between endpoints in ABC&quot;
+should be
+&quot;distance between two edge midpoints in abc is less than the distance between the corresponding midpoints in ABC&quot;
+
+-Ken
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2006-04-16T21:13:22Z</b><br />
+Interesting — thanks for the references.
+
+<i>D&#x27;(x,y) := D(x,y)/[D(x,y) + min_{a in C} D(x,a)+D(y,a)] ,
+where D(x,y) is Euclidean distance, and C is the bounding circle, gives a metric space that &quot;looks&quot; hyperbolic</i>
+
+It&#x27;s not Riemannian, is it? But it looks very closely related to the Riemannian metric in which &lt;.,.&gt;<sub>x</sub> = &lt;.,.&gt;/(min<sub>aεC</sub> 2D(x,a)). I&#x27;m not so familiar with the formula for hyperbolic distance as a Riemannian metric on the unit disk but if I&#x27;ve worked it through correctly it&#x27;s similar but with a lower-order correction term: &lt;.,.&gt;/(min<sub>aεC</sub> 2D(x,a)-D(x,a)<sup>2</sup>).
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>geomblog</b>: <br />
+<b>2006-06-28T18:51:41Z</b><br />
+did you see the FOCS paper list ? there&#x27;s a new paper by Krautgamer and Lee on algorithms for negatively curved space. Sounds very interesting. 
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>geomblog</b>: moreover<br />
+<b>2006-06-28T20:44:11Z</b><br />
+the paper I mentioned above answers your TSP question in the affirmative, using what sounds like a similar technique to what you outlined.
+</div>
+<div style="margin-left: 6em; padding-top: 1em;">
+<b>None</b>: Re: moreover<br />
+<b>2006-06-28T20:52:30Z</b><br />
+Actually, we only resort to &quot;quad-tree&quot; based techniques very locally, when the space gets flat enough that the quad-trees have bounded degree.  The more difficult part is for &quot;large&quot; distances, where the number of portals in a bounded-diameter decomposition grows exponentially (the number of eps*R-spaced portals on a diameter-R piece is ~ (1/eps)^R instead of (1/eps)^2 like in Euclidean space).  This makes dynamic programming too inefficient.  Instead, we use exponential divergence of geodesics in neg. curved spaces to prove a stronger structure theorem for the &quot;large-scale&quot; structure of near-optimal tours.
+
+--James
+</div>
+<div style="margin-left: 9em; padding-top: 1em;">
+<b>11011110</b>: Re: moreover<br />
+<b>2006-06-29T15:06:18Z</b><br />
+Which does in fact sound like &quot;a similar technique to what I outlined&quot;, in very broad outline. My hierarchical clustering paper similarly uses quadtree techniques very locally and resorts to something else for large distances.
+</div>
+

@@ -1,0 +1,38 @@
+---
+layout: post
+title:  'Finding peripheral cycles is hard'
+date:   2012-09-10 18:00:00
+---
+A <a href="http://en.wikipedia.org/wiki/Peripheral_cycle">peripheral cycle</a> in an undirected graph is an induced cycle the deletion of which does not separate the remaining graph. For instance, in the graph of a convex polyhedron, the peripheral cycles are exactly the faces of the graph. In any graph, it is possible to find a non-peripheral cycle in linear time, if one exists; see e.g. the <i>Graph Drawing</i> book by Di Battista, Eades, Tamassia, and Tollis, pp. 75–76. Every 3-connected graph has a peripheral cycle, and every 2-connected graph with minimum degree three has a peripheral cycle. So how hard is it to find a peripheral cycle, if one exists, in an arbitrary graph?
+<br />
+
+<br />
+The answer turns out to be that it&#x27;s NP-complete. The proof I found uses two reductions, one from graph three-coloring to a problem of finding cycles with forbidden pairs of vertices, and a second one from that to finding peripheral cycles.
+<br />
+
+<br />
+So first, suppose we have a graph X that we wish to 3-color. The existence of a 3-coloring in X turns out to be equivalent to the existence of a cycle that avoids all <i>forbidden pairs</i> of vertices in a graph G like the one below, where there is one K<sub>2,3</sub> subgraph (a triple of colored vertices between two white ones) for each vertex of X and the forbidden pairs consist of two colored vertices of different colors in the same K<sub>2,3</sub> subgraph, or two colored vertices of the same color in two different K<sub>2,3</sub> subgraphs that correspond to adjacent vertices in X.
+<br />
+
+<br />
+<div align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/Coloring-to-forbidden-pair-cycle.png" border="0" /></div>
+<br />
+
+<br />
+In the peripheral cycle problem, we can prevent forbidden pairs of vertices from both appearing in the same peripheral cycle by connecting them with the gadget below. (The vertices in the forbidden pair are the bigger ones.) If one of the paths within the gadget is used in a cycle, it creates two dangling edges, and if both vertices but neither path is used, then the two paths are separated from each other, neither of which is possible for a peripheral cycle. This gadget also has the effect of guaranteeing that, when neither vertex of the pair belongs to a given cycle, then the two vertices are connected to each other via paths that are disjoint from the cycle.
+<br />
+
+<br />
+<div align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/Peripheral-cycle-gadget.png" border="0" /></div>
+<br />
+
+<br />
+Finally, suppose that (G,F) are a graph and a set of forbidden pairs, and we wish to find a cycle in G that avoids every pair in F. We can reduce this to a peripheral cycle finding problem as follows: subdivide every edge of G, and connect all of the vertices of the subdivided graph to a single new vertex u by forbidden pair gadgets. Also, add to this graph a forbidden pair gadget for every pair in F. The only cycles in the resulting graph P that avoid the forbidden pair gadgets are the ones that come from cycles in G that avoid forbidden pairs. Because of the edge subdivision, each cycle in G becomes an induced cycle in P. Everything outside the cycle is connected to each other, via the gadgets connecting to u. Thus, the cycles in G that avoid forbidden pairs correspond one-for-one with the peripheral cycles in P.
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>ext_1395147</b>: <br />
+<b></b><br />
+
+</div>
+

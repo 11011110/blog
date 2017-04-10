@@ -1,0 +1,55 @@
+---
+layout: post
+title:  'Lines and joints in 3d'
+date:   2010-02-20 14:07:00
+tags:   [geometry, papers]
+---
+Why did it take reading the computational complexity theory column in SIGACT News to find out about this pretty proof in combinatorial Euclidean geometry? It was posted to the combinatorics section of arXiv a little over a year ago but I guess the abstruse title dissuaded me from looking in more depth when it came out; if I&#x27;d read the abstract I&#x27;m sure I would have remembered it.
+<br />
+
+<br />
+Theorem [Guth and Katz, <a href="http://arxiv.org/abs/0812.1043">arXiv:0812.1043</a>]: Any system of n lines in three dimensions has O(n<sup>3/2</sup>) joints, points where three or more non-coplanar lines meet.
+<br />
+
+<br />
+Proof sketch: without loss of generality each line has some constant times the average number of joints on it (otherwise, throw away the lines with too few joints). If there are m joints, then there exists a nonzero polynomial p of degree O(m<sup>1/3</sup>) that vanishes on all the joints, and if m is more than O(n<sup>3/2</sup>) then this degree would be smaller than the number of joints per remaining line, and the polynomial would vanish on all of the lines. But then one can use the fact that the lines span the space at each joint to show that a lower-degree nonzero polynomial, one of the terms of the gradient of p, also vanishes on the joints, contradicting the existence of a minimum degree for polynomials with this property. QED.
+<br />
+
+<br />
+O(n<sup>3/2</sup>) is tight, of course, since that&#x27;s the number of joints for the axis-parallel lines through a cube in an integer grid. The argument generalizes to show that n lines in d dimensions have O(n<sup>d/(d-1)</sup>) points of intersection such that the lines through these points span the whole space.
+<br />
+
+<br />
+I&#x27;m not sure what is known for weaker assumptions, e.g. how many points of triple intersection can there be in a system of lines where there is a constant bound on the number of mutually coplanar lines? Then the argument above doesn&#x27;t work because the lines at any particular triple intersection are allowed to be coplanar. There aren&#x27;t any interesting bounds if one substitutes &quot;double&quot; for &quot;triple&quot; since one can get quadratically many double intersections from lines on a hyperboloid with no three lines coplanar.
+<br />
+
+<br />
+See also: <a href="http://arxiv.org/abs/0905.1583">arXiv:0905.1583</a>, <a href="http://arxiv.org/abs/0906.0555">arXiv:0906.0555</a>, <a href="http://arxiv.org/abs/0906.0558">arXiv:0906.0558</a>.
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: <br />
+<b>2010-02-21T04:25:13Z</b><br />
+There is a simpler proof by now: http://arxiv.org/abs/0906.0558
+
+Its very nice. 
+
+--Sariel
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: <br />
+<b>2010-02-21T04:26:03Z</b><br />
+There is a simpler proof by now: http://arxiv.org/abs/0906.0558
+
+Its very nice. 
+
+Oh. You mention it in the bottom. silly me.
+
+--Sariel
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2010-02-21T05:08:55Z</b><br />
+I was a little sloppy in my attributions — the simpification of the proof was the one they ended up describing in the SIGACT News piece (and the one I briefly summarized here).
+</div>
+

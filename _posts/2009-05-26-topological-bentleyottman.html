@@ -1,0 +1,55 @@
+---
+layout: post
+title:  'Topological Bentley–Ottman?'
+date:   2009-05-26 21:08:00
+tags:   [unsolved, arrangements, wikipedia]
+---
+I just wrote a major expansion of the Wikipedia article on the <a href="http://en.wikipedia.org/wiki/Bentley%E2%80%93Ottmann_algorithm">Bentley–Ottmann algorithm</a>, the plane sweep algorithm for listing all crossings among a set of line segments. As usual, feedback would be very welcome; I already know that it could still use illustrations, and the article on the closely related Shamos–Hoey algorithm for detecting a single crossing is completely missing.
+<br />
+
+<br />
+One surprise for me as I was researching this: Chazelle and Edelsbrunner, in their 1992 JACM paper on deterministic O(<i>n</i> log <i>n</i> + <i>k</i>) algorithms for constructing arrangements of line segments, leave as an open problem whether it is possible to list all crossings deterministically in the same O(<i>n</i> log <i>n</i> + <i>k</i>) time bound as their algorithm but with the O(<i>n</i>) space bound of Bentley–Ottmann, rather than the larger O(<i>n</i> + <i>k</i>) required for storing the whole arrangement in memory. I had thought that this was one of the problems solved by topological sweeping, but if so I don&#x27;t know what the right reference is: the original Edelsbrunner–Guibas topological sweeping paper appears to be only for line arrangements, and the Asano–Guibas–Tokuyama SoCG &#x27;91 paper extends the topological sweeping method to the intersection of a line arrangement with a convex region of the plane, but not to arbitrary line segment arrangements. Can this really still be open?
+<br />
+
+<br />
+<b>ETA:</b> Seems not to be open; see comments.
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: <br />
+<b>2009-05-27T16:43:35Z</b><br />
+http://delivery.acm.org/10.1145/230000/220302/p211-balaban.pdf?key1=220302&amp;key2=0942443421&amp;coll=GUIDE&amp;dl=GUIDE&amp;CFID=37704524&amp;CFTOKEN=95518160
+
+@inproceedings{b-oafsi-95,
+  author       = &quot;Ivan J. Balaban&quot;,
+  title        = &quot;An Optimal Algorithm for Finding Segment
+                  Intersections&quot;,
+  booktitle    = SOCG_1995,
+  year         = 1995,
+  pages        = &quot;211--219&quot;,
+  keywords     = &quot;&quot;
+}
+
+Now, did I ever read this paper? I dont remember...
+
+--Sariel
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2009-05-27T16:55:57Z</b><br />
+Thanks, that does at least claim to solve the problem. It looks like it will take some time and effort to understand it, though.
+</div>
+<div style="margin-left: 6em; padding-top: 1em;">
+<b>None</b>: <br />
+<b>2009-05-27T16:59:19Z</b><br />
+Man, you had 14 years to understand it! How much more time do you want? ;)
+--S
+</div>
+<div style="margin-left: 6em; padding-top: 1em;">
+<b>None</b>: <br />
+<b>2009-05-30T12:49:16Z</b><br />
+Actually, I remember seen balaban as a method in LEDA sometime around 1998 or so.  I was surprised that I&#x27;d never heard about the algorithm before.
+
+Pat Morin
+</div>
+

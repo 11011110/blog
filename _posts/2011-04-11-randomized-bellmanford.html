@@ -1,0 +1,27 @@
+---
+layout: post
+title:  'Randomized Bellman–Ford'
+date:   2011-04-11 16:32:00
+tags:   [graph algorithms]
+---
+Both the Wikipedia article on the <a href="http://en.wikipedia.org/wiki/Bellman%E2%80%93Ford_algorithm">Bellman–Ford algorithm</a> for shortest paths (in graphs that might have negative weight edges but no negative cycles) and the CLRS coverage of the algorithm mention an improvement by Yen (1970) that cuts the number of iterations by a factor of two. But neither of them mentions that, instead, a factor of three is possible by means of randomization.
+<br />
+
+<br />
+Recall that the Bellman–Ford algorithm can be described as &quot;relaxing&quot; tentative distance values for each vertex. If a vertex u already has the correct distance from the source, and edge uv belongs to the shortest path from the source to v, then relaxing the edge uv will give v the correct distance as well. So the idea of the algorithm is just to repeatedly loop through all the edges in the graph. Each iteration takes O(m) time to relax the m edges, and each iteration causes the number of correctly labeled vertices to increase, so there are at most n iterations. Thus, the total time is O(nm).
+<br />
+
+<br />
+Yen&#x27;s improvement involves choosing the order of the edges within each iteration more carefully. Specifically, Yen chooses arbitrarily an ordering of the vertices, and uses it to partition the edges into two DAGs A and B: A consists of the edges that go from a lower numbered vertex to a higher numbered vertex, and B consists of the edges that go from a higher numbered vertex to a lower numbered one. When looping through all the edges in the graph, he first loops through the edges in A, in ascending order by vertex number (a topological ordering of A). Then, he loops through the edges in B in descending order by vertex number (again, a topological ordering). In the first part of an iteration, any path in the shortest path tree that starts at a correctly labeled vertex and goes only through edges of A becomes correctly labeled, and in the second part any path that starts at a correctly labeled vertex and goes only through edges of B becomes correctly labeled. So the number of iterations needed is the maximum number of A-B alternations on any path, at most (n+1)/2.
+<br />
+
+<br />
+But now suppose that, instead of choosing the vertex order arbitrarily, we choose it randomly. The tree whose expected number of A-B alternations is largest is a path, for in a tree in which two vertices x and y have the same parent, relinking the tree so that x becomes a child of y can only increase the number of alternations. And in a path, there is always one iteration for the source vertex, and any intermediate vertex in the path has probability 1/3 of being the starting vertex of an A-B sequence (it happens exactly when it is the first in the permutation among it and its two neighbors) so the expected number of iterations is (n+1)/3.
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>memicrab</b>: <br />
+<b></b><br />
+
+</div>
+

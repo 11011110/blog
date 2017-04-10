@@ -1,0 +1,459 @@
+---
+layout: post
+title:  'Faster ladders in Life without Death'
+date:   2009-06-07 12:28:00
+tags:   [cellular automata]
+---
+<a href="http://en.wikipedia.org/wiki/Life_without_Death">Life without Death</a> is a cellular automaton with the same rule for creating new live cells as Conway&#x27;s Game of Life, but in which no live cell ever dies. Despite the inability to create oscillators or spaceships (both of which require some cells to die sometimes) it has interesting dynamics due to the existence of ladders, patterns that grow at speed c/3 (that is, one unit of growth for every three time steps of the cellular automaton).  Typical random seeds end up with from one to four chaotic regions spreading diagonally from the starting region, spewing ladders on both sides of them so that one ends up with a pattern in which the four quarters of the pattern (as split on roughly diagonal lines) are striped by axis-parallel ladders, separated by the chaotic regions. The chaotic regions separating the striped quarters tend to grow wider, but slowly as the pattern grows, and the boundary of the chaotic regions keeps pace with the ladders (probably in a self-limiting way: there is a pattern that grows at speed 2c/3 along the side of a ladder and then erupts in chaos at the tip, so if the chaotic growth regions ever fell too far behind they would catch up using this mechanism).
+<br />
+
+<br />
+Patterns of this type can be simulated to hundreds of thousands of time steps using the <a href="http://en.wikipedia.org/wiki/Hashlife">Hashlife</a> algorithm embedded into <a href="http://golly.sourceforge.net/">Golly</a>.
+<br />
+
+<br />
+But as it turns out there is another ladder, one that can grow more quickly (the text below is a pattern format that can be copied and pasted into Golly):<pre>x = 26, y = 15, rule = B3/S012345678
+<br />
+obobobobobobobobobobo$23o$3ob3ob3ob3ob3ob3o$26o$26o$ob3ob3ob3ob3ob3ob
+<br />
+3o$3ob3ob3ob3ob3ob3obo$25o$3ob3ob3ob3ob3ob3obo$ob3ob3ob3ob3ob3ob3o$26o
+<br />
+$26o$3ob3ob3ob3ob3ob3o$23o$obobobobobobobobobobo!</pre>Rather than growing at speed c/3, it grows at speed 4c/9. I&#x27;ve only seen this once out of many chaotic starting seeds, but if it happens once it should happen more than once. My suspicion is that most chaotic patterns should have a shape that eventually comes to be dominated by these faster ladders, but that even hundreds of thousands of steps isn&#x27;t enough to see this domination.
+<br />
+
+<br />
+<b>ETA:</b> <a href="http://commons.wikimedia.org/wiki/File:LWD_animate.gif">animated gif</a> by <a href="http://en.wikipedia.org/wiki/User:Simpsons_contributor">Simpsons contributor</a>, who set this all off by starting a Wikipedia article on LwoD.
+<br />
+
+<br />
+<b>ETA2, 6/13:</b> Already discovered in October 2000 by Dean Hickerson, who also found ladders of speeds 4c/10 and 4c/13. Dean&#x27;s patterns: <pre>#C 4c/9
+<br />
+x = 258, y = 20, rule = B3/S012345678
+<br />
+246bo6bo$245b4o2b4o$245b3ob2ob3o$230bo2b3o7b14o$228b4ob3o7b4ob4ob4o$
+<br />
+221b2ob14o4b16o$220b7ob5ob4o2b2obob3ob2ob3obo$207b2ob2o9b3ob4ob10ob17o
+<br />
+$60bo145b6o7b8ob4ob3obob3ob4ob4ob4o$59b3ob3o90b3o3b3o32bo2b3ob4ob3o7b
+<br />
+4ob16ob17o$4bo5bo10bo6bo28b10o2b2ob2o82b3obob3o31b3ob15o2b10ob5ob4ob3o
+<br />
+bob3ob2ob3obo$3b3obob3o8b3ob2ob3o9bo9bo7b4ob5ob6o8b2ob2o16b2ob2o16b2ob
+<br />
+2o16b2ob2o4b13o16bo11b8ob5ob4ob3obob3ob4ob10ob17o$b13o4b14o6b3ob3o2b4o
+<br />
+5b9ob4ob3o8b6o15b6o15b6o15b6o3b4ob3ob4o15b3ob3o6bob3ob4ob10ob10ob4ob3o
+<br />
+bob3ob4ob4ob4o$b4ob3ob4o4b4ob4ob4o4b8ob2ob3o6bob3ob4ob8o6b3ob4ob3o2bo
+<br />
+6b3ob4ob3o2bo6b3ob4ob3o2bo6b3ob4ob14o5b3ob2o3b7o5b9ob4ob3obob3ob4ob16o
+<br />
+b17o$15o2b16o3b4ob3ob8o3b15ob4o4b14ob3o3b14ob3o3b14ob3o3b10obob3obob3o
+<br />
+bo4b8ob4ob3obo5b4ob16ob10ob5ob4ob3obob3ob2ob3obo$bob3obob3obo4bob3ob2o
+<br />
+b3obo3b9ob3ob4o4b4ob5ob9o3b4ob5ob8o2b4ob5ob8o2b4ob5ob8o2b4ob4ob15o3b4o
+<br />
+b16ob10ob5ob4ob3obob3ob4ob10ob17o$15o2b16o3bob3ob12o2b9ob4ob3obo3b9ob
+<br />
+4ob3ob11ob4ob3ob11ob4ob3ob11obob4ob3ob4o3b9ob5ob4ob3obob3ob4ob10ob10ob
+<br />
+4ob3obob3ob4ob4ob4o$b4ob3ob4o4b4ob4ob4o3b9ob2ob3obo4bob3ob4ob9o3bob3ob
+<br />
+4ob8o2bob3ob4ob8o2bob3ob4ob8o2bob3ob4ob14o3bob3ob4ob10ob10ob4ob3obob3o
+<br />
+b4ob16ob17o$b13o4b14o3b18o3b21o3b87o4b85o$3bo2bobo2bo8bo2bo2bo2bo7bo2b
+<br />
+o2bo2bo2b2o5bo2bo2bo2bo2bobo2b2o7bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2b
+<br />
+o2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo6bo2bo2bo2bo2bo2bo2bo
+<br />
+2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bobo!
+<br />
+
+<br />
+#C 4c/10
+<br />
+x = 274, y = 13, rule = B3/S012345678
+<br />
+224bo11b2o8bob3o4bo4b3ob3o$140bo3bo11b2o42bo10b3o8b4o7b6o5b6ob2ob3obob
+<br />
+3ob3o$129bo3bo5b3ob3obob3ob2ob5o26b3o9b3o8b4o7b6o2bo2b8ob9ob15obob3o$
+<br />
+128b3ob4o2bob15ob4ob2o24b3o4bo3b4o3b2o2b5o2b3ob6ob4ob6ob4ob6ob3obob3ob
+<br />
+2ob8o$9bo11bo3bo19bo39bo33bob3o3b4ob3ob6ob2ob3obob3ob9o17b3obob4ob4obo
+<br />
+b4ob4obob4ob4obob4ob4obob4ob4obob15ob4ob2obo$6bob4o2b3o2b4ob3o15bob4o
+<br />
+2b3o4b4o4b4o3b3o3b3o2b4obo24bo3b6ob2obob8ob4ob15obob4o11bo5b13ob11ob
+<br />
+11ob11ob11ob6ob2ob3obob3ob9o$3b7ob2ob3obob3ob4o2bo8b7ob2ob3ob2ob4ob2ob
+<br />
+4obob3obob3ob2ob7o13bo6b3ob7ob7ob2ob7ob3obob3ob2ob10o8b4o3bob2ob6ob11o
+<br />
+b11ob11ob11ob9ob15obob4o$3b2ob4ob15obob3o7b2ob4ob37ob4ob2o11b4ob2obob
+<br />
+4ob5ob7ob5obob15ob4ob2obo6b2ob5o2b9ob4ob6ob4ob6ob4ob6ob4ob6ob4ob6ob3ob
+<br />
+ob3ob2ob10o$b9ob3obob3ob2ob9o4b9ob3obob4ob2ob4ob2ob3obob3obob3ob9o6b2o
+<br />
+b4ob7ob2obob4ob5ob3ob6ob2ob3obob3ob10o3b9o3b4obob4ob4obob4ob4obob4ob4o
+<br />
+bob4ob4obob4ob4obob15ob4ob2obo$b4obob15ob4ob2obo4b4obob43obob4o4b9ob7o
+<br />
+b7ob2obob8ob4ob15obob4o4b4obob4ob14ob11ob11ob11ob11ob6ob2ob3obob3ob10o
+<br />
+$10ob2ob3obob3ob10o2b10ob2ob3ob2ob4ob2ob4obob3obob3ob2ob10o3b4obob4ob
+<br />
+5ob7ob7ob2ob7ob3obob3ob2ob10o2b12obob2ob6ob11ob11ob11ob11ob9ob15obob4o
+<br />
+$2b30o6b55o4b67o6b103o$4bo2bo2bo2bo2bo2bo2bo2bo2b2o10bo2bo2bo2bo2bo2bo
+<br />
+2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bobo8bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2b
+<br />
+o2bo2bo2bo2bo2bo2bo2bo2bo2bobo10bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo
+<br />
+2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bobo!
+<br />
+
+<br />
+#C 4c/12
+<br />
+x = 213, y = 14, rule = B3/S012345678
+<br />
+163bo$162b4o9b3o$162b6o5bob3o11b2o$160b5ob4ob4ob5o6b4ob2o$22bo56bo25bo
+<br />
+54b4ob4obob3ob4ob2o4b4ob4o$3b2o16b3o54b3o23b4o51b7ob17o2b5ob4o$b5o5b3o
+<br />
+6b6o50b6o20bob3obo5bo45bob6ob3obob3obob5obob9o$b4o6b4o5bob4o3b2ob2ob2o
+<br />
+4b2ob2ob2o4b2ob2ob2o4b2ob2ob2o3b4obo7bo10b6ob10o2b3o37b6ob9ob6obob6ob
+<br />
+2obob2o8b3o$7o2b6o4b9ob8ob2ob8ob2ob8ob2ob8ob9o4b4o7b3ob4ob3obob3obob3o
+<br />
+bob3obo5bo15b2o7b4ob4obob3ob4ob5ob4ob6obo7b5o$bob4o2b4obo5b4obob4ob2ob
+<br />
+8ob2ob8ob2ob8ob2ob4obob4o5b4o6b35ob5o3bo8b5o4b7ob17ob6ob4ob5ob4ob4o$
+<br />
+16o3b9ob8ob2ob8ob2ob8ob2ob8ob9o3b7o3b5obob3obob3obob3obob3obob3obob3ob
+<br />
+ob3obob2o3b4o5bob6ob3obob3obob5obob11ob4ob7o$b4obobo2b4o5bob4ob4ob2ob
+<br />
+8ob2ob8ob2ob8ob2ob4ob4obo5bob4o2b2obob6ob41ob7o3b16ob6obob6ob2obob6ob
+<br />
+6obo$b14o5b62o5b67o5b53o$3bo2bo2bo2bo9bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo
+<br />
+2bo2bo2bo2bo2bo2bo2bo2bo2bo9bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo
+<br />
+2bo2bo2bo2bo2bo2bo2bobo9bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2b
+<br />
+o2bo!
+<br />
+
+<br />
+#C 4c/13
+<br />
+x = 507, y = 52, rule = B3/S012345678
+<br />
+39bo$37b4o$36b2ob4o117b2o$34b4ob4o115b4ob2o$34b4ob6o113b4ob4o$33b8obob
+<br />
+2o111b5ob4o$34bob2ob6obo109bobob8o$33b5ob4ob5o105bob6ob2obo$34b4ob8ob
+<br />
+3o101b5ob4ob5o$33b8obob7o99b3ob8ob4o$34bob2ob6obob4o98b7obob8o$33b5ob
+<br />
+4ob5obob2o95b4obob6ob2obo$34b4ob8ob5obo95bob5ob4ob5o$33b8obob7ob5o91b
+<br />
+5ob8ob4o$34bob2ob6obob7ob3o86b4ob7obob8o$33b5ob4ob5obob7o84b2ob7obob6o
+<br />
+b2obo$34b4ob8ob5obob4o82b7obob5ob4ob5o$33b8obob7ob5obobo81b3obob5ob8ob
+<br />
+4o$34bob2ob6obob7ob5obo79bob5ob7obob8o$33b5ob4ob5obob7ob5o75b5ob7obob
+<br />
+6ob2obo$34b4ob8ob5obob7ob3o71b3ob7obob5ob4ob5o$33b8obob7ob5obob7o69bob
+<br />
+7obob5ob8ob4o$34bob2ob6obob7ob5obob4o67b6obob5ob7obob8o$33b5ob4ob5obob
+<br />
+7ob5obo67b3obob5ob7obob6ob2obo$34b4ob8ob5obob7ob5o65bob5ob7obob5ob4ob
+<br />
+5o$33b8obob7ob5obob7ob4o60b5ob7obob5ob8ob4o$34bob2ob6obob7ob5obob7ob2o
+<br />
+56b3ob7obob5ob7obob8o12b3o$33b5ob4ob5obob7ob5obob7o55b7obob5ob7obob6ob
+<br />
+2obo12b4o5bo$34b4ob8ob5obob7ob5obob3o52b6obob5ob7obob5ob4ob5o11b6ob5o$
+<br />
+33b8obob7ob5obob7ob5obo52b2obob5ob7obob5ob8ob4o12bob3obob3obob3obo$34b
+<br />
+ob2ob6obob7ob5obob7ob5o49bob5ob7obob5ob7obob8o10b5ob16o2b3o$33b5ob4ob
+<br />
+5obob7ob5obob7ob3o45b5ob7obob5ob7obob6ob2obo12b4ob3obob3obob3obob3obo
+<br />
+5bo$34b4ob8ob5obob7ob5obob7obo41b3ob7obob5ob7obob5ob4ob5o10b37o3bo$33b
+<br />
+8obob7ob5obob7ob5obob6o40b7obob5ob7obob5ob8ob4o12bob3obob3obob3obob3ob
+<br />
+ob3obob3obob3obo5bo$34bob2ob6obob7ob5obob7ob5obob3o37b5obob5ob7obob5ob
+<br />
+7obob8o10b5ob40ob5o$33b5ob4ob5obob7ob5obob7ob5obo36b2obob5ob7obob5ob7o
+<br />
+bob6ob2obo12b4ob3obob3obob3obob3obob3obob3obob3obob3obob3obo$34b4ob8ob
+<br />
+5obob7ob5obob7ob5o33bob5ob7obob5ob7obob5ob4ob5o10b61o2b3o$33b8obob7ob
+<br />
+5obob7ob5obob7ob3o29b5ob7obob5ob7obob5ob8ob4o12bob3obob3obob3obob3obob
+<br />
+3obob3obob3obob3obob3obob3obob3obo5bo92b2o$34bob2ob6obob7ob5obob7ob5ob
+<br />
+ob7o27b3ob7obob5ob7obob5ob7obob8o10b5ob70o3bo83b5o$33b5ob4ob5obob7ob5o
+<br />
+bob7ob5obob6o24b7obob5ob7obob5ob7obob6ob2obo12b4ob3obob3obob3obob3obob
+<br />
+3obob3obob3obob3obob3obob3obob3obob3obob3obo5bo74b2ob4o13b3o2b3o3b2o
+<br />
+105bo3bo$34b4ob8ob5obob7ob5obob7ob5obob2o23b4obob5ob7obob5ob7obob5ob4o
+<br />
+b5o10b85ob5o39b2ob3o25b4ob4o11b4ob2ob4ob4ob3o2b2o3bo90b3ob3o$6bo26b8ob
+<br />
+ob7ob5obob7ob5obob7ob5obo20b2obob5ob7obob5ob7obob5ob8ob4o12bob3obob3ob
+<br />
+ob3obob3obob3obob3obob3obob3obob3obob3obob3obob3obob3obob3obob3obob3ob
+<br />
+o30b4ob4o24b4ob7o8b4ob5ob4ob4ob4ob4o3b2o4bo78b7obo13b2ob2o$4b4o26bob2o
+<br />
+b6obob7ob5obob7ob5obob7ob5o17bob5ob7obob5ob7obob5ob7obob8o10b5ob94o2b
+<br />
+3o23b4ob4o12b3ob3o4b8obob2o7b5ob2ob4ob4ob4ob4ob4ob4ob4ob2o3bo69bob2ob
+<br />
+6o9bob6o$3b2ob4o13b2o8b5ob4ob5obob7ob5obob7ob5obob7ob3o13b5ob7obob5ob
+<br />
+7obob5ob7obob6ob2obo12b4ob3obob3obob3obob3obob3obob3obob3obob3obob3obo
+<br />
+b3obob3obob3obob3obob3obob3obob3obob3obo5bo14b8obo12b3ob4o4bob2ob6obo
+<br />
+4b2obob8ob4ob4ob4ob4ob4ob4ob4ob4o2b3o4bo47b3obo5b5ob4ob3o5b6ob2o$b4ob
+<br />
+4o11b4ob2o6b4ob8ob5obob7ob5obob7ob5obob7o11b3ob7obob5ob7obob5ob7obob5o
+<br />
+b4ob5o10b115o3bo9bob2ob6o9bob7o3b5ob4ob5obob6ob2ob4ob4ob4ob4ob4ob4ob4o
+<br />
+b4ob4ob4ob4ob3o2b2o35b4ob4o4b4ob8o3b3ob4ob4o$b4ob6o9b4ob4o3b8obob7ob5o
+<br />
+bob7ob5obob7ob5obob5o9b7obob5ob7obob5ob7obob5ob8ob4o12bob3obob3obob3ob
+<br />
+ob3obob3obob3obob3obob3obob3obob3obob3obob3obob3obob3obob3obob3obob3ob
+<br />
+ob3obob3obob3obo4b6ob4ob4o2bob6ob2obo4b4ob8ob5ob4ob5ob4ob4ob4ob4ob4ob
+<br />
+4ob4ob4ob4ob4ob4ob4o2b3o3b2o25b4ob3obob9obob5ob8ob4o$8obob2o7b5ob4o4bo
+<br />
+b2ob6obob7ob5obob7ob5obob7ob5obob2o7b4obob5ob7obob5ob7obob5ob7obob8o
+<br />
+10b5ob121ob4ob8ob5ob4ob5o2b8obob5ob8ob2ob4ob4ob4ob4ob4ob4ob4ob4ob4ob4o
+<br />
+b4ob4ob4ob4ob4ob3o2b2o3bo10b13obob2ob6obob5obob8o$bob2ob6obo5bobob8o2b
+<br />
+5ob4ob5obob7ob5obob7ob5obob7ob5obo5bobob5ob7obob5ob7obob5ob7obob6ob2ob
+<br />
+o12b4ob3obob3obob3obob3obob3obob3obob3obob3obob3obob3obob3obob3obob3ob
+<br />
+ob3obob3obob3obob3obob3obob3obob3obob9obob5ob8ob4o4bob2ob6obob5obob8ob
+<br />
+4ob4ob4ob4ob4ob4ob4ob4ob4ob4ob4ob4ob4ob4ob4ob4ob4o3b2o2b2obob3obob2ob
+<br />
+6ob4ob5obob6ob2obo$5ob4ob5obob6ob2obo4b4ob8ob5obob7ob5obob7ob5obob7ob
+<br />
+5obob5ob7obob5ob7obob5ob7obob5ob4ob5o10b127obob2ob6obob5obob8o2b5ob4ob
+<br />
+5obob6ob2ob4ob4ob4ob4ob4ob4ob4ob4ob4ob4ob4ob4ob4ob4ob4ob4ob4ob4ob4ob6o
+<br />
+b7ob4ob8ob5ob4ob5o$b4ob8ob5ob4ob5o3b7obob7ob5obob7ob5obob7ob5obob7ob5o
+<br />
+b7obob5ob7obob5ob7obob5ob8ob4o12bob3obob3obob3obob3obob3obob3obob3obob
+<br />
+3obob3obob3obob3obob3obob3obob3obob3obob3obob3obob3obob3obob3obob2ob6o
+<br />
+b4ob5obob6ob2obo4b4ob8ob5ob4ob5ob4ob4ob4ob4ob4ob4ob4ob4ob4ob4ob4ob4ob
+<br />
+4ob4ob4ob4ob4ob4ob3ob4ob3obob9obob5ob8ob4o$b28o7b131o12b156o4b167o$3bo
+<br />
+2bo2bo2bo2bo2bo2bo2bobo11bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo
+<br />
+2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo
+<br />
+2bo2bo2bo2bo2bo16b2o2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2b
+<br />
+o2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo
+<br />
+2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo8bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo
+<br />
+2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo
+<br />
+2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo!</pre>Dean also discovered some slow parasitic vines:<pre>#C 4c/13 parasite
+<br />
+x = 57, y = 35, rule = B3/S012345678
+<br />
+3bo3bo$2b3ob3o$b7obo$bob2ob6o$5ob4ob3o$b4ob8o$8obob4o$bob2ob6obob2o$5o
+<br />
+b4ob5obo$b4ob8ob5o$8obob7ob3o$bob2ob6obob7o$5ob4ob5obob4o$b4ob8ob5obob
+<br />
+o$8obob7ob5obo$bob2ob6obob7ob5o$5ob4ob5obob7ob3o$b4ob8ob5obob7o$8obob
+<br />
+7ob5obob4o$bob2ob6obob7ob5obo$5ob4ob5obob7ob5o$b4ob8ob5obob7ob4o$8obob
+<br />
+7ob5obob7ob2o15b2o$bob2ob6obob7ob5obob7o13b5o$5ob4ob5obob7ob5obob3o14b
+<br />
+4o$b4ob8ob5obob7ob5obo12b7o$8obob7ob5obob7ob5o10b4obo$bob2ob6obob7ob5o
+<br />
+bob7ob3o7b8o$5ob4ob5obob7ob5obob7obo6bob4o$b4ob8ob5obob7ob5obob6o4b8o$
+<br />
+8obob7ob5obob7ob5obob3o4b4obo$bob2ob6obob7ob5obob7ob5obob10o$b4ob4ob5o
+<br />
+bob7ob5obob7ob6obob4o$3b53o$5bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo
+<br />
+2bo2bo2bo!
+<br />
+
+<br />
+#C 4c/11 parasite
+<br />
+x = 323, y = 44, rule = B3/S012345678
+<br />
+315bo$310b11o$309b4ob3ob4o$309b13o$309bob3obob3obo$308b15o$309b4ob3ob
+<br />
+4o$308b15o$309bob3obob3obo$297b2o9b15o$296b5o6bob4ob3ob4o$283bo13b4o6b
+<br />
+16o$282b3o10b7o3b3obob3obob3obo$116bo152bo11b6o8b4obob21o$111b11o145b
+<br />
+4o10bob4obo4b10obob2ob4ob3ob4o$110b4ob3ob4o144b4obo7b10ob3obob4ob4ob
+<br />
+16o$110b13o132b3o8b9o6b4obob16ob3obob3obob3obo$110bob3obob3obo130b5o9b
+<br />
+ob4ob3o2b10obob2ob4obob21o$109b15o117b3o9b4obo7b10ob3obob4ob4ob10obob
+<br />
+2ob4ob3ob4o$110b4ob3ob4o118b4o7b9obob2ob4obob16ob3obob4ob4ob16o$109b
+<br />
+15o103b2o10b6o6bobob4ob4ob10obob2ob4obob16ob3obob3obob3obo$110bob3obob
+<br />
+3obo104b4o8b4obo5b12ob3obob4ob4ob10obob2ob4obob21o$98b2o9b15o103b4o6b
+<br />
+10obob2ob4obob16ob3obob4ob4ob10obob2ob4ob3ob4o$97b5o6bob4ob3ob4o89b3o
+<br />
+10b7o3b3obob4ob4ob10obob2ob4obob16ob3obob4ob4ob16o$85b2o9bob4o6b16o88b
+<br />
+5o8b4obobo2b13ob3obob4ob4ob10obob2ob4obob16ob3obob3obob3obo$84b5o5b9o
+<br />
+3b3obob3obob3obo75b3o10bob4o6b10obob2ob4obob16ob3obob4ob4ob10obob2ob4o
+<br />
+bob21o$21bo50b2o9bob4o3b3ob4obob21o73b4o10b9ob3obob4ob4ob10obob2ob4obo
+<br />
+b16ob3obob4ob4ob10obob2ob4ob3ob4o$16b11o44b5o5b10ob12obob2ob4ob3ob4o
+<br />
+62b2o10b7o7b4obob16ob3obob4ob4ob10obob2ob4obob16ob3obob4ob4ob16o$15b4o
+<br />
+b3ob4o31b2o9bob4o3b3ob4obob5obob4ob4ob16o59b5o9bob4ob2o3b10obob2ob4obo
+<br />
+b16ob3obob4ob4ob10obob2ob4obob16ob3obob3obob3obo$15b13o30b5o5b10ob12ob
+<br />
+ob11ob3obob3obob3obo49bo10b4obo7b10ob3obob4ob4ob10obob2ob4obob16ob3obo
+<br />
+b4ob4ob10obob2ob4obob21o$15bob3obob3obo18b2o9bob4o3b3ob4obob5obob4ob5o
+<br />
+b4obob21o47b3o8b9o4bob4obob16ob3obob4ob4ob10obob2ob4obob16ob3obob4ob4o
+<br />
+b10obob2ob4ob3ob4o$14b15o16b5o5b10ob12obob10ob12obob2ob4ob3ob4o35bo10b
+<br />
+6o8bob4ob4ob10obob2ob4obob16ob3obob4ob4ob10obob2ob4obob16ob3obob4ob4ob
+<br />
+16o$15b4ob3ob4o16bob4o3b3ob4obob5obob4ob5ob4obob5obob4ob4ob16o33b4o8b
+<br />
+4obo6b11ob3obob4ob4ob10obob2ob4obob16ob3obob4ob4ob10obob2ob4obob16ob3o
+<br />
+bob3obob3obo$3b2o9b15o13b10ob12obob10ob12obob11ob3obob3obob3obo34b4o7b
+<br />
+9obob2ob4obob16ob3obob4ob4ob10obob2ob4obob16ob3obob4ob4ob10obob2ob4obo
+<br />
+b21o$2b5o6bobob3obob3obo5b3o4b3ob4obob5obob4ob5ob4obob5obob4ob5ob4obob
+<br />
+21o19b2o10b7o4b2obob4ob4ob10obob2ob4obob16ob3obob4ob4ob10obob2ob4obob
+<br />
+16ob3obob4ob4ob10obob2ob4ob3ob4o$3b4o6b16o3b4o3b13obob10ob12obob10ob
+<br />
+12obob2ob4ob3ob4o19b5o8b4obo4b13ob3obob4ob4ob10obob2ob4obob16ob3obob4o
+<br />
+b4ob10obob2ob4obob16ob3obob4ob4ob16o$b7o3b3ob4ob3ob4o4b11obob4ob5ob4ob
+<br />
+ob5obob4ob5ob4obob5obob4ob4ob16o5bo13b4o6b10obob2ob4obob16ob3obob4ob4o
+<br />
+b10obob2ob4obob16ob3obob4ob4ob10obob2ob4obob16ob3obob3obob3obo$b4obob
+<br />
+21o3bob3obobob10ob12obob10ob12obob11ob3obob3obob3obo5b3o10b7o3b3obob4o
+<br />
+b4ob10obob2ob4obob16ob3obob4ob4ob10obob2ob4obob16ob3obob4ob4ob10obob2o
+<br />
+b4obob21o$9obob2obob3obob3obo3b12ob4obob5obob4ob5ob4obob5obob4ob5ob4ob
+<br />
+ob21o3b6o8b4obob16ob3obob4ob4ob10obob2ob4obob16ob3obob4ob4ob10obob2ob
+<br />
+4obob16ob3obob4ob4ob10obob2ob4ob3ob4o$bob4ob4ob16o3b4obob13obob10ob12o
+<br />
+bob10ob12obob2ob4ob3ob4o4bob4obo4b10obob2ob4obob16ob3obob4ob4ob10obob
+<br />
+2ob4obob16ob3obob4ob4ob10obob2ob4obob16ob3obob4ob4ob16o$10ob3ob4ob3ob
+<br />
+4o3b12obob4ob5ob4obob5obob4ob5ob4obob5obob4ob4ob16o2b10ob3obob4ob4ob
+<br />
+10obob2ob4obob16ob3obob4ob4ob10obob2ob4obob16ob3obob4ob4ob10obob2ob4ob
+<br />
+ob16ob3obob3obob3obo$b4obob20o4bob3obobob10ob12obob10ob12obob11ob3obob
+<br />
+3obob3obo4b4obob16ob3obob4ob4ob10obob2ob4obob16ob3obob4ob4ob10obob2ob
+<br />
+4obob16ob3obob4ob4ob10obob2ob4obob20o$b25o6b91o4b193o$3bo2bo2bo2bo2bo
+<br />
+2bo2bobo10bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo
+<br />
+2bo2bo2bo2bo2bo2bo2bo2bo2bobo8bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2b
+<br />
+o2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo
+<br />
+2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo2bo
+<br />
+2bo2bo2bobo!</pre>Dean has also recently solved the long-open problem of finding quadratic growth patterns: the following pattern starts growing at period 25196 some time around generation 64000. It fills a single quadrant, so four copies of it can be used to fill the whole plane to constant density.<pre>x = 47, y = 47, rule = B3/S012345678
+<br />
+3b2o26b2o$3b4o23b5o$3b4o24b4o$b7o21b7o$b4obo22b4obo$8o20b8o$bob4o22bob
+<br />
+4o$8o20b8o3bo$b4obo22b4obo2b2o$8o20b8o2bo$bob4o22bob4o$8o20b7o2bobobob
+<br />
+o$b4obo22b17o$8o20b10ob3ob3o$bob4o22b18o$8o20b19o$b4obo21b8ob3ob3obo$
+<br />
+8o22b14o$bob4o23b2obobobobobo$8o$b4obo$8o$bob4o$8o$b4obo$8o$bob4o$8o$b
+<br />
+4obo$8o$bob4o$8o$b4obo$8o$bob4o$8o$b4obo$8o$bob4o$7o2bobobobobobobobob
+<br />
+obobobobobobobobobo$b45o$10ob3ob3ob3ob3ob3ob3ob3ob3ob3o$b46o$47o$8ob3o
+<br />
+b3ob3ob3ob3ob3ob3ob3ob3o$2b42o$2b2obobobobobobobobobobobobobobobobobob
+<br />
+obo!</pre>Another very simple seed eventually settles down in two of its four quadrants exhibiting glide symmetry in those quadrants:<pre>x = 3, y = 3, rule = B3/S012345678
+<br />
+2o2$2bo!</pre>
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: <br />
+<b>2009-06-07T16:09:46Z</b><br />
+Do you have a picture/animation of it?
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>None</b>: <br />
+<b>2009-06-07T16:14:26Z</b><br />
+Never mind, I downloaded and ran the program to see it. It&#x27;s neat although not illuminating (to, say, a random schmuck such as myself) but I can see that it would be a nice mathematical question to figure out the fastest possible speed
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2009-06-08T04:58:05Z</b><br />
+<img src="http://www.ics.uci.edu/~eppstein/0xDE/LwoD-4c9.gif" />
+
+(see ETA in post for credit)
+</div>
+

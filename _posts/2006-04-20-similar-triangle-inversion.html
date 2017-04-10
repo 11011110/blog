@@ -1,0 +1,35 @@
+---
+layout: post
+title:  'Similar triangle inversion'
+date:   2006-04-20 21:33:00
+tags:   [inversion, geometry]
+---
+I discovered part of the following curiosity of <a href="http://www.ics.uci.edu/~eppstein/junkyard/tangencies/inversion.html">inversive geometry</a> a week ago, when I was setting homework problems for my computational geometry class, and the rest of it today when the students discussed their solutions.
+<br />
+
+<br />
+Claim: let abc be a right angle, and invert b and c through a circle centered on a to get points b&#x27; and c&#x27;. Then triangle abc is similar to triangle ac&#x27;b&#x27;. Note the permuted vertices: the right angle in the new triangle is at c&#x27;!
+<br />
+
+<br />
+Proof sketch: line ab inverts to itself and contains b&#x27;; line ac inverts to itself and contains c&#x27;. Therefore, angle bac equals angle c&#x27;ab&#x27;. Line bc, which is at right angles to ab, inverts to a circle ab&#x27;c&#x27;, also at right angles to ab. Thus ab&#x27; is the diameter of the circle and any point c&#x27; on the circle forms a right angle to this diameter. With two angles equal, the triangles are similar.
+<br />
+
+<br />
+<div align="center"><img src="http://www.ics.uci.edu/~eppstein/junkyard/rt-tri-inv.png" /></div>
+<br />
+
+<br />
+...which I thought was pretty impressive until I realized it had nothing to do with diameters and right angles. More generally, abc will always be similar to ac&#x27;b&#x27;, no matter whether any angle is right, because the two triangles have one equal angle and one equal ratio of side lengths: |ab|/|ac| = (R<sup>2</sup>/|ac|)/(R<sup>2</sup>/|ab|) = |ac&#x27;|/|ab&#x27;|.
+<br />
+
+<br />
+Oh well, despite being such a trivial piece of geometry I had fun making diagrams for it.
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>eccemathematica</b>: <br />
+<b>2006-04-22T21:40:09Z</b><br />
+Trivial?  Pshaw.  I think it&#x27;s adorable.  And there&#x27;s nothing nicer than a little discovery every so often.  Yay!
+</div>
+

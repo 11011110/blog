@@ -1,0 +1,15 @@
+---
+layout: post
+title:  'Concepts, bicliques, and sparsity'
+date:   2006-10-20 07:54:00
+tags:   [formal concept analysis, graph algorithms, subgraph isomorphism, information retrieval]
+---
+An old paper of mine on <a href="http://www.ics.uci.edu/~eppstein/pubs/p-asgi.html">finding complete bipartite subgraphs in sparse graphs</a> can be reinterpreted as doing a form of data mining called <a href="http://en.wikipedia.org/wiki/Formal_concept_analysis">formal concept analysis</a> (see e.g. <a href="http://people.cs.vt.edu/~vchoi/Choi-CLA.pdf">Choi</a> for the connections between these two formalisms). A system of objects and attributes (say, photos in Flickr and their tags) can be represented as a bipartite graph, and &quot;concepts&quot; are bicliques (maximal complete bipartite subgraphs). The concepts form a lattice in which the join and meet operations both involve intersecting the vertex sets of bicliques on one side of the bipartition and then extending that intersection to a biclique on the other side.
+<br />
+
+<br />
+Anyway, the result of my paper, rephrased in this language, was that if the object-attribute graph is sparse, then the total size of all the concepts in the concept lattice is linear in the number of objects and attributes, and the lattice can be generated in linear time. Or at least, the set of bicliques can be generated in that time; I didn&#x27;t address the connections between bicliques in the concept lattice structure.
+<br />
+
+<br />
+Which all makes it a little odd to see <a href="http://www.st.cs.uni-sb.de/~lindig/papers/fast-ca/iccs-lindig.pdf">a paper by Lindig</a> claiming that in systems with sparse object-attribute graphs, the size of the concept lattice empirically seems to grow quadratically. I think the resolution of this conflict is that the definitions of &quot;sparse&quot; are different: in my paper, a system is sparse if there&#x27;s some absolute bound k such that any subsystem of N objects and attributes has at most kN relations. Equivalently, the system can be constructed from a (Barabasi-like) growth process in which one adds objects and attributes one at a time, each new object or attribute connected to at most k earlier attributes or objects. In Lindig&#x27;s, the systems are generated randomly with a small but fixed fill-in factor, so one can view them as a form of Erdős–Rényi random graph...I&#x27;m wondering whether his quadratic growth rate is less about sparsity and more about randomness.

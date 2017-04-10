@@ -1,0 +1,15 @@
+---
+layout: post
+title:  'Kruskal in PADS'
+date:   2006-04-05 16:53:00
+tags:   [sudoku, graph algorithms, python]
+---
+I just updated my <a href="http://www.ics.uci.edu/~eppstein/PADS/">PADS</a> library to include some quick code for computing <a href="http://www.ics.uci.edu/~eppstein/PADS/MinimumSpanningTree.py">minimum spanning trees, via Kruskal&#x27;s algorithm</a>. Very simple given the prior existence in the library of union-find.
+<br />
+
+<br />
+The same update also adds another case to the Sudoku solver&#x27;s rectangle rule, that I found while trying to solve a &quot;diabolic&quot; puzzle in the LA Times last week. It didn&#x27;t help solve that puzzle, but I want my program to be able to do anything I know to do by hand...
+<br />
+
+<br />
+<b>ETA:</b> The impetus for me to implement this was a query from <a href="http://www.i-cherubini.it/mauro/blog">Mauro Cherobini</a>, who is using minimum spanning trees <a href="http://www.i-cherubini.it/mauro/blog/2006/04/06/minimum-spanning-tree-of-urban-tapestries-messages/">to cluster spatial messaging data</a>. Apparently the data set size is small enough that it&#x27;s not necessary to go to an O(n log n) Delaunay triangulation based MST algorithm.

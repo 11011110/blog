@@ -1,0 +1,42 @@
+---
+layout: post
+title:  'Well-covered graphs on Wikipedia'
+date:   2011-08-10 16:07:00
+tags:   [wikipedia, graph theory]
+---
+Something I started doing over at Google+ that seems to have been well received there was to share links to new or newly-expanded Wikipedia articles (primarily the ones I&#x27;d worked on) about technical topics related to algorithms and combinatorics. I don&#x27;t see a reason to stop doing that now that my G+ account is on hiatus, so anyway, here&#x27;s another one, inspired by <a href="http://cstheory.stackexchange.com/questions/7645/maximal-maximum-independent-sets">a recent question on the TCS Exchange</a>:
+<br />
+
+<br />
+<a href="http://en.wikipedia.org/wiki/Well-covered_graph">Well-covered graph</a>. These are the graphs in which all maximal independent sets have the same size, so (if you know a graph is well-covered) you can easily find a maximum independent set. Unfortunately, it&#x27;s hard to tell whether an unknown graph is well-covered...
+<br />
+
+<br />
+<div align="center"><a href="http://en.wikipedia.org/wiki/File:Well-covered_graph.svg"><img src="http://www.ics.uci.edu/~eppstein/0xDE/300px-Well-covered_graph.png" /></a></div>
+<br />
+
+<br />
+The graph in the image may be used to represent triangulations of the hexagon: the three inner vertices of the graph represent the three long diagonals of the hexagon, the six outer vertices represent the six short diagonals, and an independent set represents the set of diagonals in a triangulation. Since every triangulation of the hexagon has the same number of edges, every independent set in the graph has the same number of vertices. The same graph also turns out to be a member of the <a href="http://en.wikipedia.org/wiki/Petersen_family">Petersen family</a>, conveniently for me as I could grab and edit an image I&#x27;d already drawn instead of having to do it again from scratch.
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>ext_274121</b>: <br />
+<b>2011-08-11T00:04:32Z</b><br />
+It might be interesting to explore which &quot;hard&quot; graph problems remain hard on inputs which come from some easily-recognizable subset of well-covered graphs.
+
+For example, for the Lexicographically First Maximal Independent Set problem, which is P-complete on general graphs, I believe the reduction (from the Circuit Value problem) could be modified to show the same for a class of graphs which are clearly well-covered.  (I haven&#x27;t checked the details, though.)
+
+-Andy D.
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2011-08-11T00:15:10Z</b><br />
+There&#x27;s something of that flavor in one of the papers I didn&#x27;t include in the Wikipedia article (I was trying to be selective rather than just summarizing all of the ~100 papers on the subject):
+
+Sankaranarayana, Ramesh S. Tracking the P-NP boundary for well-covered graphs. <a href="http://dx.doi.org/10.1002/(SICI)1097-0037(199701)29:1%3C29::AID-NET3%3E3.3.CO%3B2-L">Networks 29 (1997), no. 1, 29–37</a>. <a href="http://www.ams.org/mathscinet-getitem?mr=1423743">MR1423743</a>.
+
+They look at four classes of graphs (well covered, very well covered, and two less natural classes in between) and show that they can be distinguished from each other by which of several problems are hard or easy on which classes.
+
+As for LFMIS, I think the reduction from the general problem to the well-covered case by adding a degree-one neighbor to each vertex and putting those new neighbors last in the lexicographic ordering should work. But maybe it&#x27;s just as easy to modify the original reduction as you say.
+</div>
+

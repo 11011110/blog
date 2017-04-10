@@ -1,0 +1,93 @@
+---
+layout: post
+title:  '2-site Voronoi triangle centers'
+date:   2014-10-14 16:17:00
+tags:   [geometry]
+---
+The idea of a 2-site Voronoi diagram was pioneered by Barequet, Dickerson, and Drysdale in a WADS 1999 paper later published in <a href="http://dx.doi.org/10.1016/S0166-218X(01)00320-1">Discrete Applied Math. 2002</a>. The basic idea is that you have a function d(p,q;x) that tells you the distance from an unordered pair of sites {p,q} to another point x in the plane; given a collection of sites, you want to divide the plane up into regions so that the region containing a point x tells you which pair of sites is closest to x (or in some cases farthest from x). Since their work there have been several followup papers including <a href="http://arxiv.org/abs/1105.4130">one in which I was involved</a>.
+<br />
+
+<br />
+If three sites are given, then these sites determine three pairs of sites, three regions in the Voronoi diagram, and (usually) one or more Voronoi vertices where all three sites meet. Often, these vertices define <a href="https://en.wikipedia.org/wiki/Triangle_center">triangle centers</a>: special points defined from the triangle of the three sites, such that applying a similarity transformation to the plane commutes with constructing the given point. Technically, to get a triangle center out of a 2-site Voronoi diagram, the distance function has to be invariant under congruences of the plane, and if a triangle pqx is scaled by a factor of s then the distance d(p,q;x) has to scale by a factor of s<sup>e</sup> for some constant scaling exponent e (possibly zero). But this scaling requirement is true of many natural functions that you might want to use as distances.
+<br />
+
+<br />
+By now, thousands of different triangle centers have been studied. Which of them can be generated from 2-site Voronoi diagrams in this way?  Here are some examples. (The X(...) numbers are references to Clark Kimberling&#x27;s <a href="http://faculty.evansville.edu/ck6/encyclopedia/ETC.html">Encyclopedia of Triangle Centers</a>.)
+<br />
+
+<br />
+<ul><li>If d(p,q;x) is defined as the Euclidean distance from point x to line pq, with scaling exponent 1, then the level sets of this distance function are infinite slabs having pq as their centerline. For a given triangle pqr, the 2-site Voronoi diagram for this distance function has seven junctions. At the three points where two lines cross, four cells of the diagram meet, two for each of the two lines. And at four other points (one inside the triangle and three outside), all three cells of the diagram meet. The one inside the triangle is the <a href="https://en.wikipedia.org/wiki/Incenter">incenter</a> X(1), a triangle center that is the center point of a circle inscribed inside the triangle. The other three of these Voronoi vertices are the excenters, center points of circles that touch the three lines but are exterior to the triangle, and are not individually triangle centers.
+<br />
+
+<br />
+In the figure below, the level sets of the distances from the three lines are indicated by the red, blue, and yellow shading. The Voronoi diagram boundaries are the green line segments, and the incenter is the green Voronoi vertex inside the triangle. The excenters are outside the margins of the drawing.
+<br />
+
+<br />
+<div align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/2site-incenter.png" /></div>
+<br />
+
+<br />
+Alternatively, we could have defined d(p,q;x) to be the Euclidean distance from point x to line segment pq, giving more complicated <a href="https://en.wikipedia.org/wiki/Stadium_(geometry)">stadium</a>-shaped level sets and only one Voronoi vertex at the incenter.</li>
+<br />
+<li>If d(p,q,x) is the area of triangle pqx, then the scaling exponent is 2 and the level sets of the distance function are again slabs, with longer line segments having narrower slabs for the same distance. There is a Voronoi vertex at the <a href="https://en.wikipedia.org/wiki/Centroid">centroid</a> of the triangle X(2), because at that point all three of the triangles pqx, prx, and qrx have the same area as each other.</li>
+<br />
+<li>If d(p,q;x) is the sum of distances px+qx, then the scaling exponent is 1, and the level sets of the distance function are ellipses. There is a Voronoi vertex at the <a href="https://en.wikipedia.org/wiki/Circumcenter">circumcenter</a> X(3); it is inside the triangle if it is acute, outside if it is obtuse, and at the midpoint of the hypotenuse if it is right.</li>
+<br />
+<li>If d(p,q;x) is the Euclidean distance from x to the midpoint of pq, then the level sets of the distance function are just circles centered on this midpoint, and the scaling exponent is 1. The Voronoi vertex is at the <a href="https://en.wikipedia.org/wiki/Nine-point_center">nine-point center</a> of the triangle, X(5).</li>
+<br />
+<li>If d(p,q,x) is the ratio of two quantities, the distance of x from line pq and the length of segment pq, then the scaling exponent is 0. The level sets of the distance function are slabs, as for the incenter and centroid, but scaled differently, and there is a Voronoi vertex at the <a href="https://en.wikipedia.org/wiki/Symmedian">symmedian</a> X(6).</li>
+<br />
+<li>If d(p,q;x) is the angle subtended by segment pq, as viewed from x, then the level sets of the distance function are <a href="https://en.wikipedia.org/wiki/Lens_(geometry)">lunes</a> centered on the sides of the triangle, the scaling exponent is 0, and there is a Voronoi vertex at the <a href="https://en.wikipedia.org/wiki/Fermat_point">Fermat point</a> of the triangle, which for not-too-obtuse triangles coincides with X(13).</li>
+<br />
+<li>If d(p,q;x) is the perimeter of triangle pqx, then the scaling exponent is 1 and the level sets of the distance function are ellipses. In this case there is a Voronoi vertex at the <a href="https://en.wikipedia.org/wiki/Isoperimetric_point">isoperimetric point</a> X(175).</li>
+<br />
+<li>If d(p,q;x) is the ratio of the sum of distances px+qx to the length of segment pq (that is, the dilation of the path pxq) then the scaling exponent is 0 and the level sets are ellipses again. The associated triangle center is the <a href="http://11011110.livejournal.com/144178.html">dilation center</a> X(3513).</li>
+<br />
+<li>If d(p,q;x) is the inradius of triangle pqx, then the scaling exponent is 1. I think the level sets of the distance function are hyperbolae but I haven&#x27;t proved this. There is a Voronoi vertex at the <a href="http://faculty.evansville.edu/ck6/integer/unsolved.html">mysterious</a> <a href="http://www.jstor.org/stable/2690307">congruent incircles point</a> of the triangle, X(5394).</li></ul>
+<br />
+Points X(31), X(32), X(75), and X(76) are also Voronoi vertices of differently-scaled distances from line pq. One can generate even more examples (although not necessarily interesting ones) by multiplying together two or more of these distance functions, or adding together functions with the same scaling exponent.
+<br />
+
+<br />
+Despite all these examples, it&#x27;s not clear to me how to tell whether a triangle center is or isn&#x27;t a 2-site Voronoi vertex, or whether there exists a center that is not a 2-site Voronoi vertex. The most obvious center for which I haven&#x27;t found a good 2-site distance function is the <a href="https://en.wikipedia.org/wiki/Orthocenter">orthocenter</a> X(4), the point where the perpendiculars to each side through the opposite vertex meet. Is it a 2-site Voronoi vertex for some distance function, and if so, what is the function?
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>ext_2497288</b>: 2-site distance function for orthocenter<br />
+<b>2014-10-17T00:13:15Z</b><br />
+I think the following function d(p, q; x) does the trick for the orthocenter:
+
+(p[1]^2-2*p[1]*q[1]+p[2]^2-2*p[2]*q[2]+q[1]^2+q[2]^2)^(1/2)+((p[1]^2-2*p[1]*x[1]+p[2]^2-2*p[2]*x[2]+x[1]^2+x[2]^2)*(p[1]*q[1]-p[1]*x[1]+p[2]*q[2]-p[2]*x[2]-q[1]^2+q[1]*x[1]-q[2]^2+q[2]*x[2])^2/(p[1]*q[2]-p[1]*x[2]-p[2]*q[1]+p[2]*x[1]+q[1]*x[2]-q[2]*x[1])^2)^(1/2)+((q[1]^2-2*q[1]*x[1]+q[2]^2-2*q[2]*x[2]+x[1]^2+x[2]^2)*(p[1]^2-p[1]*q[1]-p[1]*x[1]+p[2]^2-p[2]*q[2]-p[2]*x[2]+q[1]*x[1]+q[2]*x[2])^2/(p[1]*q[2]-p[1]*x[2]-p[2]*q[1]+p[2]*x[1]+q[1]*x[2]-q[2]*x[1])^2)^(1/2)
+
+It seems to give rise to 7 2-site Voronoi vertices, one of which is the orthocenter.
+
+I used the following construction. Given a point x and 2 sites p and q, find the third site r such that the point x is the orthocenter of the triangle formed by the 3 sites p, q and r. The value of d(p, q; x) is the perimeter of the triangle formed by p, q and r. Other properties of the triangle such as the sum of the squares of the lengths of the sides or the area also work.
+
+I think the key property is that given 2 sites and a point, it should be possible to find a third site such that the point is the triangle center of the three sites.
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: RE: 2-site distance function for orthocenter<br />
+<b>2014-10-17T00:22:25Z</b><br />
+Neat! I haven&#x27;t checked your formula but the construction idea is clear enough. Incidentally, r=Orthocenter(p,q,x).
+</div>
+<div style="margin-left: 6em; padding-top: 1em;">
+<b>ext_2497288</b>: RE: 2-site distance function for orthocenter<br />
+<b>2014-10-17T00:34:54Z</b><br />
+The level sets of the distance function seem to have simple equations in an orthogonal coordinate system through the middle of an edge. It may be possible to come up with a simpler formula for d(p, q; x). The sum of the squares of the side lengths and the area give rational functions (no square roots).
+
+I have a picture that shows the 6 other Voronoi centers, but I have no idea if they are special points.
+</div>
+<div style="margin-left: 9em; padding-top: 1em;">
+<b>ext_2497288</b>: RE: 2-site distance function for orthocenter<br />
+<b>2014-10-22T16:36:01Z</b><br />
+A formulation using distances, rather than coordinates:
+Let t be the orthogonal projection of x onto pq, a=|pt|, b=|qt| and h=|xt|.
+The site r lies on the line xt at a distance |rt|=H=a*b/h from pq.
+Then, for the orthocenter, we can take
+  d(p, q; x) = a^2+a*b+b^2+a^2*b^2/h^2    # 2 times the sum of the squared sides of pqr
+or
+   d(p, q; x) = (a+b)*a*b/h    # 2 times the area of pqr
+
+</div>
+

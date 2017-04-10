@@ -1,0 +1,69 @@
+---
+layout: post
+title:  'Where do you get your BibTeX data?'
+date:   2015-02-05 22:35:00
+tags:   [tools, bibliography]
+---
+Formatting a couple hundred references for a proposal led me to wonder: If you find yourself wanting to look up the BibTeX data for a paper, where do you go? And how much do you have to edit it yourself afterwards?
+<br />
+
+<br />
+The three most obvious choices for me are <a href="http://www.informatik.uni-trier.de/~ley/db/">DBLP</a>, <a href="http://dl.acm.org/">ACM Digital Library</a>, or <a href="http://www.ams.org/mathscinet/">MathSciNet</a>.
+<br />
+
+<br />
+There used to be a project to maintain a collective file &quot;geom.bib&quot; with all the references that any computational geometer would ever use. I still have about 18 copies of it on my computer (presumably not all in sync with each other) from various papers that used it, but it became unwieldy (too big to use as one file) and seems to have fallen by the wayside. Additionally, many publishers supply citation files for their own publications, so you could use those, or even take the time to write your own. But my experience is that most of the publishers are not good at generating clean data (e.g. they use hyphens instead of en-dashes for page ranges, or permute conference title words into a different order than what you&#x27;d want to use in a citation), although at least they&#x27;re better at it than Google scholar.
+<br />
+
+<br />
+The big three above all have their quirks, but they generate pretty clean data (especially if you tell DBLP not to use crossref). Copying from them can be a lot easier and less error-prone than typing it all in yourself, and picking one source and sticking to it could also help achieve greater consistency. DBLP has the best coverage for Computer Science, I think. I recently looked at a five-year window of my papers (for the prior work section of that proposal) and it missed only three (two in non-computer science journals about topology and mathematical psychology, and the third in an edited volume about cellular automata).
+<br />
+
+<br />
+My own idiosyncratic preference is for MathSciNet, though. Their coverage is almost as good for my purposes (sometimes better) but what ends up making the difference for me is their care about the capitalization of title words and formatting of math in titles. DBLP and ACM leave lots of words capitalized and let the bibtex style lowercase them later, which mostly works, but fails when some words are proper nouns that should stay capitalized. MathSciNet takes care to lowercase everything to how it should appear in a citation (my preference) and to protect the letters that should remain uppercase. And for titles that contain formulas, MathSciNet gets it right and the other two don&#x27;t.
+<br />
+
+<br />
+Example: ACM: &quot;The h-Index of a Graph and Its Application to Dynamic Subgraph Statistics&quot;.
+<br />
+DBLP: &quot;The h-Index of a Graph and Its Application to Dynamic Subgraph Statistics&quot; (journal version); &quot;The \emph{h}-Index of a Graph and Its Application to Dynamic Subgraph Statistics&quot; (conference version).
+<br />
+MathSciNet: &quot;The {$h$}-index of a graph and its application to dynamic subgraph statistics&quot;. One of these is correct and the others aren&#x27;t.
+<br />
+
+<br />
+But maybe there&#x27;s some new tool or database that beats all of these that I haven&#x27;t yet found out about. One of my co-authors uses Zotero, but I haven&#x27;t tried that myself. Are systems like it based on shared libraries rather than comprehensive databases still useful?
+<br />
+
+<br />
+(See also <a href="https://plus.google.com/u/0/100003628603413742554/posts/T7msni7sGmJ">discussion on G+</a> from the same post.)
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>ext_3000355</b>: <br />
+<b>2015-02-06T15:45:08Z</b><br />
+The crypto group at ENS maintains an incredibly useful and popular set of bib files for cryptography publications here:  http://cryptobib.di.ens.fr/
+
+They have kept it up to date for several years.  Perhaps their template and management approach could be adapted to resurrect the geom.bib.
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: <br />
+<b>2015-02-06T18:59:27Z</b><br />
+References are like sausages; it&#x27;s best not to see how they&#x27;re made.
+
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>ext_3000749</b>: Google Scholar<br />
+<b>2015-02-06T20:43:08Z</b><br />
+As another alternative, there&#x27;s also BibTeX in Google Scholar: from the settings page enable &quot;Show links to import citations into: [BibTeX]&quot; and the search results will show a link to a plaintext page that you can easily copy and paste into papers, reference managers, etc. In the MacOS app BibDesk, you can simply hit &quot;Command-V&quot; at the application level and it&#x27;ll process the contents of the clipboard into the bib file. (Similarly, hitting &quot;Command-C&quot; with an entry selected places &quot; \cite{key}&quot; in the clipboard.
+
+I&#x27;ve wondered how Google Scholar chooses the bibtex entry it shows though. My sense is that it uses some sort of majority vote algorithm for each entry across different variations it&#x27;s seen the paper cited by. I know it has a way of updating itself when a previously-arxiv-only paper starts getting cited as a published paper.
+
+I do tend to do some light editing of the reference formatting before submission, but usually that&#x27;s more about optimizing against conference page length constraints than anything else.
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: RE: Google Scholar<br />
+<b>2015-02-06T21:24:36Z</b><br />
+If you curate your Google scholar profile carefully it can produce accurate BibTeX entries, but otherwise it can be quite patchy.
+</div>
+

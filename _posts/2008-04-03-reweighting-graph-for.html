@@ -1,0 +1,171 @@
+---
+layout: post
+title:  'Reweighting a graph for faster shortest paths'
+date:   2008-04-03 23:17:00
+tags:   [graph algorithms]
+---
+<p>When I teach shortest paths in my undergraduate algorithms classes, the methods I consider most important (in roughly that order) are <a href="http://en.wikipedia.org/wiki/Breadth-first_search">breadth first search</a>, <a href="http://en.wikipedia.org/wiki/Dijkstra%27s_algorithm">Dijkstra&#x27;s algorithm</a>, <a href="http://en.wikipedia.org/wiki/A%2A_search_algorithm">A*</a>, the linear time DAG shortest path algorithm <small>(section 24.2 of CLRS)</small>, and <a href="http://en.wikipedia.org/wiki/Bellman-Ford_algorithm">Bellman-Ford</a>. Every self-respecting computer scientist knows the first two, but it came as a bit of a shock to me to discover that very few of our incoming graduate students had even heard of A*.</p>
+
+<p>Perhaps their ignorance should have been unsurprising: there&#x27;s very little to say from the algorithms-analysis point of view about A*, so it often doesn&#x27;t get covered in algorithms classes, and it&#x27;s mentioned neither in the algorithms text I use (Goodrich and Tamassia&#x27;s <i>Algorithm Design</i>) nor in the popular <i>Introduction to Algorithms</i> by Cormen et al. It&#x27;s often considered an AI technique, but it may not get mentioned in many artificial intelligence classes either, because it&#x27;s not knowledge representation or probabilistic reasoning or whatever else current AI researchers are generally interested in.</p>
+
+<p>If you do ask someone who has heard of A* what it is, I think the answer you&#x27;ll most often get is that it&#x27;s a graph searching algorithm, similar to Dijkstra but more complicated. And if you&#x27;re lucky they might also tell you that it&#x27;s faster than Dijkstra. If you haven&#x27;t heard of A* but read the Wikipedia article on it, you&#x27;ll get the same impression of a more complicated version of Dijkstra, without even any explanation of why you&#x27;d want to use it. But that&#x27;s not my current view of A*: I don&#x27;t see it as an algorithm, but as a <a href="http://en.wikipedia.org/wiki/Preconditioner">preconditioner</a> that changes the weights of a graph to allow other algorithms (such as Dijkstra) to run faster. I think this view is not only simpler (if you already understand Dijkstra) and more general, but also more intuitive explanation for why A* is a good idea and when it would be appropriate to use it. So, what I&#x27;d like to do in the rest of this post is to explain this point of view.</p>
+
+<h3>Reweighting schemes</h3>
+
+<p>Dijkstra&#x27;s algorithm, applied to the problem of finding a shortest path from a given start vertex to a given goal vertex that are at distance D from each other, will end up examining all vertices within distance D of the start. Geometrically, we can visualize this by drawing a circle, centered at the start with the shortest path to the goal as its radius; the algorithm will search everything inside the circle. The part that it searches along the actual shortest path is necessary, but everything else is wasted work.</p>
+
+<p align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/A-star/circle.png" /></p>
+
+<p>The basic idea of A* is to change the distances in the graph in such a way that the shortest paths remain unchanged, but so that vertices that aren&#x27;t on the shortest path appear farther from the start, causing fewer vertices to be expanded. The changed distances cause the &quot;circle&quot; to be distorted, in a way that (we hope) makes it smaller.</p>
+
+<p align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/A-star/ellipse.png" /></p>
+
+<p>To change the edge lengths, suppose we have a real number ƒ(v) for every vertex v of a directed graph. Replace the edge length L<sub>u,v</sub> of an edge (u,v) by the new length L*<sub>u,v</sub> = L<sub>u,v</sub> − ƒ(u) + ƒ(v), and use these new lengths to measure the distances d*(u,v) between pairs of vertices. The same construction applies to an undirected graph, by replacing each undirected edge {u,v} by two directed edges (u,v) and (v,u) prior to reweighting.</p>
+
+<p>If a path from u to v has length p in the original graph, it will have length p* = p − ƒ(u) + ƒ(v) in the reweighted graph; the weights at the vertices in the interior of the path contribute positively to one edge of the path and negatively to another edge, and these two contributions cancel out, leaving contributions only from the weights at the path endpoints. Therefore, if we compare any two paths between the same two vertices, the comparison is the same as if we did it in the original graph; shortest paths remain shortest paths.</p>
+
+<p>However, for the same reason, if we are comparing the distances from some start vertex u to two different vertices v and w, the new distances d*(u,v) = d(u,v) − ƒ(u) + ƒ(v) and d*(u,w) = d(u,w) − ƒ(u) + ƒ(w) will not, in general, have the same ordering that they did before the reweighting: if we choose a small value for ƒ(v) and a large value for ƒ(w), the reweighting will cause v to appear closer to u than it was before, and w to appear farther away.</p>
+
+<p>Thus, by choosing an appropriate weighting function ƒ we can distort the circle that has the start-goal shortest path as its radius, causing it to contain fewer unnecessary vertices, while preserving the shortest path between the start and the goal.</p>
+
+<h3>A* for monotonic weights</h3>
+
+<p>The simplest form of the A* algorithm is the following: First, choose a &quot;monotonic heuristic&quot;, that is, a weight function ƒ such that the reweighted edge lengths are non-negative. For technical reasons, we&#x27;ll also assume that ƒ is always non-negative and that it equals zero at the goal. Second, reweight the graph as described above. Third, run Dijkstra&#x27;s algorithm on the reweighted graph. That&#x27;s all! A* is not usually described this way. But, if you follow the sequence of steps performed by the usual pseudocode descriptions of A* and compare them to the steps described above, you&#x27;ll find that they&#x27;re identical.</p>
+
+<p>Why should ƒ be required to be monotonic? Monotonicity is important because Dijkstra is guaranteed to work correctly when the lengths of all edges are non-negative. Therefore, when ƒ is a monotonic heuristic, A* correctly finds the shortest path.</p>
+
+<p>For every non-goal vertex v, the reweighting causes v to appear farther away from the start vertex by ƒ(v) than it was in the unweighted graph, because ƒ is non-negative. However, the requirement that ƒ be zero at the goal implies that its reweighted distance from the start is essentially unchanged. Therefore, A* will never explore any additional vertices beyond the set of vertices explored by Dijkstra on the initial graph, and if we can find a weight function ƒ that is large enough then A* will explore a strict subset of the vertices explored by Dijkstra. Also, clearly, the same reweighting technique can be (and has been) applied not just to Dijkstra but also to any other general-purpose shortest path algorithm, such as <a href="http://en.wikipedia.org/wiki/Bidirectional_search">bidirectional search</a> or <a href="http://en.wikipedia.org/wiki/Iterative_deepening_depth-first_search">iterative deepening</a> or certain K shortest paths algorithms.</p>
+
+<h3>A* for admissible weights</h3>
+
+<p>A* is often described in terms of an <i>admissible heuristic</i>: a non-negative weight function ƒ such that, for every vertex v, ƒ(v) is at most equal to the true distance to the goal. But, if we don&#x27;t require monotonicity, it&#x27;s easy to come up with examples of graphs in which the reweighted edges are negative, and in which Dijkstra can be tricked into finding a non-shortest path. In the example below, the lower path with length six to the penultimate vertex is expanded before the shorter upper path of length four is found, causing the algorithm to eventually find the wrong path to the goal.</p>
+
+<p align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/A-star/nonmon.png" /></p>
+
+<p>So what is wrong? Isn&#x27;t A* supposed to work for any admissible heuristic? It is, but it&#x27;s missing a step in this case.</p>
+
+<p>Graphs with non-negative edges aren&#x27;t the only graphs for which Dijkstra&#x27;s algorithm works correctly. Another important class of graphs on which it works are the trees. If the graph we&#x27;re given isn&#x27;t a tree, we can replace it by a <i>path tree</i> that has as its nodes the paths from the given starting vertex, where the parent of a node in the path tree is the prefix of the corresponding path formed by omitting the path&#x27;s final edge.</p>
+
+<p align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/A-star/pathtree.png" /></p>
+
+<p>The version of A* for an admissible but not monotonic heuristic is to choose the heuristic, use it to reweight the graph, and then apply Dijkstra to the path tree of the reweighted graph. As soon as any copy of the goal node is closed by Dijkstra&#x27;s algorithm, we return the corresponding path as the shortest path to the goal. Admissibility of the heuristic implies that, before we could expand any non-shortest path to a copy of the goal vertex, we would have found all nodes on the true shortest path and therefore the shortest path itself. Therefore, if the heuristic is admissible, this algorithm finds the correct shortest path. Of course, it may expand many more nodes than Dijkstra due to the repetition of nodes caused by the path tree expansion, but this may be made up for by the reduction in nodes due to the A* reweighting.</p>
+
+<h3>Where do the weights come from?</h3>
+
+<p>The ideal weight function would be the actual distance to the goal. If we could use this as our weight function, it would be monotonic and admissible, and if we could use it to reweight the edges then all shortest path edges would get weight zero while all other edges would get nonzero weights. Therefore, using Dijkstra on this reweighted graph would focus exclusively on the shortest path itself with no wasted effort. It sounds silly to think about using this as an actual weight function for A*, though, rather than as an ideal to be approximated by our heuristic weight function, since the distance to the goal is the unknown that we&#x27;re trying to compute: if we had a good heuristic way of computing it, we wouldn&#x27;t need the search algorithm. But despite its silliness in this application, the idea is useful in other contexts: I used it as an important component of my <a href="http://www.ics.uci.edu/~eppstein/pubs/p-kpath.html">K shortest paths algorithm</a>, which uses a run of Dijkstra to compute the distances to the goal, reweights the edges using this distance as weight function, and then uses the modified weights to guide its search.</p>
+
+<p>Another algorithm that computes a weight function algorithmically, for an arbitrary graph, is <a href="http://en.wikipedia.org/wiki/Johnson's_algorithmm">Johnson&#x27;s algorithm</a> for all pairs shortest paths in a graph with negative edge weights but no negative cycles. If all edge weights were non-negative, we could find all pairs shortest paths by running Dijkstra n times, once for each possible source, in time O(nm + n<sup>2</sup> log n). If we just wanted shortest paths from a single source in a graph with negative weights, we could run Bellman-Ford, in time O(nm). Johnson&#x27;s algorithm combines both of these ideas: run Bellman-Ford once using an artificial start vertex that has a zero-length edge to all other vertices, set ƒ(v) to be the absolute value of the distance from the start vertex as computed by this run of Bellman-Ford, reweight the graph, and now run Dijkstra for each possible source. The weights ƒ(v) computed in this way are monotonic, so the <i>n</i> runs of Dijkstra get non-negative edge weights and are guaranteed to find correct shortest paths. Some recent papers at SODA on shortest path implementations use distances from a few known &quot;landmarks&quot; to construct a weight function on the vertices in a similar way.</p>
+
+<p>But for most applications of A*, these ideas are useless, because they involve a preprocessing phase that itself computes shortest paths, the very problem we&#x27;re trying to solve. This is why the weight function is called a heuristic, and why the A* algorithm is studied as a branch of artificial intelligence: one generally has to import some domain-specific knowledge to the problem, some actual intelligence, to construct a good heuristic that will speed up the shortest path search. For finding shortest paths in road networks, for instance, one can use straight-line distance as a heuristic; it&#x27;s not hard to show that this is monotonic and admissible. For finding shortest paths for sprites in computer games, a grid-based distance usually makes more sense, so one can use the <a href="http://en.wikipedia.org/wiki/Manhattan_distance">Manhattan distance</a> as the weight function. <a href="http://arxiv.org/abs/cs.CG/0610092">My recent paper on flip graphs</a> suggested using a form of earthmover distance on an associated graph as a heuristic in an A* approach to computing flip distance (for point sets for which the other algorithms in my paper don&#x27;t work well enough); again, it&#x27;s not hard to show that it&#x27;s monotonic and admissible.</p>
+
+<h3>In conclusion</h3>
+
+<p>If you think Dijkstra is the right algorithm for your problem, maybe A* is even righter. And if you think some other shortest path algorithm is right instead, A* still might help. You&#x27;ll have to think some more, in order to come up with the distance estimate it needs, but you don&#x27;t need any more code in the guts of the search algorithm.</p>
+
+<p>And if you&#x27;re thinking about implementing A*, think about implementing Dijkstra and graph reweighting separately. The combination does the same thing, and the modular design will make it easier to change one part while leaving the other alone.</p>
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: The game world lives on A*<br />
+<b>2008-04-08T20:42:31Z</b><br />
+I found it fascinating that people would study pathfinding and search and NOT know A*. In the game development world, it is pretty much the ONLY one that we use. In fact, most game development books cover it... and many hundreds of improvements and subtleties. You can&#x27;t get an AI programming gig without knowing how it works and you would be openly laughed at in the interview process if you claimed you had never heard of it.
+
+It just boggles my mind.
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: Re: The game world lives on A*<br />
+<b>2008-04-08T21:01:30Z</b><br />
+All the more reason for us to keep teaching it, then. I think there&#x27;s been a growing disconnect between what the game world thinks of as AI and what the academic research world thinks of the same subject. Thanks for keeping us grounded.
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>ext_22130</b>: Visualizing A*<br />
+<b>2008-04-09T19:27:11Z</b><br />
+In case you&#x27;re interested in teaching A* to beginners, there&#x27;s a <a href="http://el-tramo.be/software/jsearchdemo">small applet</a> visualizing A* (and other algorithms).
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: Re: Visualizing A*<br />
+<b>2008-04-12T20:17:02Z</b><br />
+Thanks.
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: Re: Goldberg Talk<br />
+<b>2008-04-09T19:47:05Z</b><br />
+This talk sounds fascinating, wish I could attend but St. Petersburg is rather far!
+
+Any chance video, slides, or transcripts will be posted?  Or anyone have links to similar content from previous talks?
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>kirpich_spb</b>: Re: Goldberg Talk<br />
+<b>2008-04-09T19:54:14Z</b><br />
+We are going to put video on the site. The talk however is going to be in Russian. I hope that the slides will also be available.
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: Google maps<br />
+<b>2008-04-09T23:17:08Z</b><br />
+If you have noticed the dragging-your-waypoint feature in google maps, it is too fast for a this type of search without some very good tricks.  It can even be set to avoid highways, and still perform very well.
+
+Pre-processing must be required.  But how?  Surely not a complete n^2 pre-computation of node-node routes?  Maybe I underestimate their storage capacity.
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>chouyu_31</b>: Re: Google maps<br />
+<b>2008-04-10T01:41:57Z</b><br />
+For reference, standard commercial products for navigation are able to do cross-country navigation in under a second.  See decarta.com for their DDS for an example.
+
+As for Google, you don&#x27;t necessarily need to do a full pre-processing in order to gain improvement, every 10 miles along all highway segments would be more than sufficient, or even at every highway to highway intersection.  Either way, the storage requirements are relatively insignificant, but the performance gains for long-distance routes immeasurable.
+
+Regardless of pre-processing, other commercial products, etc., there are some things that Google is *really* good at.  Among them is parallelization.  Bi-directional A* is laughably easy to parallelize to two threads.  Assuming the ability to generate candidate waypoints along the route allows for both better parallelization (run multiple potential routing paths simultaneously), as well as a possible reduction in search space (you have more ellipsoids searched, but the total areas of the ellipsoids is smaller).  Balancing these based on total distance, expected time, etc., wouldn&#x27;t be all that difficult.  All you do is pay processing time (which Google has plenty of) for reduced latency (which is necessary for draggable maps).  Toss in a bit of pre-processing (potential waypoint features based on origin/destination areas), maybe some highway optimizations, ... it was only a matter of time.
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>sudo</b>: A* correctness<br />
+<b>2008-04-12T19:58:27Z</b><br />
+I found your prose somewhat murky, but the following statement is simply incorrect:
+
+&quot;In the example below, the lower path with length six to the penultimate vertex is expanded before the shorter upper path of length four is found, causing the algorithm to eventually find the wrong path to the goal.&quot;
+
+It is true that the goal node will first be put in Dijkstra&#x27;s queue with a path cost of 3+3+4 = 10, but that doesn&#x27;t matter. Before that node is removed, the other nodes earlier on the shortest path will be explored. In a classical implementation of A*, its neighbor will be made current with a path cost of 2+2+5 = 9, and then the min cost to the goal node will be updated to the correct value of 8. With a reweighted-Dijkstra&#x27;s implementation, first the top node will be explored with cost 7, then the neighbor will have its cost updated from 6 to 7-3=4, at which point the cost to the goal node (in the queue) will be updated from 10 to 8. Either way, it works out.
+
+This example is why (both) algorithms test for goal nodes after a given node has been removed from the queue, not before it is added.
+
+The critical point here is that any negative edges created by an admissible reweighting are not arbitrarily placed. Specifically, as long as the heuristic is admissible, there cannot be negative-weight paths to the goal node outside of the &quot;circle&quot; that Dijkstra&#x27;s explores. That is the situation in which negative-weight paths can cause Dijkstra&#x27;s algorithm to return an incorrect path.
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: Re: A* correctness<br />
+<b>2008-04-12T20:16:45Z</b><br />
+If you think that an admissable but not monotonic heuristic will be guaranteed to work for reweighted Dijkstra (or equivalently, classical A* with closed sets), I believe you are the one that is mistaken.
+
+In your sentence, <i>With a reweighted-Dijkstra&#x27;s implementation, first the top node will be explored with cost 7, then the neighbor will have its cost updated from 6 to 7-3=4, at which point the cost to the goal node (in the queue) will be updated from 10 to 8.</i>: why do you think the cost to the goal node will be updated? The neighbor has already been expanded; Dijkstra doesn&#x27;t expand the same node a second time. And it is only in the expansion of the neighbor that the goal node&#x27;s cost is updated.
+
+If you are more familiar with classical descriptions of A*, reweighted Dijkstra is the same thing as A* with closed sets. In this example, the penultimate node is already in the closed set, and will not be re-opened.
+
+In this example, although the path cost is computed incorrectly, the path itself may be found by following pointers back from each node to its best predecessor. I could have easily produced a more complicated example in which the wrong path is found, too; for instance, include another edge from start to goal with cost 9.
+</div>
+<div style="margin-left: 6em; padding-top: 1em;">
+<b>sudo</b>: Re: A* correctness<br />
+<b>2008-04-13T20:53:34Z</b><br />
+Ah, I apologize. It seems the version of A* I learned is not the classical version, in that closed nodes may be re-expanded:
+
+<blockquote>&quot;If [a successor] HAS been generated before, then we have to see if its old g value is larger than the g value it gets from [the current node] (= g(current) + cost from going from current to successor).&quot;</blockquote>
+
+You are correct -- if closed nodes may not be revisited, the heuristic must be monotonic.
+</div>
+<div style="margin-left: 9em; padding-top: 1em;">
+<b>11011110</b>: Re: A* correctness<br />
+<b>2008-04-13T21:02:27Z</b><br />
+Re-expanding closed nodes if you discover that their distances are wrong is a reasonable thing to do, and is somewhere intermediate between the two versions I describe. But it is only the monotonic version for which one can prove that the set of node expansions is a strict subset of the ones performed by (un-reweighted) Dijkstra.
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>yodha</b>: <br />
+<b>2008-04-15T03:19:58Z</b><br />
+Thanks for the post! I didn&#x27;t know about the A* algo. I guess it&#x27;s the domain-specific weighting that keeps this algo out of the general algo books.
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2008-04-15T03:22:11Z</b><br />
+Probably true. But don&#x27;t most shortest path problems have domain-specific weights?
+</div>
+<div style="margin-left: 6em; padding-top: 1em;">
+<b>yodha</b>: <br />
+<b>2008-04-15T03:49:22Z</b><br />
+Ah, that&#x27;s true. Still, I guess it&#x27;s easier for the instructor/student to jot out a random graph, assign random weights, work out the Dijkstra&#x27;s for it and understand it. It would be harder than that for A*.
+</div>
+

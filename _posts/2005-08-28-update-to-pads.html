@@ -1,0 +1,24 @@
+---
+layout: post
+title:  'Update to PADS; concave 1d dynamic programming'
+date:   2005-08-28 16:22:00
+tags:   [sudoku, python, dynamic programming, algorithms]
+---
+<p>Just committed and uploaded a new version of <a href="http://www.ics.uci.edu/~eppstein/PADS/">PADS</a>, where I greatly improved <a href="http://www.livejournal.com/community/sudoku/15462.html">my Sudoku solver&#x27;s ability to explain in English the deductions it makes</a>.  As part of this text generation capability, I needed to wrap lines of text to fit within a console window, and rather than doing it with the obvious (and perfectly adequate) greedy algorithm, I decided to make more work for myself by incorporating a more flexible and powerful TeX-like system (in <a href="http://www.ics.uci.edu/~eppstein/PADS/Wrap.py">Wrap.py</a>) in which one assigns penalties to different possible lines in a paragraph depending on e.g. how much they fall short of the optimal target width, and searches for the partition of the paragraph into lines that minimizes the sum of the penalties.</p>
+
+
+<p>This is an example of a class of programs called <i>concave one-dimensional dynamic programming</i>, studied by myself and others in the late 1980&#x27;s when I was in grad school due to their connections with DNA sequence comparison and RNA secondary structure prediction.  More formally, the problem is to compute</p>
+\[
+E[j] = \min_{i\lt j} E[i] + w(i,j),
+\]
+<p>where \( w(i,j) \) is the penalty function for a line that stretches from breakpoint \( i \) to breakpoint \( j \), and \( E[j] \) is the total cost of the best sequence of breaks up to breakpoint \( j \).  The problem is &quot;concave&quot; if,
+roughly speaking, as we increase \( j \), the position \( i \) that forms the best previous breakpoint also increases.  The function \( w \) is independent of the computed best breakpoints, but more generally, the algorithms for this sort of problem can compute</p>
+\[
+E[j] = \min_{i\lt j} f(i,j),
+\]
+<p>as long as \( f(i,j) \) depends only on \( E[i] \) and not on later values of \( E \).</p>
+
+<p>TeX itself uses a relatively naive dynamic programming algorithm to solve the problem in time quadratic in the number of possible breakpoints, developed by Knuth and Plass.  My advisor Zvi Galil and fellow student Raffaele Giancarlo <a href="http://portal.acm.org/citation.cfm?id=64250">found an \( O(n\log n) \) algorithm</a>, which <a href="http://portal.acm.org/citation.cfm?id=51379">Robert Wilber improved to \( O(n) \)</a>.  Wilber&#x27;s algorithm had the drawback, however, of not being fully online; it could solve the line-breaking problem, but could not be used in certain algorithms that involved multiple one-dimensional dynamic programs being run in an interleaved fashion.  <a href="http://portal.acm.org/citation.cfm?id=82778">One of my early papers solved this interleaving problem</a>, and was then <a href="http://portal.acm.org/citation.cfm?id=79800">simplified by Galil and another of his students, Kunsoo Park</a>.  The algorithm I implemented in PADS is the Galil-Park one.</p>
+
+<p>No doubt this is severe overkill for what I needed, but I had fun doing it...</p>
+

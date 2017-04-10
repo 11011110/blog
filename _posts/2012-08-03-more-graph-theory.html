@@ -1,0 +1,36 @@
+---
+layout: post
+title:  'More graph theory'
+date:   2012-08-03 15:22:00
+tags:   [wikipedia, graph theory]
+---
+I&#x27;ve been slowly working my way through a copy of <i>Sparsity: Graphs, Structures, and Algorithms</i>, by Nešetřil and Ossona de Mendez, and as I do finding topics whose coverage in Wikipedia could use improvement:
+<br />
+
+<br />
+<a href="http://en.wikipedia.org/wiki/Tree-depth">Tree-depth</a> (split off from a related existing article on <a href="http://en.wikipedia.org/wiki/Cycle_rank">cycle rank</a>), the minimum clique size of a trivially perfect supergraph of the given graph. This has the nice properties that (1) on sparse families of graphs, bounded tree-depth is equivalent to the nonexistence of a long induced path, and (2) on graphs of bounded tree-depth, any hereditary graph property has a finite set of forbidden induced subgraphs. Based on these properties, it&#x27;s easy to extend the <a href="http://11011110.livejournal.com/251211.html">recognition algorithm for 1-planar threshold graphs</a> that I recently posted about to also recognize 1-planar cographs and split graphs: first make sure the graph is sparse enough to be 1-planar, and if so use dynamic programming on a tree-decomposition derived from the DFS tree to test for the existence of the forbidden subgraphs.
+<br />
+
+<br />
+<a href="http://en.wikipedia.org/wiki/Bramble_(graph_theory)">Bramble</a>, a generalization of a clique minor used to characterize treewidth.
+<br />
+
+<br />
+<a href="http://en.wikipedia.org/wiki/Gallai%E2%80%93Hasse%E2%80%93Roy%E2%80%93Vitaver_theorem">Gallai–Hasse–Roy–Vitaver theorem</a>, the theorem that the chromatic number of a graph is the same as the minimum, over all orientations of the graph, of the longest path length in the orientation. This is what I was using (without knowing it) in my <a href="http://arxiv.org/abs/0909.1870">SODA &#x27;10 paper showing that it&#x27;s possible to find either a long path or a good coloring</a> in any undirected graph, even though both the longest path and coloring problems are very hard to approximate. Along the way I was also led to create new articles on <a href="http://en.wikipedia.org/wiki/Orientation_(graph_theory)">orientations</a> and <a href="http://en.wikipedia.org/wiki/Acyclic_orientation">acyclic orientations</a>.
+<br />
+
+<br />
+[Incidentally, if anyone who can read Russian sees this: I suspect <a href="http://www.mathnet.ru/php/archive.phtml?wshow=paper&jrnid=znsl&paperid=2684&option_lang=rus">this paper</a> (<a href="http://www.ams.org/mathscinet-getitem?mr=363823">MR363823</a>) by <a href="http://en.wikipedia.org/wiki/Yuri_Matiyasevich">Matiyasevich</a> may be about the same theorem, but I can&#x27;t read it to tell for sure. So I&#x27;d appreciate any clarification anyone might have.]
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>framalex</b>: <br />
+<b>2012-08-03T23:38:57Z</b><br />
+Yes, Matiyasevich uses his method of proving statements, introduced in that paper, to prove theorem stated as &quot;Graph L can be n-colored iff all edges of L can be oriented such that resulted oriented graph has no path of length n&quot;.
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2012-08-04T00:49:21Z</b><br />
+Thanks!
+</div>
+

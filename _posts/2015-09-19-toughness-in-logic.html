@@ -1,0 +1,27 @@
+---
+layout: post
+title:  'Toughness in the logic of graphs'
+date:   2015-09-19 15:17:00
+tags:   [wikipedia, graph theory]
+---
+I&#x27;ve been working the past few days on adding to Wikipedia a new article on the <a href="https://en.wikipedia.org/wiki/Logic_of_graphs">logic of graphs</a>. And by chance I also happened to review today <a href="http://cstheory.stackexchange.com/questions/32343/a-sufficient-condition-for-non-existance-of-hamiltonian-cycle">this stackexchange question</a> relating to <a href="https://en.wikipedia.org/wiki/Graph_toughness">graph toughness</a>. That combination of events caused me to wonder: how difficult is it to express toughness as a logical sentence?
+<br />
+
+<br />
+More specifically a graph is 1-tough if there is no nonempty set of vertices the removal of which would split the graph into more components than the number of removed vertices. This particular value of the toughness is relevant for the original motivation of toughness (understanding Hamiltonian cycles in the graphs) because a Hamiltonian cycle is 1-tough and a graph containing a Hamiltonian cycle is at least 1-tough.
+<br />
+
+<br />
+A graph with nonzero toughness must be connected. And a connected graph G fails to be 1-tough if and only if there exists a set S of vertices that can be removed from G with the following stronger property: there is a matching between vertices of S and adjacent components of G − S, in which all of the vertices of S are matched and at least one component of G − S is unmatched. For, if such a matching exists, clearly there are more components than removed vertices. And if there is any set of vertices whose removal creates too many components, let S be the smallest such set. Then either such a matching exists or (by Hall&#x27;s theorem) there is a subset S&#x27; of S that is adjacent to fewer than |S&#x27;| components. Removing S&#x27; from S creates a smaller set of vertices whose removal still creates too many components, contradicting the assumed minimality of S.
+<br />
+
+<br />
+We can represent an adjacency between a component and one of the removed vertices by an edge connecting the component to the vertex. Using this idea we can express 1-toughness in MSO<sub>2</sub> by a sentence that asserts the connectivity of the graph and the nonexistence of a set S of vertices and set A of edges, such that (1) each edge in A has exactly one endpoint in S, (2) each vertex in S has at least one incident edge in A, (3) there exists a vertex in S with more than one incident edge in A, and (4) no two endpoints of edges in A are connected in G − S. The connectivity tests are standard in MSO, and can be expressed in terms of the existence of a nontrivial partition of the vertices that is not crossed by any edge.
+<br />
+
+<br />
+On the other hand, 1-toughness cannot be expressed in MSO<sub>1</sub>. The reason is that a complete bipartite graph with equal sides is 1-tough, a complete bipartite graph with unequal sides is not 1-tough, and <a href="https://books.google.com/books?id=E0qqCAAAQBAJ&pg=PA126">MSO<sub>1</sub> can&#x27;t tell these two types of graphs apart from each other</a>.
+<br />
+
+<br />
+But this reasoning all seems very specific to 1-toughness, or at least to integer values of the toughness. Is it possible to express fractional values of toughness logically?

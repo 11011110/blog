@@ -1,0 +1,38 @@
+---
+layout: post
+title:  'Report from SODA, ALENEX, and ANALCO, day 3'
+date:   2014-01-07 21:44:00
+tags:   [graph algorithms, conferences, talks, algorithms]
+---
+Today was the day I made my pilgrimages to Stumptown Coffee and Powell&#x27;s Books, so I didn&#x27;t see as many of the SODA talks as the previous two days. Nevertheless:
+<br />
+
+<br />
+My favorite title of the conference is &quot;Four Soviets Walk the Dog&quot;, for a talk this morning by Wouter Meulemans on work he did with Buchin, Buchin, and Mulzer. Part of why I like it is that, despite its whimsical appearance, it&#x27;s completely self-explanatory to people in this area: &quot;<a href="https://en.wikipedia.org/wiki/Method_of_Four_Russians">four Soviets</a>&quot; refers to an idea for shaving logarithmic factors from the running time of two-dimensional dynamic programming algorithms by partitioning the matrix of solutions into small square submatrices and doing table lookups to quickly move information from one side of each square to the other, and &quot;walk the dog&quot; refers to the problem of computing the <a href="https://en.wikipedia.org/wiki/Fr%C3%A9chet_distance">Fréchet distance</a> of two polygonal chains. And that&#x27;s exactly what this paper is about: using this trick to shave logarithmic factors from Fréchet distance calculations.
+<br />
+
+<br />
+Meulemans&#x27; talk was sandwiched by two talks by Peyman Afshani. Both were interesting but I think I liked the second a little more. It&#x27;s on finding the set of non-dominated points (Pareto frontier) of a set of two-dimensional points, in the word RAM model of computation. In two dimensions, it can easily be done in the same time as <a href="https://en.wikipedia.org/wiki/Integer_sorting">integer sorting</a>, by a stack algorithm similar to <a href="https://en.wikipedia.org/wiki/Graham_scan">Graham scan</a>, but Peyman showed that it can actually be done a little faster, via an equivalence with the problem of finding approximate quantiles in an integer sequence. He also gives a nearly-as-efficient algorithm for the three-dimensional problem.
+<br />
+
+<br />
+The invited talk was the long-awaited one by Piotr Indyk, on the problem of sparse Fourier transforms (that is, Fourier transforms when the output is a vector with only k nonzeros, or one that is somehow close to that). One goal is to get a theoretical time bound that is at least as good as the O(n log n) bound for dense Fourier transforms and that shrinks with k, but it&#x27;s also of interest to make these algorithms practical enough that they actually beat the usual FFT for values of k that are smaller than n only by an order of magnitude or two. I was surprised to see my name on one of the slides (I haven&#x27;t ever worked on Fourier transforms), but apparently there&#x27;s a connection or at least an analogy with hashing-based <a href="http://arxiv.org/abs/0704.3313">straggler detection algorithms</a>. The techniques Piotr discussed involved selecting a random arithmetic progression to sample within the input data (to scramble the frequencies in the output), carefully filtering the sample (the technique he name-checked was Dolph–Chebyshev filtering) to prevent the frequency peaks from smearing out, doing a dense FFT on the much smaller filtered sample, and then somehow unscrambling the result to recover the correct output frequencies.
+<br />
+
+<br />
+The last session I attended was the one on FPT graph algorithms. It started with an unusual talk slot, shared between two talks by Ramanujan M. S. and Yoichi Iwata on two papers for the same family of problems: deleting edges to make a graph bipartite, deleting clauses to make a 2-SAT instance solvable, or adding vertices over the matching bound in vertex cover problems. FPT algorithms were known before, but the new ones have only linear dependence on the graph size. Ramanujan solved them by analyzing the problem in terms of <a href="https://en.wikipedia.org/wiki/Skew-symmetric_graph">skew-symmetric graphs</a> and minimum separators; by finding and deleting symmetric edge pairs belonging to these separators he could reduce the problem to one where you didn&#x27;t have to worry about the skew symmetry any more. Instead, Iwata solved it by finding a half-integral maximum-flow relaxation of a 0-1 integer linear program, with as many variables integral as possible, and then branching on the half-integer variables (a technique studied also in the next paper, by Magnus Wahlström). However, the flow network he used (a directed version of the bipartite double cover of the input) is skew-symmetric, so I suspect that the two techniques could be describes as more similar than they were.
+<br />
+
+<br />
+One last sort-of-graph-drawing talk was given by Bart Jansen, on the problem of recognizing <i>k</i>-apex graphs (graphs from which <i>k</i> vertices can be deleted so that the rest os planar). Kawarabayashi had previously reduced the time for this problem from nonconstructive-FPT (based on the fact that these graphs are defined by forbidden minors) to doubly exponential in <i>k</i><sup>3</sup>, and this one brought it all the way down to a much more reasonable-looking bound, exponential in <i>k</i> log <i>k</i> and linear in <i>n</i>. But the base of the exponential is big (not big compared to typical graph minor theory constants, but big enough), so this is still not usable in practice.
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: <br />
+<b>2014-01-08T16:06:17Z</b><br />
+It turns out that the sparse FFT algorithms appear t use a framework like the &quot;peeling algorithms&quot; used for Invertible Bloom Filters and related structures;  find something, peel it out of the structure, and keep going.  The peeling operations (what it means to &quot;find something&quot; to peel) look different in the FFT algorithms, but the same greedy idea seems to be underlying that part of it.  
+
+Michael Mitzenmacher
+
+</div>
+

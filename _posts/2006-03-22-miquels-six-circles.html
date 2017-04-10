@@ -1,0 +1,31 @@
+---
+layout: post
+title:  "Miquel's Six Circles in 3d"
+date:   2006-03-22 22:22:00
+tags:   [circles, miquel, geometry]
+---
+There are several statements known as &quot;Miquel&#x27;s Theorem&quot;, but the one I&#x27;m interested in here is Miquel&#x27;s Six-Circle Theorem. It states that, if four points ABCD lie on a circle, and we draw four more circles through AB, BC, CD, and AD, the second intersection points of each of these four circles will also lie on a circle. Below I&#x27;ve drawn the first five circles in black, and the circle that must exist through the intersection points in red dashes.
+<br />
+
+<br />
+<div align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/miquel6.png" /></div>
+<br />
+
+<br />
+One can find this in books and various web sources (e.g. <a href="http://www.pballew.net/miquel.html">here</a>, <a href="http://thesaurus.maths.org/mmkb/entry.html?action=entryById&id=2145">here</a>, or <a href="http://www.math.uoc.gr/~pamfilos/eGallery/problems/Miquel2.html">here</a>). But what I haven&#x27;t seen mentioned is that this can be interpreted in a very natural way as a statement about 3d geometry:
+<br />
+
+<br />
+<b>Theorem:</b> Let a cuboid be placed in 3d in such a way that seven of its vertices belong to a sphere. Then the eighth vertex also belongs to the same sphere.
+<br />
+
+<br />
+<i>Proof:</i> By polar projection we can transform statements such as Miquel&#x27;s from circles in the plane into equivalent statements about circles on a sphere. But a circle on a sphere is just the intersection of the sphere with a plane, and three circles meet at a point when the point where the corresponding three planes meet lies on the sphere. So, if seven cuboid vertices lie on a sphere, then any four of them on the same face can be taken as ABCD; let the other four vertices be correspondingly A&#x27;B&#x27;C&#x27;D&#x27;. Miquel&#x27;s theorem for circles on a sphere tells us that the four points where the lines AA&#x27;, BB&#x27;, CC&#x27;, and DD&#x27; cross the sphere are coplanar. Since three of these crossing points are cuboid vertices belonging to the plane A&#x27;B&#x27;C&#x27;D&#x27;, the fourth must be as well.
+<br />
+
+<br />
+<i>*wanders off grumbling about needing a copy of Cinderella that runs under OS X*</i>
+<br />
+
+<br />
+ETA, 1/23/08: Miquel&#x27;s original paper can be found <a href="http://visualiseur.bnf.fr/Visualiseur?O=NUMM-16382&I=525">here</a>, and already mentions the generalization to circles on a sphere, though not to vertices of cuboids. Thanks to Tim Robinson for digging all this up.

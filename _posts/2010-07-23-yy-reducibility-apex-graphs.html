@@ -1,0 +1,27 @@
+---
+layout: post
+title:  'YΔY-reducibility, apex graphs, and forbidden minors'
+date:   2010-07-23 20:01:00
+tags:   [graph theory]
+---
+I&#x27;ve been reading about YΔY-reducibility today. A connected graph is YΔY-reducible if it can be reduced to a single vertex by <a href="http://en.wikipedia.org/wiki/Y-%CE%94_transform">YΔ and ΔY transformations</a> (replace a triangle by a degree-three vertex or vice versa) and series-parallel reductions (remove self-loops and multiple adjacencies, delete degree-one vertices, and contract paths of degree-two vertices into single edges). Every planar graph is reducible; it makes an amusing exercise to transform your favorite planar graph (such as a cube) into nothing, using these operations.
+<br />
+
+<br />
+It turns out that every <a href="http://en.wikipedia.org/wiki/Minor_(graph_theory)">minor</a> of a YΔY-reducible graph is itself reducible, which raises the questions of what are the <a href="http://en.wikipedia.org/wiki/Forbidden_graph_characterization">forbidden minors</a> for this family and how is it related to other minor-closed graph families. The forbidden minors include the complete graph K<sub>6</sub>, the Petersen graph, and the other five graphs of the <a href="http://en.wikipedia.org/wiki/Petersen_family">Petersen family</a> (the graphs that can be reached from K<sub>6</sub> and the Petersen graph by YΔ and ΔY transformations). But these are also the forbidden minors for linkless embedding: a graph can be embedded in three-dimensional space, with no two of its cycles linked together, if and only if it does not contain one of these seven graphs as a minor. So this implies that every YΔY-reducible graph is linkless embeddable.
+<br />
+
+<br />
+Are these two classes of graphs the same? No! <a href="http://www.utdallas.edu/~klaus/Mbook/matroiddecompositionbook.pdf">Truemper</a> (pages 100–101) describes a counterexample due to Neil Robertson of an apex graph (a graph formed by adding one vertex to a planar graph) that is not reducible. The planar graph at the base of Robertson&#x27;s construction is bipartite, with eight degree-three vertices on one side of the bipartition and six degree-four vertices on the other side. The construction is simply to add a new apex, connecting it to all the degree-three vertices. The resulting graph is still bipartite, so it has no triangles and we can&#x27;t perform any ΔY transformations. And the minimum degree is four, so we can&#x27;t perform any of the other transformations or reductions. Therefore, Robertson&#x27;s example is either itself a forbidden minor for the reducible graphs or it contains smaller forbidden minors. But because it&#x27;s an apex graph, it&#x27;s linkless embeddable and doesn&#x27;t contain the Petersen family graphs as minors, so whatever it does contain must be something different. <a href="http://dx.doi.org/10.1002/jgt.20039">Yu</a> shows that Robertson&#x27;s example actually contains 57578 forbidden minors, formed by deleting one of the edges of the example and then performing YΔ and ΔY transformations. Since the forbidden minors for the reducible graphs are a superset of the forbidden minors for linkless embeddable graphs, the reducible graphs themselves are a proper subset of the linkless embeddable graphs.
+<br />
+
+<br />
+Ok, so the linkless-embeddable and reducible graphs are different: one class is contained in the other. What about the apex graphs? The apex graphs and the reducible graphs are both subsets of the linkless embeddable graphs, and we already know that there are apex graphs that are not reducible. But there also exist reducible graphs that are not apex: the one below is an example. It&#x27;s formed by duplicating two opposite vertices of a cube, and some case analysis shows that it&#x27;s a minimal forbidden minor for the apex graphs. (Other minimal forbidden minors for the apex graphs include the disjoint unions of pairs of Kurotowski graphs K<sub>5</sub> or K<sub>3,3</sub>, as well as at least three of the graphs in the Petersen family: K<sub>6</sub>, the Petersen graph itself, and K<sub>3,3,1</sub>. I suspect the other four Petersen family graphs are also minimal forbidden minors for the apex graphs but I haven&#x27;t gone through the case analysis needed to check them.) But the graph below is reducible: by performing YΔ transformations on the two leftmost and two rightmost vertices to turn them into triangles, eliminating the parallel edges, and then performing ΔY transformations, we get a cube, which is a planar graph and therefore is reducible.
+<br />
+
+<br />
+<div align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/ls/double-tipped-cube.png" /></div>
+<br />
+
+<br />
+ETA 7/25: Here&#x27;s another forbidden minor for the apex graphs. Start with a triangular prism, and connect two new vertices to each of the six prism vertices but not to each other. It&#x27;s the graph of a 4-polytope, the double pyramid over the prism. It&#x27;s also a YΔ transformation of an apex graph, but not itself an apex graph.

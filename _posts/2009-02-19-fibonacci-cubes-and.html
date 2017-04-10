@@ -1,0 +1,53 @@
+---
+layout: post
+title:  'Fibonacci cubes and the zigzag lattice'
+date:   2009-02-19 19:50:00
+tags:   [media theory, wikipedia]
+---
+<p>I just added an article on <a href="http://en.wikipedia.org/wiki/Fibonacci_cube">Fibonacci cubes</a> to Wikipedia. As the first sentence states, these are graphs that resemble hypercubes but have a Fibonacci number of vertices. Their vertices can be labeled by bitstrings that have no two consecutive one-bits in them, and two vertices are adjacent when their labels differ by one bit.</p>
+
+<p>Something I didn&#x27;t put in the article, because I didn&#x27;t find it in any of the published papers I found on these graphs: the Fibonacci cube is the graph of a <a href="http://en.wikipedia.org/wiki/Distributive_lattice">distributive lattice</a>. If <i>x</i> and <i>y</i> are bitstrings in the Fibonacci cube, the join of <i>x</i> and <i>y</i> can be found by taking their bitwise or in even positions of the bitstring and their bitwise and in odd positions. The meet is the reverse operation, taking the bitwise and in even positions and the bitwise or in odd positions. The top element of the lattice has all ones in the even positions, and the bottom element of the lattice has all ones in the odd positions. And <i>x</i> ≤ <i>y</i> in the lattice ordering if <i>x</i> has a 1 in every odd position that <i>y</i> does and a 0 in every even position that <i>y</i> does.</p>
+
+<p>By <a href="http://en.wikipedia.org/wiki/Birkhoff%27s_representation_theorem">Birkhoff&#x27;s representation theorem</a>, this lattice comes from a partial order. This partial order appears to consist of the bitstrings that (1) have a 1 in an even position, and 1&#x27;s in all nonadjacent odd positions, or (2) have a 0 in an odd position, and 1&#x27;s in all other odd positions. Its Hasse diagram is a zigzag path:</p>
+
+<pre>10010101    00100101    01001001    01010010
+       \     /     \     /     \     /     \
+      00010101    01000101    01010001    01010100</pre>
+
+<p>It&#x27;s easy to see from this picture that the number of lower sets in the partial order, and therefore the number of elements of the distributive lattice, satisfies the Fibonacci recurrence: the lower sets that include the final element of the zigzag are defined by a zigzag with one fewer element, and the lower sets that don&#x27;t include it also don&#x27;t include the element above it and are defined by a zigzag with two fewer elements.</p>
+
+<p><b>ETA:</b> Stanley has an article on “The Fibonacci Lattice” in <a href="http://www-math.mit.edu/~rstan/pubs/pubfiles/14.pdf">a 1975 Fibonacci Quarterly paper</a>. I was hoping it was the same lattice, since he&#x27;s defining lattices from posets via Birkhoff and he gets a lattice with a Fibonacci number of elements. But it&#x27;s not the same poset so it&#x27;s not the same lattice. I&#x27;ve renamed the title of this post to avoid confusion with his paper.</p>
+
+<p><b>ETA2:</b> In <a href="http://arxiv.org/abs/math.CO/9801066">arXiv:math.CO/9801066</a> Jim Propp mentions the lattice of independent sets of a bipartite graph. The zigzag lattice is what you get when you apply this construction to a path graph. In general the poset underlying Propp&#x27;s lattice is formed by directing the edges of the bipartite graph from one side of the bipartition to the other, which in the case of a path graph results in the zigzag poset.</p>
+
+<p><b>ETA3:</b> It is Stanley after all. <i>Enumerative Combinatorics</i>, exercise 3.23.</p>
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>brooksmoses</b>: <br />
+<b>2009-02-20T19:12:05Z</b><br />
+On a different note but one I thought you might be interested in, I just came across <a href="http://www.mpg.de/english/illustrationsDocumentation/documentation/pressReleases/2009/pressRelease20090211/index.html">this press release about a paper on an efficient algorithm for counting ways to color nodes in a graph</a>.  I&#x27;d be interested if you could comment on whether it&#x27;s really as remarkable a discovery as the glowing words in the press release imply.
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2009-02-20T22:32:44Z</b><br />
+It&#x27;s a new exponential algorithm for a problem that previously was solved in exponential time and is unlikely to be solved more quickly than exponential, computing the <a href="http://en.wikipedia.org/wiki/Chromatic_polynomial">chromatic polynomial</a> of a graph.
+
+What I can&#x27;t tell from the writeup is whether it&#x27;s an asymptotic improvement on previously known algorithms for the same problem or whether it&#x27;s only a practical improvement on the strawman brute force algorithm they used to test it against. The Wikipedia article on the <a href="http://en.wikipedia.org/wiki/Tutte_polynomial">Tutte polynomial</a> (a generalization of the chromatic polynomial that can be used to compute chromatic polynomials) says, of the deletion-contraction method that they compare themselves against, “In practice, branch and bound strategies and graph isomorphism rejection are employed to avoid some recursive calls. This approach works well for graphs that are quite sparse and exhibit many symmetries.” It&#x27;s not clear whether they used these strategies in their comparison.
+</div>
+<div style="margin-left: 6em; padding-top: 1em;">
+<b>None</b>: <br />
+<b>2009-02-23T01:32:06Z</b><br />
+it wouldn&#x27;t be the first time: http://everything2.com/node/1262632
+</div>
+<div style="margin-left: 9em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2009-02-23T01:39:19Z</b><br />
+Fascinating, in a watching-the-trainwreck sort of way. But of course physicists do not have a monopoly on bad reinventions of the wheel.
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: Great one!<br />
+<b>2009-02-26T00:52:24Z</b><br />
+I came across this blog while searching for something completely different, but I have to say, I&#x27;m impressed. I&#x27;ll definetely subscribe to the RSS feed.
+</div>
+

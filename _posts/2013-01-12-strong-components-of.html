@@ -1,0 +1,60 @@
+---
+layout: post
+title:  'Strong components of the Wikipedia graph'
+date:   2013-01-12 16:02:00
+tags:   [graph algorithms, wikipedia]
+---
+I recently covered strong connectivity analysis in <a href="http://www.ics.uci.edu/~eppstein/163/">my graph algorithms class</a>, so I&#x27;ve been playing today with applying it to the link structure of (small subsets of) Wikipedia.
+<br />
+
+<br />
+For instance, here&#x27;s one of the strong components among the articles linked from <a href="http://en.wikipedia.org/wiki/Hans_Freudenthal">Hans Freudenthal</a> (a mathematician of widely varied interests): Algebraic topology, Freudenthal suspension theorem, George W. Whitehead, Heinz Hopf, Homotopy group, Homotopy groups of spheres, Humboldt University of Berlin, Luitzen Egbertus Jan Brouwer, Stable homotopy theory, Suspension (topology), University of Amsterdam, Utrecht University. Mostly this makes sense, but I&#x27;m not quite sure how the three universities got in there. Maybe from their famous faculty members?
+<br />
+
+<br />
+It&#x27;s limited to relatively small graphs by the time it takes to grab the data from the Wikipedia servers, but the code is surprisingly easy. Given a set of articles, here&#x27;s all it takes to build the graph:<pre>def blueLinksFrom(article):
+<br />
+    &quot;&quot;&quot;Which Wikipedia articles are linked from the given article?&quot;&quot;&quot;
+<br />
+    api = &quot;http://en.wikipedia.org/w/api.php?action=parse&amp;page=&quot; + \
+<br />
+          urllib.quote(article.encode(&#x27;utf-8&#x27;)) +\
+<br />
+          &quot;&amp;format=json&amp;prop=links&quot;
+<br />
+    linkdata = json.loads(urllib2.urlopen(api).read())
+<br />
+    linkarray = linkdata[&#x27;parse&#x27;][&#x27;links&#x27;]
+<br />
+    return {L[&#x27;*&#x27;] for L in linkarray if &#x27;exists&#x27; in L and &#x27;:&#x27; not in L[&#x27;*&#x27;]}
+<br />
+
+<br />
+graph = {v:blueLinksFrom(v)&amp;articles for v in articles}</pre>Vaguely relatedly (well, it&#x27;s about graphs and Wikipedia, if nothing else) I discovered two things about <a href="http://en.wikipedia.org/wiki/Halin_graph">Halin graphs</a> today: (1) Like <a href="http://en.wikipedia.org/wiki/List_of_misnamed_theorems">many things in mathematics</a>, they&#x27;re <a href="http://en.wikipedia.org/wiki/Stigler's_law_of_eponymy">named after the wrong person</a>. Halin graphs (or at least, 3-regular Halin graphs) actually go back to the <a href="http://www.jstor.org/stable/108592">work of Thomas Kirkman</a>, over 100 years before Halin. (2) For about the past 3 1/2 years, Wikipedia may have been using the wrong Halin reference, copied from MathWorld. I can&#x27;t tell for sure because I don&#x27;t read German, but <a href="http://dx.doi.org/10.1007/BF01363288">the 1964 paper it was citing</a> (and that MathWorld still cites) seems to be about other topics. More reliable publications in this area instead cite a different paper by Halin, published in 1971.
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>ext_1592893</b>: <br />
+<b>2013-01-13T01:07:17Z</b><br />
+I&#x27;m likely not about to say something you haven&#x27;t already thought of, but you can work around the network limitation using the full XML dump of &quot;latest pages&quot; from wikipedia (http://en.wikipedia.org/wiki/Wikipedia:Database_download). About 9 GB to download initially in bzip2 format. Not a great deal more code in Python, although you have to use streaming XML processing and it&#x27;s more practical to pre-process and write out the graph (page titles and links) to disk and then analyse the structure.
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2013-01-13T01:38:26Z</b><br />
+That might be interesting to try too. I was thinking, though, that getting small subsets that are very fresh would be a better fit for what I was interested in using this for: working on an article or a narrow category and finding subsets of its links that should be connected to each other but aren&#x27;t.
+</div>
+<div style="margin-left: 6em; padding-top: 1em;">
+<b>ext_1592893</b>: <br />
+<b>2013-01-13T02:40:55Z</b><br />
+Yeah, that makes sense. I haven&#x27;t found a practical way to incrementally update a download like that, so I only do the full download once or twice a year. Probably not good enough for contemporary editing, but a fun dataset for trying out algorithms.
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: <br />
+<b>2013-01-13T05:32:12Z</b><br />
+It doesn&#x27;t surprise me that Kirkman was ignored here.  He was basically a crazy priest off in an isolated church in the north of England with nothing to keep him company but his combinatorics, his idiosyncratic but internally consistent nomenclature (&quot;Every polyedron P, not a pyramid, has either a convanescible or an evanescible edge.&quot;), and his Aspberger&#x27;s syndrome.  Reading Kirkman&#x27;s papers is like reading the phonebook, or the execution trace of an automatic theorem prover.  Cayley tried to edit his papers into human-readability, but eventually just gave up (leading to the &quot;falling out&quot; referenced in Wikipedia).  After that, Kirkman published his stuff in the equivalent of the problems section of the <i>Monthly</i>.  He&#x27;d be forgotten entirely if he hadn&#x27;t actually come up with some groundbreaking results.
+
+<i>As authorities and analogy are alike divided about the spelling of the word polyedron,
+I have pleased myself herein. Why <b>polyhedron</b> of necessity, and yet not <b>perihodic</b>?</i>
+— Thomas P. Kirkman.  On the Representation of Polyedra. <i>Phil. Trans. Royal Soc. London</i> 146:413–418, 1856.
+</div>
+

@@ -1,0 +1,66 @@
+---
+layout: post
+title:  'Report from FUN'
+date:   2012-06-06 16:25:00
+tags:   [sudoku, conferences, talks, algorithms]
+---
+I&#x27;ve been in Venice the last few days, for the 6th International Conference on Fun with Algorithms. It&#x27;s a beautiful city, the conference location (the small island of San Servolo, a short boat ride from the city) is also beautiful, the local organizers have been very helpful at guiding us through the city, and we&#x27;ve been served some amazing seafood here.
+<br />
+
+<br />
+On the first day, I gave my own talk on algorithms that try to replicate imprecise human-style Sudoku reasoning rather than (as is more usual for algorithms) directly trying to find an optimal solution. I&#x27;ve written on this in more detail <a href="http://11011110.livejournal.com/242711.html">here</a>, and I&#x27;ve now put <a href="http://www.ics.uci.edu/~eppstein/pubs/Epp-FUN-12-slides.pdf">my talk slides</a> on the web.
+<br />
+
+<br />
+The conference lived up to its name, and there were too many good and entertaining talks for me to mention all of them, so let me just add a few words about some that I found particularly intriguing, in no particular order.
+<br />
+
+<br />
+Giuseppe Persiano gave the first invited talk about what happens in game theory when one assumes that each players&#x27; choices are drawn randomly from some distribution (proportional to an exponential function of their utilities) rather than assuming perfect rationality (in which each player always takes the utility-maximizing option). This model turns out to shed light on the dynamics of consensus in social networks (e.g. everyone using Facebook because everyone else uses Facebook). Relatedly, I noticed that almost everyone at the conference used pdf format for their talk slides; there were some Powerpoint and Keynote presentations, but not many. And Jinyun Yan&#x27;s talk (on what insights can be gained from looking at the source code of arXiv papers) showed some interesting divergences between the two consensuses of mathematicians and computer scientists on what LaTeX packages to use for papers.
+<br />
+
+<br />
+Jorge Urrutia gave an inspiring invited talk on the second day concerning variations of the art gallery problem when the guards (or more realistically wireless modems) can see through a limited number of walls. One of his problems, the question of how many walls one needs to be able to see through to guard a gallery with only a single guard, turns out to be equivalent to <a href="http://arxiv.org/abs/cs.CG/9809037">regression depth</a>.
+<br />
+
+<br />
+I learned from Jyrki Katajainen that perfectly balanced binary trees and perfect medians as pivots in quicksort are not actually optimal. In the presence of branch prediction hardware (in a language like C that is close enough to the hardware), one can do a little better to pick asymmetric pivots and asymmetric tree roots, in order to make the algorithm&#x27;s branches more predictable.
+<br />
+
+<br />
+Both Erik Jan van Leeuwen and Kitty Meeks spoke about certain graph optimization problems that are NP-hard on trees, but nevertheless can be solved efficiently on some interesting classes of graphs (that, obviously, do not include all trees) It made me wonder about what the largest &quot;reasonable&quot; such classes might be. A minor-closed class of graphs does not include all trees if and only if it has bounded pathwidth, so looking for FPT algorithms on bounded pathwidth graphs looks like a reasonable thing to try. But Meeks described an algorithm for graphs with polynomial numbers of connected subgraphs; in the minor-closed case this seems to be equivalent to considering minor-closed graph families of bounded degree, or the graphs in which each connected component is a subdivision of a graph in some finite set of model graphs.
+<br />
+
+<br />
+Among the algorithms presented, the one with what seems the greatest likelihood of practical usefulness was presented by Gerhard Woeginger, and concerned a model of fair allocation of indivisible objects (pieces of property in a divorce, say) given only combinatorial information about the preferences of the parties dividing the objects. They give a simple algorithm for performing such a division in such a way that (whenever it is possible) both parties are convinced that they got at least half the total value. Runner-up for usefulness was a paper by Kevin Lang on efficiently generating permutations by selecting weighted items one at a time without replacement; an O(n) algorithm was known, and his algorithm is O(n log log n) in the worst case, but it&#x27;s fast and much more implementable than the previous one.
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>leonardo_m</b>: <br />
+<b>2012-06-07T06:50:32Z</b><br />
+The one by Jyrki Katajainen:
+http://www.cphstl.dk/Paper/Branch-mispredictions/fun12.pdf
+
+I have not found the one by Kevin Lang.
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2012-06-08T14:37:28Z</b><br />
+The official version is http://dx.doi.org/10.1007/978-3-642-30347-0_27 but I also can&#x27;t find a preprint version online.
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>_navi_</b>: <br />
+<b>2012-06-08T07:05:03Z</b><br />
+Is Gerhard Woeginger&#x27;s paper (or a preprint) available somewhere?
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2012-06-08T14:33:40Z</b><br />
+The official version is http://dx.doi.org/10.1007/978-3-642-30347-0_30 and there also seems to be a preprint version at http://repository.tue.nl/734323
+</div>
+<div style="margin-left: 6em; padding-top: 1em;">
+<b>_navi_</b>: <br />
+<b>2012-06-08T19:11:57Z</b><br />
+The second link gives an &quot;Access denied&quot; when I try to open &quot;full text&quot;. Oh well.
+</div>
+

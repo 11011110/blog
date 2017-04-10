@@ -1,0 +1,75 @@
+---
+layout: post
+title:  'Two great tastes that taste great together'
+date:   2006-06-18 12:26:00
+tags:   [cellular automata, python]
+---
+<p><a href="http://golly.sourceforge.net/">Golly</a> is a cross-platform cellular automaton simulator that incorporates hashlife algorithms, allowing it to simulate most Game of Life patterns for astronomical numbers of generations quickly. Version 1.0 was just released, and now also incorporates Python scripting, allowing the construction of astronomically <i>complex</i> patterns via modular high level programming rather than bit-at-a-time copy and pasting.</p>
+
+<p>For instance, here is <i>bricklayer.py</i>, a pattern first found by David Bell in 2002 that is formed by combining two p22 oscillators to make a gun, combining three p22 guns to make a p154 gun, and combining two p154 guns with a p7 glider reflector and a messy small Life pattern called &quot;lumps of muck&quot;. By itself, lumps of muck forms two subpatterns that, individually, would themselves turn back into LoM again, but unfortunately interfere with each other creating a mess. The streams of gliders from the two guns and reflector repeatedly hit the back subpattern, creating a block and allowing the other subpattern to grow without interference, effectively pushing the LoM forward diagonally at each step. It ends up forming two long diagonal sequences of blocks, with the guns at one end of the sequence, the LoM on the other, and the gliders running down the middle.</p>
+
+{% highlight python %}
+from glife import *
+
+rule ()  # Life
+
+p22_half = pattern("2o$bo$bobo$2b2o3bo$6bob2o$5bo4bo$6bo3bo$7b3o!")
+p22 = p22_half + p22_half(26, 9, flip)
+
+gun22 = p22 + p22[1](-18, 11)
+gun154 = gun22[27] + gun22[5](49, 12, rcw) + gun22(5, 53, flip_y)
+
+p7_reflector = pattern("""
+2b2o5b2o$2b2o5bo$7bobo$7b2o$3b2o$3bobo$4bo3$13bo$10bo2b3o3b2o$3b5o
+2b3o3bo2bo$b3obob3o4b2obobo$o4bo4b4obobo2b2o$2ob2ob4o3bobob2obo$
+4bobobobobo2bo2bobo$4bobobo2bo2bob3ob2o$3b2obob4o6bobo$7bo4b6o2b
+o$9bo2bo2bo4b2o$8b2o!""")
+pre_lom = pattern("2bo$2ob2o$2ob2o2$b2ob2o$b2ob2o$3bo!")
+
+all = gun154[210](-52, -38) + gun154[254](52, -38, flip_x) + \
+      p7_reflector(8, 23) + pre_lom(-3, 30)
+
+all.display("bricklayer")
+{% endhighlight %}
+
+<p>And here it is in the previously standard form for such patterns, a run-length-encoded text file:</p>
+
+<pre>x = 141, y = 88, rule = 23/3
+56bo27bo$54b3o27b3o$53bo33bo$53b2o31b2o3$18b2o6b3o3bobo15bo39bo15bobo
+3b3o6b2o$19bo6bobo2bo17bob2o35b2obo17bo2bobo6bo$19bobo6b3o5b2o11bob2o
+2b2o27b2o2b2obo11b2o5b3o6bobo$20b2o5bo6bo2bo12bo2bo3bo25bo3bo2bo12bo2b
+o6bo5b2o$26bobo7b2o16bobo27bobo16b2o7bobo$25b2o7bobo17bo31bo17bobo7b2o
+$25bo2bo6bo5b2o11b2o29b2o11b2o5bo6bo2bo$25b2o5b3o6bobo4bo6bo29bo6bo4bo
+bo6b3o5b2o$31bo2bobo6bo4b2o41b2o4bo6bobo2bo$28bobo3b3o6b2o4bo41bo4b2o
+6b3o3bobo$9bo14bo22bobo41bobo22bo14bo$2o6bobo11bobo21bo3bo2bo33bo2bo3b
+o21bobo11bobo6b2o$bo6bo3b2o9b2o22b2o2b2obo12bo5bo12bob2o2b2o22b2o9b2o
+3bo6bo$bobo6b3o5b2o31b2obo10b3o5b3o10bob2o31b2o5b3o6bobo$2b2o5bo7bo2bo
+32bo10bo11bo10bo32bo2bo7bo5b2o$7b2o9b2o9bo34b2o9b2o34bo9b2o9b2o$7b2o9b
+2o10bo25bo27bo25bo10b2o9b2o$6bo2bo7bo5b2o3b3o18b2o4bo29bo4b2o18b3o3b2o
+5bo7bo2bo$7b2o5b3o6bobo24bo4b3o25b3o4bo24bobo6b3o5b2o$13b2o3bo6bo21b3o
+10b3o15b3o10b3o21bo6bo3b2o$16bobo6b2o20bo12bob2o2b2o5b2o2b2obo12bo20b
+2o6bobo$17bo17bo28bo2bo5bo2bo46bo$33bobo14bo7bo2bobob3o5b3obobo2bo7bo
+10bo$34b2o14bobo12bo9bo12bobo9bobo3b2o$50b2o6bo6bo9bo6bo6b2o11bo2bo$
+59bo6bo7bo6bo17b2o4bo2bo$40bo19bo6bo5bo6bo19bobo3bobo$41bo3bo14bo19bo
+12b2o8bo$39b3o2bo13b3obobo2bo5bo2bobob3o9bobo8bo$44b3o11bo2bo17bo2bo
+15b2o$58b2o2b2obo9bob2o2b2o14b3o2b2o$12bo25bo24b3o9b3o17bob2o3b2o24bo$
+11bo2bo23b2o56b2obob2o23bo2bo$9bo5bo6bo7b2o5bobo52bo3b2o3bo7b2o7bo6bo
+5bo$9bo6bo4bobo6bo60b2obo15bo6bobo4bo6bo$13bo2bo11bobo29b2o17b2o11bo4b
+o12bobo11bo2bo$15bobo3bo2bo3b2o31bo17bo13b3ob2ob2o9b2o3bo2bo3bobo$10b
+2ob2o2bobo3b2o7b2o24b3o19b3o17b2o5b2o7b2o3bobo2b2ob2o$12b2o3bobo2b2ob
+2o6b2o23bo23bo17bo5b2o6b2ob2o2bobo3b2o$7b2o3bo2bo3bobo10bo75bo10bobo3b
+o2bo3b2o$6bobo11bo2bo93bo2bo11bobo$6bo6bobo4bo6bo85bo6bo4bobo6bo$5b2o
+7bo6bo5bo85bo5bo6bo7b2o$22bo2bo3b3o25bo51b3o3bo2bo$24bo3bob3o15b2o5bob
+o33b2o15b3obo3bo$27b3ob3o5b3o6bo7b2o34bo6b3o5b3ob3o$28b2obob2o4b3o4bob
+o43bobo4b3o4b2obob2o$28b2obobo6bo5b2o45b2o5bo6bobob2o$29bo4bobo4b2o55b
+2o4bobo4bo$30b2o4bobo4bo53bo4bobo4b2o$25b2o5bo6bobob2o51b2obobo6bo5b2o
+$24bobo4b3o4b2obob2o51b2obob2o4b3o4bobo$24bo6b3o5b3ob3o49b3ob3o5b3o6bo
+$23b2o15b3obo51bob3o15b2o$41b3o28bo24b3o$72bobo$72b2o5$80b2o5b2o$80b2o
+5bo$85bobo$85b2o$81b2o$81bobo$82bo$69bo$67b2ob2o$67b2ob2o19bo$88bo2b3o
+3b2o$68b2ob2o8b5o2b3o3bo2bo$68b2ob2o6b3obob3o4b2obobo$70bo7bo4bo4b4obo
+bo2b2o$78b2ob2ob4o3bobob2obo$82bobobobobo2bo2bobo$82bobobo2bo2bob3ob2o
+$81b2obob4o6bobo$85bo4b6o2bo$87bo2bo2bo4b2o$86b2o!</pre>
+
+<p>If you want to see the pattern itself within Golly, either one works equally well, but I think you can see which one is more human readable and modifiable as source code.</p>
+
+<p>This is making me think the push-pull replicator-based spaceships that should exist in <a href="http://www.ics.uci.edu/~eppstein/ca/replicators/b36s23.html">HighLife</a> and <a href="http://www.ics.uci.edu/~eppstein/ca/replicators/b368s12578.html">B368/S12578</a> may be within reach of construction now...</p>

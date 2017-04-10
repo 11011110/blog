@@ -1,0 +1,27 @@
+---
+layout: post
+title:  'Report from CCCG'
+date:   2010-08-10 00:09:00
+tags:   [computational geometry, conferences, talks]
+---
+I realize that everyone else in the theoretical CS blogosphere is excited over <a href="http://rjlipton.wordpress.com/2010/08/09/issues-in-the-proof-that-p%e2%89%a0np/">something to do with P and NP</a>, but I&#x27;m in Winnipeg for <a href="http://www.cs.umanitoba.ca/~cccg2010/">CCCG</a> this week, surrounded by geometers and geometry.
+<br />
+
+<br />
+David Avis gave a very entertaining invited talk on cut metrics and cut polytopes, the Paul Erdős Memorial Lecture — apparently, the first invited talk at the first CCCG was by Erdős, and since then one of the qualifying characteristics of the first invited speakers at subsequent CCCGs is that they have to have <a href="http://en.wikipedia.org/wiki/Erd%C5%91s_number">Erdős number one</a>. For this CCCG, they seem to have added a new requirement, that the invited speakers all have to be named David, and even the introduction to Avis&#x27; talk was by another David (Rappaport). However despite the official name for the talk, Avis dedicated his talk to the memory of <a href="http://www.loria.fr/news/bloc1/a-la-une/hommage-a-hazel-everett">Hazel Everett</a>, who recently lost her struggle with cancer.
+<br />
+
+<br />
+Avis mentioned an open problem in metric graph theory that was new to me, but quite interesting: Kusner&#x27;s conjecture, that embedding the complete graph K<sub>n</sub> isometrically into an L<sub>1</sub> space requires ceiling(n/2) dimensions. For instance, K<sub>6</sub> can be embedded into three-dimensional L<sub>1</sub> space as the vertices of a regular octahedron, but K<sub>7</sub> already requires one more dimension. The proof that K<sub>5</sub> requires three dimensions is trivial (at least, it is if you know about <a href="http://en.wikipedia.org/wiki/Tight_span">tight spans</a>), the proof that K<sub>7</sub> requires four dimensions is due to Bandelt, Chepoi, and Laurent [<a href="http://dx.doi.org/10.1007/PL00009370">DCG 1998</a>], the proof that K<sub>9</sub> requires five dimensions is due to Koolen, Laurent, and Schrijver [<a href="http://dx.doi.org/10.1023/A:1008391712305">Designs, Codes, and Cryptography 2000</a>], and beyond that only weaker bounds are known.
+<br />
+
+<br />
+Among the contributed talks, I especially enjoyed the ones by Vogtenhuber et al on <a href="http://www.cs.umanitoba.ca/~cccg2010/electronicProceedings/paper75.pdf">blocking Delaunay triangulations</a> (given n red points, how many blue points do you need to add to ensure that the Delaunay triangulation of the augmented point set has no red-red edges?) and Charlton et al on &quot;<a href="http://www.cs.umanitoba.ca/~cccg2010/electronicProceedings/paper29.pdf">ghost chimneys</a>&quot; (a famous phenomenon in Japan according to which the four smokestacks of the <a href="http://en.wikipedia.org/wiki/Senju_Thermal_Power_Station">Senju Thermal Power Station</a> are seen from some angles as three, two, or one smokestack; in general, for which intervals of integers does there exist a planar point set that can be viewed from different angles in such a way that the number of visible points is any number in the interval?).
+<br />
+
+<br />
+I was hoping to enjoy a talk by Rahmati and Zarei (or, actually, since there were problems for several Iranians attempting to get into the country, by a non-author of their paper) on <a href="http://www.cs.umanitoba.ca/~cccg2010/electronicProceedings/paper32.pdf">the number of combinatorial changes that the Euclidean minimum spanning tree can undergo</a>, if the points that form the vertices of the tree are moving along paths of the form (X(t),Y(t),Z(t)) at time t, where X, Y, and Z are all bounded-degree polynomials of t. They claim a near-cubic bound on the number of changes (improving an easy O(n<sup>4</sup>) bound: each pair of possible EMST edges can swap into and out of the EMST a constant number of times) but I think their proof is just wrong. It is based on a &quot;theorem&quot; that, if you have n functions, each of which is a polynomial that is defined only over some subset of the real line, and if you take the pointwise minimum of the functions that are defined at any point, and if the boundary points of the sets within which each function is defined are all points where it is not the minimum, then you get a <a href="http://en.wikipedia.org/wiki/Davenport%E2%80%93Schinzel_sequence">Davenport-Schinzel sequence</a> with near-linear complexity: you can fill in the missing gaps of the functions by sufficiently large function values to get totally defined functions without changing the pointwise minimum and then use standard Davenport-Schinzel bounds. Unfortunately what you do change when you fill in the missing gaps in the functions is the property that each pair of functions crosses each other O(1) times, so it&#x27;s not true that the pointwise minimum is a Davenport-Schinzel sequence. In fact it&#x27;s easy to find counterexamples, sets of n partially-defined linear functions whose lower envelope has complexity that is a superlinear power of n. I don&#x27;t know whether their bound on the EMST itself is true or false, though.
+<br />
+
+<br />
+More tomorrow, if I have the energy after my own talk...

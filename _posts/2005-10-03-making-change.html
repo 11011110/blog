@@ -1,0 +1,39 @@
+---
+layout: post
+title:  'Making change'
+date:   2005-10-03 10:34:00
+tags:   [dynamic programming, algorithms]
+---
+<p>Kind of an old link, but before I lose it again: <a href="http://science.slashdot.org/article.pl?sid=03/05/16/1256213">slashdot thread on the problem of making change with as few coins as possible</a>.  Including pointers to Shallit&#x27;s research on coin systems minimizing the expected number of coins, and some discussion of why, in general, greedy algorithms don&#x27;t work for optimal change-making and instead dynamic programming may be required.</p>
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: another reference<br />
+<b>2005-10-03T19:14:29Z</b><br />
+I believe one of Dennis Shasha&#x27;s puzzle columns for Scientific American a few years back also posed the same problem. I am not sure if he knew of Shalit&#x27;s work, or vice-versa.
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: Four coin {1,a,b,c}  asymptotics, anyone?<br />
+<b>2005-10-03T23:22:21Z</b><br />
+Quite awhile ago I sent a problem to the American Math Monthly <a href="http://www.plambeck.org/oldhtml/mathematics/coinchanging/coinchangingproblem.pdf">asking for the asymptotic number of greedy-optimal {1,a,b} coin sets</a>.  I&#x27;ve tried to work out four coin asymptotics more than once without success, but have never been able to interest anyone else in the problem...so, here&#x27;s another chance, everyone!
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: Re: Four coin {1,a,b,c}  asymptotics, anyone?<br />
+<b>2005-10-04T00:56:22Z</b><br />
+Presumably this long since appeared in the Monthly answers...
+
+I calculated the probability that {1,a,b} (chosen randomly from pairs &lt;= n) is greedy-optimal to be 8/3 n^{-1/2} (plus lower order terms), but the calculation was messy enough that I likely made a mistake somewhere.
+
+It appears to be the case (e.g. applying Lemma 1 of <a href="http://portal.acm.org/citation.cfm?id=321961">Chang and Korsh, JACM 1976</a>) that {1,a,b} is greedy-optimal iff a&lt;=(b mod a)+floor(b/a).  The messy part is calculating how many pairs a,b satisfy that inequality.
+
+No idea how to extend this to {1,a,b,c}.
+
+</div>
+<div style="margin-left: 6em; padding-top: 1em;">
+<b>None</b>: Re: Four coin {1,a,b,c}  asymptotics, anyone?
+<b>2005-10-04T06:31:28Z</b>
+Nope, no mistake, that&#x27;s it, 8/3 etc, I&#x27;m pretty sure.
+
+
+</div>
+

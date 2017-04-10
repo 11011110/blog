@@ -1,0 +1,15 @@
+---
+layout: post
+title:  'CCCG acceptances'
+date:   2013-06-23 11:10:00
+tags:   [computational geometry, graph drawing, conferences, papers]
+---
+The <a href="https://cs.uwaterloo.ca/conferences/cccg2013/accepted.html">list of accepted papers for CCCG 2013</a> (the <a href="https://cs.uwaterloo.ca/conferences/cccg2013/">25th Canadian Conference on Computational Geometry</a>) is now online. I have two papers there, one of which is on the arXiv. (Since the CCCG proceedings will be online eventually, my coauthors didn&#x27;t see the point in putting the other one up early.)
+<br />
+
+<br />
+&quot;Set-Difference Range Queries&quot; (with Mike Goodrich and Joe Simons, <a href="http://arxiv.org/abs/1306.3482">arXiv:1306.3482</a>) is about data structures for keeping track of multiple point sets in the same geometric space, and determining how two sets differ within some region of the space. The basic idea is to combine the spatial decompositions commonly used for range searching with sketches of the data associated with each node of the decomposition; one of the sketches we use is the invertible Bloom filter from my work with Mike at WADS&#x27;07.
+<br />
+
+<br />
+&quot;Universal Point Sets for Planar Graph Drawings with Circular Arcs&quot; (with Patrizio Angelini, Fabrizio Frati, Michael Kaufmann, Silvain Lazard, Tamara Mchedlidze, Monique Teillaud and Alexander Wolff) is about <a href="http://en.wikipedia.org/wiki/Universal_point_set">universal point sets</a>, sets of points in the plane that can be used as the vertices for planar drawings of all possible <i>n</i>-vertex planar graphs. For drawings in which the edges are straight line segments, universal point sets generally have to have more than <i>n</i> points, and determining how many points are needed is a big open problem. But one can also consider universal point sets for other drawing styles; for instance, it was known that every strictly convex curve in the plane contains a set of <i>n</i> points that is universal for drawings in which each edge is drawn as a polyline with at most one bend. These polylines could be approximated by hyperbolic arcs, giving a drawing with very simple smooth curves for each edge, but maybe one could use curves that are even more restricted. In this paper we show that this is true for circular arcs: a certain set of <i>n</i> points on a parabola is universal for circular-arc drawings of planar graphs. It&#x27;s purely a theoretical result, though, as the vertices are too unevenly spaced and the edges too tightly packed into a neighborhood of the parabola for these drawings to be useful as visualizations.

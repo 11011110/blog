@@ -1,0 +1,48 @@
+---
+layout: post
+title:  'One-crossing-minor-free flows'
+date:   2010-07-11 18:24:00
+tags:   [graph algorithms, papers]
+---
+Families of graphs that are closed under the operation of taking <a href="http://en.wikipedia.org/wiki/Minor_(graph_theory)">minors</a> have a deep and mysterious <a href="http://en.wikipedia.org/wiki/Graph_structure_theorem">structure theory</a>, in which the graphs in the family can be formed by <a href="http://en.wikipedia.org/wiki/Clique-sum">clique-sums</a> of bounded-genus graphs with finitely many &quot;apexes&quot; and &quot;whorls&quot;. But in some cases, the structure can be greatly simplified: if one of the <a href="http://en.wikipedia.org/wiki/Forbidden_graph_characterization">forbidden minors</a> of the family can be drawn in the plane with only one <a href="http://en.wikipedia.org/wiki/Crossing_number_(graph_theory)">crossing</a>, then the graphs in the family can be formed from clique-sums that only involve planar graphs and constant-sized graphs.
+<br />
+
+<br />
+For instance, the K<sub>5</sub>-free graphs are formed by gluing together planar graphs and copies of the eight-vertex <a href="http://en.wikipedia.org/wiki/Wagner_graph">Wagner graph</a> at their vertices, edges, or triangles. A similar decomposition is known for the K<sub>3,3</sub>-free graphs, with K<sub>5</sub> taking the place of the Wagner graph.
+<br />
+
+<br />
+We know how to solve the <a href="http://en.wikipedia.org/wiki/Maximum_flow">maximum flow problem</a> in planar graphs quite efficiently, in part because it&#x27;s closely related through planar graph duality to easier shortest path problems. For instance, Borradaile and Klein (<a href="http://www.glencora.org/publications/an-on-log-n-algorithm-for-maximum-st-flow-in-a-directed-planar-graph/">JACM 2009</a>) showed how to solve planar directed flow problems in O(n log n) time. It would be nice if we could extend these speedups to broader classes of graphs. Some such extensions are known: Chambers, Erickson, and Nayyeri, in two papers at <a href="http://mathcs.slu.edu/~chambers/papers/surfcut.pdf">SoCG&#x27;09</a> and <a href="http://mathcs.slu.edu/~chambers/papers/surflow.pdf">STOC&#x27;09</a>, found efficient algorithms for flow problems in bounded genus graphs, and Hochstein and Weihe at <a href="http://portal.acm.org/citation.cfm?id=1283383.1283473">SODA&#x27;07</a> showed how to solve flows efficiently for graphs that can be drawn in the plane with a bounded number of crossings. But none of these techniques seemed to extend to more general minor-closed families.
+<br />
+
+<br />
+My new preprint with <a href="http://mathcs.slu.edu/~chambers/">Erin Chambers</a>, &quot;<a href="http://arxiv.org/abs/1007.1484">Flows in One-Crossing-Minor-Free Graphs</a>&quot; (arXiv:1007.1484) extends the planar flow algorithms in a different direction, to one-crossing-minor-free graphs. The basic idea is to apply a technique from Hagerup, Katajainen, Nishimura, and Ragde (<a href="http://dx.doi.org/10.1006/jcss.1998.1592">JCSS 1998</a>) for flows in graphs of bounded <a href="http://en.wikipedia.org/wiki/Tree_decomposition">treewidth</a>. Bounded-treewidth graphs are, essentially, the graphs that you get from clique-sums of constant-sized graphs, and the idea of Hagerup et al. is to repeatedly replace the subgraph on one side of a clique-sum by a constant-sized &quot;mimicking network&quot; with the same flow properties. With some care in how the replacements are ordered and in the construction of the mimicking networks, the same idea turns out to work for the clique-sums in the structural decomposition of one-crossing-minor-free graphs. The Hochstein-Weihe result also comes into play, because as the sequence of replacements progresses we need to compute flows in planar graphs with constant-sized replacement graphs glued into them, which are a special case of graphs with a constant number of crossings.
+<br />
+
+<br />
+The real goal is to handle arbitrary minor-closed graph families, but to do that we&#x27;d need to extend our techniques in three ways: we need to handle clique-sums of bounded-genus but nonplanar graphs, we need to handle apexes, and we need to handle whorls. There are some technical reasons why our methods don&#x27;t immediately extend to the bounded genus case, involving the possibility that the triangles that components of a clique-sum are glued together along might not be separating. And since whorls involve bounded <a href="http://en.wikipedia.org/wiki/Path_decomposition">pathwidth</a> there&#x27;s some hope of progress there. But the apexes seem to be a problem. A single apex can introduce an unbounded number of crossings. And, even finding maximum flows in planar graphs with apexes, without all the other aspects of the structure theory, would be interesting: it would allow us to solve planar problems with multiple sources and multiple sinks, by connecting all these terminals together to new apex nodes.
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: <br />
+<b>2010-07-12T14:33:49Z</b><br />
+Nice and informative post, thanks.
+
+I have one general question about &#x27;minor-closed algorithmics&#x27;, i.e., algorithms which solve some combinatorial problem (e.g. max flow) fast on a graph which is promised to come from a minor-closed class.
+
+Namely: do such algorithms usually rely on first having or finding a structure-decomposition for the input graph?  Or are there cases where the algorithm can &#x27;take it on faith&#x27;?
+
+As a simpler, related question: are there graph algorithms solving problems on planar graphs, that are faster than finding the planar embedding first and then solving the problem?
+Apologies if this question is overly-general.
+
+thanks, 
+Andy D
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2010-07-12T15:31:08Z</b><br />
+In this case we needed a structural decomposition explicitly, but I think most algorithms in this area don&#x27;t. The thing to watch out for with algorithms on minor-closed families is that they often have O-notation that looks nice but that hides astronomical constant factors, making them practically not so useful.
+
+As for whether there are algorithms on planar graphs that don&#x27;t rely on having a planar embedding of the graph: yes, sometimes all that is needed is that the graph is sparse. For instance <a href="http://11011110.livejournal.com/199317.html">my recent post on clique-finding</a> applies to planar graphs without needing an embedding. You can 6-color (possibly 5-color, I&#x27;m not sure, but 6 is easy) a planar graph in linear time without going through the embedding or the 4-color theorem. But it depends on what problem you want to solve.
+</div>
+

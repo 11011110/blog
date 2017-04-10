@@ -1,0 +1,46 @@
+---
+layout: post
+title:  'Pan-rep-tiles'
+date:   2015-11-11 00:37:00
+tags:   [tiling]
+---
+A reptile is a creature, but a <a href="https://en.wikipedia.org/wiki/Rep-tile">rep-tile</a> is a shape that can tile a larger copy of the same shape. If you use that larger copy to tile still-larger copies, and so on, you get a tiling of the plane. It&#x27;s often an aperiodic tiling, but not always: for instance, the square and the equilateral tiling are rep-tiles but generate periodic tilings when repped.
+<br />
+
+<br />
+Another of the properties of the square and the equilateral triangle is that they are rep-tiles in many different way. Any square number of these tiles can be put together to make a larger copy. A rep-tile is said to be rep-<i>k</i> if it uses <i>k</i> tiles to tile its larger self; these shapes are rep-<i>k</i> for all square <i>k</i>. For tiles whose side lengths are all rational multiples of each other, that&#x27;s the most versatile a rep-tile can be, because the side length of the larger copy is the square root of <i>k</i>. Let&#x27;s say that a rep-tile is a pan-rep-tile if it has this same property, of being rep-<i>k</i> for all square <i>k</i>. Are there other pan-rep-tiles?
+<br />
+
+<br />
+Over on the <a href="https://en.wikipedia.org/wiki/Talk:Rep-tile">Wikipedia talk page for the rep-tile article</a>, an anonymous (IP address) editor suggested this property as one that might actually be held by many rep-tiles, and gave some examples of tilings suggesting that the P pentomino and the <a href="https://en.wikipedia.org/wiki/Sphinx_tiling">sphinx</a> might be examples of pan-rep-tiles. It turns out not to be particularly difficult to show that the P pentomino is, in fact, a pan-rep-tile: see the visual demonstration below.
+<br />
+
+<br />
+<div align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/panreptile.png" /></div>
+<br />
+
+<br />
+Is the same true for the sphinx?
+<br />
+
+<br />
+<b>ETA:</b> Yoshio Okamoto informs me that his paper with Ryuhei Uehara and Takashi Horiyama at <a href="http://www.kurims.kyoto-u.ac.jp/~takazawa/JCDCGG2015/">JCDCG^2 2015</a>, &quot;Ls in L and Sphinxes in Sphinx&quot;, proves that sphinxes are indeed pan-rep-tiles.
+<br />
+
+<br />
+<b>ETA 2:</b> The results for the P-pentomino, sphinx, and several other rep-tiles are in Niţică, Viorel (2003), Rep-tiles revisited, MASS selecta, pp. 205–217, Amer. Math. Soc. Thanks to Gerhard Woeginger for the reference!
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: <br />
+<b>2015-11-11T15:38:21Z</b><br />
+Could you spell out the induction step a bit more?  For example, how do you get the rep-11^2 tiling?
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2015-11-11T16:48:00Z</b><br />
+To get rep-11^2, you start with rep-1 (i.e. a single P pentomino), which you can think of as being decomposed into a 1x1 square and a 2x2 square. You wrap the 1x1 square with the green central core of the odd L-shape to get an 11x11 square, and you wrap the 2x2 with two layers of even L-shapes to get 22x22.
+
+The rep-7^2 already shown has the same type of construction — it&#x27;s formed by wrapping the rep-3^2 with L-shapes, shown by the coloring — except that in that case the L-shapes are thinner than 10 units.
+</div>
+

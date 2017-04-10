@@ -1,0 +1,48 @@
+---
+layout: post
+title:  'Rips complexes of spherical cows'
+date:   2008-01-08 23:11:00
+tags:   [topology]
+---
+At WADS last summer Jeff Erickson gave a <a href="http://3dpancakes.typepad.com/ernie/2007/09/life-small-hole.html">nice talk</a> about <a href="http://en.wikipedia.org/wiki/Vietoris%E2%80%93Rips_complex">Rips complexes</a>, which I also <a href="http://11011110.livejournal.com/114445.html">posted about here</a> a while back, and last month <a href="http://arxiv.org/abs/0712.0395">Jeff and his co-authors posted their preprint to the arxiv</a>, at which point I dumped it in my folder of recent arxiv preprints that I should really read and try to understand someday. But then it was the holidays and I got busy with other stuff and I didn&#x27;t get around to looking at it until now, when Jeff and his student Erin Chambers (another of the preprint co-authors) are visiting and I could just ask them to tell me what&#x27;s in it rather than having to take the trouble to read it myself.
+<br />
+
+<br />
+The motivating problem here is <a href="http://en.wikipedia.org/wiki/Sensor_network">distributed sensor networks</a>: one imagines scattering randomly a collection of low-power wireless computing devices over some area, letting them talk to each other, and from that information figuring out the shape of the area they&#x27;ve been spread over. In the <a href="http://en.wikipedia.org/wiki/Spherical_cow">oversimplified theoretical model</a> of such networks, two devices can talk to each other if they&#x27;re within some threshold distance D of each other, and can&#x27;t talk to each other otherwise, giving a <a href="http://en.wikipedia.org/wiki/Unit_disk_graph">unit disk graph</a>. Once one strips out the topological definitions, Chambers et al propose the following model for reconstructing the shape of the point set from this graph: form a triangle for every three devices that can talk to each other in pairs, and a line segment for every two devices that can talk to each other, take the union of these geometric objects (the “shadow of the Rips complex”), and use that as your approximation to the shape of the points. The nice theorem is that the shadow has the same fundamental group as the Rips complex itself, so that the Rips complex is useful for computing topological information about the shape of the points in a nice coordinate-free way. In some other papers some permutation of these authors also find an efficient algorithm for computing shadows and for <a href="http://compgeom.cs.uiuc.edu/~jeffe/pubs/ripscon.html">testing contractability of cycles on Rips complexes</a> (or equivalently, by their other results, in their shadows).
+<br />
+
+<br />
+So that&#x27;s the good news. The bad news: this all doesn&#x27;t really work for the sensor network problems. We&#x27;ve made too many assumptions that don&#x27;t make sense in that application. One of those assumptions, made in the results on algorithms for testing contractability and computing shadows, is that we know the coordinates of the points. But in the sensor network application, the whole difficulty is that we don&#x27;t know the coordinates — if we did, there are plenty of more direct methods of reconstructing shapes — we want to reconstruct the shape of a point set in a coordinate-free way, and the Rips complex is defined in a nice coordinate-free way but that freedom doesn&#x27;t extend to the algorithms.
+<br />
+
+<br />
+The second bad assumption is that the sensors can talk to each other exactly when they&#x27;re within D of each other. Really, there&#x27;s some threshold within which they can talk to each other, some larger threshold beyond which they can&#x27;t talk to each other, and between those two thresholds they may or may not be able to communicate. To understand this more complex behavior, Chambers et al define a <i>quasi-Rips complex</i>, the flag complex (family of simplices defined from complete subgraphs) of a graph that has edges with the same thresholding behavior. But it turns out (section 4 of the arxiv preprint) that quasi-Rips complexes are a lot less well-behaved than Rips complexes. The fundamental groups of planar regions, and of Rips complexes of planar point sets, are always <a href="http://en.wikipedia.org/wiki/Free_group">free</a>, but the fundamental groups of quasi-Rips complexes of planar point sets can be (modulo a free factor) any <a href="http://en.wikipedia.org/wiki/Presentation_of_a_group">finitely presented group</a>. The construction involves placing many points in three tightly packed clusters near each of the three corners of an equilateral triangle, allowing the graph from which the quasi-Rips complex is formed to be the complement of an arbitrary tripartite graph.
+<br />
+
+<br />
+The upshot of which is that, although interesting as abstract computational topology, it&#x27;s not yet clear whether the pretty theory can be applied to the practical problems that motivated it. At the least, more work is needed, either smoothing away the topological problems of the quasi-Rips complex or showing that they only arise for unlikely configurations of points, and allowing the algorithms to run even in the absence of coordinates.
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: <br />
+<b>2008-01-09T20:43:13Z</b><br />
+Ahh yes, Sensor Networks, the land of dreams.  I left the area in part due to a community reluctance to step away from theoretical models, and move toward a, sadly, non-tractable reality.  Even the systems side of the community was stuck in a rut using circular emission models when their own measurement studies showed nothing of the like.   Still are as far as I know.  Protocols that looked great on paper would almost always had fundamental flaws that would kill them in the field.
+
+Never the less, it does sound like interesting work from a topology perspective!
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: A question for the author<br />
+<b>2008-01-09T23:54:03Z</b><br />
+Hello, I am a beginning graduate student interested in graph theory. I saw many nice pictures posted by you in Wikipedia: I, myself, am really struggling to find an easy to use graph drawing tool (for Linux) which draws graphs G=(V,E) as the graph theorists (drawing on a blackboard) are used to: just circles or points connected with arrows or lines. I came up with many tools which are either 1) too intricate or 2) understand the shape of &quot;graph&quot; in some other way or 3) look ugly or have an ugly control. So what do scientists use to draw graphs?
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: Re: A question for the author<br />
+<b>2008-01-10T02:27:57Z</b><br />
+I can&#x27;t speak for others, but mostly I either use Adobe Illustrator (meaning, I have to place each vertex myself, by hand) or custom software. I understand that <a href="http://www.graphviz.org/">graphviz</a> is pretty good as a package for more automatic graph drawing, in which the program decides where to put the vertices and you don&#x27;t have to tell it how to do so, but I haven&#x27;t really used it.
+</div>
+<div style="margin-left: 6em; padding-top: 1em;">
+<b>chouyu_31</b>: Re: A question for the author<br />
+<b>2008-01-10T03:35:28Z</b><br />
+I&#x27;ve used graphviz a few times to generate call graphs, and it works reasonably well for the kind of graph I told it to generate.  I tried it with some other graphs, and it produced garbage.  It seems hit or miss, depending on the graph.
+</div>
+

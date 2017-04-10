@@ -1,0 +1,108 @@
+---
+layout: post
+title:  'Odd bisectors of points on circles'
+date:   2010-03-14 13:59:00
+tags:   [circles]
+---
+In honor of <a href="http://en.wikipedia.org/wiki/Pi_Day"><i>π</i> day</a>, here&#x27;s a little puzzle about circles.
+<br />
+
+<br />
+Suppose that you have an odd number <i>n</i> of points distributed on a circle, in such a way that no two of them belong to the same diameter. Define a <i>bisector</i> to be a diameter of the circle that passes through one of the given points and partitions the remaining points into two equal-sized subsets of (<i>n</i> − 1)/2 points. Prove that there must be an odd number of bisectors.
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>aidarov</b>: <br />
+<b>2010-03-15T02:43:32Z</b><br />
+Am I right that the number of bisectors is equal to n which is odd?
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2010-03-15T02:55:32Z</b><br />
+Not necessarily: for instance, all the points could be clustered in one semicircle, in which case there would be only one bisector. But no matter how the points are placed and no matter how many bisectors there are, there can only be an odd number of them.
+</div>
+<div style="margin-left: 6em; padding-top: 1em;">
+<b>aidarov</b>: <br />
+<b>2010-03-15T03:29:34Z</b><br />
+You are right. So I think this is the proof. Let (a)i is the difference between number of point in left and right sides of a point, i=1..n. The sum of (a)i is zero and all (a)i except zeroes can be put into pairs where (a)k+(a)l = 0. It is very difficult to me to explain it in English how to put them into pairs but I found the way to do it. If the number of pairs is m then the number of zeroes (bisectors) is n-2*m which is odd.
+</div>
+<div style="margin-left: 9em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2010-03-15T04:42:26Z</b><br />
+I think this is all true, so if you fill in the part about putting them into pairs this could be a proof.
+
+The proof I had in mind involved repeatedly removing any pair of points that forms an angle as close as possible to π (it&#x27;s π day!). This removal doesn&#x27;t change the remaining bisectors and either both removed points form bisectors or neither do, so it also doesn&#x27;t change the parity.
+
+But I think this can be transformed into your proof quite easily: keep removing pairs in this way until one point is left. Then, put all the points back but keep the pairing. Each point either has (a)i=0 forming a bisector, or is paired with another point with (a)k+(a)l=0.
+</div>
+<div style="margin-left: 12em; padding-top: 1em;">
+<b>rgrig</b>: <br />
+<b>2010-03-15T22:16:52Z</b><br />
+&quot;Angle as close as possible to π&quot; to me sounds like &quot;points are as far as possible,&quot; but I guess you meant kπ so the points can also be very close. Right?
+</div>
+<div style="margin-left: 15em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2010-03-15T22:42:12Z</b><br />
+&quot;Points as far as possible&quot; would be another way of saying what I meant. I don&#x27;t think it works to remove close pairs — e.g. if the points are all in a semicircle then removing any two adjacent points changes where the bisector is.
+</div>
+<div style="margin-left: 18em; padding-top: 1em;">
+<b>rgrig</b>: <br />
+<b>2010-03-16T09:40:33Z</b><br />
+Thanks. 
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>dkorduban</b>: <br />
+<b>2010-03-15T18:25:34Z</b><br />
+nice!
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2010-03-15T20:44:51Z</b><br />
+Thanks!
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>ext_228046</b>: Another approach<br />
+<b>2010-03-16T03:05:39Z</b><br />
+&quot;Obviously&quot;, if the points are evenly distributed around the circle, the property holds.
+
+So start with the points distributed evenly around the circle, and show that as you slide points around, the property continues to hold.  (You do not even have to consider the case where you slide a point across another. Since the points are indistinguishable, you can reach any final configuration by sliding points without crossing.)
+
+You only have to consider the case of sliding one point as the opposite side of its diameter crosses another point...  And prove that either both points retain their &quot;bisecting&quot; property, or both points have their &quot;bisecting&quot; property toggled.  There are only a finite number of cases and all of them work.  I think :-).
+
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: Re: Another approach<br />
+<b>2010-03-16T03:08:52Z</b><br />
+Yes, I think this should work.
+</div>
+<div style="margin-left: 6em; padding-top: 1em;">
+<b>ext_228046</b>: Re: Another approach<br />
+<b>2010-03-16T18:18:55Z</b><br />
+Actually, as it turns out, the number of cases is more finite than I thought...  There are only two.  :-)
+
+Again, consider &quot;sliding&quot; a single point P along the circle.  If the diameter emanating from P is about to &quot;sweep across&quot; a point Q on the other side (or just did sweep across Q), then either both points lie on bisectors or neither do.  This is easy to see, since as the diameter from P approaches Q, P also approaches the diameter from Q, so in the limit they are essentially the same diameter.
+
+The conservation of bisector parity follows directly.
+
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: <br />
+<b>2010-03-18T05:31:04Z</b><br />
+There is a parity argument. Start with any hemisphere H whose bounding diameter touches no point of your set. Shade either H or its complement, whichever contains a majority of the points. Rotate H clockwise, keeping the shading updated all the time. Bisectors are in 1-1 correspondence with the occasions on which the shading flips. By the time H has spun pi degrees, all bisectors have been encountered. At that point H is shaded if and only if it was not shaded at the start. - LJS
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b></b><br />
+
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2010-03-18T06:10:49Z</b><br />
+Elegant. This may be the book proof. And it uses π too. But degrees?
+</div>
+<div style="margin-left: 6em; padding-top: 1em;">
+<b>None</b>: <br />
+<b>2010-03-19T01:02:30Z</b><br />
+Every book has typos, I suppose. - LJS
+</div>
+

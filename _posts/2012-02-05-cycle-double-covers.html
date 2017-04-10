@@ -1,0 +1,55 @@
+---
+layout: post
+title:  'Cycle double covers'
+date:   2012-02-05 18:41:00
+tags:   [graph theory, papers]
+---
+Alexander Souza has <a href="http://arxiv.org/abs/1202.0569">a new paper</a> on the arXiv claiming to prove the <a href="http://en.wikipedia.org/wiki/Cycle_double_cover">cycle double cover conjecture</a>, that every bridgeless graph has a multiset of simple cycles that covers every edge exactly twice. If it stands up, it&#x27;s a great result, solving a famous open problem.
+<br />
+
+<br />
+The main ideas are
+<br />
+
+<br />
+(1) Solve a stronger problem, that every set of edge-disjoint cycles can be extended to a cycle double cover;
+<br />
+(2) Show that, given a set of edge-disjoint cycles, it&#x27;s possible to find an &quot;augmenting set&quot;, a subset of the edges of the cycles such that, if these edges are deleted, the remaining edges of the cycles can be extended in a different way to form a different set of edge-disjoint cycles;
+<br />
+(3) Show more strongly that it is possible to find an augmenting set such that the graph formed by deleting the edges in this set has no bridges;
+<br />
+(4) Remove a bridgeless augmenting set from the given graph, find a cycle double cover by induction, put the removed edges back in, and patch up the double cover so that it covers all the edges of the graph and uses the specified set of cycles.
+<br />
+
+<br />
+I don&#x27;t understand all of it at this point but to me the only part that looks difficult to understand is step (3).
+<br />
+
+<br />
+<b>ETA</b>: Souza tells me by email that there is indeed a problem with step (3), Lemma 9 of the paper, that he discovered while trying to answer a question from Paul Seymour. It is too early to tell whether it can be patched yet.
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2012-02-07T06:02:33Z</b><br />
+Andrew King (who had trouble commenting here because of my spam filters) tells me he, Tony Huynh, and Sang-Il Oum found a counterexample. He writes:
+
+<i>I believe that the Petersen graph is a counterexample to Theorem 2.
+
+Take the typical embedding and let vertices 1,2,3,4,5 be on the outer
+face and 6,7,8,9,10 be the inner C5.  Now let these two 5-cycles be
+your circulation C.  I claim that there is no cycle double cover
+containing this circulation.
+
+To see this, note that the remainder D-C of the cover needs to have 10
+spoke edges in total and 10 other edges in total (where the &quot;spokes&quot;
+are the boundary of {1,2,3,4,5}).
+
+Since the spokes form a matching, every remaining cycle must be
+alternating between spokes and non-spokes.  Clearly there is no such
+4-cycle.  Note that the number of spokes must be even, so clearly
+there is no 6-cycle or 10-cycle.  Therefore every cycle must have
+length 8 (since the cycles are edge-simple they have length at most
+10).  But 8 does not divide 20, so no such cycle double cover exists.</i>
+</div>
+

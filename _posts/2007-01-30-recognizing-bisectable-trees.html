@@ -1,0 +1,21 @@
+---
+layout: post
+title:  'Recognizing bisectable trees'
+date:   2007-01-30 22:24:00
+tags:   [graph algorithms, squarepants]
+---
+<p>My <a href="http://arxiv.org/abs/cs.CG/0604034">hierarchical clustering paper</a> from SODA defines a class of trees, called &quot;bisectable trees&quot;, as part of an NP-completeness proof. A bisectable tree has 2<sup>k</sup> nodes, for some k, and can be partitioned into two smaller bisectable trees by removing a single edge; if an unweighted graph has a spanning tree of this type then it has a particularly nice clustering, but finding such spanning trees is hard.</p>
+
+<p>The NP-completeness proof requires a polynomial time algorithm for testing whether a tree is bisectable, but that&#x27;s straightforward enough that I didn&#x27;t bother spelling it out in any detail. This evening, though, while looking at that section of the paper again, I was thinking about the efficiency of bisectable tree recognition algorithms. Here&#x27;s a simple algorithm:</p>
+
+
+<blockquote>
+<p>For each edge e, count the number of descendants of e (including the endpoint of e farthest away from the root but not the other endpoint). This can be done for all edges at once by a simple bottom-up traversal of the tree.</p>
+<p>Find the edges that have an odd number of descendants. Call each such edge an &quot;odd edge&quot;.</p>
+<p>If T does not have exactly n/2 odd edges, where n is the number of vertices of T, then T is not bisectable.</p>
+<p>If T does have n/2 odd edges, form a tree T&#x27; with n/2 vertices by contracting each odd edge of T. T is bisectable if and only if T&#x27; is bisectable; test T&#x27; recursively using the same algorithm.</p>
+</blockquote>
+
+<p>The basic idea is that, if T really is bisectable, the odd edges must be the ones at the bottom level of the bisection hierarchy, and the contraction step simplifies the hierarchy by removing the bottom level while leaving the other levels unchanged.</p>
+
+<p>The running time is linear, as the sequence of sizes of trees T, T&#x27;, T&#x27;&#x27; etc considered by the algorithm forms a geometric sequence.</p>

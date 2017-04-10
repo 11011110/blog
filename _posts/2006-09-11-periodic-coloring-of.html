@@ -1,0 +1,43 @@
+---
+layout: post
+title:  'Periodic coloring of tilings'
+date:   2006-09-11 19:33:00
+tags:   [symmetry, color, unsolved, tiling, geometry]
+---
+The <a href="http://en.wikipedia.org/wiki/Floret_pentagonal_tiling">floret pentagonal tiling</a> is shown below with two colorings. On the left is an optimal coloring: it uses the fewest colors possible, six, among colorings that respect all translational symmetries of the tiling. The quotient of the plane tiling by these symmetries is a tiling of the torus by six tiles, in which each tile touches each other, so six colors is optimal. But on the right, we have a periodic tiling with only three colors! The trick is that it has fewer symmetries: only 1/3 of the symmetries of the uncolored tiling preserve the colors in the coloring on the right.
+<br />
+
+<br />
+<div align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/x6x3floret.png" /></div>
+<br />
+
+<br />
+What can be said about this kind of problem more generally? If one has a periodic tiling of the plane, how few colors are required to color it periodically, and what can be said about the index of the coloring&#x27;s symmetry group as a subgroup of the uncolored tiling&#x27;s symmetries? The four-color theorem together with a standard application of <a href="http://en.wikipedia.org/wiki/K%C3%B6nig's_lemma">König&#x27;s lemma</a> shows that any tiling has a four-coloring, but I don&#x27;t see how to force the coloring to be periodic and still use only four colors in general.
+<br />
+
+<br />
+<b>ETA:</b> <a href="http://11011110.livejournal.com/79077.html">Five colors suffice</a>. Still unclear whether four colors are always possible.
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: How is this different from coloring a graph on the torus?<br />
+<b>2006-10-11T18:10:55Z</b><br />
+The subject says it all.  If you have a periodic tiling of the plane, and you mod out by the periodicity, don&#x27;t you always get a torus (one should check this statement - I vaguely remember it being true, but my memory is not reliable)?  And if you have a map on the torus, can&#x27;t you color it with seven colors?
+
+Peter Shor
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: Re: How is this different from coloring a graph on the torus?<br />
+<b>2006-10-11T20:32:52Z</b><br />
+Both of the colorings I show are colorings of a graph on a torus, but they are different tori: the left one is a torus tiled by six pentagons while the right one is a torus tiled by eighteen pentagons, a triple cover of the left torus.
+
+My question can be rephrased as: if G is embedded on a torus T, is there some k-tuple cover T&#x27; of T such that the lift of G to T&#x27; is 4-chromatic, and if so how small must k be?
+</div>
+<div style="margin-left: 6em; padding-top: 1em;">
+<b>None</b>: Re: How is this different from coloring a graph on the torus?<br />
+<b>2006-10-12T22:24:30Z</b><br />
+Thanks.  Now I understand the question, I like it.
+
+Peter Shor
+</div>
+

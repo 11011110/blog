@@ -1,0 +1,23 @@
+---
+layout: post
+title:  'Partitions into 2 and 3'
+date:   2013-10-07 10:32:00
+tags:   [partitions, number theory]
+---
+My new OEIS sequence for the weekend: <a href="https://oeis.org/A227937">A227937</a>. It begins 1, 0, 1, 3, 10, 25, 105, 385... and counts the number of partitions of a set of n items into subsets that must have either two or three elements per subset.
+<br />
+
+<br />
+A polynomial recurrence relation is not hard to derive from the fact that the nth element must either be in a set of two (of which there are n–1 choices) or a set of three ((n–1)(n–2)/2 choices). From this recurrence, it follows that once three consecutive values in the sequence have the same divisor, so will all subsequent values. So, it tends to pick up prime factors as it goes, causing later values in the sequence to be highly divisible. For instance,
+<br />
+
+<br />
+a(102) = 5<sup>12</sup> 7<sup>8</sup> 11<sup>5</sup> 13<sup>4</sup> 17<sup>3</sup> 19<sup>3</sup> 23<sup>3</sup> 29<sup>2</sup> 31<sup>2</sup> 37 41 43 47 53 59 61 67 71 73 79 83 89 97 101 3229 134593 292152888047 72472250580547
+<br />
+
+<br />
+In fact, all prime powers not of the form 2<sup>k</sup> or 3<sup>k</sup> each divide all but finitely many values in the sequence. I don&#x27;t see how to derive this from the recurrence easily, but here&#x27;s a direct proof: The number of partitions for n is equal to the sum, for pairs (a,b) such that 2a+3b=n, of partitions of n into sets of size 2a and 3b, multiplied by the numbers of partitions of 2a into pairs and 3b into triples. The number of partitions of 2a into pairs is a <a href="https://en.wikipedia.org/wiki/Double_factorial">double factorial</a> (eventually divisible by all odd numbers) and the number of partitions of 3a into triples is a multinomial that is eventually divisible by all numbers prime to 6. So for each term in the sum, at least one of its three factors is divisible by large prime powers, and it follows that the same is true for the whole sum.
+<br />
+
+<br />
+I&#x27;ll leave to others the task of filling in OEIS with the counts of partitions into sets of other restricted sizes, but I think there must be quite a few other interesting sequences in that vein.

@@ -1,0 +1,55 @@
+---
+layout: post
+title:  'Nine new graph algorithm papers at JGAA'
+date:   2011-07-19 14:55:00
+tags:   [graph algorithms, media theory, papers]
+---
+I&#x27;m not sure why the <a href="http://jgaa.info/">Journal of Graph Algorithms and Applications</a> still doesn&#x27;t have an RSS feed, but anyway they just published another batch of papers.
+<br />
+
+<br />
+There are three regular submissions on <a href="http://jgaa.info/accepted/2011/ChangHungKloksPeng2011.15.2.pdf">threshold-width</a> (embedding a graph as a subgraph of a threshold graph with low chromatic number), <a href="http://jgaa.info/accepted/2011/Eppstein2011.15.2.pdf">partial cube recognition</a> (my own paper), and <a href="http://jgaa.info/accepted/2011/Gross2011.15.2.pdf">genus distribution</a> (that is, if you pick a random cyclic ordering of the edges at each vertex, what is the distribution of the genus of the resulting embedding?). There is also a special issue of papers from WALCOM 2009 (a South Asian graph algorithm conference that I hadn&#x27;t previously known of), with six papers on <a href="http://jgaa.info/accepted/2011/BorriCalamoneriPetreschi2011.15.3.pdf">graphs determined by their degree sequence</a>, <a href="http://jgaa.info/accepted/2011/KarakawaMorsyNagamochi2011.15.3.pdf">approximating weighted graphs by sets of trees</a>, <a href="http://jgaa.info/accepted/2011/MchedlidzeSymvonis2011.15.3.pdf">adding edges to make graphs Hamiltonian while minimizing crossings</a>, <a href="http://jgaa.info/accepted/2011/KarimAlamRahman2011.15.3.pdf">low-area grid drawings of outerplanar graphs</a>, and <a href="http://jgaa.info/accepted/2011/HasheminezhadMcKayReeves2011.15.3.pdf">two</a> <a href="http://jgaa.info/accepted/2011/ParvezRahmanNakano2011.15.3.pdf">papers</a> on enumeration of planar graphs.
+<br />
+
+<br />
+These days we are having to become more careful about adding sufficient new material to our conference papers to make them into journal papers. In general I&#x27;m not very sympathetic to this requirement; the conference paper should report on however much as will fit into the conference format, regardless of whether that exceeds 70% of the total length of the full paper, and the full paper should be as long as it needs to be to be complete, not puffed out to some magical percentage of new content. Imposing other requirements only makes it less likely that some conference papers will ever become journal papers, which I see as a bad thing because not having fully refereed versions of theoretical papers calls into question their reliability and the reliability of any future papers that depend on them.
+<br />
+
+<br />
+In any case, for my partial cube paper (the journal version of a paper from SODA&#x27;08), the requirement of having enough new material was not so onerous, because while revising it I came to the conclusion that it needed more detail throughout, and also because I wanted to add a section describing my implementation of the algorithm, something that wasn&#x27;t in the conference version. Then, at the last minute, I was requested by one of the referees to add some computational experiments using the implementation, which I did. It turns out that, although the two parts of my algorithm have equal asymptotic worst-case running times, one of the two parts is significantly faster than the other on the graphs I tried. So the extra work needed to add this to the paper was at least helpful in that it gives me a more focused idea of what to work on if I want to improve the algorithm.
+<br />
+
+<br />
+PS I just experimented with turning anonymous comments back on for my LiveJournal posts, and within 15 minutes got more spam. So they&#x27;re staying off, but I believe you should be able to comment using OpenID without having to register with LiveJournal.
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>ext_353166</b>: <br />
+<b>2011-07-20T03:53:05Z</b><br />
+<i>These days we are having to become more careful about adding sufficient new material to our conference papers to make them into journal papers.</i>
+
+We are?  Who&#x27;s actually pushing for this?
+
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2011-07-20T04:09:22Z</b><br />
+I&#x27;m not sure I should go into too much identifiable detail since it was from a private mailing list but (as part of a discussion on conference page limits) I saw an email from another respected algorithms researcher whose paper had already been rejected from two decent journals, not because of any judgment of the paper&#x27;s actual content but because of being too similar the conference version. In the second rejection letter, the editor of the journal stated that they had calculated the overlap between conference and journal version to be 85% (your guess as to what this number actually means is as good as mine), expressed fears that such a large overlap would lead to the journal being sued by the conference, and advised the author to plan more carefully how much of their work they should publish in conferences.
+
+So the answer is: some journal editors, and some journal referees. And since it&#x27;s their journal, they&#x27;re of course free to do this.
+</div>
+<div style="margin-left: 6em; padding-top: 1em;">
+<b>ext_353166</b>: <br />
+<b>2011-07-20T04:25:52Z</b><br />
+Sued?  Really?
+
+[facepalm]
+
+According to John Iacono, Michael Fredman was unwilling to publish an abbreviated paper in this year&#x27;s WADS proceedings, because he noticed that the language in Springer&#x27;s copyright forms says that Springer owns the rights to all derivative works.  Read strictly, this language implies that <b>if you publish a conference paper in an LNCS volume, publishing a full version of the same paper in a journal violates Springer&#x27;s copyright.</b>  (It&#x27;s unclear whether publishing a full version in a <i>Springer</i> journal is legally allowed.)  Long story short: Fredman&#x27;s WADS paper will be longer than everyone else&#x27;s page limit.
+</div>
+<div style="margin-left: 9em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2011-07-20T04:55:00Z</b><br />
+What I hear from my machine learning colleagues is that rules like this have basically shut down journal publication for them altogether. They tell me that their journals have even stricter rules where the papers have to have significant new content that is intellectually novel, new since the conference paper, not just more details (or proofs) that didn&#x27;t fit into the conference proceedings. And if you&#x27;re going to generate that much new content, you&#x27;ll get more mileage out of it by making a new conference paper out of it rather than sending it to a journal. So, no journal versions for them. I hope theory publishing doesn&#x27;t go the same way.
+</div>
+

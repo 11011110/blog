@@ -1,0 +1,28 @@
+---
+layout: post
+title:  'Triangular numbers with many factors'
+date:   2007-04-05 01:10:00
+tags:   [triangular numbers, prime numbers, python, number theory]
+---
+
+<p>Mark-Jason Dominus writes about taking a too-sophisticated approach to a puzzler about <a href="http://blog.plover.com/oops/triangular-phi.html">generating triangular numbers with many divisors</a>, ending up with a program that produced the answer in a minute and a half when someone else&#x27;s much shorter code took longer to compute but was much easier to write. But it took me only five minutes or so (less than it took to write up this blog entry, anyway) to write an even more sophisticated version of Dominus&#x27; idea, that produces the correct answer instantly even running in Python. The trick: I had a <a href="http://11011110.livejournal.com/83947.html">generator for already-factored numbers</a> <a href="http://www.ics.uci.edu/~eppstein/PADS/Eratosthenes.py">prewritten in PADS</a> and could just plug it in. And of course taking advantage of the analysis Mark wrote up for his solution kept my own thinking time low...here&#x27;s the code, slightly cleaned up from my original version:</p>
+
+{% highlight python %}
+from Eratosthenes import FactoredIntegers
+
+def triphi():
+    y,py = 0,0
+    for x,fx in FactoredIntegers():
+        px = 1
+        for p,a in fx.items():
+            if p == 2: a -= 1
+            px *= a+1
+        yield (x*y)//2,px*py
+        y,py = x,px
+
+for t,pt in triphi():
+    if pt >= 500:
+        print t,pt
+        break
+{% endhighlight %}
+

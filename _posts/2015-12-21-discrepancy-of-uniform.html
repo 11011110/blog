@@ -1,0 +1,41 @@
+---
+layout: post
+title:  'Discrepancy of uniform hypergraphs'
+date:   2015-12-21 17:55:00
+tags:   [combinatorics, algorithms, papers]
+---
+A hypergraph is just another way of talking about a family of sets: one thinks of the elements of the sets as vertices and the sets themselves as being like edges of a graph. Except that, unlike edges, sets in a family of sets can have more than two vertices, so we call them hyperedges rather than edges. An <i>r</i>-uniform hypergraph is one in which all the hyperedges have the same number of vertices as each other; for instance, a 2-uniform hypergraph is just an ordinary graph.
+<br />
+
+<br />
+If the vertices of a hypergraph are given two colors (black and white), the <a href="https://en.wikipedia.org/wiki/Discrepancy_of_hypergraphs">discrepancy</a> of the coloring measures how evenly each hyperedge is colored. In an ordinary graph, a proper 2-coloring has equal numbers of each color in each edge, and we want to get as close to that as we can in a hypergraph as well. So the discrepancy of a hyperedge is defined to be the absolute value of the difference between the numbers of black and white vertices, the discrepancy of a coloring is defined as the maximum of the discrepancies of any of the edges, and the discrepancy of a hypergraph is defined as the minimum discrepancy of any of its 2-colorings. For instance, the 4-uniform hypergraph shown as a Venn diagram below has discrepancy 2: it turns out not to be possible to 2-color the vertices so that all four hyperedges are evenly balanced between black and white. For if it were, the three lower sets (red, blue, and yellow, all sharing the bottom three vertices but each with a different top vertex) would force the three top vertices to have the same color as each other, causing the upper green set to be unbalanced.
+<br />
+
+<br />
+<div align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/4-unbalanced.png" /></div>
+<br />
+
+<br />
+How many hyperedges must an <i>r</i>-uniform hypergraph have in order to force it to be unbalanced? This question generalizes the question of how many edges are needed to make a graph non-bipartite, for which the answer is three: a triangle is non-bipartite, and anything with fewer edges isn&#x27;t. For <i>r</i> = 4, the example above (and some messy case analysis for fewer sets) shows that the answer is four. But for <i>r</i> = 6, it&#x27;s three again: a 6-uniform hypergraph formed by tripling each vertex of a triangle (without changing the edge intersection pattern) has discrepancy two, because two of the sets of three equivalent vertices must have the same majority color.
+<br />
+
+<br />
+<div align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/6-unbalanced.png" /></div>
+<br />
+
+<br />
+Generalizations of these examples show that three sets can force a nonzero discrepancy whenever <i>r</i> is 2 mod 4, and four can force a nonzero discrepancy whenever <i>r</i> is 4 or 8 mod 12, so the remaining cases are the ones where <i>r</i> is divisible by 12. On the other hand, the best upper bound I know how to prove that is valid for arbitrary <i>r</i> is logarithmic in <i>r</i>. I don&#x27;t even know whether the number of sets needed to force a nonzero discrepancy is bounded for all <i>r</i>, or whether it can grow without bound as a function of <i>r</i>.
+<br />
+
+<br />
+One can ask the same sort of question when <i>r</i> is an odd number, of course. To prevent the problem from becoming trivial, we can define a hypergraph to be balanced when its discrepancy is at most one, and ask for the minimum number of hyperedges in an unbalanced <i>r</i>-uniform hypergraph. For this variation of the problem, the number of hyperedges needed to force the hypergraph to be unbalanced has an even weaker upper bound, of the form <i>r</i> + <i>O</i>(log <i>r</i>).
+<br />
+
+<br />
+This problem comes up in my latest preprint with Dan Hirschberg, &quot;<a href="http://arxiv.org/abs/1512.06488">From Discrepancy to Majority</a>&quot;, arXiv:1512.06488, to appear at LATIN 2016. We use the odd-<i>r</i> case as a preliminary step in an algorithm
+<br />
+that takes as input a two-colored set of elements, and is allowed to access the coloring only by means of an oracle that returns the discrepancy of an <i>r</i>-subset of the elements. This problem was introduced in a paper by De Marco and Kranakis, motivated by fault diagnosis of distributed systems, and we improve their bounds on the number of queries needed by roughly a factor of <i>r</i>/2. In order to get any useful information at all from the oracle, we need to make it give an answer different from &quot;this set has the minimum possible discrepancy&quot;, and to do that we need to set up a system of sets where at least one of them does not have the minimum possible discrepancy.
+<br />
+
+<br />
+But I think the problem of finding minimal unbalanced uniform hypergraphs is interesting on its own, even aside from this application. The bounds we give on it in our paper seem to be far from tight, in part because they give lower-order contributions to the overall query bound for our algorithm so we didn&#x27;t have a lot of motivation for tightening them. So there should be scope for plenty more exploration of this problem.

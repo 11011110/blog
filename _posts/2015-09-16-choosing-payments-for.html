@@ -1,0 +1,45 @@
+---
+layout: post
+title:  'Choosing payments for optimal change'
+date:   2015-09-16 14:01:00
+tags:   [dynamic programming]
+---
+I&#x27;m sure I can&#x27;t be the only one who still sometimes pays for things with cash, and chooses the amount of cash I give in a way that will cause the change to be a round number. But there can&#x27;t be very many of us, because every time I do I totally bewilder the cashier I&#x27;m dealing with. It doesn&#x27;t help that they&#x27;re very seldom capable of making change in their heads.
+<br />
+
+<br />
+Today&#x27;s example: my lunch bill was $10.67. I knew that I had not very many coins, but I had more $1 bills than I wanted, and didn&#x27;t have any $5 or $10 bills. So, I handed over $21. This confused the cashier so badly that she rang it up as if I had given her $11, realized her mistake, asked me if I knew that I had given her $21, and was unable to figure out what to give me in change (even with the difference between $11 and $10.67 visible on the register screen) without totally redoing the whole transaction from scratch.
+<br />
+
+<br />
+But this led me to think about the following variations on the classical <a href="https://en.wikipedia.org/wiki/Change-making_problem">change-making problem</a>. They might make good dynamic programming exercises, in part because it&#x27;s less obvious how to use a greedy algorithm to solve them than it is to use a greedy algorithm for change-making.
+<br />
+
+<br />
+<b>Simplest change</b>: given a payment amount, a set of coins (or bills) that can be used for the payment, and a (possibly different) set of coins/bills that can be used to make change, choose how much to pay in order to minimize the number of coins/bills you will get back in change.
+<br />
+
+<br />
+<b>Simplest transaction</b>: with the same input data, choose how much to pay in order to minimize the total number of coins/bills that change hands in both directions. (<a href="http://11011110.livejournal.com/176631.html">Previously</a>.)
+<br />
+
+<br />
+<b>Thinnest wallet</b>: with the same input data, choose how much to pay in order to minimize the total number of coins/bills that you end up with after the transaction, including both your change and the coins and bills that you didn&#x27;t use to pay the charge.
+<br />
+
+<br />
+In all cases, let&#x27;s assume that the cashier either knows how to give you the optimal change or can be guided by the register into doing so. I&#x27;d add another problem here, about choosing how to pay in order to minimize the transaction time and least annoy the math-phobic cashiers, but I&#x27;m sure using a credit card or debit card is the answer for that.
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: This is suspicious behaviour!<br />
+<b>2015-09-17T00:54:14Z</b><br />
+Only terrorist pay with cash! https://www.youtube.com/watch?v=DAxj4TtD9EM
+
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: RE: This is suspicious behaviour!<br />
+<b>2015-09-17T17:36:31Z</b><br />
+Scary, especially since I have at least once paid a large hotel bill with cash. (It seemed like a good way to get rid of one of the €500 bills I&#x27;d been given to reimburse my airfare.)
+</div>
+

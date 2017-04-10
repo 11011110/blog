@@ -1,0 +1,37 @@
+---
+layout: post
+title:  'Graph Drawing acceptances and the Lombardi Spirograph'
+date:   2010-07-23 10:27:00
+tags:   [nauru graph, graph drawing, lombardi]
+---
+The <a href="http://www.graphdrawing.org/gd2010/accepted.html">list of accepted papers to Graph Drawing 2010</a> is out. I&#x27;m not yet sure whether abstracts will be available as well sometime soon, but I hope so.
+<br />
+
+<br />
+I have several papers on the list that I&#x27;ll post about in more detail once we have time to handle the reviewers&#x27; suggestions and make preprints available. What I do have ready to post today, though, is some software from one of the papers.
+<br />
+
+<br />
+In case you haven&#x27;t already seen his work, <a href="http://en.wikipedia.org/wiki/Mark_Lombardi">Mark Lombardi</a> was an artist whose art consisted of graph drawings of social networks describing the connections among members of crime syndicates, international financiers, and high politicians. Unlike in a lot of other graph drawings, Lombardi&#x27;s art generally depicts graph edges as curved arcs, and he obviously put a lot of care into the rhythm and spacing of the vertices. I and my co-authors were inspired by his works to define &quot;Lombardi drawings&quot; to have a more technical sense: drawings in which all edges are arcs of circles and in which the angles of the edges are equally spaced around each vertex. Two of our papers at GD will be on this subject.
+<br />
+
+<br />
+As part of our investigations into these kinds of drawings, I wrote a program, which I call the &quot;Lombardi Spirograph&quot;, to create them, and have put it online as <a href="http://www.ics.uci.edu/~eppstein/0xDE/ls/LombardiSpirograph.py">LombardiSpirograph.py</a> (see the program for usage hints). It works for graphs that can be drawn with the vertices in concentric circles, with all vertices on the same circle having the same pattern of connections, which is enough to cover many of the most famous <a href="http://en.wikipedia.org/wiki/Gallery_of_named_graphs">named graphs</a>. Here are a few of its drawings, of the <a href="http://en.wikipedia.org/wiki/Grötzsch_graph">Grötzsch graph</a>, Nauru graph, <a href="http://en.wikipedia.org/wiki/Dyck_graph">Dyck graph</a>, and the <a href="http://11011110.livejournal.com/120899.html">40-vertex cubic symmetric graph</a>.
+<br />
+
+<br />
+<div align="center"><table border="0" cellpadding="10">
+<br />
+<tr align="center" valign="middle">
+<br />
+<td><img src="http://www.ics.uci.edu/~eppstein/0xDE/ls/grotzsch.png" border="2" style="border-color:black;" /></td>
+<br />
+<td><img src="http://www.ics.uci.edu/~eppstein/0xDE/ls/nauru.png" border="2" style="border-color:black;" /></td>
+<br />
+</tr><tr align="center" valign="middle">
+<br />
+<td><img src="http://www.ics.uci.edu/~eppstein/0xDE/ls/dyck.png" border="2" style="border-color:black;" /></td>
+<br />
+<td><img src="http://www.ics.uci.edu/~eppstein/0xDE/ls/f40.png" border="2" style="border-color:black;" /></td>
+<br />
+</tr></table></div>

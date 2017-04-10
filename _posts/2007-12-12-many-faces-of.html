@@ -1,0 +1,84 @@
+---
+layout: post
+title:  'The many faces of the Nauru graph'
+date:   2007-12-12 20:59:00
+tags:   [xyz graphs, graph drawing, permutohedron]
+---
+<p>The <a href="http://people.csse.uwa.edu.au/gordon/remote/foster/">Foster census</a> lists <a href="http://mathworld.wolfram.com/CubicSymmetricGraph.html">cubic symmetric graphs</a>; that is, graphs in which the vertices all have three edges, and some symmetry takes any directed edge to any other directed edge.</p>
+
+<p>Among these graphs, the one with 24 vertices clearly deserves a name, as <a href="http://www.maa.org/editorial/mathgames/mathgames_12_29_03.html">Ed Pegg wrote in his online MAA column in 2003</a>. Naming it after a person is no good: the first person to write about it was Foster <small>[Foster, R. M. (1932), &quot;Geometrical circuits of electrical networks&quot;, <i>Transactions of the American Institute of Electrical Engineers</i> <b>51</b>: 309–317]</small>, who gives his name to the whole list of cubic symmetric graphs, and apparently the second was Coxeter <small>[Coxeter, H. S. M. (1950), &quot;<a href="http://dx.doi.org/10.1090%2FS0002-9904-1950-09407-5">Self-dual configurations and regular graphs</a>&quot;, <i>Bulletin of the American Mathematical Society</i> <b>56</b>: 413–455]</small> for whom plenty of graphs are already named. For lack of a better name, I&#x27;m going to call it the Nauru graph, because the flag of <a href="http://en.wikipedia.org/wiki/Nauru">Nauru</a> has a 12-point star greatly resembling the one in one of the standard drawings of this graph.</p>
+
+<h4>The Nauru Drawing and Generalized Petersen Graphs</h4>
+
+<p align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/F24/gp125.png" /></p>
+
+<p>This type of drawing, with an outer polygon connected to a central star with the same number of points, forms a graph called a <a href="http://en.wikipedia.org/wiki/Petersen_graph">generalized Petersen graph</a>; these graphs were introduced in the same Coxeter paper, and later studied by Watkins <small>[Watkins, Mark E. (1969), &quot;A Theorem on Tait Colorings with an Application to the Generalized Petersen Graphs&quot;, <i>Journal of Combinatorial Theory</i> <b>6</b>: 152–164]</small>. The Nauru graph is GP(12,5): 12 for the number of points, 5 for the number of steps between each connected pair of vertices in the inner star.</p>
+
+<p>A generalized Petersen graph GP(n,k) can be planar only if k=1, or if k=2 and n is even; neither are true in this case, so the Nauru graph has no planar embedding. From this drawing, it is also clear that the graph is very symmetric: one can form 24 different symmetries by combinations of rotations and mirror reversals of the drawings. But that turns out to be only a small fraction of the total number of its symmetries...</p>
+
+<h4>Tutte&#x27;s Drawing and Hamiltonicity</h4>
+
+<p>Another slightly less symmetric drawing, which Coxeter attributes to Tutte, makes visually apparent the fact that this is a <a href="http://en.wikipedia.org/wiki/Hamiltonian_path">Hamiltonian graph</a>:</p>
+
+<p align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/F24/Tutte.png" /></p>
+
+<p>This drawing allows one to express the Nauru graph in <a href="http://mathworld.wolfram.com/LCFNotation.html">LCF notation</a>: [5,-9,7,-7,9,-5]<sup>4</sup>.</p>
+
+<h4>Cayley Graph and xyz Drawing</h4>
+
+<p>Like the permutohedron and the <a href="http://11011110.livejournal.com/116782.html">truncated octahedron</a>, the Nauru graph is a <a href="http://en.wikipedia.org/wiki/Cayley_graph">Cayley graph</a> of the <a href="http://en.wikipedia.org/wiki/Symmetric_group">symmetric group</a> of <a href="http://en.wikipedia.org/wiki/Permutation">permutations</a> on four elements. Its generators as a Cayley graph are the three different ways of swapping the first element with one of the three others. That is, one can form this graph by making one vertex per permutation, and connecting each vertex to the three permutations formed from it by transpositions of this type. More generally the Cayley graphs formed by transpositions of the first element, for symmetric groups of different orders, form a family studied in electrical engineering as a possible interconnection network for parallel computers, and called the <i>star graphs</i> <small>[Akers, Sheldon B. &amp; Krishnamurthy, Balakrishnan (1989), &quot;<a href="http://dx.doi.org/10.1109%2F12.21148">A group-theoretic model for symmetric interconnection networks</a>&quot;, <i>IEEE Transactions on Computers</i> <b>38</b> (4): 555–566]</small> (another bad name, because a star can also refer to the <a href="http://en.wikipedia.org/wiki/Complete_bipartite_graph">complete bipartite graph</a> K<sub>1,n</sub>).  Pegg suggests a nearly-equivalent way of looking at the Nauru graph: form vertices labeled by ordered triples of distinct elements from {1,2,3,4}, and connect two such triples by an edge whenever they differ in only one position. If we use these triples as Cartesian coordinates, we get an xyz graph (seen here from a point of view near the main diagonal x=y=z):</p>
+
+<p align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/F24/xyz.png" /></p>
+
+<p>One way of obtaining a set of points in these positions is to orthogonally project the permutohedron, in its natural 4-dimensional embedding, onto one of the three coordinate hyperplanes. However the connections between the points are quite different from the edges of the permutohedron. Coxeter notes that the Nauru graph has 144 automorphisms; its symmetry group can be factored into the <a href="http://en.wikipedia.org/wiki/Direct_product">direct product</a> of the symmetric group on three elements (permutations of the three coordinates of the xyz graph representation) with the symmetric group on four elements (permutations of the four coordinate values of the representation).</p>
+
+<h4>Torus Drawing</h4>
+
+<p>The xyz graph drawing above looks sort of like a twisted torus, and in terms of the correspondence between xyz graphs and topological surface embeddings described in <a href="http://arxiv.org/abs/0709.4087">my paper</a> it really is a torus, with a highly symmetric map drawn on it in which six hexagons meet three per vertex. If each vertex is labeled by a triple as above, then each hexagon is formed by choosing a fixed value for one of the positions in the triple. The 144 symmetries of the Nauru graph take any <i>flag</i> (incident triple of vertex, edge, and hexagonal face) to any other flag; as there are 144 flags, a symmetry can be determined by its action on the flags.</p>
+
+<p align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/F24/torus.png" /></p>
+
+<p>Embedding the torus in three-dimensional space causes it to lose much of its symmetry, although it doesn&#x27;t have to be quite as asymmetrical as I&#x27;ve drawn it below; the layout shown here was chosen less to display any symmetries and more to show how the hexagonal layout above translates to an embedded torus.</p>
+
+<p align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/F24/3dtorus.png" /></p>
+
+<p>A more symmetrical 3d view of the torus embedding (topologically the same, although embedded differently into 3d) may be obtained from the Nauru layout: draw two dodecagons, each wrapping around the torus, one for the outer twelve points of the Nauru layout and one for the twelve inner points. These two dodecagons divide the torus into two annular strips; draw the edges connecting the two dodecagons alternatingly between these two strips. A similar double-annulus torus embedding can be constructed for any generalized Petersen graph GP(4k,2k-1) including the <a href="http://en.wikipedia.org/wiki/M%C3%B6bius%E2%80%93Kantor_graph">Möbius–Kantor graph</a> GP(8,3).</p>
+
+<p align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/F24/3dtorus2.png" /></p>
+
+<h4>Genus Four Drawing and Hyperbolic Tiling</h4>
+
+<p>The Nauru graph also has another symmetric embedding on a more complicated surface, in which each face is a dodecagon rather than a hexagon. There are two very obvious dodecagons in the twelve-point star drawing of the graph, formed by the inner and outer twelve points; the other four dodecagons look like this:</p>
+
+<p align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/F24/12cycle.png" /></p>
+
+<p>Alternatively, these dodecagons may be seen as <i>Petrie polygons</i> (zigzag paths) in the hexagonal tiling of the torus. Any edge of the Nauru graph belongs to exactly two of the dodecagons, so they can be joined up to form a surface with six dodecagonal faces. As in the hexagonal tiling of the torus, the 144 symmetries of the graph take any flag of this dodecagonal tiling to any other flag. The surface formed by these six dodecagons has, by <a href="http://www.ics.uci.edu/~eppstein/junkyard/euler/">Euler&#x27;s formula</a>, genus four: that is, it is like a torus, but with four holes instead of just one.</p>
+
+<p>The nicest three-dimensional embedding of this surface that I&#x27;ve found so far is formed as follows: start with a cube, and color opposite pairs of faces red, blue, and green. Extend a tube from each corner of the cube, connecting to the opposite corner; the three colors from one corner should continue along this tube until they meet the three colors from the opposite corner in the middle of the tube, so that each color from one corner meets the two different colors from the other corner. Then the surface of this cube with tubes has genus four, and the partition of its surface into colors partitions it into six twelve-sided faces. The points where three colors meet form the vertices of the Nauru graph, and the curves where two colors meet form its edges. But it&#x27;s hard to embed this symmetrically in space, and I don&#x27;t have a nice illustration of it yet.</p>
+
+<p>One can unroll the hexagonal torus tiling of the Nauru graph into an infinite hexagonal tiling of the plane (in which the Nauru graph vertices repeat in a periodic pattern); the same unrolling also applies to the dodecagonal tiling, but the unrolled surface ends up being the <a href="http://en.wikipedia.org/wiki/Hyperbolic_geometry">hyperbolic plane</a>, <a href="http://www.plunk.org/~hatch/HyperbolicApplet/">periodically tiled</a> by dodecagons. If one labels the faces ±1, ±2, ±3, where faces +i and -i do not touch, then the rule for labeling the corresponding faces in the infinite tiling of the hyperbolic plane is simple: for any edge of the tiling, the two non-touching faces at the endpoints of the edge have labels +i and -i for some i.</p>
+
+<p align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/F24/hypertile.png" /></p>
+
+<h4>Cube triple cover</h4>
+
+<p>Returning to Pegg&#x27;s suggestion of labeling the vertices of the Nauru graph by ordered triples of distinct elements from the set {1,2,3,4}, form groups of three triples, where the triples within each group are the cyclic rotations of each other. Then the pattern of groups, and edges connecting groups, is just the familiar cube, and this grouping forms a mapping (technically a <a href="http://en.wikipedia.org/wiki/Graph_homomorphism">graph homomorphism</a>) from the Nauru graph to the cube. This map from one graph to another extends to a map from one surface to another: each of the six dodecagonal faces of the genus-four surface for the Nauru graph wraps three times around one of the faces of the cube, so this is a <a href="http://en.wikipedia.org/wiki/Branched_covering">branched covering</a> from one surface to another, with an order-three branch point in the middle of each cube face. This covering map stands in contrast to a result of Shen and Hu that it is impossible to embed the Nauru graph (or any of the larger star graphs that contain it) as a subgraph of a hypercube <small>[Shen, X., and Hu, Q. (1993), &quot;<a href="http://dx.doi.org/10.1016/0020-0190(93)90119-T">The 4-star graph is not a subgraph of any hypercube</a>&quot;, <i>Information Processing Letters</i> <b>45</b>(4): 199–203.]</small>.</p>
+
+<p align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/F24/triple-cover.png" /></p>
+
+<h4>Projective Configuration</h4>
+
+<p>Finally, Coxeter describes an interesting geometric representation of this graph as the <a href="http://en.wikipedia.org/wiki/Levi_graph">Levi graph</a> of a <a href="http://en.wikipedia.org/wiki/Projective_configuration">projective configuration</a>, which he attributes to Zacharias <small>[Zacharias, M. (1941), &quot;Untersuchungen über ebene Konfigurationen (12<sub>4</sub>, 16<sub>3</sub>)&quot;, <i>Deutsche 
+Mathematik</i> <b>6</b>: 147–170]</small>. Start with any asymmetric triangle, such as the green 30-60-90 triangle shown below. Trisect its angles; the points where the trisectors first meet (red) form an equilateral triangle, by <a href="http://en.wikipedia.org/wiki/Morley%27s_trisector_theorem">Morley&#x27;s theorem</a>. Form a third triangle (blue), where the trisectors meet a second time. Then these three triangles are pairwise <a href="http://mathworld.wolfram.com/PerspectiveTriangles.html">perspective</a>, and their centers of perspective (gray) are collinear. One of these gray points is the <a href="http://faculty.evansville.edu/ck6/tcenters/recent/morley.html">second Morley center</a> rediscovered in 1967 by Peter Yff. We thus have a system of twelve points (the triangle vertices and the perspective centers) and twelve lines (the nine lines connecting pairs of triangle vertices with the perspective centers, and three of the six trisectors) meeting three points per line and three lines per point. (One may obtain a larger configuration, with three points per line and four lines per point, by including also the other three trisectors and the line through the perspective centers.) The Nauru graph can be represented by these twelve points, twelve lines, and the incidences among them.</p>
+
+<p align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/F24/Zacharias.png" /></p>
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: Dr. Nauru<br />
+<b>2007-12-13T16:09:45Z</b><br />
+Neat, I didn&#x27;t know Nauru had discovered that graph 
+
+p.s. &#x27;cuz no matter how many times the rule is violated, people still claim that by convention objects in mathematics are named after their creator.
+</div>
+

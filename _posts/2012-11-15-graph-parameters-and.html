@@ -1,0 +1,63 @@
+---
+layout: post
+title:  'Graph parameters and cliques in supergraphs'
+date:   2012-11-15 12:27:00
+tags:   [graph theory]
+---
+The <a href="http://en.wikipedia.org/wiki/Tree_decomposition">treewidth</a> of a graph G is the minimum, over all <a href="http://en.wikipedia.org/wiki/Chordal_graph">chordal</a> supergraphs H of G, of the size of the largest clique in H (minus one).
+<br />
+
+<br />
+The <a href="http://en.wikipedia.org/wiki/Path_decomposition">pathwidth</a> of a graph G is the minimum, over all <a href="http://en.wikipedia.org/wiki/Interval_graph">interval</a> supergraphs H of G, of the size of the largest clique in H (minus one).
+<br />
+
+<br />
+The <a href="http://en.wikipedia.org/wiki/Tree-depth">tree-depth</a> of a graph G is the minimum, over all <a href="http://en.wikipedia.org/wiki/Trivially_perfect_graph">trivially perfect</a> supergraphs H of G, of the size of the largest clique in H.
+<br />
+
+<br />
+The <a href="http://en.wikipedia.org/wiki/Vertex_cover">vertex cover number</a> of a graph G is within one of the minimum, over all <a href="http://en.wikipedia.org/wiki/Threshold_graph">threshold</a> supergraphs H of G, of the size of the largest clique in H. (One could use <a href="http://en.wikipedia.org/wiki/Split_graph">split graphs</a> instead but it changes the clique size by at most one.)
+<br />
+
+<br />
+There is a strict chain of inclusions of graph families: threshold ⊂ trivially perfect ⊂ interval ⊂ chordal. This implies a corresponding chain of near-inequalities among the corresponding graph parameters, but some of them are not exact because of the off-by-one differences between the graph parameters and clique sizes.
+<br />
+
+<br />
+Are there more like this that I&#x27;m missing?
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: <br />
+<b>2012-11-16T03:08:51Z</b><br />
+The bandwidth of a graph G is the minimum, over all proper interval supergraphs H of G, of the size of the largest clique in H (minus one).
+Kaplan and Shamir  (1996) http://dx.doi.org/10.1137/S0097539793258143
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2012-11-16T05:08:50Z</b><br />
+Another good example — thanks!
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: <br />
+<b>2012-11-16T17:35:34Z</b><br />
+Perhaps chromatic number and perfect supergraphs?
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2012-11-16T18:13:56Z</b><br />
+Another good one. I don&#x27;t know of a lot of graph algorithms parameterized by chromatic number, and I don&#x27;t know of a reference for this equivalence, but I think this does work, and adds to the chain of inequalities.
+
+Here&#x27;s a quick proof sketch. In one direction, it&#x27;s obvious that chromatic number ≤ perfect clique number. In the other direction, if you have a k-coloring, you can extend it to a complete k-partite graph, which has the same chromatic number and is necessarily perfect (either show this directly from the fact that every induced subgraph is also complete multipartite, or observe that perfect graphs are closed under complement and the complement of a complete k-partite graph is just a disjoint union of cliques).
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>tbiedl</b>: <br />
+<b>2012-12-14T12:07:08Z</b><br />
+Since vertex cover number corresponds to split graphs (more or less), then I wonder what kind of graph class the twin cover number corresponds to?  
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2012-12-14T13:38:57Z</b><br />
+I don&#x27;t know about that one. The correct reference is Ganien&#x27;s IPEC 2012 paper &quot;Twin-Cover: Beyond Vertex Cover in Parameterized Algorithmics&quot;, right?
+</div>
+

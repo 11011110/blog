@@ -1,0 +1,31 @@
+---
+layout: post
+title:  "Why you can't fold a paper bag"
+date:   2015-07-07 21:38:00
+tags:   [origami, papers]
+---
+<p>You&#x27;re probably familiar with folding paper bags. You know, the small ones for lunches or the large ones for groceries? They have a triangular folding pattern on their sides that lets them either fold flat or open up into a brick shape. Five sides of the brick are covered by the paper of the bag, and the sixth top side makes an opening that you can put things into.</p>
+
+<p align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/BrownPaperBags.jpg" width="600" height="400" /><br />
+<font size="1">Image from <a href="http://bougieblackgirl.com/we-are-all-black-but-you-as-a-light-skin-person-benefit-from-light-skin-privilege/">this post on racism and the paper bag test</a></font></p>
+
+<p>But did you know that you can&#x27;t actually open these bags or fold them up again purely by folding? To change them from their folded to their unfolded state, or vice versa, you also have to bend and twist the paper in the regions between the folds. Try it with a real bag: you should feel a distinct snap in the paper as you unfold it. And although you can start to fold it up again without the same snap, at least to the point where the top closes up (lke the upper middle bag in the image above), this partially folded state involves subtly twisting the sides of the bag, so that the creases down the middles of the sides are opened out near the bottom of the bag and folded up near the top of the bag. In fact, although both the folded and unfolded states keep the paper flat wherever it is not creased, none of the intermediate states between folded and unfolded can be realized with flat paper. So if you tried to make one of these bags from something more rigid like sheets of glass, connected by hinges at the creases, it wouldn&#x27;t work.</p>
+ 
+<p align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/GlassCranes.jpg" width="480" height="480" /><br />
+<font size="1"><a href="https://www.etsy.com/listing/209462085/stained-glass-origami-sadakos-peace">Stained glass cranes by Suncatchercreations on Etsy</a></font></p>
+
+<p>I have a small part in a new preprint analyzing this phenomenon, &quot;<a href="http://arxiv.org/abs/1507.01644">Rigid Origami Vertices: Conditions and Forcing Sets</a>&quot; (with Abel, Cantarella, Demaine, Hull, Ku, Lang, and Tachi, arXiv:1507.01644). Even paper bags are too complicated, so we simplify the situation by looking at folding patterns formed from a flat sheet of paper by a set of creases that all meet at a single vertex. When does such a pattern have a continuous folding motion that starts from its flat state and uses all the creases while avoiding any bends between the creases? It turns out to be necessary and sufficient for the pattern to contain what we call a &quot;bird&#x27;s foot&quot;. This is a configuration that has folds of both types (mountain and valley), such that for at least one of these two types of folds, the convex hull of the folds has the vertex in its interior. There are four different ways of doing this: there can be three mountain folds separated by angles that are all less than <i>π</i> together with a single valley fold, four mountain folds on two crossed lines together with a single valley fold, or the same things with mountains and valleys swapped. Extra folds are ok, as long as one of these patterns is in there somewhere.</p>
+
+<p align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/BirdsFeet.png" /></p>
+
+<p>So how does our analysis apply to the paper bag folding pattern? Paper bags have three types of vertex:</p>
+
+<ul>
+<li>There are four vertices on the corners of the bag, with three mountain folds (the three edges of the bag that meet at the corner) and one valley fold (part of the triangle of creases that allows the bag to fold flat). Our theory doesn&#x27;t apply to these vertices, because they can&#x27;t be spread out to a flat sheet of paper. But they&#x27;re not a problem, because they can be continuously folded in a range of states between their flat-folded and unfolded states.</li>
+<li>There are two vertices in the middle of the two folded sides of the bag, forming the apexes of the triangles of creases. They have three valley folds (connecting the vertex to two corners of the bag and the top midpont of the side) and one horizontal mountain fold. This forms a bird&#x27;s foot, so again it&#x27;s ok.</li>
+<li>The remaining two vertices lie on the edges of the bag. At these vertices, four folds meet at right angles. Two of the folds are mountain folds along the edge of the bag, and the other two are horizontal creases, one a mountain and the other a valley. This is not a bird&#x27;s foot, because there are only three mountain folds and two of them are separated by an angle of <i>π</i>, while a bird&#x27;s foot should have angles less than that. It has a continuous motion from its flat state to its folded state, but not one that happens all at once. Instead, you have to first fold the two parallel mountain folds (the ones along the edge of the bag) keeping the other two folds completely unfolded. Then, once the two mountain folds have been folded completely flat, you can start foldng the other two folds. But this two-stage motion is incompatible with the motion of the other vertices of the bag, and this is what prevents the bag from folding without bending or twisting.</li>
+</ul>
+
+<p>Is the inability to fold a paper bag a flaw in its design? I don&#x27;t think so. First, obviously it is still possible to open or close the bag, because paper is not rigid. And second, I think the fact that a little snap is needed to open or close the bag may actually give the bag some strength: it stays fixed in its closed or open states easily, without flopping between the two states.</p>
+
+See also two earlier papers by Ballcom, Demaine, and others, more specifically about paper bag folding, in the <a href="http://erikdemaine.org/papers/PaperBag_CGW2004/">2004 Fall Workshop</a> and in <a href="http://erikdemaine.org/papers/PaperBag_OSME2006/">Origami<sup>4</sup></a>.

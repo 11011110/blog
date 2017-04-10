@@ -1,0 +1,29 @@
+---
+layout: post
+title:  'Bit tricks for wildcard strings and hypercube face lattices'
+date:   2016-01-19 18:11:00
+tags:   [hypercube, bit parallelism, geometry]
+---
+<p>The binary strings of a given length, like the length-8 string &quot;11011110&quot; in the name of my blog, can be thought of as naming the vertices of a hypercube of the same dimension: each bit is one of the Cartesian coordinates of a vertex. In the same way,
+binary strings with wildcard characters, like &quot;11***1*0&quot;, can be thought of as naming the nonempty faces of the hypercube; the number of stars gives the dimension of the face, up to the string &quot;********&quot; which represents the whole cube. But there&#x27;s one more face, the empty set Ø, which cannot be represented in the same way.</p>
+
+<p>As with the collection of faces of any polyhedron, the faces of a hypercube can be partially ordered by inclusion, and this partial order forms a lattice: every family of faces has a unique meet (its greatest lower bound, the intersection of all the faces), and a unique join (its least upper bound, the unique minimal face that contains all of them).
+For instance, the meet of two opposite sides of an ordinary 3-dimensional cube (for instance the two sides **0 and **1) is the empty set (that&#x27;s why Ø needs to be a face) and the join of the same two opposite sides is the  whole cube ***. This is the <a href="https://en.wikipedia.org/w/index.php?title=Face_lattice">face lattice</a> of the hypercube. (The hypercube itself can also be viewed as a face lattice of another kind of polyhedron, a simplex.)</p>
+
+<p>Here&#x27;s an example, for the face lattice of a square (a 2-dimensional cube). The inclusion ordering is shown by the edges, and each lattice element is labeled both by the part of the square it represents and by the corresponding wildcard string.</p>
+
+<p align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/Square-face-lattice.png" border="0" /></p>
+
+<p>A 2012 NSDI paper by Kazemian, Varghese, and McKeown, &quot;<a href="https://www.usenix.org/system/files/conference/nsdi12/nsdi12-final8.pdf">Header Space Analysis: Static Checking For Networks</a>&quot;, uses some of these operations. It needed them to be fast, so it describes how to implement them using a constant number of bit-manipulation operations. (Actually, it omits the join operation, because what it really wants is the union, but that can&#x27;t always be described as a single face.) Their basic idea is to expand each symbol of the wildcard face description into two bits: 0 ⇒ 01, 1 ⇒ 10, and * ⇒ 11. Although the empty set Ø could not be written as a wildcard string, it can be represented in the same way as a binary number, the number 0. With this representation, we can perform subset testing, and meet and join operations, using a constant number of bit operations, as follows:</p>
+
+<ul>
+<li><p>One hypercube face A is a subset of another face B if and only if A &amp; B == A.</p></li>
+<li><p>The minimal face containing both A and B as subsets is the face A | B, the result of a bitwise Boolean or operation.</p></li>
+<li><p>The intersection of faces A and B (their join) is usually A &amp; B, the result of a bitwise Boolean and. But when the intersection is empty, A &amp; B will not necessarily be zero as it should: it may only have 00 as the expansion of a single positions. To test for this possibility, let C = A &amp; B and let M be a bitstring of the form ...01010101. Then if (~C &gt;&gt; 1) &amp; ~C &amp; M == 0, there is some position of the wildcard string where both bits are zero, and we should return zero as the result of the intersection operation. Otherwise, we can return A &amp; B.</p></li>
+</ul>
+
+<p>One drawback to this representation is that it&#x27;s a little tricky to test whether a given (non-wildcard) binary string is a match to a given wildcard string. To do so, we have to somehow expand each of its bits into two bits to put them into the correct position for the bitwise Boolean operations, and this bit permutation operation is not a primitive operation on many computer architectures (nor in many programming languages). So here&#x27;s a second small trick to make this part easier without making the other parts any harder: simply rearrange the same bits into a more convenient ordering.</p>
+
+<p>Instead of representing a wildcard string as a sequence of pairs of bits drawn from 01, 10, or 11, let&#x27;s split those pairs out. We&#x27;ll represent a wildcard string as a sequence of 2n bits in which the ith bit represents either whether the wildcard string can match a 0 in position i (if i &lt; n) or whether it can match a 1 in position i – n (if i &gt; n). That is, we use the same bits as before but we transpose their positions. Then the subset and join operations are exactly the same as before. The intersection (meet) operation only needs a small adjustment and simplification: instead of the expression (~C &gt;&gt; 1) &amp; ~C &amp; M == 0 we use (~C &gt;&gt; n) &amp; ~C == 0, with no masking needed. And mapping a binary number x to the representation of the wildcard string that matches only x becomes trivial: use the formula (x &lt;&lt; n) | ~x. To test whether x matches a wildcard string Y, compute the wildcard string X = (x &lt;&lt; n) | ~x and then apply the subset test X &amp; Y == X.</p>
+
+<p>With this permuted representation, all the lattice operations as well as wildcard membership testing have simple constant-time implementations using only bitwise Boolean operations.</p>

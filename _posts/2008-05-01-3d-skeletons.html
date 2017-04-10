@@ -1,0 +1,29 @@
+---
+layout: post
+title:  '3d skeletons'
+date:   2008-05-01 21:19:00
+tags:   [computational geometry, papers]
+---
+Another of my papers, “<a href="http://arxiv.org/abs/0805.0022">Straight skeletons of three-dimensional polyhedra</a>” (with Gill Barequet, Mike Goodrich, and Gill&#x27;s student Amir Vaxman) is now available on the arXiv. The <a href="http://en.wikipedia.org/wiki/Straight_skeleton">straight skeleton</a> is a way of representing a shape (such as a polygon in the plane) by a lower dimensional structure (a collection of line segments having roughly the same overall shape as the original polygon). It can be formed (conceptually, at least, although it takes more work to turn this into an algorithm) by continuously moving the sides of the polygon inwards at the same speed as each other, and collecting the line segments traced out by the vertices of the polygon as the sides move. It also has some architectural applications, as it describes the shape of a fixed-pitch roof over a given set of walls. Compared to the <a href="http://en.wikipedia.org/wiki/Medial_axis">medial axis</a>, another type of skeleton, it has the advantage of only using straight line segments and not curves, but the disadvantage of being harder to compute.
+<br />
+
+<br />
+It had been thought to be difficult or impossible to define the straight skeleton in 3d: one can imagine continuously moving the sides of a polyhedron inward as before, but at certain points in this process it becomes ambiguous how to connect them up to each other. In 2d, if you know the positions of a set of lines defining a polygon, and you know the order the lines should connect up with each other, you know where the vertices must be (at the points where the lines cross) but in 3d, if you only know the positions of a set of planes defining a polyhedron, there may be multiple ways of connecting those planes together at edges and vertices. We resolve this ambiguity by using a two-dimensional straight skeleton process whenever the inward-moving sides reach a point of ambiguity.
+<br />
+
+<br />
+We also have some results on more efficiently computing straight skeletons when the input is orthogonal; in this case there are no ambiguities to worry about and the resulting skeleton is provably less complicated than it might be in the general case.
+<br />
+
+<br />
+I had a little difficulty getting this paper uploaded to the arXiv due to it having a large number of bitmap figures (the output of Vaxman&#x27;s implementation of the algorithm for general polyhedra) and the arXiv requiring all uploads to fit in a total size of 1Mb. The solution turned out to be to use pdftex, as pdf versions of the figures compressed better than the eps format they were in before. I&#x27;ve usually been using pdftex anyway for my papers, but for historical reasons this one had been using postscript figures. I found <a href="http://www.math.rug.nl/~trentelman/jacob/pdflatex/pdflatex.html">these instructions</a> for converting to pdflatex helpful (especially the part about pstex). The arXiv&#x27;s instructions for submission of pdflatex are <a href="http://arxiv.org/help/submit_tex#pdflatex">here</a>.
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: 11/780???<br />
+<b>2008-05-04T04:59:04Z</b><br />
+A computer science graduate student named Vaxman?  He&#x27;s about 25 years too late to make the most out of his name!
+
+
+</div>
+

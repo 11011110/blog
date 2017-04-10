@@ -1,0 +1,19 @@
+---
+layout: post
+title:  'Steiner spanners'
+date:   2012-06-12 17:18:00
+tags:   [computational geometry, papers]
+---
+Cora Borradaile and I have a new paper out on the arXiv, <a href="http://arxiv.org/abs/1206.2254">Near-Linear-Time Deterministic Plane Steiner Spanners and TSP Approximation for Well-Spaced Point Sets</a>, arXiv:1206.2254; it&#x27;s been accepted at <a href="http://2012.cccg.ca/">CCCG</a>.
+<br />
+
+<br />
+In this context, a spanner is a graph whose distances approximate the geometric distances between a set of points. So we are given a set of points in the Euclidean plane, and we want to draw a network of points and line segments in the plane that connects up the given points and in which the distances between the given points are close to their Euclidean distances. But the network may have extra &quot;Steiner&quot; vertices that were not part of the initial point set, and the distances to those vertices aren&#x27;t important. So one way of getting a spanner would be just to overlay all the line segments between pairs of points, but that would have a lot of vertices and a high total length.
+<br />
+
+<br />
+What we show in the paper is that for point sets whose Delaunay triangulation has no sharp angles, it&#x27;s possible to build a low-weight spanner in close to linear time (the time is dominated by finding the Delaunay triangulation, which can be done as quickly as <a href="http://en.wikipedia.org/wiki/Integer_sorting">integer sorting</a>). The construction involves replacing each triangle of the triangulation by its own little spanner. The no-sharp-angle condition implies that the triangulation has low total weight and that every line segment between two given points intersects the Delaunay circles in a set of chords of small total length; the amount of deviation from this line segment along the spanner path inside each triangle can be charged to the corresponding chord.
+<br />
+
+<br />
+The real goal was to get a faster approximation scheme for Euclidean TSP than the O(<i>n</i> log <i>n</i>) algorithm by Rao and Smith in STOC 1998. Phil Klein has a different approximation scheme that can be made to work as long as we have low-weight spanners, which is what we provide. But it would be good to do this without also needing the extra assumption of no sharp angles. As we remark towards the end of the paper it&#x27;s possible to get a fast construction time and no angle assumption, by using compressed quadtrees to augment the point set before computing its Delaunay triangulation, but this seems to lose the weight bound. Or, it&#x27;s possible to get low total weight and no angle assumption with a slower method for reducing the weight of a spanner from another paper by Klein. But we don&#x27;t know how to get low total weight, fast construction, and no angle assumption, all at once.

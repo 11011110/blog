@@ -1,0 +1,48 @@
+---
+layout: post
+title:  'Generating permutations with recursive generators'
+date:   2011-10-02 14:49:00
+tags:   [python, wikipedia, algorithms]
+---
+I&#x27;ve been working recently on the Wikipedia article on the <a href="http://en.wikipedia.org/wiki/Steinhaus%E2%80%93Johnson%E2%80%93Trotter_algorithm">Steinhaus–Johnson–Trotter algorithm</a> for listing all the permutations of n items in such a way that adjacent permutations in the generated sequence differ only by swapping two adjacent elements. Inspired by this, I added an implementation to my PADS library: <a href="http://www.ics.uci.edu/~eppstein/PADS/Permutations.py">Permutations.py</a>.
+<br />
+
+<br />
+Although the algorithm is most easily explained recursively, most sources that I&#x27;ve seen skip over this quickly in order to get to various non-recursive variants of the algorithm. There are, I think, several reasons for this: the recursive version has too much overhead passing around and copying the permutation, the structure of the recursion makes it more difficult to use the method as part of a larger algorithm since that larger algorithm would have to be split up into a sequence of calls from within the recursive generation procedure, and finally there are variants of the non-recursive algorithm due to Shimon Even and others that make it take constant average time per permutation, something that seems difficult to achieve in a recursive algorithm. But are these reasons actually valid?
+<br />
+
+<br />
+The recursive overhead can be eliminated in a very simple way: instead of generating the sequence of permutations recursively, generate the sequence of swaps, and outside of the recursion apply these swaps to the permutations in sequence.
+<br />
+
+<br />
+The Python language has the concept of a <a href="http://www.ibm.com/developerworks/library/l-pycon/index.html">simple generator</a>. These look like functions containing a special keyword, &quot;yield&quot;. But when they are called, instead of running the code within the function, a special iterator object is set up. Then, every time the next() method of the iterator is called, it runs the code of the function from its previous stopping point until the next yield keyword, returning the argument of the yield as the result of the next() method. These things can call each other recursively, and when they do they end up turning the call tree of the recursion upside down, exposing the results of the recursion as a bare sequence that can be used in any context. This eliminates the objection about using recursion in larger algorithms.
+<br />
+
+<br />
+Finally, as for efficiency: a recursive algorithm for generating the swap sequence can be defined as a top level subroutine that generates the sequence of swaps for the last element of the input permutation (these swaps cause this element to sweep back and forth across the permutation) together with recursive calls to generate the other swaps. But for a permutation of length n, the recursive calls happen only once every n steps. That is, almost all of the time is spent in the outer call. If the recursion is n steps deep, so that the worst case time to generate a new element of the swap sequence is O(n), but all but a 1/n fraction of the elements don&#x27;t recurse and only take time O(1), then the average time to generate each swap is O(1).
+<br />
+
+<br />
+So that&#x27;s what my implementation does: sets up a recursive chain of simple generators for the swap sequence, with each generator in the chain using a constant amount of memory and taking a constant amount of time when it is called. The average number of calls per swap, and therefore the average time to generate each permutation, is O(1).
+<br />
+
+<br />
+It would be interesting, I think, to compare this to the non-recursive constant-average-time methods for generating the same sequence, but doing this fairly would require a lower level language than Python. There are also constant-worst-case-time methods, a result that I don&#x27;t see how to duplicate using recursion and simple generators, but Sedgewick&#x27;s 1977 survey of permutation generation algorithms says that they&#x27;re slower in practice than the average-case methods.
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>leonardo_m</b>: <br />
+<b>2011-10-05T01:43:33Z</b><br />
+The Python code is very nice, thank you. The algorithm looks simple.
+
+&gt;It would be interesting, I think, to compare this to the non-recursive constant-average-time methods for generating the same sequence, but doing this fairly would require a lower level language than Python.&lt;
+
+Do you like the D language? I&#x27;m trying to translate this permutation Python code to D.
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2011-10-05T01:45:58Z</b><br />
+I don&#x27;t really know enough about D to like it or not like it.
+</div>
+

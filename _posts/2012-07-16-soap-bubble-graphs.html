@@ -1,0 +1,75 @@
+---
+layout: post
+title:  'Soap bubble graphs'
+date:   2012-07-16 21:11:00
+tags:   [prague, graph drawing, conferences, geometry, lombardi, papers]
+---
+Last week I was in Prague as one of four invited speakers at the <a href="http://kam.mff.cuni.cz/conferences/EurogigaMidterm2012/">EuroGIGA Midterm Conference</a>; EuroGIGA is a big multi-investigator European research project on graphs, geometry, and algorithms.
+<br />
+
+<br />
+My talk there was entitled &quot;<a href="http://www.ics.uci.edu/~eppstein/pubs/Epp-EuroGIGA-12.pdf">Möbius transformations, power diagrams, Lombardi drawings, and soap bubbles</a>&quot;, and it announced the results of two papers that I&#x27;ve recently uploaded to the arXiv: &quot;<a href="http://arxiv.org/abs/1206.6142">Planar Lombardi drawings for subcubic graphs</a>&quot; (arXiv:1206.6142) and &quot;<a href="http://arxiv.org/abs/1207.3761">The graphs of planar soap bubbles</a>&quot; (arXiv:1207.3761).
+<br />
+
+<br />
+I think it&#x27;s easier to explain what I&#x27;m doing in the soap bubble one, so let&#x27;s start with that. The following picture could not possibly be a (two-dimensional) soap bubble, but why not?
+<br />
+
+<br />
+<div align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/unmatchable.png" /></div>
+<br />
+
+<br />
+One reason is that it has vertices where a straight edge and two curved edges of different curvatures meet, which can&#x27;t happen in soap bubbles, but maybe I&#x27;ve just drawn it inaccurately. Is there some other drawing with the same topological connectivity as this one that does form a valid soap bubble? You might say that the answer is no, because soap bubbles form minimal surfaces and the edges in the middle are not minimal because they can be contracted. However, to me this is an unsatisfactory answer. &quot;Things that form minimal surfaces&quot; is fine as a mathematical definition but not so good as a definition of soap bubbles, which are after all physical objects that have no notion of minimality. The fact that soap bubbles are minimal isn&#x27;t defining for them, it&#x27;s an emergent property coming from the way the more fundamental physical forces of surface tension and air pressure act when in equilibrium. But it is true that the drawing above does not have the topological connectivity of a soap bubble, and now I can prove it.
+<br />
+
+<br />
+There are two basic ingredients in both papers. The first is the <a href="http://en.wikipedia.org/wiki/Circle_packing_theorem">circle packing theorem</a> of Koebe, Andreev, and Thurston, which states that any maximal planar graph can be represented as a collection of non-crossing circles in the plane such that two graph vertices are adjacent if and only if the corresponding two circles are tangent. The second is a new type of <a href="http://en.wikipedia.org/wiki/Power_diagram">power diagram</a> that can be defined by forming a three-dimensional hyperbolic Voronoi diagram of halfspaces and then restricting it to the plane at infinity. If you apply the new power diagram to a circle packing, you get something like the figure below, which shows a soap bubble with the topological connectivity of the <a href="http://en.wikipedia.org/wiki/Frucht_graph">Frucht graph</a> overlaid on the circle packing from which it was constructed.
+<br />
+
+<br />
+<div align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/Frucht-soap.png" /></div>
+<br />
+
+<br />
+This new power diagram of a circle packing turns out to always be a Lombardi drawing, and also to always obey the physical laws describing soap bubbles: <a href="http://en.wikipedia.org/wiki/Plateau's_laws">Plateau&#x27;s laws</a> and the <a href="http://en.wikipedia.org/wiki/Young%E2%80%93Laplace_equation">Young–Laplace equation</a>. For 2d soap bubbles, Plateau&#x27;s laws are essentially the same as the requirements of Lombardi drawing, that the edges be circular arcs that meet at equal angles at the vertices, but the Young–Laplace equation is an additional requirement on the curvatures of the arcs. Not all Lombardi drawings obey the Young–Laplace equation; the figure I started with, with the non-minimal edges, gives an example of a Lombardi drawing that does not obey it.
+<br />
+
+<br />
+The Lombardi drawing paper uses this construction to prove that all planar graphs of degree at most three and some of degree four have planar Lombardi drawings; it also provides an example of another degree-four graph that has no planar Lombardi drawing. The soap bubble paper characterizes the graphs of planar soap bubbles as being exactly the bridgeless 3-regular planar graphs, using the same construction for one side of the characterization and using the Möbius invariance of the Young–Laplace equation to prove the other side, the fact that soap bubbles cannot have any bridge edges.
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>ext_1308112</b>: <br />
+<b></b><br />
+
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>ext_1308112</b>: <br />
+<b>2012-07-17T11:37:37Z</b><br />
+Very nice results! The link to your talk is broken though.  A few questions:
+
+C. Moukarzel <a href="http://pre.aps.org/abstract/PRE/v55/i6/p6866_1">showed</a> that soap bubbles in 2D are what he called sectional multiplicative Voronoi partitions (that is for any 2D soap bubble, you can find a set of sites and weights in 3D such that if you form the multiplicative Voronoi diagram from them, the soap bubble is a particular 2D slice of it).  Is this related at all to the power diagram that you defined?
+
+Does the result extend in an obvious way to foams on tori (or more generally other surfaces)? Gareth McCaughan showed that there are restrictions on the moduli of tori that admit circle-packings, so perhaps what your results imply is simply that any bridgeless 3-regular graph on a torus can be realized as soap bubble on <i>some</i> torus that you can construct?  What would be needed to show that such graphs can be realized on any torus?
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2012-07-17T15:33:45Z</b><br />
+It is sort of related, actually. My construction uses something that is sort of a multiplicatively weighted power diagram (i.e. it differs from the standard Voronoi diagram in two ways, one of which is weighted like a power diagram and the other is weighted like a multiplicative Voronoi diagram). And power diagrams are sections of 3d Voronoi diagrams.
+
+To realize this on a flat torus (i.e. a repeating pattern in the plane with translational symmetry) all you would need is to be able to construct circle packings for the dual graph of the desired bubble. But the parts of my paper that extend the bubble construction to 3-connected graphs to 2-connected graphs, and that prove that bridges are impossible, both depend on Möbius transformations, which don&#x27;t make as much sense in the torus case.
+</div>
+<div style="margin-left: 6em; padding-top: 1em;">
+<b>ext_1308112</b>: <br />
+<b>2012-07-18T17:25:11Z</b><br />
+Thanks for the reply!  I&#x27;ll have to think about these things some more.  
+
+The link to your talk is still broken.
+</div>
+<div style="margin-left: 9em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2012-07-18T17:43:45Z</b><br />
+Oops, sorry about that, I fixed the link now.
+</div>
+

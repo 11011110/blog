@@ -1,0 +1,38 @@
+---
+layout: post
+title:  'Triangulations of points on two lines'
+date:   2006-09-18 21:57:00
+tags:   [combinatorial enumeration, media theory, graph drawing, triangulation, conferences, talks]
+---
+<p>I&#x27;m in Karlsruhe for <a href="http://gd2006.org/">Graph Drawing 2006</a>. The first day had many interesting talks; my own (in the session on tree drawing) seemed to go well, and I&#x27;ve put the slides online <a href="http://www.ics.uci.edu/~eppstein/pubs/CarEpp-GD-06-talk.pdf">here</a>.</p>
+
+<p>I especially enjoyed Emo Welzl&#x27;s invited talk, on counting noncrossing configurations. A typical problem in this area would be to ask how many triangulations a set of (n+2) points in convex position has? This is, he says, known as the Euler-Segner problem, and the answer is the Catalan numbers, (2n choose n)/(n+1), asymptotically &amp;Theta(4<sup>n</sup>n<sup>-3/2</sup>). Or how many crossing-free perfect matchings are there on such a point set (the Catalan numbers again, but with index n/2 instead of n). Or noncrossing spanning trees, or simple Hamiltonian cycles, or... And the point set can be in convex position, or a grid, or a point set designed to make the number as large as possible, or as small as possible... So there are a lot of different problems of this type, and the ones for which we know exact answers are a rarity; more often we know upper and lower bounds of the form c<sup>n</sup> but where the constant c in the upper bound is much bigger than the one in the lower bound.</p>
+
+<p>One particular question Emo described in some detail concerned triangulations of an n×n grid of points. He described an encoding of a triangulation as a sequence of bits, where each bit describes the edge through one of the grid&#x27;s half-integer points. Anclin used this idea to prove a bound of O(8<sup>n<sup>2</sup></sup>) on the number of triangulations, but Emo showed that the bits are sufficiently unbalanced in the number of 0&#x27;s vs 1&#x27;s that one can get a better bound of roughly the number in position n<sup>2</sup> of the Fibonacci series (approximately 6.86<sup>n<sup>2</sup></sup>), but something he said in passing here intrigued me: apparently, for these point sets, if one forms a <i>flip graph</i> with a vertex per triangulation and an edge when two triangles differ by changing the diagonal of a single quadrilateral, this graph is bipartite and can be represented as an induced subgraph of a hypercube.  This made me wonder whether these flip graphs might be partial cubes themselves; when I asked, he said no because they have cubic diameter while the diameter of the hypercube they&#x27;re embedded in is only quadratic, but of course it might still be possible for them to also embed into a larger hypercube, so I don&#x27;t think the question is settled.</p>
+
+<p>Here&#x27;s a simplified version of the question: Suppose you have a point set where the points lie on two horizontal lines — e.g., a 2×n grid, although the grid placement is irrelevant for such sets. What do their triangulations look like?  If there are n points, there must be n-2 triangles in the triangulation, and we can encode the triangulation by specifying a bit per triangle, in left to right order: 0 if it has an edge on the upper line, 1 if it has an edge on the lower line.  When we do, we can see some interesting structure, as below for the flip graph of a 2×4 grid.</p>
+
+<p align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/1x3gridflips.png" /></p>
+
+<p>It looks very much like an isometric lattice subgraph, only the labels are not isometric: they differ by two for every flip in the triangulations, while we would prefer labels that differ by one.  The label set forms all ways of choosing three items out of six, and this is not a coincidence: on any two lines with x points above and y points below, the label set can be described as the set of choices of x-1 items out of x+y-2. To find isometric lattice labels for such choices, label them with the vector of positions of the chosen x-1 items, in sorted order; for instance, the triangulation labeled 001101 in the figure would be labeled by the vector of positions of the 1&#x27;s, (2,3,5). Besides being isometric, this family of label vectors forms a distributive lattice under componentwise minimum and maximum operations. So the flip graph of points on two lines form a partial cube, and provides a natural partial cube structure to the family of choices of k items out of an ordered set of n.</p>
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>brooksmoses</b>: <br />
+<b>2006-09-18T21:01:06Z</b><br />
+One thing I&#x27;m curious about with this -- the reason your 000111 triangulation has only one edge (connecting it to 001011) is that only one of the quadrilaterals can be flipped without creating degenerate triangles with all points on one side or the other.
+
+Thus, this flip graph is embedded in a flip graph for convex octagons, and specifically is the subset of that that doesn&#x27;t involve degenerate triangles when the point set is &quot;squished&quot; into a rectangle.
+
+I think it may be possible to generalize your numbering scheme a bit, incidentally; think of it as building triangles onto the line at the left-hand end of the rectangle.  A zero bit indicates that the next line connects to the current line on the bottom end; a one bit indicates that it connects on the top end.  If the points are a convex octagon, this continues to make sense for bit sets that don&#x27;t have three ones and three zeros.  (I&#x27;d thought that it would contain all the triangulations of the octagon, but on second thought it doesn&#x27;t....)
+
+Anyhow, I wonder if there&#x27;s anything interesting in looking at this as that sort of embedding.
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2006-09-19T03:51:47Z</b><br />
+<i>Thus, this flip graph is embedded in a flip graph for convex octagons, and specifically is the subset of that that doesn&#x27;t involve degenerate triangles when the point set is &quot;squished&quot; into a rectangle.</i>
+
+Good point. But the squishing is necessary to get this kind of partial cube structure out of the problem — the full flip graph for a convex octagon contains within it flip graphs for pentagons, which are not bipartite.
+</div>
+

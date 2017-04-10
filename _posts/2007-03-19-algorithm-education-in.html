@@ -1,0 +1,66 @@
+---
+layout: post
+title:  'Algorithm education in Python'
+date:   2007-03-19 14:04:00
+tags:   [python, algorithms, teaching]
+---
+<a href="http://www.ece.uci.edu/~chou/py02/python.html">Algorithm Education in Python</a>. Pai Chou, a faculty member in a different department here at UCI, clarifies why Python is such a good match for the pseudocode commonly used in algorithms classes. An old paper from 2002, but still quite valid, I think. (<a href="http://simonwillison.net/2007/Mar/19/algorithm/">Via</a>.)
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>chouyu_31</b>: <br />
+<b>2007-03-20T07:27:51Z</b><br />
+It is quite a good paper, offering great reasons why students should learn and professors should teach Python.
+
+On the other hand, I can&#x27;t help but wax nostalgically about my Scheme -&gt; C/C++ -&gt; Python progression.  Scheme to get you thinking recursively.  C/C++ to understand procedural and object-oriented programming.  Python to realize how much more convenient programming can be (followed by a weekend binge to rewrite everything one has ever programmed in Python).
+
+As an interesting anecdote, when I was a senior in undergrad, I competed in a local programming competition for fun using Python (the top three pairs using C/C++/Java represented our school in the Regional ACM programming competition) and I got second place.  I did that well against students with better grades, that were arguably smarter, and better programmers.  I&#x27;m honestly not surprised that the ACM doesn&#x27;t allow Python as a competitive language - they&#x27;d have to start coming up with harder problems to keep teams from finishing the competition early.
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>leonardo_m</b>: <br />
+<b>2007-03-20T12:34:45Z</b><br />
+Python is good to teach OOP too. But it&#x27;s unfit to teach about structures with pointers, like linked lists, graphs made with pointers, dancing links structures by Knuth, and so on. It also doesn&#x27;t teach you about what&#x27;s really fast or slow to do by the processor. Learning static typing can be useful too, later. For such things Pascal is better.
+Python and D are my preferred languages. Compared to all the other computer languages I know Python allows me to solve more complex problems and/or to solve them in less time. But I think that with Scheme you may write a program that computes the derivative of a simple symbolic expression in less time.
+</div>
+<div style="margin-left: 6em; padding-top: 1em;">
+<b>chouyu_31</b>: <br />
+<b>2007-03-20T19:05:18Z</b><br />
+If I implied that Python was a better language for everything, then I&#x27;m sorry, that was not my intent.  My intent was to say that for a large number of problems (algorithms especially), Python is suited very well.
+
+In terms of static typing, underlying processor operations, etc., certainly other languages are better for those.  Java seems to be the standard answer for teaching static typing, underlying processor operations, and OOP, but it teaches students bad habits (as was provided in the paper that was linked).  I&#x27;m not sure that Pascal is any better, and its slow death seems to suggest that other languages have filled the niche that Pascal once did.
+
+As an aside, I believe that Python is perfectly reasonable to teach about structures with pointers, because every reference is a pointer.
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2007-03-20T14:53:37Z</b><br />
+My progression was a lot messier, more like basic -&gt; fortran -&gt; c -&gt; pascal -&gt; assembly -&gt; teco -&gt; c++ -&gt; java -&gt; python, with a few other things thrown in on the side. I couldn&#x27;t even put together in one place everything I&#x27;ve ever programmed, let alone rewrite them all.
+
+Python is a lot slower than those other languages, if you program the same algorithms in them, though. So if runtime is important in the competition, Python could be at a disadvantage. I say could rather than would because it&#x27;s a lot easier to program better algorithms in Python.
+</div>
+<div style="margin-left: 6em; padding-top: 1em;">
+<b>leonardo_m</b>: <br />
+<b>2007-03-20T15:14:22Z</b><br />
+Psyco, Pyrex, D + Pyd help speed up Python programs.
+And if you need speed pure D is here to help you with a nice enough syntax :-)
+</div>
+<div style="margin-left: 6em; padding-top: 1em;">
+<b>chouyu_31</b>: <br />
+<b>2007-03-20T18:50:10Z</b><br />
+So many people make the &quot;python is slow&quot; argument.  But in many cases, code doesn&#x27;t need to run at lightning speed.  When it does, after one has a Python implementation (to get the algorithm right), one has a fairly reasonable code base to convert to any one of the other languages that are faster.
+</div>
+<div style="margin-left: 9em; padding-top: 1em;">
+<b>leonardo_m</b>: <br />
+<b>2007-03-20T19:06:51Z</b><br />
+<q>So many people make the &quot;python is slow&quot; argument.</q>
+
+Because it&#x27;s darn true, no matter what the others say. But there are so many ways to reduce that problem (Psyco, Pyrex, Weave, Pyinline, ShedSkin, Boo, SIP, Boost Python, SWIG, PYD + D, py2f, RPython, and more). And in the end there are other nice languages like D, Delphi, CommonLisp, OCaml, that you can use to reach enough speed.
+</div>
+<div style="margin-left: 12em; padding-top: 1em;">
+<b>chouyu_31</b>: <br />
+<b>2007-03-20T19:33:01Z</b><br />
+I don&#x27;t really see where this particular thread is going.  &quot;Python is slow&quot; isn&#x27;t really an argument.  Certainly it is slow for some things, but as I said, &quot;code doesn&#x27;t need to run at lightning speed&quot;.  We can see this, practically, on the thousands of web sites backed by a Python web server, the thousands of user applications written in Python, the fact that Yahoo, Google, etc., all use Python for serious data crunching.
+
+Personally, it is more important to me for the majority of software I write to be written quickly and correctly, rather than run 10 or 100 times faster.  I may be unique, but if I am, then there is no explanation for the hundreds of thousands of users who are happily using Python.
+</div>
+

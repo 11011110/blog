@@ -1,0 +1,169 @@
+---
+layout: post
+title:  'Version control'
+date:   2008-08-25 17:46:00
+tags:   [tools]
+---
+After seeing <b><a href="http://atheorist.livejournal.com/"><img src="http://stat.livejournal.com/img/userinfo.gif" alt="[info]" width="17" height="17" style="vertical-align: bottom; border: 0;" />atheorist</a></b>&#x27;s <a href="http://atheorist.livejournal.com/145002.html">recent post</a> on <a href="http://www.fossil-scm.org/">Fossil</a> I started taking a serious look at revision control systems again.
+<br />
+
+<br />
+I&#x27;ve been using CVS to manage the source files for my papers and share them with my colleagues but am a little dissatisfied with it. In narrowing down my ideas for what I&#x27;d like in a revision control system, I came up with the following wishlist. What I haven&#x27;t figured out is whether anything out there matches my wishes...
+<br />
+
+<br />
+<b>Essential features:</b>
+<br />
+
+<br />
+- Ability to share the same repository with users on multiple computers, and control the set of users who can access the repository. My CVS setup has been to do access control via Unix user login and file access permissions, and to do remote access via ssh; this works ok, but not great, because I don&#x27;t have control over which users may log in to my department&#x27;s Unix machines -- it means that many people who shouldn&#x27;t have access do, and some people who should have access don&#x27;t. I&#x27;d prefer a setup where I have full control over the user list and where repository access doesn&#x27;t convey any other kind of privilege. Fossil does ok with this one.
+<br />
+
+<br />
+- Ability to set up a web server providing free public access to files via a browser. I want to share e.g. the version history of my PADS Python library, and I don&#x27;t want to have to create user logins for everyone who might want to see it. Fossil does this very easily, with its own standalone server that I can run on my own machines, without my having to run something big and unwieldy like Apache myself or figure out what hoops I need to jump through to get my department&#x27;s support staff to authorize a CGI script.
+<br />
+
+<br />
+- Ability to handle multiple subprojects within a single repository, to allow users to check out only those subprojects they&#x27;re interested in, and to provide access control on a per-subproject basis. I want to be able to work on grant proposals or as-yet-unsubmitted papers privately with my collaborators, without sharing them with the public until I&#x27;m ready to do so. And I don&#x27;t want to have to set up and keep track of hundreds of servers and hundreds of different repositories for each of my different papers and software projects. As far as I can see, Fossil fails miserably here. CVS does ok, in that one can at least use Unix file permissions separately on each file and folder in the repository.
+<br />
+
+<br />
+- Ability to handle files of many types (text and binary) automatically. CVS is not so great here: one has to explicitly declare whether a file is text or binary, as it can&#x27;t figure that out automatically, and failing to make this declaration is one of my most frequent errors in using CVS.
+<br />
+
+<br />
+- Ability to run under OS X.
+<br />
+
+<br />
+- No major security holes in any of the system&#x27;s internet server software.
+<br />
+
+<br />
+<b>Desirable features:</b>
+<br />
+
+<br />
+- Ability for anonymous users to make distributed copies of the publically-viewable portions of the repository (that is, to get a copy of the version history and not just of the latest version of the files).
+<br />
+
+<br />
+- Low communication bandwidth for checkins.
+<br />
+
+<br />
+- Checkins via http or https. Sometimes my travels have taken me to places where these are the only protocols available from the local service provider. A system that didn&#x27;t involve sending passwords in cleartext over http would be a plus.
+<br />
+
+<br />
+- Ability for the same file to appear in multiple places in the hierarchy (e.g. via Unix-style links) in such a way that edits to one copy of the file automatically change the other copies. It might be good enough to be able to handle Unix-style symlinks, and have one master copy of the file that is linked to from several other places in the hierarchy.
+<br />
+
+<br />
+- Ability to run under Solaris and Windows, and handle the varying line-ending conventions of Unix vs Windows.
+<br />
+
+<br />
+- Integrated trouble ticket and wiki system (as provided e.g. by Fossil).
+<br />
+
+<br />
+- Ability to import history from CVS archives
+<br />
+
+<br />
+- Graphical display of timelines and version history
+<br />
+
+<br />
+- RSS feed of recent changes
+<br />
+
+<br />
+- Easy setup
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: SVN<br />
+<b>2008-08-26T11:35:17Z</b><br />
+I suggest SVN, which is much easier and more powerful compared to CVS, as well as more plugins and graphical clients.
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: Re: SVN<br />
+<b>2008-08-26T15:29:52Z</b><br />
+Everything I&#x27;ve read about svn indicates that it&#x27;s an improvement over cvs. What I&#x27;m less sure about for that one is whether it&#x27;s different enough to make switching worthwhile. For the style of use I&#x27;ve been putting it to, cvs isn&#x27;t actually especially difficult to use, it&#x27;s just lacking a certain level of control (particularly access control).
+</div>
+<div style="margin-left: 6em; padding-top: 1em;">
+<b>None</b>: Re: SVN<br />
+<b>2008-08-26T17:37:27Z</b><br />
+I&#x27;d have to agree with the first commenter.  I&#x27;ve found to SVN to be much less of a pain than CVS or SCCS(yuck!).  If you know cvs, though, the differences is usability will probably mean less to you.
+
+I&#x27;ve also used git and have mixed feelings about it.  Git is more about running multiple decentralized repositories that you can merge together in a powerful and flexible way.  Despite the fact that it is a Torvalds project, I&#x27;m still surprised how similar it is to Linux in the mid-90s.  It is very powerful, and smart design decisions were made at every turn, yet it is terribly documented, and practically hostile to non-experts.
+
+Like UNIX/Linux, too, once you learn it, you can scoff at those poor neophytes using those lesser alternatives.  ;-)  J/K  Actually, I wouldn&#x27;t recommend git for anything except a project with many developers and limited central management.
+</div>
+<div style="margin-left: 9em; padding-top: 1em;">
+<b>chouyu_31</b>: Re: SVN<br />
+<b>2008-08-27T03:53:51Z</b><br />
+I would also throw my hat in for SVN.
+
+One of the methods that have been used for svn and user access control is the use of public/private key pairs to determine a local userid, and subsequently who has access via ssh.
+
+Toss in trac, and you can at least get read access to your repository.  It may be worth adding a mechanism to upload patches (if it&#x27;s not already available), which then get applied as the user who is logged into trac.
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>ext_83835</b>: What about distributed VCS, for example Git?<br />
+<b>2008-08-26T18:42:13Z</b><br />
+What about <b>distributed</b> version control systems, like Git (http://git.or.cz), Mercurial (http://www.selenic.com/mercurial) or Bazaar (http://bazaar-vcs.org)?
+
+Lets take Git for example (I admit, I am biased here):
+* access restrictions: you can do this using hooks, taking contrib/hooks/paranoid as example
+* free public access to files: here you have to be able to setup web server, and run CGI script for web interface... or you can push your changes to one of free git hosting sites, like repo.or.cz, gitorious.org, or github.com.
+* multiple subprojects: this is usually solved by using separate repositories for separate projects; but there is submodule/subproject support in Git if you really need it
+* binary files and symlinks: Git does binary files detection automatically, and you can use gitattributes to override it on per path basis; not that it matters much if file is binary or not, unless you use end of line marker conversion, or try to merge or patch binary files
+* run under OS X: check
+* anonymous access to whole history: in the order of decreasing admin rights you can use git-daemon to serve repositories over git:// protocol, &quot;dumb&quot; HTTP access (access to ordinary web server, serving static files is needed), or again use one of free git hosting sites
+* low communication bandwidth: zero for commits (local history), low for transmitting changes to/from other computer or git hosting site
+* checkins via http or https: you can fetch (get) via HTTP, for push you need HTTP + WebDAV on server side; there is &quot;smart&quot; HTTP server in the works. Or you can use SSH.
+* symlinks: supported (with workaround for filesystems without symlinks: it uses plain file in the place of symlinks, IIRC)
+* runs under Solaris and Windows: for Windows you need Cygwin, or you can use msysGit (MINGW) port
+* integrated trouble ticket and wiki system: cil, ditz, ticgit, plugin for Trac in development, but none is integrated with Git
+* import history from CVS: git-cvsimport (incremental, but can fail on complicated histories, uses cvsps), cvs2svn,... and git-cvsserver
+* graphical display of timelines and version history: gitk (Tcl/Tk), qgit (Qt), giggle (GTK+), gitnub (Cocoa)
+* RSS feed of recent changes: gitweb (git web interface) includes RSS feeds; but this requires ability to run CGI script... or you can run it &quot;by hand&quot;
+* easy setup: &quot;git init &amp;&amp; git add .&quot; to start repository...
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>ext_120375</b>: Subversion<br />
+<b>2008-09-02T16:33:10Z</b><br />
+Hi David.  Subversion is indeed &quot;just an improved CVS&quot;, but that might be what you&#x27;re looking for.  I think Subversion does almost everything you ask for.
+
+Subversion over https (via e.g. Apache with mod_dav) supports a nice and simple access control file like this (no more muddling with CVS/Unix permissions):
+<pre>[repository:/Papers/vunfold]
+edemaine = rw
+eppstein = rw
+[repository:/Code/PDAS
+eppstein = rw
+anonymous = r</pre>
+And those users are not UNIX users; you create them yourself with an htaccess file.  (Downside: you have to set their password yourself manually; I keep meaning to set up password changes via CGI.)
+
+You can also access the repository via http (anonymously via free public webserver, for stuff accessible to anonymous) and https (with login), either direct with a web browser (kind of ugly but I imagine there are nicer interfaces) or using the regular svn command-line client (like cvs).  (I generally route all Subversion traffic through https, though in principle you can checkout a local filesystem copy.)
+
+Subversion handles binary files a lot better.  It does intelligent diff on them, but can&#x27;t merge them.  By default, Subversion doesn&#x27;t mess with files in any way that would cause a binary/text distinction.  You *can* specify end-of-line conversion and/or keyword substitution, but obviously wouldn&#x27;t do so for binary files.  There is a binary flag just to mark whether something can be merged; this is guessed, and you can modify it, but I have never found it to get in the way (because I&#x27;m careful never to need to merge binary files).
+
+Subversion supports adding symlinks to the repository.  Also it supports copies (svn cp), which are stored once in the repository but appear multiple times in a full checkout, and they can be separately modified with the same parent version.  I use this for maintaining multiple versions of papers (conference/journal; I used to use regular copies, but now they&#x27;re Subversion copies).
+
+RSS is possible via the checkin hooks, but perhaps nontrivial.  I haven&#x27;t tried.  http://weblogs.asp.net/britchie/archive/2006/09/02/RSS-Subversion-Change-Log-.aspx
+
+GUI is surely possible though I haven&#x27;t tried.  Maybe http://rapidsvn.tigris.org/
+
+The desirable features you request but which are missing from Subversion: * Distributed copies: If you want mirroring of the repository in an editable fashion, you&#x27;ll have to use one of the plethora of distributed version control systems (e.g. Mercurial is a good one in pure Python).  But a user can access the history of a public Subversion repository (just can&#x27;t copy the whole thing offline).  * Integrated trouble ticket and wiki system: This is a separate issue; use Trac or Fossil.
+
+The default Subversion layout has this trunk/tags/branches layout, but I ignore that, creating copies where it&#x27;s meaningful to me.  (And you can do this during conversion: cvs2svn --trunk=&#x27;&#x27; --trunk-only)
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: Re: Subversion<br />
+<b>2008-09-02T16:41:49Z</b><br />
+Thanks, Erik. Looks like I should start looking into this option more seriously. I guess to deal with the access control issues I would have to run my own Apache/mod_dav server rather than relying on the department web server (which requires all its files to be world readable) but that shouldn&#x27;t be too much of an obstacle.
+</div>
+

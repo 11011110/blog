@@ -1,0 +1,22 @@
+---
+layout: post
+title:  'Pixel noise fingerprinting'
+date:   2006-04-22 10:32:00
+tags:   [photography]
+---
+Via <a href="http://www.metafilter.com/mefi/51100">mf</a>: <a href="http://www.eurekalert.org/pub_releases/2006-04/bu-bur041806.php">individual cameras have recognizable patterns of pixel noise</a>. The press release talks about this as a mechanism for helping track child porn, but I&#x27;m more interested in  denoising: if you know more precisely what your camera&#x27;s noise looks like, shouldn&#x27;t that be helpful in removing it? One of the comments on mf says this sort of analysis has been standard for a long time in astrophotography; why don&#x27;t we see it in commercial photo-processing software?
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>0olong</b>: <br />
+<b>2006-04-22T22:25:08Z</b><br />
+If you find a good answer, I&#x27;d love to hear it! I have a pretty good idea what my camera&#x27;s noise looks like - there&#x27;s visible banding on very dark images, which is very irritating and quite consistent, so it <em>shouldn&#x27;t</em> be a big deal to get rid of it, but I don&#x27;t know of any straightforward way...
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>chouyu_31</b>: <br />
+<b>2006-04-25T00:27:12Z</b><br />
+Start taking pictures of the highest quality with the lens cap on.  Allow more and more light into the aperature, taking some reasonably large number of pictures for each change in light.  Perform some statistical analysis to the output to generate a function of interference for areas or individual pixels.  Post-process to remove such interference.
+
+For reference, darker pictures in digital cameras tend to have poorer signal/noise because the CCDs output is usually scaled on output (along with exposure changes on input), which stretches many of the minute differences in the CCD capacitance.
+</div>
+

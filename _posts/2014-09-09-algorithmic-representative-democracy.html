@@ -1,0 +1,46 @@
+---
+layout: post
+title:  'Algorithmic representative democracy'
+date:   2014-09-09 22:15:00
+tags:   [voting, papers]
+---
+Did you ever wonder why different states of the US have the numbers of representatives in congress that they do? It&#x27;s supposed to be proportional to population but that&#x27;s not actually true: for instance the ratio of representatives to population is about 40% higher in Montana than California. <a href="https://en.wikipedia.org/wiki/United_States_congressional_apportionment#Apportionment_methods">What formula or algorithm do they use to pick the numbers?</a>
+<br />
+
+<br />
+This has varied over the years but, Wikipedia tells me, currently it&#x27;s the <a href="https://en.wikipedia.org/wiki/Huntington%E2%80%93Hill_method">Huntington–Hill method</a>. One way of describing this is by a simple but inefficient algorithm, with the following steps:
+<br />
+
+<br />
+1. Give each state a representative, since they all have to have at least one.
+<br />
+
+<br />
+2. Repeatedly, until there are the desired number of total representatives, prioritize the states by <img src="http://www.ics.uci.edu/~eppstein/0xDE/HuntingtonHill.gif" valign="middle" /> and give one more representative to the state with the biggest priority.
+<br />
+
+<br />
+The problem of assigning seats to parties after a parliamentary election is very similar, using votes instead of population, but in that case it&#x27;s ok for some parties to get zero seats. This causes the formulas that are used for prioritizing the parties to use different divisors, typically linear functions of the number of seats already assigned rather than the square root thing used here. This general type of apportionment method is called a <a href="https://en.wikipedia.org/wiki/Highest_averages_method">highest averages method</a>.
+<br />
+
+<br />
+The question asked by my most recent preprint (<a href="http://arxiv.org/abs/1409.2603">&quot;Linear-time Algorithms for Proportional Apportionment&quot;, arXiv:1409.2603</a>, with Jack Cheng, to appear at ISAAC 2014) is: how quickly can you assign seats using these methods? Using the procedure described above, with a priority queue to do the prioritization, would take an amount of time slightly superlinear in the number of seats. But it turns out we can do quite a bit better: linear in the number of parties or states getting the seats. Probably this doesn&#x27;t matter for actual elections, the slow part of which is collecting all the votes. But it might be useful if you want to run a lot of simulated elections, or to use apportionment algorithms for problems where the number of things being apportioned is much larger than the number of congressional representatives.
+<br />
+
+<br />
+There&#x27;s also a nice way of viewing these problems more abstractly: suppose we have <i>n</i> different infinite arithmetic progressions, and an input parameter <i>k</i> How quickly can we find the <i>k</i>th smallest value in the disjoint union of the progressions? Answer: O(<i>n</i>) arithmetic operations, independently of <i>k</i>. For the parliamentary apportionment problem, you get these sequences by turning the priorities upside down, with the linear function of the number of representatives as the numerator and the number of votes as the denominator. For the congressional problem, this gives something that is not exactly an arithmetic progression, but it&#x27;s close enough to one that the same algorithms work with only minor modification.
+<br />
+
+<br />
+Incidentally, there&#x27;s a footnote on p. 3 of the preprint about two seemingly very relevant references, in Japanese, whose titles claim that they give linear time algorithms for related problems. Unfortunately despite attempts to contact both the authors of these references and the reviewer who used them as a reason to downvote our paper, we have been unable to obtain them <s>nor even to verify that they actually exist,</s> let alone to determine which variable their time is linear in and which apportionment methods they apply to. So we don&#x27;t actually know whether our algorithms or results are really new. If anyone reading this has better access to these sources, we&#x27;d appreciate any help you could give us. ETA: I now have a copy of the IEICE Trans. D one, but haven&#x27;t yet examined it. Apparently part of the difficulty is that there are two different IEICE Trans. D.&#x27;s.
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>chaoxu</b>: <br />
+<b>2014-09-18T02:24:49Z</b><br />
+For theorem 2, if you go for a slightly weaker version, where you can find the rank k element in A in constant time for each increasing sequence A, it seems you can reduce it to Fredrickson and Johnson&#x27;s selection in matrices with sorted columns. This would save a page of appendix. 
+
+A coarse solution x smaller than the kth ranked element allows you to remove all elements smaller than x. Also, there is no point of keep more than O(n) element after the coarse solution x in each arithmetic sequence.
+So the problem reduces to search for (k-rank(x))th element in n*O(n) implicit matrix, with the columns sorted. Because (k-rank(a))=O(n), the algorithm takes O(n) time using Fredrickson and Johnson&#x27;s algorithm. 
+</div>
+

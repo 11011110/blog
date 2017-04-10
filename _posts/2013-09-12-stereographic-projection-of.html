@@ -1,0 +1,33 @@
+---
+layout: post
+title:  'Stereographic projection of a snub cube'
+date:   2013-09-12 14:39:00
+tags:   [graph drawing, lombardi]
+---
+This is a <a href="https://en.wikipedia.org/wiki/Snub_cube">snub cube</a>, radially projected onto its circumscribing sphere and then <a href="https://en.wikipedia.org/wiki/Stereographic_projection">stereographically projected</a> onto the plane. It&#x27;s not quite a Lombardi drawing, because the angles of the quadrilateral faces are wider than the angles of the triangles. But I think it sets a good balance between optimizing the angular resolution around each vertex and preserving the property of the snub cube that, within each face, all the vertex angles are equal.
+<br />
+
+<br />
+<div align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/stereographic-snub-cube.png" /></div>
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: <br />
+<b>2013-12-05T03:54:09Z</b><br />
+Do you know what are the three equations for the snub cube analogous to the <a href="http://mathworld.wolfram.com/IcosahedralEquation.html">icosahedral equation</a>?
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2013-12-05T04:16:10Z</b><br />
+That&#x27;s an equation for the coordinates of the points in the stereographic projection directly, right? But I used a different method for this drawing: <a href="http://www.ics.uci.edu/~eppstein/0xDE/stereographic-snub-cube.py">the code I used to draw</a> it constructs it in 3d, and then uses a general-purpose stereographic projection routine that would work for any set of points and great-circle arcs on the sphere.
+
+The 3d vertex coordinates are permutations of (–1, ξ, 1/ξ), where
+ξ = ((17 + 3 sqrt(33))^{1/3} – (–17 + 3 sqrt(33))^{1/3} – 1)/3
+(a formula taken from the Wikipedia article).
+</div>
+<div style="margin-left: 6em; padding-top: 1em;">
+<b>None</b>: <br />
+<b>2013-12-05T04:39:56Z</b><br />
+Thank you for the response. Yes, that number is the reciprocal of the tribonacci constant. There is a nice continued fraction for it, by the way. Kindly see: http://sites.google.com/site/tpiezas/0012  P.S I find it amusing that the image for the guest post has a paper bag over the head.  :)   -- Tito
+</div>
+

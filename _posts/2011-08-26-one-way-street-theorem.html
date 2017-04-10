@@ -1,0 +1,15 @@
+---
+layout: post
+title:  'The one-way street theorem'
+date:   2011-08-26 00:44:00
+tags:   [wikipedia, graph theory]
+---
+<a href="http://en.wikipedia.org/wiki/Robbins_theorem">Robbins&#x27;s theorem</a>, also known as the one-way street theorem. This 1939 result of Herbert Robbins completely characterizes the undirected graphs that may be made into strongly connected graphs by orienting their edges: they are exactly the connected graphs that don&#x27;t have any bridges.
+<br />
+
+<br />
+Less abstractly, it&#x27;s possible to make the street system of a city one-way (without causing some people to get stuck in dead ends) exactly when there is no possible road closure that would split the city into two disconnected parts.
+<br />
+
+<br />
+A strongly connected orientation of a given bridgeless graph is easy to find: just perform a depth first search, orient the DFS tree edges away from the tree root, and orient the remaining edges towards the root.

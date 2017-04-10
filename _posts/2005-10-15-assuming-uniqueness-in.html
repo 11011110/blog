@@ -1,0 +1,138 @@
+---
+layout: post
+title: Assuming uniqueness in deductions
+date: 2005-10-15 16:25:00
+---
+<p>Suppose I am solving a Sudoku, and have deduced already that cells R1C4, R1C6, and R5C4 can only contain the digits 2 or 3. Then, I can deduce that R5C6 contains neither 2 nor 3. For, if it did, we would have a rectangle of four cells all containing one of the same two digits, and any solution of the puzzle could be matched with another solution in which we swap the 2's and 3's in those four cells (it's important here that the four cells together only cover two blocks of the puzzle), contradicting the assumption that the Sudoku has a unique solution.</p>
+
+<p>Is it considered valid to use this style of logic when solving a Sudoku? That is, making deductions based not just on the numbers in the puzzle, but based on the assumption that the puzzle has a unique solution? I've occasionally done this when solving puzzles by hand, but haven't built it into my solver, and am wondering whether I should.</p>
+
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>11011110</b><br />
+<b>October 16 2005, 04:09:24 UTC</b><br />
+Here's an example. Starting from the puzzle:
+
+<pre> ----------------------------------- 
+| .   8   . | .   .   . | 9   7   1 |
+|           |           |           |
+| .   .   1 | .   2   9 | .   4   . |
+|           |           |           |
+| 6   .   . | .   .   . | .   .   . |
+|-----------------------------------|
+| 4   .   . | 7   9   . | 1   .   . |
+|           |           |           |
+| .   .   . | 3   .   5 | .   .   . |
+|           |           |           |
+| .   .   8 | .   1   2 | .   .   4 |
+|-----------------------------------|
+| .   .   . | .   .   . | .   .   6 |
+|           |           |           |
+| .   4   . | 2   8   . | 5   .   . |
+|           |           |           |
+| 1   6   7 | .   .   . | .   3   . |
+ ----------------------------------- </pre>
+
+I can reach via normal deductions the state
+<pre> ----------------------------------- 
+| .   8   . | .   6   3 | 9   7   1 |
+|           |           |           |
+| .   .   1 | .   2   9 | 6   4   . |
+|           |           |           |
+| 6   .   . | .   7   1 | .   .   . |
+|-----------------------------------|
+| 4   .   . | 7   9   8 | 1   .   . |
+|           |           |           |
+| .   1   . | 3   4   5 | .   .   9 |
+|           |           |           |
+| .   .   8 | 6   1   2 | .   5   4 |
+|-----------------------------------|
+| 8   .   . | 1   3   7 | 4   9   6 |
+|           |           |           |
+| .   4   . | 2   8   6 | 5   1   7 |
+|           |           |           |
+| 1   6   7 | 9   5   4 | .   3   . |
+ ----------------------------------- </pre>
+
+but can make no further deductions of the standard type. However, in this state, it can be shown that R4C2, R7C2, and R7C3 can only contain a 2 or a 5. Therefore, we can eliminate 2 and 5 from the possible digits in R4C3, which (after some more deductions of the standard type, not all of them easy) eventually leads to the solution:
+<pre> ----------------------------------- 
+| 5   8   2 | 4   6   3 | 9   7   1 |
+|           |           |           |
+| 7   3   1 | 8   2   9 | 6   4   5 |
+|           |           |           |
+| 6   9   4 | 5   7   1 | 8   2   3 |
+|-----------------------------------|
+| 4   5   3 | 7   9   8 | 1   6   2 |
+|           |           |           |
+| 2   1   6 | 3   4   5 | 7   8   9 |
+|           |           |           |
+| 9   7   8 | 6   1   2 | 3   5   4 |
+|-----------------------------------|
+| 8   2   5 | 1   3   7 | 4   9   6 |
+|           |           |           |
+| 3   4   9 | 2   8   6 | 5   1   7 |
+|           |           |           |
+| 1   6   7 | 9   5   4 | 2   3   8 |
+ ----------------------------------- </pre>
+
+I don't know how to solve this puzzle without making this kind of step, unless I use trial and error. Is this a legitimately solvable Sudoku?
+</div>
+
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>11011110</b><br />
+<b>October 16 2005, 08:01:30 UTC</b><br />
+And another example where everything is straightforward except for this step. This time there are two ambiguous rectangles at the same time, both on rows 8 and 9.
+<pre> ----------------------------------- 
+| .   .   8 | 9   .   . | .   3   . |
+|           |           |           |
+| .   .   . | 3   .   . | .   .   . |
+|           |           |           |
+| .   2   . | .   .   . | 8   5   9 |
+|-----------------------------------|
+| .   8   . | .   9   . | .   .   3 |
+|           |           |           |
+| 7   .   5 | .   .   . | 6   .   2 |
+|           |           |           |
+| 4   .   . | .   5   . | .   8   . |
+|-----------------------------------|
+| 8   4   3 | .   .   . | .   7   . |
+|           |           |           |
+| .   .   . | .   .   7 | .   .   . |
+|           |           |           |
+| .   5   . | .   .   3 | 1   .   . |
+ -----------------------------------</pre>
+</div>
+
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>gunslnger</b><br />
+<b>March 7 2006, 05:22:49 UTC</b><br />
+A Sudoku doesn't have to have aunique solution, but the ones they print in books and newspapers are often chosen so that they do, but a generator program doesn't have to.
+</div>
+
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b><br />
+<b>March 7 2006, 05:46:23 UTC</b><br />
+<p><i>A Sudoku doesn't have to have a unique solution</i></p>
+
+<p>I'm not sure — I think I'd hesitate to call something with multiple solutions a valid sudoku. My generator program only outputs puzzles with unique solutions, anyway.</p>
+</div>
+
+<div style="margin-left: 6em; padding-top: 1em;">
+<b>gunslnger</b><br />
+<b>March 7 2006, 07:46:02 UTC</b><br />
+A valid sudoku is anything that meets the 3 rules. But most people don't want to have to just pick a number at some point, so generally no one generates ones with multiple solutions.
+</div>
+
+<div style="margin-left: 9em; padding-top: 1em;">
+<b>Anonymous</b><br />
+<b>September 29 2006, 06:28:34 UTC</b><br />
+That the solution is unique IS one of the requirements of sudoku, because a puzzle has to be solvable by logic. If you're forced to just plain pick a number and run with it, logic has failed you. (This isn't the same as trial-and-error, in which you make a temporary pick but don't choose it as a final candidate, just use it to try to suss out logical inconsistencies.) A puzzle with multiple solutions is no better than an empty grid--challenging to fill in, but not a true puzzle by any reasonable definition of the word.
+</div>
+
+<div style="margin-left: 12em; padding-top: 1em;">
+<b>11011110</b><br />
+<b>September 29 2006, 06:41:25 UTC</b><br />
+While I agree with you with regard to Sudoku, there are some very good puzzles that start with an empty grid and have multiple solutions. The one with the 27 identical rectangular blocks to be placed into a cube, for instance.
+</div>

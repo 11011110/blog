@@ -1,0 +1,27 @@
+---
+layout: post
+title:  'SODA Day 1: Nerdy Music'
+date:   2008-01-20 23:24:00
+tags:   [music, conferences, talks]
+---
+My iPod&#x27;s randomizer this morning decided to treat me to some <a href="http://www.3hive.com/2007/04/the_metasciences.php">Metasciences</a> and <a href="http://www.3hive.com/2006/02/casiotone_for_the_painfully_al.php">Casiotone for the Painfully Alone</a>. All it needed, I thought, was some <a href="http://www.3hive.com/2004/03/say_hi_to_your.php">Say Hi To Your Mom</a> (of which I have plenty) for the nerdy music trifecta to be completed. So I was looking forward to tonight&#x27;s concert by <a href="http://en.wikipedia.org/wiki/Christos_Papadimitriou">Lady X and the Positive Eigenvalues</a>, Christos Papadimitriou&#x27;s band, for another hit of nerdy music. My (excellent) dinner ran long, though, sadly, so I had to miss it. I hope those who attended had a good nerdy time.
+<br />
+
+<br />
+The SODA conference proper began, for me, with Gábor Tardos&#x27; talk on empty rectangle graphs. These are graphs in which one connects pairs of points in the plane when their minimum enclosing rectangle is empty of other points; they may be dense (e.g. complete bipartite graphs are easy to form) but it&#x27;s still of interest to ask what their independence number or chromatic number might be. Gábor showed that random point sets have graphs with only O(<i>n</i> log <i>n</i>) edges, so their independence number is at least proportional to <i>n</i>/log <i>n</i> but (more to the point) he also shows that that it is at most proportional to <i>n</i> log<sup>2</sup> log <i>n</i>/log <i>n</i>. Something that continues to puzzle me: his analysis of the number of edges is almost identical to the <a href="http://11011110.livejournal.com/119720.html">analysis of the number of edges</a> in a different two-dimensional graph, in which one quicksorts the points by their <i>x</i> coordinates, using the <i>y</i> coordinates to prioritize the choice of pivots, and connects any two points that are ever compared as part of the quicksort process. But the graphs are not the same: the quicksort graph has linear-sized independent sets. So I&#x27;m not sure whether the rectangle graph can be made to say anything more about quicksort or vice versa. What Gábor really wants to know, though, is how small the independence number can be for a worst-case rectangle graph; the random point set example shows that it can be sublinear but maybe other point sets have independence numbers that are substantially smaller.
+<br />
+
+<br />
+I also especially liked Dhandapani&#x27;s paper, the next in the session, showing that maximal planar graphs can be drawn in the plane in such a way that, from any vertex to any other vertex there is a distance-decreasing path. The technique is to parametrize <a href="http://www.ics.uci.edu/~eppstein/gina/schnyder/">Schnyder&#x27;s straight-line embedding method</a> <a href="http://portal.acm.org/citation.cfm?id=320176.320191">from the first SODA</a> and show that the desired drawing can be found using fixed-point theorems in the parameter space. In the coffee break afterwards, Mike Goodrich wondered whether it might be possible to achieve similar results for Tutte&#x27;s spring embedding (another way of finding planar straight line drawings), parametrized by spring strength.
+<br />
+
+<br />
+Ignaz Rutter spoke on some work with Sasha Wolff about finding large matchings in different kinds of graphs, a preliminary step for speeding up augmenting path based maximum matching algorithms. One motivation for this problem involves <a href="http://arxiv.org/abs/cs.CG/0405036">stripification of triangle meshes</a> for computer graphics. A few of the time bounds he quoted in his talk for 3-connected planar graphs were of the form O(<i>n</i> &amp;alpha(<i>n</i>)), which he stated (when asked in the questions afterwards) came from finding the tree of 4-connected components; I know my paper “<a href="http://www.ics.uci.edu/~eppstein/pubs/p-psgi.html">Subgraph isomorphism in planar graphs and related problems</a>” shows one way to get rid of this alpha for planar 4-connectivity testing but I&#x27;m less certain it extends to constructing the decomposition they need to use in this case.
+<br />
+
+<br />
+I wish I knew enough to follow Laci Babai&#x27;s high-level and fast-paced talk, on how measures on finite groups convolve to form more evenly distributed measures, with a lower bound on the distribution involving the minimum dimension of a group representation, and how a dozen hard theorems in group theory follow as corollaries from this result. It seemed like interesting stuff, though perhaps only peripherally related to algorithms.
+<br />
+
+<br />
+And from Bonnie Berger&#x27;s invited plenary talk I got one very interesting piece of information: approximation algorithms based on bounded-treewidth dynamic programming can actually be very practical for some problems in bioinformatics. The subject of her talk was comparative genomics: finding genes and regulatory regions in DNA by looking for highly conserved regions among multiple species, finding bases that are paired in RNA structures by looking for bases that mutate in tandem, threading proteins to known folds, and (the part she talked the longest about) finding matching regions of protein interaction networks.

@@ -1,0 +1,81 @@
+---
+layout: post
+title:  'Infinite families of simplicial arrangements'
+date:   2005-09-07 21:44:00
+tags:   [arrangements, geometry]
+---
+<p>So it turns out that there are three known infinite families of simplicial arrangements; that is, arrangements of lines in the projective plane for which all faces are triangles.  The first are the <i>near-pencils</i>: make a <i>pencil</i> of n-1 lines through a single point, and add one additional line elsewhere (by convention, the line at infinity, although it doesn&#x27;t really matter which other line you use).  They don&#x27;t look very interesting, just a star through one point.  Their duals are the prisms, already known as an infinite family of examples for the <a href="http://www.livejournal.com/users/11011110/12756.html">cubic partial cube problem</a>.</p>
+
+<p>The second infinite family is denoted R(2k), and consists of k lines formed by extending the sides of a regular k-gon, together with the k axes of symmetry of the k-gon.  When k is odd, each of these axes passes through one vertex and one edge midpoint of the k-gon; when k is even, they pass through two vertices or two edge midpoints.  Here&#x27;s R(14):</p>
+
+<p align="center"><img src="http://www.ics.uci.edu/~eppstein/junkyard/simplicial-arrangements/R14.png" /></p>
+
+<p>The third family is denoted R(4k+1), and combines R(4k) with one additional line at infinity.  So, unless we move the lines so the infinite one becomes finite and the rest become asymmetric, it looks visually very similar to the R(2k) family.  You can define R(4k+3) in the same way but it isn&#x27;t simplicial.</p>
+
+<p>Below the cut are some more examples of R(2k), for k=8, 9, 10, 12, and 15.</p>
+
+
+<p align="center"><img src="http://www.ics.uci.edu/~eppstein/junkyard/simplicial-arrangements/R16.png" /></p>
+
+<p align="center"><img src="http://www.ics.uci.edu/~eppstein/junkyard/simplicial-arrangements/R18.png" /></p>
+
+<p align="center"><img src="http://www.ics.uci.edu/~eppstein/junkyard/simplicial-arrangements/R20.png" /></p>
+
+<p align="center"><img src="http://www.ics.uci.edu/~eppstein/junkyard/simplicial-arrangements/R24.png" /></p>
+
+<p align="center"><img src="http://www.ics.uci.edu/~eppstein/junkyard/simplicial-arrangements/R30.png" /></p>
+
+<p>The script I wrote to generate these figures is <a href="http://www.ics.uci.edu/~eppstein/junkyard/simplicial-arrangements/R.py">here</a>.</p>
+
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>peeyush</b>: <br />
+<b>2005-09-08T13:53:22Z</b><br />
+Awesome! I am studying that python scripts of yours. 
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2005-09-08T21:50:23Z</b><br />
+I think the only trick that may not be obvious is using complex number multiplication to rotate the endpoints of the lines around the origin.  But I didn&#x27;t really write it with readability in mind, so let me know if you find it confusing and need an explanation of some point.
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: Amazing stuff! this is very helpful for me.<br />
+<b>2005-09-08T13:57:57Z</b><br />
+I love your website, and happily consume it&#x27;s RSS feed on a daily basis. I think this is one of the most helpful things I&#x27;ve seen, though, and I&#x27;ll tell you why.
+
+I&#x27;m somewhat obsessed with origami, and more specifically origami tessellations. and looking at these generated image sets reminds me heavily of the crease patterns that are made when I create an n-gon based pattern.
+
+To know there&#x27;s a family of these folds, and that there&#x27;s an easy way to mathematically generate them, is very meaningful. I&#x27;ve been trying to understand the mathematical connections between the number of vertices, angles, and ratios of the same. this gives me a lot of fodder to work with!
+
+you can see some of the folds in progress on my flickr stream:
+
+<a href="http://www.flickr.com/photos/origomi/41268511/">http://www.flickr.com/photos/origomi/41268511/</a>
+
+<a href="http://www.flickr.com/photos/origomi/39287615/in/set-268575/">http://www.flickr.com/photos/origomi/39287615/</a>
+
+<a href="http://www.flickr.com/photos/origomi/40815432/">http://www.flickr.com/photos/origomi/40815432/</a>
+
+I also have a website with several diagram/photo/instruction sets, available for download and usage under the Creative Commons license. It&#x27;s at <a href="http://www.origamitessellations.com">www.origamitessellations.com</a>. 
+
+Thank you for sharing these with me, and giving me new ideas to work on!
+
+-Eric Gjerde
+
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: Re: Amazing stuff! this is very helpful for me.<br />
+<b>2005-09-08T21:37:32Z</b><br />
+Thanks, I added a link to your site from my <a href="http://www.ics.uci.edu/~eppstein/junkyard/origami.html">Geometry Junkyard origami page</a>.  I hope you don&#x27;t mind that I grabbed one of the photos from your site to illustrate the link.
+</div>
+<div style="margin-left: 6em; padding-top: 1em;">
+<b>None</b>: Re: Amazing stuff! this is very helpful for me.<br />
+<b>2005-09-10T16:24:04Z</b><br />
+I absolutely don&#x27;t mind! it made my day to show up on the geometry junkyard!
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: <br />
+<b></b><br />
+
+</div>
+

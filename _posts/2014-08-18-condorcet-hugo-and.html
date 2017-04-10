@@ -1,0 +1,67 @@
+---
+layout: post
+title:  'Condorcet, Hugo, and sad puppies'
+date:   2014-08-18 17:22:00
+tags:   [voting]
+---
+Yesterday, this year&#x27;s <a href="https://en.wikipedia.org/wiki/Hugo_Award">Hugo Award</a> winners <a href="http://www.loncon3.org/hugo_ceremony.php">were announced</a>; this is an annual fan popularity contest for the best works in science fiction and fantasy (there is a different set of awards voted on by the writers themselves, the Nebulas). I have a few thoughts on the nominees (like, why wasn&#x27;t <i>Her</i> among them?) but that&#x27;s not what I&#x27;m writing about. Rather, what interests me in this year&#x27;s contest is the issue of voting systems and their resistance to manipulation.
+<br />
+
+<br />
+Some background: this year&#x27;s award nomination and voting involved a group of fans from one of the subgenres of SF whose two main interests seem to be military jingoism and sexual and racial anti-inclusivity and who have apparently dubbed themselves the &quot;sad puppies&quot;. These people pushed a slate of nominees onto the ballot, which then lost fairly decisively in the final voting. There was no unfair vote manipulation going on: everything was aboveboard and according to the rules. But it caused me to wonder: how large would a dedicated faction of the voters have to be to break into the winner&#x27;s circle, against the will of the remaining voters?
+<br />
+
+<br />
+To model this we need to know something about how the voting worked and we need to make some assumptions (not visible in the actual <a href="http://www.thehugoawards.org/content/pdf/2014HugoStatistics.pdf">Hugo voting data</a>) about the details of the voter preferences. In the nomination stage, any eligible voter may cast one vote in any category. The top five vote winners (after removing ineligible candidates, candidates that received less than 5% of the total nominations, and candidates who decline the nomination) become the short list for the final voting. If there is a tie for fifth place, the tied candidates are all included. In the final voting, each eligible voter makes an ordered list of their favorite candidates, in order from first, second, etc. They are not required to list all candidates in this list, are allowed to list a special placeholder candidate called &quot;no award&quot;, and are also allowed to list other candidates after no award. These preferences are aggregated using an algorithm (described below) to produce a winner for each category of the awards. I&#x27;m going to assume (without justification) that the sad puppies prefer their candidates, then no award, then all other candidates, while the other voters have the reverse preferences: all other candidates (in some combination of orders that I am not going to make assumptions about), then no award, then the sad puppy candidates.
+<br />
+
+<br />
+So, first, how easy is it to get your candidate on the short list of nominees? Pretty easy, it turns out. If the sad puppy faction were only 20% of the electorate, they would be able to guarantee themselves a place on the short list even if the remaining voters somehow conspired to make it as hard as possible for them. The actual cutoff was much lower, ranging from 5.0% in the best short story category to 13.9% in the best long-form dramatic presentation category. The percentages achieved by the sad puppies ranged from 9.5% to a little higher, enough to secure their nominations.
+<br />
+
+<br />
+Next, and more complicatedly, how easy is it for the sad puppies to actually win? The answer turns out to be: much harder. One indication of this is given by something called the <a href="https://en.wikipedia.org/wiki/Condorcet_criterion">Condorcet criterion</a> for preference balloting. This states that, if one candidate would win all head-to-head contests then that candidate should win the overall election; if this is the case, then an election system is immune to certain kinds of manipulation by minority factions. Unfortunately there are two problems with this analysis for the Hugos: first, the assumptions I&#x27;ve made don&#x27;t imply the existence of a Condorcet winner. There could be a directed cycle of head-to-head winners among the non-sad-puppy candidates, even though each of them individually would win a head-to-head contest against a sad puppy. When this happens, the Condorcet criterion says nothing about who the winner should be. A generalized Condorcet property fixes this: if the candidates can be partitioned into two sets A and B such that every candidate in A wins a head-to-head contest against every candidate in B, then the winner should be from A. A system that satisfies the generalized Condorcet property would never pick a sad puppy unless the sad puppies had an outright majority of the voters.
+<br />
+
+<br />
+But the second problem with trying to apply the Condorcet analysis to this situation is that the election system used for the Hugos does not obey the Condorcet criterion (in either the single-winner or generalized forms). There are systems that do have the Condorcet property; my favorite is the <a href="https://en.wikipedia.org/wiki/Schulze_method">Schulze method</a>, which involves computing <a href="https://en.wikipedia.org/wiki/Widest_path_problem">widest paths</a> in a complete directed graph describing the head-to-head results between all pairs of candidates. If the Hugo awards used this method, the Condorcet criterion would ensure their immunity to sad puppies. But the method they actually use is <a href="https://en.wikipedia.org/wiki/Instant-runoff_voting">instant-runoff voting</a>. This method proceeds in a sequence of rounds, eliminating one candidate per round until a winner is left. In each round, each voter&#x27;s vote is given to the remaining candidate that is highest on the voter&#x27;s list (or the vote is discarded if no listed candidate remains) and the candidate with the fewest votes is kicked off the island. But this is not a Condorcet system; for instance, a candidate that is every voter&#x27;s second choice would be eliminated in the first round (because that candidate gets no first place votes) but could easily be a Condorcet winner (if no other candidate gets an outright majority of first place votes).
+<br />
+
+<br />
+Instant-runoff does satisfy a different property, the <a href="https://en.wikipedia.org/wiki/Majority_criterion">majority criterion</a>: anyone who gets an outright majority of first-place votes will necessarily win, because their number of votes can only improve after other candidates are eliminated. This still doesn&#x27;t help against the sad puppies, because outright majorities are unlikely (in the 2014 Hugos, it happened only for the fan artist category). But we can generalize it just like we can generalize the Condorcet criterion. Call the &quot;generalized majority criterion&quot; the following property: if the candidates can be partitioned into two sets A and B such that a majority of the voters thinks all candidates in A are better than all candidates in B, then the winner should be a candidate in A. Whenever a voting system satisfies the generalized Condorcet criterion it also satisfies the generalized majority criterion. Instant-runoff also satisfies the generalized majority criterion, because once we reach a round in which all but one of the candidates in A has been eliminated, the remaining candidate in A will have an outright majority and will win all remaining rounds. Using any voting system that obeys the generalized majority criterion, and with the assumptions about sad puppy voting patterns made above, the sad puppies can&#x27;t win without an outright majority of the voters. If the sad puppies are not a majority, then a majority of voters agrees with the partition in which B is the sad puppy candidate and A is everybody else. In particular, the sad puppies can&#x27;t win an instant runoff without a majority. The existence of &quot;no award&quot; doesn&#x27;t really make much difference to this analysis: it would be valid with or without the ability to list no award.
+<br />
+
+<br />
+My colleague <a href="https://en.wikipedia.org/wiki/Donald_G._Saari">Don Saari</a> is an expert on voting systems and a strong advocate of a different preference balloting system, the <a href="https://en.wikipedia.org/wiki/Borda_count">Borda count</a>. This system is easier to explain than instant-runoff (and much easier than Schulze): if there are six candidates (counting no award) we give five points for each first place vote, four for each second place vote, etc., down to one point for a second-to-last vote, and give the award to whoever gets the most points. How does this method fare against the sad puppies? Not so well. If the other candidates are close to equal in strength, then their voters will split their votes evenly among 5, 4, 3, and 2 points, with 1 for no award. The average number of points per candidate will be 3.5x where x is the number of non-sad-puppy voters. On the other hand the sad puppies will vote their candidate first, and then (if they&#x27;re trying to get the strongest result for this candidate) omit listing anybody else to deny them the points they would get for lower finishes. This would give the sad puppies 5y points where y is the number of sad puppy voters. If 5y &gt; 3.5x (that is, if the sad puppies have a bit more than 41% of the electorate) then they have a chance of winning.  In the limit of large numbers of candidates, even a 33% minority of sad puppies could be enough to swing an election. That is, although the Borda count has some robustness against small minority factions, it is more vulnerable to large minority factions than Schulze or instant runoff.
+<br />
+
+<br />
+As for which election system to choose: it depends on what you want winning to mean. The system you should use for a popularity contest such as this one could well be different than the system you would prefer for a political office. Is it better for the winner to be somewhat liked by most voters or to have strongly enthusiastic support by a smaller number of voters? The instant runoff system used by the Hugos demands a balance of both: a winner needs enough enthusiasm to make it through the early rounds of voting and enough depth of support to make it through the late rounds.
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>markgritter</b>: <br />
+<b>2014-08-19T02:49:14Z</b><br />
+The sad puppies just weren&#x27;t willing to invest enough cash.  My family have joked about a Hugo award being relatively cheap (though nominations are much more so.)
+
+A supporting membership can be had for $40 and gives you a vote.  Assuming sufficient sock-puppets, the price for buying the Hugo short story win outright was thus &quot;only&quot; $107,360 and the novel award $125,480 assuming no existing members would vote for your selection.  Not profitable, certainly, but well within the capability of a few well-funded cranks.
+
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2014-08-19T03:43:09Z</b><br />
+Yes. I think it&#x27;s fortunate that the big movie studios don&#x27;t seem to think this is an important award; their marketing departments have a lot more money to blow on this sort of thing.
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>ciphergoth</b>: <br />
+<b>2014-08-23T09:17:59Z</b><br />
+I&#x27;m astonished to learn that someone familiar with the options likes Borda - I&#x27;d love to read their defence of it!
+
+I actually prefer Ranked Pairs over beatpath - it has a very neat description as the winner in an ordering of orderings.
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2014-08-23T17:21:44Z</b><br />
+I&#x27;m not so familiar with that one...will have to look it up.
+</div>
+

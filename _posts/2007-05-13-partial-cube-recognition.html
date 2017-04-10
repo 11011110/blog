@@ -1,0 +1,15 @@
+---
+layout: post
+title:  'Partial cube recognition in PADS'
+date:   2007-05-13 21:56:00
+tags:   [gray graph, graph algorithms, bit parallelism, python, media theory]
+---
+I&#x27;ve added an implementation of my new <a href="http://11011110.livejournal.com/102786.html">quadratic-time partial cube recognition algorithm</a> to <a href="http://www.ics.uci.edu/~eppstein/PADS/">PADS</a>, replacing a theoretically-slower algorithm for the same purpose that was already there.
+<br />
+
+<br />
+The labeling phase of the algorithm, as described in <a href="http://arxiv.org/abs/0705.1025">my new paper</a>, is recursive, possibly with Ω(n) levels of recursion, and Python doesn&#x27;t necessarily handle deep recursion well, so I replaced that part of the algorithm with an iterative version using union-find to keep track of the edge equivalences. I also added some new modules: Medium.py handles the media-theoretic side of the algorithm (the part where we find shortest paths between all pairs of vertices), and BFS.py is a new breadth first search routine (I previously had LexBFS.py, which generates a breadth first traversal order of the vertices in a somewhat complicated way, but in this algorithm I needed the sequence of subgraphs connecting each BFS level to the next level). I also checked in a module I&#x27;d written some time ago: GrayGraph, a description of the <a href="http://11011110.livejournal.com/78449.html">Gray Graph</a>, a cubic bipartite graph that looks a lot like a partial cube but isn&#x27;t (so making an interesting test case for my new code).
+<br />
+
+<br />
+The implementation ended up being rather more complex than I was hoping: including unit tests, comments, etc., Medium and PartialCube together now have 588 lines. The unit tests were very helpful in shaking the bugs out of the Medium side of the implementation, and (though surprisingly to me the PartialCube side worked correctly the first time) in making me confident of the correctness of that part as well.

@@ -1,0 +1,89 @@
+---
+layout: post
+title:  'Blum-style analysis of Quickselect'
+date:   2007-10-09 16:57:00
+tags:   [algorithms]
+---
+<p>So you&#x27;re all familiar with <s>Avrim Blum&#x27;s</s> Motwani and Raghavan&#x27;s (?) slick analysis of <a href="http://en.wikipedia.org/wiki/Quicksort">quicksort</a> in <a href="http://en.wikipedia.org/wiki/Introduction_to_Algorithms">CLRS</a>, avoiding probabilistic recurrences and easily getting the correct constant in the leading term, right? (If not, I review it below.) What CLRS doesn&#x27;t tell you is that the same analysis works almost as well for <a href="http://en.wikipedia.org/wiki/Quickselect">quickselect</a>.</p>
+
+<p><b>Quicksort</b></p>
+
+<p>Randomized quicksort is a recursive algorithm that, in each recursive call chooses a &quot;pivot&quot; element <a href="http://en.wikipedia.org/wiki/Uniform_distribution_%28discrete%29">uniformly at random</a> from the values given as input to the call, partitions the data into subsets that are less than, equal to, and greater than the pivot, and recursively sorts the subsets that are less and greater. With some care the partition can be done with one comparison of each data item to the pivot:</p>
+
+{% highlight python %}
+def quicksort(L):
+    if len(L) < 2: return L
+    pivot_pos = random integer in range 0 .. len(L)-1
+    x = L[pivot_pos]
+    parts = [[],[x],[]]
+    for y in L[:pivot_pos] + L[pivot_pos+1:]:
+        parts[cmp(y,x)+1].append(y)
+    return quicksort(parts[0]) + parts[1] + quicksort(parts[2])
+{% endhighlight %}
+    
+<p>An equivalent view of the algorithm (though not how one would usually program it) is that, before the recursion starts, we pick a random permutation \( \sigma \); then, in each recursive call, we pick the pivot to be the value among the inputs given to that call that&#x27;s earliest in \( \sigma \). It&#x27;s not hard to see that this gives the same uniform probability that any pivot is chosen. What we want to count is the number of calls to cmp over the course of the algorithm.</p>
+
+<p>The expected number of comparisons is (by <a href="http://en.wikipedia.org/wiki/Expected_value#Linearity">linearity of expectation</a>) the same as the sum, over pairs of data values, of the probability that the algorithm compares that pair. If \( x_i \) denotes the value in position \( i \) of the sorted output array, and \( i \lt j \), then \( x_i \) and \( x_j \) are compared exactly when one of these two values is the earliest in \( \sigma \) in the range of values \( x_i, x_{i+1}, \dots, x_{j-1}, x_j \). For, until a pivot within this range is chosen, \( x_i \) and \( x_j \) will stay in the same subproblem as each other, but after such a pivot is chosen, they will be separated. Each item in this range is equally likely to be the first one chosen as pivot, so the probability that the first in this range is one of the two endpoints is exactly \( \tfrac{2}{j-i+1} \). Thus, using this expression as the probability that a pair is compared, the expected number of comparisons is (using the known logarithmic evaluation of <a href="http://en.wikipedia.org/wiki/Harmonic_number">harmonic numbers</a>)</p>
+\[
+\sum_{i=0}^{n-2}\sum_{j=i+1}^{n-1}\frac2{j-i+1}\,&lt;\,2nH_n=2n\ln{n}+O(n).
+\]
+
+
+<p><b>Quickselect</b></p>
+
+<p>Quickselect is a variant of quicksort that finds the \( k \)th smallest of a set of items by using the same partition strategy as quicksort but then only recursing within one of the subsets of the partition, the one containing the desired value:</p>
+
+{% highlight python %}
+def quickselect(L,k):
+    if len(L) < 2: return L[k]
+    pivot_pos = random integer in range 0 .. len(L)-1
+    x = L[pivot_pos]
+    parts = [[],[x],[]]
+    for y in L[:pivot_pos] + L[pivot_pos+1:]:
+        parts[cmp(y,x)+1].append(y)
+    if k < len(parts[0]):
+        return quickselect(parts[0],k)
+    if k >= len(parts[0]) + len(parts[1]):
+        return quickselect(parts[2],k - len(parts[0]) - len(parts[1]))
+    return x
+{% endhighlight %}
+
+<p>The results of calling this should be the same as calling quicksort on \( L \) and then indexing the \( k \)th entry in the sorted array.</p>
+
+<p>Pretty much the same analysis as before goes through, changed only in the last part. The expected number of comparisons is the same as the sum, over pairs of data values, of the probability that the algorithm compares that pair. Values \( x_i \) and \( x_j \) are compared exactly when one of these two values is the earliest in \( \sigma \) in a certain range of values, but now the range is bigger (making the probability of comparison smaller): it&#x27;s the minimal consecutive range of values containing \( x_i \), \( x_j \), and \( x_k \). For, if a pivot is chosen between \( x_i \) and \( x_j \) then they are placed in separate subproblems and not compared, while if a pivot is chosen between both of these values and \( x_k \) then both values are eliminated and not compared. Thus, we need only replace the probability \( \tfrac{2}{j-i+1} \) in the quicksort analysis by the slightly more complicated formula</p>
+
+\[
+\frac2{\max(j-i+1,j-k+1,k-i+1)},
+\]
+
+<p>sum over all pairs, and we&#x27;re done. The following diagram shows graphically how the sum decomposes the \( (i,j) \) plane into regions, for \( k \lt n/2 \) (the case for larger \( k \) is symmetric); along the colored lines within each region the probability given by the formula is constant.</p>
+
+<p align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/quickselsum.png" /></p>
+
+<ul>
+<li>Within the tangerine-colored triangle on the lower left, \( i \) and \( j \) are both less than \( k \). The \( q \)th column within the triangle, through the vertical line \( i = k - q \), has approximately \( q \) entries within it, each of which is approximately \( 2/q \), and there are \( k \) columns, so the sum within this triangle is (ignoring lower order terms) \( 2k \).</li>
+
+<li>Within the salmon-colored triangle on the upper right, \( i \) and \( j \) are both greater than \( k \). The \( q \)th row within the triangle, through the horizontal line \( k = k + q \), has approximately \( q \) entries within it, each of which is approximately \( 2/q \), and there are \( n - k \) columns, so the sum within this triangle is (ignoring lower order terms) \( 2 (n-k) \).</li>
+
+<li>The remaining terms in the sum have \( i \) less than \( k \) and \( j \) greater than \( k \), but it is convenient to break them down further into three smaller regions. Within the avocado-colored triangle above and to the left of the point \( (k,k) \), the distance between \( i \) and \( j \) is less than \( k \). The \( q \)th diagonal within this triangle has approximately \( q \) entries within it, each of which is approximately \( 2/q \), and there are \( k \) diagonals, so the sum within this triangle is (ignoring lower order terms) \( 2k \).</li>
+
+<li>Within the lilac-colored parallelogram, each diagonal has \( k \) equal terms, each of the form \( 2/q \) for some \( q \). If the same pattern of terms continued down to the main diagonal, the sum of these terms would be \( 2k \) times a harmonic number; instead, we get \( 2k \) times the difference of two harmonic numbers: \( 2k (\ln(n-k) - \ln k) \).</li>
+
+<li>Within the turqoise-colored triangle at the upper right, the diagonal 
+\( j-i = q \) has approximately \( n-q \) terms, each approximately \( 2/q \). The sum of \( 2(n-q)/q \), for \( q \) ranging from \( n-k \) to \( n \), can be broken into two parts, the sum of \( 2n/q \) and the sum of \( -2q/q \); the latter sum is simply \( -2k \). The first sum is again (factoring out the constant numerator) the difference of two harmonic numbers, so the total is
+\( 2(n\ln n - n\ln(n-k) - k \).</li>
+</ul>
+
+<p>Adding all of these parts of the sum together, we find that the total expected number of comparisons made by quickselect is</p>
+
+\[
+\left(2n\left(1+\ln\frac{n}{n-k}\right)+2k\ln\frac{n-k}k\right)(1+o(1)).
+\]
+
+<p>The worst case happens when \( k = n/2 \), for which the number of comparisons can be simplified to</p>
+
+\[
+2n(1+\ln 2+o(1))\le 3.3863n+o(n).
+\]
+
+<p>A simplified analysis, perhaps more suitable for an undergraduate class, would be to expand the upper left rectangle into a larger triangle, with \( n \) diagonals each contributing less than \( 2 \) to the total; this sloppier analysis shows more easily that the number of comparisons is at most \( 4n \).</p>

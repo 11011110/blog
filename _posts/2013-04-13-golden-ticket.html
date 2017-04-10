@@ -1,0 +1,15 @@
+---
+layout: post
+title:  'The Golden Ticket'
+date:   2013-04-13 08:55:00
+tags:   [complexity theory, books]
+---
+As airplane reading to and from my recent trip to Dagstuhl, I used a review copy of Lance Fortnow&#x27;s new popularization of the P vs NP problem, <i>The Golden Ticket: P, NP, and the Search for the Impossible</i>. It&#x27;s well written and explains the problem well in layman&#x27;s terms, something I think has been sorely needed.
+<br />
+
+<br />
+As Lance carefully explains towards the end of Chapter 7, the inference from the assertion that we can only find a complete solution to an NP-complete problem by performing a brute force search of all solutions, to the assertion that P ≠ NP, forms one of the most common ways of writing a fallacious solution of the P vs NP problem. It is fallacious not because it is an invalid inference, but because it does not get rid of the need to prove something difficult: it might not be true that brute force search is the best way we can solve such problems. But it was a little disappointing that Lance did not go on to say that it is <i>already proven</i> that a naive brute force search is not always the best solution. Indeed, several times Lance seems to imply the equally fallacious reverse inference, from P ≠ NP to the idea that the best complete solution to an NP-complete problem must be a brute force search. For instance, this attitude is embodied in his equation of NP-completeness to &quot;Perebor&quot;. <a href="http://cacm.acm.org/magazines/2013/3/161189-exact-exponential-algorithms">This recent CACM article</a> provides a welcome antidote, by describing several instances of surprising solutions to NP-complete problems that are not brute force searches and that are significantly faster than brute force (although of course not polynomial).
+<br />
+
+<br />
+Despite this quibble (and smaller ones, for instance: who but a theoretician would recommend Floyd–Warshall for finding all-pairs unweighted shortest paths when one can just use repeated breadth first searches?) I think this book has an important role to play, in clearly explaining to the rest of the world just why computer scientists find the P vs NP problem so interesting and important.

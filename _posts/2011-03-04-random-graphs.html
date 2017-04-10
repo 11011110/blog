@@ -1,0 +1,43 @@
+---
+layout: post
+title:  'Random graphs'
+date:   2011-03-04 18:23:00
+tags:   [graph theory]
+---
+Ken Clarkson bugged me on a recent post here about why Wikipedia had no article on <a href="http://en.wikipedia.org/wiki/Edgar_Gilbert">Edgar Gilbert</a> (obviously, they do now) which is why I&#x27;ve become sensitive to the following issue:
+<br />
+
+<br />
+I saw a talk today (on key distribution in computer security) that invoked the <a href="http://en.wikipedia.org/wiki/Erd%C5%91s%E2%80%93R%C3%A9nyi_model">Erdős–Rényi model</a> for random graphs. Not much of a surprise there: it&#x27;s a very standard model. Except that it wasn&#x27;t the Erdős–Rényi G(n,M) model (the one in which one chooses uniformly among graphs with a fixed number of edges), it was Gilbert&#x27;s G(n,p) model in which each edge is chosen to be included or not, independently of the other edges, with a given probability. Why does Gilbert get so little credit for this? I can understand the reasons for conflating the G(n,M) and G(n,p) models but shouldn&#x27;t it at least be the Erdős–Rényi–Gilbert model?
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>ext_353166</b>: <br />
+<b>2011-03-05T02:46:22Z</b><br />
+Stigler&#x27;s Law of Eponymy.
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>arvindn</b>: <br />
+<b>2011-03-06T00:54:15Z</b><br />
+Yeah, especially considering that &quot;Erdős–Rényi–Gilbert model&quot; just rolls off the tongue ;-)
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2011-03-06T01:01:13Z</b><br />
+Well, there is that, but leaving Gilbert off doesn&#x27;t make it much more euphonic. A bigger problem with calling it the &quot;&quot;Erdős–Rényi–Gilbert model&quot; is that the ERG Model is a different kind of random graph (it stands for Exponential Random Graph).
+</div>
+<div style="margin-left: 6em; padding-top: 1em;">
+<b>ext_453792</b>: ERG vs ERG<br />
+<b>2011-03-07T19:35:07Z</b><br />
+The fact that ERG is taken is a little problem, but we could call it the GER model if we needed to.
+
+Bollobas&#x27;s book _Random Graphs_ has probably been very influential in the ER moniker.  From page xii of the preface: &quot;Occasionally all these authors are credited with the foundation of the theory of random graphs.  However, this is to misconceive the nature of the subject.  Only Erdős and Rényi introduced the methods which underlie the probabilistic treatment of random graphs.  The other authors were all concerned with enumeration problems and their techniques were essentially deterministic.&quot;
+</div>
+<div style="margin-left: 9em; padding-top: 1em;">
+<b>11011110</b>: Re: ERG vs ERG<br />
+<b>2011-03-08T03:51:42Z</b><br />
+<a href="http://dx.doi.org/10.1214%2Faoms%2F1177706098">Gilbert&#x27;s paper is online</a>, so you can see for yourself that Bollobas is grossly mischaracterizing his work. It&#x27;s explicitly about random graphs (in the title!), it introduces the G(n,p) model, and it calculates the probability that a graph generated in this way is connected.
+
+Gilbert appears to have done a little work on combinatorial enumeration problems (involving neclackes) but much more of his work was probabilistic in nature.
+</div>
+

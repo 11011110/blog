@@ -1,0 +1,89 @@
+---
+layout: post
+title:  "Hamming's problem"
+date:   2007-03-12 15:20:00
+tags:   [python, smooth numbers, number theory, regular numbers]
+---
+
+<p>I just merged today two articles in Wikipedia on the same problem, <a href="http://en.wikipedia.org/wiki/Regular_number">regular numbers</a>, that is, numbers of the form \( 2^i 3^j 5^k \). The ancient Babylonians liked these numbers because their reciprocals had terminating sexagesimal representations; more recently, &quot;Hamming&#x27;s problem&quot; is the task of generating these numbers efficiently. Dijkstra described a very simple but inefficient functional solution: if \( H \) is the sequence of numbers to be generated, then \( H \) consists of the number \( 1 \) concatenated with the merger of \( 2H \), \( 3H \), and \( 5H \). But there are two flaws with this. First, it generates the same numbers many times: e.g. \( 6 \) is generated both as \( 2\times 3 \) and as \( 3\times 2 \). This can be alleviated by letting \( A \) be the powers of \( 2 \), \( B \) be \( A \) merged with \( 3B \), and \( H \) be \( B \) merged with \( 5H \). But even if that improvement is made, and one does the merges in the most obvious and natural lazy-functional way, the sequence is generated inefficiently: the number of merges a generated number is involved in is \( O(j+k) \), and all these merges cause generating \( n \) numbers in this way to take \( \Theta(n^{4/3}) \) arithmetic operations.</p>
+
+<p>Below is an approach that instead generates \( n \) numbers in a linear number of operations. The basic principle is, when solving equations like \( H = \mathrm{merge}(B, 5\times H) \), instead of generating \( 5\times H \) using a recursive instance of the same algorithm, to cache a single list of the whole sequence of \( H \) and reuse that stored sequence when computing \( 5\times H \).</p>
+
+{% highlight python %}
+def powers(p):
+    """The sequence of powers of p."""
+    pow = 1
+    while True:
+        yield pow
+        pow *= p
+
+def powtimes(S,p):
+    """Sorted seq S times powers of p generates bigger sorted seq."""
+    seq = [S.next()]
+    yield seq[0]
+    front = S.next()
+    backindex = 0
+    back = seq[backindex]*p
+    while True:
+        if front < back:
+            yield front
+            seq.append(front)
+            front = S.next()
+        else:
+            yield back
+            seq.append(back)
+            backindex += 1
+            back = seq[backindex]*p
+
+def A051037():
+    return powtimes(powtimes(powers(2),3),5)
+{% endhighlight %}
+
+<p>However, the pure functional approach uses less space to generate the same sequence, \( O(n^{2/3}) \) instead of \( O(n) \) for the caching approach.  I can find algorithms that generate the sequence in \( O(n^{2/3}) \) space and \( O(n \log n) \) time (essentially, by turning it into a graph shortest path problem in an infinite grid graph, applying Dijkstra&#x27;s algorithm for shortest paths, and only keeping track of nodes on the search frontier), but is it possible to solve optimally both in time and space?</p>
+
+<p><b>ETA:</b> Yes, it is, by a very simple change to the above code. Simply throw away the parts of the cached sequence that the back pointer has moved past. If amortized complexity rather than constant time per output is acceptable, add the following lines to the else case in powtimes:</p>
+{% highlight python %}
+            # trim list if necessary
+            if backindex > len(seq)//2:
+                seq = seq[backindex:]
+                backindex = 0
+{% endhighlight %}
+
+<p><b>ETA2, March 14:</b> Writing in a more imperative style actually gives tighter code, though perhaps it is not as readable:</p>
+{% highlight python %}
+def A051037():
+    yield 1
+    seq = [1]
+    spiders = [(2,2,0,0),(3,3,0,1),(5,5,0,2)]
+    while True:
+        x,p,i,j = min(spiders)
+        if x != seq[-1]:
+            yield x
+            seq.append(x)
+        spiders[j] = (p*seq[i+1],p,i+1,j)
+{% endhighlight %}
+
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: <br />
+<b>2007-03-13T09:41:56Z</b><br />
+<p>I&#x27;m leonardo_m (not logged in), there is a long and *very* interesting discussion about this:
+http://lambda-the-ultimate.org/node/608</p>
+
+<p>Another discussion about it:
+http://mail.python.org/pipermail/python-list/2005-January/thread.html#303475</p>
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2007-03-13T17:31:46Z</b><br />
+<p>Thanks. That clarifies that the original version by Dijkstra is linear time <b>if</b> one is working in a language in which defining a lazy sequence in this way creates a data structure in which each sequence element is calculated only once and then the same calculated sequence is reused whenever it&#x27;s referenced elsewhere. It&#x27;s only when one tries to do something like</p>
+{% highlight python %}
+def H():
+    yield 1
+    for x in merge(seqtimes(2,H()),seqtimes(3,H()),seqtimes(5,H())):
+        yield x
+{% endhighlight %}
+<p>(recalculating the sequence recursively rather than reusing it) that one runs into trouble. The lambda-the-ultimate discussion includes a better Python implementation using tee() to reuse the sequence, and the \( O(n^{2/3}) \) space analysis of algorithms of this type that keep only the part of the sequence still required for future element generation.</p>
+</div>
+

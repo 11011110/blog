@@ -1,0 +1,169 @@
+---
+layout: post
+title:  'Wolfram Alpha: no competition for Google'
+date:   2009-05-19 16:28:00
+tags:   [tools]
+---
+This afternoon there was a minor aftershock of Sunday&#x27;s LA earthquake, and I noticed that the time on the <a href="http://quake.wr.usgs.gov/recenteqs/Quakes/ci10411545.html">USGS earthquake report</a> was pretty much the same as when I felt it several tens of miles away. So I became curious: how fast do earthquakes travel, anyway?
+<br />
+
+<br />
+This seemed like a good test case for <a href="http://www51.wolframalpha.com/">Wolfram Alpha</a>, a fancy new search engine from the makers of Mathematica, so I thought I&#x27;d try it. But &quot;earthquake speed&quot; as a query led it to think I was asking about two action movies with those titles, &quot;how fast does an earthquake travel?&quot; just confused it, and substituting &quot;seismic wave&quot; for earthquake at least avoided the movie misinterpretation but didn&#x27;t get me any better results. &quot;Seismic wave&quot; alone as a query gave the results &quot;Seismology: Additional functionality for this topic is under development... Leave your email address to be notified when it is ready.&quot; And I still didn&#x27;t find out what I had set out to.
+<br />
+
+<br />
+Finally, I gave up, went to the Google search box in my browser&#x27;s toolbar, and typed the same query I&#x27;d started with, &quot;earthquake speed&quot;. The first hit was exactly on-topic, and the snippet Google displayed with the hit showed that it was on-topic. The answer: it varies, but for the roughly 56 km between the epicenter and my location it should have taken between 4 seconds (for the fastest P waves) and 16 seconds (for the slowest S waves).
+<br />
+
+<br />
+Combined with Wolfram Alpha&#x27;s <a href="http://numberwarrior.wordpress.com/2009/05/19/wolfram-alpha-and-babylonian">Babylonian arithmetic fiasco</a>, this does not fill me with a lot of confidence in their service...
+<br />
+
+<br />
+Short conclusion: I still feel lucky.
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: another error<br />
+<b>2009-05-20T03:01:53Z</b><br />
+Search for &quot;sum n^-1.5&quot;  (apparently this sum diverges, which came as a very large shock to me).  Then search for &quot;sum n^-1.500000&quot; and you get the right answer.  There&#x27;s a reason it&#x27;s still in alpha.
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: Re: another error<br />
+<b>2009-05-20T03:20:09Z</b><br />
+At least with Google you have some idea how authoritative a result you&#x27;re getting by considering where the result comes from. With WA, you get some answer, clearly stated and unsourced, with little indication how reliable it is supposed to be.
+
+Their example &quot;calculation&quot; of $250 + 15% does not exactly inspire confidence, either. If it is trying to be intelligent about transforming that calculation into something that makes sense mathematically (should be $250 × 115% = $250 × 1.15), who knows what other transformations they&#x27;re prepared to make and what fraction of the time it will transform nonsense into bigger nonsense and give you an authoritative nonsense answer rather than giving you some hint that you need to reformulate your question?
+</div>
+<div style="margin-left: 6em; padding-top: 1em;">
+<b>None</b>: Re: another error<br />
+<b>2009-05-20T03:32:38Z</b><br />
+There the interpretation is really fine:  it interprets it as 
+$\sum_{n=1}\infty n^{-1.5}$.  It just mysteriously gets the answer wrong.  It&#x27;s some sort of bizarre error with its handling of floating point numbers.
+</div>
+<div style="margin-left: 9em; padding-top: 1em;">
+<b>helger</b>: Re: another error<br />
+<b>2009-05-20T09:34:53Z</b><br />
+Not sure why though. I&#x27;d guess they&#x27;d use Mathematica as a backend, and Mathematica 7.0 gets Sum[n^(-1.5), {n, 1, \[Infinity]}] right. 
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>None</b>: Re: another error<br />
+<b>2009-05-20T05:58:41Z</b><br />
+http://www68.wolframalpha.com/input/?i=sum+n^(-3%2F2)
+</div>
+<div style="margin-left: 6em; padding-top: 1em;">
+<b>11011110</b>: Re: another error<br />
+<b>2009-05-20T06:10:03Z</b><br />
+That one it gets right.
+
+Here&#x27;s another strangeness: this sum is interpreted as having 1 and infinity as its limits. But when one sums 2^-n it is interepreted as having 0 and infinity as its limits. In particular sum(n^-2)+sum(2^-n)≠sum(n^-2+2^-n). Is this sort of guesswork in a system that purports to give correct mathematical answers appropriate? Yes, it shows you what it has guessed, but if you didn&#x27;t know to specify the limits in your input why would you know to check that they have been guessed correctly?
+</div>
+<div style="margin-left: 9em; padding-top: 1em;">
+<b>helger</b>: Re: another error<br />
+<b>2009-05-20T09:37:42Z</b><br />
+Probably because 0^const does not always make sense. For example, sum (n+1)^(-3/2) starts with n = 0. But not sure how it handles more difficult cases that are not so clearcut.
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: A positive comment<br />
+<b>2009-05-20T09:39:13Z</b><br />
+I am trying not to be so critical: a bit more intelligent understanding of inputs for scientific calculations is what I was long looking for... Hopefully Wolfram|Alpha attracts a critical mass of users so it survives and becomes higher quality.
+
+Yesterday I was trying to check my generating function for cycles and just entered &quot;series -1/2 ln(1-x)&quot; - my straightforward guess of the query - and it gave me the right answer. 
+
+At least it can save me buying Mathematica or other maths software and learning their syntax (as it is free so far) and maybe sometimes do a bit more.
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: Re: A positive comment<br />
+<b>2009-05-20T16:18:54Z</b><br />
+You have a point. Some of the things it does are very different from Google and it&#x27;s helpful to have them collected in one place this way. As long as you&#x27;re using it as a check, rather than as a way of calculating the series, the verifiability problems should be much less of an issue.
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: 1.0001^10000 = 0<br />
+<b>2009-05-20T22:26:50Z</b><br />
+1.001^1000 = 2.71692, 1.0001^10000 = 0.
+
+From http://en.wikipedia.org/wiki/Talk:Wolfram_Alpha#Gross_Limitations
+
+(Ok, 1.0001000000^10000 = 2.718146, but how was I supposed to know that I must use it like that?)
+
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: Re: 1.0001^10000 = 0<br />
+<b>2009-05-20T22:31:48Z</b><br />
+Wow. I guess the moral is not to trust anything it does involving floating point?
+</div>
+<div style="margin-left: 6em; padding-top: 1em;">
+<b>None</b>: Re: 1.0001^10000 = 0<br />
+<b>2009-05-28T17:16:35Z</b><br />
+More fun:
+
+Input: 1.0001^5754
+Output: 2.
+
+Input: 1.0001^5755
+Output: 2.
+
+Input: 1.0001^5756
+Output: 0.
+
+</div>
+<div style="margin-left: 6em; padding-top: 1em;">
+<b>None</b>: Re: 1.0001^10000 = 0<br />
+<b>2009-05-28T17:33:00Z</b><br />
+Okay, I can&#x27;t resist but this is my last one, I promise (and in my defense I&#x27;m not the first Anonymous who posted on this).
+
+Input: 1.0003^800
+Output: 1.3
+
+Input: 1.0004^800
+Output: 1.
+
+Input: 1.0005^800
+Output: 1.
+
+Input: 1.0006^800
+Output: 2.
+
+</div>
+<div style="margin-left: 9em; padding-top: 1em;">
+<b>11011110</b>: Re: 1.0001^10000 = 0<br />
+<b>2009-05-28T17:37:42Z</b><br />
+Any one of these answers, by itself, might make sense as rounding the exact answer to the number of significant digits remaining. What I don&#x27;t understand is why the first one gets two digits and the rest only get one.
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: Graphs<br />
+<b>2009-05-20T22:39:27Z</b><br />
+By the way, if it knows &quot;(2,4)-complete bipartite graph&quot;, why doesn&#x27;t it know &quot;(4,2)-complete bipartite graph&quot; or &quot;(2,20)-complete bipartite graph&quot;? I would have expected that knowing about things like &quot;(a,b)-complete bipartite graph&quot; for arbitrary inputs a and b would be exactly the kind of &quot;computational search&quot; that WA could handle.
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>leonardo_m</b>: <br />
+<b>2009-05-21T21:35:14Z</b><br />
+Wolfram Alpha isn&#x27;t (so far) a search engine, and (so far) it has not tried to compete with Google.
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2009-05-21T21:44:41Z</b><br />
+Well, but see some of the comments above for ways in which it is not working well in the different-from-Google niche it is attempting to make for itself:
+- It produces wrong answers
+- It states these wrong answers authoritatively, with no way to check them
+- It depends strongly on the detailed syntax of queries and does not make it obvious how to compose queries that will be interpreted correctly
+- It has the appearance of being a computational engine for some queries that it really seems to handle only as a search engine (see the complete bipartite graph comment immediately above yours)
+
+On top of which add:
+- <a href="http://crookedtimber.org/2009/05/21/redefining-plagiarism/">It makes unreasonable intellectual property claims on its answers</a>.
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>brentfolger</b>: Another Positive Comment<br />
+<b>2009-08-06T21:09:00Z</b><br />
+While Google completely crushes Wolfram Alpha there are some very cool tricks and calculations you can perform with the new search engine. If you&#x27;re involved a lot in mathematics like me (I run a <a href="http://absolutelydominate.com">ppc management company</a>) then you might love Wolfram Alpha. Other than that Google stands above them all. Still though, Alpha is new and of course it will take time for them to work out all of these errors. 
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>None</b>: Re: Another Positive Comment<br />
+<b>2009-08-06T22:19:27Z</b><br />
+I agree, Wolfram will take some time for users to jump on board.  Currently you have Google, Yahoo and Bing: Yahoo and Bing are mergering (to a degree) so whats left?  As long as Wolfram is cool with a long road ahead, then they should be fine.
+
+Rob Greco
+http://robgreco.com/blog
+twitter.com/robertgreco
+</div>
+

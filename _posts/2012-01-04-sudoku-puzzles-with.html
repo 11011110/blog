@@ -1,0 +1,15 @@
+---
+layout: post
+title:  'Sudoku puzzles with small numbers of clues'
+date:   2012-01-04 17:58:00
+tags:   [sudoku, algorithms, papers]
+---
+Neat new result combining two of my own interests, sudoku and exponential-time search algorithms: &quot;There is no 16-Clue Sudoku: Solving the Sudoku Minimum Number of Clues Problem&quot;, Gary McGuire, Bastian Tugemann, and Gilles Civario, <a href="http://arxiv.org/abs/1201.0749">arXiv:1201.0749</a>.
+<br />
+
+<br />
+It was known that 17 filled-in squares (asymmetrically placed, unlike most newspaper puzzles) could be enough to determine a sudoku puzzle with a unique solution, and believed but not known that 17 is the minimum possible: any fewer clues and you&#x27;d get a puzzle with multiple solutions. The new paper proves that this is indeed true.
+<br />
+
+<br />
+The authors devised an algorithm to list small solutions to the hitting set (or equivalently <a href="http://en.wikipedia.org/wiki/Set_cover">set cover</a>) problem (one of the standard NP-hard search problems with many applications). They then looked at each of roughly 5.4 billion completed sudoku boards and used their algorithm to determine whether there is a subset of 16 cells that uniquely determines the value of the rest of the cells. For any fixed subset of 16 cells, testing uniqueness is relatively easy (just try to solve the puzzle); however, there are too many 16-cell subsets to check every subset of 16 cells on every one of the completed boards. Instead, their algorithm finds &quot;unavoidable sets&quot; of cells such that every set of clues that determines a unique solution must have a nonempty intersection with each unavoidable set; for instance, the cells labeled either 1 or 2 form an unavoidable set, because if one of these cells isn&#x27;t given as a clue then any solution could be turned into a second solution by swapping the 1&#x27;s and the 2&#x27;s. They used their search algorithm to find all the 16-cell subsets that hit each of these sets, and then tested whether any of these subsets actually forms the set of clues for a puzzle with a unique solution.

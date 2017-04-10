@@ -1,0 +1,30 @@
+---
+layout: post
+title:  'Pythagorean associativity'
+date:   2014-02-28 13:11:00
+tags:   [geometry, associahedron]
+---
+<p>This week I've been attending the <a href="http://www.imbs.uci.edu/node/25451"> Conference on Meaningfulness and Learning Spaces</a> at UC Irvine, in honor of the 80th birthday of my co-author <a href="https://en.wikipedia.org/wiki/Jean-Claude_Falmagne">Jean-Claude Falmagne</a>. I believe videos of the talks will eventually be online and I'll put up a link to mine when that happens.</p>
+
+<p>Jean-Claude himself gave a talk, in which the following cute geometric fact came up as an example: If \( f(x,y) \) is the function that computes the length of the hypotenuse of a right triangle with side lengths \( x \) and \( y \), then \( f \) obeys the associative law. It's not difficult to see this from the algebraic form of the function, but Jean-Claude instead presented a geometric demonstration of this fact, based on the properties of an <a href="https://en.wikipedia.org/wiki/Orthoscheme">orthoscheme</a>, a tetrahedron with four right triangles as its sides.</p>
+
+<p align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/Pythagorean-associativity.png" /></p>
+
+<p>Three of the edges of the orthoscheme, forming a path (labeled \( a \), \( b \), and \( c \) in the figure) are at right angles to each other and can be aligned to lie parallel to the coordinate axes; these three edges, together with the opposite long edge of the orthoscheme, form a cycle that divides the surface of the orthoscheme into two topological disks, each formed by two right triangles. One of these two disks forms a geometric representation of the formula \( f(a,f(b,c)) \) for using the Pythagorean formula to derive the length of the long edge as a function of the two short edges. The other forms a geometric representation of the different formula \( f(f(a,b),c) \).</nobr> Since these two formulas compute the same value (the length of the long edge) they must be equal to each other, and this equality is the associative law.</p>
+
+<p>This result turns out to be prototypical of all associativity laws for strictly-monotonic functions of the real numbers. In the Pythagorean theorem, there is a monotonic invertible function \( g \) (squaring) such that \( f(x,y)=g^{-1}(g(x)+g(y)) \). Every monotonic invertible one-variable function \( g \) gives rise to a monotonic associative two-variable function \( f \) in this way, and (by a result of <a href="https://en.wikipedia.org/wiki/J%C3%A1nos_Acz%C3%A9l_(mathematician)">János Aczél</a>) every monotonic associative function can be decomposed in this way. They all can be interpreted geometrically via the orthoscheme, as monotonic transformations of the Euclidean distance.</p>
+
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: <br />
+<b>2014-02-28T22:21:51Z</b><br />
+In the last paragraph, instead of \( g(x), g(y) \), I think you want \( g(x) + g(y) \).  
+-- Ravi Boppana
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2014-03-01T01:22:33Z</b><br />
+Yes — thanks for catching this.
+</div>
+

@@ -1,0 +1,25 @@
+---
+layout: post
+title:  'Primes and Subsequences'
+date:   2006-12-01 22:11:00
+tags:   [prime numbers, combinatorics, number theory]
+---
+<a href="http://recursed.blogspot.com/2006/12/prime-game.html">The Prime Game</a>, Jeff Shallit. There are only finitely many primes that do not have another smaller prime hidden in them as a subsequence of their decimal representations. True more generally for any set instead of &quot;primes&quot; and any base instead of decimal, but for decimal primes Jeff can actually tell you what the minimal ones are.
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>atheorist</b>: <br />
+<b>2006-12-02T23:02:38Z</b><br />
+In terms of finite automata, minimal elements are paths from start to finish which do not selfintersect.
+
+For context-free grammars, &quot;paths&quot; are branchy, but selfintersection means center-embedding, so it&#x27;s forbidden there too.
+
+The sets you get by forbidding selfintersection are finite, but they might have &quot;accidental&quot; non-minimal elements. For example &quot;(a+|cat)&quot; has two nonselfintersecting paths &quot;a&quot; and &quot;cat&quot;, but &quot;a&quot; is a subsequence of &quot;cat&quot;.
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2006-12-02T23:41:22Z</b><br />
+Right, so I guess this means that if you substitute a regular (or context free) language for the primes you can find the minimal elements by listing all simple paths (or all expansions without repeated nonterminals) and testing which ones really are minimal.
+
+</div>
+

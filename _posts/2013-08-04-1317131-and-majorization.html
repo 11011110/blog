@@ -1,0 +1,50 @@
+---
+layout: post
+title:  '1317131 and majorization by subsequences'
+date:   2013-08-04 18:51:00
+tags:   [graph drawing, permutation patterns, papers]
+---
+<p>My latest preprint to appear on the arXiv is &quot;Superpatterns and Universal Point Sets&quot; (with Michael Bannister, Jack Cheng, and Will Devanny, to appear at GD 2013, <a href="http://arxiv.org/abs/1308.0403">arXiv:1308.0403</a>). The main idea of the paper is to connect two open problems from different areas of research, the size of <a href="http://en.wikipedia.org/wiki/Universal_point_set">universal point sets</a> in graph drawing and the size of <a href="http://en.wikipedia.org/wiki/Superpattern">superpatterns</a> in the theory of permutation patterns, and maybe make progress on both sides.</p>
+
+<p>You can read about the details in the paper, but I wanted to highlight something else, a tool we use in both this and <a href="http://11011110.livejournal.com/273037.html">the previous preprint</a> that isn&#x27;t really about graph drawings or permutations. It&#x27;s the integer sequence
+
+<blockquote>1,3,1,7,1,3,1,15,1,3,1,7,1,3,1,... (<a href="http://oeis.org/A038712">OEIS A038712</a>)</blockquote>
+
+where each term is one less than a power of two. The <i>n</i>th term in the sequence can be generated as the exclusive-or of the two consecutive integers <i>n</i> − 1 and <i>n</i>; for instance, the sixth term, 3, is the exclusive or of 5 and 6 (101 and 110 in binary).</p>
+
+<p>This sequence has a neat and useful property: if any other sequence <i>x<sub>i</sub></i> of finitely many integers adds to a number <i>n</i>, then we can find a subsequence <i>y<sub>i</sub></i> of the first <i>n</i> numbers in the 1,3,1,7 sequence that <a href="http://en.wikipedia.org/wiki/Majorization">majorizes</a> the given sequence, meaning that each <i>y<sub>i</sub></i> is greater than or equal to <i>x<sub>i</sub></i>. For instance, the sequence 1,4,2,1 adds to 8, and among the first eight terms of the 1,3,1,7 sequence we find a subsequence 1,7,3,1 that is at least as large at each element.</p>
+
+<p>This subsequence domination property wouldn&#x27;t be so interesting by itself (the sequence 1,2,3,4,... has the same property) but the 1,3,1,7 sequence also has particularly small partial sums. The sum of the first <i>n</i> terms of the sequence can be calculated quickly (much more quickly than just computing the sum directly, for large <i>n</i>) by a simple trick: represent <i>n</i> as a sum of distinct powers of two (its binary representation), and sum up the numbers 2<sup><i>i</i></sup>(<i>i</i> + 1) for each of the powers 2<sup><i>i</i></sup> appearing in this sum. For instance, 6 = 2<sup>2</sup> + 2<sup>2</sup> and the sixth partial sum, 16, equals 2<sup>2</sup>(2 + 1) + 2<sup>2</sup>(1 + 1). Using this formula, we can show that the <i>n</i>th partial sum is always between <i>n</i> log<sub>2</sub> <i>n</i> − 2<i>n</i> and <i>n</i> log<sub>2</sub> <i>n</i> + <i>n</i>, solving a conjecture in <a href="http://oeis.org/A080277">OEIS A080277</a>. And every sequence with the subsequence domination property has partial sums at least proportional to <i>n</i> log <i>n</i>, so up to constant factors the sequence 1,3,1,7,... is optimal.</p>
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>irishoak</b>: <br />
+<b>2013-08-09T06:53:26Z</b><br />
+&quot;up to a constant factor&quot; --- in fact, this factor is 1. Moreover, if we consider the domination property for a fixed $n=2^k-1$, then the sum of our <i>n</i> terms in 1317 sequence is the minimum possible.
+
+By considering sequences of the form  1, 1, ..., 1, <i>d</i>,1,1,...,1 we get that each dominating sequence satisfies the condition: <i>For any d consecutive terms, one is not smaller than d.</i> (In fact, this property is equivalent to dominating, as an easy induction shows.)
+
+Applying this for the numbers of the form $2^i-1$, we get that the sequence contains:
+
+- at least one number not less than $2^k-1$;
+
+- at least three numbers not less than $2^{k-1}-1$ (including mentioned above);
+
+...
+
+-at least $2^{k-1}$ numbers not less than $2^2-1$ (including mentioned above);
+
+-at least $2^k-1$ numbers not less than 1 (including mentioned above).
+
+(In the 1317 sequence all these `at least&#x27; come to equalities.) The standard Abel summation now shows the desired minimality of the sum.
+
+If $2^{k-1}-1 &lt; n &lt; 2^k-1$, then the optimal sequence is obtained from the intial piece of 1317 by replacing $2^k-1$ by <i>n</i>.
+
+
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: 
+<b>2013-08-10T02:04:26Z</b>
+Neat — thanks for the comment! Do you happen to know whether any of this is already published anywhere? It seems like the sort of thing that could have come up in other contexts.
+</div>
+

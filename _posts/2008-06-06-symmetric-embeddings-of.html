@@ -1,0 +1,31 @@
+---
+layout: post
+title:  'Symmetric embeddings of cubic symmetric graphs'
+date:   2008-06-06 16:19:00
+tags:   [symmetry, graph drawing]
+---
+A cubic symmetric graph is a graph in which every vertex has exactly three neighbors, and in which there are symmetries taking every vertex to every other vertex and every edge to every other edge; a catalog of these graphs, up to 768 vertices, can be found in the <a href="http://people.csse.uwa.edu.au/gordon/remote/foster/">“Foster census.”</a>
+<br />
+
+<br />
+Each row of the adjacency matrix of a cubic symmetric graph can be interpreted as a vector of 0-1 coordinates for the vertex corresponding to that row. This interpretation embeds the graph onto a (<i>n</i> − 1)-dimensional hypersphere, the intersection of the sphere of radius √3 centered at the origin with the hyperplane Σ<i>x<sub>i</sub></i> = 3. Every symmetry of the graph is preserved as a symmetry of the embedding, but the dimension is too large for this to be useful in visualization. In some cases we can get a much lower dimensional embedding that still preserves all the symmetries, or at least enough of them to be sure that the graph is symmetric.
+<br />
+
+<br />
+Two dimensions is too small for anything interesting to happen, but here are three examples in 3d. The complete graph <i>K</i><sub>4</sub>, when embedded using its adjacency matrix, turns into the skeleton of a regular tetrahedron (drawn below with curved edges on a sphere). But the regular cube and regular dodecahedron also have three-dimensional symmetric embeddings despite having larger numbers of vertices.
+<br />
+
+<br />
+<p align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/cubic-sym-spheres.png" /><br /><small>Figures produced using <a href="http://www.math.cmu.edu/~fho/jenn/">Jenn</a></small></p>
+<br />
+
+<br />
+There are two more especially nice examples in four dimensions. Draw the <a href="http://en.wikipedia.org/wiki/Pentatope">pentatope</a> as a regular subdivision of the unit sphere in four dimensions into spherical tetrahedra, place a vertex at the midpoint of each edge and at the centroid of each triangle of this subdivision, and place a great-circle edge connecting every edge midpoint with every centroid of an adjacent triangle. The result is a symmetric embedding of the <a href="http://en.wikipedia.org/wiki/Desargues_graph">Desargues graph</a> in which every vertex has three edges meeting at 120-degree angles. The same edge-triangle placement also works starting from the <a href="http://en.wikipedia.org/wiki/24-cell">24-cell</a> to produce a nice embedding of a 192-vertex cubic symmetric graph.
+<br />
+
+<br />
+The square flat torus can be embedded onto a hypersphere in 4d as the solution to the equations <i>x</i><sup>2</sup> + <i>y</i><sup>2</sup> = 1 and <i>w</i><sup>2</sup> + <i>z</i><sup>2</sup> = 1, but the graphs embeddable in a symmetric way onto the square torus all have four edges per vertex. I&#x27;m not so sure about the hexagonal torus. If it also has a symmetry-preserving embedding onto the unit sphere in 4d, then an infinite family of cubic symmetric graphs <a href="http://11011110.livejournal.com/120899.html">formed by cutting and gluing part of the hexagonal tiling of the plane</a> would have four-dimensional symmetric sphere embeddings. The hexagonal torus does at least embed nicely into a hypersphere in six dimensions with the coordinates (sin θ, cos θ, sin φ, cos φ, sin θ+φ, cos θ+φ), providing six-dimensional symmetric embeddings for this infinite family of graphs.
+<br />
+
+<br />
+<b>ETA:</b> <a href="http://11011110.livejournal.com/141793.html">The line graph of the Desargues graph</a> also has a nice embedding of this type.

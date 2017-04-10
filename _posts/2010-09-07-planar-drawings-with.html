@@ -1,0 +1,52 @@
+---
+layout: post
+title:  'Planar drawings with few slopes'
+date:   2010-09-07 19:59:00
+tags:   [graph drawing, papers]
+---
+I should have waited a few more days to post about new graph drawing papers on the arXiv, because another nice one just showed up (presumably, for the same reason as <a href="http://11011110.livejournal.com/205098.html">my ones</a>: the <a href="http://www.graphdrawing.org/gd2010/">Graph Drawing 2010</a> proceedings versions are almost due).
+<br />
+
+<br />
+It&#x27;s called <b>Drawing planar graphs of bounded degree with few slopes</b> (<a href="http://arxiv.org/abs/1009.1315">arXiv:1009.1315</a>), by Balázs Keszegh, János Pach, and Dömötör Pálvölgyi. There are several results in it, but the main one is that, for any constant <i>d</i>, there exists another constant <i>s</i> such that the planar graphs of degree at most <i>d</i> can be drawn planarly, with the edges as straight line-segments that have only <i>s</i> different slopes.
+<br />
+
+<br />
+The proof is pretty, easy to explain, and uses some important and deep machinery about the geometric representation of graphs: the <a href="http://en.wikipedia.org/wiki/Circle_packing_theorem">circle packing theorem</a> of Koebe, Andreev, and Thurston. This theorem states that any planar graph can be represented by a system of circles with disjoint interiors, in such a way that the vertices of the graph correspond one-for-one with the circles, and with two vertices connected by an edge if and only if the corresponding circles are tangent. You can then get a planar straight line drawing by putting each vertex at the center of its circle, but that&#x27;s not what Keszegh et al do.
+<br />
+
+<br />
+Instead, they use a modified version of the circle packing theorem that works only on graphs of bounded degree, and imposes an additional constraint on the circles: any two adjacent circles have radii that are within a constant factor of each other. They then superimpose a <a href="http://en.wikipedia.org/wiki/Quadtree">quadtree</a> on the circles, with the squares of the quadtree subdivided to a small enough size to ensure that there is a quadtree corner near each circle center, and they use these quadtree corners as the locations of the vertices of the drawing.
+<br />
+
+<br />
+<div align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/KesPacPal-GD-10.png" /></div>
+<br />
+
+<br />
+Because any two neighboring circles have similar sizes, the corresponding graph vertices will be rounded to quadtree corners at a similar grid resolution, and in the grid of that resolution the two neighboring vertices will be a constant number of grid cells apart from each other. Therefore, the slope is a rational number with small integer numerator and denominator, and there are only a bounded number of possible slopes; for instance in the drawing above the only slopes are –1, 3, 1/3, 5, 1/5, and -3/5.  Although the authors don&#x27;t emphasize this, their drawing also has bounded angular resolution.
+<br />
+
+<br />
+Although pretty in theory, there are some practical issues with their method, partly because circle packings are difficult to calculate exactly and partly because the dependence of <i>s</i> on <i>d</i> is badly exponential. Possibly for this reason, the authors also describe alternative methods that allow a small number of bends in the edges but that greatly reduce the number of slopes needed in their drawings.
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: 0xDE featured on my blog<br />
+<b>2010-09-09T20:46:43Z</b><br />
+Hello,
+
+I recently compiled a list of the 25 best Math blogs for college
+students, and I just wanted to let you know that you made the list! It is published online at
+http://www.onlinedegrees.org/25-best-math-blogs-for-college-students/
+
+Thanks so much, and if you think your audience would find useful
+information in the list or on the site, please feel free to share the
+link. The blog is just starting up, so we always appreciate a link back
+as we&#x27;re trying to increase readership.
+
+Thanks again, and have a great day!
+
+Maria
+</div>
+

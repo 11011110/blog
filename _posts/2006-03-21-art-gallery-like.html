@@ -1,0 +1,11 @@
+---
+layout: post
+title:  'An art gallery like problem'
+date:   2006-03-21 21:23:00
+tags:   [computational geometry, art gallery, papers]
+---
+I and my coauthors have a new paper on arXiv (well, only a week old): <a href="http://arxiv.org/abs/cs.CG/0603057">Guard Placement For Wireless Localization</a>, with Mike Goodrich and Nodari Sitchinava.
+<br />
+
+<br />
+The basic problem is to place as few wedges as possible in the plane such that a desired polygon can be formed as some monotone Boolean combination of the wedges. The motivation is for wireless devices to prove that they are located within a target area by their ability to communicate with a subset of base stations (the wedges), though there&#x27;s still something of a gap between the theoretical problem and the application (radio isn&#x27;t limited to wedges very easily, and infrared gets stopped by walls). Regardless, it leads to interesting combinatorial geometry questions. We provide definitive answers to some of them (convex polygons require exactly ceiling(n/2) wedges; the minimum number of wedges any polygon can require is Θ(sqrt n)) but many remain open.

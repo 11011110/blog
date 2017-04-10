@@ -1,0 +1,46 @@
+---
+layout: post
+title:  'Another view of the 3x3 flip graph'
+date:   2006-09-22 16:35:00
+tags:   [graph drawing, triangulation]
+---
+Here is <a href="http://11011110.livejournal.com/72552.html">the flip graph of 3x3 triangulations</a> again, with the triangulations grouped according to their set of length-sqrt(2) edges.  The number of edges shown between each pair of groups indicates the number of pairs of triangulations that can be flipped from one group to the other. Despite not showing the detailed connections as well, I think this kind of clustered graph drawing makes the overall structure of the flip graph much clearer.
+<br />
+
+<br />
+<div align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/3x3flipgroups.png" /></div>
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>imluxionverdin</b>: <br />
+<b>2006-09-23T03:39:03Z</b><br />
+Nice.
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2006-09-23T03:44:21Z</b><br />
+Thanks!
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>boyinasuitcase</b>: <br />
+<b>2006-09-23T09:50:30Z</b><br />
+Very impressive. I especially liked <a href="http://www.ics.uci.edu/~eppstein/0xDE/3x3flips.png">this one</a>. 
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>None</b>: <br />
+<b>2006-09-23T10:54:11Z</b><br />
+Does it make sense to factor out the symmetries of the square?
+
+-Ken Clarkson
+</div>
+<div style="margin-left: 6em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2006-09-23T16:07:56Z</b><br />
+I guess it depends on what you&#x27;re trying to analyze.  If you want a roadmap of the possible triangulations, and what flips are available from each, the factored version would probably be more compact. And if you&#x27;re trying to count triangulations asymptotically (as Emo was in his talk) either way could work, though not factoring out the symmetries could lead to simpler encodings that are easier to count. But what I&#x27;m wondering about is the global structure of the flip graph, and I think factoring symmetries could destroy that structure; e.g., it&#x27;s bipartite, but the factored graph might not be.
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2006-09-23T16:03:43Z</b><br />
+Thanks! Though, my dissatisfaction with that one (its reduced symmetry, and the small relative size of the individual grids) was what led me to draw it again here...
+</div>
+

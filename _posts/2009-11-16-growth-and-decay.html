@@ -1,0 +1,52 @@
+---
+layout: post
+title:  'Growth and Decay in Life-Like Cellular Automata'
+date:   2009-11-16 19:44:00
+tags:   [cellular automata, papers]
+---
+If I haven&#x27;t been posting much here in the last couple of weeks, it&#x27;s because too much of my writing energy has been going into writing actual papers. Here&#x27;s one of them: <a href="http://arxiv.org/abs/0911.2890">Growth and Decay in Life-Like Cellular Automata</a>, arXiv:0911.2890. The aim of the paper is to predict which <a href="http://en.wikipedia.org/wiki/Life-like_cellular_automata">two-dimensional cellular automaton rules</a> will behave similarly to <a href="http://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">Conway&#x27;s Game of Life</a>. But a large part of the difficulty in making this sort of prediction is finding the right definition of &quot;similarly&quot;.
+<br />
+
+<br />
+A standard method for classifying automata, due to Wolfram, is to look at the behavior of the automaton on random initial conditions. Very roughly speaking, four outcomes are possible: the field can go from random to uniform, it can develop scattered still life and oscillator patterns but without any persistence of long-term complex behavior, it can remain random, or something else can happen. That &quot;something else&quot; supposedly describes Life, although really it seems that Life develops scattered still lifes and oscillators but just does it more slowly than some other rules.
+<br />
+
+<br />
+From my point of view, I&#x27;m not so concerned with random inputs. There are interesting things to say about Life&#x27;s behavior on random initial conditions, but it&#x27;s the non-random inputs that more fascinate me, the ones with some structure to them like the <a href="http://www.yucs.org/~gnivasch/life/article_cat/">caterpillar</a> and <a href="http://otcametapixel.blogspot.com/">metapixel</a> that are far too big to be found in practice by a random search (despite the theoretical truth that every possible pattern happens in a large enough random field). From this point of view <a href="http://www.ics.uci.edu/~eppstein/ca/wolfram.html">Wolfram&#x27;s classification is unsatisfying</a>: these large structured patterns with interesting behavior can be found in many different rules that have very different behavior on random inputs. It&#x27;s also overly subjective (why is Life Class IV and not Class II?) and unpredictive — it doesn&#x27;t tell you in advance how a rule is going to behave, it only serves to describe the behavior you&#x27;ve already observed.
+<br />
+
+<br />
+So a large part of the new paper describes a very crude classification that despite its crudity works better for my purposes: automata are grouped into four classes according to whether they support patterns that can grow beyond any bounding box enclosing them, and whether they support patterns that can die out completely. The interesting rules are likely to be the ones for which both answers are yes, and we can classify the vast majority of rules without having to look at the individual behavior of each one.
+<br />
+
+<br />
+After defining this classification and using it to map out the rule space, the rest of the paper catalogues a collection of rules that support the complex patterns I&#x27;m looking for. One standout here is <a href="http://fano.ics.uci.edu/ca/rules/b013468s02/">B013468/S02</a>, which supports many small spaceships and oscillators and has a glider gun much smaller than the one in Life. It&#x27;s also interesting from the Wolfram random-start point of view: when seeded with a random field (best with 46% live cells and 54% dead ones), it develops into large regions of cells alternating at each step between being alive and dead, each crisscrossed by large numbers of gliders, puffers, and other patterns sent out from the chaotic boundaries between regions of different phases. Because these boundaries gradually lose their curvature over long time scales, the number of steps before this system stabilizes to scattered oscillators is much higher than it is in Life.
+<br />
+
+<br />
+(<a href="http://markgritter.livejournal.com/598322.html">See also</a>)
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>ext_73227</b>: <br />
+<b>2009-11-19T05:59:43Z</b><br />
+Golly, that is awesome! In the rule you mentioned it was especially neat to see anti-gliders in a sea of live cells. I am pretty sure I would never get tired of staring at evolving patterns like that; makes me reminiscent of the Life display at the Ontario Science Center.
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: graph drawing utility<br />
+<b>2009-11-20T09:10:40Z</b><br />
+Hi, 
+
+I once asked in your comments for any simple tools for drawing graphs (to make illustrations). It seems today I found one: it is called GraphThing and is available in Ubuntu and Windows. It allows to dojust what you often need : draw a graph of vertices and edges and save it into a ps file, and you can do it in the most intuitive way - making a few clicks with your mouse.
+
+(sorry for an off-topic)
+Anonymous
+
+
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: Re: graph drawing utility<br />
+<b>2009-11-20T16:26:51Z</b><br />
+Thanks. Judging from what it says on <a href="http://graph.seul.org/">its home page</a>, there&#x27;s a Mac version too but it runs under some X window simulation rather than natively.
+</div>
+

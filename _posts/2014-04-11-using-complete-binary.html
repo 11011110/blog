@@ -1,0 +1,78 @@
+---
+layout: post
+title:  'Using complete binary trees to prove the power of two choices'
+date:   2014-04-11 17:42:00
+tags:   [hashing, algorithms, papers]
+---
+<p>The power of two choices in load balancing is well known: If one throws \( n \) balls independently at a similar number of bins (as in hash chaining), some bin will typically have \( \Theta(\log n/\log\log n) \) balls in it, but if one draws two random bins for each ball, and places the ball greedily into the less-full of these two bins, the maximum load will be much smaller, \( \Theta(\log\log n) \). And if one clairvoyantly chooses which of the two bins to place each ball into (or uses cuckoo hashing to move the balls around between their two bins as later balls come in) it is very likely that one can achieve only a constant load.</p>
+
+<p>The log-log result is originally by Azar, Broder, Karlin, and Upfal, and is well explained in a survey by Mitzenmacher, Richa, and Sitaraman, "<a href="http://people.cs.umass.edu/~ramesh/Site/PUBLICATIONS_files/MRS01.pdf">The power of two random choices: A survey of techniques and results</a>", which includes three different proof methods. Here's a fourth, which is related to but I think different from witness trees.</p>
+
+<blockquote><p>We suppose that the balls are thrown into bins one-by-one, and consider two graphs defined from this random process. The first graph, \( G_1 \), has the bins as its vertices; each ball defines an edge in \( G_1 \) whose endpoints are the two choices for that ball. As long as the number of bins is at least \( 2+\varepsilon \) times the number of balls (for some \( \varepsilon\gt 0 \)) we know from standard results on random graphs that with high probability every connected component of \( G_1 \) has \( O(\log n) \) vertices and is either a tree or a pseudotree (tree plus one edge).</p>
+
+<p>The second graph,\( G_2 \), is a directed graph that instead has the balls as its vertices. each ball in \( G_2 \) has at most two outgoing neighbors: the most recent balls to be previously placed in its two bins. When a component of \( G_1 \) is a tree, so is the corresponding component of \( G_2 \), with each vertex of \( G_1 \) (a bin) expanded into a path in \( G_2 \) (the balls that end up being placed in this bin). Similarly, when a component of \( G_1 \) is a pseudotree, so is the corresponding component of \( G_2 \). And since each component of \( G_1 \) has at most the same number of edges as it has vertices, and these edges correspond to the vertices of \( G_2 \), the components of \( G_2 \) also have \( O(\log n) \) vertices with high probability.</p>
+
+<p>Now, suppose that a ball is the \( i \)th to be added to its bin, and look at its two neighbors. When \( i\gt 1 \), each of these must exist, and must be at least the \( (i-1) \)st ball to be added to its bin, and so on. Thus, if this ball is part of a tree component of \( G_2 \), it is the root of a complete binary tree of height \( i \) within that component. If instead it is part of a pseudotree component, we can remove one edge from the component to turn it into a tree and get a complete binary tree missing at most one branch. So in either case the component of \( G_2 \) containing this ball contains a subtree with at least \( 2^{i-1} \) vertices in it.</p>
+
+<p>In order for the number of nodes in the subtree, \( 2^{i-1} \), to be no larger than the number of nodes in the whole component, \( O(\log n) \), it must be the case that \( i = O(\log\log n) \), QED.</p></blockquote>
+
+<p>One drawback of this argument, relative to the other proofs of the same result, is that it seems to require stronger assumptions on the numbers of balls and bins: it stops working when the number of bins drops below twice the number of balls. On the other hand, I think it's an easy way to teach the power of two choices, and relates well to other important theory concerning random graphs.</p>
+
+<p>It also seems to be a versatile argument that can be used for other related problems. The context here is a new paper of mine with Goodrich, Mitzenmacher, and Pszona, "Wear minimization for cuckoo hashing: how not to throw a lot of eggs into one basket", <a href="http://arxiv.org/abs/1404.0286">arXiv:1404.0286</a>, to appear at SEA 2014. In it, we used the same type of argument to show that a variant of cuckoo hashing, with three choices instead of two, avoids making large numbers of changes to any of its memory cells, a property useful for certain memory technologies. The paper also includes experiments with an implementation of this variant showing that it works well in practice.</p>
+
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>brooksmoses</b>: <br />
+<b>2014-04-12T02:00:25Z</b><br />
+Does this stop working when the number of bins drops below twice the number of balls?  It seems to me that you could divide the balls into \( m \) consecutive groups, such that each <i>group</i> has no more than half the number of balls as there are bins, and then the analysis shows that the number of balls from that group is no more than \( O(\log\log n/m) \).  And, if \( m \) is \( O(1) \) with respect to \( n \), then that's \( O(\log\log n) \) for the total as well.
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2014-04-12T03:15:55Z</b><br />
+Maybe, but the load balancing algorithm in which the balls go into the least loaded bins doesn't know about the groups. So, when a ball becomes the \( i \)th ball in a bin, it's not necessarily the case that you can find balls in the same two bins that are at the \( (i-1) \)st level or above, from the same group, with which you can build a complete binary tree. And if you try to build trees mixing up the groups, there's no longer a logarithmic bound on component size.
+</div>
+<div style="margin-left: 6em; padding-top: 1em;">
+<b>brooksmoses</b>: <br />
+<b>2014-04-12T03:30:53Z</b><br />
+<p>Oh, right, of course.  That does make it rather more complicated and non-obvious.</p>
+
+<p>Presumably (since we know from the other proofs that it works) there's some way to show that the difference between the depth you get with the all-the-balls load-balancing and the by-group load-balancing is bounded, but I have no idea if it can be shown simply or not.</p>
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: <br />
+<b>2014-04-12T14:06:45Z</b><br />
+<p>It's a cute argument and this is how I sometimes thought about some of the balls and bins and processes.</p>
+
+<p>It should be noted though that this approach was known for over 20 years, and I know this line of reasoning was behind some of the related arguments.
+For example, some very similar arguments were used by Karp, Luby, and Meyer auf der Heide in their STOC'92 paper, who gave the first bound for \( O(\log\log n) \) for maximum load in random processes of this sort (I think they had \( n/8 \) balls vs \( n \) bins, or something like that). It's a shame people don't give more credit to that paper.</p>
+
+<p>As for teaching, if someone knows random graphs and their properties then this might be a good way of approaching this problem. However, proving that a random graph with \( n \) nodes and \( n/(2+\varepsilon) \) edges has all connected components being trees or pseudo-trees is not completely trivial.</p>
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2014-04-14T20:17:03Z</b><br />
+Thanks for the reference. As for proving the tree-pseudotree property: maybe not trivial, but necessary if you're going to cover cuckoo hashing. And see Pat's message below for an approach to teaching this property.
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>ext_834481</b>: <br />
+<b>2014-04-14T12:23:25Z</b><br />
+<p>Woah, funny coincidence.  Just last week I used this argument when coming up with examples of Encoding arguments for my recent talk:</p>
+
+<p><a href="http://goo.gl/pd71Ki">http://goo.gl/pd71Ki</a></p>
+
+<p>The interesting thing is that the result that the maximum component size is \( O(\log n) \) and is either a tree or unicyclic can be proven using a simple encoding argument, so you can do the whole thing with almost no mention of probability.</p>
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: <br />
+<b>2014-04-14T20:09:19Z</b><br />
+At the risk of being obnoxiously self promoting I'd like to point out that in a paper to appear next ICALP, Omer Reingold, Ron Rothblum and I show how this approach could be used to show that some explicit hash functions also guarantee the \( \log\log n \) bound.
+
+Udi   
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2014-04-14T20:16:15Z</b><br />
+Thanks for the pointer. It seems appropriate and not too self-promoting to me (he says, after having made a blog post promoting one of his own papers).
+</div>
+

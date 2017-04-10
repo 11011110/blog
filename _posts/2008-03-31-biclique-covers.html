@@ -1,0 +1,37 @@
+---
+layout: post
+title:  'Biclique covers'
+date:   2008-03-31 23:06:00
+tags:   [combinatorics]
+---
+<p>First question: suppose you want to cover all the edges of an \( n \)-vertex <a href="http://en.wikipedia.org/wiki/Complete_graph">complete graph</a> with <a href="http://en.wikipedia.org/wiki/Biclique">complete bipartite subgraphs</a> (bicliques). How many bicliques do you need?</p>
+
+<p>Easy, right? You can do it with \( \lceil \log_2 n \rceil \) bicliques, by assigning distinct binary numbers to the \( n \) vertices and making a biclique for each bit position of these numbers, where the vertices having a 0 in the given position go on one side of the biclique and the vertices having a 1 in that position go on the other side. And conversely, if you have a biclique cover, you might as well include each vertex in each biclique, and you can assign binary labels to the vertices according to which side of each biclique they belong to, so every solution must have this form. In terms of <a href="http://en.wikipedia.org/wiki/Adjacency_matrix">adjacency matrices</a>, it looks something like this:</p>
+
+\[
+\left(\begin{array}{cccccccc}0&1&1&1&1&1&1&1\\1&0&1&1&1&1&1&1\\1&1&0&1&1&1&1&1\\1&1&1&0&1&1&1&1\\1&1&1&1&0&1&1&1\\1&1&1&1&1&0&1&1\\1&1&1&1&1&1&0&1\\1&1&1&1&1&1&1&0\end{array}\right) =\left(\begin{array}{cccccccc}0&0&0&0&1&1&1&1\\0&0&0&0&1&1&1&1\\0&0&0&0&1&1&1&1\\0&0&0&0&1&1&1&1\\1&1&1&1&0&0&0&0\\1&1&1&1&0&0&0&0\\1&1&1&1&0&0&0&0\\1&1&1&1&0&0&0&0\end{array}\right) \vee\left(\begin{array}{cccccccc}0&0&1&1&0&0&1&1\\0&0&1&1&0&0&1&1\\1&1&0&0&1&1&0&0\\1&1&0&0&1&1&0&0\\0&0&1&1&0&0&1&1\\0&0&1&1&0&0&1&1\\1&1&0&0&1&1&0&0\\1&1&0&0&1&1&0&0\end{array}\right) \vee\left(\begin{array}{cccccccc}0&1&0&1&0&1&0&1\\1&0&1&0&1&0&1&0\\0&1&0&1&0&1&0&1\\1&0&1&0&1&0&1&0\\0&1&0&1&0&1&0&1\\1&0&1&0&1&0&1&0\\0&1&0&1&0&1&0&1\\1&0&1&0&1&0&1&0\end{array}\right)
+\]
+
+<p>Ok, now time for the second question. Instead of covering a complete graph, let's cover a different graph \( G_n \), in the form of a bipartite graph \( K_{n,n} \) minus a perfect matching. Since \( G_n \) is bipartite, we might as well describe it with a <a href="http://en.wikipedia.org/wiki/Biadjacency_matrix">simplified adjacency matrix</a> in which one side of the bipartition indexes the rows and the other side indexes the columns. But this simplified adjacency matrix for \( G_n \) is identical to the adjacency matrix of the clique \( K_n \) that we started with, zero on the main diagonal and all ones elsewhere! We're just interpreting it differently. In this interpretation, the bicliques we're covering \( G \) with can only cover half as many of the ones in the adjacency matrix as they could when we were covering a complete graph. So we need twice as many bicliques, right?</p>
+
+<p>Wrong!</p>
+
+<p>Here's an example, expressed in terms of adjacency matrices, of a biclique cover of \( G_6 \).</p>
+
+\[
+\left(\begin{array}{cccccc}0&1&1&1&1&1\\1&0&1&1&1&1\\1&1&0&1&1&1\\1&1&1&0&1&1\\1&1&1&1&0&1\\1&1&1&1&1&0\end{array}\right)= \left(\begin{array}{cccccc}0&0&0&1&1&1\\0&0&0&1&1&1\\0&0&0&1&1&1\\0&0&0&0&0&0\\0&0&0&0&0&0\\0&0&0&0&0&0\end{array}\right)\vee\left(\begin{array}{cccccc}0&1&1&1&0&0\\0&0&0&0&0&0\\0&0&0&0&0&0\\0&0&0&0&0&0\\0&1&1&1&0&0\\0&1&1&1&0&0\end{array}\right)\vee\left(\begin{array}{cccccc}0&0&0&0&0&0\\0&0&0&0&0&0\\1&1&0&0&0&1\\1&1&0&0&0&1\\1&1&0&0&0&1\\0&0&0&0&0&0\end{array}\right)\vee\left(\begin{array}{cccccc}0&0&0&0&0&0\\1&0&1&0&1&0\\0&0&0&0&0&0\\1&0&1&0&1&0\\0&0&0&0&0&0\\1&0&1&0&1&0\end{array}\right)
+\]
+
+<p>This turns out to be the biggest graph \( G_n \) that can be covered by only four bicliques. It may not be obvious from the matrices above, but there's a simple way of describing this cover: let the rows and columns of the matrix both be indexed by the edges of a complete graph \( K_4 \), and make a biclique for each vertex \( v \) of the \( K_4 \), having on one side the edges incident to \( v \) and on the other side the edges not incident to \( v \). Each 1 in the matrix corresponds to an ordered pair of unequal edges of the \( K_4 \), and for each such pair there is a vertex that is an endpoint of the first edge of the pair and not an endpoint of the second edge, so all 1's are covered.</p>
+
+<p>The construction generalizes: index the rows and columns of an adjacency matrix for \( G_n \) by the subsets of \( k/2 \) out of \( k \) items, and form a biclique for each item that has on one side the subsets not containing that item and on the other side the subsets containing that item. In this way, we can cover \( G_n \) by \( k \) bicliques whenever</p>
+\[
+n\le{k\choose\lfloor k/2\rfloor}.
+\]
+
+<p>This turns out to be optimal. For any cover of \( G_n \) by a family of \( k \) bicliques, and for each of the \( n \) columns of the adjacency matrix, there must be a minimal subfamily of the bicliques that covers all but that column. These minimal subfamilies form an <a href="http://en.wikipedia.org/wiki/Antichain">antichain</a> in the <a href="http://en.wikipedia.org/wiki/Power_set">powerset</a> of the bicliques, so by <a href="http://en.wikipedia.org/wiki/Sperner%27s_theorem">Sperner's theorem</a></p>
+\[
+n\le{k\choose\lfloor k/2\rfloor}.
+\]
+
+<p>Asymptotically, \( k = \log_2 n(1+o(1)) \), the same leading term as for covering a clique by bicliques.</p>

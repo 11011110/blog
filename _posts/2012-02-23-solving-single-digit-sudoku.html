@@ -1,0 +1,19 @@
+---
+layout: post
+title:  'Solving single-digit Sudoku subproblems'
+date:   2012-02-23 17:22:00
+tags:   [sudoku, python, exponential algorithms, papers]
+---
+My paper for <a href="http://www.dsi.unive.it/~fun2012/">FUN 2012</a>, &quot;Solving Single-digit Sudoku Subproblems&quot;, is now on arXiv.org as <a href="http://arxiv.org/abs/1202.5074">arXiv:1202.5074</a>.
+<br />
+
+<br />
+In it, I revisited a problem I&#x27;d looked at earlier in <a href="http://11011110.livejournal.com/20637.html">a blog post from 2005</a>, in which you want to make deductions about a Sudoku puzzle by looking only at the candidate locations of a single digit at a time. In that blog post, I showed that this kind of deduction is NP-hard to make optimally, which is why I had resorted to heuristics that never make incorrect deductions but that might fail to make some correct deductions. In my new paper, I describe an exponential-time algorithm that finds all possible correct deductions and takes time o(2<sup>n</sup>) on nxn Sudoku puzzles. That&#x27;s fast enough to be very practical for 9x9 and 16x16 Sudoku and makes the heuristics unnecessary.
+<br />
+
+<br />
+By this point there&#x27;s a large body of work on exact exponential time algorithms for NP-hard problems (mostly graph algorithms), and also a large body of work on the <a href="http://www.ics.uci.edu/~eppstein/cgt/hard.html">computational complexity of combinatorial games and puzzles</a> showing that they give rise to NP-hard problems. What I haven&#x27;t seen much of is work like my new paper that puts these two together and does worst-case analysis of algorithms for exactly solving games and puzzles. So I think there may be a lot of low-hanging fruit in this direction.
+<br />
+
+<br />
+This wasn&#x27;t just a theoretical exercise, by the way: I implemented my new algorithm and included it in the Sudoku software included as part of my <a href="http://www.ics.uci.edu/~eppstein/PADS/">PADS</a> library of Python algorithm implementations. Relatedly, because of <a href="http://11011110.livejournal.com/242004.html">my migration from CVS to Git</a>, PADS has a new distribution mechanism: rather than downloading a tarball, you can get it by cloning a Git repository. See <a href="http://www.ics.uci.edu/~eppstein/PADS/ABOUT-PADS.txt">the README file</a> for details.

@@ -1,0 +1,55 @@
+---
+layout: post
+title:  'FOCS acceptances'
+date:   2011-07-10 22:55:00
+tags:   [conferences, papers]
+---
+The <a href="http://www.cs.ucla.edu/~rafail/FOCS11/accepted.pdf">list of FOCS acceptances</a> (with abstracts!) is public; thanks to Suresh for <a href="https://plus.google.com/112165457714968997350/posts/PJS6gLYGUNF">letting me know via +</a>.
+<br />
+
+<br />
+It looks like a good program; quite a few of the titles caught my attention. Here are ten of them, with preprint links when I could find them:
+<br />
+
+<br />
+&quot;The minimum k-way cut of bounded size is fixed-parameter tractable&quot;, Mikkel Thorup and Ken-ichi Kawarabayashi, <a href="http://arxiv.org/abs/1101.4689">arXiv:1101.4689</a>. The problem: given a graph, a number k, and another number s, we want to remove at most s edges from the graph so that the remaining subgraph has at least k components. They show that for any fixed s it can be solved in quadratic time.
+<br />
+
+<br />
+&quot;Fully dynamic maximal matching in O(log n) update time&quot;, Surender Baswana and Manoj Gupta and Sandeep Sen, <a href="http://arxiv.org/abs/1103.1109">arXiv:1103.1109</a>. Allows edges to be added or removed from a graph while maintaining a maximal matching. Addition is trivial so the hard part is handling removals. Dynamic graph algorithms have been relatively rare at algorithms conferences lately so it&#x27;s refreshing to see one here, with clean bounds for a natural problem.
+<br />
+
+<br />
+&quot;Solving connectivity problems parameterized by treewidth in single exponential time&quot;, Marek Cygan and Jesper Nederlof and Marcin Pilipczuk and Micha³ Pilipczuk and Johan M. M. van Rooij and Jakub Onufry Wojtaszczyk, <a href="http://arxiv.org/abs/1103.0534">arXiv:1103.0534</a>. They solve problems like Hamiltonian path and Steiner tree in time singly exponential in the treewidth of the input graph, surprisingly since the natural dynamic programs for these problems do not have a singly-exponential number of states.
+<br />
+
+<br />
+&quot;Separator Theorems for Minor-Free and Shallow Minor-Free Graphs with Applications&quot;, Christian Wulff-Nilsen. It&#x27;s known that minor-closed graph families obey a <a href="http://en.wikipedia.org/wiki/Planar_separator_theorem">separator theorem</a> whose constant factor depends linearly on the size of the forbidden minor, but the algorithms for finding these separators are not practical. This paper produces worse separators more quickly.
+<br />
+
+<br />
+&quot;3-SAT Faster and Simpler - Unique-SAT Bounds for PPSZ Hold in General&quot;, Timon Hertli, <a href="http://arxiv.org/abs/1103.2165">arXiv:1103.2165</a>. <a href="http://11011110.livejournal.com/210825.html">Last December</a> I mentioned a paper of Iwama et al. at ISAAC 2010 on 3-SAT that trades off between two different approaches to the problem, one that is good when there are many solutions and one that is good when there are few, taking time O(1.32113<sup>n</sup>) in the worst case. This new paper is based on the few-solution side of the problem and knocks the time bound down to O(1.308<sup>n</sup>).
+<br />
+
+<br />
+&quot;On Range Searching in the Group Model and Combinatorial Discrepancy&quot;, Kasper Green Larsen, <a href="http://cs.au.dk/~larsen/papers/range_and_disc.pdf">(preprint)</a>. Improves the lower bounds for some important geometric data structural problems.
+<br />
+
+<br />
+&quot;A Polylogarithmic-Competitive Algorithm for the k-Server Problem&quot;, Nikhil Bansal and Niv Buchbinder and Aleksander Madry and Seffi Naor. There&#x27;s a phenomenon in online algorithms where randomized algorithms can sometimes be exponentially better than deterministic ones; for instance, in page replacement strategies for virtual memory, any deterministic strategy is at best k-competitive (where k is the number of pages of real memory available) while randomized strategies can be O(log k)-competitive. This paper shows that a similar phenomenon happens for the k-server problem, an abstract problem that can model page replacement and many other more specific application problems, as long as there are not exponentially many distinct requests possible.
+<br />
+
+<br />
+&quot;Minimum Weight Cycles and Triangles: Equivalences and Algorithms&quot;, Liam Roditty and Virginia Vassilevska Williams, <a href="http://arxiv.org/abs/1104.2882">arXiv:1104.2882</a>. They reduce the problem of computing the girth of a graph with small-integer edge weights to finding a triangle in a derived graph, which lets them apply known triangle-finding methods based on fast matrix multiplication. In contrast, it is known that for real edge weights the problem can&#x27;t be solved significantly more quickly than all pairs shortest paths.
+<br />
+
+<br />
+&quot;Multiple-Source Multiple-Sink Maximum Flow in Directed Planar Graphs in Near-Linear Time&quot;, Glencora Borradaile and Philip N. Klein and Shay Mozes and Yahav Nussbaum and Christian Wulff-Nilsen, <a href="http://arxiv.org/abs/1105.2228">arXiv:1105.2228</a>. A planar graph with multiple sources and sinks is almost the same thing as a 2-apex graph with a single vertex (one of the apexes) as source and a single vertex (the other apex) as sink. So the question that comes to mind after seeing this title is: how much harder would it be to handle apex graphs, or k-apex graphs, when the apexes are not the terminals?
+<br />
+
+<br />
+&quot;The Graph Minor Algorithm with Parity Conditions&quot;, Ken-ichi Kawarabayashi and Bruce Reed and Paul Wollan. There have been previous papers on new faster algorithms for finding graph minors that were announced at conferences and then never seemed to find their way to a full journal version. It&#x27;s unfortunate, because then there isn&#x27;t a detailed algorithm one can rely on in one&#x27;s own papers and there isn&#x27;t much incentive for others to fill the gap. Let&#x27;s hope this one (claiming that even with additional constraints on the parity of the contracted paths in the minor the problem can be solved in near-linear time) meets a better fate.
+<br />
+
+<br />
+There were even more graph algorithm papers than the ones I list above, so this seems to have been a very good year for the subject. I&#x27;m also pleasantly surprised to see some fixed parameter tractability here; lately that seems to have been exiled to the European conferences but I don&#x27;t think there&#x27;s any good reason beyond fashion for that. Computational geometry doesn&#x27;t seem to have done very well at FOCS, but at least there&#x27;s Larsen&#x27;s paper there.

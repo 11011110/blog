@@ -1,0 +1,69 @@
+---
+layout: post
+title:  'How not to title your papers'
+date:   2009-02-18 21:24:00
+tags:   [graph drawing, papers]
+---
+There are various standard mistakes that we eventually learn not to do when choosing titles for papers: putting a mathematical formula into a title, for instance, makes it much more difficult for citation databases such as Google Scholar to handle it correctly.
+<br />
+
+<br />
+Here&#x27;s another one: making your title be an accurate technical description of the techniques you use without any hint of what you&#x27;re using them for. Tonight&#x27;s example: <a href="http://arxiv.org/abs/0902.3208">A Fast Multigrid Algorithm for Energy Minimization Under Planar Density Constraints</a>, by Ron, Safro, and Brandt. What you wouldn&#x27;t be able to guess from the title alone: this is really a graph drawing paper.
+<br />
+
+<br />
+What it&#x27;s actually about, as far as I can tell from a quick read, is a fairly standard graph drawing type problem: taking as input a drawing of a graph and improving it by treating the edges as springs and moving the vertices around to minimize spring energy. The new variation seems to be to perform this optimization under a set of constraints that force the vertices to remain spread out uniformly in the drawing area, rather than relying on a repulsive force to keep them apart and having to balance the repulsions and attractions. And with this explained, the title makes sense: “energy minimization” refers to the spring energy of the graph edges and “planar density constraints” refers to the way the vertices are kept apart from each other. But there&#x27;s nothing in the title that might tempt a graph drawer to get this far.
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>tostuemiy</b>: <br />
+<b>2009-02-19T22:36:49Z</b><br />
+...
+Smeraldina: Let us open it.
+Truffaldino: Can you read?
+Smeraldina: A little. But you can read quite well, I’m sure.
+Truffaldino: Yes, I too can read… just a little.
+Smeraldina: Then let us hear.
+Truffaldino: We must open it cleanly.
+(He tears off a piece.)
+Smeraldina: Oh! What have you done?
+Truffladino: Nothing, I’ve a secret way to mend it. Here it is, open.
+(They pass the letter back and forth, saying, “You read it.” “No, you read it!)
+Smeraldina: (Finally opening the letter completely.) Quick, read it.
+Truffaldino: You read it. You will know your young lady’s handwriting better than I
+do.
+Smeraldina: (Looking at the letter. Eventually turns it upside down) Really, I can’t
+make out a word.
+Truffaldino: (Same business.) Nor I neither.
+Smeraldina: Then what was the good of opening it?
+Truffaldino: (Takes the letter.) Wait; let me think; I can make out some of it.
+Smeraldina: Oh, I know some of the letters too.
+Truffladino: Let us try one by one. Isn’t that an M?
+Smeraldina: No! That’s an R!
+Truffladino: Between M and R there is very little difference.
+Smeraldina: Ri, ri, o. No, no; keep quiet; I think it is an M, Mi, mi, o…mio!
+Truffaldino: It’s not mio, it’s mia.
+Smeraldina: But it is, there’s the hook…
+Truffaldino: That proves it is mia.
+...
+(c) Carlo Goldoni (1707-1793), &quot;The servant of two masters&quot;
+
+It was very nice to read your comments on choosing a title.
+Being honest, I think that there is a couple of other things that a title must depend on: what exactly is the target audience intended by the author for this paper? and what is the key point of the paper?
+On one hand, it looks like this paper is intended mostly for the multigrid and optimization communities. On the other hand, the key point was the proposed method but not the GD application. &quot;A combination of Geometric Multigrid and Full Approximation Scheme as a method of solving a collective optimization problem&quot; is the most important part of this work. 
+In particular, the novelty of this work is an introduction of FAS as a coarsener for the constrains and mixing it with the GMG-derived functional into one pseudo-Lagrangian. The graph drawing application was only a way to <i>demonstrate</i> a collective optimization and (what is most important) a combination of two multigrid frameworks. For example it can be used as a solver for the VLSI placement/Facility location/... problems as well. However, it is a good idea to submit a short version of the paper to one of GD conferences.
+
+Sincerely,
+tostuemiy (aka Ilya Safro)
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2009-02-19T22:42:17Z</b><br />
+Point taken. On the other hand, if it were intended only for the multigrid and optimization communities, there would be little point in cross-listing it in the cs.DS category of arxiv.
+</div>
+<div style="margin-left: 6em; padding-top: 1em;">
+<b>tostuemiy</b>: <br />
+<b>2009-02-20T00:04:51Z</b><br />
+I&#x27;m not sure that, in general, a paper must be intended for X, Y and Z communities <i>only</i>. However, there are always X, Y and Z audiences that are most important to the author (given a concrete paper). I think that cross-listing it in the cs.DS category of arXiv is a good choice for us, since many (at least I know many of them) of its readers work on various constrained optimization problems related to cs.DS. Moreover, some applications of our method can be suitable for graph problems. Nevertheless, putting some-application-hints in the title can play a negative role easily. 
+</div>
+

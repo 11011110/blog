@@ -1,0 +1,27 @@
+---
+layout: post
+title:  'Halfspace intersections and their complexity'
+date:   2011-03-16 15:37:00
+tags:   [geometry, papers]
+---
+The problems of computing <a href="http://en.wikipedia.org/wiki/Convex_hull">convex hulls</a> of points and of computing intersections of <a href="http://en.wikipedia.org/wiki/Half-space">halfspaces</a> may seem, intuitively, to be quite different from each other, but by <a href="http://en.wikipedia.org/wiki/Duality_(projective_geometry)">projective duality</a> they are almost the same. If you know a single point inside the convex hull of a set of points (or find one using linear programming) you can transform the points into halfspaces such that the intersection of the halfspaces is the projective dual of the convex hull. And if the halfspace intersection is bounded (it doesn&#x27;t go off to infinity in any direction) you can do the same thing in reverse. So really you only need to study one kind of convex-thing-construction algorithm instead of two.
+<br />
+
+<br />
+But is that really true? What about the halfspace intersections that do go off to infinity? They give you an additional set of possibilities, so they must be more complicated, right?
+<br />
+
+<br />
+My new preprint with Maarten Löffler, &quot;Bounds on the Complexity of Halfspace Intersections when the Bounded Faces have Small Dimension&quot; (<a href="http://arxiv.org/abs/1103.2575">arXiv:1103.2575</a>, to appear at SoCG) shows that, actually, the opposite is true: the unbounded halfspace intersections are simpler than the others. Or at least, that&#x27;s the case when all of the high-dimensional faces go off to infinity, so that only low-dimensional faces are left.
+<br />
+
+<br />
+Specifically, a D-dimensional intersection of n halfspaces might have as many as n<sup>D/2</sup> vertices, but if the bounded faces have maximum dimension d then there are only n<sup>d</sup> vertices, which could possibly be a lot smaller. We also have some bounds on the numbers of bounded faces in general (not just vertices) but they&#x27;re a lot weaker, so there&#x27;s probably plenty of scope for improvement there.
+<br />
+
+<br />
+The details are highly technical, but they involve a form of <a href="http://www.ics.uci.edu/~eppstein/junkyard/euler/">Euler&#x27;s formula</a> for unbounded intersections, as well as a cute lemma that makes sense even in 3d. If you slice a polyhedron (say a cube) by a plane (say the perpendicular bisector of two opposite cube vertices) then you might cut all of its facets, but there are going to be some unsliced faces of lower dimensions on both sides of the slicing plane (in the case of a cube, three edges and four vertices on each side). In fact, the lemma says, there are enough unsliced faces on both sides of the slice that you can be guaranteed to find two faces (one on each side) whose convex hull is full-dimensional.
+<br />
+
+<br />
+What I think should be true, more strongly, is that you can always decompose the sliced polyhedron into pieces that are convex hulls of pairs of faces from opposite sides of the cut. So in the case of our sliced cube this gives a triangulation into six tetrahedra, convex hulls of an edge on one side of the slice and a non-parallel edge on the other side. But I don&#x27;t know how to prove that a decomposition of this type always exists.

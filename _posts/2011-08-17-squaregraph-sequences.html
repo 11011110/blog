@@ -1,0 +1,43 @@
+---
+layout: post
+title:  'Squaregraph sequences'
+date:   2011-08-17 21:48:00
+tags:   [chord diagrams, media theory]
+---
+I should probably post something about WADS but I haven&#x27;t had time to get my thoughts in order yet. In the meantime here&#x27;s something completely different. (For actual posts about WADS, see <a href="https://plus.google.com/100745070844715941049/posts">Kevin Wortman&#x27;s brief post</a> and <a href="https://plus.google.com/114451358618271640061/posts/Ypeu9YKw4YW">John Moeller&#x27;s cruise photos</a>.)
+<br />
+
+<br />
+Don Knuth has recently added <a href="http://oeis.org/search?q=A194088">six new integer sequences to OEIS</a> involving biconnected <a href="http://en.wikipedia.org/wiki/Squaregraph">squaregraphs</a>, planar graphs in which all bounded faces are four-sided and in which all vertices are either on the unbounded face or are surrounded by four or more faces. Knuth wrote <a href="http://www-cs-faculty.stanford.edu/~knuth/programs/squaregraph.w">a program to enumerate biconnected squaregraphs</a> and the OEIS sequences summarize its output.
+<br />
+
+<br />
+As I described <a href="http://11011110.livejournal.com/129009.html">here</a>, a squaregraph can be described by a chord diagram, a circular sequence of 2<i>k</i> symbols for some integer <i>k</i>, in which each of the symbols 1, 2, ..., <i>k</i> appears twice. Not all of the <i>k</i>!! possible chord diagrams work, though: a chord diagram corresponds to a squaregraph if it avoids the pattern <i>i</i>...<i>j</i>...<i>k</i>...<i>i</i>...<i>j</i>...<i>k</i> and the graph it describes is biconnected if it can&#x27;t be decomposed into two smaller contiguous subsequences, with each symbol appearing in only one of the two subsequences.
+<br />
+
+<br />
+For instance, as Knuth writes, there are (up to isomorphism) 18 biconnected squaregraphs with five bounded faces: the twelve pentominoes and six additional graphs.
+<br />
+
+<br />
+<div align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/5-face-squaregraphs.png" /></div>
+<br />
+
+<br />
+(Don&#x27;t ask me why some of them came out tilted like that; it&#x27;s an artifact of the implementation of my algorithm with Kevin for <a href="http://arxiv.org/abs/0907.5474">drawing squaregraphs with optimal angular resolution</a>.)
+<br />
+
+<br />
+The algorithms Knuth used to enumerate these things are pretty much just brute force searches, so there&#x27;s probably plenty of room for more clever algorithms to push the sequences to greater numbers of terms.
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>leonardo_m</b>: <br />
+<b>2011-08-19T00:55:26Z</b><br />
+I have even found a way to compile it:
+
+http://ideone.com/aLghS
+
+It needs unittests and more.
+</div>
+

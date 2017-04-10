@@ -1,0 +1,281 @@
+---
+layout: post
+title:  'MathML considered harmful'
+date:   2015-08-04 23:11:00
+tags:   [wikipedia, mathematics]
+---
+If you&#x27;ve been paying any attention to my blog posts and other online activity, you probably know that I&#x27;m a huge fan of Wikipedia. I think it&#x27;s a great way to communicate theoretical research to a wider audience, a great way to practice writing in a setting that encourages writing for readability, and a great place to publish survey-like material. Since I began editing Wikipedia in 2006, I have made <a href="https://en.wikipedia.org/wiki/Wikipedia:List_of_Wikipedians_by_number_of_edits">over 90000 edits</a> and created <a href="https://en.wikipedia.org/wiki/Wikipedia:List_of_Wikipedians_by_article_count">over 700 new articles</a> (not counting redirects etc), most of them on mathematical subjects. I&#x27;ve also regularly been using collections of Wikipedia readings as textbooks in some of my classes for which there is no published text that matches the material I want to cover. I&#x27;ve encouraged others to contribute their expertise and will take the opportunity to do so again: Edit Wikipedia! Contribute your knowledge to the broader world!
+<br />
+
+<br />
+But if you&#x27;ve read many Wikipedia article on mathematical subjects, you&#x27;ll know that they can have a few issues. The content may sometimes be amateurish and  topics may be missing, but those can be fixed with some effort. (Edit Wikipedia! Contribute your knowledge!) Another, more stubborn issue concerns the formatting of its mathematical equations.
+<br />
+
+<br />
+
+<br />
+<b>What&#x27;s wrong with Wikipedia&#x27;s equation formatting</b>
+<br />
+
+<br />
+In Wikipedia&#x27;s default view (what you get if you don&#x27;t create an account, log in, and change your appearance preferences), what you see for many equations is a bitmap graphics image of the equation. It&#x27;s nicely typeset by TeX or something that mimics TeX, but the fonts don&#x27;t match the text of the articles (especially in formulas that include pieces text themselves rather than just mathematical symbols or variables), the font sizes are generally too big, the text alignment is wrong, they look pixelated rather than matching the sharpness of the other text, you can&#x27;t select or copy text from the middle of them, they are stuck in \displaystyle even for inline formulas (leading to ugly irregularities in line spacing), and they don&#x27;t change color to indicate the existence of a link the way real text does.
+<br />
+
+<br />
+In 2006, that was a lot better than the mathematics formatting that you could do anywhere else on the web. On Wikipedia, you could edit formulas using familiar TeX markup and they would automatically appear. Everywhere else, you had the choice of editing html manually (and being limited to what could be formatted in html), or writing in other document-processing systems such as LaTeX and either publishing pdf files or using tools like <a href="https://en.wikipedia.org/wiki/LaTeX2HTML">LaTeX2HTML</a> to batch-produce HTML files with bare-bones formatting and bitmap image formulas.
+<br />
+
+<br />
+Later, some other web sites began springing up providing the ability to do the same thing as Wikipedia: enter TeX markup and get a bitmap image that you could include in your html files, with the same problems of font and alignment and pixelization. I probably still have several of these among my old blog posts, because LiveJournal has still never even caught up to the 2006 Wikipedia&#x27;s ability to format math.
+<br />
+
+<br />
+And then along came <a href="https://www.mathjax.org/">MathJax</a>.
+<br />
+
+<br />
+
+<br />
+<b>MathJax and Wikipedia</b>
+<br />
+
+<br />
+Introduced in 2009 after a joint project of the AMS, SIAM, and others, MathJax provided code to do the work of turning mathematical formulas into html markup so that you don&#x27;t have to. Their slogan is &quot;it just works&quot;, and it&#x27;s true. Add one line of code to your web pages:<pre>&lt;script type=&quot;text/javascript&quot; src=&quot;//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot;&gt;</pre>and then start formatting math using \(...\) for inline formulas and \[...\] for displayed equations. (If you want $...$ the setup is a few more lines.)
+<br />
+
+<br />
+MathJax has some minor issues, involving slow formatting and reflowing already-displayed text, and it&#x27;s kind of a hack, but it really is easy and it really does work well, producing equations that are formatted as pieces of text, looking as sharp as any other piece of text, using fonts that match the surrounding text, and scaling properly with the surrounding text. MathJax quickly became the de facto standard for mathematics formatting on the web and has become widely used by sites including MathSciNet, MathOverflow, arXiv, the commercial journal publishers, etc.: almost everyone who publishes mathematics on the web.
+<br />
+
+<br />
+MathJax has newer imitators, as well. A good example is the Khan Academy&#x27;s <a href="https://khan.github.io/KaTeX/">KaTeX</a>. Unlike many instances of MathJax, KaTeX runs on the server rather than the browser, making it feel faster and preventing some of the reflow glitches that affect MathJax. Unfortunately, it is also more limited than MathJax in the types of formulas that it can handle. When it works it works well but it&#x27;s not a complete solution.
+<br />
+
+<br />
+The exception to all of this mathematics formatting wonderfulness has been Wikipedia. What does Wikipedia use as its default method of displaying mathematics in 2015, six years after MathJax became available? The same bitmap images it was using in 2006. It did add a MathJax user option (for logged in users only) <a href="http://11011110.livejournal.com/252718.html">in 2012</a>, but only grudgingly, and now <a href="https://en.wikipedia.org/wiki/Wikipedia:Wikipedia_Signpost/2015-07-22/Technology_report">it&#x27;s taken even that much away again</a>.
+<br />
+
+<br />
+If you want MathJax in Wikipedia, you&#x27;ll have to hack it together yourself with custom Javascript, and of course that will do nothing for how most people see the articles you edit. And what is the reason for all of this foot-dragging, and the reason for this long post? <a href="https://en.wikipedia.org/wiki/MathML">MathML</a>, a failed non-solution to mathematics rendering that the Wikimedia developers are still trying to promote.
+<br />
+
+<br />
+
+<br />
+<b>Editors vs developers</b>
+<br />
+
+<br />
+Some background on Wikipedia versus Wikimedia is probably appropriate here. It&#x27;s confusing because the names are so similar, but they&#x27;re different things. Wikipedia is a big multi-language encyclopedia, whose volunteer contributors are usually called editors. It has a big body of text, lots of rules about how to edit, and various pieces of bureaucracy to enforce those rules, but the bureaucrats are also volunteers. Mediawiki is the software on which Wikipedia runs, and Wikimedia is the nonprofit organization that develops and runs that software. It has actual computer farms and actual paid employees, some of whom are software developers, but it also uses volunteer software developers to augment the efforts of the paid ones. The Wikipedia editors and Wikimedia developers are not the same people, and have often had major disagreements on how best to improve the Wikimedia software. Even when they share common goals, such as expanding and diversifying the base of editors (Edit Wikipedia! Contribute your knowledge!) they often disagree on how to achieve them. Major flashpoints have included<ul><li>The <a href="https://en.wikipedia.org/wiki/Wikipedia:VisualEditor">Visual Editor</a>, a GUI intended by the developers to replace text editing of wiki-markup,</li><li><a href="https://en.wikipedia.org/wiki/Wikipedia:Flow">Flow</a>, a threaded discussion system intended to replace the article talk pages used by editors to discuss controversial changes to articles, compare alternative versions of article text, or request changes that other editors might be better able to make, and</li><li><a href="https://en.wikipedia.org/wiki/Wikipedia:Pending_changes">Pending changes</a>, a system for preventing new editors&#x27; changes from becoming visible until they are vetted by more experienced editors.</li></ul>Compared to these controversies, mathematics formatting and MathML are small potatoes: a small part of the encyclopedia, important to only a small fraction of editors and developers, but very important to that small number of people.
+<br />
+
+<br />
+
+<br />
+<b>Standards-based semantic markup</b>
+<br />
+
+<br />
+Two issues that developers care much more about than editors and readers are semantic content markup and standards-based web design. From long before the dawn of the web, computerized document processing systems have tended to use one of three strategies for describing a piece of text and its formatting:<ul><li>One is to specify precisely what each mark in the output document should look like and where it should be placed; this geometry-based approach is used, for instance, in the pdf files commonly used to encode and transmit formatted scientific journal articles.</li><li>A second is to specify the intended human meaning (&quot;semantics&quot;) of a piece of text, letting the software that receives the document figure out how that meaning should be translated into  formatting. In LaTeX when we specify that something is a theorem (\begin{theorem} ... \end{theorem}) or in HTML when we specify that something is a top-level header (&lt;h1&gt; ... &lt;/h1&gt;) or paragraph (&lt;p&gt; ... &lt;/p&gt;) we are using semantic markup.</li><li>And a third is to mix the text with a sequence of ad-hoc commands that interact with a specific formatting engine and tell it what to do, but with no clearly defined geometry or semantics (like, for instance, plain TeX).</li></ul>In the early days of HTML, it used a mix of semantic and ad-hoc markup, leading to chaotic results such as web pages that were carefully coded to look nice on one browser displaying badly or not at all on others. Then, through the mid-to-late 1990s, there was a push to standardize both the coding of HTML markup and the formatting of the results by browsers, leading to the current system under which the basic document markup is purely <a href="https://en.wikipedia.org/wiki/Semantic_HTML">semantic HTML</a> (describing paragraphs or other divisions in a piece of text) but with an associated stylesheet that describes in a precise way how that semantics should be translated into formatting. As a result, one can now design a web page and be confident that it behaves in a predictable way on all modern browsers, subject only to unavoidable variations such as screen width.
+<br />
+
+<br />
+The same push for standards-based markup that led to the cleanup in HTML also led to many other new XML-based markup languages, and the hope that these languages could be used to represent pieces of HTML-based documents that required specialized markups. One of the more successful languages of this type has been <a href="https://en.wikipedia.org/wiki/Scalable_Vector_Graphics">SVG</a>, a language for storing scalable images built from simple geometric objects like lines and circles. Unlike previous vector graphics formats such as postscript and pdf, SVG images could be mixed with text in the middle of an HTML document, and unlike previous inline bitmap image formats such as GIF, PNG, and JPG they could be scaled to arbitrarily large sizes without loss of quality and did not require a separate image file download. SVG files are widely used today; for instance, they are the standard format for vector graphics on Wikipedia, and the LiveJournal service on which I keep my blog uses them as part of the login banner that you see on the top of many of its pages.
+<br />
+
+<br />
+But the success of this project has led the Wikipedia developers to push the same ideas into other areas where they fit less well, and in particular into mathematics formatting using another of the XML languages designed at this time, MathML.
+<br />
+
+<br />
+
+<br />
+<b>What is MathML?</b>
+<br />
+
+<br />
+MathML is intended to provide a structured way to describe mathematical expressions, but from the start there were ambiguities in what this meant, that caused the language to be schizophrenic, really forming two languages in one and mirroring the split between presentation and markup described above. One of the two languages, called <a href="http://www.w3.org/TR/MathML2/chapter4.html">content markup</a> in the MathML standard, is intended to describe the underlying mathematical content of an expression: what it means in terms of calculating numbers from other numbers. For instance, the expression <i>x</i> + <i>y</i>/<i>z</i> means that you should divide <i>y</i> by <i>z</i> and then add <i>x</i> to the result. The markup used to represent this expression involves an &quot;apply&quot; token that represents the application of a function to its arguments; here there are two functions, addition and division, each with two arguments, which are either variables or the results of other function applications. So we get a piece of markup that looks like<pre>&lt;semantics&gt;
+<br />
+  &lt;apply&gt;
+<br />
+    &lt;plus/&gt;
+<br />
+    &lt;ci&gt; x &lt;/ci&gt;
+<br />
+    &lt;apply&gt;
+<br />
+      &lt;divide/&gt;
+<br />
+      &lt;ci&gt; y &lt;/ci&gt;
+<br />
+      &lt;ci&gt; z &lt;/ci&gt;
+<br />
+    &lt;/apply&gt;
+<br />
+  &lt;/apply&gt;
+<br />
+&lt;/semantics&gt;</pre>In contrast, the other language within MathML, <a href="http://www.w3.org/TR/MathML2/chapter3.html">presentation markup</a>, is intended to describe the visual appearance of a mathematical expression. As in TeX, expressions are formed from subexpressions that are either concatenated together horizontally (as in the example expression <i>x</i> + <i>y</i>/<i>z</i> which has the five symbols <i>x</i>, &quot;+&quot;, <i>y</i>, &quot;/&quot;, <i>z</i> in a row), vertically (as in the other way of writing the same expression using a vertical fraction instead of a slash), or sometimes in more complex grids. These concatenations of symbols can be nested within each other, and the MathML specification recommends that this nesting should follow the semantics of the expression (even in presentation markup), so the same expression written using presentation markup would look like<pre>&lt;mrow&gt;
+<br />
+  &lt;mi&gt; x &lt;/mi&gt;
+<br />
+  &lt;mo&gt; + &lt;/mo&gt;
+<br />
+  &lt;mrow&gt;
+<br />
+    &lt;mi&gt; y &lt;/mi&gt;
+<br />
+    &lt;mo&gt; / &lt;/mo&gt;
+<br />
+    &lt;mi&gt; z &lt;/mi&gt;
+<br />
+  &lt;mrow&gt;
+<br />
+&lt;/mrow&gt;</pre>(don&#x27;t ask me why this isn&#x27;t surrounded by a presentation tag; I copied this expression directly from the MathML manual).
+<br />
+
+<br />
+
+<br />
+<b>How to edit mathematics</b>
+<br />
+
+<br />
+Needless to say, none of this is how mathematicians actually write mathematics using LaTeX, the standard document formatting system for mathematical publications. Instead, the same expression would be written in LaTeX as<pre>$x+y/z$</pre>or<pre>\[ x+y/z \]</pre>Here, just as in the MathML examples, the spaces are unimportant. The $...$ or \[...\] delimiters mark off mathematics from other text. Clearly, LaTeX is much  more concise, and much more closely resembles the expression it describes. For those reasons it is also much easier to read and write by humans than either form of MathML. Fortunately, I don&#x27;t think anyone has proposed making Wikipedia editors type in MathML formulas directly. Instead, for actually writing formulas in Wikipedia articles or elsewhere, there are two plausible options:<ul><li>Keep using LaTeX-like textual markup, and somehow translate it into MathML, or</li><li>Force everyone to use a GUI (see above for the huge wars between editors and developers already caused by this idea, before we even get to the mathematical part) and tack on a GUI editor for mathematics expressions.</li></ul>Fortunately, so far, option (1) seems to be prevailing on Wikipedia.
+<br />
+
+<br />
+So, as we&#x27;ve seen, MathML isn&#x27;t a human-usable method of editing formulas. It&#x27;s just too cumbersome compared to the alternatives. Instead, the best option for editing formulas is the one we&#x27;ve already been using, a more streamlined LaTeX-based markup format. But having a streamlined editing language isn&#x27;t unique to mathematics. After all, the bulk of Wikipedia articles are written in a streamlined wiki-markup format, designed to be easier for humans to edit than pure html. For instance, in wiki-markup, paragraph breaks are indicated very simply by leaving a blank line between the paragraphs, just like LaTeX and quite unlike the way they are indicated in HTML. The Wikimedia engine takes care of translating this markup into proper HTML, and for the most part the translation goes very smoothly. Can&#x27;t we do the same for mathematics markup, editing LaTeX but then translating it into proper MathML? That way, we would have convenient markup for editors, clean semantics for the server-browser communication channel, and nice readable formulas for readers, right? This, or something like this, seems to be the fervent hope of the Wikimedia developers. This hope is everything they have been working towards, and it is the reason they have so badly neglected any other way of rendering mathematics. But does it work? Can it work?
+<br />
+
+<br />
+To answer these questions, it is necessary to distinguish again between content (semantic) MathML and presentation MathML. Unless we&#x27;re careful to distinguish these two languages, it&#x27;s too easy to argue for or against the use of MathML by picking and choosing the advantages or disadvantages of one or the other style of markup, considering content MathML when it suits the argument and switching to presentation MathML when that choice would make a stronger argument. So let&#x27;s treat them separately, beginning with content MathML.
+<br />
+
+<br />
+
+<br />
+<b>Why content MathML doesn&#x27;t work</b>
+<br />
+
+<br />
+To begin with, content MathML was never intended to be used for editing and then publishing text documents. That&#x27;s what presentation MathML is for. Content MathML is aimed more at applications that need the ability to manipulate and evaluate mathematical functions: for instance, in symbolic algebra systems, or in the cells of a spreadsheet. But content MathML does have some tempting attractions for document publishing nevertheless. Foremost among them, I think, is that by representing the meaning of a mathematical expression, rather than its appearance, it would allow expressions to be presented to users of Wikipedia in other ways. For instance, maybe a blind person could have the formula described to them audially rather than visually? Additionally, if a document describes the meaning of an expression, it might be possible to allow readers to plug in example values and see what it does to them.
+<br />
+
+<br />
+However, this mode of MathML comes with severe drawbacks that, I think, make it unusable for Wikipedia. One of these is that the problem of inferring meaning from a mathematical expression is too difficult and requires too much context. If I write the expression <i>xRy</i>, what do I mean? It could be that I wish to multiply three real numbers, symbolized by the three letters. It could be instead that the lower-case letters are vectors and the upper case letter is a matrix; again, I might want to multiply them, but the multiplication function for these objects is a different function than the one for real numbers. It could be that I am writing about context-free grammars, that the lower case letters are terminal symbols of a grammar and the upper case letter is a non-terminal symbol, and that writing them next to each other represents string concatenation. It could be that the upper case letter represents a binary relation, and the expression represents a truth value, true when <i>x</i> and <i>y</i> have the given relation to each other and false when it doesn&#x27;t. Or it could even be that (as used to be popular among some types of logician and for all I know could still be) this expression is using the Polish notation for function applications, that the first two letters are unary functions, and that the expression describes the application of these functions to the value represented by the third letter. Each of these possibilities would have a different expression in content MathML (and a different sequence of words as spoken rather than written mathematics), but the LaTeX markup just doesn&#x27;t include the information needed to tell which is intended. Unless we develop a true artificial intelligence that can read and understand the surrounding text, we can&#x27;t transform LaTeX into content MathML correctly, and we&#x27;ve already seen that the other options for directly editing content MathML are too cumbersome.
+<br />
+
+<br />
+Even if we could edit content MathML, we&#x27;d have a second problem: converting it back into a visual representation for the bulk of the Wikipedia users, the ones who read the articles and formulas. But this problem is also highly ambiguous. If an expression involves division, should it be presented with a slash or a vertical fraction? If it involves function application, should it be presented with the standard mathematical notation of a function name followed by a parenthesized argument list, with the Polish notation of the logicians, or maybe (for binary functions) as an infix operator? If it involves multiplication, should it be presented with a diagonal cross multiplication symbol, a centered dot multiplication symbol, or by just placing the arguments next to each other with no symbol between them? These are editorial decisions. They need to be left to the human editors of wikipedia, and represented in the markup that they edit. But they don&#x27;t translate into content MathML, because it&#x27;s the wrong kind of MathML for representing these distinctions.
+<br />
+
+<br />
+With no way to accurately translate  wiki markup to content MathML and no way to translate content MathML back into a visual formula in a way that respects the wishes of the editors, it is a non-solution.
+<br />
+
+<br />
+
+<br />
+<b>Why presentation MathML doesn&#x27;t work</b>
+<br />
+
+<br />
+That leaves presentation MathML, and there the difficulties are more about practicality than about theoretical ambiguities. Can LaTeX markup be translated to well formatted presentation MathML? Sure, that conversion already exists and works reasonably well for simple formulas. When editors get too tricky with their LaTeX markup (for instance <a href="http://tex.stackexchange.com/questions/174118/not-independent-sign-in-latex">using negative spacing to cobble together a &quot;not independent of&quot; slashed double-up-tack symbol from smaller pieces</a>) the quality of the presentation MathML will suffer, but it can presumably still represent the same combination of pieces and produce roughly the same visual appearance.
+<br />
+
+<br />
+Does presentation MathML produce a semantically clean server-browser communications channel? No, the semantics are in the other kind of MathML, but this issue is unimportant to anyone but the developers.
+<br />
+
+<br />
+Can presentation MathML be used to produce a spoken rather than visual presentation of a formula? No, because the meaning that would allow a good spoken translation has been lost, and using speech to describe the visual layout of a mathematical formula would be worse than just spelling out the original streamlined markup. Sight-impaired users would need to avoid the translation to presentation MathML, and instead just run the LaTeX markup directly through their text-to-speech systems, but that option already exists. So (unlike semantic markup) presentation markup is no help in accessibility, but (also unlike semantic markup) it can actually be made to work.
+<br />
+
+<br />
+Yes, but can presentation MathML be made to actually work well? Here&#x27;s where it falls down badly. It is neither necessary nor sufficient for good presentation of mathematical formulas.
+<br />
+
+<br />
+It is not necessary, even if one wants a clean server-browser communications channel without browser-side hacks, because all it&#x27;s doing is describing the relative position of visual marks on a screen, which is a function that HTML already provides. Systems such as MathJax and KaTeX have already shown that HTML alone is perfectly capable of describing the visual presentation of mathematical formulas.
+<br />
+
+<br />
+And it is not sufficient, because formatting complex mathematical expressions is just too much of a niche market compared to formatting HTML text and SVG graphics that it&#x27;s not worth the time of the big browser developers to put much effort into doing it well. Some major browsers do a credible job of formatting presentation MathML. Some claim to be able to format presentation MathML but do it very badly. And some have never supported it or (like Chrome, the one I use most often) have retracted their support for MathML. I don&#x27;t see this situation as likely to change, because it&#x27;s not just a matter of programming it once and forgetting about it; any large chunk of code in a browser requires continued development, development costs money, and the cost-benefit ratio for MathML to the browser developers is too low to make its continued development worthwhile.
+<br />
+
+<br />
+So, when you format mathematics using presentation MathML, you can&#x27;t be guaranteed that your readers can see good results, and you can&#x27;t be guaranteed that they will see any results at all. Instead, you have to detect the failure to format MathML and have a fallback formating method that can be used whenever MathML doesn&#x27;t work. But that fallback is actually the common denominator for your users, the one that limits the quality of your presentation to them. For Wikipedia, so far, that fallback has been bitmap images, with all their problems. The plan for the foreseeable future is to eventually change it to be SVG images, with almost all of the same problems: they scale better than bitmaps, and require less browser-server communication than bitmaps, but they have all of the other problems that bitmaps have already revealed. Any developer effort put into improving MathML support is developer time not spent on making the fallback work, nor on choosing a better fallback.
+<br />
+
+<br />
+
+<br />
+<b>Blame MathML</b>
+<br />
+
+<br />
+It would be one thing if we just had ugly but readable formulas. But because Wikipedia&#x27;s built-in mathematical formatting has been so bad for so long, with so little hope of improvement, Wikipedia editors have been drawn to several alternative solutions for Wikipedia, that integrate mathematical formulas better into the surrounding text at the expense of formatting them worse as mathematics. Some articles use Wikipedia&#x27;s native formatting capabilities (such as changes to slanted rather than upright fonts) together with HTML coding (for subscripts and superscripts); others use more complicated templates that change fonts to make mathematical formulas look like LaTeX math. These have their own problems; the wiki-formatting solution uses sans-serif fonts, not a good idea for math (where it is important to be able to distinguish upright lower-case L&#x27;s, the number one, and vertical bars from each other), the font-switching used by the templates doesn&#x27;t work on all platforms (notably, not on the Android Wikipedia app), and neither method can handle complex formulas. So most articles that use these workarounds also use Wikipedia&#x27;s math, leading to different appearances for the same variable names. And they have no accessibility features. Despite all that, most editors consider these methods to be better than the alternative, Wikipedia&#x27;s actual math formatting capabilities. Even if Wikipedia eventually does switch to better math formatting, it will take a long time and a lot of editing work to get the articles to catch up.
+<br />
+
+<br />
+So that&#x27;s where we are with Wikipedia, mathematics, and MathML. Content MathML can&#x27;t work, but has distracted the developers with the false hope of clean semantic markup and accessibility. Presentation MathML can&#x27;t be edited, doesn&#x27;t have clean semantics, isn&#x27;t accessible, and doesn&#x27;t actually work for most users. In the meantime everyone is stuck seeing image files for formulas, despite all their drawbacks and despite the existence of better solutions. The developers have put in very little effort even to reduce the more easily-fixed of the problems with image files, nor to find a better solution, because they have their sights fixed on MathML and won&#x27;t work on anything else. Logged-in editors are able to set a preference for Wikipedia to translate math into MathML for their own browsing, allowing editors who use the right browsers to get formatting that&#x27;s as good as, but no better than, MathJax, but this doesn&#x27;t help the rest of us and it doesn&#x27;t help the people who just want to read Wikipedia. Editors have lost hope of ever having good mathematics formatting and have switched to half-baked workarounds with their own problems. In effect, by distracting the developers and preventing them from improving the default mathematics formatting on Wikipedia, the existence of MathML has made Wikipedia both harder to edit (because editors need to deal with all the workarounds, whose markup is much worse than LaTeX) and harder to read (compared with other mathematics sites now using MathJax). That seems a big price to pay for very little benefit.
+<br />
+
+<br />
+So, by all means, edit Wikipedia! Contribute your knowledge to the broader world! Just don&#x27;t expect the mathematical formulas to be as pretty as you might expect anywhere else on the web. And blame MathML for the problem, rather than thinking of it as any kind of solution.
+<br />
+
+<br />
+<b>( <a href="https://plus.google.com/u/0/100003628603413742554/posts/XEfbfT6C1M6">See also more discussion of this post on Google+</a> )</b>
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: <br />
+<b>2015-08-05T09:20:09Z</b><br />
+KaTeX doesn&#x27;t run on the server, it runs synchronously in the browser to avoid the reflow problems of MathJax.
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>None</b>: <br />
+<b>2015-08-05T15:20:51Z</b><br />
+KaTeX can run both on the server and client. Also, simply being synchronous does not avoid reflows.
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: Peter Krautzberger, MathJax<br />
+<b>2015-08-05T13:49:38Z</b><br />
+Hi David,
+
+Solid rant. As I wrote on phabricator, it&#x27;s a shame to see the volunteer developers and the wikipedia editors fight each other while, imho, the WMF beare much of the responsibility of the situation. I understand the frustration on both sides and neither side has done a very good job at communicating. (Mostly mathematicians involved on both sides, what should you expect ;-) ) It seems to me like a F2F of volunteer devs and editors could resolve most of this.
+
+I do think there are a lot of misconceptions about MathML, MathJax, and math accessibility in your piece. Blaming the messenger after she was put on a wooden horse, blindfolded, spun around, and pointed in the wrong direction seems unfair. Not sure in how far you&#x27;re interested in that though; it&#x27;s a messy area of web technology.
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>ext_3253890</b>: <br />
+<b>2015-08-05T17:39:09Z</b><br />
+MathML should not be entered directly by authors in Wikipedia or anywhere else. That is not what it was intended for. It is a computer representation, not an authoring language like LaTeX. 
+
+I do think document authoring systems should allow MathML to be pasted (dragged-and-dropped, etc.) in order to allow authors to use direct manipulation editors (eg, MathType, my company&#x27;s product) to create equations. It would also allow conversion from equations in other formats such Microsoft Word&#x27;s OOML format. Computer Algebra Systems (eg, Mathematica) also can product MathML. 
+
+Many assume that MathML has been a failure due to its lack of direct browser support. However, MathML is the standard for professional publishing workflows and is widely implemented. Many also assume that most math is authored in LaTeX. However, if you ask professional publishers they say that 85% or more of documents that contain math are authored using Microsoft Word. If you ask high school math teachers (and many college students and faculty) what they use to type math, they will say Microsoft Word, not LaTeX. Still, I have nothing against LaTeX. It does a wonderful job.
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: <br />
+<b>2015-08-06T12:43:26Z</b><br />
+Interesting piece. I was aware that MathML existed, but didn&#x27;t know about the two variants, or how much the non-existence of proper browser support has held back mathematics rendering on Wikipedia.
+
+One minor quibble: you mix up the inline and display math notation: &#x27;\(&#x27; and &#x27;\)&#x27; are for inline, &#x27;\[&#x27; and &#x27;\]&#x27; for display.
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2015-08-06T13:47:25Z</b><br />
+Oops, thanks for catching that — I&#x27;ve fixed it.
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>ext_3257582</b>: Math accessibility is built on MathML<br />
+<b>2015-08-08T19:35:20Z</b><br />
+You are correct that math accessibility given semantic information would be easier than dealing with presentation math, but as you point out, authors for the most the part aren&#x27;t willing to specify that level of detail. However, they don&#x27;t really need to as most math can be read ambiguously just as it is written ambiguously. For example, &quot;+&quot; for integers and for modular addition and for matrices is still read as plus and the listener disambiguates that (if they care) just as the sighted person disambiguates when they see it (if they care). There are definitely problem areas, particularly around function application versus multiplication. E.g.,  h(x+1): &#x27;h&#x27; is commonly used as a function name, but it could represent height and it could be multiplication. Is it &quot;h of x plus 1&quot;, &quot;h times the quantity x plus 1&quot; or should it simply be read as &quot;h open paren x plus 1 close paren&quot;? MathML has a way to disambiguate these cases (the invisible characters U+2061 and U+2062), but few authors bother, so assistive technology does the best it can.
+
+Despite these problems, assistive technologies exist that speak the math. Solutions include Safari+VoiceOver, Chrome+ChomeVox, JAWS+(IE, Firefox), and NVDA+MathPlayer+(FireFox, IE, Word). [Full disclosure, MathPlayer is a product I&#x27;ve worked on]. All of these work with Wikipedia when someone logs in and says to use MathML. That&#x27;s tens of thousands of pages with math in them that are now accessible (modulo the problems you mention with authors avoiding using Wikipedia&#x27;s TeX input methods). The same is true for Khan Academy&#x27;s pages that use MathML, and for the other sites on the web that use MathML either directly or through MathJax&#x27;s translation of TeX to MathML.
+
+Almost every mathematical piece of software imports and exports MathML. That means that I can take some math on the web represented by MathML and paste it into the document I&#x27;m editing or into computational software for further manipulation. It also means it can be searched (still mostly research projects). None of that happens with images or HTML+CSS positioning hacks. As Peter said, MathML is just the messenger. It&#x27;s wrong to blame it because others such as some browser implementers choose to ignore the message.
+</div>
+

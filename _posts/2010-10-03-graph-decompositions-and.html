@@ -1,0 +1,31 @@
+---
+layout: post
+title:  'Graph decompositions and a counterexample to a meta-conjecture'
+date:   2010-10-03 22:58:00
+tags:   [graph theory]
+---
+Carsten Thomassen gave an interesting invited lecture at Graph Drawing, on graph decompositions: partitions of the edges of graphs into subgraphs of a fixed type. For instance, a Schnyder labeling of a maximal planar graph, important in graph drawing for its applications in embedding planar graphs into grids, can be interpreted as a partition of the graph into one triangle (the outer face) and <i>n</i> − 3 claws (the three outward edges from each vertex). A <a href="http://en.wikipedia.org/wiki/Steiner_triple_system">Steiner triple system</a> is just a decomposition of the complete graph into triangles; such a decomposition exists whenever the graph satisfies the obvious necessary conditions that the vertices have even degree and the number of edges be divisible by three. Every graph with an even number of edges can be decomposed into length-two paths: equivalently, every line graph and more generally every <a href="http://en.wikipedia.org/wiki/Claw-free_graph">claw-free graph</a> has a perfect matching.
+<br />
+
+<br />
+A decomposition into claws is essentially the same thing as an orientation of the edges of the graph so that every vertex has an outdegree that&#x27;s divisible by three: in one direction, just orient each claw outwards from its center, and in the other direction, partition the outgoing edges at each vertex into claws. With Barat, Thomassen proved that K<sub>4</sub> is the only graph of a triangulated surface that does not have a decomposition into claws. He also showed that there is a constant k such that every k-edge-connected graph (satisfying the obvious necessary condition that the number of edges be divisible by three) has a decomposition into claws. More strongly, if Tutte&#x27;s conjecture that every 4-edge-connected graph has a <a href="http://en.wikipedia.org/wiki/Nowhere-zero_flow">nowhere zero 3-flow</a> (equivalently an orientation such that indegree and outdegree are congruent mod 3 at every vertex) is true, then k = 10 would suffice. But the following graph shows that k = 4 is not good enough: each of the three K<sub>4</sub> subgraphs (the three crossed circles in the drawing) can only be covered by having three claw centers within the K<sub>4</sub>, but the resulting nine centers would be too many for the total number of edges in the graph.
+<br />
+
+<br />
+<div align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/4conn-no-claw-decomp.png" /></div>
+<br />
+
+<br />
+Thomassen made a meta-conjecture, that Tutte has never made a wrong conjecture. But unfortunately there&#x27;s a counterexample. In a 1971 paper (&quot;On the 2-factors of bicubic graphs&quot;, <a href="http://dx.doi.org/10.1016/0012-365X(71)90027-6">Discrete Mathematics 1: 203–208</a>) Tutte conjectured that every 3-connected bipartite cubic graph is Hamiltonian and more strongly that the Hamiltonian cycles form a cycle basis. But it&#x27;s not true: the <a href="http://en.wikipedia.org/wiki/Horton_graph">Horton graph</a> is 3-connected, bipartite, cubic, and non-Hamiltonian.
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: counterexample - maybe not<br />
+<b>2010-10-22T08:14:11Z</b><br />
+As Carsten Thomassen points out, Tutte writes that &quot;it is tempting to conjecture&quot; (see final page) - an indication that he was doubtful and did not feel comfortable enough to actually do conjecture.  So I don&#x27;t think this qualifies as a counterexample to the meta-conjecture. 
+
+BTW, the keynote is now available from the <a href="http://www.graphdrawing.org/gd2010/invited.html">GD 2010 Web site</a>.
+
+Ulrik Brandes
+</div>
+

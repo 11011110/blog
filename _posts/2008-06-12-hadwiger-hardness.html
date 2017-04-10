@@ -1,0 +1,64 @@
+---
+layout: post
+title:  'Hadwiger hardness'
+date:   2008-06-12 00:05:00
+tags:   [complexity theory, graph theory, papers]
+---
+<p>The <i>Hadwiger number</i> of a graph G is the maximum number of vertices in a clique minor of G, or the maximum number of disjoint connected subgraphs of G that we can find that are all mutually adjacent to each other. It will not be surprising to learn that finding the Hadwiger number (or more precisely testing whether it is large) is NP-complete.</p>
+
+<p>But what is the appropriate reference to cite for this result? I looked for it recently when improving the Wikipedia article on the related <a href="http://en.wikipedia.org/wiki/Hadwiger_conjecture_%28graph_theory%29">Hadwiger conjecture</a> (that Hadwiger number is greater than or equal to chromatic number), but came up short. Suggestively, a paper by Alon, Lingas, and Wahlen on approximating the Hadwiger number didn&#x27;t explicitly state its NP-completeness. Could this really have been unknown?</p>
+
+In case anyone doesn&#x27;t believe the problem is really NP-complete, here is a proof of the standard type.
+
+<p><b>Theorem:</b> It is NP-complete, given a graph G and a number h, to determine whether G has Hadwiger number at least h.</p>
+
+<p><i>Proof:</i>
+By reduction from <a href="http://en.wikipedia.org/wiki/Domatic_number">domatic number</a>.</p>
+
+<p>In the domatic number problem, we are given a graph G and a number d, and asked to determine whether the domatic number (that is, the maximum number of disjoint dominating sets in G) is at least d. We may assume without loss of generality that no vertex of G is adjacent to all others, for if v is such a vertex we may simplify the problem by deleting v and subtracting one from d. As we show, the instance (G,d) may be translated in polynomial time to an equivalent instance (G&#x27;,h) of the Hadwiger number problem.</p>
+
+<p>So, given an n-vertex graph G in which no vertex is adjacent to all others, and a number d, construct G&#x27; in three layers:</p>
+<ul>
+<li>The top layer is a d-vertex clique with vertices t<sub>i</sub>.</li>
+<li>The middle layer is an n-vertex independent set with vertices m<sub>i</sub>.</li>
+<li>The bottom layer is an n(n+1)-vertex clique with vertices b<sub>i,j</sub>.</li>
+<li>All pairs of top and middle vertices are connected by edges.</li>
+<li>Middle vertex m<sub>i</sub> and bottom vertex b<sub>j,k</sub> are connected by an edge if i=j or G has an edge v<sub>i</sub>v<sub>j</sub>. That is, if v<sub>i</sub> dominates v<sub>j</sub>.</li>
+</ul>
+<p>Let h = n(n+1)+d.</p>
+
+<p>If G has domatic number at least d, that is, if there exist d disjoint dominating sets S<sub>i</sub>, then G&#x27; has Hadwiger number at least n(n+1)+d. For we can form a family of mutually-adjacent connected subgraphs, where each bottom vertex forms by itself one of the subgraphs and each top vertex together with a set S<sub>i</sub> forms a subgraph.</p>
+
+<p>Conversely, suppose that G&#x27; has Hadwiger number at least n(n+1)+d; that is, that it has this many disjoint mutually-adjacent connected subgraphs. Each of these connected subgraphs must include a top or bottom vertex, because no two middle vertices are connected directly to each other and any single middle vertex has too few outgoing edges to be adjacent to all the other subgraphs. But because the number of subgraphs is equal to the total number of top and bottom vertices, each subgraph must have exactly one top or bottom vertex, together with possibly some middle vertices. For each vertex v<sub>i</sub> of G, some representative b<sub>i,j</sub> of v among the bottom vertices must form a single-vertex connected subgraph, because there are only n middle vertices to be shared among the n+1 bottom representatives of v<sub>i</sub> . The connected subgraph containing any top vertex t<sub>k</sub> must then include a middle vertex m<sub>l</sub> such that v<sub>l</sub> dominates v<sub>i</sub>, in order to form an adjacency between the subgraphs containing t<sub>k</sub> and  b<sub>i,j</sub>. Thus, for each top vertex t<sub>k</sub>, the connected subgraph that includes t<sub>k</sub> must include a set of middle vertices that forms a dominating set of G, and these dominating sets must be disjoint as they form a partition of the middle vertices. Therefore, the sets of middle vertices connected to each top vertex form a family of d disjoint dominating sets.</p>
+
+Thus, (G,d) is a positive instance of the domatic number problem if and only if (G&#x27;,h) is a positive instance of the Hadwiger number problem. This reduction (together with the easy observation that the Hadwiger number problem is in NP) completes the proof of NP-completeness.
+
+<p><b>Update, July 1:</b> I&#x27;ve asked around some more, and still not found a reference for this fact. So I made one myself: <a href="http://arxiv.org/abs/0807.0007">arXiv:0807.0007</a>.</p>
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: a tangental question<br />
+<b>2008-06-12T23:43:25Z</b><br />
+I am trying to see the difference between Hadwiger&#x27;s conjecture and Hajos&#x27; conjecture mentioned in the wikipedia page you linked.  Is there a trivial example of a graph G that is contactable to Kn but does not have a subdivision of Kn as a subgraph?
+
+
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: Re: a tangental question<br />
+<b>2008-06-12T23:53:26Z</b><br />
+The graph below has a K5 minor (just contract each of the small squares) but no K5 subdivision (there is no vertex with degree four).
+
+<div align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/Hadwiger-vs-Hajos.png" /></div>
+</div>
+<div style="margin-left: 6em; padding-top: 1em;">
+<b>None</b>: Re: a tangental question<br />
+<b>2008-06-13T00:07:02Z</b><br />
+Wow.  That was quick!  Thank you very much.
+
+</div>
+<div style="margin-left: 6em; padding-top: 1em;">
+<b>None</b>: Re: a tangental question<br />
+<b>2008-06-13T04:25:27Z</b><br />
+What&#x27;s interesting about this is that it while it does not have a K5 subdivision, it must have a K3,3 subdivision because it is not planar.  
+</div>
+

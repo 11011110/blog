@@ -1,0 +1,39 @@
+---
+layout: post
+title:  'Parametric closures'
+date:   2015-04-16 18:08:00
+tags:   [antimatroids, algorithms, papers]
+---
+My latest arXiv preprint, <a href="http://arxiv.org/abs/1504.04073">The Parametric Closure Problem</a> (arXiv:1504.04073, to appear at WADS) concerns an old optimization problem that can be used, among other applications, in the planning process for open-pit mining.
+<br />
+
+<br />
+Suppose you have the mining rights to a three-dimensional patch of earth and rock, in which the ore is of a type and depth that make it appropriate to remove the ore by digging down to it from above rather than by tunneling. You can make a three-dimensional model of your mining area, in which different three-dimensional blocks of material might represent ore of different values or worthless overburden (the stuff on top of the ore that you have to remove to get to the ore). Each block has its own value: the profit that can be extracted from its ore minus the cost of digging it out and processing it. Additionally, each block has some blocks above it (maybe staggered in a three-dimensional brick-wall pattern) that have to be removed first before you can get to it. Some blocks are worth digging for; others are buried so deeply under other worthless material that it would cost more to dig them out than you would get in profit from them. How should you go about deciding which blocks to excavate and which to leave in place?
+<br />
+
+<br />
+This can be modeled mathematically by the <a href="https://en.wikipedia.org/wiki/Closure_problem">closure problem</a>, in which you have as input a partially ordered set (the blocks of the mine, ordered by which ones have to be excavated first before you can get to which other ones) with weights on each element (the net profit of excavating each block). The goal is to find a downward-closed subset of the partial order (a set of blocks such that, whenever a block is in the set, so is all of its overburden) with maximum total weight. Alternatively, instead of a partial order, you can think about a directed acyclic graph, in which you have to find a set of vertices with no outgoing edges; the problem is essentially the same. It has long been known that this can be solved in polynomial time using a transformation to the minimum cut problem.
+<br />
+
+<br />
+Ok, but that assumes that the price of the material you&#x27;re extracting (gold, say) is fixed. What happens as the price of gold varies? If gold is more expensive, it will be worthwhile to dig deeper for it; if it is cheap enough, you might even prefer to shut down the whole mine. How many different mining plans do you need for different prices of gold, and how can you compute them all? This is an example of a parametric optimization problem, one in which the weight of each element depends continuously on a parameter rather than being a fixed number.
+<br />
+
+<br />
+Alternatively, what if you want to optimize a quantity that isn&#x27;t just a sum of element weights? Suppose, for instance, that it takes a certain up-front cost to extract a block of ore, but that you only get the value of the gold in the ore later. How can you choose a mining plan that maximizes your return-on-investment, the ratio between the profit you expect and the cost you have to pay now? This can also be modeled as a parametric problem, where the weight of a block has the form C × profit − cost for an unknown parameter C. If you can find all the different mining plans that would be obtained by different choices of C, you can then search through them to choose the plan with the optimal return-on-investment, and this turns out to be optimal.
+<br />
+
+<br />
+My paper defines the parametric (and bicriterion) closure problems, but I was only able to find polynomial-time solutions (and polynomial bounds on the number of different solutions to be found) for some special cases of partial orders, including series-parallel partial orders, semiorders, and orders of bounded width. However, the partial orders arising in the mining problem are unlikely to be any of these, so a lot more remains to be done. In particular I&#x27;d like to know whether there can exist a partial order whose parametric closure problem has exponentially many solutions, or whether they all have only a polynomial number of solutions. (Anything in between would also be interesting.)
+<br />
+
+<br />
+Incidentally, it&#x27;s tempting to try to generalize closures of partial orders to feasible sets of antimatroids, and ask for an algorithm that can find the maximum weight feasible set. Unfortunately, this antimatroid closure problem is NP-complete. Consider, for instance, an antimatroid defined from a family of sets <i>S<sub>i</sub></i> in which there is one antimatroid element <i>x<sub>i</sub></i> corresponding to each set <i>S<sub>i</sub></i>, another antimatroid element <i>y<sub>j</sub></i> corresponding to each element of a set, and the feasible sets consist of any subset of the <i>x<sub>i</sub></i>&#x27;s together with any of the <i>y<sub>j</sub></i>&#x27;s that are covered by sets among the chosen <i>x<sub>i</sub></i>&#x27;s. If we give the <i>x<sub>i</sub></i>&#x27;s small equal negative weights and the <i>y<sub>j</sub></i>&#x27;s big equal positive weights, then the optimal feasible set is given by the optimal solution to a set cover problem. Although this complexity result doesn&#x27;t prove anything about the number of solutions to the corresponding parametric problem, it makes me think that the parametric antimatroid problem is likely to be exponential.
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>ext_3262038</b>: <br />
+<b></b><br />
+
+</div>
+

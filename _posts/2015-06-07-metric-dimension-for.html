@@ -1,0 +1,19 @@
+---
+layout: post
+title:  'Metric dimension for subdivided graphs'
+date:   2015-06-07 18:11:00
+tags:   [graph algorithms, papers]
+---
+I have another new preprint out this evening: &quot;<a href="http://arxiv.org/abs/1506.01749">Metric Dimension Parameterized by Max Leaf Number</a>&quot;, arXiv:1506.01749. The <a href="https://en.wikipedia.org/wiki/Metric_dimension_(graph_theory)#Properties">metric dimension</a> of a graph is the minimum number of vertices you need to choose as landmarks so that all other vertices are uniquely determined by their distances to the landmarks.
+<br />
+
+<br />
+The result in the new paper is small: it says that if you form big graphs from smaller ones by subdividing their edges into paths, you can solve the problem in a time that depends exponentially on the size of the small graph, but only linearly on the number of added subdivision vertices. So the result seems to apply to only a very restricted class of graphs, but as I argue in the paper there are some natural real-world graphs that have the structure of subdivided smaller graphs: the graphs of public transportation systems tend to have this form, because they consist of long lines or tracks with many stops on them. For instance, here&#x27;s a graph of the Toronto subway system, from Paulshannon <a href="https://commons.wikimedia.org/wiki/File:TTCsubwayRTmap-2007.svg">on Wikimedia commons</a>:
+<br />
+
+<br />
+<div align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/TTCsubwayRTmap-2007.svg.png" /></div>
+<br />
+
+<br />
+It&#x27;s also known how to compute the metric dimension efficiently on trees. So putting these two results together, it seems at least plausible that there should be an efficient algorithm on the graphs formed by subdividing smaller graphs and gluing trees onto them. That is, I would like a fixed-parameter tractable algorithm parameterized by the <a href="https://en.wikipedia.org/wiki/Circuit_rank">cyclomatic number</a> (or slightly better the almost-tree number), rather than by the max leaf number. But despite some effort I wasn&#x27;t able to get that.

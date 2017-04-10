@@ -1,0 +1,81 @@
+---
+layout: post
+title:  'Linear probing made easy'
+date:   2011-10-13 15:47:00
+tags:   [data structures]
+---
+<p>Mike Goodrich and I have both been teaching <a href="http://en.wikipedia.org/wiki/Linear_probing">linear probing</a>, he in his undergraduate algorithms class and I in my graduate data structures class. Comparing notes, we think we have a way of analyzing it that is considerably simpler than ways I&#x27;ve seen it analyzed before (e.g. Mihai Patrascu&#x27;s nice invited talk at WADS 2011) and that avoids using Chernoff bounds (a very useful tool, and the way I did it in my lecture, but too advanced for this early in Mike&#x27;s class).</p>
+
+<p>We assume we have <i>n</i> items placed into a hash table of size <i>N</i> = <i>2n</i>, for a load factor of 1/2. The time to perform an operation, say a query or an insertion, can be charged to the run of consecutive nonempty table positions that the operation lands in, and with this charging scheme the total time charged to a run is proportional to the square its length. So, if <i>p<sub>k</sub></i> denotes the probability that a particular contiguous sequence of <i>k</i> table positions is a maximal run of nonempty positions, the total time is</p>
+<div align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/linprob-1.gif" alt="$\frac{1}{2n}\sum_{i=1}^{2n}\sum_{k=1}^{n} p_k O(k^2).$" /></div>
+<p>The initial 1/2n (averaging over the possible places that the operation could begin its probe sequence) and the first sum from 1 to 2n (summing over the possible places that a run could start) cancel each other, leaving only the second sum. As long as we can show that <i>p<sub>k</sub></i> is exponentially small in <i>k</i>, this sum will converge to O(1), even if we replace the upper bound <i>n</i> of the second summation by infinity.</p>
+
+<p>The probability <i>p<sub>k</sub></i> is at most the probability that exactly <i>k</i> items land within the given interval, which is exactly</p>
+<div align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/linprob-2.gif" alt="$\binom{n}{k}\left(\frac{k}{2n}\right)^k \left(1-\frac{k}{2n}\right)^{n-k}.$" /></div>
+
+<p>Using <a href="http://en.wikipedia.org/wiki/Stirling's_approximation">Stirling&#x27;s approximation</a> to replace the binomial coefficient, and ignoring the square root terms from Stirling&#x27;s approximation (which anyway always lead to a factor less than one), this becomes</p>
+<div align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/linprob-3.gif" alt="$$\frac{n^n}{(n-k)^{n-k}k^k}\left(\frac{k}{2n}\right)^k\left(1-\frac{k}{2n}\right)^{n-k}=2^{-k}\left(1+\frac{k/2}{n-k}\right)^{n-k}\le\left(\frac{\sqrt e}{2}\right)^k.$" /></div>
+<p>And we&#x27;re done! We have a probability that is exponentially shrinking as a function of <i>k</i>, just as we need. The magic simplification in the middle of this last equation is just splitting the <i>n<sup>n</sup></i> term into two terms with exponents <i>n</i> − <i>k</i> and <i>k</i>, and then grouping terms with the same exponent together with each other.</p>
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>snoeyink</b>: nitpick<br />
+<b>2011-10-14T03:04:57Z</b><br />
+If you are going to assume that k is maximal, then do you need to include gaps on each end in bounding &quot;The probability pk is at most...?&quot;  If you don&#x27;t on the top end, it seems you&#x27;d have to worry about other elements probing in.
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: Re: nitpick<br />
+<b>2011-10-14T03:10:23Z</b><br />
+I think that can be swept under the &quot;at most&quot; in the sentence &quot;The probability <i>p<sub>k</sub></i> is at most...&quot;
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>ext_834481</b>: <br />
+<b>2011-10-15T16:40:45Z</b><br />
+Nice.  That&#x27;s really one from the book.
+
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>ext_924205</b>: You don&#x27;t need the Stirling approximation<br />
+<b>2011-12-10T13:59:44Z</b><br />
+Just use (n choose k) &lt;= n^n / (k^k * (n-k)*(n-k))
+
+To see this, look at 
+
+sum_{i=0}^n (n choose i) k^i (n-k)^(n-i) = (k + (n-k))^n = n^n
+
+So the term with i = k must be &lt;= n^n
+
+I&#x27;m planning to show this analysis of linear probing my sophomore data structures course, and I didn&#x27;t want to introduce the Stirling formula...
+
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: Re: You don&#x27;t need the Stirling approximation
+<b>2011-12-10T16:43:42Z</b>
+Thanks! So you did find a good argument for this bound. I saw your tweet about it yesterday...
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>md_tui</b>: all constant load factors &lt; 1 work
+<b>2011-12-11T22:09:05Z</b>
+Neat argument. 
+
+It has an easy generalizion to all fixed load factors alpha &lt; 1, in place of 0.5. 
+
+---
+
+If the table size is m and the set size is n, and n=alpha*m,
+one can do the same calculation and gets p_k &lt; (alpha*exp(1-alpha))^k.
+
+Now alpha*exp(1-alpha)&lt;1 for alpha &lt;1 (just plug in alpha=1 to get 1,
+and differentiate to see the function is increasing).
+
+Conclusion: Linear probing has constant expected time for each load factor alpha &lt; 1. 
+
+
+
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: Re: all constant load factors &lt; 1 work
+<b>2011-12-11T22:21:46Z</b>
+Sure, but I thought it would help keep the argument simpler for pedagogical reasons to use a fixed alpha. Also, for alpha close to one, linear probing degenerates more badly than double probing, but to me that&#x27;s less of an argument to use a different algorithm and more of an argument for keeping alpha well away from one.
+</div>
+

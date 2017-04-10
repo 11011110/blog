@@ -1,0 +1,19 @@
+---
+layout: post
+title:  'Big grids in outerplanar strict confluent graphs'
+date:   2014-07-23 17:50:00
+tags:   [confluence, graph drawing]
+---
+I was wondering whether the <a href="http://arxiv.org/abs/1308.6824">outerplanar strict confluent drawings</a> I studied in a Graph Drawing paper last year had underlying diagrams whose <a href="https://en.wikipedia.org/wiki/Treewidth">treewidth</a> is bounded, similarly to the treewidth bound for the usual <a href="https://en.wikipedia.org/wiki/Outerplanar_graph">outerplanar graphs</a>. The confluent graphs themselves can&#x27;t have low treewidth, because they include large <a href="https://en.wikipedia.org/wiki/Complete_bipartite_graph">complete bipartite graphs</a>, but I was hoping that a treewidth bound for the diagram could be used to prove that the graphs themselves have low <a href="https://en.wikipedia.org/wiki/Clique-width">clique-width</a>. Sadly, it turns out not to be true.
+<br />
+
+<br />
+<div align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/hyperbolic-outerconfluent.png" /></div>
+<br />
+
+<br />
+The drawing above, shown with two levels of cells surrounding the central pentagon, can be extended to any number of levels. Besides the three shapes of faces shown here (with three, four, and five sharp points) there&#x27;s one more possible shape, with three sharp points that are not consecutive, that would take a couple more levels to complete — the five points on the boundary with three incoming edges would each form the base of one of these shapes — but that&#x27;s the only other thing that can happen. The drawing is based on the <a href="https://en.wikipedia.org/wiki/Order-5_pentagonal_tiling">order-5 pentagonal tiling</a> of the hyperbolic plane, and consists of five-sided regions with five regions meeting at each confluent junction. By the theory from my GD paper, it&#x27;s not possible to find a different drawing with the same vertices in the same order in which some junctions have been merged, reducing the treewidth of the drawing. And because it can be extended to arbitrarily large patches of the pentagonal tiling (analogous to arbitrarily large grids in the Euclidean plane) it has unbounded treewidth.
+<br />
+
+<br />
+It doesn&#x27;t seem to work to do this directly with the square grid because some confluent junctions will have three connections in one direction and one in the other, allowing them to be merged with a neighboring junction. Using a hyperbolic tiling pattern allows all junctions to have at least two connections in each direction.

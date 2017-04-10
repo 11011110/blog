@@ -1,0 +1,22 @@
+---
+layout: post
+title:  'A planar graph with nonconfluent complement'
+date:   2005-10-03 15:14:00
+tags:   [confluence, graph drawing]
+---
+<p>I think most planar graphs, in some sense, should have complements with no <a href="http://arxiv.org/abs/cs.CG/0212046">confluent drawing</a>, but it&#x27;s been difficult to prove.  Finally, I think I&#x27;ve found an example: the gyroelongated square dipyramid, shown below in two drawings. The left is a rough sketch of its form as a polyhedron with equilateral-triangle faces, while the right is a planar drawing.</p>
+
+
+<p align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/confluent-complement/gesdp.png" /></p>
+
+<p>The proof that its complement is nonconfluent resembles that for the hypercube in <a href="http://arxiv.org/abs/cs.CG/0212046">our original paper on confluence</a>.
+The eight degree-five vertices of the graph form a square antiprism, whose complement is a Möbius ladder with four rungs.
+This ladder has 4-cycles but no K<sub>2,3</sub> subgraph, so (as we argued for the cube in our paper) the only possible drawings are formed by replacing some of its 4-cycles by confluent tracks.
+We must make an odd number of replacements in order to have a planar drawing, so essentially there are only two drawings: one with a single confluent track and one with three confluent tracks.</p>
+
+<p align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/confluent-complement/moblad4.png" /></p>
+
+<p>The remaining two vertices of the complement must connect to each other and to a certain subset of four vertices of the ladder, and in neither case is it possible to add tracks to the drawing that make those connections.</p>
+
+<p>The regular icosahedron (aka gyroelongated pentagonal dipyramid) should make an even more symmetric example of a planar graph with nonconfluent complement, but I don&#x27;t know how to prove nonconfluence in this case.</p>
+

@@ -1,0 +1,19 @@
+---
+layout: post
+title:  'Recognition algorithms for subfamilies of threshold graphs'
+date:   2012-07-18 08:26:00
+tags:   [graph algorithms]
+---
+Here&#x27;s one possible answer to <a href="http://11011110.livejournal.com/251048.html">Sergio&#x27;s question</a>, about nontrivial families of graphs within which testing 1-planarity is polynomial: it&#x27;s possible to test whether a <a href="http://en.wikipedia.org/wiki/Threshold_graph">threshold graph</a> is 1-planar in linear time.
+<br />
+
+<br />
+But maybe this is cheating, because it has very little to do with 1-planarity. The more general result is: let <i>F</i> be any family of graphs closed under induced subgraphs. Then it&#x27;s possible to test whether a threshold graph belongs to <i>F</i> in linear time.
+<br />
+
+<br />
+This follows from two known facts. First, any <a href="http://en.wikipedia.org/wiki/Formal_language">formal language</a> (over a finite alphabet) that is closed under subsequence operations can be characterized by a finite set of forbidden subsequences (e.g. see <a href="http://books.google.com/books?id=rSEFeV98ZIMC&pg=PA1160">Gasarch&#x27;s survey on recursive combinatorics</a>, in the sentence about &quot;another interesting example&quot;). Therefore, any such language is <a href="http://en.wikipedia.org/wiki/Regular_language">regular</a>. And secondly, every <i>n</i>-vertex threshold graph may be represented by an (<i>n</i> − 1)-bit binary string, where the 0&#x27;s represent the operation of adding an isolated vertex and the 1&#x27;s represent the operation of adding a vertex connected to all the others; in this representation, induced subgraphs correspond to subsequences and vice versa. So if <i>F</i> is a family of graphs closed under induced subgraphs, then the set of binary strings corresponding to threshold graphs in <i>F</i> will be closed under subsequences and therefore will be a regular language.
+<br />
+
+<br />
+So all we need to do to test whether a threshold graph <i>G</i> is 1-planar is to convert <i>G</i> to its binary sequence and then test whether that sequence belongs to a certain regular language derived from the finite set of minimally non-1-planar threshold graphs (whatever they happen to be).

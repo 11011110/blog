@@ -1,0 +1,131 @@
+---
+layout: post
+title:  'Stack-based graph traversal ≠ depth first search'
+date:   2013-12-17 16:10:00
+tags:   [graph algorithms, teaching]
+---
+<p>I just finished teaching our required undergraduate algorithms class, and in grading their final exams I discovered that a few of the students have (not from me) acquired the incorrect belief that modifying the standard version of the breadth first search algorithm by replacing the stack with a queue makes it into depth first search. Embarrassingly, the Wikipedia <a href="https://en.wikipedia.org/wiki/Depth-first_search">depth first search</a> article made the same mistake (until today), as do some textbooks (for example Skiena&#x27;s <i>Algorithm Design Manual</i> p. 169; Jeff Edmonds&#x27; <i>How to Think about Algorithms</i>, pp. 175–178; Gilberg and Forouzan <i>Data Structures: A Pseudocode Approach Using C</i>, 2nd ed., p. 497).</p>
+
+<p>Here&#x27;s what you get if you swap a stack for the queue in breadth first search:</p>
+
+{% highlight python %}
+def stack_traversal(G,s):
+    visited = {s}
+    stack = [s]
+    while stack:
+        v = stack.pop()
+        for w in G[v]:
+            if w not in visited:
+                visited.add(w)
+                stack.append(w)
+{% endhighlight %}
+
+<p>In trees, or in AI search contexts where the visited set is not used to eliminate duplicate vertices, this idea does indeed produce a depth-first search. But in arbitrary graphs with a visited set, the traversal that you get from this routine is not depth first. The problem is that nodes high in the tree push some of their neighbors as children too early; in a proper depth first search those children would instead be discovered as descendants farther down in the tree. Here&#x27;s an example, illustrating (as usual) the tree whose edges link each vertex with the earlier vertex it was discovered from:</p>
+
+<p align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/stack-traversal.png" /></p>
+
+<p>In a depth first search tree, all edges connect ancestors and descendants. In a breadth-first search tree, all edges connect vertices in the same or adjacent levels.
+But in the stack traversal tree, all non-tree edges connect pairs of vertices that are not ancestors and descendants of each other, the opposite property to the depth first tree property. Or, to put it another way, if \( w \) is a descendant of \( v \), and is adjacent to \( v \), then \( w \) must be a direct child of \( v \).</p>
+
+<p>Goodrich and Tamassia (whose book I used for my class) and CLRS avoid this mistake by only discussing recursive depth-first search; CLRS has an exercise of writing an iterative stack-based depth-first search but doesn&#x27;t state the answer. One text that discusses the subject of using a stack for an iterative depth first search but gets it right is Sedgewick&#x27;s <i>Algorithms in Java</i>. There are (at least) two different ways of doing it, both discussed by Sedgewick. You can use a stack of iterators instead of a stack of vertices:</p>
+
+{% highlight python %}
+def dfs(G,s):
+    visited = {s}
+    stack = [iter(G[s])]
+    while stack:
+        try:
+            w = stack[-1].next()
+            if w not in visited:
+                visited.add(w)
+                stack.append(iter(G[w]))
+        except StopIteration:
+            stack.pop()
+{% endhighlight %}
+
+Alternatively, you can push all neighbors and delay the check for whether a vertex has been visited until it is popped. This is the approach taken by Kleinberg and Tardos&#x27;s <i>Algorithm Design</i>:
+
+{% highlight python %}
+def dfs2(G,s):
+    visited = set()
+    stack = [s]
+    while stack:
+        v = stack.pop()
+        if v not in visited:
+            visited.add(v)
+            for w in G[v]:
+                stack.append(w)
+{% endhighlight %}
+
+<p>Both of these have the property that replacing the stack by a queue gives a breadth-first search, implemented in a somewhat nonstandard way. They don&#x27;t give the same traversal as each other (the first one matches the usual recursive dfs while the second one reverses the order of the children at each vertex), and the second one uses more space because of duplicated entries on the stack, but they at least both give a valid depth-first search.</p>
+
+<p>Depth-first search and breadth-first search (and <a href="https://en.wikipedia.org/wiki/Lexicographic_breadth-first_search">lexicographic breadth-first search</a>) are all useful in algorithm design because of the restricted way the rest of the graph can be attached to the search tree. The non-dfs stack traversal is a different type of graph traversal, so conceivably it could also be useful in this way. But I don&#x27;t know of any examples of algorithms that deliberately use it instead of bfs or dfs.</p>
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: <br />
+<b>2013-12-18T11:16:34Z</b><br />
+I have some tangential question. How do you define BFS tree for a graph? I always thought that any unweighted shortest path tree is a BFS tree. However most definitions I find are much more restrictive and use queue, so there is some linear order on the set of vertices. 
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2013-12-18T16:50:21Z</b><br />
+I would define it as a tree in which each vertex is connected to the vertex from which it was first discovered, its leftmost neighbor on the previous tree level.
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: <br />
+<b>2013-12-21T03:18:18Z</b><br />
+Phew.  I used what you call dfs2 in Open Data Structures.  Glad I didn&#x27;t screw that up.
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2013-12-21T03:29:35Z</b><br />
+I used the other iterative dfs (with the stack of iterators) in http://www.ics.uci.edu/~eppstein/PADS/DFS.py. It is a bit more space-efficient than dfs2. But dfs2 is definitely simpler, and the difference between O(n) and O(m) space usage isn&#x27;t usually that important, so if you have to remember only one I think it&#x27;s a good choice.
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: <br />
+<b>2014-01-04T19:36:31Z</b><br />
+Your writeup is an excellent illustration of a reader&#x27;s need to confirm to himself or herself the veracity of material available (oftentimes from reputable sources). 
+
+I recently discovered the following article that does a similarly excellent job with dispelling profoundly incorrect interpretations frequently espoused in a lot of the quantum mechanics literature. Just thought that some of your quantum computing inclined readers might benefit as well. Given my non-physics background I did not understand all that is in the article but with additional effort I believe that this resource should clarify a great deal of the mystery (in my mind, atleast) that sorrounds quantum mechanics. The khet and tensor product notation is a pain to parse through but perhaps is not an insurmountable obstacle.
+
+http://jamesowenweatherall.com/SCPPRG/EllermanDavid2012Man_QuantumEraser2.pdf
+
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>q08p08klnqa</b>: <br />
+<b></b><br />
+
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: <br />
+<b>2014-01-07T13:44:59Z</b><br />
+I&#x27;m teaching graph searching with the following pseudocode
+that explicitly constructs a tree. The active vertices are kept
+in a data structure A that supports insert, delete and active,
+where active refers to the element that would be deleted.
+If A is implemented by a queue resp. a stack you get a
+BFS-Tree resp. DFS-Tree
+
+Search-Tree(s)
+  A.insert(s)
+  visit(s)
+  while not A.empty do
+        v = A.active
+        if exists w in (N(v) \ visited)
+               A.insert(w)
+               T.edge(v,w)
+               visit(w)
+        else
+               A.delete
+  return T
+              
+ 
+(Stefan Felsner)        
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2014-01-07T15:42:06Z</b><br />
+Ok, but then how do you find an unvisited neighbor in constant time? Don&#x27;t you need to store for each active vertex some sort of pointer into its neighbor list? I think for an algorithms class these things should be explicit.
+</div>
+

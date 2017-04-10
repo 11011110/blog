@@ -1,0 +1,39 @@
+---
+layout: post
+title:  'Aspect ratio and image size'
+date:   2007-02-04 12:47:00
+tags:   [rectangles, geometry, aspect ratio, photography]
+---
+I&#x27;m sure I&#x27;ve written about this before, but not here and now I can&#x27;t find it, so...
+<br />
+
+<br />
+Here&#x27;s the question. You have a bunch of photographs, in different aspect ratios, which you would like to make thumbnails of for a web gallery. How big should you make the thumbnails? Equivalently, what is a good measure of the size of an image, that allows one to compare sizes of images that have different aspect ratios?
+<br />
+
+<br />
+Flickr and many other systems resize the thumbnails so that they all fit as tightly as possible into equal size squares. That is, the size of an image is defined to be max(width,height). That makes for nice uniform looking galleries, but it gives something of an unfair advantage to the square photos: they are shown bigger, in more detail than the others, and are more eye-catching. Narrow panaramic shots with a high aspect ratio (say 10:1) are shown in such a tiny size that one can barely tell what they&#x27;re about.
+<br />
+
+<br />
+Instead, one could resize the photos so they all have the same area, that is, defining the size of an image to be width*height. This works better for giving pictures similar amounts of visual emphasis, but produces bad results when trying to fit narrow panoramic shots into grids of thumbnails, as there is no limit on how wide they can be when resized.
+<br />
+
+<br />
+What I settled on for my own galleries is a compromise between these two: I define the size of an image to be its perimeter 2*(width+height), and resize all images so they have the same perimeter. Non-square images are not unduly penalized, as for aspect ratios near square this behaves similarly to area-based resizing. Panoramas are larger than they would be for fixed-width resizing, but not unboundedly large: they end up at most twice the width of square images. This works best if the target perimeter is a common multiple of the numbers 2*(a+b) of the aspect ratios a:b of the images; for my own images, the aspect ratios I use most frequently are 3:2, 5:4, 1:1, and 16:9, so multiples of 900 would be best, but I started doing this when I still had many 4:3 images and before I started cropping 16:9, so what I actually use is a 700 pixel perimeter for my thumbnails and a 2240 pixel perimeter for the larger images.
+<br />
+
+<br />
+This all leads me to wonder whether there are some constraints that it would be appropriate to place on the set of functions that map (width,height) pairs to numbers and could be reasonably considered as image sizes? Obviously, if one pair dominates another it should have larger size, but anything more restrictive than that? For instance should we require the image size function to be quasiconcave? Area and perimeter satisfy that, but max(width,height) doesn&#x27;t.
+<br />
+
+<br />
+On a related subject, I was amused to learn recently that there are two conflicting definitions for the aspect ratio of a &quot;silver rectangle&quot; should be, analogous to the golden rectangle: 1+sqrt(2):1 or sqrt(2):1. One can convert either rectangle into the other by removing a square. The 1+sqrt(2):1 can be formed by the two opposite edges of a regular octagon, and has the advantage that its aspect ratio is the so-called silver ratio. But the 1:sqrt(2) also has the nice property that cutting it in half produces two similar rectangles, and is more important both in modern commerce (the size of European paper) and in ancient architecture.
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>leonardo_m</b>: <br />
+<b>2007-02-06T23:18:33Z</b><br />
+The idea of using the len of perimeter for this purpose is new to me, it&#x27;s a nice idea, I&#x27;ll try it, because a friend of mine too has a gallery of images. Thank you for sharing.
+</div>
+

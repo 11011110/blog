@@ -1,0 +1,66 @@
+---
+layout: post
+title:  'Shaving a superpolylog from subtract-a-square'
+date:   2016-11-14 22:24:00
+tags:   [python, game theory, number theory]
+---
+<p>The game of <a href="https://en.wikipedia.org/wiki/Subtract_a_square">subtract-a-square</a> is played by two players with a pile of coins. They take turns taking a square number of coins until none are left. The last player to move wins. So how can we play this game optimally and efficiently? As it turns out, there's some deep number theory lurking in the answer.</p>
+
+<p>I covered this game in my undergraduate algorithms class today, as an example of dynamic programming. It's perhaps unusual among dynamic programming algorithms as having a fractional exponent. If you define the value of a position to be \( +1 \) if the player about to move wins, and \( -1 \) otherwise, then you get the usual dynamic programming recurrence for any game: the value of any position is the maximum, over available moves, of the negated values of the positions resulting from each move. A position with \( n \) coins has \( O(\sqrt{n}) \) moves available, so evaluating each position takes \( O(\sqrt{n}) \) time. Looping over all positions and evaluating each of them in this way takes a total amount of time that is \( O(n^{3/2}) \).</p>
+
+<p>In Python, <a href="https://oeis.org/A030193">the set of winning positions</a> (the ones you want to move to, with value \( -1 \)) can be listed by the following code, which essentially follows this algorithm:</p>
+
+{% highlight python %}
+def A030193():
+    winners = set()
+    
+    def win(n):
+        i = 1
+        while i*i <= n:
+            if n - i*i in winners:
+                return False
+            i += 1
+        return True        
+    
+    n = 0
+    while True:
+        if win(n):
+            yield n
+            winners.add(n)
+        n += 1
+{% endhighlight %}
+
+<p>But then after the lecture I realized that there's a different way of doing this, closer in spirit to the sieve of Eratosthenes. Rather than looking backward from each position to all the numbers that are smaller than it by a square difference, let's look forward from each winning position we find to the ones that are larger by a square. After we knock all of those positions out, the remaining ones are the winners.</p>
+
+{% highlight python %}
+def A030193():
+    walkers = {}
+    steps = {}
+    
+    n = 0
+    while True:
+        if n not in walkers:
+            yield n
+            walkers[n] = [n]
+            steps[n] = 0
+        for w in walkers[n]:
+            steps[w] += 1
+            next = w+(steps[w]*steps[w])
+            if next not in walkers:
+                walkers[next] = [w]
+            else:
+                walkers[next].append(w)
+        n += 1
+{% endhighlight %}
+
+<p>What's the running time of this sieving algorithm? I don't know, but it seems to depend on some deep questions in number theory!</p>
+
+<p>It's easy to see that, when generating the winning positions up to <i>n</i>, it takes time <i>O</i>(sqrt <i>n</i>) per winning position. This is an improvement on the dynamic program, which multiplied the same factor by <i>n</i> rather than by the number of winning positions. But how many winning positions are there?</p>
+
+<p>I don't know of any actual analysis of this (beyond an observation of Golomb that shows that there must be at least \( \sqrt{n} \) of them), but there has been a lot of work in number theory on square-difference-free sets: sets of numbers no two of which differ by a square. And that's true here, so we can plug in the upper bounds that are known for the more general square-difference-free problem to analyze our algorithm.</p>
+
+<p>Unfortunately the best of these bounds that I know of, by Pintz, Steiger, and Szemerédi (see the Wikipedia link for the precise bounds and reference) are pretty weak and also tricky to prove. They show that the number of elements in any square-difference-free set is sublinear, but only by a slightly-superpolylogarithmic factor. So the sieving algorithm is faster than the dynamic programming algorithm by at least the same factor.</p>
+
+<p>Maybe the fact that we care about a single specific square-difference-free set (the winning positions in subtract-a-square) can save us, and allow for a simpler and stronger analysis than what we have for general square-difference-free sets? Again, I don't know. The sieving idea can also be combined with FFT-based bit-vector convolution to give a provably near-linear algorithm for subtract-a-square but one that's much more complicated and less implementable. I'm more interested in learning more about the complexity of the simple sieving method implemented above.</p>
+
+Update: See <a href="http://11011110.livejournal.com/337934.html">a later post</a> for some experiments on the growth rate of this set.

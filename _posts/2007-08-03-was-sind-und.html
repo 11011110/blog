@@ -1,0 +1,65 @@
+---
+layout: post
+title:  'Was sind und was sollen die Pseudogeraden?'
+date:   2007-08-03 15:15:00
+tags:   [arrangements]
+---
+<p>(Sorry, couldn&#x27;t resist the Dedekindesque title.)</p>
+
+<p>I&#x27;ve been <s>arguing about</s> <s>having a frank exchange of views on</s> discussing the proper mathematical definition of pseudolines and pseudoline arrangements with some co-authors, and it seems to be an issue on which there is much confusion. So in hopes of spreading the confusion, I thought I&#x27;d discuss it here as well.</p>
+
+<p>To begin with, intuitively, a pseudoline is something that &quot;behaves like&quot; a line, but is not necessarily straight. A pseudoline arrangement is a collection of pseudolines that &quot;behave like&quot; lines, usually meaning that each pair of pseudolines meets in at most a single point of intersection and that when they meet they cross. The concept of a pseudoline arrangement was <a href="http://www.ams.org/featurecolumn/archive/oriented4.html">introduced by F. Levi in 1926</a>. Another important paper in this area was by Ringel in 1956, who showed that there exist pseudoline arrangements that are not combinatorially equivalent to line arrangements.</p>
+
+<p>Usually, a pseudoline arrangement requires all pairs of pseudolines to cross, while a weak pseudoline arrangement (see e.g. <a href="http://www.springerlink.com/content/uxkrjp7yyjdbjbbn/">de Fraysseix and Ossona de Mendez</a> or <a href="http://arxiv.org/abs/cs.DS/0406020">one of my papers</a>) allows some pairs to avoid crossing. Weak pseudoline arrangements can model e.g. hyperbolic line arrangements, if one uses a sufficiently general definition of a pseudoline, while non-weak pseudoline arrangements can&#x27;t.</p>
+
+<p>The difficulty is not so much in the arrangement part, but in the definition of a single pseudoline. Here are some alternatives, roughly ordered from more general to less general.</p>
+
+<ul>
+<li>De Fraysseix and Ossona de Mendez define a pseudoline to be &quot;an arc homeomorphic to a straight line&quot;. I like their paper a lot, but I think this is just a mistake. It allows for open line segments which unlike proper pseudolines do not partition the Euclidean plane into two regions.</li>
+
+<li>The definition I&#x27;d like to use is that a pseudoline is the image of a line under a homeomorphism of the plane to itself. I think this doesn&#x27;t cause any real difficulties, but it does allow for some strange examples such as the <a href="http://en.wikipedia.org/wiki/Fermat%27s_spiral">Fermat double spiral</a>. This doesn&#x27;t seem to be a common choice but apparently it&#x27;s the one in Shor&#x27;s 1991 paper on hardness of stretchability; it&#x27;s also used in <a href="ftp://ftp.win.ua.ac.be/pub/penne/moves.ps">at least one more recent manuscript</a>. (<b>ETA:</b> See <a href="http://11011110.livejournal.com/111461.html">my follow-up post</a> for a stronger reason to use this definition.)</li>
+
+<li>Björner et al. in &quot;Oriented Matroids&quot; (1993) (p.257) define an &quot;affine pseudoline&quot; in terms of a topological model of the plane as an open disk. A pseudoline for this model is a simple curve in the closed disk that has its endpoints on the boundary of the disk and all of its other points in the interior of the disk. Björner et al. don&#x27;t mention, however, how to go from this to a definition of a pseudoline as an object in the Euclidean plane itself. It is tempting to fix a homeomorphism h from the disk to the plane and say that a pseudoline in the plane is the image under this fixed h of a pseudoline in the disk. However, different homeomorphisms give different classes of curves as their pseudolines; for instance, one can find an h that would allow the Fermat spiral as a pseudoline but disallow any line itself to count as a pseudoline. A reasonable choice would be to fix h to be the map that takes polar coordinates (r,θ) in the disk to (r/(1-r),θ) in the plane, but packing that into the definition leads to something quite unnatural sounding and unwieldy. And while I think that choice of h gives a definition that is invariant under congruence transformations, proving that sort of fact isn&#x27;t completely obvious. This definition would still work for defining weak pseudoline arrangements, though, and my co-authors like it because we can cite someone else and hope that they&#x27;ve been sufficiently careful in their axiomatics rather than having to get it right ourselves.</li>
+
+<li>The classical definition from discrete geometry is that a pseudoline is an uncontractible simple closed curve in the projective plane, or equivalently a simple closed curve that does not separate the projective plane. For instance, the nonseparating version is the definition used by Goodman in his pseudoline arrangement chapter of the Handbook of Discrete and Computational Geometry (1997). Grünbaum (&quot;Arrangements and Spreads&quot;, 1972) and <a href="http://projecteuclid.org/DPubS?service=UI&version=1.0&verb=Display&handle=euclid.pjm/1102968560">Kelly and Rottenberg</a> similarly define a pseudoline arrangement to be a collection of simple closed curves in the projective plane such that each pair of curves has exactly one point of intersection, which is equivalent when there are at least two curves in the arrangement. However, these definitions do not allow for weak pseudoline arrangements, as one cannot form nonintersecting pairs of pseudolines.</li>
+
+<li>A definition I haven&#x27;t seen used, but one that is very natural when viewing (weak) pseudoline arrangements as the <a href="http://arxiv.org/abs/cs.DS/0406020">planar duals of zonotopal tilings</a>, is that a pseudoline is a monotone curve: that is, a curve that, when projected perpendicularly onto some line, projects one-to-one. Different pseudolines would be allowed to have different projection lines.</li>
+
+<li>More popular in computational geometry is the definition that a pseudoline is an x-monotone curve in the Cartesian plane; that is, it projects one-to-one onto the x axis, or equivalently is the graph of a continuous function y=f(x). Edelsbrunner (&quot;Algorithms in Combinatorial Geometry&quot;, 1987) uses this definition, for instance, as do <a href="http://www.springerlink.com/content/k550q3l739n1r01n/">Clarkson et al.</a> and <a href="http://www.springerlink.com/content/23t6bv0hx104t92j/">Felsner</a>. This definition allows for non-intersecting pairs of pseudolines, but any nonintersecting family of pseudolines is totally ordered by y-coordinate, and partitions the plane into regions bounded by only two pseudolines, so this is again unsatisfactory for defining weak arrangements.</li>
+
+<li>Leah Berman (personal communication) suggested a simple combinatorial model of pseudolines, closely related to the projective plane definition, that she says was suggested by Grünbaum: a pseudoline is the result of modifying a Euclidean line by replacing a line segment by a polygonal chain in a non-self-intersecting way. Again, this doesn&#x27;t work for weak arrangements, but variants of this definition could be made to work: either one can use hyperbolic lines and polygonal chains instead of Euclidean ones, or one can define a pseudoline to be the result of connecting two disjoint Euclidean rays by a polygonal chain having as endpoints the rays&#x27; vertices, such that the chain intersects neither itself nor the rays.</li>
+
+<li>Another simple combinatorial model of pseudolines, introduced by Goodman (1980) and discussed by <a href="http://www.springerlink.com/content/23t6bv0hx104t92j/">Felsner</a>, is the &quot;wiring diagram&quot;. This model is a special case of the x-monotone definition. In it, the pseudolines are graphs of continuous functions that are constant except within small intervals of the range of x coordinates, within which two functions having values that are adjacent in sorted order swap their values by linear interpolation, forming a crossing. The sorted orders of the pseudolines between the crossings form (half of) a so-called circular sequence of permutations, and wiring diagrams are a convenient device for translating circular sequences into pseudoline arrangemens. Perhaps an illustration might make this description more clear:</li></ul>
+
+<div align="center">
+<img src="http://www.ics.uci.edu/~eppstein/0xDE/wiring-diagram.png" />
+<br />
+A wiring diagram.
+</div>
+
+<p>I don&#x27;t have a clear conclusion: while I hope to use the image-of-line-under-homeomorphism-of-plane definition for this publication, I still intend to use others in other situations. In particular, for simplicial arrangements, one needs to use the projective plane, for which the standard discrete geometry definition seems most suited. I guess the overall morals of this story are, first, that sometimes the detailed definitions matter, and it pays to think about which one is best for the problem you&#x27;re working on. And second, be careful when you&#x27;re reading papers in this area, because objects that are given the same names might not be the same underneath.</p>
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: line segments and polygonal chains<br />
+<b>2007-08-08T14:58:58Z</b><br />
+In fact, I think I would go further and say that a pseudoline is the result of modifying a Euclidean line by replacing a line segment with a non-self-intersecting curve. (That is, you don&#x27;t have to be restricted to polygonal chains, but they&#x27;re the easiest to work with.)
+
+I&#x27;m still not convinced that it makes sense to talk about a single pseudoline, though---it seems to me that their behavior is fundamentally determined by the other objects they interact with, since something that is a perfectly good pseudoline in one arrangement fails to be a pseudoline in a different arrangement.
+
+Leah Berman
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: Re: line segments and polygonal chains<br />
+<b>2007-08-08T15:14:03Z</b><br />
+<i>That is, you don&#x27;t have to be restricted to polygonal chains, but they&#x27;re the easiest to work with.</i>
+
+True, though the version with polygonal chains arises quite naturally: they&#x27;re simply the uncontractable simple polygons in the projective plane.
+
+<i>I&#x27;m still not convinced that it makes sense to talk about a single pseudoline, though---it seems to me that their behavior is fundamentally determined by the other objects they interact with, since something that is a perfectly good pseudoline in one arrangement fails to be a pseudoline in a different arrangement.</i>
+
+Well, but you can&#x27;t know about what is a valid pseudoline arrangement in general unless you know about the most simple case, arrangements with only one pseudoline in them, right?
+
+(Actually, I&#x27;m not completely happy about the definition in Grünbaum&#x27;s book for exactly that reason: if a pseudoline arrangement is an arrangement of curves such that each pair has a single crossing, then an arrangement of one pseudoline allows more general curves than any other arrangement.)
+</div>
+

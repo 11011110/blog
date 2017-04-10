@@ -1,0 +1,140 @@
+---
+layout: post
+title:  'Odd triangles'
+date:   2009-04-29 18:25:00
+tags:   [geometry]
+---
+I thought I&#x27;d take a break from shilling my own papers and talk about some simple geometry, and specifically a question posed by Peter Shor in email concerning half-integer triangles.
+<br />
+
+<br />
+In any set of integer points in the plane, it follows from <a href="http://en.wikipedia.org/wiki/Pick's_theorem">Pick&#x27;s theorem</a> that the area of any triangle with vertices in the set is either an integer or a half-integer. And by making all the coordinates be a multiple of two, it&#x27;s easy to force the areas to all be integers. But how hard is it to find a set of points where all triangle areas are half-integers? Collinear triples count as forming triangles of area zero, so the points must be in general position, but I don&#x27;t want to restrict the points to having integer coordinates.
+<br />
+
+<br />
+If one considers the points (0,0), (0,1), (1,0), and (1,1) in the plane, all four of the triangles formed by these four points have area 1/2, so it&#x27;s possible to find a solution for four points. But there can be no five points p, q, r, s, t such that all ten of the triangles formed by these points have half-integer areas. For, if p, q, and r are fixed in general position, the points x such that pqx has integer or half-integer area lie on a set of lines parallel to pq, and the points x such that prx has integer or half-integer area lie on another set of parallel lines. All five points must lie in the lattice formed by the intersections of these two parallel lines, and we can apply an affine transformation that doesn&#x27;t change the areas of any triangles but that transforms this lattice into the standard integer lattice. So we might as well assume that p, q, r, s, and t all have integer coordinates. But there are only four combinations of parity for the x and y coordinates of two integer points, so by the pigeonhole principle some two of them (say p and q) have the same parity for both x and y. That means that the midpoint u of pq is also an integer point, and triangles pur and uqr both have equal area that by Pick&#x27;s formula is an integer or half-integer, so triangle pqr has integer area.
+<br />
+
+<br />
+Despite this, we can get very close to half-integer area for the ten triangles determined by five points. Consider the regular pentagon of side length α. Its vertices determine two types of isosceles triangle, with areas in the golden ratio to each other. If we choose α carefully, so that the smaller triangle&#x27;s area is φ<sup><i>n</i></sup>/2 where φ is the golden ratio and <i>n</i> is a large integer congruent to 1 mod 3, then the larger triangle&#x27;s area will be φ<sup><i>n + 1</i></sup>/2, and both areas will be very close (exponentially close as a function of <i>n</i>) to halves of odd Fibonacci numbers.
+<br />
+
+<br />
+Shor&#x27;s question: is it true that for every ε &gt; 0 and every positive integer <i>k</i> there exists a set of <i>k</i> points such that all areas of the <i>k</i>(<i>k</i> − 1)(<i>k</i> − 2)/6 triangles they form are within ε of a half-integer? I&#x27;m pretty sure the answer is yes, but the argument I have in mind is hand-wavy and involves some powerful machinery. An explicit construction would be nice.
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>sune_k_jakobsen</b>: <br />
+<b>2009-04-30T07:21:10Z</b><br />
+Given n positive real numbers, a_1, a_2,...a_n, such that a_i/a_j is irrational for all i \neq j, and given a epsilon&gt;0, do there exist a real number x, such that xa_i is within epsilon of a half-integer for any i?
+
+If this is the case, we can try to choose points such that the rations between the areal of the triangles all are irrational. 
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>sune_k_jakobsen</b>: <br />
+<b></b><br />
+
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>sune_k_jakobsen</b>: <br />
+<b>2009-04-30T10:46:52Z</b><br />
+a_1=1, a_2=sqrt(2), a_3=1+sqrt(2) is of cause a counterexample to the conjecture in my last comment. Instead: let a_1, a_2,…a_n be positive real number such that a_1b_1+a_2b_2+…+a_nb_n=0 where the b_i are integers implies that b_i=0 for all i. 
+Now it should be possible to prove, that for any epsilon&gt;0, there exist a real positive number x such that xa_i is within epsilon of a half-integer for any i.
+I think it is possible to use some sort of greedy algorithm to choose k points such that the areas of the triangles they form are “lineary independent” in the above meaning.
+
+</div>
+<div style="margin-left: 6em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2009-04-30T15:42:03Z</b><br />
+This was the same line I was thinking along. The sets of points where there is some integer relation between two triangle areas form a measure-zero subset of the unit square, so it is possible to find a set of points with no integer relations between the areas. Then some result from ergodic theory should imply that scaling the point set appropriately will cause all the triangle areas to be close to half-integers — if one takes a vector V (the vector of areas) without any integer relationships, and looks at the sequence of vectors (iV mod 1), this sequence should be dense in the unit hypercube, so there should be a scale factor sqrt(i) such that all areas are close to 1/2.
+</div>
+<div style="margin-left: 9em; padding-top: 1em;">
+<b>None</b>: It&#x27;s Kronecker&#x27;s theorem you want<br />
+<b>2009-04-30T17:30:24Z</b><br />
+It isn&#x27;t all that well-covered on the web, but the theorem Sune Jakobsen is looking for seems to be Kronecker&#x27;s approximation theorem. 
+
+See <a href="http://eom.springer.de/k/k055910.htm">this excerpt</a> from the Encyclopaedia of Mathematics.
+
+</div>
+<div style="margin-left: 9em; padding-top: 1em;">
+<b>sune_k_jakobsen</b>: <br />
+<b>2009-04-30T18:41:44Z</b><br />
+<q>The sets of points where there is some integer relation between two triangle areas form a measure-zero subset of the unit square, so it is possible to find a set of points with no integer relations between the areas.</q>
+Don&#x27;t you mean measure-zero subset of (the unit square)^k, where k is the number of points?
+How do you prove that the set has measure zero? 
+If I understand you correctly, you prove that you can find a set of points with no integer relations between (all) the areas, using only that fact the set of set of points with integer relations between TWO areas has measure zero. How do you prove that?
+
+</div>
+<div style="margin-left: 12em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2009-04-30T20:55:48Z</b><br />
+Yes, a subset of square^k.
+
+I had been thinking that there are a countable set of potential integer relationships of the form &lt;k,a&gt;=i where k is an integer vector, a is the vector of areas, and i is an integer: there are countably many choices for k and i. For any specific coefficient vector, the condition that that vector describes a relationship between triangle areas is algebraic, so the set of bad placements is a countable union of algebraic sets and therefore has measure zero.
+
+But there&#x27;s a problem with this argument: an algebraic set can have nonzero measure if it&#x27;s the whole space, and there are integer relationships that are valid for the whole space. For instance (with appropriate choice of signs) area(pqr)+area(qrs)=area(pqs)+area(psr): both pairs of triangles define a triangulation of the quadrilateral pqrs and the area is the same no matter which triangulation you choose.
+
+One idea for a solution would be to somehow factor out these known relationships before applying Kronecker&#x27;s theorem; the argument still says that there are only a measure-zero subset of placements that could have some coincidental area relationships, and maybe the relationships that are always true don&#x27;t hurt. But there are some relationships that could hurt: if we had area(t1)=area(t2)+area(t3) then not all three of these could be near a half-integer. So we need to somehow argue that all universal integer relationships have even parity and are therefore non-problematic.
+
+Another approach would be to find a particular point set where the known integer relationships are non-problematic; maybe for instance it always works to place a prime number of points evenly around a circle.
+</div>
+<div style="margin-left: 12em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b></b><br />
+
+</div>
+<div style="margin-left: 12em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b></b><br />
+
+</div>
+<div style="margin-left: 12em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b></b><br />
+
+</div>
+<div style="margin-left: 12em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2009-05-01T00:07:58Z</b><br />
+Ok, here&#x27;s I think a fix to the argument.
+
+The only integer relationships that could be true for all point placements are the ones of the form &lt;κ,a&gt;=0, for the ones of the form &lt;κ,a&gt;=i for nonzero integer i do not continue to hold when the point set is scaled by an irrational number.
+
+Given a set of points p<sub>i</sub>, let T be the set of triples of the form i,i+1,j for j &gt; i+1. If a is the vector of areas only of the triangles within T, then I claim that there can be no relation &lt;κ,a&gt;=0 with κ not identically zero that is valid for all point placements. For, given any κ, let the triple i,i+1,j be chosen to have a nonzero coefficient x in κ, such that j is as large as possible subject to the coefficient being nonzero, and that i is as large as possible subject to the previous choices. Then placing points p<sub>1</sub> through p<sub>i</sub> at (0,0), p<sub>i+1</sub> through p<sub>j-1</sub> at (0,1), and p<sub>j</sub> at (1,1) produces a vector a of areas such that &lt;κ,a&gt; equals the nonzero number x.
+
+If t is any triangle that does not belong to T, then the area of t is an odd integer combination of areas of triangles in T. Specifically, the area of a triangle of points with indices i,j,k is the sum of the areas for i,i+1,k, i+1,i+2,k, ..., j-1,j,k, minus the areas for i,i+1,j, i,i+2,j, ... i,j-1,j. The number of terms added is one more than the number of terms subtracted, so the total parity of the combination is odd.
+
+By the argument from the previous comment about countable unions of algebraic sets, it&#x27;s possible to find a placement of points in the unit square such that the areas of triangles in T do not satisfy any integer relations with each other. By Kronecker&#x27;s theorem, it is possible to scale this placement such that (for any given ε &gt; 0, and with n denoting the number of points) all areas of triangles in T are within ε/2n of a half-integer. The integer combinations for the remaining areas then show that they too are within ε of a half-integer.
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: <br />
+<b>2009-04-30T15:09:55Z</b><br />
+Dont k points induce k(k-1)(k-2)/6 triangles and not k(k-1)/2?
+
+And it trivially holds in high dimension by picking points uniformly from the hypersphere, which implies that it holds in dimension (log n)/eps^2. In fact, in high dimensions all the triangles have roughly the same area. Also, one can prove it indirectly by just picking n points in the plane an then scaling the coordinate system till it holds. But this is a painful indirect argument that should probably work...
+
+--Sariel
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2009-04-30T15:34:03Z</b><br />
+Duh. Yes, k choose 3. I&#x27;ll fix the post.
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2009-05-01T00:09:33Z</b><br />
+See above for the details of the &quot;just picking and scaling&quot; argument; it&#x27;s not as trivial as it seems at first glance.
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: A refinement of the question<br />
+<b>2009-04-30T15:23:41Z</b><br />
+The application I originally wanted this for has completely blown up, so you should consider the problem solely for its own sake. My refinement of the question was: suppose it&#x27;s true. If you want the area of every triangle within ε of a half-integer, how small an area can you put the <i>k</i> points in?
+
+Peter Shor
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: <br />
+<b></b><br />
+
+</div>
+

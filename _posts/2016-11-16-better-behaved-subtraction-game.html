@@ -1,0 +1,79 @@
+---
+layout: post
+title:  'A better-behaved subtraction game'
+date:   2016-11-16 13:31:00
+tags:   [game theory, number theory]
+---
+I used the <a href="http://11011110.livejournal.com/337587.html">sieving algorithm for subtract-a-square</a> to generate its P-positions (the ones you want to move to) in order to estimate how quickly this sequence of positions grows. Based on some assumptions that the sequence was basically random and on considerations involving the coupon collector problem, I was expecting its growth rate (the number of P-positions up to <i>n</i>) to be roughly <i>O</i>(sqrt <i>n</i> log <i>n</i>). But that seems to be inconsistent with the data. Instead (based on generating the first 350k or so of these numbers) it seems to be more like <i>O</i>(<i>n</i><sup>0.69</sup>), a surprisingly high growth rate.
+<br />
+
+<br />
+Below is a table of some P-positions (the middle column), the number of P-positions up to that value (left column), and the exponent one would infer from those two numbers:<pre>22 109 0.658881526366
+<br />
+39 204 0.688882847768
+<br />
+66 425 0.692265864743
+<br />
+99 827 0.684021054309
+<br />
+158 1625 0.684757862413
+<br />
+255 3209 0.686333836589
+<br />
+419 6414 0.688764172045
+<br />
+682 12812 0.689885260226
+<br />
+1087 25647 0.688637867852
+<br />
+1752 51202 0.688752703605
+<br />
+2821 102517 0.688593820775
+<br />
+4497 204817 0.687755821596
+<br />
+7436 409687 0.689776813171
+<br />
+12068 819267 0.69023196924
+<br />
+19659 1638632 0.690896170477
+<br />
+31742 3276892 0.690915578787
+<br />
+51489 6553775 0.691222814299
+<br />
+83851 13107272 0.691745659235
+<br />
+136858 26215012 0.692354994835
+<br />
+221074 52429275 0.69233584282
+<br />
+358248 104857942 0.692489695744</pre>In any subtraction game like this one, the growth rates of the move set and the P-position set must multiply together to at least linear. But it occurred to me to wonder: maybe they are always superlinear? That is, maybe there is some more general reason why the winning positions in subtract-a-square seem to be significantly more dense than the squares? But the answer is no. There&#x27;s a different subtraction game where both number of moves up to <i>n</i> and the number of winning positions up to <i>n</i> are proportional to the square root, with some oscillation in the constant of proportionality.
+<br />
+
+<br />
+To define such a game, let the available moves be the <a href="http://oeis.org/A000695">Moser–de Bruijn sequence</a> of sums of distinct powers of 4: 0, 1, 4, 5, 16, 17, 20, 21, 64, ... Any integer <i>n</i> can be decomposed into its even part <i>n</i> &amp; 0x55555555, a member of its sequence, and its odd part <i>n</i> &amp; 0xaaaaaaaa, which is two times a member of the sequence.
+<br />
+The P-positions for the game defined by these moves are the ones whose even part is zero, and the unique winning move (when the even part is nonzero) is to subtract off the even part.
+<br />
+
+<br />
+Another way of looking at this, in number theoretic terms, is that the Moser–de Bruijn sequence is something like a <a href="https://en.wikipedia.org/wiki/Sidon_sequence">Sidon sequence</a>. A Sidon sequence is defined by the property that the sums <i>x</i> + <i>y</i> of pairs of numbers <i>x</i>, <i>y</i> from the sequence are all distinct. To achieve this property, the number of elements in an infinite Sidon sequence up to <i>n</i> must (for infinitely many <i>n</i>) grow strictly smaller than the square root of <i>n</i>. Instead, the Moser–de Bruijn sequence has distinct sums of the form <i>x</i> + 2<i>y</i>, and because this form is a little different it can grow proportionally to the square root.
+<br />
+
+<br />
+So, any explanation of the high growth rate of P-positions in subtract-a-square will need to depend on the actual distribution of square numbers, and not just on their frequency.
+<br />
+
+<br />
+<b>Update Nov. 18:</b> Compare <a href="http://www.ics.uci.edu/~eppstein/cgt/subsquare.html">these old messages</a> on modular behavior of the subtract-a-square positions with Ruzsa&#x27;s lower bound technique in the <a href="https://en.wikipedia.org/wiki/Furstenberg%E2%80%93S%C3%A1rk%C3%B6zy_theorem">Furstenberg–Sárközy theorem</a>. Then look at the table below, of what happens when we represent subtract-a-square positions in base 5 and count digit frequencies for each digit position of these numbers (here, for positions up to 4 million):<pre>digit 0 : 15179 8 18520 36 2803
+<br />
+digit 1 : 7369 7280 7277 7351 7268
+<br />
+digit 2 : 11273 3903 10586 6161 4614
+<br />
+digit 3 : 7230 7303 7360 7470 7160
+<br />
+digit 4 : 7863 6726 7524 7453 6894
+<br />
+digit 5 : 7094 7278 7346 7280 7302</pre> It looks very much to me like the greedy algorithm is trying to emulate Ruzsa&#x27;s strategy in base 5 (that is, to use a square-difference-free set of digits in even positions and arbitrary digits in odd positions), which would already give it approximately <i>n</i><sup>0.715338</sup> positions. If it could bring in other prime factors to the base it could do even better. Maybe it emulates Ruzsa for all bases simultaneously?

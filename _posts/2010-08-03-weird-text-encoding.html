@@ -1,0 +1,62 @@
+---
+layout: post
+title:  'Weird text encoding issue with Google scholar'
+date:   2010-08-03 11:05:00
+tags:   [bibliography]
+---
+Does anyone have any idea why Google scholar sometimes erroneously decides that a paper is written in Cyrillic, and more importantly, how to get them to fix it? It happens for, e.g.,  Archdeacon et al, &quot;Halin&#x27;s theorem for the Möbius strip&quot; (Halin&#x27;s theorem is about extensions of Kuratowski&#x27;s theorem to infinite graphs; the same authors also have a similar paper about Halin&#x27;s theorem for the annulus that shows up properly) and for my own paper &quot;Fast hierarchical clustering and other applications of dynamic closest pairs&quot;.
+<br />
+
+<br />
+In the Archdeacon case this issue appears to be preventing the text of the paper from being indexed properly: if I search for phrases from within the paper, rather than by title, I can&#x27;t find them. My own paper with the same problem has other versions that show up in English, though, so that&#x27;s less of a problem for it. But when I Google myself (you know you do it too) it comes up in a position that&#x27;s far away from the usual collation order by number of citations, and I wonder whether that&#x27;s somehow related to the encoding issue.
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>suzimoses</b>: Scholar<br />
+<b>2010-08-03T21:38:26Z</b><br />
+Sounds like a problem with the metadata.  We had a similar problem (I work for Annual Reviews, a small scientific publishing house) where our compositor had set our language tag to &quot;xml:lang=&quot;ital&quot;  instead of &quot;en.&quot;
+
+First thing to do is contact your publisher and let them know there&#x27;s a possible problem.  Then you can write Scholar, I&#x27;ll send you the e-mail in a private message, and ask them to either correct your record or re-index from your publisher&#x27;s site.
+
+However, I should warn you, Google is no longer actively supporting Scholar and are very slow at responding to issues.  You may have better luck than the publisher though, they tend to listen to the authors/users more than the publishers.  
+
+(Did that sound bitter.  Good.  It should.)
+
+Suzanne
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>suzimoses</b>: Re: Scholar<br />
+<b>2010-08-03T21:44:44Z</b><br />
+Shoot.  I just checked my records and found that the address I had for Scholar corrections is being bounced as of 3 months ago.  The scholar website now says to contact the publisher or the maintainer of the webpage to correct all errors.  
+
+Did I mention the bitter?  Yeah.  
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: Re: Scholar<br />
+<b>2010-08-03T21:46:01Z</b><br />
+Thanks; in my own case it&#x27;s a journal paper so I should check whether the problem exists for any of the other papers of the journal. The other one is I think just a preprint on the web somewhere, though.
+
+Not supporting Scholar is a problem; I don&#x27;t know of any adequate replacement for indexing CS research papers. The other commercial databases are no good.
+
+(I had a paper in an Annual Reviews volume years ago; I remember it because for some reason the easiest way to get the manuscript to you guys was to hand-deliver it to your offices on El Camino Way in Palo Alto.)
+</div>
+<div style="margin-left: 6em; padding-top: 1em;">
+<b>suzimoses</b>: Re: Scholar<br />
+<b>2010-08-03T23:01:53Z</b><br />
+I came across someone who was going to index CS conference papers at a publisher conference a while back, I&#x27;ll go back through my notes and see if I can find them.
+
+Scholar was... I&#x27;d like to be more supportive of it than I am.  I don&#x27;t think it was necessarily a bad idea, but Google really handled the launch badly by threatening the publishers.  Once they took that stance, it was hard to see them fairly.  It does seem that they are updating their index much more often now, perhaps it&#x27;s better than I thought.
+
+I /remember/ the story of the hand-delivered paper!  It actually got writen into the production editor handbook as a footnote I believe.  I&#x27;m the electronic content coordinator here, which means I&#x27;m responsible for posting and maintaining all the content for all 40 series.  I love it, and the company, very much.
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>davidkudler</b>: <br />
+<b>2010-08-05T04:09:09Z</b><br />
+It probably uses the same algorithm as the Google translate app—which seems to look at the domain on which the page is being displayed, and then checks the header for language clues before heading down to the actually body. That&#x27;s why every time I open a Livejournal page in Firefox, my #@)$@@*$@ Google Toolbar asks me if I want to translate it from Russian. I <i>knew</i> having the Russians buy LJ was going to be a problem! :-p
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2010-08-05T04:29:10Z</b><br />
+Every time I look at my spam folder in gmail, Chrome asks me if I want to translate the page from Korean.
+</div>
+

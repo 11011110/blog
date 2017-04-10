@@ -1,0 +1,527 @@
+---
+layout: post
+title: An unsuccessful attempt to use CairoSVG to generate small vector-graphics PDF files
+date: 2017-02-16 18:31:00
+---
+The following image shows the onion layers of a \( 6 \times 6 \) grid (see <a href="https://plus.google.com/u/0/101113174615409489753/posts/PdoVfoHY6bJ">Sariel's post for context</a>). It consists of 42 circles, 36 with a fill and a stroke and 6 with only a stroke.</p>
+
+<p align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/grid-onion.svg" style="background-color:white;"></p>
+
+<p>My usual workflow is to draw this sort of thing in Adobe Illustrator, but one drawback of doing things this way is huge files: as a PDF file suitable for inclusion in LaTeX, these 42 circles take up 155k bytes. I've recently started cutting my file size by opening the Illustrator PDF in the Apple Preview application, and then using Preview's "export" command with the "reduce file size" filter. This cuts it down to 41k, still nothing impressive but a lot better. It does have the drawback that going between Illustrator and Preview multiple times has sometimes messed up my fonts, so I think it's best viewed as a one-way filter: if I want to re-edit the same file, I need to keep the original.</p>
+
+<p>But if I save as an SVG file from Illustrator (like the one above) it's only 3.3K, a reasonable size for such a simple image. Reading the SVG back into Illustrator and saving as PDF blows it back up to 88k, which is still way too big. So I thought: maybe there's a good command line tool for converting SVG to PDF? I could have a workflow where I use Illustrator only to read and edit SVG files (keeping them around so that I can re-edit them if I want, without as much confusion as keeping two different PDF versions of the same file) and use a different program to convert them to small PDFs.</p>
+
+<p>After some searching, I found CairoSVG, which (after a lot of hassle installing, see below) seemed to work well: it produces a 3.5k byte PDF file from the same image.</p>
+
+<p>The installation process was a bit of a mess. Very different from typical OS X download-and-run installation processes:</p>
+
+<ol>
+<li><p>Install pip from <a href="https://pip.pypa.io/en/stable/installing/">https://pip.pypa.io/en/stable/installing/</a></p></li>
+<li><p>Use pip to install CairoSvg per <a href="http://cairosvg.org/">http://cairosvg.org/</a></p></li>
+<li><p>Try running cairosvg from the command line, but it doesn't work because it is unable to load the cairo library. After much searching, discover what the CairoSVG web site never tells you: that cairo is a separate piece of software that you also need to install.</p></li>
+<li><p>Install MacPorts from <a href="https://www.macports.org/install.php">https://www.macports.org/install.php</a></p></li>
+<li><p>Try using MacPorts to install cairo, but discover that it requires the App version of Xcode and not just the command-line developer tools I already had installed.</p></li>
+<li><p>Install Xcode from the Apple App store</p></li>
+<li><p>Try MacPorts again, but discover that the App store install is not the real install.</p></li>
+<li><p>Run Xcode to install it for real.</p></li>
+<li><p>Use MacPorts to install cairo per <a href="https://www.cairographics.org/">https://www.cairographics.org/</a></p></li>
+<li><p>Try running cairosvg from the command line, but it still can't find the library.</p></li>
+<li><p>Searching the net for the error message eventually leads to <a href="https://github.com/Kozea/WeasyPrint/issues/79">https://github.com/Kozea/WeasyPrint/issues/79</a> which advises setting the environment variable DYLD_FALLBACK_LIBRARY_PATH to /opt/local/lib</p></li>
+<li><p>It used to be the case that setting environment variables globally was done by editing the file ~/.MacOSX/environment.plist but that no longer works —&nbsp;see <a href="http://stackoverflow.com/questions/603785/environment-variables-in-mac-os-x/">http://stackoverflow.com/questions/603785/environment-variables-in-mac-os-x/</a> — so instead I've been putting them in my .login file.</p></li>
+<li><p>After editing .login to set the environment variable I need to make a new terminal window because the old ones won't have it set yet.</p></li>
+</ol>
+
+<p>After all this, the command-line cairosvg runs, and the command line "cairosvg grid-onion.svg -o grid-onion.pdf" produces the small PDF file reported above.</p>
+
+<p>But we're not done...</p>
+
+<p>It turns out that the resulting PDF has a different image size than the original file. After some more groveling on the net I discovered that it's using a default value of 96 dots per inch rather than respecting the 72dpi value used by Illustrator. So when I view the resulting pdf files in Illustrator, Preview, or TeX, they don't have the same scale as when I drew them. This is a problem, because I've been using relative image sizes (the scale= parameter of graphicx) when including images in some of my LaTeX documents.</p>
+
+<p>The cairosvg command line program has two options for changing the scale. We can either set the program to use 72 dpi, or we can tell it to scale the image by a factor of 1.33. Both generate images that have the correct size. But now the bounding box of the image has been destroyed, and it's instead using a bounding box that's way too big. This turns out to be true for svg to png conversion as well: if I try to use cairosvg to make a png from my svg file, it also loses the bounding box. There are no options for telling cairosvg to avoid destroying the bounding box, and no suggestion on the cairosvg issue tracking site that anyone knows or cares about this problem.</p>
+
+<p>After all this, I'm ready to give up on cairosvg as being worth what I've paid for it (nothing). Does anyone know of an svg-to-pdf conversion pipeline that produces small pdf files but actually works?</p>
+
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>lucaswiman</b>: Pretty much no<br />
+<b>February 17 2017, 06:40:53 UTC</b><br />
+<p>By coincidence, I looked into this for several hours last week for a project I'm working on for visualizing grammars and finite automata. CairoSVG was a big pain to install; you seem to have been more successful than I was.</p>
+
+<p>The other commands I tried are:</p>
+<ol><li>Imagemagick, which IIUC uses its own rendering engine under the hood, and then converts to PDF using ghostscript. This rasterizes the image, which produces large images that are embedded in the PDF.</li>
+<li>PhantomJS (installable via NPM) with the rasterize.js script. This has nicer rendering/fonts than imagemagick, but samples a canvas in a headless browser, so has the same large file size you're describing.</li>
+<li>Inkscape, which I didn't try because... reasons, but might suit your needs. http://tex.stackexchange.com/a/2107</li></ol>
+
+<p>It's sad that SVG rendering support is so mediocre. It's otherwise a great format, and pretty easy to manipulate programmatically.</p>
+</div>
+
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b><br />
+<b>February 17 2017, 07:15:04 UTC</b> Edited:  February 17 2017, 07:16:25 UTC<br />
+Thanks for the added experiences. The programmatic manipulation is one reason I really like SVG — when I want to write a program to generate an illustration, SVG makes the output side of it easy. Another is that you can embed it directly in web pages as an image file format. And the third is that it's what I need to use to add images to Wikipedia, so I'm familiar with it from doing so regularly. But I'm stuck with PDF for an image format for papers, I think. Over on Google+ (<a href="https://plus.google.com/100003628603413742554/posts/PqgjUGauLPB">https://plus.google.com/100003628603413742554/posts/PqgjUGauLPB</a>) a commenter tried Inkscape and it seems to have worked pretty well (nowhere near as small as CairoSVG, but usable looking), but it's a GUI rather than a command line so it won't work for all applications.
+</div>
+
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>Peter Kling</b><br />
+<b>February 17 2017, 08:59:10 UTC</b><br />
+<p>Maybe this svg2pdf variant works better (it's definitely much easier to install):</p>
+
+<ol><li>Install Homebrew (https://brew.sh) via: /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</li>
+<li>brew install svg2pdf</li></ol>
+</div>
+
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b><br />
+<b>February 17 2017, 16:58:35 UTC</b><br />
+Definitely worth a try; thanks for the suggestion.
+</div>
+
+<div style="margin-left: 6em; padding-top: 1em;">
+<b>11011110</b><br />
+<b>February 17 2017, 20:29:19 UTC</b> Edited:  February 17 2017, 20:31:22 UTC<br />
+<p>Installation: required one more step than you say. I had to run bash, as the command line doesn't work with my preferred shell (cshrc)</p>
+
+<p>File size: very good for this example with the 42 circles. Not as good, but still significantly better than preview, for a larger example with lots of text (26k vs 42k).</p>
+
+<p>Image display size and bounding box: no longer a problem.</p>
+
+<p>Correct rendering of graphical elements like circles, spline curves, rounded rectangles, etc: not a problem.</p>
+
+<p>Correct rendering of text: major problems in both fonts (a file with Times text came back in sans serif) and font size (the sans-serif text was randomly much too big or much too small, often on different lines of the same chunk of text).</p>
+
+<p>Verdict: still not usable. The text problems are too severe.</p>
+</div>
+
+<div style="margin-left: 6em; padding-top: 1em;">
+<b>John Sidles</b>: Font fixes<br />
+<b>February 17 2017, 21:51:40 UTC</b><br />
+<p>When producing SVG files in Inkscape, a great many export-related font problems 
+can be remedied by selecting all the 'text' objects, and choosing (from the top menubar) </p>
+
+<p>'Path' -> 'Object to Path'</p>
+
+<p>Now 'svg2pdf' works OK --- because it is converting vector art, not font characters.</p>
+</div>
+
+<div style="margin-left: 9em; padding-top: 1em;">
+<b>11011110</b>: RE: Font fixes<br />
+<b>February 17 2017, 21:53:56 UTC</b><br />
+Yes, and I could do the same thing in Illustrator, but then I wouldn't have editable text any more for the next time I wanted to change the drawing.
+</div>
+
+<div style="margin-left: 12em; padding-top: 1em;">
+<b>Anonymous</b>: RE: Font fixes<br />
+<b>February 17 2017, 22:53:12 UTC</b><br />
+<p>Store type on a hidden layer, converted paths on a visible layer.</p>
+
+<p>Works fine in Illustrator and Inkscape.</p>
+</div>
+
+<div style="margin-left: 15em; padding-top: 1em;">
+<b>11011110</b>: RE: Font fixes<br />
+<b>February 17 2017, 23:10:23 UTC</b> Edited:  February 17 2017, 23:13:32 UTC<br />
+Ok, but I don't think I should have to work around font "issues" that are primarily ideological rather than technical. The fonts in question are installed on my system and everyone else's, freely available for no money, and standardized as a required part of the pdf format, but the free software people refuse to write software that uses them because the fonts themselves have not been granted a sufficiently pure license. I have a sort-of-working workaround that I use for Wikipedia, a script I hacked together that replaces the fonts by close-enough and freely-licensed fonts, but I want higher quality for my own publications. By not working with the fonts I already have installed, the free software developers are driving me away from free software, rather than encouraging its adoption.
+</div>
+
+<div style="margin-left: 18em; padding-top: 1em;">
+<b>John Sidles</b>: RE: Font fixes<br />
+<b>February 17 2017, 23:41:20 UTC</b><br />
+Donald Knuth's <i>Digital Typography</i> (1999) is recommended 
+to all who perceive that font issues are "primarily ideological". 
+
+<p>Ideological issues there may be, but as Knuth discusses at length, there are 
+an overwhelming number of technical and aesthetic issues too, that 
+accompany the design of even the simplest typeface.</p>
+
+<p>SUMMARY: Of free, simple, and high-quality typography .... pick any two. </p>
+
+<p>Uhhh ... except for the pairing 'simple' and 'high-quality' ... which in typography 
+and/or four-color printing, just plain ain't all that compatible. :)</p>
+
+<p>In the meantime, I have verified that the following LaTex/Tikz document, 
+which generates a multi-color exotic-character commutative diagram 
+as a PDF file under TeXLive/pdflatex, is properly converted by 
+'svg2pdf' into a SVG document that (for example) Inkscape can edit, 
+and that in turn, Inkscape can export the modified document as a PDF file.</p>
+
+<p>Happy TeXing!</p>
+
+<pre>------
+\documentclass[10pt]{standalone}
+
+\usepackage{xcolor} %used for font color
+\usepackage{amssymb} %maths
+\usepackage{amsmath} %maths
+\usepackage{tikz-cd} 
+
+\begin{document}
+\begin{tikzcd}
+\mathcal{A} \arrow[r, "\phi"] \arrow[d, red]
+& \mathbb{B} \arrow[d, "\psi" red] \\
+\mathfrak{C} \arrow[r, red, "\eta" blue]
+&D \end{tikzcd} 
+\end{document}
+----------</pre>
+</div>
+
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>Anonymous</b><br />
+<b>February 17 2017, 19:52:13 UTC</b><br />
+<p>For me, running under MacOS Sierra, the SVG graphics ecosystem created by "brew install svg2pdf", together with Inkscape (version 0.91), seems to 'just work'.</p>
+
+<p>In particular, the PDF files created by 'svg2pdf' are about the same size as the starting SVG files; moreover it turns out that the PDF files thus created can themselves be opened in Inkscape for further editing.</p>
+
+<p>Exporting SVG to PDF from within Inkscape also works, albeit the PDF files created by this path seem to be somewhat larger than those created by svg2pdf.</p>
+</div>
+
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b><br />
+<b>February 18 2017, 02:23:55 UTC</b><br />
+<p>The recommended OS X version of inkscape is no longer usable on OS X because it is not signed with an Apple-approved developer key.</p>
+
+<p>Using port to install the "experimental" version took a long time but eventually worked. And running the command-line version of the resulting installation with the -A option to convert svg to pdf also produced a reasonably small pdf file, although it printed some scary-looking warnings as it did so:</p>
+
+<pre>Dynamic session lookup supported but failed: launchd did not provide a socket path, verify that org.freedesktop.dbus-session.plist is loaded!
+Failed to get connection
+** (inkscape:39840): CRITICAL **: dbus_g_proxy_new_for_name: assertion 'connection != NULL' failed
+
+** (inkscape:39840): CRITICAL **: dbus_g_proxy_call: assertion 'DBUS_IS_G_PROXY (proxy)' failed
+
+** (inkscape:39840): CRITICAL **: dbus_g_connection_register_g_object: assertion 'connection != NULL' failed</pre>
+
+<p>Unfortunately, the resulting PDF has some of the same font problems that I was getting from svg2pdf. The font size is ok this time, but the Times font of my drawings has been replaced by something sans-serif, and some of the text has been shifted to overlay itself making it unreadable</pre>
+</div>
+
+<div style="margin-left: 6em; padding-top: 1em;">
+<b>John Sidles</b>: More fixes and idioms<br />
+<b>February 18 2017, 06:55:55 UTC</b><br />
+<p>(1) Drag-and-drop installation of Inkscape will succeed, per the directions on Inkscape's MacOS web page (https://inkscape.org/en/download/mac-os/).</p>
+
+<p>The first run of Inkscape ineed will fail (due to lack of a certificate), but the second run will succeed, provided that it is initiated (as usual for unsigned software) via the Apple Icon -> System Preferences -> Security and Privacy -> "General" tab -> "Open Anyway" button. This override need only be done once.</p>
+
+<p>(2) Regarding font problems associated to SVG graphics files, the American Mathematical Society's Author Resource Center (http://www.ams.org/publications/authors/authors) strongly recommends that "fonts should be fully embedded in your graphic". Alternatively all characters can be converted vector graphic objects, thus eliminating the need for fonts.</p>
+
+<p>The reason for this strong AMS recommendation is evident to all: the so-called "standard fonts", that in theory are supported consistently across all systems, are in fact supported inconsistently or not at all.</p>
+
+<p>In practice this means that AMS's two preferred formats for high-quality vector-art graphics files are PDF and EPS; such files are readily exported from native Illustrator, Inkscape, or LaTeX/Tikz files, according to individual preference.</p>
+
+<p>HOT TIP May I say that the figure-generating utility "LaTeXiT" (which is distributed with TeXLive) holds a special place in many folks' hearts (including mine)? Ingeniously, LaTeXiT produces PDF files that have the native LaTeX/Tikz code embedded as comments. To edit/amend such PDF files, simply open the PDF file in LaTeXiT, edit the source, and recompile ... it's the best of both worlds! :)</p>
+</div>
+
+<div style="margin-left: 9em; padding-top: 1em;">
+<b>11011110</b>: RE: More fixes and idioms<br />
+<b>February 18 2017, 08:13:34 UTC</b><br />
+<p>"Open Anyway" hasn't been one of the options for quite a while now. You have to do "sudo spctl --master-disable" from the command line instead (see <a href="https://www.tekrevue.com/tip/gatekeeper-macos-sierra/">https://www.tekrevue.com/tip/gatekeeper-macos-sierra/</a>). Or you have to know to control-click on the app from the finder to access the super sekrit menu for bypassing the access controls this one time.</p>
+
+<p>Apple is basically making it impossible to release free software and get it out to regular users. Or at least, to do it for free yourself. You have to buy a developer key from them, and you can't use anything but Xcode to build your app. I understand the security needs behind this but it's quite irritating.</p>
+</div>
+
+<div style="margin-left: 12em; padding-top: 1em;">
+<b>John Sidles</b>: RE: More fixes and idioms<br />
+<b>February 18 2017, 16:50:02 UTC</b><br />
+<p>The override "Open Anyway" definitely *IS* still available ... as of Sierra 10.12.3 ... in accounts that have "Admin" privileges.</p>
+
+<p>For this reason it is good practice to maintain precisely one account that has Admin privileges, which is used solely to install and update software for all other accounts.</p>
+
+<p>To further escape security restrictions, note all of the usual unix command-line interfaces still work OK ... and can can even be made double-clickable applications.</p>
+
+<p>E.g., from any account it is possible to (first) create a text-file bash script whose first line is "#!/bin/bash -e", (then) give that file "execute" privileges, and (and finally) tell the finder to open that file in "Terminal". Presto: an unrestricted, completely general, unix-style double-clickable "app"! Moreover, because the command-line 'open -a "any Apple app]' is available, such clickable bash-scripts turn out to be almost infinitely customizable.</p>
+
+<p>As a concrete example, the recent Science article by Microsoft's Giuseppe Carleo and Matthias Troyer, "Solving the quantum many-body problem with artificial neural networks" shipped with a zip file containing a thousand-line C++ source code and a "makefile". To my gratification, their makefile just 'worked" -- in particular, the compiled executable runs with no security restrictions.</p>
+
+<p>Now, folks who want to access all of Apple's proprietary graphical goodness from a commercial-grade standalone 'app', indeed have play in Apple's xcode sandbox. But for a great many science-and-math purposes, this level of software development is inessential (even distracting).</p>
+</div>
+
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>Anonymous</b><br />
+<b>February 17 2017, 11:45:13 UTC</b><br />
+For inclusion in a LaTeX document (or, using the standalone package, generating a PDF of the graphic) the Tikz/PGF package is pretty standard (http://www.texample.net/tikz/) Haven't tested the size of the resulting image but getting the scaling right should be easier than importing from other editors.
+</div>
+
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b><br />
+<b>February 17 2017, 16:59:49 UTC</b><br />
+That's a different piece of the puzzle, how to generate a diagram in the first place. I had one co-author using tikz but I prefer a GUI drawing program. And if I did use tikz, I'd have the reverse problem, how to generate SVG from it.
+</div>
+
+<div style="margin-left: 6em; padding-top: 1em;">
+<b>Peter Kling</b><br />
+<b>February 17 2017, 19:01:56 UTC</b><br />
+<p>Continuing the list from my former post:</p>
+
+<p>3. brew install pdf2svg</p>
+
+<p>;)</p>
+</div>
+
+<div style="margin-left: 6em; padding-top: 1em;">
+<b>John Sidles</b>: Full-featured open-source graphics and print-production<br />
+<b>February 17 2017, 21:23:19 UTC</b><br />
+<p>For me the following manuscript ecosystem "just works" for pretty much 
+all graphical and textual permutations of LaTeX, Tikz, SVG, and PDF.</p>
+
+<p>I use this workflow to produce not only scientific articles, 
+but also four-color press-ready art for my wife's publishing company.</p>
+
+<p>The following setup directions are expert-tolerant, NOT user-friendly.
+Considerable familiarity with the unix/MacOS command-line environment
+is assumed.</p>
+
+<p>Messing around with command-line CAN trash your system, 
+so apply these command-line idioms at YOUR own risk and trouble.
+And of course, your entire system IS backed-up, isn't it?</p>
+
+<ul>
+<li>start with MacOS Sierra</li>
+<li>install 'TeXLive' (2016), including in particular 'TeXShop' and 'LaTeXiT'</li>
+<li>install 'GIMP' and 'Inkscape'</li>
+<li>install 'brew' per its web page directions</li>
+<li>verify that all the above applications are latest-version</li>
+</ul>
+
+<p>Then from the command line, use 'brew' to (re)install various packages.
+The following need be done only once:</p>
+
+<pre>brew install svg2pdf pdf2svg ghostscript
+brew reinstall imagemagick --with-little-cms --with-little-cms2</pre>
+
+<p>Note: the imagemagick (re)install options '--with-little-cms' and '--with-little-cms2' 
+are necessary to gain full control of color profiles in raster art files.</p>
+
+<p>At this point it's a good idea to check that 'which gs' returns '/usr/local/bin/gs'
+(here 'gs' is the command line name for ghostscript). For example 
+on my system, running a bash shell, we see</p>
+
+<pre>$ ls -l `which gs`
+/usr/local/bin/gs -> ../Cellar/ghostscript/9.20/bin/gs</pre>
+
+<p>Here 'Cellar' is where 'brew' stores its applications.</p>
+
+<p>It's prudent to check too that no fossilized versions of 'gs' and/or 'pdflatex' lurk 
+elsewhere in $PATH. Both 'LaTeXiT' and 'TeXShop' preferences in particular 
+may need tuning.</p>
+
+<p>Periodically update all of the above command-line tools 
+-- once a week is plenty often -- as follows</p>
+
+<pre>brew update && brew doctor && brew upgrade && brew cleanup && brew doctor
+tlmgr update --self && tlmgr update --all</pre>
+
+<p>At this point, with luck, pretty much *EVERYTHING* will 'just work' interoperatively.
+In particular, a dozen or more graphics conversion utilities ('pdf2ps', 'ps2pdf', 
+'eps2eps', 'pdf2svg', 'svg2pdf', etc.) will be found in '/usr/local/bin'</p>
+
+<p>Uhhhh ... except that to gain full control of color profiles in raster-art files, 
+you may need to use the built-in MacOS command-line application 'sips'
+(which is what the MacOS application 'Preview' is built upon).</p>
+
+<p>And oh yeah, did I mention that (La)TeX font management can be tedious
+at best, and an outright nightmare at worst? And that all-too-many font-files
+are themselves of dubious quality?</p>
+
+<p>Your mileage may vary, and I emphasize again that above environment is 
+more nearly expert-tolerant tban user-friendly, but for me it has proved 
+both stable and full-featured.</p>
+
+<p>Good luck, and happy TeX-ing.</p>
+</div>
+
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>John Sidles</b>: Converting Tikz to SVG to PDF and back ...<br />
+<b>February 19 2017, 13:12:47 UTC</b><br />
+<p>Appended is a file "tikz_standalone_source.tex" that demonstrates 
+complete interoperability of Tikz to SVG to PDF and back again,
+for a color graphic that includes exotic mathematical characters.</p>
+
+<p>What *cannot* be achieved is font embedding in SVG graphics. 
+On the other hand, SVG was never designed to offer this capability.</p>
+
+<p>The conversion utilities are open-source: 'gs', 'svg2pdf', and 'pdf2svg',
+(all installed as described elsewhere on this thread). A basic familiarity 
+with the bash command-line is assumed.</p>
+
+<p>Good luck, and happy TeXing! :)</p>
+
+<pre>% ------------------------------------------------------------
+% this is a LaTeX file named "tikz_standalone_source.tex"
+
+\documentclass[10pt]{standalone}
+
+\usepackage{xcolor} % used for font color
+\usepackage{amsmath} % math environments
+\usepackage{amssymb} % math symbols
+\usepackage{tikz-cd} % commutative diagrams in tikz
+
+\begin{document}
+\begin{tikzcd}
+\mathcal{A} \arrow[r, "\phi"] \arrow[d, red]
+& \mathbb{B} \arrow[d, "\psi" red] \\
+\mathfrak{C} \arrow[r, red, "\eta" blue]
+&D \end{tikzcd} 
+\end{document}
+
+\endinput
+
+# ------------------------------------------------------------
+# here are bash command-line idioms for PDF -> SVG -> PDF (etc.)
+
+# ------------------------------------------------------------
+# 'gs' command-line to convert a PDF file with embedded fonts into
+# an identical-appearing PDF file containing solely vector art; 
+# the output PDF file then can be edited in applications such as 
+# Inkscape, Illustrator, and exported to SVG format (etc).
+
+# for details of 'gs' usage, see 
+# URL: https://ghostscript.com/doc/current/VectorDevices.htm
+
+# to specify font embedding (or not), vary the arguments
+# -dNoOutputFonts=true # if 'true', all characters -> vector art
+# -dEmbedAllFonts=false # if 'true', embed all fonts
+# -dSubsetFonts=false # if 'true', subset all fonts
+
+gs \
+-sDEVICE=pdfwrite \
+-dCompatibilityLevel=1.4 \
+-dPDFSETTINGS=/prepress \
+-dNoOutputFonts=true \
+-dEmbedAllFonts=false \
+-dSubsetFonts=false \
+-dNOPAUSE \
+-dQUIET \
+-dBATCH \
+-dSAFER \
+-sOutputFile='tikz.pdf' \
+'tikz_standalone_source.pdf'
+
+# ------------------------------------------------------------
+# verify that 'pdf2svg' can convert the output PDF file to SVG
+
+pdf2svg 'tikz.pdf' 'tikz_then_pdf2svg.svg'
+
+# ------------------------------------------------------------
+# verify that 'svg2pdf' can convert the output SVG file to PDF
+
+svg2pdf 'tikz_then_pdf2svg.svg' 'tikz_then_pdf2svg_then_svg2pdf.pdf'
+
+# ------------------------------------------------------------
+# verify that 'Inkscape' can read the PDF and SVG files (and edit them)
+
+open -a Inkscape \
+'tikz.pdf' 'tikz_then_pdf2svg.svg' 'tikz_then_pdf2svg_then_svg2pdf.pdf'
+
+# ------------------------------------------------------------
+# verify that 'Preview' and 'Adobe Reader' can read the PDF files
+
+open -a 'Preview' \
+'tikz.pdf' 'tikz_then_pdf2svg_then_svg2pdf.pdf'
+
+open -a 'Adobe Reader' \
+'tikz.pdf' 'tikz_then_pdf2svg_then_svg2pdf.pdf'</pre>
+</div>
+
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>John Sidles</b>: RE: Converting Tikz to SVG to PDF and back ...<br />
+<b>February 19 2017, 13:48:48 UTC</b><br />
+<p><b>PS</b> I will mention too, that a variety of web browsers 
+were able to read the SVG file produced by the above workflow.</p>
+
+<p>The SVG file 'tikz_then_pdf2svg.svg' was fairly small (16 kilobytes), 
+and the pdf file distilled from it 'tikz_then_pdf2svg_then_svg2pdf.pdf'
+was even smaller (4 kilobytes).</p>
+
+<pre># ------------------------------------------------------------
+# verify that 'FireFox' and 'Safari' and 'Google Chrome' 
+# can read the SVG files produced by 'gs' and 'pdf2svg'
+
+open -a 'FireFox' 'tikz_then_pdf2svg.svg'
+open -a 'Safari' 'tikz_then_pdf2svg.svg'
+open -a 'Google Chrome' 'tikz_then_pdf2svg.svg'
+# ------------------------------------------------------------</pre>
+</div>
+
+<div style="margin-left: 6em; padding-top: 1em;">
+<b>11011110</b>: RE: Converting Tikz to SVG to PDF and back ...<br />
+<b>February 19 2017, 23:12:47 UTC</b><br />
+Ok, but how does this all allow me to continue to use the GUI drawing program that I like and am familiar with (Adobe Illustrator) with a workflow that produces less-bloated files from it?
+</div>
+
+<div style="margin-left: 9em; padding-top: 1em;">
+<b>John Sidles</b>: RE: Converting Tikz to SVG to PDF and back ...<br />
+<b>February 20 2017, 01:11:02 UTC</b><br />
+<p>For me more than many folks, consistency is a paramount concern, 
+given that books can contain hundreds of figures (some vector,
+some raster, some mixed), created by dozens of contributors (some
+expert photographers and/or graphics artists, others neophytes), using 
+multiple versions of multiple software programs (some software being 
+up-to-date and reliable, other software being ancient and buggy).</p>
+
+<p>To handle this complexity, for each project a folder called "figures_master"
+is maintained, that contains complex-but-editable files. Various bash scripts 
+automatically scan "figures_master", to populate a folder called 
+'figures_production' with files that are smaller and simpler, but no 
+longer editable.</p>
+
+<p>This management strategy works consistently well
+(consistency being very important) both for vector art 
+(which is script-converted with 'gs' and 'pdf2svg')
+and for raster art.</p>
+
+<p>Here's how it works for vector art (raster art is similar):</p>
+
+<hr />
+<p>(A) Export from Adobe Illustrator --- or Inkscape, or whatever GUI 
+is preferred --- to any of (1) EPS, (2) PS, or (3) PDF.</p>
+
+<p>Note in particular that Illustrator-created PDF files, although large, 
+*ARE* re-editable in Illustrator.</p>
+<hr />
+<p>(B) Filter the GUI-created but awkwardly-large too-complex PDF/EPS/PS files 
+through 'gs' (with option -dNoOutputFonts) to obtain smaller, simpler PDF files</p>
+
+<p>
+The price for this simplicity is, that Illustrator/Inkscape (etc.) in general
+can no longer re-edit these new, smaller PDF files.</p>
+<hr />
+<p>(C) If desired, filter the gs-version PDF files through 'pdf2svg', 
+to obtain browser-compatible SVG files (that can be further edited
+in Inkscape, for example)</p>
+<hr />
+<p>Note that steps (B) and (C) lend themselves to automated processing
+by bash-scripts.</p>
+
+<p>In regard to raster art, it is supplied in dozens of formats (the single most common
+being Adobe PSD), then script-converted with Imagemagick and/or Apple's 'sips' 
+to either (a) PDF with embedded raster art, or (b) simplified/smaller PSD files;
+in either case always with color profiles have been carefully validated.</p>
+
+<p>This way, although the original artwork may be supplied in any of dozens 
+of formats --- all-too-commonly as files that are idiosyncratic, obsolete, or 
+generally messed-up --- the printer sees only well-formatted consistently
+color-controlled artwork, that is created by reliable, wholly automated 
+command-line procedures (always with 'gs' or 'sips' as the final production 
+software).</p>
+</div>
+
+<div style="margin-left: 12em; padding-top: 1em;">
+<b>11011110</b>: RE: Converting Tikz to SVG to PDF and back ...<br />
+<b>February 20 2017, 01:24:35 UTC</b><br />
+<p>It does seem to be the case that "gs -sDEVICE=pdfwrite -dBATCH -dNOPAUSE -dQUIET -sOutputFile="... does most of what I want: crunch down big Illustrator drawings while preserving their appearance. I was hoping for an SVG-based workflow rather than PDF-to-PDF so that I could have a simpler time distinguishing between the editable Illustrator version and the crunched-down version to include in the documents, but maybe that's too much to hope for.</p>
+
+<p>On the other hand, if I include the -dNoOutputFonts option then the files are about twice as big as the ones I've been getting with Preview's reduce file size filter, and if I don't include it the files are a little smaller than preview but significantly less re-editable.</p>
+
+<p>Dealing with multiple image sources of variable quality and professionality is not generally a big issue for my workflow.</p>
+</div>
+
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>Gabriel Nivasch</b>: PowerPoint<br />
+<b>February 19 2017, 19:33:06 UTC</b><br />
+When I draw that figure the usual way I draw figures, which is in PowerPoint using "Export to PDF", I get a file size of 9.6 KB. --Gabriel
+</div>
+
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: RE: PowerPoint<br />
+<b>February 19 2017, 19:45:37 UTC</b><br />
+Yes, other drawing software produces files that are not as bloated as Illustrator's. But I think PowerPoint is also not as powerful as Illustrator. For this figure it probably doesn't matter but for others it does.
+</div>

@@ -1,0 +1,43 @@
+---
+layout: post
+title:  'Complexity theory and Sudoku'
+date:   2005-10-16 10:31:00
+tags:   [complexity theory, sudoku]
+---
+<p>My <a href="/2005/10/15/assuming-uniqueness-in.html">recent post on Sudoku deductions using the knowledge that the solution is unique</a> led me to re-think what complexity class puzzles like Sudoku should be classified under.  Most sources including <a href="http://arxiv.org/abs/cs.DS/0507053">my own paper</a> simply cite the puzzle as being NP-complete, as proven by Yato and Seta.  But is it really?  Complexity theory has ways of incorporating the knowledge that a puzzle has a unique solution, and they lead to complexity classes different from NP.  It seems these classes, not NP, are the right level for describing the hardness of Sudoku puzzles.</p>
+
+
+<p>I'm no complexity theorist, but I did write <a href="http://fano.ics.uci.edu/cites/Document/Simultaneous-strong-separations-of-probabilistic-and-unambiguous-complexity-classes.html">one complexity theory paper</a>, long ago, and it's in part about problems with unique solutions.  Actually, there is more than one way of handling the question of unique solutions in a complexity theoretic way:</p>
+
+<ul>
+<li>Valiant (1976) defined UP, the class of languages accepted by nondeterministic polynomial time machines that have at most one accepting path.  That is, somehow as part of the structure of the problem we are guaranteed that there is a unique solution.  For instance, each composite number has a unique maximal factorization into primes, so compositeness is a concept that fits into this unique-witness paradigm, except for the difficulty of veryifying that the factors in this factorization really are prime.  This class lies between P and NP, and appears (or did when I wrote the paper in 1990) to lack completeness results. This doesn't seem to fit Sudoku perfectly, however, because it is easy to design Sudoku-like puzzles with multiple solutions; the uniqueness of the solutions is a property of the subset of instances we're interested in, rather than a syntactic feature of the language.</li>
+<li>Blass and Gurevich (1982) defined US, the class of languages in which we must distinguish uniquely-solvable instances from other instances.  This is the Sudoku designer's problem: she must design a puzzle with a unique solution, and reject puzzles that have no or several solutions.  Most Sudoku solving deduction rules fit within this paradigm: they make progress on filling in the puzzle without changing the set of solutions, so if they end up finishing the puzzle then we know not just a solution but also that there is a unique solution.</li>
+<li>The best fit, to my mind, for Sudoku solving is that of "promise problems": we are given as input a Sudoku puzzle, together with the promise that it has a unique solution, and our solver is only required to work correctly on such problems.  On instances that have more than one solution we make no guarantees about what our solver might do.  A solver using <a href="http://www.livejournal.com/community/sudoku/18540.html">the ambiguous rectangle rule I described in my recent post</a> fits into this paradigm.  More formally a promise-problem language is of this type if it is formed by a nondeterministic polynomial time machine together with the promise that it has at most one accepting path on the given problem instance.  I don't know the right complexity-theoretic name for this class of languages, so I'll call it UniqueP, because the most famous result in this area is that of Valiant and Vazirani ("NP is as easy as detecting unique solutions", 1986) which shows that a solution to the satisfiability language of this form (known as Unique-SAT) would lead to a solution of any NP problem.  The reduction is randomized, though, so it's not correct to say that Unique-SAT is NP-complete.</li>
+</ul>
+
+<p>It is not important, by the way, for our solver to "know" (whatever that means for a computer program) that there is a unique solution.  What is important in solving UniqueP type problems is that we don't care what our solver does for problem instances that don't have unique solutions.  That's exactly the situation for the ambiguous rectangle rule: for instances with a unique solution, it makes progress while not invalidating that solution.  For instances with multiple solutions, applying the ambiguous rectangle rule might rule out all remaining solutions, so that the solver fails to find a solution even when one exists.</p>
+
+<p>All proper Sudoku puzzles come with a guarantee that the puzzle has a unique solution, so they belong to the UniqueP complexity class.  I imagine there's a class of uniqueness-preserving reductions under which Sudoku can be shown to be complete for this class, but as far as I know that hasn't yet been explicitly proven.  In the meantime, when one says Sudoku is NP-complete, one should keep in mind that this refers only to an unusual type of Sudoku puzzle in which there might be multiple solutions.</p>
+
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: <br />
+<b>2005-10-16T22:14:19Z</b><br />
+
+Lance discusses this question here: http://weblog.fortnow.com/2005/08/sudoku-revisited.html
+ 
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: Promise problems<br />
+<b>2005-10-17T02:00:33Z</b><br />
+
+<p>Observe that promise problems can be much simpler than UP problems. For example Unique-SAT is generally considered to be difficult, while the promise version of unique SAT is trivial: always accept!</p>
+
+<p>Jeremy Spinrad and Vijay Raghavan show that there are other ways in which promise algorithms can be easier. They consider a stronger form of promise algorithms, called robust algorithms, in which if the input does not belong to the promise class the algorithm must either reject or find what would otherwise have been a solution without the promise (e.g. a satisfying assignment, or a solution to the sodoku problem). They show that finding the largest independent set in a well-covered graph is trivial in the promise sense yet NP-hard in the robust sense [SODA 2001].</p>
+
+<p>Alex Lopez-Ortiz</p>
+
+
+</div>
+

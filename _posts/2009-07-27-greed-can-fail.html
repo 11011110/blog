@@ -1,0 +1,64 @@
+---
+layout: post
+title:  'Greed can fail for American money'
+date:   2009-07-27 16:14:00
+tags:   [dynamic programming]
+---
+You all know the <a href="http://11011110.livejournal.com/19558.html">change-making problem</a>, right? The task is to represent a given amount of money in a given system of coins, using as few coins as possible. The greedy algorithm makes change by repeatedly subtracting the largest available coin from the remaining amount, and is optimal for most actual systems of coins but not in general. It makes a good example problem for algorithms classes, because it&#x27;s easy to understand and helps with two important goals of the class: convincing the students that greedy algorithms aren&#x27;t always the right way to solve problems, and giving them a simple example of dynamic programming. When I&#x27;ve presented this problem to my algorithms classes I&#x27;ve usually made up a fictitious coin system with unusual denominations (e.g. large prime numbers) to force non-greediness, but today I encountered a very natural non-greedy example.
+<br />
+
+<br />
+An easy way to make a coinage system for which the greedy algorithm always works is to make each coin be an integer multiple of the next smaller coin, but there can be systems of coins for which greed is optimal that are not constructed in this way, and the U.S. coinage system is a good example. It uses dollars (100c), half-dollars (50c), quarters (25c), dimes (10c), nickels (5c), and pennies (1c), but the dollars and half-dollars are rarely used. Or, one could consider the paper money (100c, 200c, 500c, 1000c, 2000c, and 5000c, with 200c being rare) to also be part of the system. With or without the paper money and rare denominations, the greedy algorithm is optimal, despite the non-integer ratio between quarters and dimes.
+<br />
+
+<br />
+But when buying my lunch today, I needed 40 cents in change, and the cash register was out of nickels. That is, due to the outage, I was using a system where the denominations are (25,10,1). If one makes change greedily, the solution uses seven coins (quarter, dime, and five pennies) but a better non-greedy solution uses only four dimes. My cashier stood for a while with a quarter in his hand, taking out dimes and putting them back, before finally figuring out what to do and giving me the optimal change.
+<br />
+
+<br />
+A variant I haven&#x27;t seen formalized (but that I have seen in my own interactions with cashiers): two people want to convey a given amount of money from one person to another so that the total number of coins that change hands in either direction is minimized. How do they do it? Again, there&#x27;s a straightforward dynamic programming solution, but maybe (as for change making) there&#x27;s a simpler greedy-like strategy that works for most common coin systems.
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>brooksmoses</b>: Some thoughts....<br />
+<b>2009-07-27T23:56:08Z</b><br />
+Looks like the general idea there is that the greedy strategy can fail when the number of coins required to make the amount (coin<sub><i>i</i></sub> mod coin<sub><i>i-1</i></sub>) is greater than some N for some <i>i</i>, where coin<sub><i>i</i></sub> is the value of coin <i>i</i>.
+
+Is N always 1, or can we place stricter bounds on it?  If so, what are they?
+
+Also, is this condition more accurately phrased as (<i>k</i> coin<sub><i>i</i></sub> mod coin<sub><i>i-1</i></sub>) &gt; N<sub><i>k</i></sub> -- and, if so, is N<sub><i>k</i></sub> actually a function of <i>k</i>?
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: Re: Some thoughts....<br />
+<b>2009-07-28T00:03:56Z</b><br />
+See the paper <a href="http://portal.acm.org/citation.cfm?id=321961">Chang and Korsh</a> linked from the comments of <a href="http://11011110.livejournal.com/19558.html">my previous post on the problem</a>: {1,a,b} with a &lt; b is greedy if and only if a ≤ (b mod a) + floor(b/a). I&#x27;m not sure offhand how this translates into the sort of formulation you describe, though, and I don&#x27;t remember what happens for more than three coins.
+</div>
+<div style="margin-left: 6em; padding-top: 1em;">
+<b>brooksmoses</b>: Re: Some thoughts....<br />
+<b>2009-07-28T00:30:26Z</b><br />
+Hmm.  I&#x27;m a bit confused, and expect I&#x27;ve got something wrong.
+
+Suppose we vary your case slightly, and let a=10 and b=30.  Then (b mod a) = 0, and floor(b/a) = 3.  The algorithm then asks whether 10 is less than or equal to three, and concludes that a greedy algorithm doesn&#x27;t apply -- which I think is obviously wrong.
+
+Does the rule only apply when (b mod a) is nonzero?
+</div>
+<div style="margin-left: 9em; padding-top: 1em;">
+<b>11011110</b>: Re: Some thoughts....<br />
+<b>2009-07-28T01:10:22Z</b><br />
+I think the condition that b mod a ≠ 0 is necessary for the formula to be right.
+Here&#x27;s an explanation of where the formula comes from: by the JACM paper&#x27;s results, one needs only to look at how the greedy and optimal algorithms make change for the smallest multiple of a that&#x27;s greater than or equal to b.  The greedy algorithm uses 1 + a - (b mod a) coins, except when b mod a = 0 in which case it uses only 1 coin. The optimal algorithm uses ceiling(b/a) coins, and (again except when b mod a = 0) this equals 1 + floor(b/a). So the two 1+ parts cancel and you&#x27;re left with the inequality I gave. But it breaks down at two different points when b mod a = 0, in which case greed is always good.
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: half-cents, 2-cent pieces, 3-cent pieces...<br />
+<b>2009-08-04T18:57:38Z</b><br />
+http://www.acoin.com/regular.htm
+U.S. coinage at one time or another included half-cents, 2-cent pieces, 3-cent pieces, silver half-dimes, 20 cents Seated Liberty, silver dollars, 2 1/2 Dollars , 3 dollars, 4 dollars, 5 dollars, 10 dollars, 20 dollars. My maternal grandfather had each of these, but had to sell his entire coin collection when he was screwed on medical insurance and had to pay cash to stay alive.
+
+-- Prof. Jonathan Vos Post
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: Re: half-cents, 2-cent pieces, 3-cent pieces...<br />
+<b>2009-08-11T04:18:24Z</b><br />
+Interesting. It makes me wonder which combinations existed concurrently and whether they were all optimally solved by the greedy algorithm.
+</div>
+

@@ -1,0 +1,207 @@
+---
+layout: post
+title:  'Gilbreath made practical'
+date:   2011-02-19 20:11:00
+tags:   [unsolved, cellular automata, python, number theory]
+---
+Make a triangle of numbers in which the leftmost column is the sequence of prime numbers and each other number is the absolute value of the difference of the two numbers to its left:
+<br />
+
+<br />
+<pre>  2
+<br />
+  3 1
+<br />
+  5 2 1
+<br />
+  7 2 0 1
+<br />
+ 11 4 2 2 1
+<br />
+ 13 2 2 0 2 1
+<br />
+ 17 4 2 0 0 2 1
+<br />
+ 19 2 2 0 0 0 2 1
+<br />
+ 23 4 2 0 0 0 0 2 1
+<br />
+ 29 6 2 0 0 0 0 0 2 1
+<br />
+ 31 2 4 2 2 2 2 2 2 0 1
+<br />
+ 37 6 4 0 2 0 2 0 2 0 0 1
+<br />
+ 41 4 2 2 2 0 0 2 2 0 0 0 1
+<br />
+ 43 2 2 0 2 0 0 0 2 0 0 0 0 1
+<br />
+ 47 4 2 0 0 2 2 2 2 0 0 0 0 0 1
+<br />
+ 53 6 2 0 0 0 2 0 2 0 0 0 0 0 0 1
+<br />
+ 59 6 0 2 2 2 2 0 0 2 2 2 2 2 2 2 1
+<br />
+ 61 2 4 4 2 0 2 0 0 0 2 0 2 0 2 0 2 1
+<br />
+ 67 6 4 0 4 2 2 0 0 0 0 2 2 0 0 2 2 0 1
+<br />
+ 71 4 2 2 2 2 0 2 2 2 2 2 0 2 2 2 0 2 2 1
+<br />
+ 73 2 2 0 2 0 2 2 0 2 0 2 0 0 2 0 2 2 0 2 1
+<br />
+ 79 6 4 2 2 0 0 2 0 0 2 2 0 0 0 2 2 0 2 2 0 1
+<br />
+ 83 4 2 2 0 2 2 2 0 0 0 2 0 0 0 0 2 0 0 2 0 0 1
+<br />
+ 89 6 2 0 2 2 0 2 0 0 0 0 2 2 2 2 2 0 0 0 2 2 2 1
+<br />
+ 97 8 2 0 0 2 0 0 2 2 2 2 2 0 2 0 2 0 0 0 0 2 0 2 1</pre>
+<br />
+
+<br />
+Notice the pattern of 1&#x27;s running down the right side? <a href="http://en.wikipedia.org/wiki/Gilbreath's_conjecture">Gilbreath&#x27;s conjecture</a> states that it continues like that forever. It seems very likely to be true: the numbers in the second column on the left start out quite small (polylogarithmically small if <a href="http://en.wikipedia.org/wiki/Cramer's_conjecture">Cramér&#x27;s conjecture</a> is to be believed), while the big region of 0&#x27;s and 2&#x27;s on the right behaves like the <a href="http://en.wikipedia.org/wiki/Rule_90">Rule 90</a> one dimensional cellular automaton (with each automaton configuration being a column of the triangle and the automaton&#x27;s time steps proceeding left to right). Rule 90 behaves in many ways as if it were random (despite being deterministic), and so each successive row of the triangle gets filled with a seemingly-random sequence of 0&#x27;s and 2&#x27;s, with the 2&#x27;s in the sequence quickly wearing down any larger values in the next row.
+<br />
+
+<br />
+There are some other sequences of integers that behave a lot like the prime numbers, one of which is the <a href="http://en.wikipedia.org/wiki/Practical_number">practical numbers</a>, numbers q such that any fraction p/q less than one can be represented as an <a href="http://en.wikipedia.org/wiki/Egyptian_fraction">Egyptian fraction</a> in which all denominators are divisors of q. The practical numbers are highly composite, but they have similar density properties to the prime numbers. And like the prime numbers, the first one has a different parity from all the rest. What happens if we try making a triangle in the same way from them? We get:
+<br />
+
+<br />
+<pre>  1
+<br />
+  2 1
+<br />
+  4 2 1
+<br />
+  6 2 0 1
+<br />
+  8 2 0 0 1
+<br />
+ 12 4 2 2 2 1
+<br />
+ 16 4 0 2 0 2 1
+<br />
+ 18 2 2 2 0 0 2 1
+<br />
+ 20 2 0 2 0 0 0 2 1
+<br />
+ 24 4 2 2 0 0 0 0 2 1
+<br />
+ 28 4 0 2 0 0 0 0 0 2 1
+<br />
+ 30 2 2 2 0 0 0 0 0 0 2 1
+<br />
+ 32 2 0 2 0 0 0 0 0 0 0 2 1
+<br />
+ 36 4 2 2 0 0 0 0 0 0 0 0 2 1
+<br />
+ 40 4 0 2 0 0 0 0 0 0 0 0 0 2 1
+<br />
+ 42 2 2 2 0 0 0 0 0 0 0 0 0 0 2 1
+<br />
+ 48 6 4 2 0 0 0 0 0 0 0 0 0 0 0 2 1
+<br />
+ 54 6 0 4 2 2 2 2 2 2 2 2 2 2 2 2 0 1
+<br />
+ 56 2 4 4 0 2 0 2 0 2 0 2 0 2 0 2 0 0 1
+<br />
+ 60 4 2 2 2 2 0 0 2 2 0 0 2 2 0 0 2 2 2 1
+<br />
+ 64 4 0 2 0 2 0 0 0 2 0 0 0 2 0 0 0 2 0 2 1
+<br />
+ 66 2 2 2 0 0 2 2 2 2 0 0 0 0 2 2 2 2 0 0 2 1
+<br />
+ 72 6 4 2 0 0 0 2 0 2 0 0 0 0 0 2 0 2 0 0 0 2 1
+<br />
+ 78 6 0 4 2 2 2 2 0 0 2 2 2 2 2 2 0 0 2 2 2 2 0 1
+<br />
+ 80 2 4 4 0 2 0 2 0 0 0 2 0 2 0 2 0 0 0 2 0 2 0 0 1</pre>
+<br />
+
+<br />
+Again, we get 1&#x27;s all down the right side. I conjecture that this pattern continues forever. As evidence, I tried computing the first 212000 rows of the triangle (up to the practical number 2314890) and they all ended with a 1. The same argument involving Rule 90 makes provides a heuristic explanation for why counterexamples should be increasingly rare in later rows of the triangle, so that if it&#x27;s true this far out it seems almost certainly true in general.
+<br />
+
+<br />
+Here&#x27;s my Python source code (using my <a href="http://www.ics.uci.edu/~eppstein/PADS/Eratosthenes.py">Eratosthenes</a> code for generating prime and practical numbers from <a href="http://www.ics.uci.edu/~eppstein/PADS/">PADS</a>). It could be made a lot faster by using bit manipulation tricks to speed up the Rule 90 part of each row, but I think this should be sufficient as a proof-of-concept.
+<br />
+
+<br />
+<pre>from Eratosthenes import *
+<br />
+
+<br />
+def triangle(seq):
+<br />
+    row = []
+<br />
+    for x in seq:
+<br />
+        next = [x]
+<br />
+        for x in row:
+<br />
+            next.append(abs(next[-1] - x))
+<br />
+        yield next
+<br />
+        row = next
+<br />
+
+<br />
+def printrows():
+<br />
+    nrows = 0
+<br />
+    for row in triangle(PracticalNumbers()):
+<br />
+        digits = 3
+<br />
+        for i in range(len(row)):
+<br />
+            format = &quot;%%%dd&quot; % digits
+<br />
+            digits = 1
+<br />
+            print format % row[i],
+<br />
+        print
+<br />
+        nrows += 1
+<br />
+        if nrows &gt; 24:
+<br />
+            return
+<br />
+
+<br />
+def testgood():
+<br />
+    num = 0
+<br />
+    for row in triangle(PracticalNumbers()):
+<br />
+        if row[-1] != 1:
+<br />
+            print &quot;Bad row!&quot;, row
+<br />
+            return
+<br />
+        num += 1
+<br />
+        if num % 500 == 0:
+<br />
+            print &quot;first&quot;,num,&quot;up to&quot;,row[0],&quot;good&quot;
+<br />
+
+<br />
+testgood()</pre>
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>vftyfbubhuh</b>: <br />
+<b></b><br />
+
+</div>
+

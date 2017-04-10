@@ -1,0 +1,39 @@
+---
+layout: post
+title:  'Demaine on research'
+date:   2013-07-15 20:10:00
+tags:   [computational geometry, game theory, talks, origami]
+---
+Via <a href="http://processalgebra.blogspot.com/2013/07/icalp-2013-part-3-award-sessions.html">Luca Aceto</a>: Erik Demaine, this year&#x27;s <a href="http://en.wikipedia.org/wiki/Presburger_Award">Presburger Award</a> winner, <a href="http://erikdemaine.org/outgoing/Presburger.html">gives an inspiring talk about how and why he does his research</a>, ranging from computer games to theoretical computer science to paperfolding art and back again to programmable matter. It&#x27;s about 36 minutes long, but definitely worth the time.
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>leonardo_m</b>: <br />
+<b>2013-07-19T17:32:18Z</b><br />
+A nice video, thank you for all your posts here.
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: <br />
+<b>2013-07-26T06:35:42Z</b><br />
+I would like to ask a simple question, sorry it is out of context.
+
+What is the model of computation implicitly assumed in the TCS literature?
+For example, in the article D. Eppstein &quot;Finding the k shortest paths&quot;?
+
+Is it random-access machine (the wikipedia <a href="http://en.wikipedia.org/wiki/Random-access_machine" target="_blank">page</a> is not really clear on this)
+
+Thank you
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2013-07-26T06:51:45Z</b><br />
+Your first mistake is the word &quot;the&quot;. For computational complexity theory, I think the gold standard is still the Turing machine, but a large part of that subject is making up different models and comparing their power. For algorithm design, the RAM is a good first approximation, but details vary, and the pointer machine, real RAM, or word RAM might be more appropriate in some cases — in any case, in this area, one doesn&#x27;t often pay a lot of attention to the model, just as many mathematicians who are not set theorists don&#x27;t spend a lot of time thinking about the underlying set theoretic axiom system they&#x27;re using. There are also more specialized models for algorithms that incorporate memory hierarchy costs or parallelism. For lower bounds on algorithmic problems, comparison trees are common, but the cell probe model (when it can be used) leads to more powerful bounds (not in terms of having bigger asymptotic growth, but in terms of being harder to work around with a more powerful type of algorithm).
+
+For your specific question about one of my papers, I&#x27;m pretty sure I was thinking about it as a RAM algorithm, but I didn&#x27;t end up using anything that couldn&#x27;t be done on a pointer machine. Some of my later algorithms use bit manipulations that make the word RAM a better model.
+</div>
+<div style="margin-left: 6em; padding-top: 1em;">
+<b>None</b>: <br />
+<b>2013-07-26T07:48:57Z</b><br />
+Excellent answer - thanks very much. 
+</div>
+

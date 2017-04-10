@@ -1,0 +1,54 @@
+---
+layout: post
+title:  'Report from WG'
+date:   2009-06-29 16:35:00
+tags:   [graph algorithms, conferences, talks]
+---
+I just returned from Montpellier, France, where I was invited to speak at <a href="http://www.lirmm.fr/wg2009/">WG 2009</a>, the 35th International Workshop on Graph-Theoretic Concepts in Computer Science.
+<br />
+
+<br />
+This was my first trip to France, and <a href="http://en.wikipedia.org/wiki/Montpellier">Montpellier</a> was a very charming place to visit. It is in the south, and though not quite on the Mediterranean itself it has a very Mediterranean feeling. The conference organizers put together an interesting and educational excursion for us in which we learned some of the local history by visiting three local landmarks (the opera house, an old pharmacy, and the top of the gateway arch) and drinking a different wine in each. We learned that Montpellier is a new city for France, being only a little over 1000 years old, but it is home to one of the oldest medical schools in Europe. It&#x27;s on the old <a href="http://en.wikipedia.org/wiki/Way_of_St._James">pilgrim trail</a> from Rome to <a href="http://en.wikipedia.org/wiki/Santiago_de_Compostela">Compostela</a>, markers for which run through the town, and although the language is no longer spoken in the area there are several inscriptions for tourists written in <a href="http://en.wikipedia.org/wiki/Occitan">Occitan</a>. The nearby mountains were a refuge for the <a href="http://en.wikipedia.org/wiki/Catharism">Cathars</a> when they were persecuted by the Catholics, and there are many open squares in the city due to the monasteries and other buildings that were torn down in the French revolution. My hotel was on one side of the old quarter, now mostly a shopping district, and the conference was in an old movie theater on the other side of the quarter, so I had a very pleasant walk every day to the conference (only getting lost twice), and my bad high-school French was enough to get by with the people who didn&#x27;t or wouldn&#x27;t speak English (rather more of them than I&#x27;ve encountered in other parts of Europe).
+<br />
+
+<br />
+The conference itself is about graph algorithms, both for problems on arbitrary graphs and (a larger fraction of the papers) for important special classes of graphs. There were too many interesting talks to describe them all in detail, so let me just mention a few.
+<br />
+
+<br />
+Daniel Král started the conference with the other invited talk, on graphs of bounded expansion. This is a notion of sparsity in graphs, based on <i>shallow minors</i>, graph minors (subgraphs of contractions) in which two vertices may only be contracted together if they started out within some constant distance of each other in the original graph. There is a trichotomy theorem for the density of shallow minors: among the densest shallow minors of a given family of graphs, the numbers of edges must grow roughly as an integer power of the number of vertices, the exponent of which can only be 0 (for graphs with bounded numbers of edges), 1 (sparse graphs, with comparable numbers of edges and vertices), or 2 (dense graphs). Additionally, in the case where the exponent is 2, all graphs can be formed as shallow minors. Graphs of bounded expansion form the case of exponent 1, in which the shallow minors are all sparse; they generalize both minor-closed graph families (in which all minors are sparse) and bounded-degree graphs (since a shallow minor of a bounded-degree graph also has bounded degree). As Král described, graph properties describable as first-order logic formulae may be tested efficiently on these graphs, but there seems to be plenty of opportunity for more algorithmic work on them.  The two main papers on this subject are in the European Journal of Combinatorics, by Nešetřil and Ossona de Mendez: <a href="http://arxiv.org/abs/math.CO/0508323">one on structure theory</a> and <a href="http://arxiv.org/abs/math.CO/0508324">a second on algorithms</a>. There also seems to be some connection with Král&#x27;s work with Dvořák and Thomas at SODA 2009 on <a href="http://portal.acm.org/citation.cfm?id=1496784">efficient 3-coloring of triangle-free surface-embedded graphs</a> (via a data structure for finding paths of bounded length) but I&#x27;m not sure of the details of this part.
+<br />
+
+<br />
+My favorite contributed talk of the first day was by Pim van &#x27;t Hof, a Ph.D. student of Broersma at Durham, presenting <a href="http://www.dur.ac.uk/pim.vanthof/parity.html">his work with Marcin Kamiński
+<br />
+ and Daniël Paulusma</a> on finding induced paths of given parity in <a href="http://en.wikipedia.org/wiki/Claw-free_graph">claw-free graphs</a>. Since line graphs are claw-free, this generalizes the problem of finding arbitrary paths of given parity in arbitrary graphs. Non-induced paths of given parity are easy enough to find: the shortest path has one parity, and a path of the other parity exists if and only if at least one of the biconnected components on a path between a given pair of terminals is non-bipartite (one direction is easy and the other can be proved by induction using open ear decomposition). However, the induced claw-free generalization is not as easy. I don&#x27;t know that it&#x27;s a very important problem, but it was a well-presented method that used some deep results of Chudnovksy and Seymour on the three-in-a-tree problem to reduce the problem to one in which all vertices belong to induced paths between the given terminals, and then split the problem into a case analysis using the known structure of perfect claw-free graphs (in the case that the graph is perfect) or the existence of an odd hole (in the case that it is not).
+<br />
+
+<br />
+The talks on the morning of the second day were all about parametrized complexity and exponential time algorithmics. The most interesting to me (and the most closely related to my own recent research) was the last of the morning&#x27;s talks, by Fedor Fomin, Daniel Lokshtanov, and Saket Saurabh, on algorithms for <a href="http://www.ii.uib.no/~daniello/papers/exactDist.pdf">finding an embedding of a metric space into a line</a> minimizing the total distortion. The metric spaces they consider are the ones generated by distances in an unweighted graph (hence the relevance to WG); the difficult part of the problem is determining the ordering of the vertices on the line, so the problem could be solved in factorial time, but they reduce this time bound to 5<sup><i>n</i> + o(<i>n</i>)</sup>. The method involves partitioning the line into blocks whose length is the eventual distortion bound, so that each vertex only has a constant number of choices for the block it belongs to, and then performing some more complicated placement algorithms within the blocks. It&#x27;s one of only a very few algorithms that I know of in which the optimal distortion of an embedding can be calculated exactly (another being <a href="http://11011110.livejournal.com/170366.html">my upcoming WADS paper</a>); it would be of interest to extend the result from unweighted graphs to arbitrary metrics.
+<br />
+
+<br />
+My own talk was in the afternoon; I surveyed problems (such as the partition of an orthogonal polygon into a minimum number of rectangles) the solution to which involves constructing a graph from the input (the bipartite intersection graph of line segments bounded by two reflex vertices of the polygon) and uses the special properties of this graph to find an efficient algorithmic solution (maximum independent sets in bipartite graphs via <a href="http://en.wikipedia.org/wiki/K%C3%B6nig%27s_theorem_(graph_theory)">König&#x27;s theorem</a>). See <a href="http://www.ics.uci.edu/~eppstein/pubs/Epp-WG-09-talk.pdf">here</a> for talk slides.
+<br />
+
+<br />
+I almost missed the first talk of the third day, due to my mistaken belief that I could find an alternative route from my hotel to the conference site without referring to a map, but I was very glad that I recovered from my disorientation in time for its start. Torben Hagerup spoke, on the problem of determining whether a given tree is the minimum spanning tree of a weighted graph, or (almost equivalently) of finding the maximum-weight edge on each of a collection of paths in a given tree, a key step in the randomized linear time minimum spanning tree algorithm of <a href="http://portal.acm.org/citation.cfm?id=201022">Karger, Klein, and Tarjan</a>. This spanning tree verification problem had been previously solved in linear time in two papers, by <a href="http://link.aip.org/link/?SMJCAT/21/1184/1">Tarjan, Rauch, and Dixon</a> and again by <a href="http://www.cs.princeton.edu/courses/archive/fall03/cs528/handouts/A%20Simpler%20Minimum%20Spanning.pdf">King</a>, but Hagerup&#x27;s solution was even simpler (though still not without some complication). By using least common ancestors and a technique of hierarchical clustering into subtrees from the previous papers based on <a href="http://en.wikipedia.org/wiki/Bor%C5%AFvka's_algorithm">Borůvka&#x27;s algorithm</a>, the problem becomes one of finding maximum-weight edges on ancestor-descendant paths in a tree in which all paths have logarithmic length, so sets of edges in these paths (for instance, the set of suffix maxima according to the weight function) can be represented in single machine words. Hagerup then derives some clever bit manipulation tricks for solving the problem in a linear number of word operations, based around the algebraic properties of an interesting operation down(x,y) that returns the nonzero bits of y for which the next larger bit of x is smaller than the next larger bit of y. <a href="http://blog.computationalcomplexity.org/2009/05/shaving-logs-with-unit-cost.html">Unlike our new SIGACT chair</a>, I&#x27;m a big fan of this sort of bit-parallel computation — I think the effort of algorithm design in this area is well-spent because these techniques really do speed up actual programs and yet can be quite nontrivial to discover. Or, if you prefer an argument by authority, Knuth likes them too: on my way to France, I had coincentally watched Knuth discuss similar manipulations in his &quot;Platologic Computation&quot; talk (available <a href="http://stanford-online.stanford.edu/seminars/knuth/061024-knuth-300.asx">here</a> for Windows or <a href="http://deimos3.apple.com/WebObjects/Core.woa/Browse/itunes.stanford.edu.1292192668.01292192672.1335417912?i=1282624271">here</a> for iTunes).
+<br />
+
+<br />
+All in all, a good conference, and one I would attend much more regularly if only it weren&#x27;t so far away.
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: <br />
+<b></b><br />
+
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: <br />
+<b></b><br />
+
+</div>
+

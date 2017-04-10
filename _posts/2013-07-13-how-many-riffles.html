@@ -1,0 +1,37 @@
+---
+layout: post
+title:  'How many riffles does it take until all permutations are possible?'
+date:   2013-07-13 13:04:00
+tags:   [combinatorics, wikipedia]
+---
+So yesterday I was working on new Wikipedia articles on <a href="http://en.wikipedia.org/wiki/Riffle_shuffle_permutation">riffle shuffle permutations</a> (an awkward name: I would have preferred riffle permutations but I couldn&#x27;t find enough sources that called them that) and the <a href="http://en.wikipedia.org/wiki/Gilbert%E2%80%93Shannon%E2%80%93Reeds_model">Gilbert–Shannon–Reeds model</a> of random shuffling. There&#x27;s been a lot of work on how many riffles you need to do until all permutations are nearly equally likely (by some reasonable measures, the answer is 1.5 log<sub>2</sub> <i>n</i>) but it occurred to me to ask a simpler question: how many riffles do you need to do until all permutations have nonzero probability? If you riffle the deck only once, for instance, you can only form a small fraction of the possible permutations: there are roughly 2<sup><i>n</i></sup> different riffles, a much smaller number than <i>n</i>!. And which permutation requires the most riffles to be generated?
+<br />
+
+<br />
+The answer turns out to be surprisingly easy, if one thinks about riffles from the point of view of dynamical systems rather than card shuffling, as <a href="http://www.jstor.org/stable/2959752">Bayer and Diaconis</a> did. Consider any set of <i>n</i> points in the unit interval [0,1), and to avoid collisions assume that no two of the points differ by a <a href="http://en.wikipedia.org/wiki/Dyadic_rational">dyadic rational</a>. Then the <a href="http://en.wikipedia.org/wiki/Dyadic_transformation">doubling map</a> that doubles each number and then takes the fractional part of the results transforms the point set by a riffle, and any riffle can be achieved in this way. Another way of thinking about this map, in more computer science related terms, is that we shift the binary representations of each number left by one position and then chop off the top bit. More strongly, repeating the doubling map <i>k</i> times (shifting left by <i>k</i> positions then chopping) gives a permutation that is the result of <i>k</i> riffles, and each <i>k</i>-riffle permutation can be achieved in this way, because the chopped-off bits give all the information needed to describe what happens in each riffle. (If the initial positions of the points are uniformly random and independent of each other, then this process preserves that uniform independent distribution, and the permutations one gets are distributed exactly according to the Gilbert–Shannon–Reeds model. But we don&#x27;t need that for what follows.)
+<br />
+
+<br />
+So, suppose you want to achieve the permutation that takes the initially sorted card deck and reverses its order. And suppose you try to do this with fewer than log<sub>2</sub> <i>n</i> riffles. Then the number of different patterns of chopped-off bits that you can achieve will be fewer than <i>n</i>, and by the pigeonhole principle some two cards will have the same pattern. But then, those two cards will remain in the same order throughout the sequence of riffles, preventing you from achieving a complete reversal. That is, the reversal permutation is not a product of fewer than log<sub>2</sub> <i>n</i> riffles. On the other hand, with exactly ceiling(log<sub>2</sub> <i>n</i>) riffles, you can give each card its own distinct pattern of chopped-off bits, allowing any permutation to be realized. So the number of riffles you need to perform, in order to guarantee that all permutations have nonzero probability, is exactly ceiling(log<sub>2</sub> <i>n</i>).
+<br />
+
+<br />
+Bayer and Diaconis give a precise formula for the probability of a given permutation after a given number of riffles, in the Gilbert–Shannon–Reeds model, in terms of the number of rising sequences; this formula can also be used to derive the same ceiling(log<sub>2</sub> <i>n</i>) for the number of riffles needed for all permutations to have nonzero probability. However, the number of riffles needed does not depend on the details of the probability distribution on riffles, but only on the fact that a single riffle should be able to produce all of the different riffle permutations with nonzero probability.
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: <br />
+<b>2013-07-14T14:48:28Z</b><br />
+The De Bruijn graph also known as the shuffle network was one of the standard models for parallel computation with bounded degree and log n diameter was studied in the 1980&#x27;s for permutation routing (e.g. by Aleliunas&#x27; paper in 1982 PODS on Randomized Parallel Communication - the hard part is making sure that the queues and delay don&#x27;t get too big: deterministic oblivious routing suffers large bottlenecks.)
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2013-07-14T16:24:29Z</b><br />
+Yes, but that&#x27;s one particular riffle (a perfect one), rather than allowing a different riffle at each step.
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>ext_2027124</b>: <br />
+<b>2013-07-16T01:42:14Z</b><br />
+nIce! 
+</div>
+

@@ -1,0 +1,57 @@
+---
+layout: post
+title:  'Theory vs implementation in clique listing algorithms'
+date:   2011-03-05 18:08:00
+tags:   [graph algorithms, cliques, papers]
+---
+The <a href="http://www.ise.ufl.edu/cao/sea2011/papers.html">list of accepted papers to the Symposium on Experimental Algorithms</a> is out, and it includes one of mine: <a href="http://arxiv.org/abs/1103.0318">Listing All Maximal Cliques in Large Sparse Real-World Graphs</a>, with student co-author Darren Strash. Claire Mathieu recently asked <a href="http://teachingintrotocs.blogspot.com/2011/02/dagstuhl-monday-afternoon.html">whether FPT algorithms can lead to implementations</a>; this paper provides an example, although I&#x27;m sure very far from the first one.
+<br />
+
+<br />
+There&#x27;s an old and standard algorithm for listing all maximal cliques, the <a href="http://en.wikipedia.org/wiki/Bron-Kerbosch_algorithm">Bron–Kerbosch algorithm</a>, which works pretty well in practice. However, until recently the only theoretical bound on its running time was O(3<sup><i>n</i>/3</sup>). There are graphs that have this many cliques (the <a href="http://en.wikipedia.org/wiki/Tur%C3%A1n_graph">Moon–Moser graphs</a>) so nothing better in terms of <i>n</i> alone can be proven, but this bound didn&#x27;t really explain the algorithm&#x27;s good performance in practice. So in <a href="http://arxiv.org/abs/1006.5440">a paper at ISAAC</a>, Darren, Maarten Löffler and I had attempted to bridge this gap between theory and practice using FPT analysis techniques. Specifically, we showed that a simple variant of the algorithm (in which we used a <a href="http://en.wikipedia.org/wiki/Degeneracy_(graph_theory)">degeneracy ordering</a> of the input graph to order the recursive subproblems) could be made to run in the improved time bound O(<i>dn</i>3<sup><i>d</i>/3</sup>), where <i>d</i> is the degeneracy of the graph, a measure of its sparsity. What this means is that for large but sparse graphs, the algorithm takes linear time, and moreover that the dependence of the time bound on the sparseness of the graph is as tight as possible.
+<br />
+
+<br />
+So then (<a href="http://11011110.livejournal.com/199317.html">as I wrote here</a>) we thought that we should implement the algorithm, to see whether ordering the subproblems is actually useful in practice or whether it&#x27;s just a trick that makes the analysis work. Another reason for implementing it was that we&#x27;re part of a large project on the analysis of social networks, and our co-workers on the project needed a better implementation of a clique-finding algorithm than the one they had been using. The new SEA paper reports on our experiments using some very large real-world networks as test data.
+<br />
+
+<br />
+The upshot is that the new algorithm does indeed work very well: it&#x27;s not always better than a previous version of the Bron–Kerbosch algorithm that didn&#x27;t use our subproblem ordering idea, but it&#x27;s often better, always close, and sometimes far better. An additional advantage is that the new algorithm can work well with sparse representations of the input graph, whereas the older versions that we compared our algorithm against work best with dense graph representations that use a quadratic amount of memory, preventing them from being applied to very large graphs. Some of the largest graphs that we successfully tested the new algorithm on have millions of vertices and degeneracies ranging into the low three digits. In fact, this raises an issue, not unlike the one we started with: the running times of the implementation are far better than even our improved FPT analysis would predict, so again there&#x27;s a big gap between theory and practice. Maybe we&#x27;re not using the right parameter, and a tighter parameterized analysis with a different parameter would better show why these graphs are not so hard? Or maybe it&#x27;s time to switch from worst-case to average case analysis, come up with a plausible but mathematically tractable model of random large sparse real-world graphs, and show that the expected time of the algorithm on such graphs is small?
+<br />
+
+<br />
+One unanticipated outcome of writing a new implementation was that it uncovered several bugs in other existing implementations. Unfortunately this also meant that we had to badmouth some of our colleagues, after the SEA reviewers asked us to include another comparison of our code against someone else&#x27;s software that we hadn&#x27;t previously tried and we found that it didn&#x27;t produce the correct results. But if this leads to fixes in code that others use, it&#x27;s also a good thing in the long run.
+<br />
+
+<br />
+The code is not yet public, but our plan is to include it in <a href="http://csde.washington.edu/statnet/">statnet</a>, allowing it to be used within <a href="http://en.wikipedia.org/wiki/R_(programming_language)">R</a>.
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>mcfnord</b>: <br />
+<b>2011-03-08T23:23:09Z</b><br />
+well go you!
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>mcfnord</b>: <br />
+<b>2011-03-08T23:24:57Z</b><br />
+is livejournal a large sparse graph?
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2011-03-15T00:43:48Z</b><br />
+I imagine so. It has millions of users and typical users have at most a few hundred friend links. That counts as sparse for our purposes. If you looked at the whole graph at once, it would be maybe ten times larger than the largest ones we tried, but not really any more dense, so probably it would only take ten times as much time to run.
+
+(Sorry for the delayed response. I imagine it has something to do with <a href="http://news.livejournal.com/135748.html">this</a>.)
+</div>
+<div style="margin-left: 6em; padding-top: 1em;">
+<b>mcfnord</b>: <br />
+<b>2011-03-15T00:48:37Z</b><br />
+let me know if you want it!
+</div>
+<div style="margin-left: 9em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2011-03-15T17:56:02Z</b><br />
+Thanks — my coauthor says he already has a copy. It was too big to fit into memory on the machine we were using on our tests but could probably be handled by a machine with more memory.
+</div>
+

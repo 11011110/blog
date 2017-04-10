@@ -1,0 +1,39 @@
+---
+layout: post
+title:  'Robust statistics and partial cubes'
+date:   2007-04-03 21:22:00
+tags:   [regression depth, robust statistics, media theory, tukey depth, statistics]
+---
+Thought of the day: as described in <a href="http://arxiv.org/abs/cs.CG/9809037">Regression Depth and Center Points</a>, Tukey depth (a combinatorial description of the quality of a statistical estimate of the location of a cloud of points) and regression depth (a similar description of the quality of fit of a hyperplane to a set of points) can both be described in terms of distances in the dual graph to an arrangement: For Tukey depth, the point to be evaluated is dual to a hyperplane, and its depth is the length of the shortest path to some particular chamber &quot;at vertical infinity&quot; in the dual arrangement, while for regression depth the hyperplane to be evaluated is dual to a point in some chamber and its depth is the length of the shortest path to some particular plane &quot;at infinity&quot; in the arrangement.
+<br />
+
+<br />
+But hyperplane arrangements are a special case of partial cubes, graph distance is defined more generally in any partial cube, and hyperplanes in arrangements generalize to Djokovic classes in partial cubes (aka tokens in media). So, Tukey depth and regression depth both have natural definitions in partial cubes, at least once a vertex or Djokovic class is designated as &quot;infinite&quot;: they are just the graph distance from this infinite object.
+<br />
+
+<br />
+I&#x27;m not sure what this is good for, but maybe applying the same definitions to other partial cubes will lead to interesting notions of robust statistical estimation for the systems modeled by those graphs.
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>atheorist</b>: Example of partial cuboid<br />
+<b>2007-04-04T10:47:55Z</b><br />
+Sometimes I encounter a finite context-free language, and want to understand it, so I arrange the elements of the language into a partial cuboid.
+For example:
+S ::= LEFT RIGHT ;
+LEFT ::= one | two | three ;
+RIGHT ::= aleph | beta ;
+corresponds to a two-by-three rectangle of points. (A full cuboid).
+Another example:
+S ::= LEFT RIGHT | SPECIAL alpha;
+SPECIAL ::= one | two | three | four ;
+LEFT ::= one | two | three ;
+RIGHT ::= beta | gamma;
+corresponds to an irregular shape (partial cuboid) like this:
+###
+###
+###
+#
+If I knew a nice way of building partial cuboids from finite context-free languages, possibly I could apply design of experiments to software testing.
+</div>
+

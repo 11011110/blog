@@ -1,0 +1,27 @@
+---
+layout: post
+title:  'Diamonds, kites, and circle packings'
+date:   2012-07-23 21:11:00
+tags:   [circles, computational geometry, quadrilaterals, papers]
+---
+My paper &quot;<a href="http://arxiv.org/abs/1207.5082">Diamond-Kite Meshes: Adaptive Quadrilateral Meshing and Orthogonal Circle Packing</a>&quot; just appeared on the arXiv as arXiv:1207.5082; it will be published in the 21st <a href="http://www.sandia.gov/imr/">International Meshing Roundtable</a> this October.
+<br />
+
+<br />
+It&#x27;s about a kind of quadrilateral mesh that you can make by starting with the <a href="http://en.wikipedia.org/wiki/Rhombille_tiling">rhombille tiling</a> (a tiling of the plane by 60° rhombi that is also called &quot;tumbling blocks&quot; because of its resemblance to a pile of cubes) and overlaying copies of the same tiling, rotated by 90° and reduced in size by a factor of √3.
+<br />
+
+<br />
+<div align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/3-colored.png" /></div>
+<br />
+
+<br />
+As well as having the usual properties that you&#x27;d want a finite element mesh to have (bounded aspect ratio elements, easy generation by repeated refinement, optimal number of elements for a given set of constraints on element sizes, etc) it has one much more unusual property: its vertices are the centers of the circles in a circle packing:
+<br />
+
+<br />
+<div align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/dk-packing.png" /></div>
+<br />
+
+<br />
+This is one of two types of packing guaranteed to exist by the <a href="http://en.wikipedia.org/wiki/Circle_packing_theorem">Koebe–Andreev–Thurston circle packing theorem</a>, in which a 3-connected planar graph and its dual are represented by circles so that adjacent vertices in either graph correspond to tangent circles and adjacent vertex-face pairs correspond to perpendicular circles (the other type involves only one graph, which should be maximal planar). In either of these two cases, the packing is essentially fixed by the graph, making its geometry hard to control: small local changes to the underlying graph can make the geometric shape of the circle packing very different. But these diamond-kite meshes turn that relation around, making the graph a function of the geometry rather than vice versa and allowing arbitrary amounts of subdivision in some regions of the plane without any change to the mesh in other parts of the plane that are far enough away.

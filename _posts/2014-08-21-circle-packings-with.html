@@ -1,0 +1,27 @@
+---
+layout: post
+title:  'Circle packings with small area'
+date:   2014-08-21 23:16:00
+tags:   [circles, graph drawing, papers]
+---
+The second of my papers for this year&#x27;s Graph Drawing symposium is now online: <a href="https://arxiv.org/abs/1408.4902">&quot;Balanced Circle Packings for Planar Graphs&quot;, arXiv:1408.4902</a>, with Jawaherul Alam, Mike Goodrich, Stephen Kobourov, and Sergey Pupyrev. It&#x27;s about finding <a href="https://en.wikipedia.org/wiki/Circle_packing_theorem">circle packings</a> (interior-disjoint circles whose tangencies form a given graph) where the radii are all within a polynomial factor of each other. Or equivalently, if one normalizes the packing to make the smallest circles have unit radius, then the <a href="https://en.wikipedia.org/wiki/Area_(graph_drawing)">area</a> of the packing should be at most polynomial. We call packings with this property &quot;balanced&quot;.
+<br />
+
+<br />
+The graphs that can be represented by circle packings are all the planar graphs, but not all of these graphs have balanced packings. In particular, for a maximal planar graph, the packing is essentially unique (any two packings can be transformed into each other by a Möbius transformation) and one can easily find graphs for which the circles differ exponentially in their sizes. But if the graph is not maximal planar, then there can be a lot more freedom in choosing a circle packing for it, allowing us to find balanced ones for many subclasses of the planar graphs.
+<br />
+
+<br />
+Probably the most practical of our results (though not very deep) are that trees, cactus graphs, and bounded-degree outerplanar graphs all have balanced packings. The tree construction is particularly simple: represent the tree by tangent squares (with size proportional to the number of descendants, and with children attached to the bottom side of each square), fill each square by a circle, and then push the circles straight up until they touch.
+<br />
+
+<br />
+<div align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/tree-balcpack.png" /></div>
+<br />
+
+<br />
+The result for bounded-degree outerplanar graphs follows by adding a balanced binary tree to the outside face to make the graph have bounded degree and logarithmic diameter, augmenting it to be maximal planar (still with bounded degree), and then applying the standard circle packing theorem. It is known that for bounded degree graphs one can find circle packings in which adjacent circles have radii within a constant factor of each other. Because of the binary tree, any two circles are connected by a path of logarithmic length, and multiplying these constant factors along this path shows that the two circles&#x27; radii are within a polynomial of each other. With a little more care the same thing works if the starting graph is not outerplanar, but has at most a logarithmic number of layers from the outside face inwards. For two-layer graphs, bounded degree is necessary, but it might be possible that all outerplanar graphs, even the ones with unbounded degree, have balanced circle packings; we couldn&#x27;t solve that question and left it open.
+<br />
+
+<br />
+A large fraction of the paper is taken up by what I think may be its deepest result (but certainly not its most useful): the planar graphs of bounded <a href="https://en.wikipedia.org/wiki/Tree-depth">tree-depth</a> such as the <a href="https://en.wikipedia.org/wiki/Book_(graph_theory)">book graphs</a> and <a href="https://en.wikipedia.org/wiki/Friendship_graph">friendship graphs</a> all have balanced circle packings. The result depends on a characterization of planar bounded-tree-depth graphs in terms of their <a href="https://en.wikipedia.org/wiki/SPQR_tree">SPQR trees</a>, and on a generalization of circle packings to non-tangent circles, called &quot;<a href="https://en.wikipedia.org/wiki/Inversive_distance">inversive distance</a> circle packings&quot;. Not much was known about the existence of inversive-distance packings, but we were able to show that the ones we need for this result do exist and can be glued together using Möbius transformations to give us the balanced packings we want.

@@ -1,0 +1,66 @@
+---
+layout: post
+title:  'Cubic 1-planarity'
+date:   2014-05-11 15:07:00
+tags:   [unsolved, graph drawing]
+---
+Here&#x27;s a graph drawing problem I don&#x27;t know how to solve: find the smallest <a href="https://en.wikipedia.org/wiki/Cubic_graph">3-regular graph</a> that is not <a href="https://en.wikipedia.org/wiki/1-planar_graph">1-planar</a>.
+<br />
+
+<br />
+The examples I tried with up to 24 vertices are 1-planar. Below are the 20-vertex <a href="https://en.wikipedia.org/wiki/Desargues_graph">Desargues graph</a>,
+<br />
+
+<br />
+<div align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/Desargues_graph_1planar.png" /></div>
+<br />
+
+<br />
+the 24-vertex <a href="https://en.wikipedia.org/wiki/McGee_graph">McGee graph</a> (7-cage),
+<br />
+
+<br />
+<div align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/McGee_graph_1planar.png" /></div>
+<br />
+
+<br />
+and the 24-vertex <a href="https://en.wikipedia.org/wiki/Nauru_graph">Nauru graph</a>:
+<br />
+
+<br />
+<div align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/Nauru_graph_1planar.png" /></div>
+<br />
+
+<br />
+(I&#x27;m not requiring the edges to be straight line segments; they&#x27;re just drawn that way.)
+<br />
+
+<br />
+On the other hand, for the 28-vertex <a href="https://en.wikipedia.org/wiki/Coxeter_graph">Coxeter graph</a> and 30-vertex <a href="https://en.wikipedia.org/wiki/Tutte%E2%80%93Coxeter_graph">Tutte–Coxeter graph</a> (8-cage) I have been unable to find a 1-planar drawing. So my guess is that the answer is somewhere in this range.
+<br />
+
+<br />
+The fastest method I know of for testing whether graphs are 1-planar algorithmically (try all pairings of edges, for each pair of edges insert a dummy node to represent their crossing, and test planarity of the result) is going to max out at 14 or so vertices, I think, not good enough to solve the problem. On the other hand, lately there&#x27;s been some progress on solving other crossing number problems exactly by formulating them as logic problems using the Hanani–Tutte theorem and throwing SAT solvers at them. Maybe something like that can work here, too.
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>spupyrev</b>: <br />
+<b>2014-05-13T03:37:41Z</b><br />
+Do you know if recognition of 1-planar graphs for 3-regular graphs is NP-hard?
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2014-05-13T03:56:50Z</b><br />
+It would surprise me if it weren&#x27;t NP-hard, but I don&#x27;t think it has been proved.
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>tomster0</b>: <br />
+<b>2014-05-17T03:00:36Z</b><br />
+I&#x27;m probably being naive, but have you tried the Franklin graph?
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2014-05-17T05:46:20Z</b><br />
+<img src="http://www.ics.uci.edu/~eppstein/0xDE/Franklin_graph_1planar.png" />
+</div>
+

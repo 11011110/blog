@@ -1,0 +1,22 @@
+---
+layout: post
+title: Weak moves in high-dimensional tic-tac-toe
+date: 2017-01-18 17:24:00
+---
+<p>Everyone who plays tic-tac-toe quickly learns that the nine squares have different strengths. The center square is best, because it belongs to four lines. The corners, on three lines each, are next. And weakest are the squares in the middle of a side of the tic-tac-toe grid, which are only on two lines each. What about higher dimensions? (Let's ignore the fact that tic-tac-toe on a \( 3\times 3\times\dots \) grid is an easy win in more than two dimensions.) Which are the weak cells, and which are the strong ones?</p>
+
+<p>For instance, the image below shows a four-dimensional tic-tac-toe grid, projected to the plane. Each cell of the grid becomes a colored dot; the five colors distinguish the cells by the dimension of the hypercube face that they're the midpoint of. We have vertices (blue), edges (yellow), squares (red), cubes (white), and the center of the hypercube itself (black). But I've only shown a subset of the lines, four through each point. If I included all the lines, which colors would be more powerful (on more lines), and which less?</p>
+
+<p align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/ttt4d.png"></p>
+
+<p>It is not hard to work out the formula for this, if we give each of these points coordinates that are \( d \)-tuples of the numbers in the set \( \{−1,0,1\} \). If \( k \) of these coordinates are equal to \( 0 \), then the given point is the middle point of \( (3^k-1)/2 \) lines. These lines can be described by replacing each zero by one of three possibilities: \( 0 \), \( x \), or \( -x \), and then plugging in \( 1 \), \( 0 \), and \( -1 \) as the value of \( x \). There are \( 3^k \) choices for how to replace each zero, one of which doesn't give a line: if we leave all the zeros as they are, then all three choices of \( x \) give the same point. But for any other set of replacements, we get a line. Each line gets represented twice, because we can negate all the replaced coordinates and get the same line. That double-counting explains the division by two in the formula.</p>
+
+<p>These aren't the only lines, though. If there are \( k \) zeros in the coordinates of a point, there are \( d-k \) nonzeros. These, also, can be replaced, either keeping the same value in place, replacing a \( -1 \) with \( -x \), or replacing a \( 1 \) by \( x \). When we plug in \( 1 \), \( 0 \), and \( -1 \) as the value of \( x \), we get a line on which the given point is the first point. This time there is no double-counting, but there are only two choices per coordinate, so we get \( 2^{d-k}-1 \) lines.</p>
+
+<p>The center point (the one that in this system has all-zero coordinates) is always the winner, the most powerful point. It has the maximum number of lines possible, because they cover all of the other points in pairs.</p>
+
+<p>To find the least powerful point, we need to minimize \( (3^k-1)/2 + 2^{d-k}-1 \). This can easily be done numerically, showing for instance that in our 4d picture the black point is on 40 lines, the white points are on 14, the red points are on 7, the yellow are on 8, and the blue points are on 15. The red points, the middle-dimensional ones, are the losers in this case.</p>
+
+<p>However, in higher dimensions, the weakest cells are not the middle-dimensional ones. To minimize the total number of lines, we want the two types of lines (the ones where the point is in the middle, and the ones where the point is first) to be roughly balanced in number. Ignoring the subtraction of one and division by two in the formulas (as these do not significantly affect the result when the dimension is high) this balanced is achieved for points whose number of zero coordinates is approximately \( (\log_6 2)d \), and whose number of nonzero coordinates is approximately \( (\log_6 3)d \). These, then, are the weakest points in high-dimensional tic-tac-toe boards.</p>
+
+<p>This also shows that, in high dimensions, no point is extremely weak. They are all on a number of lines that grows as a polynomial of the size of the whole board. If there are \( n \) cells on the whole board, then the number of lines through even the weakest cell is proportional to \( n^{\log_6 2} \approx n^{0.387} \).</p>

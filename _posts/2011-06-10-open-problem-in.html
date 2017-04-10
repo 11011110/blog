@@ -1,0 +1,23 @@
+---
+layout: post
+title:  'An open problem in greedy geometric algorithms'
+date:   2011-06-10 13:08:00
+tags:   [circles, computational geometry, unsolved]
+---
+I&#x27;ve been working on improving the Wikipedia article on the <a href="http://en.wikipedia.org/wiki/Malfatti_circles">Malfatti circles</a>, three mutually-tangent circles packed into a triangle. While doing so, I ran across an interesting open problem on greedy algorithms for geometric optimization.
+<br />
+
+<br />
+The Malfatti circles had been studied by others earlier, but in 1803 <a href="http://en.wikipedia.org/wiki/Gian_Francesco_Malfatti">Gian Francesco Malfatti</a> used them to solve (he mistakenly thought) the case <i>n</i> = 3 of the following optimization problem:
+<br />
+
+<br />
+<b>Input:</b> A triangle <i>T</i> and a number <i>n</i>.<br /><b>Output:</b> A set of <i>n</i> circles inside <i>T</i>, with disjoint interiors, having the maximum possible total area.
+<br />
+
+<br />
+Through the work of <a href="http://dx.doi.org/10.1112/plms/s2-30.1.287">Lob and Richmond (1930)</a>, <a href="http://jstor.org/stable/2688277">Goldberg (1967)</a>, and <a href="http://dx.doi.org/10.1007/BF01249514">Zalgaller and Los&#x27; (1994)</a>, it was shown that, actually, Malfatti&#x27;s solution is never optimal. Instead, the problem is solved optimally by a simple greedy procedure that repeatedly selects the largest circle in <i>T</i> that is disjoint from all previously-selected circles.
+<br />
+
+<br />
+Mellisen (1997) conjectured that the same greedy algorithm finds the <i>n</i> area-maximizing circles for any <i>T</i> and <i>n</i>. At each step of the algorithm, the remaining uncovered pieces of the input triangle are themselves triangular in shape, bounded by three straight or curved sides; this invariant not only simplifies the algorithm, it also makes it plausible that some sort of inductive proof of the conjecture might be possible. But as of the recent survey by <a href="http://alpha.science.unitn.it/~andreatt/Malfatti.pdf">Andreatta, Bezdek and Boroński (2010)</a> it seems to remain unsolved.

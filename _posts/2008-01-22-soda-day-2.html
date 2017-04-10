@@ -1,0 +1,27 @@
+---
+layout: post
+title:  'SODA Day 2'
+date:   2008-01-22 01:07:00
+tags:   [conferences, talks]
+---
+Let me explain... no, there is too much. Let me sum up.
+<br />
+
+<br />
+Persi Diaconis gave a fun talk about how the Markov chain describing the sequence of carries in b-way addition is the same as the Markov chain describing the number of descents in a permutation as the permutation undergoes b-way baker&#x27;s shuffles (these are the shuffles described by taking a set of random points in [0,1] and then moving each point x to bx mod 1). It involved convolutions of measures on groups, not unlike <a href="http://11011110.livejournal.com/129758.html">Babai&#x27;s talk</a>, but symmetric groups rather than finite simple groups. I&#x27;m pretty sure there is literature from the circuit design (or parallel algorithms) community analyzing the random behavior of carries in order to do addition in O(log log n) expected depth (or parallel time) rather than O(log n), that might be relevant and that he didn&#x27;t touch on; it&#x27;s one of those areas that&#x27;s hard to find all the disparate pieces of research in, because addition is so basic.
+<br />
+
+<br />
+Timothy Chan spoke about the bichromatic k-set problem. This is easiest to describe in the dual, as the number of arrangement vertices covered by exactly k out of a set of halfspaces. It behaves, according to his upper bound, like O(n k<sup>1/3</sup>) for smaller values of k (like the usual k-sets), like O(k^2) for larger values of k (unsurprising since one can find sets of halfspaces for which all vertices are at the same level), and some nastier polynomial in the middle. I asked him whether there was a matroid version of the problem (similar to the usual k-set problem where the upper bounds also apply to parametric spanning trees and other matroid problems) but if so it wasn&#x27;t obvious to him or me.
+<br />
+
+<br />
+Steve Oudot spoke about witness complexes, an alternative to <a href="http://11011110.livejournal.com/127972.html">Rips complexes</a> that seems to be growing in popularity. The nice theoretical result is that one can define a notion of local feature size that measures the length of the shortest noncontractible cycle through a point; if one samples points from a 2-manifold-with-boundary inversely proportionally to this length measure, constructs the (true exact) Voronoi diagram of these points according to geodesic distance, and forms the nerve of the Voronoi cells, the result is homotopic to the manifold. The practical technique involves sampling somewhat more densely, keeping a small subsample as landmarks, and forming a complex that has as its simplices the subsets of landmarks that look Delaunay from the point of view of one of the other simplices: there is some sample from which they are the k nearest neighbors, and all their boundary facets are also Delaunay according to the same definition. By using variations of this technique they can obtain two complexes, one with too many simplices and one with too few, sandwiching the homology of the original space from which the points were sampled in the sense that persistent homology techniques can recover it. But what they don&#x27;t get is a single complex homotopic to the original, so I guess that&#x27;s for future work.
+<br />
+
+<br />
+Later in the day, it seemed like my ability to follow the talks was decreasing monotonically, until the last one, Sergio Cabello&#x27;s, on fixed-parameter tractability and intractibility results for k-center problems in low dimensions (with dimension as the parameter), which was very clear and which I liked very much. One of his results is a very nice reduction for 3-center in d-dimensional L-infinity spaces, to a set of 6<sup>d</sup> 2-SAT problems, leading to an FPT algorithm. 1-center and 2-center are polynomial for variable d, while 4-center appears not to have any FPT algorithm though it can be solved in polynomial time for any fixed dimension. Now I&#x27;m wondering how hard these problems are on <a href="http://arxiv.org/abs/math.MG/0612109">Manhattan orbifolds</a>: they should behave like 2-dimensional L-infinity but maybe they&#x27;re messier.
+<br />
+
+<br />
+And <i>Sweeney Todd</i> is really really bloody. I enjoyed watching Johnny Depp,  Helena Bonham Carter, and Ed Sanders steal scenes from each other, the <i>Labyrinth</i> ballroom scene homage was a nice touch, and I was pleased with myself for figuring out who <s>spoiler</s> was several scenes before the characters did. The palette was black and white with splashes of red, not unlike Frédéric Pluquet&#x27;s slides. Speaking of which, the Python implementation of his persistence technique appeared overnight; apparently it really was as easy as Langerman claimed it to be.

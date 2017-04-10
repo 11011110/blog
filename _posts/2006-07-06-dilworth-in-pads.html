@@ -1,0 +1,23 @@
+---
+layout: post
+title:  'Dilworth in PADS'
+date:   2006-07-06 23:47:00
+tags:   [partial orders, combinatorics, python]
+---
+<a href="http://en.wikipedia.org/wiki/Dilworth's_theorem">Dilworth&#x27;s Theorem</a>: in any partial ordering, the size of the largest possible antichain is equal to the smallest possible number of chains in a partition of the items into chains.
+<br />
+
+<br />
+If you already know, in a bipartite graph with n vertices, maximum matching M, and maximum independent set I, that n=|M|+|I|, then a proof is easy: form a bipartite graph with 2n vertices, one copy of each item of the ordering in each side and an edge from the smaller to the larger of each pair of comparable items. Find a matching M and maximum independent set I. The edges of M decompose the items into n-|M| chains, and the items that have both of their copies belonging to I form an antichain of at least n-|M| items. The antichain must have exactly n-|M| items, for it can have at most one item from each chain.
+<br />
+
+<br />
+Anyway, I&#x27;ve now implemented all this in <a href="http://www.ics.uci.edu/~eppstein/PADS/">PADS</a>. It&#x27;s in a new module PartialOrder.py, which also contains everything that used to be in TopologicalOrder.py. Along with the new MaximumAntichain and MinimumChainDecomposition functions, I included a TransitiveClosure function, as it was needed when the input order is given by a sparser DAG.
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>kumho35</b>: <br />
+<b></b><br />
+
+</div>
+

@@ -1,0 +1,41 @@
+---
+layout: post
+title:  'SODA roundup'
+date:   2006-01-26 07:36:00
+tags:   [computational geometry, blogging, conferences, computational topology, papers]
+---
+Now that I&#x27;m back from SODA, I guess it&#x27;s appropriate for me to post a recap of some of the more memorable parts of it for me.
+<br />
+
+<br />
+I don&#x27;t really want to talk in detail about elevator scheduling algorithms, crowded stretch limos with mirrored ceilings and mysteriously absent return rides, ants on the 14th floor, shorting crooked cabdrivers, rose-flavored gelato and Peruvian musicians, forgotten laptop power adapters, new sunglasses, and drawbridge stunt helicopter explosions. So you&#x27;ll have to use your imagination for those parts.
+<br />
+
+<br />
+As usual, it was good to see so many old friends and meet some new ones as well.  I&#x27;m not sure why but I had less of the feeling that I sometimes do at SODA, of being lost in a sea of people none of whom I know.  Since I&#x27;m blogging, I&#x27;ll just single out some bloggers here — besides Jeff and Suresh, of course, and Scott &quot;<a href="http://www.scottaaronson.com/blog/">Shtetl-Optimized</a>&quot; Aaronson at the STOC PC meeting, it was a pleasant discovery to find that <a href="http://magic.aladdin.cs.cmu.edu/">[Lowerbounds, Upperbounds]</a> is not just a CMU talk announcement and LaTeX tip board, but also a person by the name of Maverick. We had an interesting discussion involving, if I remember correctly, DSLR photography, the view from Phil&#x27;s penthouse, lost cell phones, and the gender of the Winnie the Pooh characters (apparently Piglet is female in the Chinese movie dubs).  I also spoke with a mystery blogger who, in order to remain incognito, is avoiding such obvious subjects as algorithms, Borges, and his recent trip to Antarctica, in favor of posts on hair color.  A good strategy, I guess, since searches for that subject hide his blog among those of thousands of teen girls. (ETA: <a href="http://mysliceofpizza.blogspot.com/">Found</a> <a href="http://geomblog.blogspot.com/2006/02/welcome-to-machine.html">by Suresh</a>.)
+<br />
+
+<br />
+There were too many good papers for me to pick out any one as a favorite, but there were a couple of subject areas where I particularly enjoyed the small number of papers in the area and wished there were more (I guess this means I should try harder to write some myself...).  First, two papers that I saw dealt with computational topology: representing surfaces (or higher dimensional manifolds, but these ones were about surfaces) as abstract complexes of cells, and solving algorithmic problems for these complexes.  Jeff Erickson had a nice paper with Éric Colin de Verdière on <a href="http://compgeom.cs.uiuc.edu/~jeffe/pubs/octagons.html">continuously deforming a curve on such a surface to the shortest possible topologically equivalent curve</a>.  The proof involved cutting the surfaces along crossing geodesics into octagons, passing to the universal cover (the {8,4} tiling of the hyperbolic plane), and showing that one could limit the search to a linear number of octagons in this tiling.  Sergio Cabello&#x27;s <a href="http://www.fmf.uni-lj.si/~cabello/publications/c-mdpg-06-soda.pdf">paper on planar shortest paths</a> (using techniques related to <a href="http://www.ics.uci.edu/~eppstein/pubs/p-egis.html">separator based sparsification</a>) seems on the face of it to be purely a graph algorithms paper, but it&#x27;s really on a very similar problem to that of Erickson and Colin de Verdière: finding the shortest possible nonseparating cycle on a topological surface. The connection between this topological problem and planar graph shortest paths comes from <a href="http://www.fmf.uni-lj.si/~cabello/publications/cabello+mohar+shortest%20cycles+2005+draft.pdf">a previous paper by Cabello and Bogdan Mohar</a>.
+<br />
+
+<br />
+The second area I wanted to highlight is that of data structures for low dimensional geometry.  There were two very interesting papers in this area that both involved the geometry of three-dimensional convex hulls.  A convex hull and associated point location data structure can be used in a straightforward way to answer certain range queries: is there any data point in a query halfspace of <b>R</b><sup>3</sup>?  Kaplan and Sharir had <a href="http://www.math.tau.ac.il/~michas/chmin-final4.ps">a nice convex-hull based data structure for a similar but more informative query: what is the approximate number of data points in a halfspace?</a>  The method involves a trick of Edith Cohen: if you assign a collection of objects random keys in the interval [0,1], and search for the minimum key in a range, then ranges with more data points in them are likely to have smaller minimum keys, so by repeating this minimum key search with different random assignments you can estimate the range size.  But this random minimum key problem is basically the same as point location in some intermediate state of a randomized incremental convex hull construction algorithm, so a point location structure used for that algorithm lets one handle the queries efficiently.  Also in this area, Timothy Chan showed for the first time that one could <a href="http://www.cs.uwaterloo.ca/~tmchan/dch3d_soda.ps">maintain a dynamic 3d point set with queries that seek extreme vertices of the convex hull in polylogarithmic time per update or query</a>, improving an O(n<sup>ε</sup>) bound by Agarwal and Matousek in 1992. Chan&#x27;s data structure improves the times for a big collection of other dynamic geometry problems including the post office problem, diameter, width, bichromatic closest pairs, minimum enclosing disks, and minimum spanning trees. The technique is still a little complicated, though, involving machinery such as shallow cuttings, and the polylogs have high exponents, so there&#x27;s plenty of room for improvement.
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>geomblog</b>: <br />
+<b>2006-01-30T18:42:23Z</b><br />
+&quot;in favor of posts on hair color&quot; ? you know, there is exactly one person who comes to SODA and might talk about topics like that ;). I also know that he&#x27;s blogging :)
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2006-01-30T19:05:47Z</b><br />
+Yeah, I figured that would be sufficient to identify the person, if not to locate his blog.
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>luckystrike1</b>: <br />
+<b></b><br />
+
+</div>
+

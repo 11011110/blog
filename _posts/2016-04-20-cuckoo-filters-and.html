@@ -1,0 +1,45 @@
+---
+layout: post
+title:  'Cuckoo filters and their analysis'
+date:   2016-04-20 20:31:00
+tags:   [data structures, papers]
+---
+Do you have a software project in which you need a fast and space-efficient approximate set data structure, like a <a href="https://en.wikipedia.org/wiki/Bloom_filter">Bloom filter</a>? Then probably what you want is actually a <a href="https://github.com/efficient/cuckoofilter">cuckoo filter</a>, a plug-in replacement for Bloom filters that is faster, more space-efficient, and more versatile (because it allows elements to be deleted as well as inserted).
+<br />
+
+<br />
+Michael Mitzenmacher has described cuckoo filters in <a href="http://mybiasedcoin.blogspot.com/2014/10/cuckoo-filters.html">an earlier blog post</a> (as well as of course in the <a href="http://www.eecs.harvard.edu/~michaelm/postscripts/cuckoo-conext2014.pdf">published paper about them</a>) but the basic idea is to use a <a href="https://en.wikipedia.org/wiki/Cuckoo_hashing">cuckoo hash table</a> cut down in size by storing only a short fingerprint of each key rather than a whole key-value pair. As in a normal cuckoo hash table, keys (or rather their fingerprints) get moved around to make room for other keys, and that leads to a small complication: when you&#x27;re moving a fingerprint, you don&#x27;t know which key it came from, so the location to move it to needs to be computable based only on where it is now and on its value. More specifically, the other location for any fingerprint ends up being the xor of its current location with a hash of its value.
+<br />
+
+<br />
+Although cuckoo filters have been implemented (see first link) and work well in practice, one drawback is that we didn&#x27;t know whether they also work well in theory. Conversely, an earlier data structure of Pagh, Pagh, and Rao (<a href="http://www.itu.dk/people/pagh/papers/bloom.pdf">SODA 2005</a>) has all the same advantages of cuckoo filters over Bloom filters, but for it, as far as I am aware, there was no implementation, only theory. In contrast, Bloom filters work both actually and theoretically: there is no major gap between theory and practice.
+<br />
+
+<br />
+So my new paper, &quot;Cuckoo filter: simplification and analysis&quot; (<a href="http://arxiv.org/abs/1604.06067">arXiv:1604.06067</a>, to appear at SWAT) is aimed at closing this gap, although it does not fully do so. What it does is to show that, if you omit the hash of the fingerprint and instead move each fingerprint to the xor of its current location and its value, then cuckoo filtering works well in theory. This simplification causes the filter to be partitioned into many small sub-filters, which operate independently of each other, with each key being assigned randomly to one of them. The main ideas of the paper are that this assigment of keys to sub-filters is very unlikely to be unbalanced and that, within each sub-filter, the data structure behaves just like a cuckoo hash, without any restriction on which pairs of cells the keys can be mapped to. It uses Chernoff bounds to prove the balancing part (as you do), and then just plugs in the existing analysis of cuckoo hashing for the rest.
+<br />
+
+<br />
+Of course, it would be better to prove that the actual cuckoo filter works well than this simplification, since I don&#x27;t think the simplification is likely to be a practical improvement. The graph whose edges connect pairs of cells where a single fingerprint can go has a lot of nice structure and symmetry (usually either a Cayley graph or a disjoint union of hypercubes, compared to a disjoint union of cliques for the simplification), suggesting that spectral graph theory might be helpful, but that&#x27;s not my forté. Also, my analysis only holds for random hash functions, so it would be good to extend it to realistic methods such as <a href="https://en.wikipedia.org/wiki/Tabulation_hashing">tabulation hashing</a>. Tabulation hashing is known to work for cuckoo hashing, but to get my analysis to work it needs to be extended to blocked cuckoo hashing, a variation that allows multiple keys per cell. Ideally, an analysis of the full cuckoo filter algorithm with a realistic hash function would be best.
+<br />
+
+<br />
+But you don&#x27;t need to wait for that analysis to happen to go start using these things in your code: they already work now. We just don&#x27;t completely understand why they work.
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>brooksmoses</b>: <br />
+<b>2016-04-21T07:35:03Z</b><br />
+Out of curiosity, are there similar sorts of things that <i>do</i> work well in practice but not in theory?
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2016-04-21T15:41:54Z</b><br />
+Good question. I can&#x27;t think of any offhand.
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>leventov</b>: <br />
+<b>2016-05-01T16:03:52Z</b><br />
+Levit&#x27;s algorithm for shortest paths in a graph
+</div>
+

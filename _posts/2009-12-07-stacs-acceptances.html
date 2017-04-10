@@ -1,0 +1,23 @@
+---
+layout: post
+title:  'STACS acceptances'
+date:   2009-12-07 00:36:00
+tags:   [conferences, papers]
+---
+Via <a href="http://polylogblog.wordpress.com/2009/12/07/stacs-accepts/">polylogblog</a> I learn that the <a href="http://go2.wordpress.com/?id=725X1342&site=polylogblog.wordpress.com&url=http%3A%2F%2Fstacs.loria.fr%2FAcceptedPapers.html">list of accepted papers at STACS</a> has become available.
+<br />
+
+<br />
+Three graph algorithm titles caught my attention enough to get me to track down their online versions, though I haven&#x27;t had time to do much more than scan their abstracts:
+<br />
+
+<br />
+<a href="http://arxiv.org/abs/0909.5278">Finding Induced Subgraphs via Minimal Triangulations (arXiv:0909.5278)</a> by Fomin and Villanger. This turns out to be about finding moderately-exponential algorithms that find subgraphs of bounded treewidth that are as large as possible and to solve subgraph isomorphism problems when the subgraph to be found is large but of bounded treewidth.
+<br />
+
+<br />
+<a href="http://people.cs.uchicago.edu/~sourav/papers/parametric-sp.ps">Two-phase algorithms for the parametric shortest path problem</a> by Chakraborty, Fischer, Lachish, and Yuster. Parametric optimization problems involve an input graph with weights that vary (linearly or more complicatedly) with some parameter; one must solve an optimization problem like shortest paths for particular parameter values. In the version studied here, one doesn&#x27;t want all the different shortest paths for all different parameter values (there can be superpolynomially many different paths even when the edge weights vary linearly); rather, we&#x27;d like to compute the shortest path for some small set of parameter values, more quickly than the O(mn) per value that it would take to run Bellman-Ford separately for each value. (One can&#x27;t use Dijkstra because some edges may be negative.) The authors show that, with polynomial preprocessing, shortest paths for each parameter value may be found in O(m + n log n) time, as fast as Dijkstra.
+<br />
+
+<br />
+<a href="http://arxiv.org/abs/0909.4692"">Planar Subgraph Isomorphism Revisited (arXiv:0909.4692)</a> by Dorn. This is a followup to <a href="http://arxiv.org/abs/cs.DS/9911003">one of my papers</a>, which provides a completely impractical algorithm for finding any k-vertex subgraph (for fixed k) in a larger planar graph in linear time. The algorithm described here has been improved: it&#x27;s now exponential in k rather than k log k. I&#x27;m still not convinced that it&#x27;s at all close to practical, but it&#x27;s a step in the right direction.

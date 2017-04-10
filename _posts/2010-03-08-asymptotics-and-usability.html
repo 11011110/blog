@@ -1,0 +1,167 @@
+---
+layout: post
+title:  'Asymptotics and usability'
+date:   2010-03-08 13:06:00
+tags:   [tools, algorithms]
+---
+In Google Wave, when a user is editing a wave, every keystroke entails sending messages back and forth between that user, the Wave servers, and every other person who has the same wave open at the same time, so that all users can see what everybody else is typing as they type it. But that&#x27;s not so bad: it&#x27;s just a small message, and everything is still pretty fast, at least on a new wave with not much in it yet. Despite all this communication the system can be very usable and responsive.
+<br />
+
+<br />
+However, when a wave grows to a hundred or so messages and a few tens of thousands of characters, everything slows down to a crawl. Each keystroke takes a second or so to process. Typing directly into a wave can become so painful that it can be much easier to switch back and forth between a separate text editor and Wave and to copy and paste large chunks of text (each a single operation, as fast as a single keystroke) rather than editing directly within the wave. The only way to return to a responsive system seems to be to archive the wave and start a fresh one.
+<br />
+
+<br />
+So far this is verifiable personal experience but the rest is speculation. My wild guess at the underlying cause for this lack of scalability: as each keystroke is processed, it entails an amount of work by the browser, or worse an amount of communication between the browser and the Wave servers, that&#x27;s linear in the size of the wave. For instance, it&#x27;s plausible to me (though I don&#x27;t know the details of the communication protocol) that each update causes the server to communicate the entire new updated state of the wave to the browser. The net effect is that, if one creates a wave by typing a character at a time, the number of bytes communicated, over the course of the wave, is quadratic in the number of characters in the wave. And as we all (should) know, linear algorithms scale well to large amounts of data and quadratic algorithms don&#x27;t.
+<br />
+
+<br />
+The moral: asymptotic analysis matters for usability, even for problem sizes that are not massive (there is no problem fitting a whole wave into main memory) and even in situations such as this one where the designers are probably thinking less about algorithmic efficiency and more about functionality and user interface design. If your system doesn&#x27;t scale, it will become slow and unusable when its users push its boundaries, and that will limit the uses people make of it.
+<br />
+
+<br />
+<b>ETA 3/26:</b> For unrelated reasons I switched to Chrome from Firefox as the browser I use for editing in Wave, and now it works much faster on long threads. Rather than trying to make some point about how web content should work equally well on all standards-compliant web platforms, I&#x27;ll just note that this may give some hint at where the bottleneck is, to someone who knows more about the guts of the system than I do.
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>rgrig</b>: <br />
+<b>2010-03-14T18:36:25Z</b><br />
+A javascript loop that adds around 1000 short strings to an HTML document takes time on the order of 1 second, if I remember correctly. I might be off by an order of magnitude, but the point is that last time I tried it I was quite surprised by how slow it is. (I also remember that parsing 2MB of whitespace separated integers takes &gt;10 seconds in IE, but only a few tens of milliseconds in Chrome. The performance of javascript programs seems very hard to predict.)
+
+It sounds I&#x27;m looking for excuses and I kinda am: I simply can&#x27;t imagine any of the friends I have and work for Google sending the whole Wave when one character changes. (Not that any of them would work on Wave...)
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: Nope.<br />
+<b>2010-03-14T23:16:21Z</b><br />
+&quot;For instance, it&#x27;s plausible to me (though I don&#x27;t know the details of the communication protocol) that each update causes the server to communicate the entire new updated state of the wave to the browser.&quot;
+
+Nope - have a look at the federation protocol spec. Wave doesn&#x27;t need to send a message per-keystroke it can modify the document locally immediately, and then asynchronously batch up keystrokes as a short &quot;Diff&quot;, and send that to the server. (If you really want to see the client protocol (different from federation), have a look at the messages in firebug.)
+
+To further understand this have a look at how OT works:
+http://en.wikipedia.org/wiki/Operational_transformation
+
+Now the hard bit is implementing this in javascript, and running in a browser, without using multi-threading - but that&#x27;s an engineering challenge, not asymptotics.
+
+As a further example, consider that I can do a large git merge in milliseconds, and in Wave, merging is the only part of the algorithm that will scale with document size and number of concurrent users.
+
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: Re: Nope.<br />
+<b>2010-03-14T23:28:04Z</b><br />
+Well, obviously it doesn&#x27;t scale with document size, so if that isn&#x27;t the problem then there&#x27;s still a problem.
+</div>
+<div style="margin-left: 6em; padding-top: 1em;">
+<b>chouyu_31</b>: Re: Nope.<br />
+<b>2010-03-15T07:27:26Z</b><br />
+It is definitely painful to use large waves.  One trick is to replace large sections of the wave with summaries of their contents.  Since history is kept, you can always play it back to see what happened (though I much preferred the internal demo of playback (or what I remember of it) to what I saw the last time I used Wave).
+</div>
+<div style="margin-left: 6em; padding-top: 1em;">
+<b>None</b>: Re: Nope.<br />
+<b>2010-03-16T01:21:28Z</b><br />
+So to summarise:
+ 
+ - Wave is slow with large documents. (I agree).
+ - Overly slow software is difficult to use. (I agree).
+
+My point is this has nothing to do with the &quot;asymtotics&quot; of the algorithm used by Wave.
+
+I have no idea why their current implementation doesn&#x27;t scale - and no-one else here has come-up with an explanation either. Anyways... I&#x27;d be interested to know.
+
+Perhaps it&#x27;s something as mundane as overloading the javascript garbage collector with too many objects.
+
+</div>
+<div style="margin-left: 9em; padding-top: 1em;">
+<b>11011110</b>: Re: Nope.<br />
+<b>2010-03-16T01:36:16Z</b><br />
+&quot;Not scaling&quot; is almost exactly the same thing as &quot;having bad asymptotics&quot;. Asymptotics is just a tool for describing how something scales. The item you left out of the summary that shows that there is something asymptotic going on:
+
+- Wave is fast with small documents.
+
+So, obviously, the function describing response time as a function of document size scales in an unacceptable way. That scaling may be linear or quadratic or something else, the cause of the bad scaling may be something in the local javascript or something in the transmission protocol or something else, and the scaling may be not as bad in practice (although still bad) as a theoretical worst case analysis might tell you. But regardless of all that it still can be described using asymptotics.
+</div>
+<div style="margin-left: 12em; padding-top: 1em;">
+<b>None</b>: Re: Nope.<br />
+<b>2010-03-17T00:31:30Z</b><br />
+The point that I am trying to make, is that in your post you speculate that the Wave _algorithm_ might scale as O(n2). I suggested reading about the algorithm, it&#x27;s interesting, and it doesn&#x27;t scale as O(n2). That is all that I intended to disagree with. Apologies if I was unclear.
+
+Here&#x27;s a quote (1 min&#x27;s googling):
+
+&quot;the transformation running time to O(n log n + m log m), where n is the total size of the client operations and m is the total size of the server operations.&quot; http://www.waveprotocol.org/whitepapers/operational-transform
+
+I believe the network usage is linear based on the change size, not the document size.
+
+Back to discussing the problem with scaling in the current Wave _implementation_.
+
+Would it have made sense for the Google Wave team to have performed a more detailed &quot;asymptotic analysis&quot; of Wave, including Wave&#x27;s use of a javascript garbage collector, before actually implementing Wave? (This seems to be your implication.)
+
+Now time for me to speculate. If they had done this, the results would have a high level of uncertainty, and the process would be time consuming and costly. Not to mention, you&#x27;ll also need to include a number of other browser sub-systems in your analysis. (Btw. If there is an easy way to do this that I don&#x27;t know about, I&#x27;d love to know.)
+
+My guess is that a better strategy would be to, analyse the core algorithm, which Google did. Then implement the algorithm, test and measure the implementation&#x27;s performance, and based on the results, adjust the strategy if it&#x27;s too slow.
+
+This seems to be the Wave team&#x27;s strategy, and it seems like the correct one to me. (Especially if you take into account, that there are a number of back up strategies like Native Client, a faster javascript engine, or shipping some code in Gears).
+
+I hope my point is now clear.
+
+Greg.
+
+</div>
+<div style="margin-left: 15em; padding-top: 1em;">
+<b>11011110</b>: Re: Nope.<br />
+<b>2010-03-17T00:45:29Z</b><br />
+If an analysis and testing strategy results in a widely-deployed system with embarrassingly poor performance that causes users to think badly of it, and yet you still say &quot;it seems like the correct one&quot; then I wonder what someone would have to do to convince you that the strategy is incorrect.
+
+As for &quot;the transformation running time to O(n log n + m log m)&quot;: this is so far out of context as to be meaningless. How many of these near-linear-running time transformations are incurred over the course of typing k characters into a wave? What are n and m as a function of k? Is this part of the algorithm even anywhere near where the performance bottleneck is?
+</div>
+<div style="margin-left: 18em; padding-top: 1em;">
+<b>None</b>: Re: Nope.<br />
+<b>2010-03-17T05:52:40Z</b><br />
+You have made it clear that you think it&#x27;s feasible to perfectly estimate in advance the performance of a system such as Wave, and therefore you attribute all of the performance problems to poor decisions.
+
+I think there is a lot of uncertainty when planning a project such as Wave, and sometimes you&#x27;ve got to continue even when faced with large uncertainties, and make mistakes, and learn from those mistakes.
+
+So good we disagree.
+
+I&#x27;m curious, what do you think an analysis phase would look like for creating an application, based on an O(n log n) algorithm, which must run in a browser and be implemented in Javascript. How do you know in advance how big the application can get before choking the browser, especially if no-one has ever written such a large browser-based application before.
+
+This to me is a question of probability, especially when you take into account the moving baseline of Javascript performance.
+
+As for a testing strategy - isn&#x27;t that what they are doing now, since it is in beta? Or is your complaint that the software should be in a perfectly usable state already, then perhaps it&#x27;s really a question of resources, so they can get it done more quickly.
+
+If you&#x27;re actually interested in understanding the client side algorithm, rather than just speculating on it, have a read of the link or paper at the bottom of it.
+
+Personally I think a widely-deployed _beta_ system, used to try out an ambitious idea, beats a system with 5 users, and a load tester, running behind closed doors. Sure to avoid embarrassment, they could have waited another 5 years, but then there is no software eco-system around it once it&#x27;s fast. It will take them longer to develop without community testers.
+
+For me the important part of the project is coming up with a new standard messaging protocol to replace of SMTP, POP + a million annoying websites. Even if Wave&#x27;s current implementation was thrown away and replaced with native code, I think they have made a useful contribution, by opening up early, and getting more people working on the protocol.
+
+</div>
+<div style="margin-left: 21em; padding-top: 1em;">
+<b>11011110</b>: Re: Nope.<br />
+<b>2010-03-17T06:24:41Z</b><br />
+I&#x27;m not sure where you get &quot;in advance&quot; from. Although my own interests are more theoretical, I think testing an actual implementation is an important part of performance analysis.
+</div>
+<div style="margin-left: 12em; padding-top: 1em;">
+<b>None</b>: Re: Nope.<br />
+<b>2010-03-19T22:44:03Z</b><br />
+<i>But regardless of all that it still can be described using asymptotics.</i>
+
+Again, my <i>guess</i> that <i>in this case</i> the issue is a <b>big</b> constant, rather than bad asymptotic behavior.
+
+That said, I <i>agree</i> that, in general,
+1. asymptotics are important than constants for performance,
+2. performance affects usability, and
+3. Google Wave&#x27;s performance sucks.
+
+But, I <i>disagree</i> that small waves are fast.
+
+</div>
+<div style="margin-left: 15em; padding-top: 1em;">
+<b>rgrig</b>: Re: Nope.<br />
+<b>2010-03-19T22:45:00Z</b><br />
+That was me. I forgot to login.
+</div>
+<div style="margin-left: 18em; padding-top: 1em;">
+<b>11011110</b>: Re: Nope.<br />
+<b>2010-03-19T22:51:09Z</b><br />
+You may be right about the big constant, but I haven&#x27;t had too much trouble with small waves. Except today. Google wave has just been not working very well at all for most of the day — contact list blank, avatars all generic, no way to add anyone to a wave, frequent offline and frequent unsynced waves, etc. Maybe it has something to do with the new extensions?
+</div>
+

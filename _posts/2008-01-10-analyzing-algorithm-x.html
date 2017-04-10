@@ -1,0 +1,225 @@
+---
+layout: post
+title:  'Analyzing Algorithm X'
+date:   2008-01-10 00:04:00
+tags:   [algorithms]
+---
+<p>Today is <a href="http://recursed.blogspot.com/2008/01/happy-birthday-donald-knuth.html">Don Knuth&#x27;s 70th birthday</a>. Happy birthday, Don!</p>
+
+<p>I could say a lot about my own relation with Knuth&#x27;s work: as a freshman in college in 1981 I was hired to help typeset a book in TeX (<i>The Handbook of Artificial Intelligence</i>), my <a href="http://www.ics.uci.edu/~eppstein/pubs/1985.html">first published paper</a> was on graph drawing using TeX, and my thesis work concerned dynamic programs closely related to the line-breaking algorithms in TeX. But I thought it might be appropriate, instead, to do something a little more technical.</p>
+
+<p>Knuth was the first to use the phrase “analysis of algorithms,” at the 1970 ICM in Nice. He <a href="http://doi.acm.org/10.1145/1008328.1008329">popularized and extended O-notation</a> (previously used in functional analysis) as an essential tool for algorithm analysis. And, his <i><a href="http://en.wikipedia.org/wiki/The_Art_of_Computer_Programming">Art of Computer Programming</a></i> set the standards for the field and is still well worth reading today. So, it seems a little presumptuous for me to analyze one of Knuth&#x27;s own algorithms. I set out only with the goal of understanding one of his many papers, “<a href="http://arxiv.org/abs/cs/0011047">Dancing Links</a>,” which concerns a backtracking algorithm for an NP-complete problem, a subject of <a href="http://www.ics.uci.edu/~eppstein/pubs/exponential.html">some interest to me</a>. But, as so often, the problem took over and wouldn&#x27;t let me go until I&#x27;d found something to add to it. Several times I thought I&#x27;d reached the end of the analysis, only to discover another refinement that kept it going deeper, until eventually this grew from a blog post to something resembling the outline of a full paper. I imagine Knuth is familiar with this process, on a much larger scale, as his <i>Art of Computer Programming</i> also grew far larger than he originally envisioned. Regardless, here is my analysis.</p>
+
+<h4>The Exact Cover Problem</h4>
+
+The problem studied in Knuth&#x27;s paper is <a href="http://en.wikipedia.org/wiki/Exact_cover">exact cover</a>: given a family of sets, find a subfamily of disjoint sets with the same union as the whole family. For instance, suppose the input family consists of all the vertices and edges of a four-vertex <a href="http://en.wikipedia.org/wiki/Cycle_graph">cycle graph</a>:
+<blockquote>{ {<i>a</i>}, {<i>b</i>}, {<i>c</i>}, {<i>d</i>}, {<i>a</i>, <i>b</i>}, {<i>b</i>, <i>c</i>}, {<i>c</i>, <i>d</i>}, {<i>d</i>, <i>a</i>} }.</blockquote>
+<p>Then these eight sets combine to form seven different exact covers:</p>
+<blockquote><ol>
+<li>{ {<i>a</i>}, {<i>b</i>}, {<i>c</i>}, {<i>d</i>} }</li>
+<li>{ {<i>a</i>, <i>b</i>}, {<i>c</i>}, {<i>d</i>} }</li>
+<li>{ {<i>a</i>}, {<i>b</i>, <i>c</i>}, {<i>d</i>} }</li>
+<li>{ {<i>a</i>}, {<i>b</i>}, {<i>c</i>, <i>d</i>} }</li>
+<li>{ {<i>b</i>}, {<i>c</i>}, {<i>d</i>, <i>a</i>} }</li>
+<li>{ {<i>a</i>, <i>b</i>}, {<i>c</i>, <i>d</i>} }</li>
+<li>{ {<i>b</i>, <i>c</i>}, {<i>d</i>, <i>a</i>} }</li>
+</ol></blockquote>
+
+<p>Exact cover is one of the <a href="http://en.wikipedia.org/wiki/Karp%27s_21_NP-complete_problems">21 NP-complete problems</a> in Karp&#x27;s 1972 “<a href="http://www.cs.berkeley.edu/~luca/cs172/karp.pdf">Reducibility Among Combinatorial Problems</a>,” a paper that forms (together with <a href="http://en.wikipedia.org/wiki/Cook%27s_theorem">Cook&#x27;s theorem</a>) the foundation of NP-completeness theory. Knuth describes applications of exact cover in finding <a href="http://en.wikipedia.org/wiki/Polyomino">polyomino</a> tilings, using sets of the cells that can be covered by each possible placement of each polyomino. The seven exact covers above can be interpreted in this way as the tilings of a 2×2 square by monominos and dominos:</p>
+
+<p align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/knuth/domtile.png" /></p>
+
+<p>Sudoku puzzles can also be <a href="http://www.garethrees.org/2007/06/10/zendoku-generation/">expressed as exact cover problems</a>, in which there is one element for each cell, one element for each combination of a digit and a group of nine cells, and one set for each combination of a digit and a single cell. Another standard combinatorial problem, the <a href="http://en.wikipedia.org/wiki/Eight_queens_problem">eight queens problem</a>, is not quite an exact cover problem directly (the selected queen placements must cover each row and column of a chessboard but only cover 16 of the 30 diagonals) but can be made into one by adding seven additional “virtual pieces” that may each cover two perpendicular diagonals but no rows or columns. If all sets in an exact cover instance have exactly two elements (as for instance, in the eight rooks problem, in which the set representing each rook placement contains a single row and a single column), the problem becomes that of <a href="http://mathworld.wolfram.com/PerfectMatching.html">perfect matching</a>, a polynomially-solvable but nontrivial special case.</p>
+
+<h4>Algorithm X</h4>
+
+<p>The algorithmic content of Knuth&#x27;s paper involves a backtracking algorithm that Knuth calls “Algorithm X,” and some techniques for implementing Algorithm X efficiently using doubly linked lists (where the “<a href="http://en.wikipedia.org/wiki/Dancing_Links">dancing links</a>” of the title come in). Algorithm X can be defined very simply, if one skips over such details; it is a recursive search procedure that takes as arguments a set <i>U</i> of elements and a family <i>F</i> of subsets of <i>U</i> and performs the following steps.</p>
+
+<blockquote><b>Algorithm X:</b>
+<ul>
+<li>If <i>U</i> is empty, return the empty cover</li>
+<li>Choose arbitrarily an element <i>x</i> of <i>U</i></li>
+<li>For each set <i>S<sub>i</sub></i> in <i>F</i> that contains <i>x</i>:</li>
+<ul>
+<li>Form a set family <i>F&#x27;</i> consisting of the sets in <i>F</i> that are disjoint from <i>S<sub>i</sub></i></li>
+<li>Solve recursively the exact cover problem (<i>U</i> \ <i>S<sub>i</sub></i>, <i>F&#x27;</i>)</li>
+<li>If a solution is found, add <i>S<sub>i</sub></i> to the solution and return it</li>
+</ul></ul>
+</blockquote>
+
+<p>Different choices of the “pivot” <i>x</i> may lead to different running times — for instance, if one can choose a pivot that is not contained in any of the sets, it is preferably to do so, because then the algorithm will immediately backtrack rather than fruitlessly searching unsolvable subproblems. But what can we say more rigorously about the worst case performance of Algorithm X? If <i>n</i> is the number of sets in the input family, what function ƒ(<i>n</i>) describes the running time of the algorithm? Because of the way the dancing links implementation reduces the input size of the subproblems in the recursive calls, the time per call at the bottommost levels of the recursion (where most of the work happens) will be constant, so we may equivalently ask how many recursive calls are made.</p>
+
+<p>Algorithm X may easily be modified to find, not just one exact cover, but all of them, so one possible lower bound on its performance is provided by the maximum number of different exact covers in any instance. For instance, an exact cover instance formed from <i>k</i> disjoint copies of the 2×2-square example has 7<sup><i>k</i></sup> different solutions, formed from n = 8<i>k</i> input sets, so (as a function of <i>n</i>) the number of exact covers is 7<sup><i>n</i>/8</sup> ≈ 1.27537<sup><i>n</i></sup>. Any version of Algorithm X that lists all covers must take at least this much time.</p>
+
+<h4>Upper bounds for Algorithm X</h4>
+
+<p>What about upper bounds? Let <i>C</i> denote the subfamily of sets in <i>F</i> that contain the chosen element <i>x</i>; then the algorithm will perform |<i>C</i>| recursive calls, but, in each of these calls the size of the set family <i>F&#x27;</i> is at most <i>n</i> − |<i>C</i>|, because <i>F&#x27;</i> and <i>C</i> must be disjoint. For example, it may perform two recursive calls of size at most <i>n</i> − 2, three recursive calls of size at most <i>n</i> − 3, four recursive calls of size at most <i>n</i> − 4, etc. The worst of these cases is the one with three recursive calls, leading to a time bound of O(3<sup><i>n</i>/3</sup>) ≈ 1.44225<sup><i>n</i></sup>. Therefore, even the stupidest version of Algorithm X, one that avoids any chance to backtrack and always chooses its pivots in such a way as to maximize its running time, takes at most O(3<sup><i>n</i>/3</sup>) time. This bound is tight as may be seen for instances consisting of many disjoint copies of the set system { {<i>a</i>, <i>b</i>}, {<i>a</i>, <i>c</i>}, {<i>a</i>, <i>d</i>} } and for an algorithm that always pivots on an element contained in as many sets as possible. It is also a tight bound on the number of solutions for a generalization of exact cover in which <i>F</i> is allowed to include multiple copies of the same set; for instance, if one tiles a rectangle by monominos of three different colors, there are 3<sup><i>n</i>/3</sup> different solutions.</p>
+
+<p>For exact cover itself, one can do better using Knuth&#x27;s suggestion of choosing a pivot element that is contained in as few sets as possible. Pivots contained in no sets lead to immediate backtracking, and pivots contained in a single set lead to a smaller subproblem with no branching, so we need only worry about pivots contained in two or more sets. Before diving into case analysis, it will be helpful to have a lemma analyzing the sizes of the subproblems the algorithm may encounter.</p>
+
+<blockquote><p><b>Lemma 1</b>. Suppose that Algorithm X chooses a pivot <i>x</i>, contained in sets <i>S<sub>i</sub></i>, <i>i</i> = 1, 2, ... <i>k</i>, and that no other element is contained in fewer sets. Let <b><i>s</i></b> = (<i>s</i><sub>1</sub>, <i>s</i><sub>2</sub>, ... <i>s</i><sub>k</sub>), where <i>s<sub>i</sub></i> is the number of sets in <i>F</i> that have a nonempty intersection with <i>S<sub>i</sub></i> (including <i>S<sub>i</sub></i> itself). Suppose also that the ordering of the subscripts is chosen so that the vector <b><i>s</i></b> is in sorted order from smaller values to larger values. Then either there exists an <i>i</i> such that <i>s<sub>i</sub></i> ≥ <i>k</i> + i, or each <i>s<sub>i</sub></i> = <i>k</i> + <i>i</i> − 1. In the latter case, the sets <i>S<sub>i</sub></i> are totally ordered by inclusion.</p>
+
+<p><i>Proof sketch</i>: We show by induction that, if the first <i>i</i> components of <b><i>s</i></b> are equal to <i>k</i> + <i>i</i>, then the first <i>i</i> sets are totally ordered by inclusion and each are subsets of all remaining sets, and further that in this case <i>s</i><sub><i>i</i> + 1</sub> ≥ <i>k</i> + <i>i</i> + 1. As a base case, the total ordering holds vacuously for <i>i</i> = 0, and in this case the lower bound <i>s</i><sub>1</sub> ≥ <i>k</i> holds as <i>S</i><sub>1</sub> must intersect each of the <i>k</i> sets <i>S<sub>i</sub></i>. In the inductive case, suppose that all sets up to but not including <i>S<sub>i</sub></i> have the minimum size allowed by the lemma. Then by the induction hypothesis, <i>S<sub>i</sub></i> is a superset of <i>S</i><sub><i>i</i> − 1</sub>, and has a nonempty intersection with all of the <i>k</i> + <i>i</i> − 2 sets that <i>S</i><sub><i>i</i> − 1</sub> intersects. Because it is a superset, <i>Y</i> = <i>S<sub>i</sub></i> \ <i>S</i><sub><i>i</i> − 1</sub> is nonempty; each element <i>y</i> in <i>Y</i> must be contained in at least <i>k</i> sets of the set system <i>F</i>, none of which can be among the <i>i</i> − 1 sets earlier in the sequence. At most <i>k</i> − 1 of the sets containing y can be among the <i>k</i> + <i>i</i> − 2 sets already known to intersect <i>S<sub>i</sub></i>, for the <i>i</i> − 1 sets occurring earlier in the sequence do not contain <i>y</i>. Thus, there must be at least one additional set containing <i>y</i>. If there is exactly one additional set <i>T<sub>i</sub></i> that contains each <i>y</i> in <i>Y</i>, then <i>Y</i> is contained in all subsequent sets <i>S<sub>j</sub></i> for <i>j</i> &gt; <i>i</i>, and <i>s<sub>i</sub></i> ≥ <i>k</i> + <i>i</i> − 1; otherwise, there are two or more additional sets intersecting with <i>Y</i>, and <i>s<sub>i</sub></i> ≥ <i>k</i> + <i>i</i>. In either case the induction hypothesis holds and the lemma is proven.</p></blockquote>
+
+<p align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/knuth/chain.png" /></p>
+
+<p>Using this lemma, we may proceed to analyze cases. In general, each case will lead to a recurrence of the type <i>T</i>(<i>n</i>) = Σ <i>T</i>(<i>n</i> − <i>s<sub>i</sub></i>), which is solved as κ<sup><i>n</i></sup> where κ is a root of the function 1 − Σ κ<sup>−<i>s<sub>i</sub></i></sup>. A numerical approximation to κ may easily be found <a href="http://www.ics.uci.edu/~eppstein/0xDE/knuth/recur.py">by binary search</a>, or by more sophisticated numerical search procedures, as this function is negative for κ between one and the desired root, and positive for all κ larger than the root. For instance, the graph of the function 1 − 1/κ<sup>3</sup> − 2/κ<sup>5</sup> shown below (created with Walter Zorn&#x27;s <a href="http://www.walterzorn.com/grapher/grapher_e.htm">function grapher</a>) shows how well behaved this function is for <b><i>s</i></b> = (3,5,5). The overall worst-case behavior of an algorithm of this type can be bounded as the maximum among the solutions of the different recurrences arising from the different cases. We need only determine the minimal vectors <b><i>s</i></b> allowable by the lemma, search for the roots corresponding to each vector, and choose the maximum value κ among the different roots found by these searches.</p>
+
+<p align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/knuth/plot355.png" /></p>
+
+<p>Thus, for Algorithm X, with the pivot rule in which the algorithm chooses <i>x</i> to be contained in as few sets as possible and using Lemma 1 to bound <b><i>s</i></b>, we have the following cases.</p>
+<ul>
+<li><p>If <i>x</i> is contained in two sets, <b><i>s</i></b> must equal or be componentwise larger than (2,3). We get a recurrence <i>T</i>(<i>n</i>) ≥ <i>T</i>(<i>n</i> − 2) + <i>T</i>(<i>n</i> − 3), the solution of which is approximately 1.32472<sup><i>n</i></sup>, where the base of the exponential is the <a href="http://en.wikipedia.org/wiki/Plastic_number">plastic number</a>.</p></li>
+
+<li><p>If <i>x</i> is contained in three sets, <b><i>s</i></b> must equal or be componentwise larger than (3,4,5) or (4,4,4). We get two possible recurrences, <i>T</i>(<i>n</i>) ≥ <i>T</i>(<i>n</i> − 3) + <i>T</i>(<i>n</i> − 4) + <i>T</i>(<i>n</i> − 5) or <i>T</i>(<i>n</i>) ≥ 3<i>T</i>(<i>n</i> − 4). The solution to the former is again 1.32472<sup><i>n</i></sup>, while the solution to the latter is approximately 1.31607<sup><i>n</i></sup>.</p></li>
+
+<li><p>If <i>x</i> is contained in four sets, <b><i>s</i></b> must equal or be componentwise larger than (4,5,6,7), (5,5,5,5), or (4,6,6,6). The three resulting recurrences solve to 1.29647<sup><i>n</i></sup>, 1.31951<sup><i>n</i></sup>, and 1.29294<sup><i>n</i></sup>.</p></li>
+
+<li><p>If <i>x</i> is contained in five sets, <b><i>s</i></b> must equal or be componentwise larger than (5,6,7,8,9), (6,6,6,6,6), (5,7,7,7,7), or (5,6,8,8,8). The four resulting recurrences solve to 1.26859<sup>n</sup>, 1.30766<sup>n</sup>, 1.28032<sup>n</sup>, and 1.26696<sup>n</sup>.</p></li>
+
+<li><p>If <i>x</i> is contained in six or more sets, <b><i>s</i></b> must be componentwise larger than the vector (<i>k</i>, <i>k</i> + 1, <i>k</i> + 1, <i>k</i> + 1, ...). The worst case for vectors of this type occurs when <i>k</i> equals six, for which the solution is 1.30077<sup>n</sup><sup><i>n</i></sup>.</p></li>
+</ul>
+
+<p>However, this is not the end of the analysis. Consider the two worst cases, branches with size reduction vectors (2,3) and (3,4,5). In all but the last recursive subproblem in each of these cases, the analysis of Lemma 1 tells us that there must be an element <i>y</i> contained only in a single set <i>T<sub>i</sub></i> of the remaining subproblem. The next step of Algorithm X will be to pivot on <i>y</i> and eliminate this set without performing any more branching. Thus, effectively, these two cases lead to (3,3) and (4,5,5) reductions, much better than the analysis above. The worst remaining case, once the (2,3) and (3,4,5) cases are eliminated and (2,4), (3,3), (3,4,6), (3,5,5), and (4,4,5) included in their place, is a (5,5,5,5) branch. Therefore, as this analysis shows, in the worst case, Algorithm X takes time O(4<sup><i>n</i>/5</sup>) ≈ O(1.31951<sup><i>n</i></sup>).</p>
+
+<h4>Reducing the instance size without branching</h4>
+
+<p>Although Algorithm X already performs well on chains such as the (2,3) and (3,4,5) cases discussed above, we can do a little better. In this case, it turns out that the problem size may be reduced for free without doing any branching. However the price for this improvement is that generating all solutions, rather than just a single solution, becomes more awkward.</p>
+
+<p>Suppose the sets <i>S<sub>i</sub></i> containing the pivot <i>x</i> have the property that the intersection of any two such sets other than <i>S</i><sub>1</sub> is a proper superset of <i>S</i><sub>1</sub>; this property holds, for instance, in the case of a chain. We call a family of sets with this property a <i>nest</i>. Rather than pivoting on <i>x</i>, perform the following transformation:
+replace <i>U</i> with <i>U</i> \ <i>S</i><sub>1</sub>, remove <i>S</i><sub>1</sub> from <i>F</i>, and also remove from <i>F</i> any set that intersects <i>S</i><sub>1</sub> but does not contain <i>x</i>. Replace each other set <i>S<sub>i</sub></i> containing <i>x</i> with the set <i>S<sub>i</sub></i> \ <i>S</i><sub>1</sub>. This modified problem has at least one fewer set than the original. I claim that its exact covers are in one-to-one correspondence with the exact covers of the original problem. For, in one direction, any solution to the original problem must contain exactly one set in the nest, and corresponds in the obvious way to a solution of the modified problem. In the other direction, as the modified sets <i>S<sub>i</sub></i> \ <i>S</i><sub>1</sub> continue to intersect pairwise, at most one of them can be included in any exact cover. If one of them, <i>S<sub>i</sub></i> \ <i>S</i><sub>1</sub>, is included in some exact cover, then replacing <i>S<sub>i</sub></i> \ <i>S</i><sub>1</sub> with <i>S<sub>i</sub></i> forms an exact cover of the original problem. And if none of them are included in some exact cover, then adding <i>S</i><sub>1</sub> forms an exact cover of the original problem.</p>
+
+<p>However, there is a catch. Suppose that we perform this transformation, replacing some <i>S<sub>i</sub></i> by <i>S<sub>i</sub></i> \ <i>S</i><sub>1</sub>, but suppose also that <i>S<sub>i</sub></i> \ <i>S</i><sub>1</sub> already exists as a separate set in the family. What do we do? The one-for-one correspondence of solutions of the reduced problem and solutions of the original problem only holds if we allow multiple copies of the same set in our reduced problem, which prevents us from applying Lemma 1. If we only care about finding a single solution, though, there is no problem: simply keep one copy of the duplicate set (it doesn&#x27;t matter which one). If we are interested in the number of solutions, rather than a list of solutions, we may keep an integer multiplicity on each input set, add together the numbers of duplicate sets, and multiply together the numbers of the sets used in any solution. And if we really wish to list all solutions, we may associate with each set in any reduced instance a list of the larger sets it comes from, so that, once we have found a solution to the reduced problem we may produce from it a list of all corresponding solutions in the original problem.</p>
+
+<p>If a search algorithm for the exact cover problem uses this transformation to reduce the problem size whenever a nest is detected, instead of branching, the worst remaining cases turn out to be those in which <b><i>s</i></b> is (4,4,4) or (5,5,5,5). But in those cases, also, it is possible to simplify the problem without branching, using the following lemma.</p>
+
+<blockquote><p><b>Lemma 2.</b> Suppose that all elements of <i>U</i> are contained in <i>k</i> or more sets of <i>F</i> (for <i>k</i> ≥ 3), that some element <i>x</i> is contained in exactly <i>k</i> sets of <i>F</i>, and that each of the sets of <i>F</i> containing <i>x</i> has a nonempty intersection with at least <i>k</i> + 1 sets (including itself). Then either there is a set <i>Y</i> that does not contain <i>x</i> but intersects all sets containing <i>x</i> in <i>F</i>, or the sum of the components of the vector <b><i>s</i></b> is at least <i>k</i><sup>2</sup> + 2<i>k</i> − 2.</p>
+
+<p><i>Proof sketch:</i> If all sets in <i>F</i> that contain <i>x</i> intersect <i>k</i> + 2 or more other sets, the sum of components of <b><i>s</i></b> is at least <i>k</i><sup>2</sup> + 2<i>k</i> and the lemma is proved; otherwise, let <i>A</i> be a set in <i>F</i> that contains <i>x</i> and intersects exactly <i>k</i> + 1 sets in <i>F</i>. Since <i>A</i> intersects more sets than the <i>k</i> sets containing <i>x</i>, there must be some element <i>y</i> in <i>A</i>, and some set <i>Y</i> containing <i>y</i>, such that <i>Y</i> does not contain <i>x</i>. If <i>Y</i> intersects all sets in <i>F</i> that contain <i>x</i>, the lemma is proved; otherwise, <i>y</i> must be contained in exactly <i>k</i> sets, namely, <i>Y</i> itself, and all but one of the <i>k</i> sets that contain <i>x</i>. Let <i>B</i> be the set in <i>F</i> that contains <i>x</i> but does not contain <i>y</i> nor any other element of <i>Y</i>. Since <i>B</i> intersects at least <i>k</i> + 1 sets in <i>F</i>, there must be an element <i>z</i> in <i>B</i>, and a set <i>Z</i> containing <i>z</i> but not containing <i>x</i>. Each intersection between sets containing <i>x</i> contributes one unit towards the total of <b><i>s</i></b>, for a total contribution of <i>k</i><sup>2</sup> units, and the intersections between <i>Y</i> and the sets other than <i>B</i> contribute an additional <i>k</i> − 1 units. Each of the <i>k</i> sets containing <i>z</i>, other than <i>B</i> itself, contributes an additional unit either for its intersection with <i>B</i> or its intersection with <i>Z</i>. Thus, the total is as stated in the lemma.</p></blockquote>
+
+<p>Note that, if the problem instance includes a set <i>Y</i> that intersects every set containing <i>x</i>, as described as one of the possible cases in the statement of the lemma, then <i>Y</i> cannot be part of any exact cover, as including it in a cover would prevent <i>x</i> from being covered.</p>
+
+<p>Using these two simplification rules, we define Algorithm Y as follows:</p>
+
+<blockquote><b>Algorithm Y:</b>
+<ul>
+<li>If <i>U</i> is empty, return the empty cover</li>
+<li>Choose arbitrarily an element <i>x</i> of <i>U</i></li>
+<li>If some set <i>Y</i> does not contain <i>x</i> but intersects all sets containing <i>x</i>:</li>
+<ul>
+<li>Remove <i>Y</i> from <i>F</i></li>
+<li>Solve the resulting smaller instance</li>
+</ul>
+<li>Else if the sets containing <i>x</i> form a nonempty nest:</li>
+<ul>
+<li>Form the modified instance (<i>U&#x27;</i>, <i>F&#x27;</i>) as described above</li>
+<li>Solve recursively the modified instance</li>
+<li>If a solution is found, form the corresponding solution to the original problem as described above and return it.</li>
+</ul>
+<li>Else, for each set <i>S<sub>i</sub></i> in <i>F</i> that contains <i>x</i>:</li>
+<ul>
+<li>Form a set family <i>F&#x27;</i> consisting of the sets in <i>F</i> that are disjoint from <i>S<sub>i</sub></i></li>
+<li>Solve recursively the exact cover problem (<i>U</i> \ <i>S<sub>i</sub></i>, <i>F&#x27;</i>)</li>
+<li>If a solution is found, add <i>S<sub>i</sub></i> to the solution and return it</li>
+</ul></ul>
+</blockquote>
+
+<p>As an example, consider applying Algorithm Y to the example instance we started with, with eight sets, four elements, and seven exact covers. The recursion tree has only one multiway branch, at the outermost level of recursion; each successive call after that leads to an instance of the nesting rule, until the problem reduces to instances with a single set:</p>
+
+<p align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/knuth/yex.png" /></p>
+
+<p>The 7<sup><i>n</i>/8</sup> lower bound no longer applies to this algorithm, because different exact covers do not necessarily lead to different leaves of the recursion tree.</p>
+
+<h4>Preliminary Analysis of Algorithm Y</h4>
+
+<p>As with Algorithm X, we may analyze algorithm Y (with the pivot rule that chooses <i>x</i> to have as few sets containing it as possible) using the lemmas to bound the vectors <b><i>s</i></b> of subproblem size reductions. Although the algorithm itself is still relatively simple, its analysis is complex and involves many cases.</p>
+
+<ul>
+<li><p>If the algorithm branches on <i>x</i>, and <i>x</i> is contained in two sets of <i>F</i>, <b><i>s</i></b> must equal or be componentwise larger than (3,3). We get a recurrence <i>T</i>(<i>n</i>) ≥ 2<i>T</i>(<i>n</i> − 3), the solution of which is 2<sup>n/3</sup> ≈ 1.25992<sup><i>n</i></sup>.</p></li>
+
+<li><p>If the algorithm branches on <i>x</i>, and <i>x</i> is contained in three sets of <i>F</i>, <b><i>s</i></b> must equal or be componentwise larger than either (3,5,5) or (4,4,5): as shown below, Lemma 1 rules out (3,4,5) and smaller vectors, while Lemma 2 rules out (4,4,4). The (3,5,5) case gives us a recurrence solving to approximately 1.29803<sup><i>n</i></sup>, while the (4,4,5) case solves to approximately 1.29065<sup><i>n</i></sup>.</p>
+
+<p align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/knuth/cases3d.png" /></p></li>
+
+<li><p>If the algorithm branches on <i>x</i>, and <i>x</i> is contained in four sets of <i>F</i>, <b><i>s</i></b> must equal or be componentwise larger than (4,5,7,7), (4,6,6,6), (5,5,6,6), or (5,5,5,7). The four resulting recurrences solve to approximately 1.28449<sup><i>n</i></sup>, 1.29294<sup><i>n</i></sup>, 1.28854<sup><i>n</i></sup>, and 1.29193<sup><i>n</i></sup> respectively.</p></li>
+
+<li><p>If the algorithm branches on <i>x</i>, and <i>x</i> is contained in five sets of <i>F</i>, <b><i>s</i></b> must equal or be componentwise larger than (5,6,7,9,9), (5,6,8,8,8), (5,7,7,7,7), (6,6,7,7,7), (6,6,6,7,8), or (6,6,6,6,9). The six resulting recurrences solve to approximately 1.26246<sup><i>n</i></sup>, 1.26696<sup><i>n</i></sup>, 1.28032<sup><i>n</i></sup>, 1.27757<sup><i>n</i></sup>, 1.27971<sup><i>n</i></sup>, and 1.28360<sup><i>n</i></sup> respectively.</p></li>
+
+<li><p>If the algorithm branches on <i>x</i>, and <i>x</i> is contained in six sets of <i>F</i>, <b><i>s</i></b> must equal or be componentwise larger than (6,7,8,9,10,12), (6,7,8,9,11,11), (6,7,8,10,10,10), (6,7,9,9,9,9), (6,8,8,8,8,8), (7,7,8,8,8,8), (7,7,7,8,8,9), (7,7,7,7,9,9), (7,7,7,7,8,10), or (7,7,7,7,7,11). The ten resulting recurrences solve to approximately 1.24189<sup><i>n</i></sup>, 1.24121<sup><i>n</i></sup>, 1.24386<sup><i>n</i></sup>, 1.25139<sup><i>n</i></sup>, 1.26610<sup><i>n</i></sup>, 1.26431<sup><i>n</i></sup>, 1.26572<sup><i>n</i></sup>, 1.26715<sup><i>n</i></sup>, 1.26829<sup><i>n</i></sup>, and 1.27181<sup><i>n</i></sup> respectively.</p></li>
+
+<li><p>If the algorithm branches on <i>x</i>, and <i>x</i> is contained in seven or more sets, <b><i>s</i></b> must be componentwise larger than the vector (<i>k</i>, <i>k</i> + 1, <i>k</i> + 1, <i>k</i> + 1, ...). The worst case for vectors of this type occurs when k equals seven, for which the solution is 1.28168<sup><i>n</i></sup>.</p></li>
+</ul>
+
+<p>Thus, Algorithm Y with the pivot rule that chooses the pivot <i>x</i> with the smallest number of containing sets runs, in the worst case, in time O(1.29803<sup><i>n</i></sup>). The worst case is the (3,5,5) split, which occurs arbitrarily often in our example of monomino and domino tilings of disjoint 2×2 squares.</p>
+
+<h4>Matchings in Cycle Graphs</h4>
+
+<p>Now that our preliminary analysis has identified the (3,5,5) branch as problematic, let us make one additional refinement to the pivot rule for Algorithm Y. As before, we choose a pivot <i>x</i> that is covered by as few sets as possible. But, in order to avoid the (3,5,5) branch, we break ties in choosing the pivot in favor of pivots that do not form this split. That is, if the pivots we may choose among are contained in exactly three sets each, we only choose a (3,5,5) branch in the situation in which all three-set pivots lead to the same vector of subproblem size reductions.</p>
+
+<p>Suppose that, despite our attempts to avoid it, the algorithm still performs a (3,5,5) branch. What can we say about the structure of the instance in this case? To simplify the discussion (although the algorithm does not perform this simplification) we assume that no two elements are contained in exactly the same collection of sets. Then, in order to form a (3,5,5) branch, the three sets containing the pivot <i>x</i> must be of the form {<i>x</i>}, {<i>x</i>, <i>y</i>}, and {<i>x</i>, <i>z</i>} for some elements <i>y</i> and <i>z</i>. In addition, <i>y</i> and <i>z</i> must themselves each be contained in three sets, and similarly form pivots that lead to (3,5,5) branches.</p>
+
+<p>We may draw a graph in which the vertices are pivots of (3,5,5) branches, and the edges of the graph are sets of <i>F</i> that contain two such pivots. By the analysis above, this graph has exactly two edges at every vertex; that is, it is a collection of disjoint cycles.</p>
+
+<p>Now, consider what happens once Algorithm Y chooses a pivot within one of these cycles. In the next step, in each of the three recursive calls after the (3,5,5) branch, the neighboring vertices in the cycle will be covered by exactly two sets of the instance: a singleton set containing only the vertex, and one of the two edges that were in the graph before the pivot was performed. Thus, the Algorithm will proceed to reduce the instance by applying the nesting rule, without performing any more branching. This reduction continues until the entire cycle has been removed from the instance. Thus, for the cost of three recursive calls, the algorithm reduces the problem not only by the three or five sets that it removes at the time of the (3,5,5) branch, but by the number of sets included in the whole cycle. The worst case occurs for the smallest possible cycle, a triangle, which acts effectively like a (6,6,6) branch and leads to a recurrence with an O(3<sup><i>n</i>/6</sup>) ≈ O(1.20094<sup>n</sup>) solution, much smaller than those arising from other cases in the algorithm. Thus, we may eliminate the (3,5,5) branch from our case analysis and consider the other cases instead.</p>
+
+<p>The next most time-consuming cases in our preliminary analysis are the cases in which the branches of the algorithm are described by the vectors (4,4,5), (4,6,6,6), (5,5,5,7), and (5,5,6,6). However, additional analysis (left to the exercises) shows that for each of these vectors, either a branch with that vector is not possible at all or, like the (3,5,5) case, a branch of this type leads to additional simplifications in successive steps of the algorithm. It turns out that the worst case that we cannot yet handle in this way is a (4,5,7,7) branch, which leads to a recurrence with the solution O(1.28449<sup>n</sup>).</p>
+
+<p>Thus, in the worst case, with our (3,5,5)-avoiding pivot rule, Algorithm Y runs in time O(1.28449<sup>n</sup>).</p>
+
+<h4>Conclusions</h4>
+
+<p>We may draw the following conclusions from our analysis:</p>
+
+<ul>
+<li><p>Algorithm X is pretty good already, especially if one wants to list all solutions to an exact cover problem. For finding a single solution or counting solutions, Algorithm Y may be even better.</p></li>
+
+<li><p>Analysis of algorithms may be helpful not just for understanding the performance of an algorithm but also for drawing attention to the areas of the algorithm in which more refinement can be most helpful.</p></li>
+
+<li><p>In exponential backtracking algorithms of this type, it is common to see complex case analysis of the type we have seen here. But it is not always necessary for this case analysis to be reflected in the algorithm: Algorithm X is very simple, and Algorithm Y only incorporates a few simple and general rules for simplifying its instances. The mess of cases arises only in their analysis.</p></li>
+
+<li><p>The analysis of Algorithm X also provides an algorithmic proof that any system of <i>n</i> sets has at most 4<sup><i>n</i>/5</sup> exact covers. Although this upper bound for the maximum number of exact covers does not match the 7<sup><i>n</i>/8</sup> lower bound coming from the tilings of 2×2 squares, the gap between the two bounds is not large.</p></li>
+</ul>
+
+<h4>Exercises</h4>
+
+<p>What Knuth tribute would be complete without exercises? The parenthesized numbers are my estimate of the difficulty of the problem, on Knuth&#x27;s familiar scale.</p>
+
+<ol>
+<li><p><i>(10)</i> Trace through the execution of Algorithm Y on the 2×2 square example, as in the figure, but showing additionally the number of ways each set in each instance may be derived from its parent instance. Use these numbers to count the number of solutions to the original problem found in each branch of the execution.</p></li>
+
+<li><p><i>(20)</i> In some exact cover instances, such as those for Sudoku puzzles, we may be guaranteed that there exists exactly one solution. What additional simplification does this guarantee allow in the nesting rule of Algorithm Y?</p></li>
+
+<li><p><i>(25)</i> Suppose that Algorithm Y, with a pivot rule that always chooses the least covered pivot, performs a (4,4,5) branch. Show that, in two of the three recursive calls, there exists a pivot covered by only a single set. Write down a recurrence describing this case, taking into account the treatment of this single-set pivot, and find the asymptotic solution to this recurrence.</p></li>
+
+<li><p><i>(25)</i> Suppose that Algorithm Y, with a pivot rule that always chooses the least covered pivot, performs a (4,6,6,6) branch. Show that, in this case, at least two of the recursive calls have an uncovered element and will immediately backtrack. Write down a recurrence describing this case, taking into account the two backtracking calls, and find the asymptotic solution to this recurrence.</p></li>
+
+<li><p><i>(25)</i> Prove that Algorithm Y, with a pivot rule that always chooses the least covered pivot, cannot perform a (5,5,5,7) branch.</p></li>
+
+<li><p><i>(25)</i> Prove that Algorithm Y, with a pivot rule that always chooses the least covered pivot, cannot perform a (5,5,6,6) branch.</p></li>
+
+<li><p><i>(20)</i> Once the (3,5,5), (4,4,5), (4,6,6,6), (5,5,5,7), and (5,5,6,6) branches are eliminated for Algorithm Y, what additional possibilities for <b><i>s</i></b> must be added to the list of minimal non-eliminated branches? Compute numerically the asymptotic solution to each of these possibilities and show that they are not worse than the (4,5,7,7) branch identified as the worst case in our analysis.</p></li>
+
+<li><p><i>(35)</i> Implement Algorithm X and Algorithm Y, and test them on examples. Does the additional complexity of Algorithm Y lead to improved performance in practice?</p></li>
+
+<li><p><i>(25)</i> Describe an additional simplification rule that can be applied to exact cover instances in which two elements are each contained in only two sets, one of which is the same for both elements. How should this rule handle multiplicities of sets?</p></li>
+
+<li><p><i>(30)</i> Observe that, if an instance (<i>U</i>, <i>F</i>) of Algorithm Y with <i>t</i> sets leads to an execution in which <i>k</i> leaves of the recursion tree have valid solutions, then running Algorithm Y on instances formed by <i>n</i>/<i>t</i> disjoint copies of (<i>U</i>, <i>F</i>) takes time Ω(<i>k</i><sup><i>n</i>/<i>t</i></sup>), as long as the prioritization of pivots within each copy remains the same. Use this principle to find good lower bounds for Algorithm Y.</p></li>
+
+<li><p><i>(40)</i> find a tight (Θ-notation) worst-case time bound for Algorithm X, closing the gap between its Ω(7<sup><i>n</i>/8</sup>) lower bound and its O(4<sup><i>n</i>/5</sup>) upper bound.</p></li>
+
+<li><p><i>(45)</i> Find an exact formula (without O-notation!) for the maximum number of exact covers any family of <i>n</i> distinct sets can have, as a function of <i>n</i>.</p></li>
+</ol>
+
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: icm<br />
+<b>2008-01-11T01:33:46Z</b><br />
+i was just wondering what icm stands for. could not find it on dblp.
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: Re: icm<br />
+<b>2008-01-11T02:44:04Z</b><br />
+<a href="http://en.wikipedia.org/wiki/International_Congress_of_Mathematicians">International Congress of Mathematicians</a>.
+</div>
+

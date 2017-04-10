@@ -1,0 +1,144 @@
+---
+layout: post
+title:  'Report from SoCG'
+date:   2011-06-16 00:09:00
+tags:   [computational geometry, conferences, talks]
+---
+I&#x27;ve been in Paris the last few days for the annual Symposium on Computational Geometry. The symposium had 55 contributed talks, two invited talks, one self-invited talk, and will still have an entire satellite workshop. So I&#x27;m not going to try to write about the whole thing. I&#x27;m not even going to try to pick out the important results (that&#x27;s why we have program committees: the important results are the ones they accepted to appear in the conference). So instead, here are a few shiny bits that attracted my attention.
+<br />
+
+<br />
+The first talk of the conference, by Timothy Chan (with Larsen and Patrascu) on orthogonal range searching, could easily be criticized as being about <a href="http://www.flickr.com/photos/meganpru/5593104173/">shaving logs</a>, but one of their results gives a surprisingly clean answer to a surprisingly simple question: O(<i>n</i> log <i>n</i> + <i>k</i>) time for finding all of the pairs of rectangles that contain each other in a given set of <i>n</i> rectangles, where <i>k</i> is the number of output pairs. Buried under the O-notation is a big mess of integer data structures (although it&#x27;s not necessary to assume the input to be integer, since there&#x27;s time to convert it by sorting), so it would be nice to have a simple combinatorial algorithm for the same problem.
+<br />
+
+<br />
+One thing graph drawing seems to be good for (besides, you know, actually visualizing graphs) is providing layouts for the gadgets in computational hardness proofs. An example of this came in Subhash Suri&#x27;s talk (with Kamousi and Chan) showing that, if one is given a planar point set and a probability for each point, and then one samples the points with the given probabilities and computes their minimum spanning tree, then it&#x27;s #P-hard to estimate the expected value of the tree length.
+<br />
+
+<br />
+Jan Kratochvil gave a nice invited talk about the theory of <a href="http://en.wikipedia.org/wiki/Intersection_graph">intersection graphs</a> that included a pretty photo of wind-swept peaks of sand on a beach whose shadows formed a collection of homothetic triangles.
+<br />
+
+<br />
+Csaba Toth finished the technical part of the first day&#x27;s program with a talk about how, if you have a non-crossing matching on a set of 4<i>n</i> points in the plane, you can always augment it to a 2-regular non-crossing graph. (This is not true if the number of points is 2 mod 4.) His proof involved finding a pair of disjoint spanning trees in the dual graph of a convex subdivision of the plane formed as a <a href="http://compgeom.cs.uiuc.edu/~jeffe/open/cycles.html">motorcycle graph</a> of the segment endpoints, only that didn&#x27;t quite work well enough so he included some extra motorcycles.
+<br />
+
+<br />
+The business meeting Monday evening was unexpectedly eventful. After the usual discussions of where to go two years from now (Rio! It&#x27;s not as crime-filled as you think!) we had a big discussion of, as someone put it later, whether to ditch ACM. There were three motivating factors. First, the local arrangements this year were greatly complicated by the fact that (unlike the previous two offerings of SoCG that were not in North America) ACM did not allow the conference to be &quot;in cooperation with&quot; ACM, but rather made it be sponsored by ACM, which led to a lot more bureaucracy. Second, ACM charges both a tax on conference registration fees (to support ACM) and an additional heavy surcharge beyond the budgeted expenses that can however be spent by the conference (to reduce the probability of running a loss). The net effect is that conference registrations are a lot more expensive than they need to be: 320 Euros this year for non-ACM members, which is most of the Europeans in attendance, and 240 Euros for ACM members, compared to an estimate of 205 Euros for all if the conference could have been done without ACM.  And third, Schloss Dagstuhl has started a conference proceedings series that will be selective (and therefore like ACM will carry some kind of &quot;this is a good conference&quot; cachet), that uses a more author-friendly copyright model (you keep copyright and give them a license, and the papers are not hidden behind a paywall), that already includes several well known conferences that were previously published through Springer&#x27;s LNCS series, and that had explicitly invited SoCG to join the party. I suspect that if the same discussion had been held in the US that the result might have been much more timid, but this year&#x27;s SoCG attendees voted overwhelmingly against ACM in a straw poll. If non-geometers reading this wonder whether the attendees are serious about high fees being such a problem, it might be relevant to observe that SoCG was one of the founding symposia within <a href="http://en.wikipedia.org/wiki/Federated_Computing_Research_Conference">FCRC</a>, and left that grouping over exactly the same issue.
+<br />
+
+<br />
+Tuesday started with a topology session. <a href="http://11011110.livejournal.com/211518.html">I&#x27;ve already written</a> about Dunfield&#x27;s polynomial-time algorithm for finding minimum-area Seifert surfaces; it turns out to be implemented and usable for space meshes with tens of thousands of tetrahedra. Benjamin Burton gave back-to-back talks; the first was on exponential-time algorithms for knot theory problems based on using normal surface theory to turn them into polyhedral vertex enumeration problems, and the second was on how the flip graphs of 3-manifolds seem to be much nicer in practice than they are in the currently-known theory (they seem to have short paths between different triangulations of the same manifold, and it seems that one does not need to make triangulations much more complicated in the middles of flip sequences that simplify them).
+<br />
+
+<br />
+Crossing numbers are very important in graph drawing, and Bukh and Hubard had an interesting generalization to 3d: a 4-tuple of edges in a 3d drawing crosses if there is a line through all four of them. Planar graphs drawn on a convex surface have no crossings in this sense (a line can touch only two edges), and for the same reason the 3d crossing number of any graph is at most the square of the usual crossing number. The 3d crossing number behaves like the square of the planar crossing number in another way: there is a <a href="http://en.wikipedia.org/wiki/Crossing_number_(graph_theory)#The_crossing_number_inequality">crossing number inequality</a> in which the number of 3d crossings is lower bounded by a formula that is the square of the formula in the standard inequality, proven in roughly the same way from random sampling, together with some graph minor theory (graphs that have a certain large linear number of edges have many disjoint K<sub>6</sub> minors, and K<sub>6</sub> is not <a href="http://en.wikipedia.org/wiki/Linkless_embedding">linkless</a>) and some cohomology used to prove that two disjoint K<sub>6</sub> minors have a 3d crossing (related to the much longer-known fact that <a href="http://www.ics.uci.edu/~eppstein/junkyard/knot-colinear.html">any nontrivial knot has a 3d crossing</a>). However, there exist graphs with high planar crossing number and no 3d crossings.
+<br />
+
+<br />
+Unfortunately <a href="http://11011110.livejournal.com/202579.html">as at CCCG 2010</a> I had to miss a paper on <a href="http://en.wikipedia.org/wiki/Straight_skeleton">straight skeletons</a> because of parallel scheduling. From reading Huber and Held&#x27;s paper, they appear to have a new algorithm for straight skeletons that runs much more quickly than previous algorithms in practice despite having a worse theoretical worst case running time than some of the known algorithms. The reason is that the only case causing bad running time in their algorithm is a &quot;switch event&quot; that happens very rarely for real data. (ETA: their &quot;new algorithm&quot; actually appears to be the same as the one from CCCG 2010. Can someone explain how this isn&#x27;t double publication?)
+<br />
+
+<br />
+Tuesday&#x27;s invited talk was by GIS researcher Ross Purves on the increasing need for geometric algorithms to make inferences from user-generated geographic data (for instance, the tags associated with <a href="http://commons.wikimedia.org/wiki/Commons:Geocoding">geocoded</a> photographs). He gave as an example the problem of figuring out what informal place names (the ones not officially defined by governments) actually mean: as he said, this could be a matter of life and death, because emergency dispatchers don&#x27;t necessarily live nearby enough to understand descriptions using these names. The algorithmic problems that come out of this problem have some similarities to geometric shape reconstruction, but some differences too, because shape reconstruction assumes from the start that there is a crisp shape to be reconstructed and that may not really be true.
+<br />
+
+<br />
+Jet lag got the better of me for the rest of the afternoon. I missed my co-author&#x27;s talk on <a href="http://11011110.livejournal.com/214704.html">polyhedral combinatorics</a>, but the talk that I missed that I think I would have most liked to have seen was the next one, Seth Pettie&#x27;s, on forbidden subsequence analysis (a generalization of <a href="http://en.wikipedia.org/wiki/Davenport%E2%80%93Schinzel_sequence">Davenport–Schinzel sequences</a>) and its applications (reducing the constant factors in bounds on the numbers of edges in geometric graphs with few mutually crossing edges, and a slight asymptotic improvement to bounds on the complexity of unions of fat triangles).
+<br />
+
+<br />
+The dinner cruise Tuesday was pleasant: sunset on the Seine and very good food. Among all the great architecture passing by, I was amused to see a <a href="http://en.wikipedia.org/wiki/Invader_(artist)">Space Invader</a> tile installation on the bank of the Île de la Cité. The organizer&#x27;s frequent warnings ahead of time that nobody wearing T-shirts or jeans would be allowed on board were not actually true and seemed to produce only a marginally better level of dress than usual.
+<br />
+
+<br />
+Gabor Tardos spoke about lower bounds on <a href="http://en.wikipedia.org/wiki/E-net_(computational_geometry)">epsilon-nets</a> (with Pach) that match some known upper bounds. It was known that there are nets whose complexity (as a function of 1/ε) is linear for halfspaces in two or three dimensions; he shows that they are as bad as the general case for four dimensions, so this result cannot be extended, using a very simple construction (a range space where the points are power-of-two rectangles in the plane and the ranges are planar points). Additionally, he shows that a known doubly-logarithmic bound for rectangular ranges is tight.
+<br />
+
+<br />
+As part of two talks by Borcea and Streinu about determining the region that can be reached by a robot arm in which all consecutive pairs of hinge axes are coplanar (or by the backbone of a protein molecule or alkane), Borcea showed off a nice quote from Milton: &quot;<i>In orbs of circuit inexpressible they stood, orb within orb</i>&quot;. The context was a quickly-shown construction for a robot arm for a given set of hinge axes in which self-collisions were impossible.
+<br />
+
+<br />
+At some point, I think during the afternoon break on Wednesday, Joe Mitchell told me about an interesting lecturing strategy he uses. He prefers to give his classes on whiteboards or blackboards instead of preparing computer-projector presentations for the lectures, as do I: I think this lecturing style helps slow me down to a good pace for the students. But one drawback of doing things this way is that you don&#x27;t have anything to hand out to the students to help them study and prevent them from having to take notes. (For some students, taking notes can be a good way of paying attention, but for others it can be a distraction from paying attention.) So what Joe has been doing is stopping in the lecture to take a photo of the board with his cell phone, and then after the lecture is done he immediately uploads these photos to a web site. It doesn&#x27;t take much time, but it would also be possible to assign board-photography duties to one of the students.
+<br />
+
+<br />
+The final regular session of the conference was on shape reconstruction algorithms. Attali, Leutier, and Salinas (in yet another pair of back to back papers) showed that certain well behaved point sets have Čech and <a href="http://en.wikipedia.org/wiki/Vietoris%E2%80%93Rips_complex">Vietoris–Rips</a> complexes that are homotopy equivalent (very convenient, because the Čech complex has the right homotopy and the Rips complex is easier to represent and work with) and that Rips complexes could be simplified to much smaller complexes by edge contractions while preserving their topology. The smaller complex is not necessarily Rips; it can be represented as an underlying graph together with a small set of <i>blockers</i>, minimal cliques in the graph that are not simplices in the complex. To me this raises a graph algorithm question about which I don&#x27;t know much: given a graph, and a set of edges to be contracted in the graph, find the minimal cliques that are created by the contraction but do not correspond to any clique in the uncontracted graph. It seems to be easy enough to maintain this set of minimal cliques as edges are contracted one at a time (as Attali et al do) but that doesn&#x27;t give an output sensitive algorithm for contracting many edges at once, because there might be many cliques at some intermediate stage of the contraction and few in the end.
+<br />
+
+<br />
+Possibly some photos will come later, if I don&#x27;t just delete them all.
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>sleepy_drago</b>: <br />
+<b>2011-06-16T19:37:18Z</b><br />
+&gt;could easily be criticized as being about shaving logs,
+I met similar problem in practice where it had huge practical significance. It was 2d range reporting of (possibly overlapping) rectangles. In EDA (electronics design automation) they are having billions of them.
+I am upset a little that algorithmic problems like data structure construction and queries are described with such informality. Such description makes them quite hard to verify.
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2011-06-16T19:49:07Z</b><br />
+You mean, that I&#x27;m describing them too informally in my blog? For a more formal description, you should see <a href="http://arxiv.org/abs/1103.5510">the actual paper</a>.
+</div>
+<div style="margin-left: 6em; padding-top: 1em;">
+<b>sleepy_drago</b>: <br />
+<b>2011-06-17T06:56:46Z</b><br />
+No I was talking about paper. It may be perfect but the style of description looks like result of software obfuscation to me.
+</div>
+<div style="margin-left: 9em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2011-06-18T01:45:09Z</b><br />
+Oh, ok, that makes more sense. It&#x27;s true that (in part because of the limitations of conference proceedings formats) theory papers written for other theoreticians are often not as clear to non-theoreticians as they probably should be. And it&#x27;s also true that some theory papers are not even as clear to other theoreticians as they should be. But in this particular case there may be an explanation, of sorts: my impression is that the complications they added to the data structure to improve its theoretical performance may actually disimprove its practical performance, so (if the authors had the same feeling) they may not have expected practitioners to read it.
+
+On the other hand, being hard to verify is a flaw even in a purely theoretical paper. So it may just be subpar writing...
+</div>
+<div style="margin-left: 12em; padding-top: 1em;">
+<b>sleepy_drago</b>: <br />
+<b>2011-06-18T09:01:38Z</b><br />
+Or I just not used to decrypt such :)
+
+My impression is that they lost count of pointers in a tree and that makes their compact version O(n lg n) space too.
+
+Also I like their approach to offline problems. It makes theory closer to practice significantly.
+
+PS. I spent last few years in EDA project and even re-written subsystem that solved range selection problem (selecting rectangles) to reduce its footprint in half. That rewriting alone took me few month so yes I am interested in verifying claims about range selection in papers :)
+</div>
+<div style="margin-left: 15em; padding-top: 1em;">
+<b>ext_673908</b>: <br />
+<b>2011-06-20T09:32:09Z</b><br />
+Hi.
+
+I&#x27;m one of the author&#x27;s of the paper. If you would like clarification, you are welcome to contact me (Kasper Green Larsen). It is a theoretical paper as Eppstein says, but I can assure you that we did not forget about pointers :) First of all, the base range tree is completely balanced, so there is no need for pointers: You can compute the addresses directly by constant time integer arithmetic (which might require some care though). Secondly, there are only n nodes in the tree, so the space for n pointers is nlgn bits, not words. Anyways, if you are still in doubt, send me an email.
+</div>
+<div style="margin-left: 18em; padding-top: 1em;">
+<b>sleepy_drago</b>: <br />
+<b>2011-06-20T10:34:46Z</b><br />
+Hi
+I am not saying it is wrong because as I said earlier its not easy to verify. Lets get away from chopping bits from pointers for a moment. So 
+* there are only n nodes in the tree, - yes
+* the space for n pointers is nlgn bits, not words.- yes
+but my impression from reading paper is that number of pointers is strictly greater than nodes to allow multilevel skipping. So many nodes contain pointers to same leaf. So if I understand correctly number of pointers is still proportional to tree depth too.
+If the owner of this blog has no objections we may continue here.
+best regards, Myroslav Rubanets (rubanetz dog gmail dot com)
+</div>
+<div style="margin-left: 21em; padding-top: 1em;">
+<b>ext_673908</b>: <br />
+<b>2011-06-20T10:51:06Z</b><br />
+I think I understand your concern. The number of pointers IS strictly greater, but since most of them point only a few levels down, they can be compressed a lot. For instance, a pointer k levels down need only k bits since there are only 2^k descendants k levels down. If you are still concerned, maybe the following helps:
+
+1) Given a node in the tree, one can easily support an operation like: Amongst the descendants k levels down, give me the i&#x27;th such node. It is not hard to number the nodes of a complete binary tree such that given the number of one node, we can compute the number of its i&#x27;th descendant at k levels down. Now all that remains is to store an array with n entries, where the j&#x27;th entry stores a pointer to the node with number j.
+
+I hope this clarifies things for you. You should look carefully at the proof of Lemma 2.3 if you want details of how the compression is done.
+
+Best regards
+Kasper
+</div>
+<div style="margin-left: 24em; padding-top: 1em;">
+<b>ext_673908</b>: <br />
+<b>2011-06-20T11:00:38Z</b><br />
+Btw. I would be happy to hear about your implementation if you plan to do it. Thank you for your interest in our result.
+</div>
+

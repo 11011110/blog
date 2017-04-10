@@ -1,0 +1,48 @@
+---
+layout: post
+title:  '3d modeling tools'
+date:   2012-06-30 19:47:00
+tags:   [tools]
+---
+I&#x27;m curious, what do other people use to make 3d illustrations? For the one below, I started with a whiteboard sketch (legible to me but probably not to anyone else). I then tried <a href="http://www.blender.org">Blender</a>, but got stuck in the first tutorial video when it started telling me I couldn&#x27;t do anything without a middle mouse button and a numeric keypad. I tried <a href="http://sketchup.google.com/">SketchUp</a>, but it doesn&#x27;t have first-class sphere objects, I couldn&#x27;t see how to position and size things precisely, and it was just too painful trying to position them approximately where I wanted by hand. I finally ended up going back to <a href="http://www.povray.org/">POV-Ray</a> (or actually <a href="http://megapov.inetart.net/">MegaPOV</a>), which I&#x27;d used several times before and has a nice text-based format for specifying geometry rather than forcing me to use a GUI. Am I just a Luddite? Is there a better way?
+<br />
+
+<br />
+<div align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/radialpower.png" /></div>
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>livejournal</b>: Visualizing histograms vs. time<br />
+<b>2012-07-01T06:49:17Z</b><br />
+User livejournal user markgritter referenced to your post from <a href="http://markgritter.livejournal.com/685437.html">Visualizing histograms vs. time</a> saying: [...] e at it, you could also pop over and answer David Eppstein&#x27;s question on 3-D illustration tools [...]
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>ext_1283717</b>: <br />
+<b>2012-07-01T13:50:30Z</b><br />
+I haven&#x27;t tried it myself, but if you&#x27;re working with Latex, the 3dplot + tikz might be an option:
+
+http://www.texample.net/tikz/examples/the-3dplot-package/
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2012-07-01T17:13:24Z</b><br />
+Thanks for the suggestion. But from the documentation, &quot;3dplot does not, in general, consider polygons, surfaces, or object opacity. The one exception is the \tdplotsphericalsurfaceplot command, specically designed to render spherical polar surfaces&quot;. But, at least for the coordinate system I was using for the diagram above, both of the cut planes for the hemisphere as well as the base plane all pass through the origin, making it not just awkward but impossible to give polar coordinates for them.
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>tomster0</b>: <br />
+<b>2012-07-01T15:07:03Z</b><br />
+I&#x27;ve had this same question for many years.  I&#x27;ve been frustrated that I haven&#x27;t been able to find an easy-to-use 3d graphics program (in my case, for origami purposes).  So I&#x27;ve been using Mathematica (which is what Robert Lang also uses, along with POV-Ray) for all my 3d modeling.  But there have been many projects for which Mathematica isn&#x27;t really suitable, and thus I&#x27;ve been stuck.
+
+The world of 3d CAD programs caters to the engineering crowd, and thus they&#x27;ve always seemed to be much more than what I&#x27;ve wanted, difficult to use, and usually PC-only.  But several folks in the origami scene (namely Brian Chan and Tachi Tomohiro) use Rhino a lot, especially with it&#x27;s Grasshopper generative modeling extension.  I&#x27;ve never tried Rhino because it&#x27;s only for PC platforms, but your message here made me look again, and I see that they have a Rhino OS X in development!  My guess is that it&#x27;s more than what you or I would really need, but it could be worth checking out.  I might try to get on their development list:  http://mac.rhino3d.com/
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2012-07-01T17:19:56Z</b><br />
+That does look promising, and their educational pricing is quite reasonable. I do need what I use to run on Macs, so the fact that they&#x27;re developing that is also encouraging. I should give it a try.
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>passacaglio</b>: <br />
+<b>2012-07-05T20:14:03Z</b><br />
+I have also become a POV-Rayer in my latest paper. The text-based UI is also great in the sense that it allows you to automate the camera\lighting, and borrow elements from nice examples online.
+</div>
+

@@ -1,0 +1,58 @@
+---
+layout: post
+title:  'Four preprints'
+date:   2014-07-11 20:25:00
+tags:   [subgraph isomorphism, papers]
+---
+I noticed that there was a higher-than-usual density of arxiv preprints among the web pages I&#x27;d been bookmarking lately, so I thought maybe I&#x27;d share. The first one, especially, is very timely:
+<br />
+
+<br />
+<b>From the &quot;Brazuca&quot; ball to Octahedral Fullerenes: Their Construction and Classification</b>, Yuan-Jia Fan, Bih-Yaw Jin, <a href="http://arxiv.org/abs/1406.7058">arXiv:1406.7058</a>, <a href="https://medium.com/the-physics-arxiv-blog/mathematicians-solve-the-topological-mystery-behind-the-brazuca-world-cup-football-2e11ab1f4391">via</a>. The classical pentagon and hexagon soccer ball pattern (introduced for the 1970 World Cup) later became even more famous as the structure of the <a href="https://en.wikipedia.org/wiki/Buckminsterfullerene">buckminsterfullerene</a> Carbon-60 molecule, from which the fullerene graphs (planar graphs in which all faces are pentagons or hexagons) took their name. Another soccer ball pattern, used in the 2006 world cup, is topologically a truncated octahedron but with distorted face shapes that reduce its symmetry to tetrahedral; there also exist fullerenes with tetrahedral symmetry.  And there&#x27;s a new soccer ball pattern for the Brazil world cup, with the topology of the cube; the &quot;via&quot; article says that it has octahedral symmetry but I&#x27;m not convinced, because it doesn&#x27;t seem to have the reflection symmetries that octahedra should have. Nevertheless Fan and Jin asked: are there fullerenes with octahedral symmetry? The positive answer comes from a nice construction involving cutting equilateral triangles out of the hexagonal tiling and then gluing them together to make a finite polyhedron.
+<br />
+
+<br />
+<b>The Shortest Path to Happiness: Recommending Beautiful, Quiet, and Happy Routes in the City</b>, Daniele Quercia, Rossano Schifanella, Luca Maria Aiello, <a href="http://arxiv.org/abs/1407.1031">arXiv:1407.1031</a>, <a href="http://gizmodo.com/yahoos-developing-a-map-algorithm-to-find-the-most-beau-1602266077">via</a>. Suppose you want an online map service to give you a walking tour of a city. You probably wouldn&#x27;t want the shortest path from one part to another, but rather the nicest path. Changing how you weight the edges of the underlying graph to prioritize them differently is not so difficult (and I wrote <a href="http://arxiv.org/abs/cs.DS/9907001">a paper</a> long ago on how you might adjust these weights to fit different users&#x27; preferences) but the harder part is gathering the data to measure what it means for a route to be nice. These authors approach the problem with online photo databases, in one case crowdsourcing the problem of quantifying niceness and in another attempting to use the image tags to determine it automatically. The analysis of how well it worked seemed very anecdotal and handwavy to me but maybe that&#x27;s the nature of the subject.
+<br />
+
+<br />
+<b>The Convex Configurations of &quot;Sei Shonagon Chie no Ita&quot; and Other Dissection Puzzles</b>, Eli Fox-Epstein, Ryuhei Uehara, <a href="http://arxiv.org/abs/1407.1923">arXiv:1407.1923</a>. Given a puzzle like the <a href="https://en.wikipedia.org/wiki/Tangram">tangram</a> (a square subdivided into seven convex pieces) how many ways are there of rearranging it into convex shapes? I asked a similar question (with different shapes) in <a href="http://www.ics.uci.edu/~eppstein/pubs/Epp-COMB-01.pdf">one of my old talks</a> but the tangram question (and its answer) have been known for much longer, <a href="http://www.jstor.org/stable/2303340">since at least 1942</a>. This paper solves the same question for some more complex puzzles of a similar type. Like the 1942 tangram paper, the new preprint uses the observation that there is a smaller tile into which the puzzle pieces can all be subdivided, such that any solution is a subset of a regular tesselation of the plane by this tile. I don&#x27;t know of a general algorithm for solving this kind of problem efficiently; perhaps there&#x27;s something interesting to be done in that direction.
+<br />
+
+<br />
+<b>Complexity of counting subgraphs: only the boundedness of the vertex-cover number counts</b>, Radu Curticapean, Dániel Marx, <a href="http://arxiv.org/abs/1407.2929">arXiv:1407.2929</a>. Ok, unlike the other ones this is not recreational mathematics. But it still interested me. The problem concerns the complexity of counting copies of subgraphs in larger graphs, something that seems to be quite topical lately. If the subgraph has a fixed number <i>k</i> of vertices and the larger graph has <i>n</i> vertices, then there&#x27;s an obvious <i>O</i>(<i>n</i><sup><i>k</i></sup>) algorithm: just try all <i>k</i>-tuples of vertices, and it&#x27;s not hard to extend this to the case where the subgraph has a subset of <i>k</i> vertices that together cover all of its edges. As Curticapean and Marx show, these are the only cases in which one gets a polynomial time algorithm (assuming standard complexity-theoretic conjectures): counting subgraphs from a given class does not have a fixed-parameter tractable algorithm unless the vertex cover number is bounded.
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: <br />
+<b>2014-07-14T21:34:37Z</b><br />
+Dear David,
+
+I have not looked at this paper but I assuming that by a fullerene is meant a graph which is planar and 3-connected, all vertices 3-valent and 12 pentagons and some number h of hexagons with h not equal to one. A theorem of Grunbaum and Motzkin showed constructions of fullerene graphs with h hexagons h not 1, though many others have constructions as well. An Atlas of Fullerenes by Fowler and Manolopoulos states there are 28 different groups, which if I understand them properly, can be the automorphism groups of a fullerene graph. Non-isomorphic groups can of course have the same order. By Steinitz&#x27;s Theorem one can realize the graph of a fullerene by a convex 3-dimensional polytope, and by a theorem of Peter Mani, if H is the (full) automorphism group of a fullerene graph G, then G can be realized by a convex 3-dimensional polytope who isometry group is H. The usual definition of the octahedral group is that it has order 48, and this is not one of the orders in the Fowler and Manolopoulos list. The rotation group of the octahedron has 24 symmetries. Perhaps what is being done relates to fullerenes with this group as its automorphism group?
+
+Joe Malkevitch
+https://york.cuny.edu/~malk
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2014-07-14T21:49:45Z</b><br />
+When I saw your name commenting I thought it would be re the convex puzzle rearrangements...I remember you once pointed me to some existing literature on the question of which convex shapes can be formed by triangles and squares.
+
+Anyway, they seem to be using a looser definition which is again planar 3-connected 3-regular and girth five but allows faces of higher order such as (in this case) octagons as well as the usual pentagons and hexagons. I think they&#x27;re coming at this from the chemical point of view without a lot of knowledge of what&#x27;s already been done on the graph theory side of this problem.
+
+</div>
+<div style="margin-left: 6em; padding-top: 1em;">
+<b>None</b>: <br />
+<b>2014-07-15T16:22:45Z</b><br />
+There a very nice theorem of Grunbaum related to these matters, but only combinatorial issues are addressed. Grunbaum shows that when there are no triangles or 4-gons in the planar 3-connected graphs, graphs involving 5-gons and &quot;big faces&quot; (7-gons or more) and 3-valent, then for all solutions of the usual Euler relation for 3-valent graphs, all graphs can be constructed with the number of hexagons eight or more.
+
+B. Grünbaum
+Some analogues of Eberhard&#x27;s theorem on convex polytopes
+Israel J. Math., 6 (1968), pp. 398–411
+
+I agree with your remark about combinatial/geometrical questions inspired by chemistry. A remarkable book here is: Michel Deza and Mathieu Dutour Sikiric, Geometry of Chemical Graphs Polycycles and Two-Faced Maps. Cambridge U. Press, 2008. This book collects the results in many of the papers of Deza and Sikric and has led to additional work. 
+
+Joseph Malkevitch
+https:york.cuny.edu/~malk
+</div>
+

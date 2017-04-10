@@ -1,0 +1,79 @@
+---
+layout: post
+title:  'Snakes, birthdays, and color calibration'
+date:   2007-03-06 23:18:00
+tags:   [color, reptiles, photography, family]
+---
+After a two-month hiatus I&#x27;ve put some new photos up, of <a href="http://www.ics.uci.edu/~eppstein/pix/t8bd/">Timothy&#x27;s 8th birthday party</a>. We hired a local company to come to our house and do a reptile show, which seemed to go over well with the boys.
+<br />
+
+<br />
+My new computer and new version of photoshop have left me unconfident of the color calibration on the photos, though. I ended up calibrating the monitor merely by going with the built-in calibration and setting gamma to 2.2, since that made various internet test charts look closer than I was getting with more sophisticated calibration procedures. And after some effort I&#x27;ve figured out how to get Photoshop, Preview, and Safari to all agree with each other on what my images look like, an essential first step in getting consistent color for my photos. But everything&#x27;s slightly more washed out and desaturated when I view it in Camino; other people&#x27;s images, too, not just mine.
+<br />
+
+<br />
+One of the things I discovered I needed for consistent cross-application color was to embed a color profile tagging my jpeg files as sRGB. My older images, which are untagged, are still coming out consistently washed out and desaturated in Safari as well as Camino. So I suspect what&#x27;s happening in Camino is that it&#x27;s stripping the color profile information before it passes the image to the OS display routines, and that the OS on this machine, if it sees untagged color, just sends it straight to the monitor without conversion rather than as in previous versions assuming sRGB. If so, I may have to switch to Safari for my more serious web photography as well as going back and adding profiles to all my old images (fortunately easy with <a href="http://www.sno.phy.queensu.ca/~phil/exiftool/">exiftool</a>).
+<br />
+
+<br />
+On the other hand, maybe I will hear back that my new images are seriously blackened, that my color calibration is all screwed up, and that I will have to process this batch of photos over again after completely redoing my color setup.
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>chouyu_31</b>: <br />
+<b>2007-03-08T02:05:22Z</b><br />
+Color calibration at best is annoying, at worst a sure way to go nuts.  I recently had to deal with the same thing; my wife just got a new LCD monitor.  We spent the better part of a couple evenings getting the color to the point where one could properly differentiate colors.  One pair of fairly useful pages we ended up using were hotmail (for white/yellow on read/unread messages) and my own livejournal (which uses two different gray-blues for background and subject headers).
+
+Then again, the color calibration software for her monitor is horrible, and we&#x27;ve not found anything significantly better on the internet.
+
+In my opinion (based on the colors produced by my CRT which has displayed every color that I&#x27;ve wanted to differentiate), your latest set of images look to be a bit washed out as compared with your old pictures.
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: What you really want to calibrate...<br />
+<b>2007-03-08T21:48:29Z</b><br />
+... are the monitors of your friends and family members. :P
+
+And it isn&#x27;t clear from the post if you are using a color calibration device or if you are &quot;eye-balling&quot;. I highly recommend the former approach. (I have seen strange enough calibration curves that simple gamma equations will not give a good match. Having a lookup table seems the only way to go.)
+
+-- maverick
+
+P.S. Tagging JPEG intended for web usage as sRGB seems to be standard practice. But I am speaking with hindsight. I remember the horror I had when I started using a DSLR... Well, I conjecture that every DSLR users must have used AdobeRGB in JPEGs at some point in their life. I have. :P
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: Re: What you really want to calibrate...<br />
+<b>2007-03-08T22:02:59Z</b><br />
+<i>... are the monitors of your friends and family members. :P</i>
+
+That&#x27;s the problem, isn&#x27;t it? I don&#x27;t just want my photos to look good to myself, I want them to look good to everyone else, and I can&#x27;t force them all to buy or use calibration equipment.
+
+And of course the other problem is convincing all the software to play together with the calibrated color...
+
+<i>And it isn&#x27;t clear from the post if you are using a color calibration device or if you are &quot;eye-balling&quot;.</i>
+
+Currently, I am doing neither. I am trusting Apple&#x27;s factory settings to calibrate the monitor better than I can by eyeballing, and am merely telling it to use those factory settings with a 2.2 gamma (and D65 whitepoint) rather than the Apple default 1.8 gamma and some other whitepoint.
+
+But I guess I should really spring for calibration equipment. Any recommendations of something that works well with OS X?
+
+<i>I conjecture that every DSLR users must have used AdobeRGB in JPEGs at some point in their life. I have.</i>
+
+I don&#x27;t recall making that particular mistake myself, but I&#x27;ve certainly seen examples of it. I think the more common mistake (which I have committed) is to not even realize there is such a thing as monitor calibration, and to process the photos with an uncalibrated monitor assuming they will look the same on everyone else&#x27;s monitor and when printed.
+</div>
+<div style="margin-left: 6em; padding-top: 1em;">
+<b>None</b>: Re: What you really want to calibrate...<br />
+<b>2007-03-09T04:02:32Z</b><br />
+I am a happy user of Eye-One Display 2, which is currently sold under Pantone&#x27;s brand but it really is a GretagMacbeth colorimeter. I use it on both Mac and Windows and it works great for display calibration. Around $200. (For printer and projector calibration, Eye-One also has some products based on a spectrophotometer, but the price is in another league.)
+
+Here is the interesting part about its license: you are allowed to use it on unlimited number of machines (see the link below). So I installed it on all my family machines and the problem is mostly &quot;solved&quot; within the family. I also calibrate displays for some friends.
+
+I said &quot;mostly&quot; because the theory says you have to recalibrate regularly, say once per week. It&#x27;s true---displays change over time. But you do get a diminish of return as you do it more and more frequently. Plus, a calibration per year is way better than no calibration at all.
+
+-- maverick
+
+http://www.gretagmacbeth.com/index/products/products_color-mgmt-spec/products_cm-for-creatives/products_eye-one-display.htm
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>chouyu_31</b>: <br />
+<b>2007-03-21T00:01:26Z</b><br />
+If you still need to calibrate your monitor, http://blog.wired.com/wiredphotos47/2007/03/post_1.html looks to be a reasonable option.
+</div>
+

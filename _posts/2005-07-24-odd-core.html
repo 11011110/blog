@@ -1,0 +1,21 @@
+---
+layout: post
+title:  'Odd Core'
+date:   2005-07-24 13:13:00
+tags:   [python, algorithms, graph theory]
+---
+<p>Here&#x27;s a graph algorithms problem that&#x27;s at that awkward level, too easy for publication, but I think too hard for an exam question — we used it for this year&#x27;s theory candidacy exam but I think it was too hard even for that. Maybe it might make a good starred homework problem for an algorithms course — the answer itself is within reach of what you&#x27;d learn — but only if there&#x27;s a more accessible proof of correctness than the one I found.</p>
+
+<p>Define the <i>odd core</i> of a graph to be the set of vertices that belong to an odd-length simple cycle.  The problem is to describe an efficient algorithm for finding the odd core.</p>
+
+
+<p>The intended answer is that a vertex belongs to the odd core if and only if it belongs to a nonbipartite biconnected component of the graph.  So, to compute the odd core, use the standard linear-time DFS-based biconnectivity algorithm, test each biconnected component for bipartiteness, and mark as part of the answer all the vertices in each nonbipartite component.  Then scan the vertices of the graph and output all marked vertices.</p>
+
+<p>The harder part is proving it correct.  The proof I know of involves <i>open ear decomposition</i> — that is, a decomposition of the edges of graph into subgraphs (called <i>ears</i>), where the first subgraph is a simple cycle, and each successive subgraph after that is a simple path that starts and ends at two different vertices that already appear in previous subgraphs.  It is known that such a decomposition exists if and only if the graph is biconnected. You can find an open ear decomposition by a greedy process, starting from any simple cycle: as long as not all vertices are covered by the decomposition, find an edge connecting a covered vertex to an uncovered one, then connect it by a shortest path back to the other covered vertices.  Such a path must exist (else the covered vertex you chose would be an articulation point and the graph would not be biconnected) and must be simple (else it would not be a shortest path). Once all vertices are included, the remaining edges form ears on their own.</p>
+
+<p>Based on this decomposition, one can prove by induction on the number of ears that, in any nonbipartite biconnected graph, each two vertices <i>u</i> and <i>v</i> are connected by simple paths of both possible parities.  To see this, form a decomposition starting from an odd simple cycle (which must exist in any nonbipartite graph); if <i>u</i> and <i>v</i> are both on that cycle, then the two paths connecting them different ways around the cycle have different parities. Otherwise, if <i>u</i> and <i>v</i> first appear on the same ear, then one path connects them on that ear, and we can form another simple path by connecting each of them to an endpoint of the ear and choosing a simple path in the edges of earlier ears connecting those two ear endpoints.  Finally, if <i>v</i> is added on a later ear than <i>u</i>, we can connect <i>v</i> to one of its ear endpoints and connect that endpoint by simple paths of opposite parities to <i>u</i> using the induction hypothesis.</p>
+
+<p>Therefore, in a nonbipartite biconnected graph, every edge participates in an odd simple cycle (the one formed by the even path connecting its two endpoints), so the odd core is the whole graph.  In a graph that is not biconnected, any simple cycle must be contained in a single biconnected component, so our overall characterization of the odd core follows.</p>
+
+
+<p>I implemented this in PADS as the OddCore function in <a href="http://www.ics.uci.edu/~eppstein/PADS/Bipartite.py">Bipartite.py</a>.  I think I was motivated by my combinatorial group testing work with Goodrich and Hirschberg (to appear at WADS) — something about the odd core of a graph being the only part you need to worry about in a greedy coloring heuristic for finding small CGTs — but I can&#x27;t find that part of my CGT code any more and can&#x27;t remember for sure.</p>

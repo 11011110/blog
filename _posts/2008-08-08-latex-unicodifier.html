@@ -1,0 +1,97 @@
+---
+layout: post
+title:  'LaTeX Unicodifier'
+date:   2008-08-08 23:54:00
+tags:   [tools]
+---
+While playing with some other code today I created a new little OS X mini-application: <a href="http://www.ics.uci.edu/~eppstein/LaTeX_Unicodifier.dmg.gz">LaTeX Unicodifier</a>. It converts between unicode strings with accented characters (e.g., “Mihai Pătraşcu”) and LaTeX source code for producing those strings (e.g., {``}Mihai P{\u{a}}tra{\c{s}}cu{&#x27;&#x27;}). So if you&#x27;ve ever seen a name with strange accents and wondered how to type it in LaTeX, or you&#x27;re familiar with LaTeX markup and want to get a unicode version of the name to paste into your blog entries, this may be for you.
+<br />
+
+<br />
+Caveats: I&#x27;ve only tested this on one machine, and that not very thoroughly, so there are probably bugs. It won&#x27;t run without a recent version of Python and PyObjC, which come preinstalled on version 10.5 of the OS but not on earlier versions.
+<br />
+
+<br />
+If you dig into the application (applications on the Mac are really folders) you will find the source code, the bulk of which is <a href="http://code.activestate.com/recipes/252124/">this codec</a>. I&#x27;d be especially interested to learn of gaps or errors in the codec. It would probably be easy for someone with a Python-based web server to use the same codec to produce a web page that does the same thing as the app for people without OS X, but since I wrote this primarily for myself I haven&#x27;t bothered.
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>mcfnord</b>: <br />
+<b>2008-08-09T09:59:57Z</b><br />
+work it!
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2008-08-09T15:18:48Z</b><br />
+Yeah, I&#x27;m sure there are a lot more effective ways of advertising a new app than mentioning it only in my own LJ, but I don&#x27;t want to put a lot of effort into that. It&#x27;s not like it&#x27;s going to get me any money or academic brownie points. But it seemed like the sort of thing that some of my other readers might find useful, so...
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>gareth_rees</b>: <br />
+<b>2008-08-09T11:52:15Z</b><br />
+A comment on coding style. The module would be easier to read, check and maintain if you used character names instead of code points in the <code>latex_equivalents</code> dictionary. For example, this section:<blockquote><pre>
+0x01c4: &quot;{D\\v{Z}}&quot;,
+0x01c5: &quot;{D\\v{z}}&quot;,
+0x01c6: &quot;{d\\v{z}}&quot;,
+0x01c7: &quot;{LJ}&quot;,
+0x01c8: &quot;{Lj}&quot;,
+0x01c9: &quot;{lj}&quot;,
+0x01ca: &quot;{NJ}&quot;,
+0x01cb: &quot;{Nj}&quot;,
+</pre></blockquote>could be rewritten like this:<blockquote><pre>
+ord(u&#x27;\N{LATIN CAPITAL LETTER DZ WITH CARON}&#x27;):                    &#x27;{D\\v{Z}}&#x27;,
+ord(u&#x27;\N{LATIN CAPITAL LETTER D WITH SMALL LETTER Z WITH CARON}&#x27;): &#x27;{D\\v{z}}&#x27;,
+ord(u&#x27;\N{LATIN SMALL LETTER DZ WITH CARON}&#x27;):                      &#x27;{d\\v{z}}&#x27;,
+ord(u&#x27;\N{LATIN CAPITAL LETTER LJ}&#x27;):                               &#x27;{LJ}&#x27;,
+ord(u&#x27;\N{LATIN CAPITAL LETTER L WITH SMALL LETTER J}&#x27;):            &#x27;{Lj}&#x27;,
+ord(u&#x27;\N{LATIN SMALL LETTER LJ}&#x27;):                                 &#x27;{lj}&#x27;,
+ord(u&#x27;\N{LATIN CAPITAL LETTER NJ}&#x27;):                               &#x27;{NJ}&#x27;,
+ord(u&#x27;\N{LATIN CAPITAL LETTER N WITH SMALL LETTER J}&#x27;):            &#x27;{Nj}&#x27;,
+ord(u&#x27;\N{LATIN SMALL LETTER NJ}&#x27;):                                 &#x27;{nj}&#x27;,
+</pre></blockquote>But maybe you&#x27;re worried about the computational cost of loading the <code>latex.py</code> module?
+
+Also, is <code>&#x27;\n&#x27;</code> really the LaTeX equivalent of U+000a? I would have expected <code>&#x27;{\\newline}&#x27;</code>. Maybe this depends on the use cases you have in mind.
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2008-08-09T14:42:48Z</b><br />
+Thanks!
+
+The main intended purpose of this codec was to be able to edit BibTeX files in Unicode and end up with a usable BibTeX file that TeX can still read afterwards (I used to have a program to do this but it only handled Macroman and stopped working after OS 9 died; I&#x27;m working on a replacement). But in that case it&#x27;s reasonably common to have newlines in the longer BibTeX fields (such as a note or an abstract) and rare to want that to turn into an actual line break in the compiled results.
+</div>
+<div style="margin-left: 6em; padding-top: 1em;">
+<b>gareth_rees</b>: <br />
+<b>2008-08-09T15:04:54Z</b><br />
+You can automate the replacement of codepoints with names using the <code>unicodedata</code> module:<blockquote><pre>
+import latex
+import unicodedata
+for k, v in latex.latex_equivalent.items():
+    print &quot;   ord(u&#x27;\\N&#123;&#37;s}&#x27;): %s,&quot; % (unicodedata.name(unichr(k)), repr(v))
+</pre></blockquote>
+</div>
+<div style="margin-left: 9em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2008-08-09T15:16:56Z</b><br />
+Thanks, that makes it a lot more likely that I would do this change.
+</div>
+<div style="margin-left: 9em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2008-08-19T04:27:49Z</b><br />
+I suppose there&#x27;s some deeply important historical/political/linguistic reason that the unicode people spell λ as lamda rather than as lambda. I edited this module again to add better Greek handling and decided to implement your change along with it, and that weirdness was what caused me the most trouble debugging it.
+
+Turns out that even with the change the module load time is not a problem.
+</div>
+<div style="margin-left: 12em; padding-top: 1em;">
+<b>gareth_rees</b>: <br />
+<b>2008-08-19T17:42:50Z</b><br />
+The (monotonic) Greek portion of Unicode derives from the 8-bit ISO 8859-7 character set. <a href="http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-118.pdf">ECMA-118</a> (1986) is the European version of this standard and you can see in that document the name LAMDA for λ (also KSI for ξ and KHI for χ). I guess these are Latinizations of the modern Greek names for the letters.
+
+ALEF and BET are another pair of names that may be surprising to mathematicians.
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: Similar problem in KBibTeX<br />
+<b>2008-08-11T07:33:19Z</b><br />
+Hello,
+as the author of KBibTeX I had the same problem. Currently I&#x27;m using a lookup table including regular expressions and support the conversion in both directions. You may want to have a look on the source code (C++, not Python):
+http://svn.gna.org/viewcvs/kbibtex/trunk/src/libkbibtexio/encoderlatex.cpp?rev=19&amp;view=markup
+</div>
+

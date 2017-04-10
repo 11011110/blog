@@ -1,0 +1,62 @@
+---
+layout: post
+title:  'Fast Go game recognition'
+date:   2012-03-23 13:42:00
+tags:   [game theory, data structures]
+---
+Suppose you are given as input a sequence of moves in a game of Go; that is, just the positions at which each player moves in each turn. You want to verify in real time that this is a correct game sequence (no moves on top of existing stones or suicidal moves), recognize when a capture has been made, and identify the captured pieces. How quickly can you do this?
+<br />
+
+<br />
+I have a solution with alpha(n) amortized time per move based on union-find (detailed below), where n is the side length of the Go board. (There&#x27;s a hint of the same algorithm, without details, in <a href="http://dx.doi.org/10.1007/3-540-45622-8_5">this paper</a>.) But it&#x27;s not clear to me that this is optimal; maybe there&#x27;s a clever way of getting constant amortized time per move. The amortization is necessary, though, because the output size from a capture move may be nonconstant.
+<br />
+
+<br />
+The basic idea is to maintain a union-find data structure that has an element for each stone. In this structure, we form a set for each connected string of stones, and we annotate the root of each tree in the union-find structure with the color and number of liberties of its string. Here, by a &quot;liberty&quot; I mean the edge connecting the string to an empty position on the board, not the empty position itself, so a single empty position could correspond to as many as four different liberties. We also need a separate array or hash table that maps board positions to stones within the union-find structure; we&#x27;ll call this the &quot;position map&quot;.
+<br />
+
+<br />
+A move is valid if it is to an unoccupied position and is not suicidal. Whether a position is occupied or not can be checked easily with the position map, but checking whether a move is suicidal is trickier. We have to find the strings of stones surrounding the move position (by using the position map to find neighboring stones and using the union-find structure to find the strings for these stones), determine the number of liberties of each string that would be taken away by the new move (the same as the number of neighboring stones that belong to the same string), and compare this to the total number of liberties of the string. A move is non-suicidal if at least one of the following three conditions is met: it has a vacant adjacent position, it takes the last liberty from an opposing string, or it connects to a string of the same color which has more liberties than the move takes away.
+<br />
+
+<br />
+After making a move, we need to group the new stone with its neighbors of the same color into a larger string (union operations), sum the liberty counts of any strings that become merged as part of this operation, and subtract off the numbers of liberties taken by the new stone (its number of neighbors in the same string). We must also subtract the new stone&#x27;s liberties from any adjacent strings of the opposite color, and if their liberty counts go to zero, capture their stones.
+<br />
+
+<br />
+In order to perform a capture, we need a variant of union find that can also list the elements of each set, but this is not difficult to do within the time bounds of the standard union-find structure. For each stone in a captured string, we clear the corresponding cell from the position map, and use the position map to search for adjacent stones that do not belong to the captured string. Whenever we find a non-captured stone adjacent to one of the captured stones, we increment the number of liberties of its group. This takes a constant number of data structure operations per captured stone, the time for which can be charged against the move in which the stone was placed. The captured string can be removed from the union-find structure or left to site there, it doesn&#x27;t matter, but whenever we re-occupy the same positions with new stones we need to be sure that they&#x27;re represented by new elements of the union-find structure.
+<br />
+
+<br />
+Fortunately, it&#x27;s not necessary in any of this to be able to count the number of eyes of each string. That looks quite a bit more difficult.
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>ext_1123097</b>: <br />
+<b>2012-03-24T00:55:07Z</b><br />
+I don&#x27;t have an immediate answer to the question of how to do constant time w.r.t. board dimension. However, a few observations:
+
+If you&#x27;re dealing with human-scale games then the board&#x27;s grid graph really isn&#x27;t very big. The standard 19x19 board has 361 vertices. You can represent a subset of vertices as a bitvector, which would take only (6) 64-bit words in the 19x19 case. A string may be represented as the set of vertices it occupies, plus the set of its liberties = 12 words. Then merging strings and testing their properties can be implemented with bitwise arithmetic on a few machine words, which has worse asymptotics than your data structure, but would be fast in practice.
+
+The standard union-find data structure is unaware of some properties that stone strings have:
+- They occupy a contiguous space of integer grid coordinates.
+- They are in a bounded square so packing arguments work; you can have many small strings or a few large ones but not both.
+- Stones, and by extension strings, are uniquely identified by the turn in which they were created. Maybe they should be hashed by time rather than position?
+
+Also, have you thought about enforcing the ko rule? One version disallows repeating a recent board configuration which is easy to implement by checking a constant-size log of recent moves. But a stronger version disallows repeating any board configuration that has ever appeared, and it&#x27;s not obvious that can be checked in constant time.
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2012-03-24T01:00:28Z</b><br />
+As long as you&#x27;re talking about practice rather than theory, union find is constant time, and with a pretty small constant. But it makes me wonder whether the fact that this is on a grid might somehow be used to prove that it really is constant time even in theory.
+
+As for ko: the obvious solution is to maintain a hash of the current board position and a dictionary of all past hashes. But you&#x27;d have to do the captures before checking whether a move was ko, in order to get the good amortized time, so this would allow you to tell that you&#x27;d violated ko after the fact but it wouldn&#x27;t allow you to quickly determine which moves are legal. I think in practice most kos involve captures of a very small number of pieces (most often just one) so again this may be more of a theoretical issue than a practical one.
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>ext_1125775</b>: <br />
+<b>2012-03-25T18:23:53Z</b><br />
+Have you read the <a href="http://computer-go.org/pipermail/computer-go/">computer go</a> list?  Also see the<a href="http://www.mail-archive.com/computer-go@computer-go.org/maillist.html"> older archives</a>, as I think the related discussions were several years ago.  I think what you describe has been used by some engines (usually adding simple ko detection).  Your definition of &quot;liberty&quot; is what they call &quot;pseudoliberty&quot;, so you could try searching for that keyword.  
+
+I don&#x27;t think anyone has described a faster algorithm--though it&#x27;s not really an active topic, since strong engines need to use slower algorithms that keep more information.  However it&#x27;d be very interesting if there was something linear time, and you should post if you find something :)
+</div>
+

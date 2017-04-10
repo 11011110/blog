@@ -1,0 +1,31 @@
+---
+layout: post
+title:  'Crossing-parity-invariant graphs'
+date:   2010-02-24 15:06:00
+tags:   [graph drawing]
+---
+<p>The <a href="http://11011110.livejournal.com/191644.html">Radon exchange graph</a> argument shows that every straight-line drawing of the complete graph K<sub>5</sub> has an odd number of crossings; this can also be proven directly by noticing that, if the vertices are moved continuously so that they remain distinct, then the number of crossings changes by an even number whenever a vertex crosses an edge. But it&#x27;s only the straight-line drawings that are stuck with odd parity: if the edges can curve, an even number of crossings is possible.</p>
+
+<p align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/K5-crossing-parity.png" /></p>
+
+<p>What other graphs share with K<sub>5</sub> the property that the parity of the number of crossings in a straight-line drawing is always fixed? It turns out that only the following graphs have the same property:</p>
+<ul>
+<li>Stars K<sub>1,n</sub> can never have any crossings, so the parity of the number of crossings is always even.</li>
+<li>Odd complete graphs K<sub>2n+1</sub>. The number of crossings is odd if n is 2 or 3 mod 4, and even if n is 0 or 1 mod 4, as can easily be calculated for drawings in which the vertices of the complete graph are in convex position and every 4-tuple of vertices has one crossing.</li>
+<li>Disjoint unions of odd complete graphs. The number of crossings (mod 2) can be added separately for each connected component.</li>
+<li>Complete bipartite graphs K<sub>2a+1,2b+1</sub> where both sides are odd. The number of crossings is always congruent to ab mod 2, as can be seen by counting crossings in a drawing in which the two sides of the bipartition are drawn on two parallel lines, and every 4-tuple with two vertices from each side has one crossing.</li>
+</ul>
+
+<p>Here&#x27;s a sketch of a proof that these are the only possibilities. Consider what happens when we move vertices around continuously and a vertex v crosses an edge uw, and let X be the set of edges incident to v and not incident to u or w. If |X| is even, the number of crossings doesn&#x27;t change and if |X| is odd the number of crossings does change. So a graph is crossing-parity-invariant if and only if there do not exist u, v, and w for which |X| is odd. It follows from this that, if v has even degree, its neighbors must be the whole connected component containing v, for otherwise there would be a neighbor u connected to a non-neighbor w. And if v has odd degree, its neighbors must be an independent set that includes one endpoint of every edge in the graph: if its neighbors are non-independent then any edge uw connecting two neighbors leads to an odd |X|, and if some edge uw does not include any neighbor of v then again |X| is odd.</p>
+
+<p>Given that characterization of the neighborhoods of even and odd vertices, let&#x27;s examine cases:</p>
+
+<ul>
+<li>Suppose that every vertex has even degree. Then in every connected component, every vertex is connected to every other vertex: the component is a clique and the graph is a disjoint union of cliques. In order for every vertex to have even degree, every clique must be odd.</li>
+<li>Two or more vertices u and v with even degree and some nonempty set of odd vertices are not possible in a crossing-parity-invariant graph. Because of the neighborhood structure of odd vertices, such a graph must be connected. Every even-odd pair must form an edge, by the neighborhood structure of even vertices, and for the same reason u and v must be connected to each other. But then, any odd vertex would have both u and v in its neighborhood and the neighborhood would not be independent.</li>
+<li>If the graph has one even vertex v and some number of odd vertices, then v is adjacent to all the other vertices. Since the other vertices are odd, their neighborhoods are independent sets containing v, but the only independent set containing v is the set {v}. Therefore, in this case the graph must be a star.</li>
+<li>If all vertices are odd and there is a vertex v adjacent to all others, then by the same reasoning the graph is a star.</li>
+<li>In the remaining case, all vertices are odd, and there is a vertex v that is adjacent to more than one other vertex but not to all other vertices. Let A be the neighbors of v and B be the non-neighbors. Then A must be an independent set because otherwise the neighborhood of v would not be independent, and B must be an independent set because otherwise there would be an edge not covered by the neighbors of v. Every possible edge from A to B must be present because, if a pair (u,w) did not have an edge (with u in A and w in B) then the edge uv would not have one of its endpoints in the neighborhood of w. Thus, the graph is complete bipartite with A on one side of the bipartition and both v and B on the other side. Both sides must be odd in order to ensure that all degrees are odd.</li>
+</ul>
+
+<p>The crossing-parity invariance of odd cliques is Theorem 1 of Guy [<a href="http://dx.doi.org/10.1007/BFb0059432">Latest results on crossing numbers</a>, Recent Trends in Graph Theory, 1971, LNM 186: 143–156]. Guy credits the theorem to Eggleton, and uses a more general topological form, drawings in which every two edges have at most one intersection point which must be either a crossing or a shared endpoint. I think all the arguments above generalize to this form. It&#x27;s an interesting coincidence that both of the two Kuratowski graphs K<sub>5</sub> and K<sub>3,3</sub> are crossing-parity-invariant with odd crossing number, and apparently this was used by Tutte in a proof that graphs containing either of these as a subdivision must be nonplanar. I don&#x27;t know of a reference for the full characterization of crossing-parity-invariant graphs, though.</p>

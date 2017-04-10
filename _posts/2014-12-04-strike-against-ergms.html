@@ -1,0 +1,60 @@
+---
+layout: post
+title:  'A strike against ERGMs'
+date:   2014-12-04 23:27:00
+tags:   [complexity theory, social networks, papers]
+---
+The <a href="https://en.wikipedia.org/wiki/Exponential_random_graph_models">exponential random graph model</a> is a system for describing probability distributions on graphs, used to model social networks. One fixes a set of vertices, and determines a collection of &quot;features&quot; among the edges of this fixed set (such as whether or not a particular edge or combination of a small number of edges), each with an associated real-valued weights. Then to determine the probability of seeing a particular graph, one simply looks at which features it has; the probability is exp(sum of feature weights), divided by a normalizing constant (the &quot;partition function&quot;).
+<br />
+
+<br />
+This is a good model for several reasons: it is powerful enough that (with complicated enough features) it can describe any distribution. With simple enough features (e.g. just individual edges) it degenerates to the standard <a href="https://en.wikipedia.org/wiki/Erd%C5%91s%E2%80%93R%C3%A9nyi_model">Erdős–Rényi–Gilbert model</a> of random graphs. It&#x27;s easy to express features that model sociological theories of network formation, such as <a href="https://en.wikipedia.org/wiki/Assortative_mixing">assortative mixing</a> (more similar people are more likely to be friends) or <a href="https://en.wikipedia.org/wiki/Triadic_closure">triadic closure</a> (friends-of-friends are more likely to be friends). And by fitting the weights to actual social networks, one can learn something about the strengths of these effects.
+<br />
+
+<br />
+But on the other hand, there are some theoretical and practical obstacles to its use. It seems to be difficult to set up features and weights such that, when one generates graphs using the distribution they describe, the results actually look like social networks. If we go even a little bit beyond the Erdős–Rényi–Gilbert model we don&#x27;t have closed form solutions to anything and have to use MCMC simulations to compute the partition function, fit weights, or generate graphs, and we don&#x27;t know much about how quickly or slowly these simulations converge.
+<br />
+
+<br />
+And now, with my latest preprint &quot;<a href="http://arxiv.org/abs/1412.1787">ERGMs are Hard</a>&quot; (arXiv:1412.1787, with Michael Bannister and Will Devanny), the picture gets darker. We prove complexity-theoretic hardness results showing that with completely realistic features (in fact the ones for assortative mixing and triadic closure, but with unrealistic weights) we can&#x27;t compute the partition function, we can&#x27;t get anywhere close to approximating the partition function, we can&#x27;t generate graphs with the right probabilities, and we can&#x27;t even get anywhere close to the right probability distribution. And trying to escape the hardness by tweaking the features to something a little more complicated doesn&#x27;t help: the same hardness results continue to be true when the features include induced subgraphs of any fixed type with more than one edge.
+<br />
+
+<br />
+The short explanation for why is that lurking inside these models are computationally hard combinatorial problems such as (the one we mainly use) finding or counting the largest induced triangle-free subgraphs. It was known that the maximization version of this problem was hard, but the reduction wasn&#x27;t parsimonious (less technically, this means that the reduction can&#x27;t be used to prove that the counting version of the problem is hard). So for that part we had to find our own reduction from another hard counting problem, counting perfect matchings in cubic bipartite graphs. Here it is in a picture.
+<br />
+
+<br />
+<div align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/match2maxtf.png" /></div>
+<br />
+
+<br />
+Each vertex of the original graph turns into four triangles after the reduction. In this example, counting matchings in a cube turns into counting maximum triangle-free subgraphs of a <a href="https://en.wikipedia.org/wiki/Snub_cube">snub cube</a>. These subgraphs are formed by deleting all the snub cube edges that correspond to unmatched cube edges, and then deleting one more edge inside each four-triangle gadget. When I posted a drawing of <a href="http://11011110.livejournal.com/275610.html">a stereographic projection of a snub cube</a> a bit over a year ago, this is what it was for. Since that time, we&#x27;ve also been using the image of this reduction in the logo of <a href="http://www.ics.uci.edu/~theory/">our local research center</a>.
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: Andy D<br />
+<b>2014-12-05T15:16:33Z</b><br />
+&quot;And now, with my latest preprint ... the picture gets darker.&quot;    
+
+Love it!
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: More darkness<br />
+<b>2014-12-05T21:05:44Z</b><br />
+Hi David,
+
+Very nice results. It&#x27;s very likely you know the references below, but I thought I&#x27;d raise them as they&#x27;re squarely on the topic of the darkness of ERGMs.
+
+Regarding convergence rate of sampling schemes, the papers by Bhamidi-Bresler-Sly (http://arxiv.org/abs/0812.2265) and Chatterjee-Diaconis (http://arxiv.org/abs/1102.2650) shed quite a bit of light on those questions, though perhaps you&#x27;re using a strong sense of &quot;much&quot;.
+
+Also, your &quot;any subgraph with more than one edge&quot; result reminded me of a talk I saw by Cosma Shalizi on consistency of ERGMs, which I believe hinged on a similar distinction: http://arxiv.org/abs/1111.3054
+
+Best,
+Johan Ugander
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>nrydino</b>: <br />
+<b></b><br />
+
+</div>
+

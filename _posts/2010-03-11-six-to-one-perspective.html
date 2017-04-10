@@ -1,0 +1,38 @@
+---
+layout: post
+title:  'Six-to-one perspective'
+date:   2010-03-11 21:16:00
+tags:   [circles]
+---
+<p>The drawing below is in &quot;six-to-one perspective&quot;: three-dimensional axis-parallel rays in each of the six possible directions are drawn as circular arcs that all converge to the same one point.  Axis-parallel line segments become circular arcs, right angles in space become 60 or 120-degree angles in the plane, and (in exchange for some fisheye distortion) the whole 360-degree field of view fits into a plane. If a <a href="http://11011110.livejournal.com/186617.html">corner polyhedron</a> (such as a cube, below) is drawn using this projection, we can see all of its vertices, even the hidden back vertex.</p>
+
+<p align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/621/621.png" /></p>
+
+<p>By comparison, <a href="http://en.wikipedia.org/wiki/Axonometric_projection">axonometric projection</a> uses nice straight lines and has the same 60- or 120- degree angles, but can&#x27;t show the points of convergence.</p>
+
+<p align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/621/axonometric.png" /></p>
+
+<p><a href="http://en.wikipedia.org/wiki/Three-point_perspective">Three-point perspective</a> again has nice straight lines, and (when used less excessively than the view below) looks the most realistic of any of these methods, but has nonuniform angles and can only show three of the six convergence points.</p>
+
+<p align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/621/threepoint.png" /></p>
+
+<p>And six-point perspective uses circular arcs and represents all six convergence points, but again has nonuniform angles.</p>
+
+<p align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/621/sixpoint.png" /></p>
+
+<p>In choosing the radii for the guide circles in the six-to-one perspective drawing, it turned out to work well to pick <a href="http://en.wikipedia.org/wiki/Smooth_number">smooth numbers</a>: the radii are in the proportion 3:4:6:8:12, leading to lots of triple junctions on which the vertices of the cube can be placed. Maybe for a more complex drawing I&#x27;d need to step up to a larger number of prime factors?</p>
+
+<p>If anyone knows any references on this type of perspective, I&#x27;d appreciate hearing about them.</p>
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>passacaglio</b>: <br />
+<b>2010-03-12T12:30:39Z</b><br />
+Isn&#x27;t that a sort of Mobius transformation?
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2010-03-12T15:35:35Z</b><br />
+I guess the six-point view could be thought of as a Möbius transform of the axonometric view, yes. It&#x27;s curious that the view that shows the least about the convergence points can be transformed in this way into one that shows them all.
+</div>
+

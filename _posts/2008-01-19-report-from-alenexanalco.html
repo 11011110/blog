@@ -1,0 +1,51 @@
+---
+layout: post
+title:  'Report from ALENEX/ANALCO'
+date:   2008-01-19 22:10:00
+tags:   [conferences, talks]
+---
+My usual pattern here is to start with high hopes of several long complicated blog posts, and then get more terse and less frequent as the conferences go on and I get more sleep-deprived. So don&#x27;t count on this continuing...
+<br />
+
+<br />
+This time, due to some <a href="http://11011110.livejournal.com/123239.html">snafu with the toll-free registration system</a>, I&#x27;m staying at a non-conference hotel, and I&#x27;m happy with the choice. The room is nice, the internet is free, the place has character in a way that the Holiday Inn doesn&#x27;t, the staff are very friendly, it&#x27;s a pleasant ten-minute walk from the talks, it&#x27;s noticeably cheaper, and they have a complimentary wine bar in the lobby in the evenings. The only flaw I&#x27;ve seen so far is that the neon sign advertising the place is dark in a few letters, so instead of the HOTEL CARLTON it calls itself the EL C LTON. Drop the C as well and you could be famous.
+<br />
+
+<br />
+Erik Demaine, <a href="http://erikdemaine.org/curved/">soon to be even more famous as a MoMA artist</a>, is making a very strong start in the race for the best ratings of people to go to meals with. He used his fancy tiny computer&#x27;s navigation software to lead us to a great hole-in-the-wall dim-sum place in Chinatown where we ate such foodstuffs as shrimp dumplings shaped like little bunny rabbits, with little food color eyes and all. They didn&#x27;t scream when you bit their heads off, but they were yummy. Someone in the group suggested that the algorithm for ordering food at such places was to order 2<i>n</i>+2 items for <i>n</i> people (though we actually ordered more than that); we couldn&#x27;t decide whether the +2 part of this formula really was a constant or whether some more complex function such as log<sup>*</sup> <i>n</i> was hiding there, but we eventually discovered what it was for when one more person joined our group after we were most of the way through and there was still plenty of food for him. Then, when the surprisingly small bill came, Erik surprised us again by picking the whole thing up himself, as a way to get rid of some cash he&#x27;d acquired smuggling illicit iPhones into Belgium. Thank you, Erik!
+<br />
+
+<br />
+Since several people asked about it, my <i>Math is delicious! Now with more integers!</i> T-shirt can be found and purchased <a href="http://questionablecontent.net/merch.php">here</a>.
+<br />
+
+<br />
+Out this evening, we saw a pair of black high heeled shoes sitting, abandoned, on a window sill on Sutter Street. There must be a story there, I&#x27;m sure.
+<br />
+
+<br />
+Talks? There were talks, too. Here&#x27;s a random sample.
+<br />
+
+<br />
+Frédéric Pluquet spoke (with very prettily typeset slides in what looked like Gill Sans, white on black with occasional splashes of red) on implementing <a href="http://en.wikipedia.org/wiki/Persistent_data_structure">persistent data structures</a>, a paper with Stefan Langerman, Roel Wuyts, and Antoine Marot. Rather than forcing the implementor to actually think or work, he wants programmers to be able to simply say &quot;make this data structure persistent&quot; and make it work, much as the theory papers do — he put up a selection of quotes from some 20 papers that use persistence but only refer to it in a single line, one of which was my “<a href="http://www.ics.uci.edu/~eppstein/pubs/BerDobEpp-Algo-94.pdf">visibility with a moving point of view</a>”. To achieve this level of simplicity, he uses the fat node technique and <a href="http://en.wikipedia.org/wiki/Aspect-oriented_programming">aspect oriented programming</a>, in a way that would likely work in any sufficiently <a href="http://en.wikipedia.org/wiki/Introspection_%28computer_science%29">introspective</a> <a href="http://en.wikipedia.org/wiki/Object-oriented_programming">object-oriented language</a>. The performance was a little disappointing, though: a factor of 40 slowdown in Java (not as bad in Smalltalk); this might still be ok, though, when a persistent data structure is a small part of a larger algorithm. On the way to lunch I discussed with Langerman the possibility of a Python implementation; he seemed to feel it shouldn&#x27;t be harder than those other languages.
+<br />
+
+<br />
+Don Knuth gave one of the two plenary talks, on what turned out to be three asymptotic enumeration type problems. The first was on the “<a href="http://www.research.att.com/~njas/sequences/A005439">medial Genocchi numbers</a>”, a sequence closely related as the name implies to the (absolute values of the) <a href="http://mathworld.wolfram.com/GenocchiNumber.html">Genocchi numbers</a> studied by Euler. The two sequences of Genocchi numbers interleave to form a single sequence, where the even Genocchi number terms are approximated very well by a simple formula, 4(2n)!&amp;pi<sup>−2<i>n</i></sup>(1+O(1/2<sup><i>n</i></sup>)) if Erik and I deciphered Knuth&#x27;s handwriting correctly, but the odd medial terms, while seeming to have the same leading term, have a much larger error term. Knuth wanted a more accurate approximation in that case. The second problem was on the distribution of the number of leaves of a uniformly random forest on <i>n</i> nodes after you strip off <i>k</i> levels of leaves and the paths leading to those leaves, and the third was on the asymptotics of a strange recurrence involving mins and sums that is related to the complexity of binary decision diagrams, with asymptotics that converge to a hairy monkey as you increase <i>n</i>, but different monkeys for different sequences of the form n=4<sup><i>i</i></sup>×<i>j</i>. The zeroth question (the one he decided at the last minute to omit from the talk, but was asked about afterwards) involved counting hypergraph analogues of forests, and was omitted after he did enough computation to find the appropriate sequences in <a href="http://www.research.att.com/~njas/sequences/">OEIS</a>. He referred to OEIS at several points in the talk, telling us in the end that this is the new way of doing science: compute your way to the right literature.
+<br />
+
+<br />
+Daniel Dumitriu spoke on some work with Stefan Funke, Martin Kutz, and Nikola Milosavljevic on surface reconstruction. They have an approach which is based only on the distance matrix of the sample points: find a good subset of the points (an independent set of the <i>k</i>th power of the κ-nearest-neighbor graph), compute the graph Voronoi diagram, dualize it omitting some bad edges, and then greedily find cycles in order by length to use as faces. With some careful choice of parameters they can make most faces triangles, and prove guarantees on the quality of the reconstruction for three-dimensional samples similar to alternative techniques such as cocone.
+<br />
+
+<br />
+Robert Geisberger spoke on approximating betweenness <a href="http://en.wikipedia.org/wiki/Centrality">centrality</a> in graphs. There was a known fast approximation based on finding single source shortest paths from a small set of pivot nodes, but although <a href="http://en.wikipedia.org/wiki/Bias_of_an_estimator">unbiased</a> it tended to distort the centralities near the chosen pivots. Geisberger and his co-authors Peter Sanders and Dominik Schultes described how to compensate for that distortion while preserving the unbiased properties of the previous work. It seems likely that this should also be a good idea for closeness centrality, where <a href="http://arxiv.org/abs/cs.DS/0009005">I have a paper</a> that (like the previous betweenness algorithm) is based on finding single source shortest paths from a small set of pivots.
+<br />
+
+<br />
+Heidi Gebauer, after some technical difficulties with the projector-laptop connection, gave a nice presentation for <a href="http://www.siam.org/proceedings/analco/2008/anl08_023gebauerh.pdf">her paper with Tibor Szabó and Emo Welzl</a> related to <a href="http://11011110.livejournal.com/106713.html">a conjecture of mine</a>. I had found a family of <i>n</i>-vertex cubic graphs with 2<sup><i>n</i>/3</sup> Hamiltonian cycles, and conjectured that no other cubic graphs have more, but the best upper bound I could prove was 2<sup>3<i>n</i>/8</sup>; she improves the upper bound. In some sense, her analysis should give a simple proof of a φ<sup><i>n</i>/2</sup> upper bound, where φ is the golden ratio, but a key lemma fails in some problematic cases; with more effort she was able to get most of the way to that bound anyway.
+<br />
+
+<br />
+Tomorrow the main event starts. I can&#x27;t play hooky, because I promised to chair two of the sessions...

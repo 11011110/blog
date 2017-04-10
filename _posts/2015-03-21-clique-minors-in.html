@@ -1,0 +1,55 @@
+---
+layout: post
+title:  'Clique minors in de Bruijn graphs'
+date:   2015-03-21 22:18:00
+tags:   [de bruijn graph, graph theory]
+---
+In my new Wikipedia article on <a href="https://en.wikipedia.org/wiki/Queue_number">the queue number of graphs</a>, the binary de Bruijn graphs form an important family of examples. These are 4-regular graphs with one vertex for every <i>n</i>-bit binary string, and with an edge from every string of the form 0s or 1s to s0 or s1. <a href="http://11011110.livejournal.com/75392.html">I posted about them</a> here several years ago, with the following drawing, which can be interpreted as a 2-queue drawing with one queue for the edges that wrap around the left side and another for the edges that wrap around the right.
+<br />
+
+<br />
+<div align="center"><a href="http://en.wikipedia.org/wiki/Image:DeBruijn-3-2.png"><img src="http://www.ics.uci.edu/~eppstein/0xDE/dbg32b.png" border="0" /></a></div>
+<br />
+
+<br />
+Graph minors also showed up in the article, and it occurred to me to wonder: do de Bruijn graphs belong to any minor-closed graph families? The answer should be no, because they&#x27;re too highly connected, but can we quantify this? One way would be to determine the <a href="https://en.wikipedia.org/wiki/Hadwiger_number">Hadwiger number</a> of the de Bruijn graphs, i.e., the size of their largest clique minors. As long as this is not bounded by a constant, the de Bruijn graphs do not belong to any nontrivial minor-closed family. And in fact, that turns out to be true: the Hadwiger number is somewhere near the square root of the number of vertices.
+<br />
+
+<br />
+One direction is easy: an <i>n</i>-vertex de Bruijn graph has 2<i>n</i> edges, and a <i>k</i>-vertex clique minor needs at least <i>k</i>(<i>k</i> − 1)/2 edges, so <i>k</i> has to be at most approximately 2√<i>n</i>.
+<br />
+
+<br />
+In the other direction, it&#x27;s possible to exhibit an explicit clique minor of size nearly the square root of <i>n</i> in any de Bruijn graph. To do so, I need three ingredients:
+<br />
+
+<br />
+(1) A representative vertex in the de Bruijn graph for each clique vertex,
+<br />
+
+<br />
+(2) A path in the de Bruijn graph between any two representative vertices (not necessarily disjoint from the other paths), and
+<br />
+
+<br />
+(3) A mapping from the vertices within these paths to representative vertices, such that each path can be split into two segments that are mapped to the two endpoints of the path.
+<br />
+
+<br />
+With these ingredients, the minor itself can be formed by throwing away non-path vertices and contracting path edges between pairs of vertices that are mapped to the same endpoint as each other. (Every clique minor of any graph can be represented in this way.)
+<br />
+
+<br />
+So here are the representative vertices: for order-<i>k</i> de Bruijn graphs (with <i>n</i> = 2<sup><i>k</i></sup> vertices) they are the binary strings of the form 1<i>x</i>1<i>y</i>1<i>y</i>, where <i>x</i> is a string of about log<sub>2</sub> <i>k</i> consecutive 0&#x27;s and <i>y</i> is a string of length (<i>k</i> − len(<i>x</i>) − 3)/2 that doesn&#x27;t contain <i>x</i> as a substring. The <i>y</i> part of this is what distinguishes this representative vertex from all the other ones, and we will look for this string to determine how to map path vertices to representative vertices. The <i>x</i> part of the string carries no useful identifying information, but instead will allow us to find <i>y</i> even when the string has been shifted and mangled in the process of finding a path between two representative vertices. With this choice of the length of <i>x</i>, a constant fraction of the strings that are the right length to be <i>y</i> are valid (don&#x27;t contain <i>x</i> as a substring). The number of valid <i>y</i>&#x27;s, and therefore the size of the clique minor that we find, is proportional to the square root of <i>n</i>/log <i>n</i>.
+<br />
+
+<br />
+To find a path from one representative vertex to another, we simply follow edges that shift the bitstring left by one position, shifting in the bits of the second representative vertex as we shift out the bits of the first. This actually gives two paths between each two representative vertices (one in each direction) but that isn&#x27;t a problem; just pick one of the two.
+<br />
+
+<br />
+In order to define the mapping from path vertices to representative vertices, it&#x27;s convenient to think of a bitstring (vertex of the de Bruijn graph) as having its left end wrapped around and glued to the right end to form a single cyclic sequence of bits. As we follow the path, the string <i>x</i> of consecutive 0&#x27;s will rotate from the left side of the string to the right and then back to the left, but will always be uniquely identifiable as the only string of consecutive 0&#x27;s of the correct length in this cyclic sequence. From the position of <i>x</i>, in any path vertex, we can identify two substrings in the cyclic sequence, in the correct positions relative to <i>x</i> to be the <i>y</i>&#x27;s of a representative vertex. For the first half of the path, one of these two <i>y</i> substrings will be equal to the <i>y</i> of the starting vertex of the path, and the second will be arbitrary (some mix of the two path endpoints). For the second half of the path, the pattern is reversed: the other one of the two <i>y</i> substrings will be equal to the <i>y</i> of the ending vertex of the path, and the other one will be a mix. But we can tell which of these two situations is the case by looking at the position of the consecutive 0&#x27;s. So we map each path vertex to the representative vertex for one of its two <i>y</i> substrings, the one that isn&#x27;t mixed up.
+<br />
+
+<br />
+So which of sqrt(<i>n</i>) (the edge-counting upper bound) and sqrt(<i>n</i>/log <i>n</i>) (the explicit construction of a clique minor) is closer to the truth? I&#x27;m not sure. On the one hand, if you have representative vertices <i>k</i> units apart from each other (as seems necessary, up to constant factors) with disjoint paths between them in the clique minor, then comparing the total number of edges in these paths with the total number of edges in the complete minor would show that the sqrt(<i>n</i>/log <i>n</i>) bound is tight. On the other hand, in the construction above, the paths are not disjoint, and they can&#x27;t be because the representative vertex doesn&#x27;t have high degree. But I don&#x27;t know how to define the mapping from paths from representative vertices without, seemingly, wasting bits on the <i>x</i> strings which are used only as markers to determine where in the path each vertex is.

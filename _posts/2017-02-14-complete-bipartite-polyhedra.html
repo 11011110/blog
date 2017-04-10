@@ -1,0 +1,30 @@
+---
+layout: post
+title: Complete bipartite polyhedra
+date: 2017-02-14 18:27:00
+---
+<p>The tetrahedron and the <a href="https://en.wikipedia.org/wiki/Cs%C3%A1sz%C3%A1r_polyhedron">Császár polyhedron</a> are polyhedra whose edges and vertices form complete graphs; it is unknown whether any others exist. At the tutorial session for Graph Drawing 2015, I asked whether there are any complete bipartite polyhedra.</p>
+
+<p>As the definition of non-convex polyhedra can be the subject of heated debate (check out <a href="https://en.wikipedia.org/wiki/Talk:Polyhedron">Wikipedia:Talk:Polyhedron</a> if you dare), I should clarify that the kind of polyhedron I am looking for is a piecewise-linearly-embedded manifold whose maximal linear pieces (the faces) are simple polygons. This is all true of the Császár polyhedron, for instance. For non-geometric definitions of polyhedra, the existence of complete bipartite polyhedra is already known; for instance Archdeacon ("a survey of self-dual polyhedra", 1992) describes a polyhedral embedding of \( K_{6,5} \) on a topological surface with 17 crosscaps, dual to \( K_9 \) on that surface.</p>
+
+<p>A near-miss geometric complete bipartite polyhedron is the complete bipartite graph <i>K</i><sub>2,2</sub>, which forms the graph of a <a href="https://en.wikipedia.org/wiki/Dihedron">doubly covered square</a>. This is in some sense a Euclidean convex polyhedron; at least, it satisfies the criteria of <a href="https://en.wikipedia.org/wiki/Alexandrov%27s_uniqueness_theorem">Alexandrov's characterization of convex polyhedra by their surface metrics</a>. But its two faces coincide, rather than intersecting only at their shared vertices and edges. The regular octahedron forms the graph of a complete tripartite graph \( K_{2,2,2} \), and the cube forms a subgraph of \( K_{4,4} \) but is missing some edges (the long diagonals) needed to form the whole complete bipartite graph.</p>
+
+<p>In a complete bipartite graph, represented in this way, each face must be a quadrilateral, because higher order faces would have diagonals that form edges of other faces, not possible in a manifold. This puts some constraints on which bipartite graphs we can have: the number of edges must be divisible by two (so that there is an integer number of quadrilaterals) and in addition the number of edges must be 2 (mod 4) if the number of vertices is odd, or 0 (mod 4) if the number of vertices is even, so that the Euler characteristic will be even. (Odd Euler characteristics only happen for non-oriented manifolds, which cannot be embedded without crossings in Euclidean space.) And \( K_{2,n} \) is never possible, because it has vertices of degree two which must come from coplanar faces or collinear edges, neither of which is allowed by the specific definition of polyhedra chosen above.</p>
+
+<p>Based on this calculation, the simplest complete bipartite graphs that could work are \( K_{4,4} \) and \( K_{3,6} \). Both of these form nice polyhedral subdivisions of a torus:</p>
+
+<p align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/complete-bipartite-tori.svg"></p>
+
+<p>I have been unable to find manifold embeddings of these tori, but I also don't have a proof that they're impossible. I did, however, find a realization of \( K_{4,4} \) as a crossed polyhedron (meaning: a subdivision of a topological manifold, with its vertices mapped to distinct points of Euclidean space in such a way that the faces are mapped to distinct planes, but allowing edge and face crossings):</p>
+
+<p align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/crossed-K44.svg"></p>
+
+<p>It's based on a <a href="https://en.wikipedia.org/wiki/Complete_quadrangle">complete quadrilateral</a> in the \( z=0 \) plane (the black lines) with two of its six points lifted and lowered in \( z \) to form pairs of points. In this arrangement of points, \( A \) and \( C \) form dart-shaped quadrilaterals with the blue points on the line \( x=0 \) and with the other two blue points. Similarly, \( B \) and \( D \) form two darts with pairs of the two blue points. \( A \) and \( D \) form a tilted dart with the two blue points on the diagonal \( x=y \), and \( B \) and \( C \) also form a tilted dart with the same two diagonal points. Finally, \( A \) and \( B \) form a crossed quadrilateral (an <a href="https://en.wikipedia.org/wiki/Antiparallelogram">antiparallelogram</a>) with the two blue points on the line \( x+y=3 \), and \( B \) and \( D \) form another antiparallelogram with the same two blue points. So each edge of the complete bipartite graph is used twice, giving us a topological manifold.</p>
+
+<p>This is not the torus above, because the face pairings are different. It turns out to be a different torus:</p>
+
+<p align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/brick-wall-K44.svg"></p>
+
+<p>So, this does show that \( K_{4,4} \) can be mapped to space so that the points form eight planes of four points, intersecting in the desired edges, and forming a configuration of eight points and eight planes with four points per plane and four planes per point. But it doesn't really solve the original problem. Can it be untangled to form an embedded torus with the same connectivity?</p>
+
+<p>ETA 2/16: \( K_{3,6} \) is also easy to realize as a crossed polyhedron. Place \( A \), \( B \), and \( C \) on a triangle, choose three planes through each pair of these points, and place the other six points where triples of these planes meet. But be careful to choose the correct triples of planes: if you place \( A \), \( B \), and \( C \) on an equilateral triangle, and the other six points at equal distances above and below the midpoints, you can realize \( K_{3,6} \) as a crossed polyhedron with three square sides and six antiparallelogram sides, but it's a Klein bottle, not a torus.</p>

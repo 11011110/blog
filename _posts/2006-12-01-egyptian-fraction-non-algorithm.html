@@ -1,0 +1,50 @@
+---
+layout: post
+title:  'An Egyptian fraction non-algorithm'
+date:   2006-12-01 18:00:00
+tags:   [egyptian fractions, number theory]
+---
+An Egyptian fraction is a sum of <b>distinct</b> unit fractions, but it&#x27;s easy to convert sums of non-distinct fractions into Egyptian fractions, by repeatedly finding pairs of equal fractions 1/<i>k</i> + 1/<i>k</i> and replacing them either by 2/<i>k</i> (if <i>k</i> is even) or 2/(<i>k</i>+1) + 2/<i>k</i>(<i>k</i>+1) as I described <a href="http://www.ics.uci.edu/~eppstein/numth/egypt/conflict.html">here</a>. For example,
+<br />
+
+<br />
+5/18 =&gt; 1/18 + 1/18 + 1/18 + 1/18 + 1/18 =&gt; 1/18 + 1/9 + 1/9 =&gt; 1/18 + 1/5 + 1/45.
+<br />
+
+<br />
+It also works to replace 1/<i>k</i> + 1/<i>k</i> by 1/<i>k</i> + 1/(<i>k</i>+1) + 1/<i>k</i>(<i>k</i>+1), as Graham and Jewett proved:
+<br />
+
+<br />
+3/7 =&gt; 1/7 + 1/7 + 1/7 =&gt; 1/7 + 1/8 + 1/8 + 1/56 + 1/56 =&gt; 1/7 + 1/8 + 1/9 + 1/72 + 1/56 + 1/57 + 1/3192.
+<br />
+
+<br />
+Both of these methods produce fractions that may have significantly larger denominators than the starting one, because the replacement formulas involve quadratic polynomials. But maybe that quadratic blowup is unnecessary? What if we try a much simpler replacement: 1/<i>k</i> + 1/<i>k</i> =&gt; 1/<i>k</i> + 1/2<i>k</i> + 1/3<i>k</i> + 1/6<i>k</i>?
+<br />
+
+<br />
+3/4 =&gt; 1/4 + 1/4 + 1/4 =&gt; 1/4 + 1/8 + 1/8 + 1/12 + 1/12 + 1/24 + 1/24 = 1/4 + 1/8 + 1/12 + 1/12 + 1/16 + 1/24 + 1/24 + 1/24 + 1/48
+<br />
+
+<br />
+and now we have a problem: the three copies of 1/4 led to three copies of 1/24, which will lead to three copies of 1/144, which...won&#x27;t ever terminate.
+<br />
+
+<br />
+Can we fix this by a more complicated replacement rule? What about, say, 1/<i>k</i> + 1/<i>k</i> =&gt; 1/2<i>k</i> + 1/3<i>k</i> + 1/7<i>k</i> + 1/42<i>k</i>? No such expansion rule, in which all the denominators of the expansion are linear in the duplicated input denominator, can work! For, in a rule with <i>s</i> terms in the expansion, starting with <i>a</i> copies of the same fraction and expanding one of these copies once, one copy twice, etc., results in an expansion with ≥ <i>s</i><sup><i>a</i>-1</sup> terms, all of which belong to a set of O(<i>a</i><sup><i>s</i></sup>) different multiples of the starting denominator. So for any sufficiently large <i>a</i>, we can find after these forced expansions a larger denominator <i>d</i> with at least <i>a</i> copies of the fraction 1/<i>d</i>, setting off the same kind of infinite loop we saw for the 1/2 + 1/3 + 1/6 expansion.
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>1minusqsquared</b>: <br />
+<b>2006-12-02T02:59:04Z</b><br />
+Neat.
+
+But you can do better than quadratic and still not be linear, right? What about some expansion rule that, (on average &#x27;cause we&#x27;re dealing with integers), makes the denominator nlog(n) or n^(3/2) or any number of other things?
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2006-12-02T06:12:34Z</b><br />
+There are methods that will expand a/b to something with denominators that are subquadratic in b, but I don&#x27;t know how to express them in terms of this sort of simple expansion rule.
+</div>
+

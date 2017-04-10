@@ -1,0 +1,59 @@
+---
+layout: post
+title:  'Vietoris–Rips complexes are Čech complexes'
+date:   2007-09-01 19:51:00
+tags:   [topology, wikipedia]
+---
+Based in part on Jeff Erickson&#x27;s nice invited talk on algorithms for finding small cycles in topological spaces at WADS, I just added a brief survey on <a href="http://en.wikipedia.org/wiki/Vietoris%E2%80%93Rips_complex">Vietoris–Rips complexes</a> to Wikipedia.
+<br />
+
+<br />
+I&#x27;m a little worried that one point I included may violate Wikipedia&#x27;s prohibition on original research, though: the Vietoris–Rips complex of any metric space <i>X</i> turns out to always equal the Čech complex of some set of balls in some larger space into which <i>X</i> can be embedded.
+<br />
+
+<br />
+Specifically, if <i>X</i> is embedded in any <a href="http://en.wikipedia.org/wiki/Injective_metric_space">injective metric space</a> <i>Y</i>, then the Vietoris–Rips complex for distance δ in <i>X</i> is the same as the Čech complex for the balls of radius δ/2 centered at the points of <i>X</i> in <i>Y</i>: the Rips complex includes a simplex for any finite set of balls that intersect pairwise, the Čech complex includes a simplex for any finite set of balls with a common intersection, and an injective metric space is defined by the property that any set of balls that intersect pairwise has a common intersection. Since any metric space can be embedded in an injective space via the <a href="http://en.wikipedia.org/wiki/Tight_span">tight span</a>, the result follows.
+<br />
+
+<br />
+This seems obvious enough (and important enough) that I&#x27;d include it in a survey or research paper on a related subject without attempting to assign or take credit for it, but Wikipedia has different standards: everything must have a source. So, can anyone help me find a published paper that includes something resembling this statement? I suppose in the worst case that this blog post might suffice, but it&#x27;s not a very good source by Wikipedian standards...
+<br />
+
+<br />
+<b>ETA:</b> Carlsson says he doesn&#x27;t know more than what&#x27;s in his new paper (which mentions that the two complexes are the same for L<sub>∞</sub> spaces), and he should know. And <a href="http://3dpancakes.typepad.com/ernie/2007/09/life-small-hole.html">Jeff has put his talk slides up</a>.
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: <br />
+<b>2007-09-02T03:27:16Z</b><br />
+Hmmm. An easy extension of the alpha-complex idea?
+
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b></b><br />
+
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2007-09-02T05:23:46Z</b><br />
+Um, the Čech complex is, sort of. At least, both the Čech complex and the alpha-complex involve sorting tuples of points by circumradius, although the Čech complex allows all tuples, even those of more than (d+1) points while the alpha-complex restricts to tuples that come from the Delaunay triangulation, and the Čech complex is more usually thought of as fixed at some specific scale parameter while the alpha-complex is I think more thought of as a sequence graded by scale. I&#x27;m not sure what insight the alpha-complex has for Vietoris–Rips complexes, though.
+</div>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>None</b>: <br />
+<b>2007-09-02T20:15:17Z</b><br />
+I was a little confused about the point in your article regarding Cech complexes, because I understood your definition to refer to balls within M itself, which I would think would be a perfectly valid (if often uninteresting) definition; why then would the containing space matter?  Shouldn&#x27;t even the definition of a Cech complex of M refer to the metric space containing M, a Cech complex of M &quot;relative to&quot; M&#x27; containing M, or something?
+
+-Ken Clarkson
+
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2007-09-02T20:31:55Z</b><br />
+Probably the wording could be made more clear. I don&#x27;t know if there&#x27;s a commonly used shorthand for &quot;the Čech complex of the set of δ-balls centered at points of X in a space Y ⊃ X&quot;, though.
+
+The point I was trying to make is, I think, the same one you&#x27;re expressing: specifying M and δ alone is not enough to determine &quot;the Čech complex&quot; because for that complex it matters in what space M is embedded.
+
+I think the actual definition of Čech complex is just that you start with a family of sets and form a simplex for every finite subfamily that has a common intersection. The balls aren&#x27;t really part of the definition, they just come in as the most likely sets to use to relate Čech complexes to Vietoris–Rips complexes.
+</div>
+

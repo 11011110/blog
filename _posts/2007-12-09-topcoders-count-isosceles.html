@@ -1,0 +1,70 @@
+---
+layout: post
+title:  'The topcoders count isosceles triangles'
+date:   2007-12-09 01:39:00
+tags:   [computational geometry, number theory]
+---
+<a href="http://forums.topcoder.com/;jsessionid=1519461073E9521580109AEDB475E2F0?module=Thread&threadID=592389&start=0&mc=7#899203">Find an algorithm for counting the number of isosceles triangles in an n × n grid</a>.
+<br />
+
+<br />
+<small>I&#x27;ve edited this several times, and am now (10 Dec) integrating the edits back into the main text to make this a little more coherent.</small>
+<br />
+
+<br />
+The best solution there (maniek&#x27;s), tweaked just a little:
+<br />
+
+<br />
+(1) Find all isosceles triangles with the origin as the apex in a (2n-1) × (2n-1) grid centered on the origin. To do so, bucket sort the points in this grid by their squared distance from the origin, and take pairs of points with the same squared distance. Note that this will only give isosceles triangles, never equilateral, because there is no equilateral triangle in a grid. Time: O(n<sup>2</sup> + k), where k is the number of triangles found. Also note that no two triangles so found are translates of each other.
+<br />
+
+<br />
+(2) For each isosceles triangle found in step 1, compute its bounding box and use it to count the number of translates of the triangle that occur in the original grid. Time: constant per triangle, or O(k) overall.
+<br />
+
+<br />
+What wasn&#x27;t there, though, is the analysis: how to bound k. As one of the topcoders noticed, there may be up to Ω(n<sup>c/log log n</sup>) points at a given distance from the origin (this comes from a famous example from Paul Erdős for finding sets of points with many unit distances); using Erdős&#x27; analysis we can prove that k is O(n<sup>2 + c/log log n</sup>). But, I think we can still bound k much closer to n<sup>2</sup>.
+<br />
+
+<br />
+Here&#x27;s a heuristic argument, not yet rigorous. The number of points at squared distance D is something like 2<sup>i</sup> where i is the number of prime factors congruent to 1 mod 4 of D (it&#x27;s not quite that because of what happens when you get the same factor more than once, but that will do for a start). So, the number of isosceles triangles for that distance is something like 4<sup>i</sup>. In addition, if a prime factor congruent to 3 mod D occurs with an odd exponent in the factorization of D, then D won&#x27;t occur as a squared distance at all. Here&#x27;s an algorithm for computing (using these rough approximations) these numbers of triangles for each distance: form a table T[D] indexed by the integers from 1 to 2n<sup>2</sup>, and initialize each table entry to 1. Then, for each prime p, if p is 1 mod 4 then multiply by 4 each entry indexed by a multiple of p, and if p is 3 mod 4 then zero out each entry indexed by a multiple of p that does not have p to an even power. The total number of triangles, k, should then be approximated by S = Σ<sub>i</sub>T[i].
+<br />
+
+<br />
+S starts off as 2n<sup>2</sup> and then is increased or decreased as we process each successive prime p. Each prime p congruent to 1 mod 4 multiplies 1/p of the table entries by 4, approximately increasing S by a factor of (1+3/p) ~ (1+1/p)<sup>3</sup>. And each prime p congruent to 3 mod 4 zeroes out roughly 1/p of the table entries, approximately decreasing S by a factor of (1-1/p) ~ (1+1/p)<sup>-1</sup>. So the total value of S at the end of this computation should be its original total before the multiplications, 2n<sup>2</sup>, times Π<sub>p</sub>(1+1/p)<sup>χ(p)</sup> where χ(p) is 3 when p is 1 mod 4 and χ(p) is -1 when p is 3 mod 3.
+<br />
+
+<br />
+Note that the similar product without the weird exponents, P = Π<sub>p</sub>(1+1/p), equals the harmonic series Σ 1/i = Θ(log n), as can be seen by considering the prime factorization of each i in the sum (this is an example of an <a href="http://en.wikipedia.org/wiki/Euler_product">Euler product</a>). P = P<sub>1</sub>P<sub>3</sub>, where P<sub>i</sub> is the product of the terms for primes congruent to i mod 4, and the product we actually want to compute can similarly be expressed as P<sub>1</sub><sup>3</sup> P<sub>3</sub><sup>-1</sup>. Since P<sub>1</sub> and P<sub>3</sub> should be of similar orders of magnitude (there are similarly many primes in each congruence class mod 4), and their product is Θ(log n), each of them should be Θ(sqrt log n). Therefore, k ~ 2n<sup>2</sup> Θ(sqrt log n)<sup>3</sup> Θ(sqrt log n)<sup>-1</sup> ~ Θ(n<sup>2</sup> log n).
+<br />
+
+<br />
+Net effect: the (still non-rigorous) analysis comes out to O(n<sup>2</sup> log n) for the overall algorithm.
+<br />
+
+<br />
+Can we prove the same bound, rigorously, without quite so much analytic number theory? Yes!
+<br />
+
+<br />
+Recall that we&#x27;re trying to bound the number of equivalence classes of isosceles triangles, under translational equivalences, in a grid. Instead of fixing the apex of the triangle, let&#x27;s fix the slope of its base to a number a/b. There are O(n/max(a,b)) possible base lengths with that slope; for each choice of base, the possible apexes are distributed along the perpendicular bisector, a line with slope -b/a that also has O(n/max(a,b)) points on it. Therefore, the total number of triangles we can form is O(∑<sub>0≤a≤b≤n</sub>(n/b)<sup>2</sup>) = O(n<sup>2</sup> ∑<sub>1≤b≤n</sub> 1/b )= O(n<sup>2</sup> log n).
+<br /><br /><hr /><br />
+<h3>Comments:</h3>
+<div style="margin-left: 0em; padding-top: 1em;">
+<b>ext_73227</b>: <br />
+<b>2007-12-11T02:18:44Z</b><br />
+This is kind of a neat post. (Although in fairness I skipped to the last paragraph of slickness - and am I right in thinking that the argument is easily tweaked to show Theta(n^2 log n)?)
+
+The neatness --- well, I know of a handful of math/CS theory grad students including myself who went through the ACM/IOI-style contests and now do TopCoder, but I don&#x27;t know of any CS theory professors who compete in TopCoder. Do you? To be sure, they consistently have good &quot;puzzly&quot; problems but this is kind of a gem in its relatedness to combinatorial enumeration (and geometry).
+</div>
+<div style="margin-left: 3em; padding-top: 1em;">
+<b>11011110</b>: <br />
+<b>2007-12-11T02:28:29Z</b><br />
+Thanks.
+
+I don&#x27;t compete there, but their forum comes up sometimes in some automated Google searches I run (this time, I think the keyword it hit was &quot;algorithm&quot;). I used to do math contests (and the academic decathlon) when I was in high school, but I don&#x27;t think I&#x27;ve been involved in any kind of competitive programming event.
+
+Yes, I think this algorithm (and the number of different isosceles triangle shapes in a grid) is Θ(n<sup>2</sup> log n), by either argument. I also think it should be possible to turn the idea in the final paragraph into a slightly faster O(n<sup>2</sup>) algorithm: for each possible base of a triangle, the regular pattern of the possible apex locations should make it possible to count all triangles with that base in constant time, rather than having to separately count the triangles with each different shape. But I haven&#x27;t worked out the details.
+</div>
+
