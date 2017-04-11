@@ -28,7 +28,7 @@ permalink: /about/
     href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative
     Commons License"
     style="border-width:0;float:left;margin-right:1em;margin-top:1ex"
-    src="/assets/CC-BY_icon.svg" width="88" height="31" /></a>The text of
+    src="{{site.baseurl}}/assets/CC-BY_icon.svg" width="88" height="31" /></a>The text of
     the posts on this blog, and all images created for these posts, are
     licensed under a <a rel="license"
     href="http://creativecommons.org/licenses/by/4.0/">Creative Commons
