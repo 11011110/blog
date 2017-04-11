@@ -4,13 +4,13 @@ title:  '3-coloring and xyz graphs'
 date:   2006-06-11 14:34:00
 tags:   [xyz graphs, topology, media theory]
 ---
-<p>It turns out there's a very simple characterization of <a href="/2006/06/09/topology-of-xyz.html">xyz graphs</a>: if a graph G is embedded on a surface, then that embedding can be represented as an xyz graph, with the surface represented via the flat polygons of the xyz graph, if and only if: (1) every face of the embedding is a disk without repeated vertices, (2) if any two faces intersect, they do so in an edge, and (3) the faces can be 3-colored.</p>
+<p>It turns out there's a very simple characterization of <a href="{{site.baseurl}}/2006/06/09/topology-of-xyz.html">xyz graphs</a>: if a graph G is embedded on a surface, then that embedding can be represented as an xyz graph, with the surface represented via the flat polygons of the xyz graph, if and only if: (1) every face of the embedding is a disk without repeated vertices, (2) if any two faces intersect, they do so in an edge, and (3) the faces can be 3-colored.</p>
 
 <p>For instance, the following three tori (drawn as rectangles with periodic boundary conditions) all form xyz graphs. The left one is the nine-hexagon torus we've already seen before, center is another twelve-hexagon torus, and right is a torus embedding of the four-dimensional cube-connected-cycles network (and also a GEM for K<sub>4,4</sub>).</p>
 
 <p align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/3x-tori.png" /></p>
 
-<p>To prove this characterization, in one direction, the coloring is given by the partition of the faces of an xyz graph into three parallel families; in the other direction we can assign each face an index number, and use the indexes of the adjacent faces of each color as the coordinates of the vertices similarly to the <a href="/2006/06/09/topology-of-xyz.html">xyz representation of GEMs</a> noted before. The requirement that the graph be 3-regular follows from property (2) above.</p>
+<p>To prove this characterization, in one direction, the coloring is given by the partition of the faces of an xyz graph into three parallel families; in the other direction we can assign each face an index number, and use the indexes of the adjacent faces of each color as the coordinates of the vertices similarly to the <a href="{{site.baseurl}}/2006/06/09/topology-of-xyz.html">xyz representation of GEMs</a> noted before. The requirement that the graph be 3-regular follows from property (2) above.</p>
 
 <p>Testing these conditions for embedded graphs can be done easily in linear time: color three faces at a vertex, propagate colors at any vertex with two colored faces, and check whether this results in a valid coloring of the whole surface. Of course, if we are just given a graph, finding the correct surface to embed it into may be harder...</p>
 
