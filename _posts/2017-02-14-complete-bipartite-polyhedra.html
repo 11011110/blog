@@ -13,17 +13,17 @@ date: 2017-02-14 18:27:00
 
 <p>Based on this calculation, the simplest complete bipartite graphs that could work are \( K_{4,4} \) and \( K_{3,6} \). Both of these form nice polyhedral subdivisions of a torus:</p>
 
-<p align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/complete-bipartite-tori.svg"></p>
+<p style="text-align:center"><img alt="Polyhedral embeddings of K_{4,4} and K_{3,6} on a torus" src="http://www.ics.uci.edu/~eppstein/0xDE/complete-bipartite-tori.svg"></p>
 
 <p>I have been unable to find manifold embeddings of these tori, but I also don't have a proof that they're impossible. I did, however, find a realization of \( K_{4,4} \) as a crossed polyhedron (meaning: a subdivision of a topological manifold, with its vertices mapped to distinct points of Euclidean space in such a way that the faces are mapped to distinct planes, but allowing edge and face crossings):</p>
 
-<p align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/crossed-K44.svg"></p>
+<p style="text-align:center"><img alt="Realization of K_{4,4} as a crossed polyhedron" src="http://www.ics.uci.edu/~eppstein/0xDE/crossed-K44.svg"></p>
 
 <p>It's based on a <a href="https://en.wikipedia.org/wiki/Complete_quadrangle">complete quadrilateral</a> in the \( z=0 \) plane (the black lines) with two of its six points lifted and lowered in \( z \) to form pairs of points. In this arrangement of points, \( A \) and \( C \) form dart-shaped quadrilaterals with the blue points on the line \( x=0 \) and with the other two blue points. Similarly, \( B \) and \( D \) form two darts with pairs of the two blue points. \( A \) and \( D \) form a tilted dart with the two blue points on the diagonal \( x=y \), and \( B \) and \( C \) also form a tilted dart with the same two diagonal points. Finally, \( A \) and \( B \) form a crossed quadrilateral (an <a href="https://en.wikipedia.org/wiki/Antiparallelogram">antiparallelogram</a>) with the two blue points on the line \( x+y=3 \), and \( B \) and \( D \) form another antiparallelogram with the same two blue points. So each edge of the complete bipartite graph is used twice, giving us a topological manifold.</p>
 
 <p>This is not the torus above, because the face pairings are different. It turns out to be a different torus:</p>
 
-<p align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/brick-wall-K44.svg"></p>
+<p style="text-align:center"><img alt="Alternative polyhedral torus embedding of K_{4,4} used by the realization" src="http://www.ics.uci.edu/~eppstein/0xDE/brick-wall-K44.svg"></p>
 
 <p>So, this does show that \( K_{4,4} \) can be mapped to space so that the points form eight planes of four points, intersecting in the desired edges, and forming a configuration of eight points and eight planes with four points per plane and four planes per point. But it doesn't really solve the original problem. Can it be untangled to form an embedded torus with the same connectivity?</p>
 

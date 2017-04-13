@@ -27,7 +27,7 @@ The problem studied in Knuth&#x27;s paper is <a href="http://en.wikipedia.org/wi
 
 <p>Exact cover is one of the <a href="http://en.wikipedia.org/wiki/Karp%27s_21_NP-complete_problems">21 NP-complete problems</a> in Karp&#x27;s 1972 “<a href="http://www.cs.berkeley.edu/~luca/cs172/karp.pdf">Reducibility Among Combinatorial Problems</a>,” a paper that forms (together with <a href="http://en.wikipedia.org/wiki/Cook%27s_theorem">Cook&#x27;s theorem</a>) the foundation of NP-completeness theory. Knuth describes applications of exact cover in finding <a href="http://en.wikipedia.org/wiki/Polyomino">polyomino</a> tilings, using sets of the cells that can be covered by each possible placement of each polyomino. The seven exact covers above can be interpreted in this way as the tilings of a 2×2 square by monominos and dominos:</p>
 
-<p align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/knuth/domtile.png" /></p>
+<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/knuth/domtile.png" /></p>
 
 <p>Sudoku puzzles can also be <a href="http://www.garethrees.org/2007/06/10/zendoku-generation/">expressed as exact cover problems</a>, in which there is one element for each cell, one element for each combination of a digit and a group of nine cells, and one set for each combination of a digit and a single cell. Another standard combinatorial problem, the <a href="http://en.wikipedia.org/wiki/Eight_queens_problem">eight queens problem</a>, is not quite an exact cover problem directly (the selected queen placements must cover each row and column of a chessboard but only cover 16 of the 30 diagonals) but can be made into one by adding seven additional “virtual pieces” that may each cover two perpendicular diagonals but no rows or columns. If all sets in an exact cover instance have exactly two elements (as for instance, in the eight rooks problem, in which the set representing each rook placement contains a single row and a single column), the problem becomes that of <a href="http://mathworld.wolfram.com/PerfectMatching.html">perfect matching</a>, a polynomially-solvable but nontrivial special case.</p>
 
@@ -61,11 +61,11 @@ The problem studied in Knuth&#x27;s paper is <a href="http://en.wikipedia.org/wi
 
 <p><i>Proof sketch</i>: We show by induction that, if the first <i>i</i> components of <b><i>s</i></b> are equal to <i>k</i> + <i>i</i>, then the first <i>i</i> sets are totally ordered by inclusion and each are subsets of all remaining sets, and further that in this case <i>s</i><sub><i>i</i> + 1</sub> ≥ <i>k</i> + <i>i</i> + 1. As a base case, the total ordering holds vacuously for <i>i</i> = 0, and in this case the lower bound <i>s</i><sub>1</sub> ≥ <i>k</i> holds as <i>S</i><sub>1</sub> must intersect each of the <i>k</i> sets <i>S<sub>i</sub></i>. In the inductive case, suppose that all sets up to but not including <i>S<sub>i</sub></i> have the minimum size allowed by the lemma. Then by the induction hypothesis, <i>S<sub>i</sub></i> is a superset of <i>S</i><sub><i>i</i> − 1</sub>, and has a nonempty intersection with all of the <i>k</i> + <i>i</i> − 2 sets that <i>S</i><sub><i>i</i> − 1</sub> intersects. Because it is a superset, <i>Y</i> = <i>S<sub>i</sub></i> \ <i>S</i><sub><i>i</i> − 1</sub> is nonempty; each element <i>y</i> in <i>Y</i> must be contained in at least <i>k</i> sets of the set system <i>F</i>, none of which can be among the <i>i</i> − 1 sets earlier in the sequence. At most <i>k</i> − 1 of the sets containing y can be among the <i>k</i> + <i>i</i> − 2 sets already known to intersect <i>S<sub>i</sub></i>, for the <i>i</i> − 1 sets occurring earlier in the sequence do not contain <i>y</i>. Thus, there must be at least one additional set containing <i>y</i>. If there is exactly one additional set <i>T<sub>i</sub></i> that contains each <i>y</i> in <i>Y</i>, then <i>Y</i> is contained in all subsequent sets <i>S<sub>j</sub></i> for <i>j</i> &gt; <i>i</i>, and <i>s<sub>i</sub></i> ≥ <i>k</i> + <i>i</i> − 1; otherwise, there are two or more additional sets intersecting with <i>Y</i>, and <i>s<sub>i</sub></i> ≥ <i>k</i> + <i>i</i>. In either case the induction hypothesis holds and the lemma is proven.</p></blockquote>
 
-<p align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/knuth/chain.png" /></p>
+<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/knuth/chain.png" /></p>
 
 <p>Using this lemma, we may proceed to analyze cases. In general, each case will lead to a recurrence of the type <i>T</i>(<i>n</i>) = Σ <i>T</i>(<i>n</i> − <i>s<sub>i</sub></i>), which is solved as κ<sup><i>n</i></sup> where κ is a root of the function 1 − Σ κ<sup>−<i>s<sub>i</sub></i></sup>. A numerical approximation to κ may easily be found <a href="http://www.ics.uci.edu/~eppstein/0xDE/knuth/recur.py">by binary search</a>, or by more sophisticated numerical search procedures, as this function is negative for κ between one and the desired root, and positive for all κ larger than the root. For instance, the graph of the function 1 − 1/κ<sup>3</sup> − 2/κ<sup>5</sup> shown below (created with Walter Zorn&#x27;s <a href="http://www.walterzorn.com/grapher/grapher_e.htm">function grapher</a>) shows how well behaved this function is for <b><i>s</i></b> = (3,5,5). The overall worst-case behavior of an algorithm of this type can be bounded as the maximum among the solutions of the different recurrences arising from the different cases. We need only determine the minimal vectors <b><i>s</i></b> allowable by the lemma, search for the roots corresponding to each vector, and choose the maximum value κ among the different roots found by these searches.</p>
 
-<p align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/knuth/plot355.png" /></p>
+<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/knuth/plot355.png" /></p>
 
 <p>Thus, for Algorithm X, with the pivot rule in which the algorithm chooses <i>x</i> to be contained in as few sets as possible and using Lemma 1 to bound <b><i>s</i></b>, we have the following cases.</p>
 <ul>
@@ -126,7 +126,7 @@ replace <i>U</i> with <i>U</i> \ <i>S</i><sub>1</sub>, remove <i>S</i><sub>1</
 
 <p>As an example, consider applying Algorithm Y to the example instance we started with, with eight sets, four elements, and seven exact covers. The recursion tree has only one multiway branch, at the outermost level of recursion; each successive call after that leads to an instance of the nesting rule, until the problem reduces to instances with a single set:</p>
 
-<p align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/knuth/yex.png" /></p>
+<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/knuth/yex.png" /></p>
 
 <p>The 7<sup><i>n</i>/8</sup> lower bound no longer applies to this algorithm, because different exact covers do not necessarily lead to different leaves of the recursion tree.</p>
 
@@ -139,7 +139,7 @@ replace <i>U</i> with <i>U</i> \ <i>S</i><sub>1</sub>, remove <i>S</i><sub>1</
 
 <li><p>If the algorithm branches on <i>x</i>, and <i>x</i> is contained in three sets of <i>F</i>, <b><i>s</i></b> must equal or be componentwise larger than either (3,5,5) or (4,4,5): as shown below, Lemma 1 rules out (3,4,5) and smaller vectors, while Lemma 2 rules out (4,4,4). The (3,5,5) case gives us a recurrence solving to approximately 1.29803<sup><i>n</i></sup>, while the (4,4,5) case solves to approximately 1.29065<sup><i>n</i></sup>.</p>
 
-<p align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/knuth/cases3d.png" /></p></li>
+<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/knuth/cases3d.png" /></p></li>
 
 <li><p>If the algorithm branches on <i>x</i>, and <i>x</i> is contained in four sets of <i>F</i>, <b><i>s</i></b> must equal or be componentwise larger than (4,5,7,7), (4,6,6,6), (5,5,6,6), or (5,5,5,7). The four resulting recurrences solve to approximately 1.28449<sup><i>n</i></sup>, 1.29294<sup><i>n</i></sup>, 1.28854<sup><i>n</i></sup>, and 1.29193<sup><i>n</i></sup> respectively.</p></li>
 

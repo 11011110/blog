@@ -10,11 +10,11 @@ tags:   [topology, geometry]
 
 <p>Start with your favorite cellular embedding of a complete graph (that is, an embedding on a two-dimensional surface with the property that every face of the embedding is topologically a disk; every <a href="http://en.wikipedia.org/wiki/Rotation_system">rotation system</a> of the graph gives rise to such an embedding). Below I&#x27;ve shown an embedding of the seven-vertex complete graph on a torus, with the property that every face is a triangle; it&#x27;s the embedding that is realized geometrically by the <a href="http://en.wikipedia.org/wiki/Cs%C3%A1sz%C3%A1r_polyhedron">Császár polyhedron</a>.</p>
 
-<p align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/k7-cellular.png" /></p>
+<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/k7-cellular.png" /></p>
 
 To make a smooth surface out of this embedding, start by replacing all vertices of the embedding by congruent regular polygons, and all edges by congruent rectangles with Euclidean geometry connecting pairs of regular polygon edges, leaving gaps in the faces. When I tried this using stapled paper rectangles for the embedding of K<sub>7</sub>, I got something that looks more like a tangled mess than a nice surface, but I believe that I really did embed it as a nice surface, in the sense that each triangular face is the boundary of a topological disk that is disjoint from the rest of the graph. (This doesn&#x27;t contradict the fact that K<sub>7</sub> is <a href="http://en.wikipedia.org/wiki/Linkless_embedding">inherently linked</a> — the embedding has lots of triangles that aren&#x27;t faces.) Filling in those disks with a sufficiently flexible material would produce a torus embedded into 3-space.
 
-<p align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/paper-k7-m.jpg" /></p>
+<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/paper-k7-m.jpg" /></p>
 
 <p>Finally, replace the middle of each face by a nice smooth surface; in this example, a nice flat equilateral triangle will work well enough. In general, we need to ensure that there is never a path across any face between two vertices of the complete graph that is shorter than the rectangles we used to connect the same two vertices along the edges of the graph. Also, for higher numbers of vertices, it&#x27;s not possible to use Euclidean geometry because the vertex angles don&#x27;t add up to what they should for a Euclidean polygon. Nevertheless, neither of these issues is very problematic: it&#x27;s not hard to create a smooth 3d surface that fits the frame of the edges surrounding it, is topologically a disk, and is not too short across the middle.</p>
 

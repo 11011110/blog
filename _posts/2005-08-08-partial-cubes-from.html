@@ -13,7 +13,7 @@ tags:   [partitions, media theory, graph drawing, number theory]
 
 <p>Due to this, we can apply all the <a href="http://arxiv.org/abs/cs.DS/0206033">algorithms for partial cube computations</a> I&#x27;ve been working on, including the ones for <a href="http://arxiv.org/abs/cs.DS/0406020">drawing partial cubes nicely</a>, to show the structure of the set of binary partitions.  E.g., below are the binary partitions of 20; the coarsest partition 16+4 is at top left while the vertex at lower right represents the partition into 20 ones.</p>
 
-<p align="center"><img src="http://www.ics.uci.edu/~eppstein/numth/binpart20.png" /></p>
+<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/numth/binpart20.png" /></p>
 
 <p>From this drawing, it appears (and one can verify) that this graph can actually be embedded in a distance-preserving way using three-dimensional integer coordinates (under the L<sub>1</sub> metric), even though the bitvector representation uses 19 dimensions.  The three-dimensional coordinates were found automatically by an algorithm for
 <a href="http://arxiv.org/abs/cs.DS/0402028">minimum-dimension lattice embedding</a>.  In general, for binary partitions of <i>n</i>, at most floor(log<sub>2</sub> <i>n</i> - 1) integer coordinates are needed (the splits of the same size values form edges that can all be lined up along the same dimension) but this example hints that this is not a tight bound.</p>

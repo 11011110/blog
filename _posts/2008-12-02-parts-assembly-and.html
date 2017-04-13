@@ -6,11 +6,11 @@ tags:   [antimatroids, geometry]
 ---
 <p>One of the toys on my desk is a small plastic <a href="http://en.wikipedia.org/wiki/Burr_puzzle">burr puzzle</a>, one of the simplest burr puzzles possible. It consists of six pieces, each in the shape of a <a href="http://en.wikipedia.org/wiki/Cuboid">square prism</a> with beveled ends and notches in the middle. The bevels are there only for aesthetics, but the notches are important for allowing the pieces to fit together in the puzzle solution. One yellow piece is unnotched, one has two notches, both green pieces also have two notches, and both blue pieces have three notches. I&#x27;ve found a simple and easy-to-remember way to put it together: place the notched yellow piece down as a base with its notches up, stand the two green pieces on either side of it (with their bottom notches interlocking with the edges of the base), rest the two blue pieces in the notches of the base, and finally slip the unnotched yellow piece into the hole formed by the top notches of the standing green pieces. But then I started wondering: is that the only possible construction order? In how many other orders can I put the puzzle together, if I place the pieces into their final positions one piece at a time?</p>
 
-<p align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/burr3states.jpg" /></p>
+<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/burr3states.jpg" /></p>
 
 <p>I eventually came up with the following state diagram. There are 24 different states the pieces can be in, starting from none of them being placed correctly and ending with them all in place, and it&#x27;s easy enough to count paths from the starting position if one observes that all states with a given number of pieces have the same number of predecessors with one fewer piece: there are two paths to each two-piece state, six paths to each three-piece state, 18 paths to each four-piece state, and 36 paths to the penultimate and final states.</p>
 
-<p align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/burr-states.png" /></p>
+<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/burr-states.png" /></p>
 
 <p>But it&#x27;s all a bit messy looking. How can we be sure I haven&#x27;t missed something? And is there some cleaner way of modeling this sort of state space?</p>
 

@@ -12,7 +12,7 @@ For instance, the meet of two opposite sides of an ordinary 3-dimensional cube (
 
 <p>Here&#x27;s an example, for the face lattice of a square (a 2-dimensional cube). The inclusion ordering is shown by the edges, and each lattice element is labeled both by the part of the square it represents and by the corresponding wildcard string.</p>
 
-<p align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/Square-face-lattice.png" border="0" /></p>
+<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/Square-face-lattice.png" border="0" /></p>
 
 <p>A 2012 NSDI paper by Kazemian, Varghese, and McKeown, &quot;<a href="https://www.usenix.org/system/files/conference/nsdi12/nsdi12-final8.pdf">Header Space Analysis: Static Checking For Networks</a>&quot;, uses some of these operations. It needed them to be fast, so it describes how to implement them using a constant number of bit-manipulation operations. (Actually, it omits the join operation, because what it really wants is the union, but that can&#x27;t always be described as a single face.) Their basic idea is to expand each symbol of the wildcard face description into two bits: 0 ⇒ 01, 1 ⇒ 10, and * ⇒ 11. Although the empty set Ø could not be written as a wildcard string, it can be represented in the same way as a binary number, the number 0. With this representation, we can perform subset testing, and meet and join operations, using a constant number of bit operations, as follows:</p>
 

@@ -11,17 +11,17 @@ tags:   [sudoku]
 
 <p>But what happens when a cell has edges with three or more different labels, all belonging to nonrepetitive cycles?  Which two digits should we restrict the cell&#x27;s values to?  I used to think that this situation could not arise in a valid Sudoku puzzle, so my code raised an exception in this case.  That was the bug.  It can happen.  Consider for instance the following puzzle:</p>
 
-<p align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/triple-threat/puzzle.png" /></p>
+<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/triple-threat/puzzle.png" /></p>
 
 <p>After some earlier steps (including a previous pass of the same sort of bilocal analysis) we reach the following configuration:</p>
 
-<p align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/triple-threat/partial.png" /></p>
+<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/triple-threat/partial.png" /></p>
 
 <p>Two different cycles are possible here, both sharing the same edges for part of the cycle and diverging for another part:</p>
 
-<p align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/triple-threat/cycle1.png" /></p>
+<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/triple-threat/cycle1.png" /></p>
 
-<p align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/triple-threat/cycle2.png" /></p>
+<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/triple-threat/cycle2.png" /></p>
 
 <p>Note especially cell R2C8, in the top right corner.  One cycle uses edges labeled 1 and 5 at that cell; the other cycle uses edges labeled 4 and 5.  So this is an example of the triple threat that I raised an exception for.  But it&#x27;s still a valid puzzle: if we restrict R2C8 to contain only 4 and 5, and to contain only 1 and 5, it still has a possible value, 5.  The two cycles together allow us to make a stronger deduction than if we had only one of them.  If there were a third cycle, labeled with 1 and 4, then we would truly have a contradiction, but no such cycle exists.</p>
 

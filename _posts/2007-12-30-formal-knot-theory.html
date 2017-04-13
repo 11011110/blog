@@ -12,10 +12,10 @@ tags:   [knot theory, interdigitating trees, media theory]
 
 <p>I was hopeful that, analogously to my results on flip graphs, the obvious necessary conditions would also be sufficient, but it was not to be. The simplest examples of bipartite Eulerian graphs are even cycles, which give rise to even cycle rotation graphs, so far so good. The next graph I tried was a 4-cycle with doubled edges:</p>
 
-<p align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/fkt/2x4cycle.png" /></p>
+<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/fkt/2x4cycle.png" /></p>
 
 <p>Its spanning trees consist of any capitalization of three of the four letters. There are 32 spanning trees: four choices of three letters, times eight capitalizations. A rotation either changes the capitalization of a letter, or replaces a letter with the adjacent missing letter with the same capitalization. The states involving a single choice of three letters form a cube, and the states involving any two adjacent choices of three letters form a 4-dimensional hypercube. However, it does not link up to form a 5-cube: if you start at any state, and repeatedly rotate in such a way that each rotation changes which three of the four letters are included, then after four rotations you will return to the same cube but with the capitalizations cyclically shifted by one position, while in a 5-cube this sequence of four transitions should return you to your starting point. In fact, the rotation graph of the doubled 4-cycle is not even a partial cube.</p>
 
-<p align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/fkt/twisted5cube.png" /></p>
+<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/fkt/twisted5cube.png" /></p>
 
 <p>So, if it is possible or useful to characterize the plane graphs that form partial-cube rotation graphs, the characterization is more complicated than simply avoiding odd cycles and odd vertices. Alternatively, perhaps the twisted 5-cube, and rotation graphs more generally, have some useful structure other than as a partial cube...</p>

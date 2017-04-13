@@ -8,21 +8,21 @@ tags:   [arrangements]
 
 <p>Suppose you have an apparatus consisting of two mirrors, hinged together, and a laser attached perpendicularly to one of the mirrors.  Suppose also that there&#x27;s enough vapor in the air to make the laser beam visible:</p>
 
-<p align="center"><img src="http://www.ics.uci.edu/~eppstein/junkyard/simplicial-arrangements/kaleidoscope.png" /></p>
+<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/junkyard/simplicial-arrangements/kaleidoscope.png" /></p>
 
 <p>If you look into this from the side, it will act like a kaleidoscope, so that you see not just the wedge between the two mirrors and the beam within that wedge, but reflected copies of the wedge and beam.  The reflected copies of the beam will match up with the real beam to look like lines, and if the angle of the wedge is of the form π/k for some integer k, the wedges will link around evenly to cover the plane:</p>
 
-<p align="center"><img src="http://www.ics.uci.edu/~eppstein/junkyard/simplicial-arrangements/R24.png" /></p>
+<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/junkyard/simplicial-arrangements/R24.png" /></p>
 
 <p>Here I&#x27;ve drawn the case for k=12, also drawing lines for the mirrors and their reflected images.  It&#x27;s our old friend, <a href="http://www.livejournal.com/users/11011110/13475.html">the simplicial arrangement R(24)</a>.</p>
 
 <p>Now, add another laser, starting farther out on the other mirror, so that every third bounce of the second laser hits the same sequence of reflection points as every bounce of the first laser, and so that its final bounce is one step after the final point of reflection of the first beam.  Actual light won&#x27;t do this correctly (the angles aren&#x27;t quite right) but you can fake it by using a piece of thread instead and tacking it down to the mirror at the appropriate points.</p>
 
-<p align="center"><img src="http://www.ics.uci.edu/~eppstein/junkyard/simplicial-arrangements/kaleidoscope2.png" /></p>
+<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/junkyard/simplicial-arrangements/kaleidoscope2.png" /></p>
 
 <p>Looking at this second beam in the kaleidoscope, interleaved with the first one, produces a more complex arrangement:</p>
 
-<p align="center"><img src="http://www.ics.uci.edu/~eppstein/junkyard/simplicial-arrangements/P37.png" /></p>
+<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/junkyard/simplicial-arrangements/P37.png" /></p>
 
 <p>If the line at infinity is included, this forms a simplicial arrangement with 3k+1 lines, whenever k=0 or 4 mod 6.  It&#x27;s an <a href="http://www.livejournal.com/users/11011110/15749.html">arrangement of pseudolines</a> rather than lines because of the incorrect reflection angles of the second beam.  In connection with <a href="http://www.livejournal.com/users/11011110/12756.html">the construction of cubic partial cubes from arrangements</a>, I think this is interesting, not only because it provides yet another infinite family of arrangement-based partial cubes, but also because it looks like we can <a href="http://www.livejournal.com/users/11011110/13674.html">glue this arrangement to a rotated copy of itself</a> to provide an infinite family of cubic partial cubes that do not come directly from a single arrangement.  But I&#x27;m not yet sure how to prove that the result of this gluing operation is always itself a partial cube...</p>
 

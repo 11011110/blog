@@ -9,7 +9,7 @@ tags:   [sudoku]
 
 <p>Both rules have the same purpose: looking only at the cells where a single digit may be placed, determine which of those cells can possibly be used in a solution to the puzzle, and eliminate the others. For example, suppose that (by other deduction rules) we have limited the locations for the digit 7 in four squares of a puzzle to the X&#x27;s and Y&#x27;s shown in the following diagram (with the 7&#x27;s in the other five squares placed in positions compatible with these locations):</p>
 
-<p align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/nishio/xdigit.png" /></p>
+<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/nishio/xdigit.png" /></p>
 
 <p>If we place a 7 at the X at bottom left, it eliminates the Y at top left,
 forcing the 7 in that square to be placed at X as well, and so on. By a sequence of similar deductions we find that if any 7 is placed on an X, all four squares must have their 7&#x27;s placed at X&#x27;s.  But the X&#x27;s do not give a consistent solution to the puzzle (the bottom two are on the same row), so none of the 7&#x27;s can be placed on any X.  We can deduce that the 7&#x27;s may only be placed at the positions marked Y, and in particular we can immediately place 7&#x27;s at the Y&#x27;s in the top two squares.  We would like a deduction rule that quickly comes to this conclusion.</p>
@@ -21,7 +21,7 @@ It forms a bipartite graph, having 18 vertices, one for each row and one for eac
 
 <p>In the example above, considering only the rows and columns involved in the marked cells, we get a graph with four perfect matchings:</p>
 
-<p align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/nishio/matchings.png" /></p>
+<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/nishio/matchings.png" /></p>
 
 <p>Unfortunately, only two of the matchings correspond to possible solutions of the puzzle.  The other two have two 7&#x27;s in two of the four squares and none in the other two squares, leading to invalid solutions.  This is not detected by the matching algorithm because it only considers rows and columns, not squares.  So my program&#x27;s rule fails to eliminate the X&#x27;s as potential placements for the digit 7.</p>
 
@@ -31,7 +31,7 @@ It forms a bipartite graph, having 18 vertices, one for each row and one for eac
 
 <p>However, nishio is not omniscient.  For instance, suppose that the locations for the digit 4 in a puzzle have been limited to the marked cells below:</p>
 
-<p align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/nishio/checkers.png" /></p>
+<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/nishio/checkers.png" /></p>
 
 <p>Can we place 4 at A or B?  As it turns out, B can be part of a valid solution.  However, if we place 4 at A, the remaining cells can be decomposed into two independent blocks, one with five columns and four rows, and the other with three columns and four rows; it is impossible to fill all the rows and columns of both blocks, so the placement at A should be eliminated.  The matching rule can detect this inconsistency, but nishio can&#x27;t.</p>
 
@@ -61,7 +61,7 @@ It forms a bipartite graph, having 18 vertices, one for each row and one for eac
 We place three positions in each of these squares, so that a certain row R can only be covered if one of the variables is assigned true, and so that the other three rows used by these gadgets can always be covered.
 Finally we fill in the remaining squares of the board with positions of S not belonging to the rows and columns used by these gadgets.  A schematic view of this reduction is shown below.</p>
 
-<p align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/nishio/3sat.png" /></p>
+<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/nishio/3sat.png" /></p>
 
 <h3>Where Do We Go From Here?</h3>
 

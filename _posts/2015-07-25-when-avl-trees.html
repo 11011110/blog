@@ -20,7 +20,7 @@ def parent(x):
 
 <p>You might think that this is a wrong answer, because AVL trees don&#x27;t have to be perfectly balanced. And probably the students giving this answer misunderstood the question, or the behavior of AVL trees, or both. But it turns out to be correct! If you insert items into an AVL tree in sorted order, without doing any deletions, you will always get a perfectly balanced tree. More precisely, as can be shown by induction, the right spine of the tree will always have a sequence of complete trees dangling from it, so that the leaves within each of these trees are all at the same level and the leaves of any two of these trees are all at levels that are within one of each other. Here are the first few steps of the process:</p>
 
-<p align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/IncrementalAVL.png" /></p>
+<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/IncrementalAVL.png" /></p>
 
 <p>The next steps, inserting 10 and 11, do the same thing to the right subtree that the insertions of 6 and 7 did to the whole tree. But when we insert 12, we get a right subtree that looks like the whole tree for 8, too deep to balance the left subtree, so we rebalance the root making the left subtree be a complete binary tree one level deeper, etc.</p>
 

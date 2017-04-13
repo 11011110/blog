@@ -8,7 +8,7 @@ The <a href="http://en.wikipedia.org/wiki/Pseudoforest">pseudoforests</a> can be
 <br />
 
 <br />
-<div align="center"><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Butterfly_and_diamond_graphs.svg/432px-Butterfly_and_diamond_graphs.svg.png" /><br />The bowtie (left) and the diamond (right).</div>
+<div style="text-align:center"><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Butterfly_and_diamond_graphs.svg/432px-Butterfly_and_diamond_graphs.svg.png" /><br />The bowtie (left) and the diamond (right).</div>
 <br />
 First a word about terminology: what I&#x27;m calling here the bowtie appears to be more commonly called a butterfly (e.g. in <a href="http://wwwteo.informatik.uni-rostock.de/isgci/smallgraphs.html">ISGCI</a>) so that&#x27;s what I call it on Wikipedia. But here, I&#x27;d prefer to call it a bowtie, to avoid confusion with the butterfly graphs used as parallel computer communication networks.
 <br />
@@ -22,25 +22,25 @@ First, suppose that G is a BCBMFG with <a href="http://en.wikipedia.org/wiki/Gir
 <br />
 
 <br />
-<div align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/bmfg/cycles.png" /><br />BCBMFG type I: cycles.</div>
+<div style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/bmfg/cycles.png" /><br />BCBMFG type I: cycles.</div>
 <br />
 Second, suppose that G is a BCBMFG containing a triangle abc, and that some component of the remaining graph attaches to this triangle at all three of its vertices. This attachment must be a tree: if it contained a cycle, it and triangle abc could be contracted together to form a bowtie. There can be no second attachment to abc, for the cycle formed by the second attachment and one of the edges of abc could be combined by the cycle formed by the first attachment and a different edge of abc to form a bowtie. Thus, in this case, the attachment and the triangle together form a <b>subdivision of the complete graph K<sub>4</sub></b>. At most one edge of K<sub>4</sub> can be subdivided, for the triangle itself is not subdivided and if two legs of the attachment were subdivided, we could contract the third leg and omit the opposite triangle edge to form a figure eight, contractible to a bowtie.
 <br />
 
 <br />
-<div align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/bmfg/subk4.png" /><br />BCBMFG type II: subdivided K<sub>4</sub>.</div>
+<div style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/bmfg/subk4.png" /><br />BCBMFG type II: subdivided K<sub>4</sub>.</div>
 <br />
 Third, suppose that G is a BCBMFG containing a triangle abc, and all components of the remaining graph attach at two vertices of abc. They must all attach at the same two vertices, for otherwise we could form a figure eight by cycles through two attachments and two edges of abc. Each attachment must be a simple path, because if an attachment contained a cycle then it and triangle abc could be contracted together to form a bowtie. At most one attachment can be a path of length three or more, because if there were two such long paths we could contract abc to form a figure eight. If there are no long paths, then G is a <b>book of triangles</b> (or complete <a href="http://en.wikipedia.org/wiki/Split_graph">split graph</a>). If there is one long path, then it and one of the edges of abc forms a long cycle, and we have a <b>cycle of length ≥ 4 with a book of triangles attached to one edge</b>.
 <br />
 
 <br />
-<div align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/bmfg/triangles.png" /><br />BCBMFG types III and IV: book of triangles, and cycle with attached book of triangles.</div>
+<div style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/bmfg/triangles.png" /><br />BCBMFG types III and IV: book of triangles, and cycle with attached book of triangles.</div>
 <br />
 In the remaining case, G is a triangle-free BCBMFG containing a quadrilateral abcd. Again, look at the attachments to abcd formed by the components of the remaining graph; each must be cycle-free and attach to two or more vertices of abcd. No such attachment can connect adjacent vertices of abcd, because it would either form a triangle or allow us to form a figure eight by contracting abcd; thus each attachment connects an opposite pair of vertices of abcd. It is not possible to connect both opposite pairs, because in this case contracting one edge of abcd and deleting the opposite edge would produce a figure eight; therefore all attachments connect the same opposite pair. And as in the triangle case, at most one of the attachments can be a long path, or we could form a figure eight by contracting abcd. If there are no long paths, then G is a <b><a href="http://en.wikipedia.org/wiki/Complete_bipartite_graph">complete bipartite graph</a></b> K<sub>2,i</sub>. If there is a long path, then G is a <b>cycle of length ≥ 4 with one of its edges replaced by a complete bipartite graph</b>.
 <br />
 
 <br />
-<div align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/bmfg/k2i.png" /><br />BCBMFG types V and VI: K<sub>2,i</sub>, and cycle with edge replaced by K<sub>2,i</sub>.</div>
+<div style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/bmfg/k2i.png" /><br />BCBMFG types V and VI: K<sub>2,i</sub>, and cycle with edge replaced by K<sub>2,i</sub>.</div>
 <br />
 And that&#x27;s the complete classification! ...at least, if I haven&#x27;t made any mistakes.
 <br />

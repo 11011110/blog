@@ -7,7 +7,7 @@ tags:   [partitions, combinatorial enumeration, number theory]
 <p>From any partition of <i>n</i>, one can get a partition of <i>n</i> - 1, by subtracting one from the last value in the partition and removing it if it becomes zero.  Connecting any two partitions related in this way forms an infinite tree, in which the nodes on level <i>n</i> represent the partitions of <i>n</i>:</p>
 
 
-<p align="center"><img src="http://www.ics.uci.edu/~eppstein/numth/partition-unit-tree.png" /></p>
+<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/numth/partition-unit-tree.png" /></p>
 
 <p>My recursive lexicographic and reverse-lexicographic-order partition generators work by traversing this tree (using a <a href="http://aspn.activestate.com/ASPN/Cookbook/Python/Recipe/231503">self-recursive BFS pattern</a>, but a level-limited DFS would work just as well); they&#x27;re efficient, even though they traverse a lot of lower-level nodes that aren&#x27;t part of the output, because the number of nodes in the tree increases by a constant factor at each level.</p>
 
@@ -15,7 +15,7 @@ tags:   [partitions, combinatorial enumeration, number theory]
 <p>On the other hand, there&#x27;s another way to form a finite tree out of the partitions of <i>n</i> only: from any partition with two or more values in it, form a shorter partition in which the largest two values in the partition have been replaced by their sum, and connect the pairs of partitions so related.</p>
 
 
-<p align="center"><img src="http://www.ics.uci.edu/~eppstein/numth/partition-merge-tree.png" /></p>
+<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/numth/partition-merge-tree.png" /></p>
 
 
 <p>It looks like a depth first preorder traversal of this tree should provide an efficient generator for partitions in reverse colexicographic order, and a depth first post-order traversal of the reversed tree should generate partitions in colexicographic order.  Terminating these traversals early would list the partitions using only values larger than some cutoff, or the partitions that use at least one value below the cutoff.  The maximum value in a partition decreases as we progress down the tree, so we can list all partitions that have maximum larger than some cutoff by traversing the subtree they form.  Breadth first traversal would list partitions in order by their length, but I don&#x27;t know how to do this in a way that&#x27;s efficient both in time and in space; iterative deepening (or the equivalent self-recursive BFS) doesn&#x27;t work so well because the tree has too many of its nodes too close to the root.  Instead, to list partitions in order by their length, efficiently, one can use Hindenburg&#x27;s algorithm described by Knuth for listing partitions of each possible length, separately, but unfortunately I don&#x27;t know of a nice way of relating this to tree traversals...</p>

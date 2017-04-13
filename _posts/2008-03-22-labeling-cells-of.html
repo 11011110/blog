@@ -8,15 +8,15 @@ tags:   [chord diagrams, media theory]
 
 <p>Draw any triangle-free chord diagram in such a way that each chord partitions the disk in which the diagram is drawn into a region inside the chord and a region outside the chord, and such that one of the regions of the arrangement is outside all of the chords.</p>
 
-<p align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/chord-diag/13u.png" /></p>
+<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/chord-diag/13u.png" /></p>
 
 <p>Now, consider the <a href="http://en.wikipedia.org/wiki/Partially_ordered_set">partial order</a> in which chord x is a descendant of chord y if x lies entirely inside y. Below is a <a href="http://en.wikipedia.org/wiki/Hasse_diagram">Hasse diagram</a> for partial order formed in this way from the same example chord diagram.</p>
 
-<p align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/chord-diag/13po.png" /></p>
+<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/chord-diag/13po.png" /></p>
 
 <p>The arrangement of the chords partitions the disk into regions; the set of chords containing any region is an <a href="http://en.wikipedia.org/wiki/Upper_set">upper set</a> in the partial order. There must be either one or two <a href="http://en.wikipedia.org/wiki/Minimal_element">minimal elements</a> in this upper set (by the assumption that the diagram is triangle-free), and we can use these elements to label each region.</p>
 
-<p align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/chord-diag/13l.png" /></p>
+<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/chord-diag/13l.png" /></p>
 
 <p>These labels have some very nice properties. Firstly, the labels consist exactly of the empty set, each chord, and each crossing pair of chords. Thus, the number of regions can be seen to be exactly the number of crossings, plus the number of chords, plus one. (This is true more generally without the assumption that the diagram is triangle-free, by <a href="http://www.ics.uci.edu/~eppstein/junkyard/euler/">Euler&#x27;s formula</a>, but not with as simple a <a href="http://en.wikipedia.org/wiki/Bijective_proof">bijective proof</a>.)</p>
 

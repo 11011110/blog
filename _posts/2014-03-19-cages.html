@@ -14,7 +14,7 @@ tags:   [graph theory]
 </ul>
 An example is the <a href="https://en.wikipedia.org/wiki/Petersen_graph">Petersen graph</a>, which is the unique smallest 3-regular graph with girth 5 and therefore is also known as the (3,5)-cage. Another, less well known, is the <a href="https://en.wikipedia.org/wiki/Robertson_graph">Robertson (4,5)-cage</a>. Challenge: find a better layout than Robertson&#x27;s, below (which I took from Wikipedia and at least shows some hints at symmetry), or than the tangled circular layouts also shown in the Wikipedia article.</p>
 
-<p align="center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/Robertson-cage.png" /></p>
+<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/Robertson-cage.png" /></p>
 
 <p>I don&#x27;t think it&#x27;s obvious that cages exist, for all combinations of <i>r</i> and <i>g</i>, but they do. They have to be big: A simple argument based on the fact that a breadth first search of depth up to half the girth can&#x27;t find any cycles shows that these graphs must have Ω((<i>r</i> − 1)<sup><i>g</i>/2 − O(1)</sup>) vertices, exponential in <i>g</i> even when <i>r</i> is bounded. Turning this around, if <i>n</i> is the number of vertices in such a graph, <i>g</i> can be at most 2 log<sub><i>r</i> − 1</sub> <i>n</i> + O(1), only logarithmically small.</p>
 
