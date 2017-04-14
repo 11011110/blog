@@ -11,7 +11,7 @@ tags:   [python, trees, number theory]
 <li>If the nodes are placed into their breadth-first search ordering, then two consecutive nodes have the same label if and only if they have the same parent.</li>
 </ul>
 
-<p>There are two choices for the root label, but the trees they produce are almost the same as each other, so let's say the root is labeled 2, giving the tree shown below together with its <a href="http://11011110.livejournal.com/171440.html">spiraling breadth first search</a> order. (If the root were labeled 1, the only difference would be to add one more node labeled 1 above the node that is the root in the drawing.)</p>
+<p>There are two choices for the root label, but the trees they produce are almost the same as each other, so let's say the root is labeled 2, giving the tree shown below together with its <a href="{{site.baseurl}}/2009/05/16/visualizing-bfs-as.html">spiraling breadth first search</a> order. (If the root were labeled 1, the only difference would be to add one more node labeled 1 above the node that is the root in the drawing.)</p>
 
 <p style="text-align:center"><img alt="Downwards-infinite binary tree with the node labels at each level forming the Kolakoski sequence, and its breadth-first traversal order" src="http://www.ics.uci.edu/~eppstein/0xDE/Kolakoski-tree.svg" style="background-color:white;" /></p>
 
@@ -37,9 +37,9 @@ def Kolakoski():
 
 <p>(The only reason we need two separate functions is to handle the first two terms in the sequence, the ones that are not part of the tree.) If this algorithm is used to generate the first \( n \) terms of the sequence, then it calls itself recursively \( O(\log n) \) levels deep, with each level of recursion tracking one level higher in the tree and generating approximately \( 2/3 \) as many values as its caller. Each level of recursion has only a constant amount of storage for its local variables. Therefore, it takes \( O(n) \) time and \( O(\log n) \) space to generate the whole sequence.</p>
 
-<p>Something very similar to this algorithm, with the same analysis, is described in the paper &quot;<a href="http://www.emis.ams.org/journals/JIS/VOL15/Nilsson/nilsson5.pdf">A space-efficient algorithm for calculating the digit distribution in the Kolakoski sequence</a>&quot;, by Johan Nilsson in <i>J. Integer Sequences</i> 2012. But he replaces the chain of recursive calls by an explicit data structure, which makes the algorithm's description longer and I think more confusing. And instead of making a single tree from all but the first two numbers in the sequence, Nilsson uses a forest with infinitely many trees, with each level of the forest being labeled by its own copy of the Kolakoski sequence.</p>
+<p>Something very similar to this algorithm, with the same analysis, is described in the paper "<a href="http://www.emis.ams.org/journals/JIS/VOL15/Nilsson/nilsson5.pdf">A space-efficient algorithm for calculating the digit distribution in the Kolakoski sequence</a>", by Johan Nilsson in <i>J. Integer Sequences</i> 2012. But he replaces the chain of recursive calls by an explicit data structure, which makes the algorithm's description longer and I think more confusing. And instead of making a single tree from all but the first two numbers in the sequence, Nilsson uses a forest with infinitely many trees, with each level of the forest being labeled by its own copy of the Kolakoski sequence.</p>
 
-<p><b>ETA:</b> <a href="http://11011110.livejournal.com/336374.html">See next post</a> for an alternative algorithm that avoids the recursion.</p>
+<p><b>ETA:</b> <a href="{{site.baseurl}}/2016/10/14/kolakoski-sequence-via.html">See next post</a> for an alternative algorithm that avoids the recursion.</p>
 
 <br /><br /><hr /><br />
 <h3>Comments:</h3>

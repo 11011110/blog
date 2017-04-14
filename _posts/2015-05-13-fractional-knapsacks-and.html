@@ -4,127 +4,62 @@ title:  'Fractional knapsacks and colossal abundance'
 date:   2015-05-13 22:04:00
 tags:   [python, number theory]
 ---
-In <a href="http://11011110.livejournal.com/305481.html">a recent post</a> I observed that the largest <a href="https://en.wikipedia.org/wiki/Highly_abundant_number#References">highly abundant number</a> below some threshold <i>n</i> could be found as the optimal solution of a certain knapsack problem in which the items to be packed into the knapsack are prime powers <i>p<sup>i</sup></i> with profit log (<i>p</i><sup><i>i</i> + 1</sup> − 1)/(<i>p</i><sup><i>i</i></sup> − 1) and size log <i>p</i> (both independent of <i>n</i>), and with knapsack capacity log <i>n</i>. In particular every highly abundant number has a factorization that can be generated as the solution to this knapsack problem with the number itself as the threshold.
-<br />
+<p>In <a href="{{site.baseurl}}/2015/02/26/highly-abundant-numbers.html">a recent post</a> I observed that the largest <a href="https://en.wikipedia.org/wiki/Highly_abundant_number#References">highly abundant number</a> below some threshold \( n \) could be found as the optimal solution of a certain knapsack problem in which the items to be packed into the knapsack are prime powers \( p^i \) with profit \( \log (p^{i+1}-1)/(p^i-1) \) and size \( \log p \) (both independent of \( n \)), and with knapsack capacity \( \log n \). In particular every highly abundant number has a factorization that can be generated as the solution to this knapsack problem with the number itself as the threshold.</p>
 
-<br />
-Unfortunately, the knapsack problem is NP-complete, making its solutions vary in complicated ways, and making it tricky to extract useful information about highly abundant numbers and their factorizations from this formulation. But fortunately, there&#x27;s a class of knapsack problems that are really easy to solve: the ones where the optimal fractional solution is the same as the optimal integer solution. These are the solutions that you get by a greedy algorithm that at each step chooses the item with maximum profit/size. This greedy strategy is not optimal for all capacities, but it is optimal when the capacity happens to equal the solution size. So which highly abundant numbers have this greedy property?
-<br />
+<p>Unfortunately, the knapsack problem is NP-complete, making its solutions vary in complicated ways, and making it tricky to extract useful information about highly abundant numbers and their factorizations from this formulation. But fortunately, there's a class of knapsack problems that are really easy to solve: the ones where the optimal fractional solution is the same as the optimal integer solution. These are the solutions that you get by a greedy algorithm that at each step chooses the item with maximum profit/size. This greedy strategy is not optimal for all capacities, but it is optimal when the capacity happens to equal the solution size. So which highly abundant numbers have this greedy property?</p>
 
-<br />
-To test this, I wrote <a href="http://www.ics.uci.edu/~eppstein/0xDE/frachab.py">a simple piece of Python code</a> that starts with the number 1, repeatedly chooses a not-already-chosen prime power that maximizes the profit/size ratio defined above, and multiplies the current number by the base of the chosen prime power. I computed the profits and sizes sloppily using floating point numbers and the built-in log function, but that seems to be good enough for small prime powers. Here are the first few results:<pre>
-<br />
-1
-<br />
+<p>To test this, I wrote <a href="http://www.ics.uci.edu/~eppstein/0xDE/frachab.py">a simple piece of Python code</a> that starts with the number 1, repeatedly chooses a not-already-chosen prime power that maximizes the profit/size ratio defined above, and multiplies the current number by the base of the chosen prime power. I computed the profits and sizes sloppily using floating point numbers and the built-in log function, but that seems to be good enough for small prime powers. Here are the first few results:</p>
+
+<pre>1
 2
-<br />
 6
-<br />
 12
-<br />
 60
-<br />
 120
-<br />
 360
-<br />
 2520
-<br />
 5040
-<br />
 55440
-<br />
 720720
-<br />
 1441440
-<br />
 4324320
-<br />
 21621600
-<br />
 367567200
-<br />
 6983776800
-<br />
 160626866400
-<br />
 321253732800
-<br />
 9316358251200
-<br />
 288807105787200
-<br />
 2021649740510400
-<br />
 6064949221531200
-<br />
 224403121196654400
-<br />
 9200527969062830400
-<br />
 395622702669701707200
-<br />
 791245405339403414400
-<br />
 37188534050951960476800
-<br />
 1970992304700453905270400
-<br />
 116288545977326780410953600
-<br />
 581442729886633902054768000
-<br />
 35468006523084668025340848000
-<br />
 2376356437046672757697836816000
-<br />
 168721307030313765796546413936000
-<br />
 12316655413212904903147888217328000
-<br />
 135483209545341953934626770390608000
-<br />
 10703173554082014360835514860858032000
-<br />
 21406347108164028721671029721716064000
-<br />
 1776726809977614383898695466902433312000
-<br />
 5330180429932843151696086400707299936000
-<br />
 474386058264023040500951689662949694304000
-<br />
 46015447651610234928592313897306120347488000
-<br />
 598200819470933054071700080664979564517344000
-<br />
 60418282766564238461241708147162936016251744000
-<br />
 6223083124956116561507895939157782409673929632000
-<br />
 665869894370304472081344865489882717835110470624000
-<br />
 72579818486363187456866590338397216244027041298016000
-<br />
-8201519488959040182625924708238885435575055666675808000</pre>This calculation was essentially instantaneous; I cut it off here because it was a conveniently-sized screenfull of numbers rather than out of any difficulty in continuing the sequence for many more terms.
-<br />
+8201519488959040182625924708238885435575055666675808000</pre>
 
-<br />
-When I tried looking this up in OEIS, I had two surprises. First (except for the leading one) this exactly matches all the known terms of the sequence of <a href="http://oeis.org/A004490">colossally abundant numbers</a>, which have quite a different definition from the highly abundant numbers. <s>Why? I don&#x27;t know. Do this sequence and the sequence of colossally abundant numbers stay equal forever? I also don&#x27;t know. And second, this calculation goes much farther than the known entries for the colossally abundant numbers in OEIS (about half of the terms shown above). The computation was so quick that I would tag the sequence &quot;easy&quot; if I were adding it as a new one to OEIS, but the colossally abundant numbers aren&#x27;t tagged easy and have no listed algorithm for generating their sequence. Does this give a new easy way to calculate the colossally abundant numbers?</s> Update: <a href="http://oeis.org/A073751">this sequence of factors</a> looks like it is calculated the same way, so this method does seem to be known, but still somewhat conjectural. It&#x27;s not clear whether it was obtained using the greedy knapsack idea or through some other reasoning.
-<br />
+<p>This calculation was essentially instantaneous; I cut it off here because it was a conveniently-sized screenfull of numbers rather than out of any difficulty in continuing the sequence for many more terms.</p>
 
-<br />
-The same knapsack formulation applies to other sequences of numbers maximizing multiplicative functions, and the same fractional-knapsack greedy trick can be used to find easy-to-compute subsequences of those other sequences. For instance, the <a href="https://en.wikipedia.org/wiki/Highly_composite_number">highly composite numbers</a> have knapsack problems with profit log (<i>i</i> + 1)/<i>i</i>, and the greedy knapsack method applied to this profit function gives what looks like the sequence of <a href="http://oeis.org/A002201">superior highly composite numbers</a>. Are others as interesting? I also don&#x27;t know.
-<br /><br /><hr /><br />
-<h3>Comments:</h3>
-<div style="margin-left: 0em; padding-top: 1em;">
-<b>ext_3262038</b>: <br />
-<b></b><br />
+<p>When I tried looking this up in OEIS, I had two surprises. First (except for the leading one) this exactly matches all the known terms of the sequence of <a href="http://oeis.org/A004490">colossally abundant numbers</a>, which have quite a different definition from the highly abundant numbers. <s>Why? I don't know. Do this sequence and the sequence of colossally abundant numbers stay equal forever? I also don't know. And second, this calculation goes much farther than the known entries for the colossally abundant numbers in OEIS (about half of the terms shown above). The computation was so quick that I would tag the sequence "easy" if I were adding it as a new one to OEIS, but the colossally abundant numbers aren't tagged easy and have no listed algorithm for generating their sequence. Does this give a new easy way to calculate the colossally abundant numbers?</s> Update: <a href="http://oeis.org/A073751">this sequence of factors</a> looks like it is calculated the same way, so this method does seem to be known, but still somewhat conjectural. It's not clear whether it was obtained using the greedy knapsack idea or through some other reasoning.</p>
 
-</div>
-<div style="margin-left: 0em; padding-top: 1em;">
-<b>ext_3262038</b>: <br />
-<b></b><br />
-
-</div>
-
+<p>The same knapsack formulation applies to other sequences of numbers maximizing multiplicative functions, and the same fractional-knapsack greedy trick can be used to find easy-to-compute subsequences of those other sequences. For instance, the <a href="https://en.wikipedia.org/wiki/Highly_composite_number">highly composite numbers</a> have knapsack problems with profit \( \log (i+1)/i \), and the greedy knapsack method applied to this profit function gives what looks like the sequence of <a href="http://oeis.org/A002201">superior highly composite numbers</a>. Are others as interesting? I also don't know.

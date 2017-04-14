@@ -4,28 +4,16 @@ title:  'Point sets with no empty quadrilateral'
 date:   2006-10-06 01:49:00
 tags:   [quadrilaterals, graph drawing, triangulation, geometry]
 ---
-I know it&#x27;s ridiculously late, but when I get ideas late at night I tend not to be able to sleep until I write them down, and here&#x27;s as good a place as any for that.
-<br />
+<p>I know it's ridiculously late, but when I get ideas late at night I tend not to be able to sleep until I write them down, and here's as good a place as any for that.</p>
 
-<br />
-Anyway, you remember (or probably you don&#x27;t, but I do) that <a href="http://www.ics.uci.edu/~eppstein/junkyard/dilation-free/">classification of dilation-free planar graphs</a> I did a while back, that&#x27;s now been incorporated into <a href="http://arxiv.org/abs/math.CO/0606450">a paper with Dujmović, Suderman, and Wood</a>?
-<br />
+<p>Anyway, you remember (or probably you don't, but I do) that <a href="http://www.ics.uci.edu/~eppstein/junkyard/dilation-free/">classification of dilation-free planar graphs</a> I did a while back, that's now been incorporated into <a href="http://arxiv.org/abs/math.CO/0606450">a paper with Dujmović, Suderman, and Wood</a>?</p>
 
-<br />
-A graph drawn with straight line segments in the plane is dilation-free if, for every pair of vertices x and y, the graph contains a path along the line segment from x to y.  A set of vertices has a dilation-free planar graph if and only if (1) all points are on a line, (2) all but one point are on a line, (3) all but two points are on a line, those two points are on opposite sides of the line, and the line segment between them is outside the convex hull of the remaining points, (4) all but two points are on a line, those two points are on opposite sides of the line, and there is another point where the line segment between them crosses the line, or (5) the points form one sporadic six-point configuration:
-<br />
+<p>A graph drawn with straight line segments in the plane is dilation-free if, for every pair of vertices \( x \) and \( y \), the graph contains a path along the line segment from \( x \) to \( y \).  A set of vertices has a dilation-free planar graph if and only if (1) all points are on a line, (2) all but one point are on a line, (3) all but two points are on a line, those two points are on opposite sides of the line, and the line segment between them is outside the convex hull of the remaining points, (4) all but two points are on a line, those two points are on opposite sides of the line, and there is another point where the line segment between them crosses the line, or (5) the points form one sporadic six-point configuration:</p>
 
-<br />
-<div style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/junkyard/dilation-free/v.gif" /></div>
-<br />
+<p><div style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/junkyard/dilation-free/v.gif" /></div></p>
 
-<br />
-So anyway, there&#x27;s a much easier way to describe the same family of point sets, closely related to the famous <a href="http://en.wikipedia.org/wiki/Happy_Ending_problem">happy ending problem</a>: these are exactly the point sets that have no strictly-convex empty quadrilateral. They&#x27;re also the point sets with exactly one triangulation.
-<br />
+<p>So anyway, there's a much easier way to describe the same family of point sets, closely related to the famous <a href="http://en.wikipedia.org/wiki/Happy_Ending_problem">happy ending problem</a>: these are exactly the point sets that have no strictly-convex empty quadrilateral. They're also the point sets with exactly one triangulation.</p>
 
-<br />
-In one direction, if there is a strictly-convex empty quadrilateral, its diagonals would cross so it couldn&#x27;t form a dilation-free planar graph and there would be at least one triangulation for each diagonal. In the other direction, line segment xy will be formed by a path of edges in every triangulation of the point set unless there is a line segment zw that crosses xy not at a point of the point set. But in this case either xyzw form an empty quad or we can shrink to a smaller quad with a non-point crossing (by some case analysis involving replacing x or y by a point on xy if possible, or if not then replacing w or z by any point within the quad) and eventually find a strictly-convex empty quadrilateral.
-<br />
+<p>In one direction, if there is a strictly-convex empty quadrilateral, its diagonals would cross so it couldn't form a dilation-free planar graph and there would be at least one triangulation for each diagonal. In the other direction, line segment \( xy \) will be formed by a path of edges in every triangulation of the point set unless there is a line segment \( zw \) that crosses \( xy \) not at a point of the point set. But in this case either \( xyzw \) form an empty quad or we can shrink to a smaller quad with a non-point crossing (by some case analysis involving replacing \( x \) or \( y \) by a point on \( xy \) if possible, or if not then replacing \( w \) or \( z \) by any point within the quad) and eventually find a strictly-convex empty quadrilateral.</p>
 
-<br />
-It&#x27;s known by now that <a href="http://11011110.livejournal.com/16493.html">every sufficiently large point set in general position has a strictly-convex empty hexagon</a> but of course these point sets aren&#x27;t in general position...
+<p>It's known by now that <a href="{{site.baseurl}}/2005/09/18/empty-hexagon.html">every sufficiently large point set in general position has a strictly-convex empty hexagon</a> but of course these point sets aren't in general position...</p>

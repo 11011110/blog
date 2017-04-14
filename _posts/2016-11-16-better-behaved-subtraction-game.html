@@ -4,7 +4,7 @@ title:  'A better-behaved subtraction game'
 date:   2016-11-16 13:31:00
 tags:   [game theory, number theory]
 ---
-<p>I used the <a href="http://11011110.livejournal.com/337587.html">sieving algorithm for subtract-a-square</a> to generate its P-positions (the ones you want to move to) in order to estimate how quickly this sequence of positions grows. Based on some assumptions that the sequence was basically random and on considerations involving the coupon collector problem, I was expecting its growth rate (the number of P-positions up to \( n \)) to be roughly \( O(\sqrt{n} \log n) \). But that seems to be inconsistent with the data. Instead (based on generating the first 350k or so of these numbers) it seems to be more like \( O(n^{0.69}) \), a surprisingly high growth rate.</p>
+<p>I used the <a href="{{site.baseurl}}/2016/11/14/shaving-superpolylog-from.html">sieving algorithm for subtract-a-square</a> to generate its P-positions (the ones you want to move to) in order to estimate how quickly this sequence of positions grows. Based on some assumptions that the sequence was basically random and on considerations involving the coupon collector problem, I was expecting its growth rate (the number of P-positions up to \( n \)) to be roughly \( O(\sqrt{n} \log n) \). But that seems to be inconsistent with the data. Instead (based on generating the first 350k or so of these numbers) it seems to be more like \( O(n^{0.69}) \), a surprisingly high growth rate.</p>
 
 <p>Below is a table of some P-positions (the middle column), the number of P-positions up to that value (left column), and the exponent one would infer from those two numbers:</p>
 

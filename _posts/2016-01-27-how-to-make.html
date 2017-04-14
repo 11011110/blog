@@ -4,41 +4,32 @@ title:  'How to make a bad pseudoline arrangement worse'
 date:   2016-01-27 21:59:00
 tags:   [arrangements, papers]
 ---
-The image below is a drawing of (part of) a pseudoline arrangement, a collection of curves in the plane that behave like lines in the sense that each curve partitions the plane into two unbounded regions and each two curves have exactly one point of intersection, where they cross. It&#x27;s from my latest arXiv preprint, &quot;<a href="http://arxiv.org/abs/1601.06865">Convex-Arc Drawings of Pseudolines</a>&quot; (with Mereke van Garderen, Bettina Speckmann, and Torsten Ueckerdt, arXiv:1601.06865).
-<br />
+<p>The image below is a drawing of (part of) a pseudoline arrangement, a collection of curves in the plane that behave like lines in the sense that each curve partitions the plane into two unbounded regions and each two curves have exactly one point of intersection, where they cross. It's from my latest arXiv preprint, "<a href="http://arxiv.org/abs/1601.06865">Convex-Arc Drawings of Pseudolines</a>" (with Mereke van Garderen, Bettina Speckmann, and Torsten Ueckerdt, arXiv:1601.06865).</p>
 
-<br />
-<div style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/many-bends.png" /></div>
-<br />
+<p><div style="text-align:center"><img alt="Pseudoline arrangement requiring many bends" src="http://www.ics.uci.edu/~eppstein/0xDE/many-bends.png" /></div></p>
 
-<br />
-The repeated yellow squares within the image are themselves smaller pseudoline arrangements, all the same as each other, with nine pseudolines each. I drew them more curvy than they need to be, but the special property of these arrangements is that they need to be at least a little bit curvy: they cannot be drawn with straight lines.
-<br />
+<p>The repeated yellow squares within the image are themselves smaller pseudoline arrangements, all the same as each other, with nine pseudolines each. I drew them more curvy than they need to be, but the special property of these arrangements is that they need to be at least a little bit curvy: they cannot be drawn with straight lines.</p>
 
-<br />
-The point of this image is that it repeats! The black parts outside the yellow squares show how to connect up the pseudolines so that the repetition still obeys the requirements of a pseudoline arrangement. The nine pseudolines in any one square must never go to the same square as each other again (otherwise they would cross twice, not allowed). To prevent this, one of the nine pseudolines in each square (the one that comes in the top and goes out the bottom) connects horizontally to the next square across, another connects one square down on the left and one square up on the right, another connects two squares down and up, etc. In this way, an <i>n</i> by <i>n</i> grid of yellow squares can be glued together using a total of only <i>O</i>(<i>n</i>) pseudolines. They won&#x27;t all cross each other within the grid, but that can be fixed up by adding extra crossings outside the grid.
-<br />
+<p>The point of this image is that it repeats! The black parts outside the yellow squares show how to connect up the pseudolines so that the repetition still obeys the requirements of a pseudoline arrangement. The nine pseudolines in any one square must never go to the same square as each other again (otherwise they would cross twice, not allowed). To prevent this, one of the nine pseudolines in each square (the one that comes in the top and goes out the bottom) connects horizontally to the next square across, another connects one square down on the left and one square up on the right, another connects two squares down and up, etc. In this way, an \( n \) by \( n \) grid of yellow squares can be glued together using a total of only \( O(n) \) pseudolines. They won't all cross each other within the grid, but that can be fixed up by adding extra crossings outside the grid.</p>
 
-<br />
-If you start with a small constant-sized pseudoline arrangement requiring at least one bend, then after performing this expansion you get a big pseudoline arrangement requiring a quadratic number of bends. Here I define a bend to be a vertex of a polygonal chain, but the same construction generalizes to show that if you draw the pseudolines as smooth spline curves you need a quadratic number of knots, or if you draw them as piecewise-circular curves you need a quadratic number of arcs. It&#x27;s not hard to draw any pseudoline arrangement with only this many bends (just use a <a href="http://11011110.livejournal.com/111308.html">wiring diagram</a>) but one of the results of the paper is that you can still draw the arrangement with quadratically many bends even if you require all of the pseudolines to be convex curves.
-<br />
+<p>If you start with a small constant-sized pseudoline arrangement requiring at least one bend, then after performing this expansion you get a big pseudoline arrangement requiring a quadratic number of bends. Here I define a bend to be a vertex of a polygonal chain, but the same construction generalizes to show that if you draw the pseudolines as smooth spline curves you need a quadratic number of knots, or if you draw them as piecewise-circular curves you need a quadratic number of arcs. It's not hard to draw any pseudoline arrangement with only this many bends (just use a <a href="{{site.baseurl}}/2007/08/03/was-sind-und.html">wiring diagram</a>) but one of the results of the paper is that you can still draw the arrangement with quadratically many bends even if you require all of the pseudolines to be convex curves.</p>
 
-<br />
-Another part of the paper concerns &quot;weak pseudoline arrangements&quot;, where not every pair of curves is required to cross (but they can still only intersect in a single crossing point). We say that a weak pseudoline arrangement is outerplanar if every crossing point belongs to an unbounded face. Outerplanar arrangements can&#x27;t always be straightened in the plane; for instance rotating the parabola <i>y</i> = <i>x</i><sup>2</sup> + 1 by right angles around the origin forms a pseudoline arrangement with four pseudolines that cannot be made straight. However, we show that this is a special property of the Euclidean plane: in the hyperbolic plane, every outerplanar arrangement can be straightened. This leads to Euclidean drawings with only two bends per pseudoline, but maybe only one bend is possible, I&#x27;m not sure.
+<p>Another part of the paper concerns "weak pseudoline arrangements", where not every pair of curves is required to cross (but they can still only intersect in a single crossing point). We say that a weak pseudoline arrangement is outerplanar if every crossing point belongs to an unbounded face. Outerplanar arrangements can't always be straightened in the plane; for instance rotating the parabola \( y=x^2+1 \) by right angles around the origin forms a pseudoline arrangement with four pseudolines that cannot be made straight. However, we show that this is a special property of the Euclidean plane: in the hyperbolic plane, every outerplanar arrangement can be straightened. This leads to Euclidean drawings with only two bends per pseudoline, but maybe only one bend is possible, I'm not sure.</p>
+
 <br /><br /><hr /><br />
 <h3>Comments:</h3>
 <div style="margin-left: 0em; padding-top: 1em;">
-<b>ext_2381707</b>: I don&#x27;t see no yellow squares<br />
+<b>ext_2381707</b>: I don't see no yellow squares<br />
 <b>2016-02-03T18:57:49Z</b><br />
 in the image.
 </div>
 <div style="margin-left: 3em; padding-top: 1em;">
-<b>11011110</b>: RE: I don&#x27;t see no yellow squares<br />
+<b>11011110</b>: RE: I don't see no yellow squares<br />
 <b>2016-02-03T19:08:28Z</b><br />
-They&#x27;re a very pale yellow background, in the parts with the bends.
+They're a very pale yellow background, in the parts with the bends.
 </div>
 <div style="margin-left: 6em; padding-top: 1em;">
-<b>ext_2381707</b>: RE: I don&#x27;t see no yellow squares<br />
+<b>ext_2381707</b>: RE: I don't see no yellow squares<br />
 <b>2016-02-03T20:14:31Z</b><br />
 Ah. With Paint I see they have RGB value (255,255,235). In my laptop screen it is completely indistinguishable from white...
 </div>
