@@ -4,9 +4,9 @@ title:  'A game of cop and robber'
 date:   2016-08-18 18:33:00
 tags:   [game theory, wikipedia, graph theory]
 ---
-Suppose we play the following game. We place a bunch of hexagonal game board tiles on a table, edge-to-edge, to form our playing field. On the field, we place two game pieces, a cop (blue) and a robber (red). The cop and robber take turns, either moving to an adjacent hex or passing (staying put). The cop wins if he can end a turn on the same hex as the robber. The robber wins by evading the cop forever. Who has the advantage?</p>
+<p>Suppose we play the following game. We place a bunch of hexagonal game board tiles on a table, edge-to-edge, to form our playing field. On the field, we place two game pieces, a cop (blue) and a robber (red). The cop and robber take turns, either moving to an adjacent hex or passing (staying put). The cop wins if he can end a turn on the same hex as the robber. The robber wins by evading the cop forever. Who has the advantage?</p>
 
-<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/polyhex-cop-win.png" /></</p>
+<p style="text-align:center"><img alt="A position in the cop-and-robber game" src="http://www.ics.uci.edu/~eppstein/0xDE/polyhex-cop-win.png" /></p>
 
 <p>It turns out to depend on what game board shapes are allowed. If the hexes of the board can completely surround a hole (a shape where one or more hexes could have been placed, but weren't) then the robber can win by keeping the hole between himself and the robber. But if there are no holes, then the cop always wins.</p>
 
@@ -20,13 +20,13 @@ Suppose we play the following game. We place a bunch of hexagonal game board til
 
 <p>One way to visualize this strategy is to draw a tree representing the parent of each removed vertex, together with numbers indicating the order in which the vertices were removed:</p>
 
-<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/polyhex-cop-tree.png" /></p>
+<p style="text-align:center"><img alt="Tree visualization of the cop's strategy in the cop-and-robber game" src="http://www.ics.uci.edu/~eppstein/0xDE/polyhex-cop-tree.png" /></p>
 
 <p>Then, at each turn, add back one more vertex (in the reverse of the order that they were removed) and move to the lowest-numbered ancestor of the robber's current position among the ones that have been added back so far. For instance, in the position shown, to figure out what to do on your first move, you would add back hex 28, realize that the lowest-numbered ancestor of the robber's position is hex 29 (the one you're already on), and pass. After the robber moves, you would add back hex 27, and (since all moves for the robber land in the subtree of hex 27) move there. Etc.</p>
 
 <p>But this strategy involves keeping track of a spanning tree, a numbering, and a current set of added-back tiles. Maybe for the hex board there's a simpler strategy based only on your position and the position of the robber?</p>
 
-<p>And finally, what about other kinds of game tiles? Square tiles don't work with edge-to-edge adjacency: the robber can evade the cop by staying on the opposite side of a 4-cycle. But for squares with corner adjacency (and no holes) the cop can always win; for instance, consider cops and robbers that move like kings on a chessboard. Being planar with only three game tiles meeting at a corner isn't good enough for the cop to win: the robber always wins on a dodecahedron by staying as far as possible from the cop. Maybe some other polyforms than polyhexes will also allow the cop to always win.
+<p>And finally, what about other kinds of game tiles? Square tiles don't work with edge-to-edge adjacency: the robber can evade the cop by staying on the opposite side of a 4-cycle. But for squares with corner adjacency (and no holes) the cop can always win; for instance, consider cops and robbers that move like kings on a chessboard. Being planar with only three game tiles meeting at a corner isn't good enough for the cop to win: the robber always wins on a dodecahedron by staying as far as possible from the cop. Maybe some other polyforms than polyhexes will also allow the cop to always win.</p>
 
 <br /><br /><hr /><br />
 <h3>Comments:</h3>

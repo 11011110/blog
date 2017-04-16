@@ -4,44 +4,42 @@ title:  'Zero-knowledge Sudoku'
 date:   2006-08-03 14:16:00
 tags:   [complexity theory, sudoku]
 ---
-<a href="http://weblog.fortnow.com/2006/08/zero-knowledge-sudoku.html">Lance provides a cute zero-knowledge proof protocol for convincing someone that a Sudoku puzzle is solvable without giving away anything about the solution.</a>
+<p><a href="http://weblog.fortnow.com/2006/08/zero-knowledge-sudoku.html">Lance provides a cute zero-knowledge proof protocol for convincing someone that a Sudoku puzzle is solvable without giving away anything about the solution.</a></p>
+
 <br /><br /><hr /><br />
 <h3>Comments:</h3>
+
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>chouyu_31</b>: <br />
 <b>2006-08-04T05:39:31Z</b><br />
-I may be missing something, but...
+<p>I may be missing something, but...</p>
 
-1. In each &quot;round&quot;, Victor is only able to open up one lockbox, and accept or reject based on the contents of that one lockbox.
-2. For the first 27 possible choices that Victor can make (any row, column, or box), Paula can choose a different random permutation that has nothing to do with her solution.
-3. For the 28th choice (the original problem permuted), Paula provides an actual permutation.
+<ol>
+<li>In each "round", Victor is only able to open up one lockbox, and accept or reject based on the contents of that one lockbox.</li>
+<li>For the first 27 possible choices that Victor can make (any row, column, or box), Paula can choose a different random permutation that has nothing to do with her solution.</li>
+<li>For the 28th choice (the original problem permuted), Paula provides an actual permutation.</li>
+</ol>
 
-Now, because there exists a permutation that could produce any one of those results, and because Victor can only choose one of them at a time, there doesn&#x27;t seem to be a fundamental difference to Victor&#x27;s eyes between truth and lie.  More importantly, he can&#x27;t prove whether the particular permutation was properly generated.  Even worse, Paula can be completely truthful, Victor can claim that Paula is a liar every time, and Paula cannot prove herself otherwise, besides giving Victor the solution.  And honestly, I can&#x27;t figure out how Victor could claim that Paula was not being truthful with any semblance of truth, considering that Paula would normally create a new permutation in every round.
+<p>Now, because there exists a permutation that could produce any one of those results, and because Victor can only choose one of them at a time, there doesn't seem to be a fundamental difference to Victor's eyes between truth and lie.  More importantly, he can't prove whether the particular permutation was properly generated.  Even worse, Paula can be completely truthful, Victor can claim that Paula is a liar every time, and Paula cannot prove herself otherwise, besides giving Victor the solution.  And honestly, I can't figure out how Victor could claim that Paula was not being truthful with any semblance of truth, considering that Paula would normally create a new permutation in every round.</p>
 </div>
-<div style="margin-left: 3em; padding-top: 1em;">
+
+<div style="margin-left: 0em; padding-top: 1em;">
 <b>11011110</b>: <br />
 <b>2006-08-04T05:48:43Z</b><br />
-It&#x27;s relying on a cryptographic primitive (the same one Nodari described in his talk last quarter) that allows Paula to commit to some hidden values (the 27 digits of the solution), and then to reveal some later-chosen subset of those committed values. The operations of that primitive don&#x27;t let Paula rearrange things after the commitment.
+It's relying on a cryptographic primitive (the same one Nodari described in his talk last quarter) that allows Paula to commit to some hidden values (the 27 digits of the solution), and then to reveal some later-chosen subset of those committed values. The operations of that primitive don't let Paula rearrange things after the commitment.
 </div>
-<div style="margin-left: 6em; padding-top: 1em;">
+
+<div style="margin-left: 0em; padding-top: 1em;">
 <b>chouyu_31</b>: <br />
 <b>2006-08-04T07:14:12Z</b><br />
-I didn&#x27;t really understand the talk that Nodari gave.  I suppose I&#x27;ll have to rely on what I understand to be equivalent to Paula being required to follow some rules, even if she is trying to lie, which seems to make it possible for Victor to discern truth from fiction.  From there, my understanding breaks down.
+I didn't really understand the talk that Nodari gave.  I suppose I'll have to rely on what I understand to be equivalent to Paula being required to follow some rules, even if she is trying to lie, which seems to make it possible for Victor to discern truth from fiction.  From there, my understanding breaks down.
 </div>
-<div style="margin-left: 9em; padding-top: 1em;">
-<b>11011110</b>: <br />
-<b></b><br />
 
-</div>
-<div style="margin-left: 9em; padding-top: 1em;">
-<b>11011110</b>: <br />
-<b></b><br />
-
-</div>
-<div style="margin-left: 9em; padding-top: 1em;">
+<div style="margin-left: 0em; padding-top: 1em;">
 <b>11011110</b>: <br />
 <b>2006-08-04T07:31:48Z</b><br />
-Ok, let&#x27;s try it this way. Suppose Paula and Victor agree on a hash function H such that Paula can not feasibly find hash collisions for H, and on a secure public key encryption scheme.
+<p>Ok, let's try it this way. Suppose Paula and Victor agree on a hash function H such that Paula can not feasibly find hash collisions for H, and on a secure public key encryption scheme.</p>
+
 {% highlight python %}
 def commit(x):
     choose randomly an encryption key E and decryption key D such that D(E(y))=y
@@ -52,96 +50,107 @@ def commit(x):
 def reveal(x):
     publish D
 {% endhighlight %}
-(Note: I am not a cryptographer so there may be some mistakes in how secure these commit/reveal protocols are. deleted and reposted because I already found one such bug. Don&#x27;t you wish LJ had some kind of edit comment facility?)
 
-Paula runs the commit procedure for all 27 digits, Victor specifies a subset of the digits to reveal, Paula runs the reveal procedure on this subset, and Victor checks that the given D&#x27;s are the decryption keys for the given E&#x27;s, and that the given D&#x27;s decrypt the E(x) values to something that hashes correctly. Paula can&#x27;t cheat and give a different D that convinces Victor that she committed to a different x, because if she did she&#x27;d be able to use the different D to find a hash collision.
+<p>(Note: I am not a cryptographer so there may be some mistakes in how secure these commit/reveal protocols are. deleted and reposted because I already found one such bug. Don't you wish LJ had some kind of edit comment facility?)</p>
+
+<p>Paula runs the commit procedure for all 27 digits, Victor specifies a subset of the digits to reveal, Paula runs the reveal procedure on this subset, and Victor checks that the given D's are the decryption keys for the given E's, and that the given D's decrypt the E(x) values to something that hashes correctly. Paula can't cheat and give a different D that convinces Victor that she committed to a different x, because if she did she'd be able to use the different D to find a hash collision.</p>
 </div>
-<div style="margin-left: 12em; padding-top: 1em;">
+
+<div style="margin-left: 0em; padding-top: 1em;">
 <b>chouyu_31</b>: <br />
 <b>2006-08-04T07:57:53Z</b><br />
-That clarifies the protocol, but my question/misunderstanding is not protocol related, which may or may not be a problem.
+<p>That clarifies the protocol, but my question/misunderstanding is not protocol related, which may or may not be a problem.</p>
 
-Presume that Paula chooses the first 27 x&#x27;s randomly without regard to the actual solution or to previous x&#x27;s.  My understanding is that among the set of 28 possible &#x27;digits&#x27; that Victor can choose in any particular &#x27;round&#x27;, he can choose only 1.  Why?
+<p>Presume that Paula chooses the first 27 x's randomly without regard to the actual solution or to previous x's.  My understanding is that among the set of 28 possible 'digits' that Victor can choose in any particular 'round', he can choose only 1.  Why?</p>
 
-For any subset larger than 1, he may be able to choose some pairing of rows/columns/boxes that were all permuted the same that produces a &quot;hint&quot;.  For example, #28 and any other row/column/box.  If Paula was telling the truth, and produced real permutations, and Victor can choose any two of the possible 28, then in O(81) rounds, Victor can solve the problem.
+<p>For any subset larger than 1, he may be able to choose some pairing of rows/columns/boxes that were all permuted the same that produces a "hint".  For example, #28 and any other row/column/box.  If Paula was telling the truth, and produced real permutations, and Victor can choose any two of the possible 28, then in O(81) rounds, Victor can solve the problem.</p>
 
-Because Victor can only choose 1 &#x27;x&#x27; to reveal, it doesn&#x27;t matter what Paula produces for 27 of the 28 possible x values, Victor can&#x27;t verify that any one of them have anything to do with her claimed solution, even if he can verify that she hasn&#x27;t tampered with them after encoding.  Effectively, she puts garbage into these locked boxes, and he can&#x27;t tell the kitty litter from the fresh cheesecake.
+<p>Because Victor can only choose 1 'x' to reveal, it doesn't matter what Paula produces for 27 of the 28 possible x values, Victor can't verify that any one of them have anything to do with her claimed solution, even if he can verify that she hasn't tampered with them after encoding.  Effectively, she puts garbage into these locked boxes, and he can't tell the kitty litter from the fresh cheesecake.</p>
 
-Is there some other layer of verification for Paula&#x27;s (non-)garbage &#x27;x&#x27; that Victor can perform?  If so, I completely missed it.
+<p>Is there some other layer of verification for Paula's (non-)garbage 'x' that Victor can perform?  If so, I completely missed it.</p>
 </div>
-<div style="margin-left: 15em; padding-top: 1em;">
+
+<div style="margin-left: 0em; padding-top: 1em;">
 <b>11011110</b>: <br />
 <b>2006-08-04T13:58:00Z</b><br />
-Victor can only choose (a) a row, (b) a column, (c), a box, or (d) the initial givens. In each case that whole subset is revealed, and (assuming Paula really did commit to a solution) in cases (a), (b), and (c) he gets only a uniformly random permutation of the nine digits in the revealed cells, something he could have generated himself, so it doesn&#x27;t help him solve the puzzle. In case (d), he only finds out about the givens he already knew about.
+Victor can only choose (a) a row, (b) a column, (c), a box, or (d) the initial givens. In each case that whole subset is revealed, and (assuming Paula really did commit to a solution) in cases (a), (b), and (c) he gets only a uniformly random permutation of the nine digits in the revealed cells, something he could have generated himself, so it doesn't help him solve the puzzle. In case (d), he only finds out about the givens he already knew about.
 </div>
-<div style="margin-left: 18em; padding-top: 1em;">
+
+<div style="margin-left: 0em; padding-top: 1em;">
 <b>chouyu_31</b>: <br />
 <b>2006-08-04T15:24:48Z</b><br />
-Right.  He gets a permutation of a row, a column, a box, or the initial givens.  But because there is no substantive difference between garbage and an actual permutation for what Paula could produce for 27 of the 28 &#x27;x&#x27; values, he can&#x27;t tell if Paula is actually telling the truth when she says that the problem is solvable.  In fact, anyone with a copy of the initial problem can produce &quot;valid&quot; &#x27;x&#x27; values that will convince Victor.
+<p>Right.  He gets a permutation of a row, a column, a box, or the initial givens.  But because there is no substantive difference between garbage and an actual permutation for what Paula could produce for 27 of the 28 'x' values, he can't tell if Paula is actually telling the truth when she says that the problem is solvable.  In fact, anyone with a copy of the initial problem can produce "valid" 'x' values that will convince Victor.</p>
 
-Is there some other verification of these permutations that can be done that I&#x27;m not getting, or is Victor reduced to random guessing?
+<p>Is there some other verification of these permutations that can be done that I'm not getting, or is Victor reduced to random guessing?</p>
 </div>
-<div style="margin-left: 21em; padding-top: 1em;">
+
+<div style="margin-left: 0em; padding-top: 1em;">
 <b>11011110</b>: <br />
 <b>2006-08-04T15:41:51Z</b><br />
-<i>he can&#x27;t tell if Paula is actually telling the truth</i>
+<p><i>he can't tell if Paula is actually telling the truth</i></p>
 
-Sure he can. If she didn&#x27;t commit to an actual correct solution, she wouldn&#x27;t be certain of being able to reveal whichever subset Victor asks her to reveal. So if she does reveal subsets enough times, Victor can be sure that there&#x27;s only a very small probability she could have cheated.
+<p>Sure he can. If she didn't commit to an actual correct solution, she wouldn't be certain of being able to reveal whichever subset Victor asks her to reveal. So if she does reveal subsets enough times, Victor can be sure that there's only a very small probability she could have cheated.</p>
 </div>
-<div style="margin-left: 24em; padding-top: 1em;">
+
+<div style="margin-left: 0em; padding-top: 1em;">
 <b>chouyu_31</b>: <br />
 <b>2006-08-04T17:43:00Z</b><br />
-In any round she can reveal exactly one row, column, box, or the original problem.
+<p>In any round she can reveal exactly one row, column, box, or the original problem.</p>
 
-Since each particular row/column/box will be chosen on average ~5 times, let us say that the solution to the first row in a particular Sudoku puzzle P is 456789123, and let us also say that the first row was chosen 5 times.  Of the five following sequences, which were generated by creating a random permutation of 1..9 (garbage), and which were generated by constructing a random 1:1 mapping and applying the mapping to the above solution row (not garbage):
+<p>Since each particular row/column/box will be chosen on average ~5 times, let us say that the solution to the first row in a particular Sudoku puzzle P is 456789123, and let us also say that the first row was chosen 5 times.  Of the five following sequences, which were generated by creating a random permutation of 1..9 (garbage), and which were generated by constructing a random 1:1 mapping and applying the mapping to the above solution row (not garbage):</p>
 
-a. 294851367
-b. 482537691
-c. 149762385
-d. 493167825
-e. 138945672
+<p>a. 294851367<br />
+b. 482537691<br />
+c. 149762385<br />
+d. 493167825<br />
+e. 138945672</p>
 
-The sha1 hash of the hex representation of the code I used to produce these results is 6e10830477c3f7b7539a33294f4fe211ca5db48f.  I will provide the hex representation after you assign truth and false to the above 5 rows.  I&#x27;ll even give you a hint; at least one is garbage, and at least one is not garbage.
+<p>The sha1 hash of the hex representation of the code I used to produce these results is 6e10830477c3f7b7539a33294f4fe211ca5db48f.  I will provide the hex representation after you assign truth and false to the above 5 rows.  I'll even give you a hint; at least one is garbage, and at least one is not garbage.</p>
 
-My claim is that this isn&#x27;t 1-sided error, but rather 2-sided error; that truth can be rejected as a lie, or a lie can be accepted as truth.  I also claim that it doesn&#x27;t matter how many layers of cryptography that we add in to guarantee that Paula hasn&#x27;t changed her values after she has committed to them, she can commit to a lie or truth in any or all of the 27 of 28 lockboxes, and no one can tell the difference.
+<p>My claim is that this isn't 1-sided error, but rather 2-sided error; that truth can be rejected as a lie, or a lie can be accepted as truth.  I also claim that it doesn't matter how many layers of cryptography that we add in to guarantee that Paula hasn't changed her values after she has committed to them, she can commit to a lie or truth in any or all of the 27 of 28 lockboxes, and no one can tell the difference.</p>
 
-My question remains as it always has been; how can Victor (or anyone else), choose non-trivial all-truth assignments for a-e above that doesn&#x27;t reject truth (or really that the probability of rejecting truth is less than the probability of rejecting a lie (for convenience assume that half of the rows produced by Paula are truth and half are lies))?  I don&#x27;t believe that it is possible for Victor to distinguish between lie and truth for any Sudoku instance that Paula claims to have solved.
+<p>My question remains as it always has been; how can Victor (or anyone else), choose non-trivial all-truth assignments for a-e above that doesn't reject truth (or really that the probability of rejecting truth is less than the probability of rejecting a lie (for convenience assume that half of the rows produced by Paula are truth and half are lies))?  I don't believe that it is possible for Victor to distinguish between lie and truth for any Sudoku instance that Paula claims to have solved.</p>
 </div>
-<div style="margin-left: 27em; padding-top: 1em;">
+
+<div style="margin-left: 0em; padding-top: 1em;">
 <b>chouyu_31</b>: <br />
 <b>2006-08-04T17:49:05Z</b><br />
-I closed the window that had all of the information. Try this set:
+<p>I closed the window that had all of the information. Try this set:</p>
 
-a. 479368152
-b. 256739481
-c. 185263479
-d. 915342786
-e. 432576891
+<p>a. 479368152<br />
+b. 256739481<br />
+c. 185263479<br />
+d. 915342786<br />
+e. 432576891</p>
 
-With the hash of the hex of the code as ac1ea2f400666f3552626a4a8ea58761de8e62cd.  Same hint as before; at least one lie, at least one truth.
+<p>With the hash of the hex of the code as ac1ea2f400666f3552626a4a8ea58761de8e62cd.  Same hint as before; at least one lie, at least one truth.</p>
 </div>
-<div style="margin-left: 27em; padding-top: 1em;">
+
+<div style="margin-left: 0em; padding-top: 1em;">
 <b>11011110</b>: <br />
 <b>2006-08-04T20:04:26Z</b><br />
-I&#x27;m not sure what you mean by some of these being lies, some truth. As far as the protocol goes they all look valid, as they&#x27;re all permutations of the nine digits; whether they were generated from a larger correct solution is irrelevant.
+<p>I'm not sure what you mean by some of these being lies, some truth. As far as the protocol goes they all look valid, as they're all permutations of the nine digits; whether they were generated from a larger correct solution is irrelevant.</p>
 
-Also, it doesn&#x27;t make sense to look at the transcript of the protocol afterwards. It shouldn&#x27;t have to be convincing as a proof to anyone else, only to Victor as a participant in the interactivity of the protocol.
+<p>Also, it doesn't make sense to look at the transcript of the protocol afterwards. It shouldn't have to be convincing as a proof to anyone else, only to Victor as a participant in the interactivity of the protocol.</p>
 
-If Paula really is truthfully participating in the protocol, every one of her answers will look valid, every time. If she is trying to be dishonest, and prove to Victor that she has a solution when she doesn&#x27;t have one, it is impossible to commit to answers that look valid in every row, column, box, and the set of givens, and with probability 1/28 Victor will choose one of the bad answers, so she will be forced to reveal invalid looking answers at least 1/28 of the time.
+<p>If Paula really is truthfully participating in the protocol, every one of her answers will look valid, every time. If she is trying to be dishonest, and prove to Victor that she has a solution when she doesn't have one, it is impossible to commit to answers that look valid in every row, column, box, and the set of givens, and with probability 1/28 Victor will choose one of the bad answers, so she will be forced to reveal invalid looking answers at least 1/28 of the time.</p>
 </div>
-<div style="margin-left: 30em; padding-top: 1em;">
+
+<div style="margin-left: 0em; padding-top: 1em;">
 <b>chouyu_31</b>: <br />
 <b>2006-08-04T20:36:44Z</b><br />
-<i>&quot;If she is trying to be dishonest, and prove to Victor that she has a solution when she doesn&#x27;t have one, it is impossible to commit to answers that look valid in every row, column, box, and the set of givens, and with probability 1/28 Victor will choose one of the bad answers, so she will be forced to reveal invalid looking answers at least 1/28 of the time.&quot;</i>
+<p><i>"If she is trying to be dishonest, and prove to Victor that she has a solution when she doesn't have one, it is impossible to commit to answers that look valid in every row, column, box, and the set of givens, and with probability 1/28 Victor will choose one of the bad answers, so she will be forced to reveal invalid looking answers at least 1/28 of the time."</i></p>
 
-For any single round, the &#x27;x&#x27; values committed don&#x27;t need to be consistant with respect to each other, because Victor only gets one D to open one lockbox.  As such, the validity of the &#x27;x&#x27; values are untestable.  How can the commit/reveal protocol be proof, when the validity of the input is untestable?
+<p>For any single round, the 'x' values committed don't need to be consistant with respect to each other, because Victor only gets one D to open one lockbox.  As such, the validity of the 'x' values are untestable.  How can the commit/reveal protocol be proof, when the validity of the input is untestable?</p>
 </div>
-<div style="margin-left: 33em; padding-top: 1em;">
+
+<div style="margin-left: 0em; padding-top: 1em;">
 <b>11011110</b>: <br />
 <b>2006-08-04T20:43:52Z</b><br />
-We seem to be going around in circles here; I don&#x27;t see how repeating a description of the protocol or why Victor should be convinced by it is going to help. Maybe you could give me an algorithmic description of how you think Paula could cheat. Note this is not the same as a transcription of the protocol: Victor can generate valid-looking transcriptions without knowing a solution.  Not knowing a solution, how does she choose 27 values to commit, and how does that choice of values help her avoid being revealed as a cheater?
+We seem to be going around in circles here; I don't see how repeating a description of the protocol or why Victor should be convinced by it is going to help. Maybe you could give me an algorithmic description of how you think Paula could cheat. Note this is not the same as a transcription of the protocol: Victor can generate valid-looking transcriptions without knowing a solution.  Not knowing a solution, how does she choose 27 values to commit, and how does that choice of values help her avoid being revealed as a cheater?
 </div>
-<div style="margin-left: 36em; padding-top: 1em;">
+
+<div style="margin-left: 0em; padding-top: 1em;">
 <b>chouyu_31</b>: <br />
 <b>2006-08-04T21:10:31Z</b><br />
 {% highlight python %}
@@ -191,30 +200,32 @@ def victor(problem):
         D = reveal(i)
         p = D(ex)
         if h != hash(p + ex):
-            raise Exception, "Didn&#x27;t follow protocol"
+            raise Exception, "Didn't follow protocol"
         #verify the strength of e and D somehow
         
         e = p[9:18]
         # What goes here to verify that during
         # Paula.new_round(), Paula was truthful,
-        # that is, didn&#x27;t cheat.
+        # that is, didn't cheat.
 
     ...
 {% endhighlight %}
 </div>
-<div style="margin-left: 39em; padding-top: 1em;">
+
+<div style="margin-left: 0em; padding-top: 1em;">
 <b>11011110</b>: <br />
 <b>2006-08-04T21:21:00Z</b><br />
-In your Paula, x and y are permutations of the nine digits.
-That is, you seem to be committing to 27 9-digit values.
+<p>In your Paula, x and y are permutations of the nine digits.
+That is, you seem to be committing to 27 9-digit values.</p>
 
-In the actual protocol, a single random permutation is generated and applied to all the solution digits, then Paula commits to the permuted digits.
-That is, she commits to 27 single-digit values.
+<p>In the actual protocol, a single random permutation is generated and applied to all the solution digits, then Paula commits to the permuted digits.
+That is, she commits to 27 single-digit values.</p>
 </div>
-<div style="margin-left: 42em; padding-top: 1em;">
+
+<div style="margin-left: 0em; padding-top: 1em;">
 <b>chouyu_31</b>: <br />
 <b>2006-08-04T21:39:50Z</b><br />
-I realized the over-permuting of the truthful result in the shower.  Here&#x27;s a better version.
+<p>I realized the over-permuting of the truthful result in the shower.  Here's a better version.</p>
 {% highlight python %}
 class paula:
     def __init__(self, problem):
@@ -247,80 +258,91 @@ class paula:
         return output, reveal
 {% endhighlight %}
 </div>
-<div style="margin-left: 45em; padding-top: 1em;">
+
+<div style="margin-left: 0em; padding-top: 1em;">
 <b>11011110</b>: <br />
 <b>2006-08-04T21:49:21Z</b><br />
-So self.__lie is a sequence of 27 uniformly random digits? Then most of its rows, columns, and boxes will have duplicated digits and missing digits, which Victor will discover as soon as he asks Paula to reveal one of the defective rows, columns, or boxes. Also it won&#x27;t have the same pattern of repeated digits as the givens of the original puzzle, which Victor would discover if he asks to see the givens instead of one of the rows, columns, or boxes.
+So self.__lie is a sequence of 27 uniformly random digits? Then most of its rows, columns, and boxes will have duplicated digits and missing digits, which Victor will discover as soon as he asks Paula to reveal one of the defective rows, columns, or boxes. Also it won't have the same pattern of repeated digits as the givens of the original puzzle, which Victor would discover if he asks to see the givens instead of one of the rows, columns, or boxes.
 </div>
-<div style="margin-left: 48em; padding-top: 1em;">
+
+<div style="margin-left: 0em; padding-top: 1em;">
 <b>chouyu_31</b>: <br />
 <b>2006-08-04T21:59:03Z</b><br />
 No, each list in self.__lie is a permutation of the digits 1...9, so there are no repeats in any row, column, or box.
 </div>
-<div style="margin-left: 51em; padding-top: 1em;">
+
+<div style="margin-left: 0em; padding-top: 1em;">
 <b>11011110</b>: <br />
 <b>2006-08-04T22:21:05Z</b><br />
 Oh, wait, I see, self.__lie has a vector in each of the 27 positions. But self.__soln has a digit in each of the 27 positions. How can you use them interchangeably?
 </div>
-<div style="margin-left: 54em; padding-top: 1em;">
+
+<div style="margin-left: 0em; padding-top: 1em;">
 <b>chouyu_31</b>: <br />
 <b>2006-08-04T22:23:29Z</b><br />
 They are both lists of lists:
 [[...],[...],[...],...]
 
-It&#x27;s just that __soln has copies of the real rows, columns, and boxes, but __lie is just a bunch of unrelated permutations of range(1,10).
+It's just that __soln has copies of the real rows, columns, and boxes, but __lie is just a bunch of unrelated permutations of range(1,10).
 </div>
-<div style="margin-left: 57em; padding-top: 1em;">
+
+<div style="margin-left: 0em; padding-top: 1em;">
 <b>11011110</b>: <br />
 <b>2006-08-04T22:27:49Z</b><br />
 No, the __soln that Paula should be committing to has 27 digits, not 27 vectors. One digit for each position of the puzzle. To reveal a row, Paula has to reveal nine out of the 27 commitments, not one.
 </div>
-<div style="margin-left: 60em; padding-top: 1em;">
+
+<div style="margin-left: 0em; padding-top: 1em;">
 <b>chouyu_31</b>: <br />
 <b>2006-08-04T22:33:25Z</b><br />
-Um...
-<pre>
-Victor can make one of 28 choices.
+<p>Um...</p>
+
+<pre>Victor can make one of 28 choices.
 
    1. Choose one of the rows.
    2. Choose one of the columns.
    3. Choose one of the sub-boxes.
-   4. See the permuted version of the original puzzle.
-</pre>
+   4. See the permuted version of the original puzzle.</pre>
 
-If Victor could see 9 of the 27 (28) simultaneously, he could invert a large portion of the solution by choosing all rows, or all columns, or all boxes.  Even if he could only see 2 of the 27 simultaneously, if he chose carefully, he could always invert at least entry given a solvable Sudoku puzzle.
+<p>If Victor could see 9 of the 27 (28) simultaneously, he could invert a large portion of the solution by choosing all rows, or all columns, or all boxes.  Even if he could only see 2 of the 27 simultaneously, if he chose carefully, he could always invert at least entry given a solvable Sudoku puzzle.</p>
 </div>
-<div style="margin-left: 63em; padding-top: 1em;">
+
+<div style="margin-left: 0em; padding-top: 1em;">
 <b>11011110</b>: <br />
 <b>2006-08-04T22:36:16Z</b><br />
 He gets to choose nine digits from the puzzle. And not just any nine digits, but nine forming a row, column, or box. How can he get all 27 digits by only choosing nine of them?
 </div>
-<div style="margin-left: 66em; padding-top: 1em;">
+
+<div style="margin-left: 0em; padding-top: 1em;">
 <b>chouyu_31</b>: <br />
 <b>2006-08-04T22:40:42Z</b><br />
-The 27 choices, as I see it (and as the blog post sees it), are the 9 rows, 9 columns, and 9 boxes.
+<p>The 27 choices, as I see it (and as the blog post sees it), are the 9 rows, 9 columns, and 9 boxes.</p>
 
-Also, unless my math is way off, there are 81 entries in the Sudoku puzzle.
+<p>Also, unless my math is way off, there are 81 entries in the Sudoku puzzle.</p>
 
-You are seeing 9 of the 81 entries, but not just any, the 9 that are in a single row, column, or box.
+<p>You are seeing 9 of the 81 entries, but not just any, the 9 that are in a single row, column, or box.</p>
 
-
-What do you mean by &quot;nine digits&quot;, if not one of the 27 possible row, column, or box choices? (that have been transformed by the permutation mapping)
+<p>What do you mean by "nine digits", if not one of the 27 possible row, column, or box choices? (that have been transformed by the permutation mapping)</p>
 </div>
-<div style="margin-left: 69em; padding-top: 1em;">
+
+<div style="margin-left: 0em; padding-top: 1em;">
 <b>11011110</b>: <br />
 <b>2006-08-05T00:16:01Z</b><br />
 Right, 81 digits. Each separately and individually committed, from which Victor selects nine to be revealed.
 </div>
-<div style="margin-left: 72em; padding-top: 1em;">
+
+<div style="margin-left: 0em; padding-top: 1em;">
 <b>chouyu_31</b>: <br />
 <b>2006-08-05T00:19:33Z</b><br />
-As stated in the original proof, he doesn&#x27;t choose 9 digits; he choose a row, column, or box.  Each row, column, and box is individually committed.
+As stated in the original proof, he doesn't choose 9 digits; he choose a row, column, or box.  Each row, column, and box is individually committed.
 </div>
-<div style="margin-left: 75em; padding-top: 1em;">
+
+<div style="margin-left: 0em; padding-top: 1em;">
 <b>11011110</b>: <br />
 <b>2006-08-05T00:42:27Z</b><br />
-Let me quote the original post for you:<blockquote>Paula then puts each entry into a lockbox (which can be implemented using cryptographic assumptions) and gives the lockboxes to Victor.
+Let me quote the original post for you:
+
+<pre>Paula then puts each entry into a lockbox (which can be implemented using cryptographic assumptions) and gives the lockboxes to Victor.
 
 Victor can make one of 28 choices.
 
@@ -329,27 +351,19 @@ Victor can make one of 28 choices.
    3. Choose one of the sub-boxes.
    4. See the permuted version of the original puzzle. 
 
-Paula then unlocks the appropriate boxes.</blockquote>
-Note: each entry into a separate lockbox. Not each row, column, or cell. Each entry. And note, &quot;unlocks the appropriate boxes&quot;. Plural.
+Paula then unlocks the appropriate boxes.</pre>
+
+<p>Note: each entry into a separate lockbox. Not each row, column, or cell. Each entry. And note, "unlocks the appropriate boxes". Plural.</pre>
 </div>
-<div style="margin-left: 78em; padding-top: 1em;">
+
+<div style="margin-left: 0em; padding-top: 1em;">
 <b>chouyu_31</b>: <br />
 <b>2006-08-05T00:45:09Z</b><br />
 That is what I was missing.
 </div>
-<div style="margin-left: 81em; padding-top: 1em;">
+
+<div style="margin-left: 0em; padding-top: 1em;">
 <b>chouyu_31</b>: <br />
 <b>2006-08-05T00:47:13Z</b><br />
 And it only took 27 posts.  Thank you for the clarification.  I agree that given that method, it is correct.
 </div>
-<div style="margin-left: 42em; padding-top: 1em;">
-<b>1minusqsquared</b>: <br />
-<b></b><br />
-
-</div>
-<div style="margin-left: 0em; padding-top: 1em;">
-<b>None</b>: <br />
-<b></b><br />
-
-</div>
-

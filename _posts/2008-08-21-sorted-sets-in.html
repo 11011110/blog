@@ -4,42 +4,42 @@ title:  'Sorted sets in PADS'
 date:   2008-08-21 11:55:00
 tags:   [python, algorithms]
 ---
-I&#x27;ve updated my <a href="http://www.ics.uci.edu/~eppstein/PADS/">library of Python algorithm implementations</a> to include another module: <a href="http://www.ics.uci.edu/~eppstein/PADS/SortedSet.py">SortedSet</a>. It maintains a set of items (like a Python set data type), but adds a method to report all the items in the set in sorted order.
-<br />
+<p>I've updated my <a href="http://www.ics.uci.edu/~eppstein/PADS/">library of Python algorithm implementations</a> to include another module: <a href="http://www.ics.uci.edu/~eppstein/PADS/SortedSet.py">SortedSet</a>. It maintains a set of items (like a Python set data type), but adds a method to report all the items in the set in sorted order.</p>
 
-<br />
-The obvious ways of doing this are to sort everything at reporting time or to maintain the items in a balanced binary tree data structure. My solution combines the simplicity of the first solution with the asymptotic speed of the second: store, along with the set itself, the sorted output from the last report and smaller lists of changed items. A new report request can be handled by sorting the smaller lists and merging them with the previous output, in constant time for each previously listed item and logarithmic time for each changed item.
+<p>The obvious ways of doing this are to sort everything at reporting time or to maintain the items in a balanced binary tree data structure. My solution combines the simplicity of the first solution with the asymptotic speed of the second: store, along with the set itself, the sorted output from the last report and smaller lists of changed items. A new report request can be handled by sorting the smaller lists and merging them with the previous output, in constant time for each previously listed item and logarithmic time for each changed item.</p>
+
 <br /><br /><hr /><br />
 <h3>Comments:</h3>
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>leonardo_m</b>: <br />
 <b>2008-08-21T19:24:59Z</b><br />
-Quite nice, I often need a sorted set/map in Python. I&#x27;ll try the performance of your code.
+Quite nice, I often need a sorted set/map in Python. I'll try the performance of your code.
 I already use some of your modules.
-If you don&#x27;t mind few notes:
+If you don't mind few notes:
 
+{% highlight python %}
 self._removals = set()
 self._additions = set()
 This may be more friendly for the GC:
 self._removals.clear()
 self._additions.clear()
 
-
 def __init__(self,comparison=None):
 Better to put a space after the commas (as PEP8 too says):
 def __init__(self, comparison=None):
+{% endhighlight %}
 
+Generally in Python it's better to put/define all the attributes used by a class inside the __init__, for documentation purposes too (untested, may be wrong for this program):
 
-Generally in Python it&#x27;s better to put/define all the attributes used by a class inside the __init__, for documentation purposes too (untested, may be wrong for this program):
-<pre>
+{% highlight python %}
 def __init__(self, comparison=None):
-    &quot;&quot;&quot;Create a new sorted set with the given comparison function.&quot;&quot;&quot;
+    """Create a new sorted set with the given comparison function."""
     self._comparison = comparison
     self._set = set()
     self._previous = None
     self._removals = set()
     self._additions = set()
-</pre>
+{% endhighlight %}
 </div>
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>thekit</b>: <br />
@@ -48,7 +48,7 @@ Hi,
 
 Your library looks interesting, but I keep getting gateway timed out errors on trying to download it. Is there a mirror anywhere?
 
-I&#x27;ll try again later.
+I'll try again later.
 
 Cheers,
 Jin
@@ -56,6 +56,6 @@ Jin
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>11011110</b>: <br />
 <b>2008-08-24T15:51:57Z</b><br />
-I&#x27;m not getting a response from the server right now, either, and I don&#x27;t know of any mirrors. I have a copy on my laptop, so if you&#x27;re in a hurry you could give me an email address and I could send it that way, but it&#x27;s likely that everything would be back up by the time we work that out.
+I'm not getting a response from the server right now, either, and I don't know of any mirrors. I have a copy on my laptop, so if you're in a hurry you could give me an email address and I could send it that way, but it's likely that everything would be back up by the time we work that out.
 </div>
 

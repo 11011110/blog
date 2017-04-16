@@ -4,52 +4,47 @@ title:  'Three cellular automata updates'
 date:   2011-08-21 10:53:00
 tags:   [cellular automata, wikipedia]
 ---
-(1) Matthias Merzenich has found a c/7 diagonal spaceship in Conway&#x27;s Game of Life! Here it is, in <a href="http://www.conwaylife.com/wiki/index.php?title=Run_Length_Encoded">RLE format</a>:<pre>x = 26, y = 26, rule = B3/S23
-<br />
+<ul><li><p>Matthias Merzenich has found a c/7 diagonal spaceship in Conway's Game of Life! Here it is, in <a href="http://www.conwaylife.com/wiki/index.php?title=Run_Length_Encoded">RLE format</a>:</p>
+
+<pre>x = 26, y = 26, rule = B3/S23
 12b3o$12bo$13bo2b2o$16b2o$12b2o$13b2o$12bo2bo2$14bo2bo$14bo3bo$15b3obo
-<br />
 $20bo$2o2bobo13bo$obob2o13bo$o4bo2b2o13b2o$6bo3bo6b2o2b2o2bo$2b2o6bo6b
-<br />
 o2bo$2b2o4bobo4b2o$9bo5bo3bo3bo$10bo2bo4b2o$11b2o3bo5bobo$15bo8b2o$15b
-<br />
-o4bo$14bo3bo$14bo5b2o$15bo5bo!</pre>It can also be extended into longer versions:<pre>x = 44, y = 34, rule = B3/S23
-<br />
+o4bo$14bo3bo$14bo5b2o$15bo5bo!</pre>
+
+<p>It can also be extended into longer versions:</p>
+
+<pre>x = 44, y = 34, rule = B3/S23
 11b3o$11bo$2o2bobo5bo2b2o$obob2o9b2o$o4bo2bo2b2o$6bo5b2o$2b2o7bo2bo$2b
-<br />
 2o$13bo16b3o$20b3o7bo$20bo10bo2b2o$9b2o2bobo5bo2b2o8b2o$9bobob2o9b2o4b
-<br />
 2o$9bo4bo2bo2b2o9b2o$15bo5b2o7bo2bo$11b2o7bo2bo$11b2o19bo2bo$22bo9bo3b
-<br />
 o$33b3obo$38bo$18b2o2bobo13bo$18bobob2o13bo$18bo4bo2b2o13b2o$24bo3bo6b
-<br />
 2o2b2o2bo$20b2o6bo6bo2bo$20b2o4bobo4b2o$27bo5bo3bo3bo$28bo2bo4b2o$29b
-<br />
 2o3bo5bobo$33bo8b2o$33bo4bo$32bo3bo$32bo5b2o$33bo5bo!</pre>
-<br />
-(2) If I&#x27;d made a list of things I intended to do this weekend, &quot;programming in C&quot; would not have been on it. But Andrew Trevorrow helpfully alerted me to the fact that my <a href="http://www.ics.uci.edu/~eppstein/ca/gfind.c">gfind software</a> (for searching for patterns such as this one, although Merzenich used a different program) didn&#x27;t work correctly when compiled in 64-bit mode, which has become the default for cc on new Apple computers, at least. In a past life long ago I used to work on a C compiler for a 36-bit architecture, so I should have known better. Anyway, I&#x27;ve updated it and I think it should work better now.
-<br />
+</li>
 
-<br />
+<li><p>If I'd made a list of things I intended to do this weekend, "programming in C" would not have been on it. But Andrew Trevorrow helpfully alerted me to the fact that my <a href="http://www.ics.uci.edu/~eppstein/ca/gfind.c">gfind software</a> (for searching for patterns such as this one, although Merzenich used a different program) didn't work correctly when compiled in 64-bit mode, which has become the default for cc on new Apple computers, at least. In a past life long ago I used to work on a C compiler for a 36-bit architecture, so I should have known better. Anyway, I've updated it and I think it should work better now.</p></li>
 
-<br />
-(3) The pointer to xlife on Wikipedia&#x27;s Game of Life article is woefully out of date, and I&#x27;ve been getting complaints for not letting people update it to point to their own customized versions. The trouble is, I don&#x27;t know where to find a recent and canonical version of xlife, one that everyone accepts as &quot;the standard xlife&quot;, or at least a well-curated page documenting the different versions that are available. Does anyone else have a better idea what to do with this? Or is everyone else just using <a href="http://golly.sourceforge.net/">Golly</a> these days as I am, in which case maybe Wikipedia should just drop xlife from its list.
+<li><p>The pointer to xlife on Wikipedia's Game of Life article is woefully out of date, and I've been getting complaints for not letting people update it to point to their own customized versions. The trouble is, I don't know where to find a recent and canonical version of xlife, one that everyone accepts as "the standard xlife", or at least a well-curated page documenting the different versions that are available. Does anyone else have a better idea what to do with this? Or is everyone else just using <a href="http://golly.sourceforge.net/">Golly</a> these days as I am, in which case maybe Wikipedia should just drop xlife from its list.</p></li>
+
 <br /><br /><hr /><br />
 <h3>Comments:</h3>
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>gohover</b>: <br />
 <b>2011-08-21T18:30:24Z</b><br />
-Thank you very much for fixing gfind on such short notice!   It is chugging on my mac right now.   I wasn&#x27;t the one who originally commented on the bug, so you can know that you helped more than one person just this weekend alone.
+<p>Thank you very much for fixing gfind on such short notice!   It is chugging on my mac right now.   I wasn't the one who originally commented on the bug, so you can know that you helped more than one person just this weekend alone.</p>
 
-I&#x27;m using gfind to search for spaceships in B013468/S02 -- the rule you recommended here:  http://11011110.livejournal.com/185722.html?thread=476794   Do you have a cache of pattern files  for this rule, beyond what is already available on fano, and what was shown in your growth and decay paper?       You&#x27;ve already provided CA-enthusisasts with an embarrassment of riches, but I thought it couldn&#x27;t hurt to ask!    Any RLE,etc patterns for this rule would be greatly appreciated.   
+<p>I'm using gfind to search for spaceships in B013468/S02 -- the rule you recommended here:  http://11011110.livejournal.com/185722.html?thread=476794   Do you have a cache of pattern files  for this rule, beyond what is already available on fano, and what was shown in your growth and decay paper?       You've already provided CA-enthusisasts with an embarrassment of riches, but I thought it couldn't hurt to ask!    Any RLE,etc patterns for this rule would be greatly appreciated.</p>
 
-In the same spirit, I&#x27;ll post any new spaceships that gfind uncovers.
+<p>In the same spirit, I'll post any new spaceships that gfind uncovers.</p>
 </div>
+
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>11011110</b>: <br />
 <b>2011-08-21T19:00:21Z</b><br />
-Thanks, no, <s>I haven&#x27;t tried to build a catalog of B013468/S02 patterns, so what&#x27;s in fano for that rule is pretty much all I have.</s> No wait, that&#x27;s not true, I do have some files for it. What I don&#x27;t have is a big catalog of ships, but I have some other kinds of patterns.
+<p>Thanks, no, <s>I haven't tried to build a catalog of B013468/S02 patterns, so what's in fano for that rule is pretty much all I have.</s> No wait, that's not true, I do have some files for it. What I don't have is a big catalog of ships, but I have some other kinds of patterns.</p>
 
-# Wickstretcher
+<pre># Wickstretcher
 x = 7, y = 4, rule = B013468/S02
 4obo$2bo3bo$4o2bo$5bo!
 
@@ -105,46 +100,51 @@ x = 29, y = 79, rule = B013468/S02
 $9bo2b4obo$16bo$14bo13$25bo$18b2o7bo$17b4o2b4obo$17b4o2b4obo$18b2o7bo$
 25bo4$24bo$17b2o7bo$16b4o2b4obo$16b4o2b4obo$17b2o7bo$24bo6$20bo$12bo9b
 o$17b5obo$17b5obo$12bo9bo$20bo4$9bo11bo$13bo9bo$9bo8b5obo$18b5obo$13bo
-9bo$21bo!
+9bo$21bo!</pre>
 </div>
+
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>andy_drucker</b>: impossibility in Life<br />
 <b>2011-08-21T20:26:07Z</b><br />
-Thanks for publicizing this kind of interesting work in CA constructions.  I have a question.  It seems like most of the action today in Conway&#x27;s Game of Life (at least in online forums) is on the gadgets/constructions side; is there a survey of impossibility results and conjectures?
+<p>Thanks for publicizing this kind of interesting work in CA constructions.  I have a question.  It seems like most of the action today in Conway's Game of Life (at least in online forums) is on the gadgets/constructions side; is there a survey of impossibility results and conjectures?</p>
 
-I don&#x27;t mean the known undecidability results for GOL, which follow from a rich-enough vocabulary of constructions; rather I&#x27;m curious about results ruling out certain constructions, e.g., a spaceship of a certain velocity.  Are there many interesting results of this kind?
- 
-As an example, Conway&#x27;s &quot;grandfather problem&quot;
+<p>I don't mean the known undecidability results for GOL, which follow from a rich-enough vocabulary of constructions; rather I'm curious about results ruling out certain constructions, e.g., a spaceship of a certain velocity.  Are there many interesting results of this kind?</p>
 
-http://www.conwaylife.com/wiki/Lifeline_Volume_6
+<p>As an example, Conway's "grandfather problem"</p>
 
-gives an interesting kind of configuration that might be impossible.  Of course answering this kind of question is likely to be hard.
+<p>http://www.conwaylife.com/wiki/Lifeline_Volume_6</p>
+
+<p>gives an interesting kind of configuration that might be impossible.  Of course answering this kind of question is likely to be hard.</p>
 </div>
+
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>gareth_rees</b>: Re: impossibility in Life<br />
 <b>2011-08-21T21:26:42Z</b><br />
-There&#x27;s the question of whether oscillating configurations with all periods are possible. <a href="http://www.conwaylife.com/wiki/Oscillator">Configurations are known</a> with all periods except 19, 23, 38, 41, 43, and 53. (The linked page doesn&#x27;t says so explicitly, but <a href="http://www.radicaleye.com/lifepage/patterns/bhept/bhept.html">David Buckingham showed how to construct</a> configurations with all periods ≥ 62.)
+There's the question of whether oscillating configurations with all periods are possible. <a href="http://www.conwaylife.com/wiki/Oscillator">Configurations are known</a> with all periods except 19, 23, 38, 41, 43, and 53. (The linked page doesn't says so explicitly, but <a href="http://www.radicaleye.com/lifepage/patterns/bhept/bhept.html">David Buckingham showed how to construct</a> configurations with all periods ≥ 62.)
 </div>
+
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>gohover</b>: Re: impossibility in Life<br />
 <b>2011-08-21T23:23:04Z</b><br />
-David, thank you very much for the extra B013468/S02 patterns -- just the sort of thing I was hoping for.    I look forward to coming up with more and sharing them here and on conwaylife.com.
+<p>David, thank you very much for the extra B013468/S02 patterns -- just the sort of thing I was hoping for.    I look forward to coming up with more and sharing them here and on conwaylife.com.</p>
 
-Andy,   The following isn&#x27;t a survey, but I wonder if this conversation would be of interest to you:
-   http://www.conwaylife.com/forums/viewtopic.php?f=7&amp;t=482&amp;p=3120&amp;hilit=limit#p3120
+<p>Andy,   The following isn't a survey, but I wonder if this conversation would be of interest to you:</p>
 
-    -- Eric
+<p>http://www.conwaylife.com/forums/viewtopic.php?f=7&amp;t=482&amp;p=3120&amp;hilit=limit#p3120</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;-- Eric</p>
 </div>
+
 <div style="margin-left: 6em; padding-top: 1em;">
 <b>andy_drucker</b>: Re: impossibility in Life<br />
 <b>2011-08-22T15:43:40Z</b><br />
 Thanks, Gareth and Eric!
 </div>
+
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>ferkeltongs</b>: <br />
 <b>2011-08-22T09:32:06Z</b><br />
-There was a thread about xlife recently: http://www.conwaylife.com/forums/viewtopic.php?f=7&amp;t=670&amp;p=4739&amp;hilit=xlife#p4739 but it didn&#x27;t get much interest.
+<p>There was a thread about xlife recently: http://www.conwaylife.com/forums/viewtopic.php?f=7&amp;t=670&amp;p=4739&amp;hilit=xlife#p4739 but it didn't get much interest.</p>
 
-Maybe the version distributed with (e.g.) Debian is the canonical one?
+<p>Maybe the version distributed with (e.g.) Debian is the canonical one?</p>
 </div>
-

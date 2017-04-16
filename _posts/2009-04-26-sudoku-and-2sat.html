@@ -4,73 +4,60 @@ title:  'Sudoku and 2SAT'
 date:   2009-04-26 15:00:00
 tags:   [sudoku, python]
 ---
-I&#x27;ve updated <a href="http://www.ics.uci.edu/~eppstein/PADS/">PADS</a>, my Python algorithm implementation library, to include
-<br />
-<ul><li>The <a href="http://en.wikipedia.org/wiki/Condensation_(graph_theory)">condensation</a> of a directed graph.</li>
-<br />
-<li>A bit-parallel algorithm for testing reachability in a directed acyclic graph; after a linear number of bit-vector operations, one can test reachability between any pair of vertices in constant time.</li>
-<br />
-<li>A <a href="http://en.wikipedia.org/wiki/2-satisfiability">2-satisfiability</a> solver that uses reachability in the condensation of an <a href="http://en.wikipedia.org/wiki/Implication_graph">implication graph</a> to determine which variables have values that are fixed to true or fixed to false in all solutions to a given 2SAT instance.</li>
-<br />
-<li>An optional rule for my Sudoku solver that transforms the puzzle into a 2SAT instance with at least as many solutions, and uses the fixed variables of this instance to make inferences about the puzzle.</li></ul>In more detail, a 2SAT instance is represented as a collection of implications, that if one variable or negated variable is true then so must be another. The 2SAT instance for a Sudoku puzzle has a variable for each combination of a cell and a digit. There are obvious 2SAT implications between these variables: if a digit is placed somewhere, no other digit can be placed there, and the same digit cannot be placed anywhere else in the same row, column, or square. But these aren&#x27;t enough to get any useful information out of the 2SAT solver, because with only these implications the resulting 2SAT instance could be trivially solved by making all variables false. To get something nontrivial, we need to add some other implications: if a cell can only contain two possible digits, then if one digit is not placed in that cell the other digit must be placed there, and if a digit can only go in two cells within a row, column, or square, and if it is not placed in one of these cells it must be placed in the other. I also included implications whenever a placement of a digit in one cell eliminates all but one placement of the same digit in another row, column, or square.
-<br />
+<p>I've updated <a href="http://www.ics.uci.edu/~eppstein/PADS/">PADS</a>, my Python algorithm implementation library, to include</p>
 
-<br />
-The new smarter Sudoku solver still needs to backtrack on some puzzles, but many fewer of them than before. Here&#x27;s one that it still finds difficult:
-<br />
+<ul>
+<li><p>The <a href="http://en.wikipedia.org/wiki/Condensation_(graph_theory)">condensation</a> of a directed graph.</p></li>
+
+<li><p>A bit-parallel algorithm for testing reachability in a directed acyclic graph; after a linear number of bit-vector operations, one can test reachability between any pair of vertices in constant time.</p></li>
+
+<li><p>A <a href="http://en.wikipedia.org/wiki/2-satisfiability">2-satisfiability</a> solver that uses reachability in the condensation of an <a href="http://en.wikipedia.org/wiki/Implication_graph">implication graph</a> to determine which variables have values that are fixed to true or fixed to false in all solutions to a given 2SAT instance.</p></li>
+
+<li><p>An optional rule for my Sudoku solver that transforms the puzzle into a 2SAT instance with at least as many solutions, and uses the fixed variables of this instance to make inferences about the puzzle.</p></li>
+</ul>
+
+<p>In more detail, a 2SAT instance is represented as a collection of implications, that if one variable or negated variable is true then so must be another. The 2SAT instance for a Sudoku puzzle has a variable for each combination of a cell and a digit. There are obvious 2SAT implications between these variables: if a digit is placed somewhere, no other digit can be placed there, and the same digit cannot be placed anywhere else in the same row, column, or square. But these aren't enough to get any useful information out of the 2SAT solver, because with only these implications the resulting 2SAT instance could be trivially solved by making all variables false. To get something nontrivial, we need to add some other implications: if a cell can only contain two possible digits, then if one digit is not placed in that cell the other digit must be placed there, and if a digit can only go in two cells within a row, column, or square, and if it is not placed in one of these cells it must be placed in the other. I also included implications whenever a placement of a digit in one cell eliminates all but one placement of the same digit in another row, column, or square.</p>
+
+<p>The new smarter Sudoku solver still needs to backtrack on some puzzles, but many fewer of them than before. Here's one that it still finds difficult:</p>
+
 <pre> ----------------------------------- 
-<br />
 | .   .   . | 9   .   2 | .   .   . |
-<br />
 |           |           |           |
-<br />
 | 8   .   . | .   4   . | .   .   3 |
-<br />
 |           |           |           |
-<br />
 | .   4   . | 7   .   . | 1   .   . |
-<br />
 |-----------------------------------|
-<br />
 | .   .   6 | .   .   9 | .   .   1 |
-<br />
 |           |           |           |
-<br />
 | .   2   . | .   .   . | .   7   . |
-<br />
 |           |           |           |
-<br />
 | 5   .   . | 3   .   . | 4   .   . |
-<br />
 |-----------------------------------|
-<br />
 | .   .   7 | .   .   3 | .   6   . |
-<br />
 |           |           |           |
-<br />
 | 6   .   . | .   1   . | .   .   5 |
-<br />
 |           |           |           |
-<br />
 | .   .   . | 2   .   6 | .   .   . |
-<br />
  ----------------------------------- </pre>
+
 <br /><br /><hr /><br />
 <h3>Comments:</h3>
+
 <div style="margin-left: 0em; padding-top: 1em;">
-<b>leonardo_m</b>: <br />
+<b>leonardo_m</b>:<br />
 <b>2009-04-26T23:20:58Z</b><br />
-Thank you for your new code, I&#x27;ll take a better look at it tomorrow, I&#x27;m sleepy now.
+<p>Thank you for your new code, I'll take a better look at it tomorrow, I'm sleepy now.</p>
 
-Sometimes it can be useful to add (for example in the global docstring of your modules, or at their bottom, in the if __name__==&quot;__main__&quot;: section) few more different usage examples of your algorithms, because for me it&#x27;s not always obvious why I may want to use them (and it&#x27;s happened to me to need one of your algorithm implementations without actually knowing it! Knowing what algorithm to use is sometimes half of the battle).
+<p>Sometimes it can be useful to add (for example in the global docstring of your modules, or at their bottom, in the if __name__==&quot;__main__&quot;: section) few more different usage examples of your algorithms, because for me it's not always obvious why I may want to use them (and it's happened to me to need one of your algorithm implementations without actually knowing it! Knowing what algorithm to use is sometimes half of the battle).</p>
 
-In your Python code I suggest you to break very long lines (like the docstrings/comments), for example after 70-100 chars.
+<p>In your Python code I suggest you to break very long lines (like the docstrings/comments), for example after 70-100 chars.</p>
 
-In your Python code I also suggest you to use doctests (http://docs.python.org/library/doctest.html ) where possible. Doctests can&#x27;t be used everywhere, in some situations you have to use normal unittest module. But where the situations are simple enough and doctests can be used, they make the unit tests more readable and simpler to understand too.
+<p>In your Python code I also suggest you to use doctests (http://docs.python.org/library/doctest.html ) where possible. Doctests can't be used everywhere, in some situations you have to use normal unittest module. But where the situations are simple enough and doctests can be used, they make the unit tests more readable and simpler to understand too.</p>
 </div>
+
 <div style="margin-left: 3em; padding-top: 1em;">
-<b>11011110</b>: <br />
+<b>11011110</b>:<br />
 <b>2009-04-27T02:20:16Z</b><br />
-Thanks for the suggestions. Re the overlong lines: maybe I should find a text editor that makes soft-wrapped lines more visible, because as it is it&#x27;s difficult to notice that I&#x27;m doing that.
+Thanks for the suggestions. Re the overlong lines: maybe I should find a text editor that makes soft-wrapped lines more visible, because as it is it's difficult to notice that I'm doing that.
 </div>
 
