@@ -4,9 +4,9 @@ title:  '2013 in algorithm preprints'
 date:   2014-01-01 20:00:00
 tags:   [algorithms, papers]
 ---
-<p>As <a href="http://11011110.livejournal.com/211518.html">in</a> <a href="http://11011110.livejournal.com/238766.html">previous</a> <a href="http://11011110.livejournal.com/260838.html">years</a>, it&#x27;s time for my report on the cs.DS (data structures and algorithms) section of arXiv.org. The past years&#x27; rapid growth seems to have plateaued: In 2013 there were <a href="http://arxiv.org/list/cs.DS/13">1065 preprints</a> listed in cs.DS, up only a little from the 940 preprints in 2012.</p>
+<p>As <a href="{{site.baseurl}}/2010/12/31/top-ten-algorithms.html">in</a> <a href="{{site.baseurl}}/2011/12/31/top-ten-algorithms.html">previous</a> <a href="{{site.baseurl}}/2013/01/01/top-ten-algorithms.html">years</a>, it's time for my report on the cs.DS (data structures and algorithms) section of arXiv.org. The past years' rapid growth seems to have plateaued: In 2013 there were <a href="http://arxiv.org/list/cs.DS/13">1065 preprints</a> listed in cs.DS, up only a little from the 940 preprints in 2012.</p>
 
-<p>It&#x27;s also time for me to pick ten algorithms preprints that I found particularly interesting (not including <a href="http://arxiv.org/a/eppstein_d_1">my own ones</a> as well as <a href="http://11011110.livejournal.com/275238.html">some I wrote about earlier</a>). Here they are, in chronological order. It was difficult to get the list down to 10, and I cheated a bit by including two papers for some of the entries.</p>
+<p>It's also time for me to pick ten algorithms preprints that I found particularly interesting (not including <a href="http://arxiv.org/a/eppstein_d_1">my own ones</a> as well as <a href="{{site.baseurl}}/2013/09/01/big-batch-of.html">some I wrote about earlier</a>). Here they are, in chronological order. It was difficult to get the list down to 10, and I cheated a bit by including two papers for some of the entries.</p>
 
 <ul>
 <li><p><b>On randomized memoryless algorithms for the weighted \( k \)-server problem</b>, Ashish Chiplunkar and Sundar Vishwanathan,
@@ -18,14 +18,14 @@ This paper gives a tight doubly-exponential bound on the competitive ratio of me
 <a href="http://arxiv.org/abs/1304.2077">arXiv:1304.2077</a> and FOCS 2013, and
 <b>An almost-linear-time algorithm for approximate max flow in undirected graphs, and its multicommodity generalizations</b>, Jonathan A. Kelner, Yin Tat Lee, Lorenzo Orecchia, and Aaron Sidford,
 <a href="http://arxiv.org/abs/1304.2338">arXiv:1304.2338</a> and SODA 2014.
-Here &quot;nearly maximum&quot; and &quot;approximate&quot; mean within a \( 1+\varepsilon \) factor of optimal, and &quot;nearly linear&quot; and &quot;almost linear&quot; mean that the time on an \( m \)-edge graph is \( O(m^{1+o(1)}) \).
+Here "nearly maximum" and "approximate" mean within a \( 1+\varepsilon \) factor of optimal, and "nearly linear" and "almost linear" mean that the time on an \( m \)-edge graph is \( O(m^{1+o(1)}) \).
 The previous bound by Christiano and four co-authors in STOC 2011, which the first paper characterizes as a breakthrough, was slower by an \( n^{1/3} \) factor.
 </p></li>
 
 <li><p><b>A \( O(c^k n) \) 5-approximation algorithm for treewidth</b>, Hans Bodlaender, Pål G. Drange, Markus S. Dregi, Fedor V. Fomin, Daniel Lokshtanov, and Michał Pilipczuk,
-<a href="http://arxiv.org/abs/1304.6321">arXiv:1304.6321</a> and FOCS 2013. This is the first known algorithm to get a constant approximation approximation to treewidth in an amount of time that&#x27;s both FPT and singly-exponential in the treewidth. It&#x27;s important for FPT algorithms more generally, because constructing a good tree decomposition is a bottleneck in other computations: one can often then finish the solution in time that&#x27;s singly exponential in the width of the decomposition.</p>
+<a href="http://arxiv.org/abs/1304.6321">arXiv:1304.6321</a> and FOCS 2013. This is the first known algorithm to get a constant approximation approximation to treewidth in an amount of time that's both FPT and singly-exponential in the treewidth. It's important for FPT algorithms more generally, because constructing a good tree decomposition is a bottleneck in other computations: one can often then finish the solution in time that's singly exponential in the width of the decomposition.</p>
 
-<p>While I have the podium, let me also remind everyone that it&#x27;s a bad idea to put formulas into titles: it makes it hard to search for them, it makes it hard to format them on sites without proper MathJax support, the formatting is strange when the rest of the title is boldfaced, and it makes it likely that indexing sites will format them incorrectly. I was going to guess that this explains why I can&#x27;t find the FOCS version of this paper in Google scholar, but it didn&#x27;t find Sherman&#x27;s paper either, so I don&#x27;t know. (Also, formulas starting with a vowel should use &quot;an&quot;, not &quot;a&quot;.)
+<p>While I have the podium, let me also remind everyone that it's a bad idea to put formulas into titles: it makes it hard to search for them, it makes it hard to format them on sites without proper MathJax support, the formatting is strange when the rest of the title is boldfaced, and it makes it likely that indexing sites will format them incorrectly. I was going to guess that this explains why I can't find the FOCS version of this paper in Google scholar, but it didn't find Sherman's paper either, so I don't know. (Also, formulas starting with a vowel should use "an", not "a".)
 </p></li>
 
 <li><p><b>Combining binary search trees</b>, Erik D. Demaine, John Iacono, Stefan Langerman, and Özgür Özkan,
@@ -47,22 +47,22 @@ Bounded tree-depth is a pretty strong assumption. But in exchange you get dynami
 
 <li><p><b>Finding small patterns in permutations in linear time</b>, Sylvain Guillemot and Dániel Marx,
 <a href="http://arxiv.org/abs/1307.3073">arXiv:1307.3073</a> and SODA 2014.
-A small permutation is a pattern of a larger permutation if it is order-isomorphic to a subsequence of the larger permutation; I&#x27;ve recently been studying connections between permutation patterns and graph drawing. It&#x27;s NP-complete to test whether one permutation is a pattern of another, but this paper shows that it&#x27;s FPT, with the parameter being the size of the smaller permutation, and with linear dependence on the size of the larger permutation.
+A small permutation is a pattern of a larger permutation if it is order-isomorphic to a subsequence of the larger permutation; I've recently been studying connections between permutation patterns and graph drawing. It's NP-complete to test whether one permutation is a pattern of another, but this paper shows that it's FPT, with the parameter being the size of the smaller permutation, and with linear dependence on the size of the larger permutation.
 </p></li>
 
 <li><p><b>The Mondshein sequence</b>, Jens M. Schmidt,
 <a href="http://arxiv.org/abs/1311.0750">arXiv:1311.0750</a>.
-Canonical orderings of maximal planar graphs are a very important tool in graph drawing; they are an ordering of the vertices such that each prefix forms a triangulated disk and each new vertex attaches to a contiguous path on this disk&#x27;s boundary. They can be generalized to arbitrary directed graphs by a structure known as a non-separating ear decomposition, but so far this has been less useful because it&#x27;s slower to construct. This paper solves that problem by finding a linear time algorithm for non-separating ear decomposition. The algorithm is complicated and depends on 3-connectivity analysis, but once the decomposition has been constructed it&#x27;s possible to use it to test planarity easily.
+Canonical orderings of maximal planar graphs are a very important tool in graph drawing; they are an ordering of the vertices such that each prefix forms a triangulated disk and each new vertex attaches to a contiguous path on this disk's boundary. They can be generalized to arbitrary directed graphs by a structure known as a non-separating ear decomposition, but so far this has been less useful because it's slower to construct. This paper solves that problem by finding a linear time algorithm for non-separating ear decomposition. The algorithm is complicated and depends on 3-connectivity analysis, but once the decomposition has been constructed it's possible to use it to test planarity easily.
 </p></li>
 
 <li><p><b>Exact algorithms for maximum independent set</b>, Mingyu Xiao and Hiroshi Nagamochi,
 <a href="http://arxiv.org/abs/1312.6260">arXiv:1312.6260</a> and ICALP 2013.
-The first improvement in over 25 years on the worst case time for finding maximum independent sets in graphs. The algorithm only uses polynomial space, so presumably Robson&#x27;s idea of memoizing small subgraphs can give a further improvement.
+The first improvement in over 25 years on the worst case time for finding maximum independent sets in graphs. The algorithm only uses polynomial space, so presumably Robson's idea of memoizing small subgraphs can give a further improvement.
 </p></li>
 
 <li><p><b>Faster all-pairs shortest paths via circuit complexity</b>, Ryan Williams,
 <a href="http://arxiv.org/abs/1312.6680">arXiv:1312.6680</a>.
-The best algorithms for finding all-pairs shortest paths in dense graphs (in the real RAM model, so without assuming small integer edge lengths) take a bit less than \( O(n^3) \) time, but how much less? A hint that maybe it&#x27;s a lot less comes from an old decision-tree algorithm of Fredman that solves the problem in time \( O(n^{2.5}) \) but with a decision tree of exponential size. By applying this to very small subproblems one can at least get an explicit algorithm that&#x27;s subcubic by a polylogarithmic factor. Williams instead shows that it&#x27;s possible to achieve a bound that&#x27;s smaller than cubic by an exponential of a polylog. So it&#x27;s still not an improvement to the actual exponent of the problem but it&#x27;s not just an encoding trick as some logarithmic improvements have been alleged to be. The technique for achieving these bounds involves algebraic connections between tropical matrix multiplication (the min,plus algebra that one needs for shortest paths) and matrix multiplication over finite fields.
+The best algorithms for finding all-pairs shortest paths in dense graphs (in the real RAM model, so without assuming small integer edge lengths) take a bit less than \( O(n^3) \) time, but how much less? A hint that maybe it's a lot less comes from an old decision-tree algorithm of Fredman that solves the problem in time \( O(n^{2.5}) \) but with a decision tree of exponential size. By applying this to very small subproblems one can at least get an explicit algorithm that's subcubic by a polylogarithmic factor. Williams instead shows that it's possible to achieve a bound that's smaller than cubic by an exponential of a polylog. So it's still not an improvement to the actual exponent of the problem but it's not just an encoding trick as some logarithmic improvements have been alleged to be. The technique for achieving these bounds involves algebraic connections between tropical matrix multiplication (the min,plus algebra that one needs for shortest paths) and matrix multiplication over finite fields.
 </p></li>
 </ul>
 <br /><br /><hr /><br />
@@ -70,7 +70,7 @@ The best algorithms for finding all-pairs shortest paths in dense graphs (in the
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>None</b>: <br />
 <b>2014-01-02T11:56:28Z</b><br />
-If you&#x27;re interested in maximum flows, it seems difficult not to include:
+If you're interested in maximum flows, it seems difficult not to include:
 Navigating Central Path with Electrical Flows: from Flows to Matchings, and Back
 http://arxiv.org/abs/1307.2205
 

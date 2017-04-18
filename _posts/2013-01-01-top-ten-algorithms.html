@@ -5,65 +5,69 @@ date:   2013-01-01 22:19:00
 tags:   [algorithms, papers]
 ---
 
-<p>Happy new year! As in <a href="http://11011110.livejournal.com/238766.html">previous years</a> the growth of the cs.DS section of arXiv.org continues: there were 935 data structures and algorithms preprints this year, compared with 798 in 2011. We&#x27;re not quite to the point of having 100 papers per month but July came close with 98.</p>
+<p>Happy new year! As in <a href="{{site.baseurl}}/2011/12/31/top-ten-algorithms.html">previous years</a> the growth of the cs.DS section of arXiv.org continues: there were 935 data structures and algorithms preprints this year, compared with 798 in 2011. We're not quite to the point of having 100 papers per month but July came close with 98.</p>
 
-<p>Here is a personal selection of ten preprints from this list that I found particularly interesting, excluding (as usual) my own preprints as well as <a href="http://11011110.livejournal.com/252997.html">some</a> <a href="http://11011110.livejournal.com/239482.html">others</a> <a href="http://11011110.livejournal.com/253704.html">that</a> <a href="http://11011110.livejournal.com/240170.html">I</a> wrote about earlier. (Also excluded: papers like <a href="http://jorlin.scripts.mit.edu/docs/papersfolder/O(nm)MaxFlow.pdf">Orlin&#x27;s faster max flow algorithm</a> that haven&#x27;t been submitted to the arXiv.) In chronological order, they are:</p>
+<p>Here is a personal selection of ten preprints from this list that I found particularly interesting, excluding (as usual) my own preprints as well as <a href="{{site.baseurl}}/2012/02/05/cycle-double-covers.html">some</a> <a href="{{site.baseurl}}/2012/01/04/sudoku-puzzles-with.html">others</a> <a href="{{site.baseurl}}/2012/07/27/mimicking-networks.html">that</a> <a href="{{site.baseurl}}/2012/05/13/flip-distance-is.html">I</a> wrote about earlier. (Also excluded: papers like <a href="http://jorlin.scripts.mit.edu/docs/papersfolder/O(nm)MaxFlow.pdf">Orlin's faster max flow algorithm</a> that haven't been submitted to the arXiv.) In chronological order, they are:</p>
 
 <ul>
-<li><p><b>Sublinear time algorithm for PageRank computations</b>, Christian Borgs, Michael Brautbar, Jennifer Chayes, and Shang-Hua Teng, <a href="http://arxiv.org/abs/1202.2771">arXiv:1202.2771</a> and WAW 2012. It&#x27;s only slightly sublinear but it&#x27;s interesting to me that we can prove such bounds, in a natural model of computation for web graph access.</p></li>
+<li><p><b>Sublinear time algorithm for PageRank computations</b>, Christian Borgs, Michael Brautbar, Jennifer Chayes, and Shang-Hua Teng, <a href="http://arxiv.org/abs/1202.2771">arXiv:1202.2771</a> and WAW 2012. It's only slightly sublinear but it's interesting to me that we can prove such bounds, in a natural model of computation for web graph access.</p></li>
 
 <li><p><b>Finding a most biased coin with fewest flips</b>, Karthekeyan Chandrasekaran and Richard Karp, <a href="http://arxiv.org/abs/1202.3639">arXiv:1202.3639</a>. The problem this solves seems very fundamental, and the result improves previous constant factor approximations, instead solving the problem optimally.</p></li>
 
 <li><p><b>Strongly universal string hashing is fast</b>, Owen Kaser and Daniel Lemire, <a href="http://arxiv.org/abs/1202.4961">arXiv:1202.4961</a>. From the practical side of algorithmics, a method for hashing strings that uses less than one instruction per byte and nevertheless has guaranteed theoretical properties.</p></li>
 
-<li><p><b>Known algorithms for EDGE CLIQUE COVER are probably optimal</b>, Marek Cygan, Marcin Pilipczuk, and Michał Pilipczuk, <a href="http://arxiv.org/abs/1203.1754">arXiv:1203.1754</a> and SODA 2013. There is a simple FPT algorithm for covering the edges of a graph with a minimum number of cliques, which is however doubly exponential in the number of cliques. Apparently (see e.g. <a href="http://cstheory.stackexchange.com/questions/5282/parameterized-complexity-of-graph-intersection-number">this stackexchange question</a>) it&#x27;s an old open question to do better than this. Last year it was shown that no better kernelization is possible, and now this preprint shows that double exponential is optimal regardless of whether it&#x27;s achieved using a kernelization, assuming the <a href="http://en.wikipedia.org/wiki/Exponential_time_hypothesis">exponential time hypothesis</a> is true. Apparently it&#x27;s the first known (if conditional) double exponential lower bound for FPT algorithms.</p></li>
+<li><p><b>Known algorithms for EDGE CLIQUE COVER are probably optimal</b>, Marek Cygan, Marcin Pilipczuk, and Michał Pilipczuk, <a href="http://arxiv.org/abs/1203.1754">arXiv:1203.1754</a> and SODA 2013. There is a simple FPT algorithm for covering the edges of a graph with a minimum number of cliques, which is however doubly exponential in the number of cliques. Apparently (see e.g. <a href="http://cstheory.stackexchange.com/questions/5282/parameterized-complexity-of-graph-intersection-number">this stackexchange question</a>) it's an old open question to do better than this. Last year it was shown that no better kernelization is possible, and now this preprint shows that double exponential is optimal regardless of whether it's achieved using a kernelization, assuming the <a href="http://en.wikipedia.org/wiki/Exponential_time_hypothesis">exponential time hypothesis</a> is true. Apparently it's the first known (if conditional) double exponential lower bound for FPT algorithms.</p></li>
 
 <li><p><b>Approximability of the vertex cover problem in power law graphs</b>, Mikael Gast and Mathias Hauptmann, <a href="http://arxiv.org/abs/1204.0982">arXiv:1204.0982</a>. I think there should be more work on algorithms that take advantage of the properties of web graphs and social networks to compute properties of these graphs more quickly than they can be computed in the worst case, and this is an example: it gets a better approximation ratio for vertex cover than can be achieved in the worst case, for any graph whose degree distribution obeys a power law.</p></li>
 
 <li><p><b>Clustering is difficult only when it does not matter</b>, Amit Daniely, Nati Linial, and Michael Saks, <a href="http://arxiv.org/abs/1205.4891">arXiv:1205.4891</a>. Like the previous paper, this represents a move from worst-case complexity towards something more instance-based. The main idea here is that the only hard instances for clustering problems (under traditional worst-case algorithms) are ones in which the input is not actually clustered very well. Their definition of a &quot;good clustering&quot; seems very sensitive to outliers or noisy data, but perhaps that can be a subject for future work.</p></li>
 
-<li><p><b>A randomized parallel algorithm with run time \( O(n^2) \) for solving an \( n \times n \) system of linear equations</b>, Joerg Fliege, <a href="http://arxiv.org/abs/1209.3995">arXiv:1209.3995</a>. The real breakthrough here is Raghavendra&#x27;s layered generate-and-test algorithm for linear equations over finite fields, <a href="http://rjlipton.wordpress.com/2012/08/09/a-new-way-to-solve-linear-equations/">described earlier this year on Richard Lipton&#x27;s blog</a>. This note shows how to do the same thing over the real numbers.</p></li>
+<li><p><b>A randomized parallel algorithm with run time \( O(n^2) \) for solving an \( n \times n \) system of linear equations</b>, Joerg Fliege, <a href="http://arxiv.org/abs/1209.3995">arXiv:1209.3995</a>. The real breakthrough here is Raghavendra's layered generate-and-test algorithm for linear equations over finite fields, <a href="http://rjlipton.wordpress.com/2012/08/09/a-new-way-to-solve-linear-equations/">described earlier this year on Richard Lipton's blog</a>. This note shows how to do the same thing over the real numbers.</p></li>
 
-<li><p><b>Faster deterministic fully-dynamic graph connectivity</b>, Christian Wulff-Nilsen, <a href="http://arxiv.org/abs/1209.5608">arXiv:1209.5608</a> and SODA 2013. Ok, it&#x27;s <a href="http://www.youtube.com/watch?v=sh55ZRwcWZM">log shaving</a> (actually loglog shaving) but on an important problem.</p></li><li><p><b>Eight-fifth approximation for TSP paths</b>, András Sebö, <a href="http://arxiv.org/abs/1209.3523">arXiv:1209.3523</a> and IPCO 2013. I&#x27;d taught Christofides algorithm enough times to know to be careful about paths vs cycles in it, but somehow it had flown under the radar for me that the approximation ratio for paths was significantly larger.</p></li>
+<li><p><b>Faster deterministic fully-dynamic graph connectivity</b>, Christian Wulff-Nilsen, <a href="http://arxiv.org/abs/1209.5608">arXiv:1209.5608</a> and SODA 2013. Ok, it's <a href="http://www.youtube.com/watch?v=sh55ZRwcWZM">log shaving</a> (actually loglog shaving) but on an important problem.</p></li><li><p><b>Eight-fifth approximation for TSP paths</b>, András Sebö, <a href="http://arxiv.org/abs/1209.3523">arXiv:1209.3523</a> and IPCO 2013. I'd taught Christofides algorithm enough times to know to be careful about paths vs cycles in it, but somehow it had flown under the radar for me that the approximation ratio for paths was significantly larger.</p></li>
 
 <li><p><b>Approximating \( k \)-median via pseudo-approximation</b>, Shi Li and Ola Svensson, <a href="http://arxiv.org/abs/1211.0243">arXiv:1211.0243</a>. Here the \( k \)-median problem is that of finding exactly \( k \) cluster centers minimizing the sum of distances of each point to its center, an approximation again finds exactly \( k \) centers but only approximately minimizes the sum, and a pseudo-approximation finds a number of centers that is only approximately \( k \). As the authors say, using even one extra center may make a big difference in the objective function, so it is a bit of a surprise that pseudo-approximation can be useful in approximation for this problem.</p></li>
 </ul>
+
 <br /><br /><hr /><br />
 <h3>Comments:</h3>
+
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>None</b>: <br />
 <b>2013-01-03T02:25:26Z</b><br />
-I don&#x27;t understand the excitement over the paper on solving linear equations:
+<p>I don't understand the excitement over the paper on solving linear equations:
 it runs in \( O(n^2) \) parallel time, but requires \( O(n^3) \) work.  This is worse than
 Gaussian elimination, which can naively be implemented to run in \( O(n\log n) \)
-parallel time with \( O(n^3) \) work.  Moreover, the constants in the big-O&#x27;s in
-GE are better.
+parallel time with \( O(n^3) \) work.  Moreover, the constants in the big-O's in
+GE are better.</p>
 
-  --Dan Spielman
-
+<p>&nbsp;&nbsp;--Dan Spielman</p>
 </div>
+
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>ext_978887</b>: <br />
 <b>2013-01-04T11:27:03Z</b><br />
-With GPGPU spreading around algorithms it&#x27;s important how GPGPU friendly parallel algo is. GPGPU friendliness depend on how tightly coupled components of solution are, the less the better. Generate and test is very GPGPU friendly, CUDA implementaion would be a lot more efficient than parallel G-S.
+With GPGPU spreading around algorithms it's important how GPGPU friendly parallel algo is. GPGPU friendliness depend on how tightly coupled components of solution are, the less the better. Generate and test is very GPGPU friendly, CUDA implementaion would be a lot more efficient than parallel G-S.
 </div>
+
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>None</b>: <br />
 <b>2013-01-15T19:45:41Z</b><br />
-Regarding the linear equations paper: I think the algorithm can fail in ways not considered by the author, if some unfortunate choices of pairs are made in step (a) over several rounds.
+<p>Regarding the linear equations paper: I think the algorithm can fail in ways not considered by the author, if some unfortunate choices of pairs are made in step (a) over several rounds.</p>
 
-For example, suppose that in round 1 one chooses the pairs (1, 2), (1, 3), and (2, 3). Then the resulting three vectors -- let&#x27;s call them x1, x2, x3 -- will lie on a line.
+<p>For example, suppose that in round 1 one chooses the pairs (1, 2), (1, 3), and (2, 3). Then the resulting three vectors -- let's call them x1, x2, x3 -- will lie on a line.</p>
 
-Then x1, x2, x3 become v1, v2, v3 of the next round.
+<p>Then x1, x2, x3 become v1, v2, v3 of the next round.</p>
 
-Then suppose that at the next round we choose the pairs (1, 2) and (1, 3). Then the resulting two vectors will be *equal*. This leads to a failure in the next round if this pair is chosen.
+<p>Then suppose that at the next round we choose the pairs (1, 2) and (1, 3). Then the resulting two vectors will be *equal*. This leads to a failure in the next round if this pair is chosen.</p>
 
-In fact, I don&#x27;t think one needs any randomness in the choice of the pairs. I think one can just take the pairs (1,2), (1,3), (1,4), ... . This way at each step one has one vector less than before, as the author himself suggests at the end of the paper. I think the vectors will always remain affinely independent (with probability 1), so they will always affinely span the space of solutions to the equations considered so far.
+<p>In fact, I don't think one needs any randomness in the choice of the pairs. I think one can just take the pairs (1,2), (1,3), (1,4), ... . This way at each step one has one vector less than before, as the author himself suggests at the end of the paper. I think the vectors will always remain affinely independent (with probability 1), so they will always affinely span the space of solutions to the equations considered so far.</p>
 
-I wrote the author about this.
+<p>I wrote the author about this.</p>
 
--- Gabriel Nivasch
+<p>-- Gabriel Nivasch</p>
 </div>
+
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>ext_933347</b>: <br />
 <b>2013-01-23T09:29:27Z</b><br />

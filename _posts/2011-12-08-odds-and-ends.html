@@ -10,21 +10,23 @@ tags:   [wikipedia, graph theory]
 
 <p><b>Lemma:</b> In a locally finite graph, every odd flap contains an odd end or an odd vertex.</p>
 
-<blockquote><i>Proof sketch:</i> Let F be an odd X-flap of the given graph G and define a sequence of finite sets X_i to be the set of vertices at distance at most i from X. We will define a nested sequence of odd flaps for these vertices, starting with F_0 = F. If F_i is an odd flap already defined in this way, let Y_i be the intersection of F_i with X_{i+1}, and form a finite graph G_i by contracting X_i and each (Y_i)-flap inside F_i to a single vertex. Then the vertex of G_i formed by contracting X_i is odd, by the assumption that F_i is an odd flap, so by the handshaking lemma for finite graphs G_i must have another odd vertex. If this second odd vertex is in Y_i, it is a vertex of G inside F, proving the lemma. Otherwise, it is an odd flap, which we select as F_{i+1}. Thus, this process either terminates or it produces an infinite sequence of odd flaps. In the latter case it can be used to define an odd haven β in which β(Z) is calculated by finding i large enough that X_i contains Z and choosing the Z-flap containing F_i.</blockquote>
+<div style="margin-left: 2em"><p><i>Proof sketch:</i> Let F be an odd X-flap of the given graph G and define a sequence of finite sets X_i to be the set of vertices at distance at most i from X. We will define a nested sequence of odd flaps for these vertices, starting with F_0 = F. If F_i is an odd flap already defined in this way, let Y_i be the intersection of F_i with X_{i+1}, and form a finite graph G_i by contracting X_i and each (Y_i)-flap inside F_i to a single vertex. Then the vertex of G_i formed by contracting X_i is odd, by the assumption that F_i is an odd flap, so by the handshaking lemma for finite graphs G_i must have another odd vertex. If this second odd vertex is in Y_i, it is a vertex of G inside F, proving the lemma. Otherwise, it is an odd flap, which we select as F_{i+1}. Thus, this process either terminates or it produces an infinite sequence of odd flaps. In the latter case it can be used to define an odd haven β in which β(Z) is calculated by finding i large enough that X_i contains Z and choosing the Z-flap containing F_i.</p></div>
 
 <p><b>Theorem:</b> If a locally finite graph has a finite number of odd vertices and odd ends, that number is even.</p>
 
-<blockquote><i>Proof sketch:</i> let X be a finite set that contains all the odd vertices of the given graph G and that separates all the odd ends from each other. For the ith odd end, defined by haven β_i, choose Y_i to be a superset of X for which β_i(Y_i) is odd; we may assume without loss of generality that Y_i \ X is contained within β_i(X), because any vertices outside this set do not change the (Y_i)-flap selected by β_i. Let Y be the union of the sets Y_i, and form a finite graph H whose vertices are Y and all of the Y-flaps of G. Then by the handshaking lemma for finite graphs Y has an even number of odd vertices, each of which is either an odd vertex of G or a flap containing a single odd end.</blockquote>
+<div style="margin-left: 2em"><p><i>Proof sketch:</i> let X be a finite set that contains all the odd vertices of the given graph G and that separates all the odd ends from each other. For the ith odd end, defined by haven β_i, choose Y_i to be a superset of X for which β_i(Y_i) is odd; we may assume without loss of generality that Y_i \ X is contained within β_i(X), because any vertices outside this set do not change the (Y_i)-flap selected by β_i. Let Y be the union of the sets Y_i, and form a finite graph H whose vertices are Y and all of the Y-flaps of G. Then by the handshaking lemma for finite graphs Y has an even number of odd vertices, each of which is either an odd vertex of G or a flap containing a single odd end.</p></div>
 
 <p>Euler used the handshaking lemma to characterize the finite graphs that have Euler paths and Euler tours. An infinite graph cannot have an Euler tour (a cycle is always finite) but may have an Euler path. The correct characterization seems to be that a connected locally finite graph has a doubly-infinite Euler path if and only if there is no odd vertex and either a single even end or two odd ends (but not both!) and has a singly-infinite Euler path if and only if there is an odd vertex, a single odd end, and no even ends. If so, I think <a href="http://www.renyi.hu/~p_erdos/1938-15.pdf">Erdos, Grünwald, and Vásonyi 1938</a> is the correct reference, but unfortunately I can&#x27;t read German to tell for sure what&#x27;s in that paper or whether it even has a clear concept of an end of a graph. (There have also been several papers on topological Euler tours in the end compactification of a locally finite graph [<a href="http://doi.org/10.1007/s00493-004-0005-z">1</a>,<a href="http://www.emis.ams.org/journals/EJC/Volume_16/PDF/v16i1r40.pdf">2</a>], which is not quite the same thing.)</p>
+
 <br /><br /><hr /><br />
+
 <h3>Comments:</h3>
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>ext_921097</b>: Also interesting news from today:<br />
 <b>2011-12-09T04:15:40Z</b><br />
-The 2011 ACM fellows were announced. Congratulations!
+<p>The 2011 ACM fellows were announced. Congratulations!</p>
 
-http://fellows.acm.org/homepage.cfm
+<p>http://fellows.acm.org/homepage.cfm</p>
 </div>
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>11011110</b>: Re: Also interesting news from today:<br />

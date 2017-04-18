@@ -4,45 +4,44 @@ title:  'Pair programming meets group testing'
 date:   2013-05-01 23:04:00
 tags:   [group testing, papers]
 ---
-I have another new preprint: <a href="http://arxiv.org/abs/1305.0110">Combinatorial Pair Testing: Distinguishing Workers from Slackers</a> (with Mike Goodrich and Dan Hirschberg), arXiv:1305.0110, to appear at WADS.
-<br />
+<p>I have another new preprint: <a href="http://arxiv.org/abs/1305.0110">Combinatorial Pair Testing: Distinguishing Workers from Slackers</a> (with Mike Goodrich and Dan Hirschberg), arXiv:1305.0110, to appear at WADS.</p>
 
-<br />
-The story in this one is that we have students in a pair programming class, some of whom will do the work and some of whom will let their partner do all the work. But if two of the slackers get paired together, we can catch them, because then nobody does the work. So how do we choose partners for the assignments to be sure of catching everyone, with an assumption that only a small fraction of the students are slackers?
-<br />
+<p>The story in this one is that we have students in a pair programming class, some of whom will do the work and some of whom will let their partner do all the work. But if two of the slackers get paired together, we can catch them, because then nobody does the work. So how do we choose partners for the assignments to be sure of catching everyone, with an assumption that only a small fraction of the students are slackers?</p>
 
-<br />
-Actually, we started out working on a different (but related) puzzle. We&#x27;ve been having a weekly tea with our theory students and faculty, at which we drink tea and also try to solve puzzles. <a href="http://www.cs.cmu.edu/puzzle/puzzle1.html">The first one from the Puzzle TOAD</a> is on distinguishing engineers (who always tell the truth) from managers (who will either tell the truth or lie, whichever of the two will confuse you the most) using as as few questions as possible about who is whom. It caught our attention at one of these teas, especially after we had some ideas for solving part 3 and saw that there was no official solution already given. Sadly, <a href="http://www.math.iupui.edu/~bleher/Papers/1983_On_a_logical_problem.pdf">someone else with a time machine already got there first</a>, so we had to find something else to work on.
-<br />
+<p>Actually, we started out working on a different (but related) puzzle. We've been having a weekly tea with our theory students and faculty, at which we drink tea and also try to solve puzzles. <a href="http://www.cs.cmu.edu/puzzle/puzzle1.html">The first one from the Puzzle TOAD</a> is on distinguishing engineers (who always tell the truth) from managers (who will either tell the truth or lie, whichever of the two will confuse you the most) using as as few questions as possible about who is whom. It caught our attention at one of these teas, especially after we had some ideas for solving part 3 and saw that there was no official solution already given. Sadly, <a href="http://www.math.iupui.edu/~bleher/Papers/1983_On_a_logical_problem.pdf">someone else with a time machine already got there first</a>, so we had to find something else to work on.</p>
 
-<br />
-Speaking of time machines, if you like time travel movies and get a chance to see <i>Young Gun In The Time</i>, do. It&#x27;s a fun South Korean time-travel detective farce. I&#x27;d like to rewatch it to get a clearer idea of exactly what happened, but at this point the easiest way to do that seems to be to find a time machine of my own.
+<p>Speaking of time machines, if you like time travel movies and get a chance to see <i>Young Gun In The Time</i>, do. It's a fun South Korean time-travel detective farce. I'd like to rewatch it to get a clearer idea of exactly what happened, but at this point the easiest way to do that seems to be to find a time machine of my own.</p>
+
 <br /><br /><hr /><br />
 <h3>Comments:</h3>
+
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>ext_132046</b>: <br />
 <b>2013-05-04T20:25:04Z</b><br />
-For your slacker problem, wouldn&#x27;t the following work, if eps is sufficiently large? (say &gt; 1/n^{1/4})? Pick a random matcing. With high probability, you had identiied $\omega(\epsilon^2 n)$ slackers - this requires a proof, but it is not hard. Repeat this $1/\eps$ times on the unidentified. Now, with high probability, you had identified $\Omega(\epsilon*n)$ slackers. Now, use the obvious strategy and $O(1/\epsilon)$ rounds to indentify the remaining slackers.
+<p>For your slacker problem, wouldn't the following work, if \( \epsilon \) is sufficiently large? (say \( \gt 1/n^{1/4} \))? Pick a random matching. With high probability, you had identiied \( \omega(\epsilon^2 n) \) slackers - this requires a proof, but it is not hard. Repeat this \( 1/\epsilon \) times on the unidentified. Now, with high probability, you had identified \( \Omega(\epsilon*n) \) slackers. Now, use the obvious strategy and \( O(1/\epsilon) \) rounds to indentify the remaining slackers.</p>
 
-Theorem 2 might have an easier proof -- a status of an individual can be identified only by comparing it to a slacker. There are $(1-\epsilon)n$ comparisions needed, but there are only $\epsilon n$ slackers. One slacker as such must be compared to $1/\epsilon$ individuals, which implies the lower bound.
+<p>Theorem 2 might have an easier proof -- a status of an individual can be identified only by comparing it to a slacker. There are \( (1-\epsilon)n \) comparisions needed, but there are only \( \epsilon n \) slackers. One slacker as such must be compared to \( 1/\epsilon \) individuals, which implies the lower bound.</p>
 
---S
+<p>--S</p>
 </div>
+
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>11011110</b>: <br />
 <b>2013-05-04T20:28:45Z</b><br />
-We had essentially that &quot;easier proof&quot; in the submitted version, and a reviewer complained that, if you knew the exact number of slackers, you might (with some luck) identify all the slackers early, without having to individually identify each non-slacker. So we replaced it with a proof that didn&#x27;t assume that all non-slackers had to be identified.
+We had essentially that "easier proof" in the submitted version, and a reviewer complained that, if you knew the exact number of slackers, you might (with some luck) identify all the slackers early, without having to individually identify each non-slacker. So we replaced it with a proof that didn't assume that all non-slackers had to be identified.
 </div>
+
 <div style="margin-left: 6em; padding-top: 1em;">
 <b>ext_132046</b>: <br />
 <b>2013-05-04T20:38:49Z</b><br />
 Well, deep inside, we are all slackers ;).
 </div>
+
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>ext_132046</b>: <br />
 <b>2013-05-04T20:53:40Z</b><br />
-Also, an interesting variant is when the students must work in groups of size $k$.... At least the obvious strategies requires $O(1/eps^{k-1))$ rounds.
+<p>Also, an interesting variant is when the students must work in groups of size \( k \).... At least the obvious strategies requires \( O(1/\epsilon^{k-1}) \) rounds.</p>
 
-Oh. And I realized you are using the random matching later in the paper...
+<p>Oh. And I realized you are using the random matching later in the paper...</p>
 </div>
 

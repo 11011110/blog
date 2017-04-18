@@ -6,67 +6,71 @@ tags:   [algorithms]
 ---
 <p>A comparison sorting algorithm is called <i>adaptive</i> if its performance can be better than the worst-case \( O(n\log n) \) time for comparison sorting algorithms, on subsets of inputs that are somehow close to being already sorted. Two examples of this are a <a href="https://en.wikipedia.org/wiki/Cartesian_tree">Cartesian tree</a> based sorting algorithm described by <a href="http://dx.doi.org/10.1007%2F3-540-51542-9_41">Levcopoulos and Petersson in WADS 1989</a>, and splaysort, a <a href="https://en.wikipedia.org/wiki/Splay_tree">splay tree</a> based sorting algorithm described by <a href="http://dx.doi.org/10.1002/(SICI)1097-024X(199607)26:7<781::AID-SPE35>3.0.CO;2-B">Moffat, Eddy, and Petersson in <i>Software: Practice and Experience</i> 1996</a>. How do these two algorithms compare with each other?</p>
 
-<p>First, let&#x27;s describe the algorithms in a little more detail. Cartesian tree sort is at heart a form of <a href="https://en.wikipedia.org/wiki/Selection_sort">selection sort</a>, an algorithm that finds the elements of the output sequence in their sorted order, using data structures to speed up how it finds each element. It builds a Cartesian tree on the input, a tree in which the parent of each value is the larger of the two <a href="https://en.wikipedia.org/wiki/All_nearest_smaller_values">nearest smaller values</a> on either side of it; this can be done in linear time. It maintains a <a href="https://en.wikipedia.org/wiki/Binary_heap">binary heap</a> of active values, initially just the root of the Cartesian tree. And then it repeatedly moves the smallest element of the heap to the output list, replacing it in the heap by its children in the Cartesian tree.</p>
+<p>First, let's describe the algorithms in a little more detail. Cartesian tree sort is at heart a form of <a href="https://en.wikipedia.org/wiki/Selection_sort">selection sort</a>, an algorithm that finds the elements of the output sequence in their sorted order, using data structures to speed up how it finds each element. It builds a Cartesian tree on the input, a tree in which the parent of each value is the larger of the two <a href="https://en.wikipedia.org/wiki/All_nearest_smaller_values">nearest smaller values</a> on either side of it; this can be done in linear time. It maintains a <a href="https://en.wikipedia.org/wiki/Binary_heap">binary heap</a> of active values, initially just the root of the Cartesian tree. And then it repeatedly moves the smallest element of the heap to the output list, replacing it in the heap by its children in the Cartesian tree.</p>
 
-<p>Its running time can be understood in terms of the following diagram, which I drew for Wikipedia a few years ago. It shows a plot of a data set for a sorting problem in which the horizontal axis represents the input sorted order and the vertical axis represents the value to be sorted (or equivalently, since the vertical scale is unimportant, the position in the output sorted order). For any input item \( x \) (such as the one highlighted by the dark blue color in the figure) one can draw a horizontal line through this plot, which cuts through several other edges (red in the figure). The red edges are called &quot;bracketing pairs&quot; and they represent pairs of consecutive inputs that sandwich \( x \). At the time \( x \) is pulled from the heap in the Cartesian tree sorting algorithm, the size of the heap is proportional to the number of bracketed pairs. Thus, the cost for processing \( x \) is proportional to the logarithm of its number of bracketed pairs, and adding this over the whole input gives the time for the whole algorithm. This is tight to within constant factors, for all inputs, not just an upper bound. For inputs in which the average number of bracketed pairs is significantly less than the input length, the time will be significantly less than \( O(n\log n) \).</p>
+<p>Its running time can be understood in terms of the following diagram, which I drew for Wikipedia a few years ago. It shows a plot of a data set for a sorting problem in which the horizontal axis represents the input sorted order and the vertical axis represents the value to be sorted (or equivalently, since the vertical scale is unimportant, the position in the output sorted order). For any input item \( x \) (such as the one highlighted by the dark blue color in the figure) one can draw a horizontal line through this plot, which cuts through several other edges (red in the figure). The red edges are called "bracketing pairs" and they represent pairs of consecutive inputs that sandwich \( x \). At the time \( x \) is pulled from the heap in the Cartesian tree sorting algorithm, the size of the heap is proportional to the number of bracketed pairs. Thus, the cost for processing \( x \) is proportional to the logarithm of its number of bracketed pairs, and adding this over the whole input gives the time for the whole algorithm. This is tight to within constant factors, for all inputs, not just an upper bound. For inputs in which the average number of bracketed pairs is significantly less than the input length, the time will be significantly less than \( O(n\log n) \).</p>
 
 <p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/bracketing-pairs.png" /></p>
 
-<p>Splaysort, on the other hand, is a form of <a href="https://en.wikipedia.org/wiki/Insertion_sort">insertion sort</a>, in which we add items one by one to a sorted list, using some data structures to make each addition fast. In splay sort, the data structure is a splay tree, used as a binary search tree on the already-processed input items.  The time bounds for splay trees are not well understood (in particular, we don&#x27;t know whether they are within a constant factor of every other binary search tree balancing strategy for every possible input — this is the famous dynamic optimality conjecture) but some upper bounds are known. One such bound is the finger theorem, proven by <a href="http://dx.doi.org/10.1145/100216.100218">Cole in STOC 1990</a>, which states that the time to access an item in a splay tree is at most proportional to the logarithm of the number of items that separate it from the previously accessed item.</p>
+<p>Splaysort, on the other hand, is a form of <a href="https://en.wikipedia.org/wiki/Insertion_sort">insertion sort</a>, in which we add items one by one to a sorted list, using some data structures to make each addition fast. In splay sort, the data structure is a splay tree, used as a binary search tree on the already-processed input items.  The time bounds for splay trees are not well understood (in particular, we don't know whether they are within a constant factor of every other binary search tree balancing strategy for every possible input — this is the famous dynamic optimality conjecture) but some upper bounds are known. One such bound is the finger theorem, proven by <a href="http://dx.doi.org/10.1145/100216.100218">Cole in STOC 1990</a>, which states that the time to access an item in a splay tree is at most proportional to the logarithm of the number of items that separate it from the previously accessed item.</p>
 
-<p>We can use Cole&#x27;s bound to give an adaptive analysis of splaysort. Again, consider the diagram above, with the horizontal axis giving the position of a value in the input and the vertical axis (which matters for this part of the analysis) giving the position in the sorted output rather than its numerical value. Using Cole&#x27;s bound, the cost of inserting each item into the splay tree is at most proportional to the logarithm of the length of the edge connecting it to the previous item. The time for the whole splaysort algorithm is at most the sum of the logs of the edge lengths.</p>
+<p>We can use Cole's bound to give an adaptive analysis of splaysort. Again, consider the diagram above, with the horizontal axis giving the position of a value in the input and the vertical axis (which matters for this part of the analysis) giving the position in the sorted output rather than its numerical value. Using Cole's bound, the cost of inserting each item into the splay tree is at most proportional to the logarithm of the length of the edge connecting it to the previous item. The time for the whole splaysort algorithm is at most the sum of the logs of the edge lengths.</p>
 
 <p><b>Theorem:</b> <i>Splay sort is competitive with Cartesian tree sort, meaning that the time for splay sort is at most a constant times the time for Cartesian tree sort.</i></p>
 
-<blockquote><p><i>Proof:</i> We use a charging scheme in which each item in the sorted list assigns numerical charges to each of its bracketing pairs. Different bracketing pairs get charged different amounts: the bracketing pairs are sorted by the numerical values of their top items, after which the first one (the one with the smallest top item) gets charged \( 1 \) unit, the second one gets charged \( 1/2 \) unit, the third one gets charged \( 1/3 \) unit, etc. In this way, the total charge for an item \( x \) is a <a href="https://en.wikipedia.org/wiki/Harmonic_number">harmonic number</a>, proportional to the logarithm of the number of bracketing pairs. The total charge is thus proportional to the total time of Cartesian tree sort.</p>
+<div style="margin-left: 2em"><p><i>Proof:</i> We use a charging scheme in which each item in the sorted list assigns numerical charges to each of its bracketing pairs. Different bracketing pairs get charged different amounts: the bracketing pairs are sorted by the numerical values of their top items, after which the first one (the one with the smallest top item) gets charged \( 1 \) unit, the second one gets charged \( 1/2 \) unit, the third one gets charged \( 1/3 \) unit, etc. In this way, the total charge for an item \( x \) is a <a href="https://en.wikipedia.org/wiki/Harmonic_number">harmonic number</a>, proportional to the logarithm of the number of bracketing pairs. The total charge is thus proportional to the total time of Cartesian tree sort.</p>
 
-<p>Now, with the same charging scheme, let&#x27;s see how much each edge \( xy \) of the diagram (representing two consecutive input items \( x \) and \( y \)) gets charged. If \( x \) and \( y \) are separated by \( s \) other input items, then edge \( xy \) will be charged \( s \) times, once for each of these separating inputs. The largest of the separating items will give edge \( xy \) a charge of either \( 1/2 \) or \( 1 \) unit (it might be \( 1/2 \) because edge \( xy \) might be tied with another bracketing pair for having the closest top item). The second largest separating item may give edge \( xy \) a charge of between \( 1/4 \) and \( 1 \) units, depending on whether the largest separating item also forms one or two bracketing pairs for this item. And in general the \( i \)th largest separating item may give edge \( xy \) a charge of between \( 1/2i \) and \( 1 \) units. The total charge for all these items adds in something like a harmonic series to something that is at least proportional to \( \log s \) (when all the charges are as small as possible) and at most \( s \) (when the charges are as large as possible). Thus, the total charge (and the total time for Cartesian tree sort) is at least proportional to the sum of \( \log s \), summed over all consecutive pairs, which in turn (by the finger theorem) is at least proportional to the running time of splay sort.</p></blockquote>
+<p>Now, with the same charging scheme, let's see how much each edge \( xy \) of the diagram (representing two consecutive input items \( x \) and \( y \)) gets charged. If \( x \) and \( y \) are separated by \( s \) other input items, then edge \( xy \) will be charged \( s \) times, once for each of these separating inputs. The largest of the separating items will give edge \( xy \) a charge of either \( 1/2 \) or \( 1 \) unit (it might be \( 1/2 \) because edge \( xy \) might be tied with another bracketing pair for having the closest top item). The second largest separating item may give edge \( xy \) a charge of between \( 1/4 \) and \( 1 \) units, depending on whether the largest separating item also forms one or two bracketing pairs for this item. And in general the \( i \)th largest separating item may give edge \( xy \) a charge of between \( 1/2i \) and \( 1 \) units. The total charge for all these items adds in something like a harmonic series to something that is at least proportional to \( \log s \) (when all the charges are as small as possible) and at most \( s \) (when the charges are as large as possible). Thus, the total charge (and the total time for Cartesian tree sort) is at least proportional to the sum of \( \log s \), summed over all consecutive pairs, which in turn (by the finger theorem) is at least proportional to the running time of splay sort.</p></div>
 
-<p>It&#x27;s not hard to find inputs for which the two algorithms have differing time complexities. For instance, take a sorted sequence of \( n \) values, pull off the top and bottom \( n/\log n \) of them and riffle them together, then concatenate the rest of the values in sorted order after the riffled set. Most of the items in the resulting sequence will have \( 2n/\log n \) bracketed pairs, causing the Cartesian tree algorithm to take \( \Theta(n\log n) \) time on this input. However, the number of long edges in the diagram is small enough to make the time for splaysort remain linear. Thus, splaysort is strictly stronger, as an adaptive algorithm, than Cartesian tree sort: it is always within a constant factor of the same running time, and sometimes much faster.</p>
+<p>It's not hard to find inputs for which the two algorithms have differing time complexities. For instance, take a sorted sequence of \( n \) values, pull off the top and bottom \( n/\log n \) of them and riffle them together, then concatenate the rest of the values in sorted order after the riffled set. Most of the items in the resulting sequence will have \( 2n/\log n \) bracketed pairs, causing the Cartesian tree algorithm to take \( \Theta(n\log n) \) time on this input. However, the number of long edges in the diagram is small enough to make the time for splaysort remain linear. Thus, splaysort is strictly stronger, as an adaptive algorithm, than Cartesian tree sort: it is always within a constant factor of the same running time, and sometimes much faster.</p>
 
-<p>The dynamic optimality conjecture implies that splaysort is competitive with other binary-tree based insertion sorts, but it doesn&#x27;t seem to say much about its competitiveness against other sorting algorithms such as selection sorts or merge sorts. It&#x27;s not possible for splaysort to be competitive against all comparison sorting algorithms: for instance, let \( X \) be an input permutation on which splaysort is slow, and devise a comparison sorting algorithm that tests whether the input is of type \( X \), if so handles it in linear time, and if not reverts to some other algorithm. But is there a natural and generally useful adaptive sorting algorithm that splaysort is not competitive against? I don&#x27;t know of one.</p>
+<p>The dynamic optimality conjecture implies that splaysort is competitive with other binary-tree based insertion sorts, but it doesn't seem to say much about its competitiveness against other sorting algorithms such as selection sorts or merge sorts. It's not possible for splaysort to be competitive against all comparison sorting algorithms: for instance, let \( X \) be an input permutation on which splaysort is slow, and devise a comparison sorting algorithm that tests whether the input is of type \( X \), if so handles it in linear time, and if not reverts to some other algorithm. But is there a natural and generally useful adaptive sorting algorithm that splaysort is not competitive against? I don't know of one.</p>
+
 <br /><br /><hr /><br />
 <h3>Comments:</h3>
+
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>None</b>: <br />
 <b>2014-01-27T02:50:20Z</b><br />
-Hi David,
+<p>Hi David,</p>
 
-I read your blog post on Cartesian/splay-tree sorting with great interest.
+<p>I read your blog post on Cartesian/splay-tree sorting with great interest.</p>
 
-Well, I did my PhD on &quot;Adaptive computational geometry&quot; (1996)
-http://www.sonycsl.co.jp/person/nielsen/PT/phdthesis/phdthesis.html
+<p>Well, I did my PhD on "Adaptive computational geometry" (1996)
+http://www.sonycsl.co.jp/person/nielsen/PT/phdthesis/phdthesis.html</p>
 
-In particular, since we have many output-sensitive algorithms in computational geometry,
+<p>In particular, since we have many output-sensitive algorithms in computational geometry,
  let us say that the algorithms are adaptive if their performances can be better than the worst-case output-sensitive algorithms 
- (adaptive in both the input size $n$ and the output size $h$). 
- Thus this notion of adaptivity can be extended to an arbitrary fixed number of parameters in an algorithmic complexity analysis.
+ (adaptive in both the input size \( n \) and the output size \( h \)). 
+ Thus this notion of adaptivity can be extended to an arbitrary fixed number of parameters in an algorithmic complexity analysis.</p>
+
+<p>Traditional problems/algorithms to revisit are:</p>
+<ul>
+<li><p>Sorting \( n \) numbers with 
+\( l \) distinct values: \( O(n\log l) \) (Quicksort)</p></li>
  
- Traditional problems/algorithms to revisit are:
+<li><p>The union of \( n \) intervals on the real line: Optimal \( \Theta(n\log n) \).
+ Let \( p \) be the piercing number, then can do in \( O(n\log p) \).
+ (we would have liked \( O(n\log c) \) where \( c \) is the number of connected components. However for \( c=1 \), worst-case \( p \) is \( n/2 \).)</p></li>
  
- - Sorting $n$ numbers with $l$ distinct values: $O(n\log l)$ (Quicksort)
+<li><p>Computing the diameter of a 2D point set: \( O(n) \) when the minimum enclosing ball has a diametrical pair of points on its boundary, otherwise \( \Theta(n\log n) \).</p></li></ul>
  
- - The union of $n$ intervals on the real line: Optimal $\Theta(n\log n)$.
- Let $p$ be the piercing number, then can do in $O(n\log p)$.
- (we would have liked $O(n\log c)$ where $c$ is the number of connected components. However for $c=1$, worst-case $p$ is $n/2$.)
- 
- - Computing the diameter of a 2D point set: O(n) when the minimum enclosing ball has a diametrical pair of points on its boundary, otherwise $\Theta(n\log n)$.
- 
- Lower bounds in general got more difficult to design since we do not know how &quot;many creative&quot; parameters we may look at for finding adaptive algorithms.
+<p>Lower bounds in general got more difficult to design since we do not know how "many creative" parameters we may look at for finding adaptive algorithms.
  I still think there is plenty opportunity in computational geometry for adaptive algorithms.
- I hope your blog column with spur further interests in this direction.
- 
- Kind regards, Frank.
+ I hope your blog column with spur further interests in this direction.</p>
+
+<p> Kind regards, Frank.</p>
 </div>
+
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>None</b>: <br />
 <b>2014-02-03T21:39:21Z</b><br />
-Hi there just wanted to give you a quick heads up. The text 
-in your article seem to be running off the screen in Safari.
+<p>Hi there just wanted to give you a quick heads up. The text 
+in your article seem to be running off the screen in Safari.</p>
 
-I&#x27;m not sure if this is a formatting issue or something to do with web browser compatibility but I thought 
-I&#x27;d post to let you know. The design look great though!
+<p>I'm not sure if this is a formatting issue or something to do with web browser compatibility but I thought 
+I'd post to let you know. The design look great though!</p>
 
-Hope you get the problem solved soon. Kudos
+<p>Hope you get the problem solved soon. Kudos</p>
 </div>
 
