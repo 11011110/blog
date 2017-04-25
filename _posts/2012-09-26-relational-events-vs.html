@@ -4,31 +4,20 @@ title:  'Relational events vs graphs'
 date:   2012-09-26 22:02:00
 tags:   [graph algorithms, social networks, wikipedia, data structures, papers]
 ---
-I suppose I should say something about my paper, &quot;Windows into Relational Events: Data Structures for Contiguous Subsequences of Edges&quot; (with Michael Bannister, Chris DuBois, and Padhraic Smyth), which has been accepted at SODA and just appeared online as <a href="http://arxiv.org/abs/1209.5791">arXiv:1209.5791</a>.
-<br />
+<p>I suppose I should say something about my paper, "Windows into Relational Events: Data Structures for Contiguous Subsequences of Edges" (with Michael Bannister, Chris DuBois, and Padhraic Smyth), which has been accepted at SODA and just appeared online as <a href="http://arxiv.org/abs/1209.5791">arXiv:1209.5791</a>.</p>
 
-<br />
-The point of the paper is to look at data sets consisting of (directed or undirected) edges connecting pairs of vertices drawn from some vertex set, with timestamps on the edges. For example, edits to Wikipedia can be modeled in this way: the vertices are editors and Wikipedia articles, and each edge represents an edit made at some time by some editor to some article. This kind of data set has been studied in social network analysis for quite some time under several names; in the name we use, &quot;relational events&quot;, the &quot;relational&quot; part refers to the pair of vertices and the &quot;event&quot; part refers to the timestamps.
-<br />
+<p>The point of the paper is to look at data sets consisting of (directed or undirected) edges connecting pairs of vertices drawn from some vertex set, with timestamps on the edges. For example, edits to Wikipedia can be modeled in this way: the vertices are editors and Wikipedia articles, and each edge represents an edit made at some time by some editor to some article. This kind of data set has been studied in social network analysis for quite some time under several names; in the name we use, "relational events", the "relational" part refers to the pair of vertices and the "event" part refers to the timestamps.</p>
 
-<br />
-You might think that such a thing is a graph, but it&#x27;s really not. You can get a graph (or rather a multigraph) from it, by forgetting the time steps and just keeping the vertex pairs, but it&#x27;s probably not the graph you want, because it aggregates everything together on too coarse a timescale. You don&#x27;t get a graph for any single instant of time, either, instead you just get a single edge (assuming all timestamps are distinct, which can be made to happen by an appropriate tie-breaking rule). It&#x27;s not even a dynamic graph in the sense of dynamic graph algorithms, because those have edges that persist over long time periods from an insertion to a later deletion, with the whole graph changing only gradually.
-<br />
+<p>You might think that such a thing is a graph, but it's really not. You can get a graph (or rather a multigraph) from it, by forgetting the time steps and just keeping the vertex pairs, but it's probably not the graph you want, because it aggregates everything together on too coarse a timescale. You don't get a graph for any single instant of time, either, instead you just get a single edge (assuming all timestamps are distinct, which can be made to happen by an appropriate tie-breaking rule). It's not even a dynamic graph in the sense of dynamic graph algorithms, because those have edges that persist over long time periods from an insertion to a later deletion, with the whole graph changing only gradually.</p>
 
-<br />
-What you probably want to do with this sort of data is to form a sequence of graphs by aggregating together the edge events that occur within certain windows of time, and examine the changing behavior of the graphs in this sequence. And if you do that, for a fixed window size, and you slide the window across the timeline, you really do get a dynamic graph with an insertion event when an edge&#x27;s timestamp enters the window and a deletion event when it leaves the window. But this requires knowing a fixed window size to use, and we want to allow exploratory forms of data analysis in which the window size is not fixed in advance. So the type of result we show is: you can preprocess the data set in near-linear time and space, in such a way that you can query the properties of the graphs formed by any given window into the event timeline, in near-constant time per query.
-<br />
+<p>What you probably want to do with this sort of data is to form a sequence of graphs by aggregating together the edge events that occur within certain windows of time, and examine the changing behavior of the graphs in this sequence. And if you do that, for a fixed window size, and you slide the window across the timeline, you really do get a dynamic graph with an insertion event when an edge's timestamp enters the window and a deletion event when it leaves the window. But this requires knowing a fixed window size to use, and we want to allow exploratory forms of data analysis in which the window size is not fixed in advance. So the type of result we show is: you can preprocess the data set in near-linear time and space, in such a way that you can query the properties of the graphs formed by any given window into the event timeline, in near-constant time per query.</p>
 
-<br />
-Here &quot;query the properties&quot; is a bit vague, but what we mean by it is that we can compute many numerical invariants that are standard in social network analysis: the number of connected components of the graph formed by the windowed set of edges, an approximation to the degree distribution of the graph, the reciprocity (the proportion of connected pairs of vertices that have two-way connections), etc. We also included a couple of properties that make sense only for relational events, and not for graphs without timestamps; for instance, given a starting set of &quot;infected&quot; vertices, we can ask how many other vertices could be reached from these vertices by time-monotonic paths.
-<br />
+<p>Here "query the properties" is a bit vague, but what we mean by it is that we can compute many numerical invariants that are standard in social network analysis: the number of connected components of the graph formed by the windowed set of edges, an approximation to the degree distribution of the graph, the reciprocity (the proportion of connected pairs of vertices that have two-way connections), etc. We also included a couple of properties that make sense only for relational events, and not for graphs without timestamps; for instance, given a starting set of "infected" vertices, we can ask how many other vertices could be reached from these vertices by time-monotonic paths.</p>
 
-<br />
-The technical details of our algorithms involve <a href="http://en.wikipedia.org/wiki/Matroid">matroids</a> and cutting-and-linking trees and <a href="http://en.wikipedia.org/wiki/Range_searching">orthogonal range counting</a> and <a href="http://en.wikipedia.org/wiki/Persistent_data_structure">path-copying persistence</a>: techniques that may seem a bit fearsome if you don&#x27;t already know about them, but that are not particularly new. If you do already know these tools then I think our results are best characterized as &quot;simple in retrospect&quot;, so for theoreticians the point of the paper is less about technique and more about the data model. But in this context I think that (other than being a potential obstacle to publication) being simple is a good thing: it makes it more likely that these algorithms are usable. And despite some efforts on our part to make the data structures as uncomplicated as possible, my two less-theoretical co-authors still don&#x27;t seem convinced that they&#x27;re simple enough, so there may still be room for improvement in that direction.
-<br />
+<p>The technical details of our algorithms involve <a href="http://en.wikipedia.org/wiki/Matroid">matroids</a> and cutting-and-linking trees and <a href="http://en.wikipedia.org/wiki/Range_searching">orthogonal range counting</a> and <a href="http://en.wikipedia.org/wiki/Persistent_data_structure">path-copying persistence</a>: techniques that may seem a bit fearsome if you don't already know about them, but that are not particularly new. If you do already know these tools then I think our results are best characterized as "simple in retrospect", so for theoreticians the point of the paper is less about technique and more about the data model. But in this context I think that (other than being a potential obstacle to publication) being simple is a good thing: it makes it more likely that these algorithms are usable. And despite some efforts on our part to make the data structures as uncomplicated as possible, my two less-theoretical co-authors still don't seem convinced that they're simple enough, so there may still be room for improvement in that direction.</p>
 
-<br />
-Incidentally, this is what my earlier blog post <a href="http://11011110.livejournal.com/246085.html">binary numbers without the zeros</a> was for. We use the counting scheme described in that post to set up a sequence of updates to a persistent binary tree, which forms the basis of a range counting data structure whose query times depend on the window size rather than on the size of the whole data set.
+<p>Incidentally, this is what my earlier blog post <a href="{{site.baseurl}}/2012/04/17/binary-numbers-without.html">binary numbers without the zeros</a> was for. We use the counting scheme described in that post to set up a sequence of updates to a persistent binary tree, which forms the basis of a range counting data structure whose query times depend on the window size rather than on the size of the whole data set.</p>
+
 <br /><br /><hr /><br />
 <h3>Comments:</h3>
 <div style="margin-left: 0em; padding-top: 1em;">
@@ -39,16 +28,18 @@ whoa, finally I see a paper where the formal approach to study an evolution of s
 &gt; This kind of data set has been studied in social network analysis for quite some time under several names
 also now I know the keywords to search for! :) could you suggest some more?
 </div>
+
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>11011110</b>: <br />
 <b>2012-09-28T00:20:06Z</b><br />
-The names we found for this model are relational event data, dyadic event data, longitudinal network data, contact sequences, and time-ordered networks. Probably there are other names that we didn&#x27;t find.
+The names we found for this model are relational event data, dyadic event data, longitudinal network data, contact sequences, and time-ordered networks. Probably there are other names that we didn't find.
 </div>
+
 <div style="margin-left: 6em; padding-top: 1em;">
 <b>wizzard0</b>: <br />
 <b>2012-09-28T09:19:40Z</b><br />
 Thanks a lot!
 
-I&#x27;ve also encountered &quot;bitemporal event model&quot;, &quot;bitemporal systems engineering&quot; and so on with &quot;bitemporal&quot; keyword.
+I've also encountered "bitemporal event model", "bitemporal systems engineering" and so on with "bitemporal" keyword.
 </div>
 

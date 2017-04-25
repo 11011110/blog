@@ -4,125 +4,116 @@ title:  'Instability vs anonymization in E Pluribus Hugo'
 date:   2015-09-09 14:50:00
 tags:   [voting]
 ---
-The latest episode of Hugo voting-system fever is that the Hugo administrators were hoping to be able to release anonymized nomination data for this year&#x27;s Hugo Awards, in order to test the new <a href="http://nielsenhayden.com/makinglight/archives/016262.html">&quot;E Pluribus Hugo&quot; (single-divisible-vote last-place-elimination)</a> slate-resistant nomination scheme. But now they have realized that anonymization is difficult: one of them made a first cut at anonymizing the data and another was able to match ballots to individual people even after the anonymization. As a result <a href="http://file770.com/?p=24790">they&#x27;re delaying (perhaps indefinitely) any release of the anonymized data</a>.
-<br />
+<p>The latest episode of Hugo voting-system fever is that the Hugo administrators were hoping to be able to release anonymized nomination data for this year's Hugo Awards, in order to test the new <a href="http://nielsenhayden.com/makinglight/archives/016262.html">"E Pluribus Hugo" (single-divisible-vote last-place-elimination)</a> slate-resistant nomination scheme. But now they have realized that anonymization is difficult: one of them made a first cut at anonymizing the data and another was able to match ballots to individual people even after the anonymization. As a result <a href="http://file770.com/?p=24790">they're delaying (perhaps indefinitely) any release of the anonymized data</a>.</p>
 
-<br />
-So this naturally raises some questions: is anonymization really possible? What can we do to scramble the data, and what useful information would we lose by doing it?
-<br />
+<p>So this naturally raises some questions: is anonymization really possible? What can we do to scramble the data, and what useful information would we lose by doing it?</p>
 
-<br />
-One can&#x27;t really anonymize the identities of the nominated works (at least, the more popular ones) without significantly changing the data, because their ranking by popularity gives them away. And knowing the identity of some of these works may be enough to identify some voters (who have been enthusiastic about the same set of works elsewhere on the net) and from that identify the less-popular works as well. Even just the connections between pairs of voters implied by the presence of a less-popular work on both of their lists would likely be enough to infer much of the structure of their social network and from that their individual identities. Some of the proposed anonymization techniques I&#x27;ve seen suggested to get around these problems include
-<br />
+<p>One can't really anonymize the identities of the nominated works (at least, the more popular ones) without significantly changing the data, because their ranking by popularity gives them away. And knowing the identity of some of these works may be enough to identify some voters (who have been enthusiastic about the same set of works elsewhere on the net) and from that identify the less-popular works as well. Even just the connections between pairs of voters implied by the presence of a less-popular work on both of their lists would likely be enough to infer much of the structure of their social network and from that their individual identities. Some of the proposed anonymization techniques I've seen suggested to get around these problems include</p>
 
-<br />
-- Replacing voter names by randomized identifier numbers (an obvious first step, but not good enough)
-<br />
-- Separately randomize voter names in each of the nomination categories (loses some possible information about slates, but reduces the amount of information that can be correlated to learn voter identities)
-<br />
-- Remove obvious-loser nominees. In the new EPH system being proposed, if the total number of voters for a given nominee is less than the fifth-largest total number of points (with one point per voter, spread evenly among their candidates), then no matter how the points are redistributed the nominee can&#x27;t possibly win a place in the final ballot. So it would seem to be safe to remove those nominees from the data.
-<br />
-- Alternatively, randomly re-distribute the votes for obvious-loser nominees among the voters, to break up any social-network structure that might be inferred from them. They&#x27;re not going to win, so why should it matter which voters voted for them?
-<br />
+<ul><li><p>Replacing voter names by randomized identifier numbers (an obvious first step, but not good enough)</p></li>
 
-<br />
-Unfortunately the first two anonymization techniques aren&#x27;t good enough and (as I want to show below) the last two can change the result. The issue is that in certain unusual circumstances, EPH can be highly unstable, so that the ordering in which even very weak nominees are eliminated can make a significant difference in who ends up included in the final ballot. It seems likely to me that this sort of instability wouldn&#x27;t happen much in practice, but I don&#x27;t know that; it&#x27;s one of the things one would like to test with real data. And it&#x27;s not possible to do that if anonymization has altered the data in a way that might eliminate any instabilities.
-<br />
+<li><p>Separately randomize voter names in each of the nomination categories (loses some possible information about slates, but reduces the amount of information that can be correlated to learn voter identities)</p></li>
 
-<br />
-Specifically, consider the following scenario. It is the year 2025. Fandom has splintered into a sequence of factions, each 2/3 as numerous as the previous one in the sequence. The two remaining publishers, Geb and Roan, have remained scrupulously neutral and each publish only one book a year from the authors of each faction. Most Hugo voters nominate only the two books of their own faction, but a small fraction of voters (a consistent percentage of each faction, probably consisting of the publishers&#x27; employees) defect, and instead nominate two works of their favorite publisher, one from their own faction and one from the next larger faction. The defectors are equally split among the two publishers.
-<br />
+<li><p>Remove obvious-loser nominees. In the new EPH system being proposed, if the total number of voters for a given nominee is less than the fifth-largest total number of points (with one point per voter, spread evenly among their candidates), then no matter how the points are redistributed the nominee can't possibly win a place in the final ballot. So it would seem to be safe to remove those nominees from the data.</p></li>
 
-<br />
-What happens if we use EPH to find the five top nominees? The algorithm eliminates nominees one at a time, roughly in order by faction strength. In the first round, one of the two candidates from the weakest faction will be eliminated, but in each round after that, the weakest remaining faction will have only one candidate left. If the second weakest remaining faction also has only one candidate, the one from the weakest faction is eliminated. But if the second weakest remaining faction still has both of its candidates, the division of points will cause these two candidates to be weaker than the single candidate of the weakest faction, so one of the two candidates from the second weakest faction will be eliminated. We repeat elimination steps of these types until finally the top two factions have both of their nominees still present, but the third faction has only one of its two. Which one? That depends...
-<br />
+<li><p>Alternatively, randomly re-distribute the votes for obvious-loser nominees among the voters, to break up any social-network structure that might be inferred from them. They're not going to win, so why should it matter which voters voted for them?</p></li></ul>
 
-<br />
-If any one faction has its Geb candidate eliminated first, then the defectors from that faction will cause the Geb candidate for the next larger faction to be stronger, and the next larger faction will have its Roan candidate eliminated first. In the same way, if one faction has its Roan candidate eliminated first, then the next larger faction will have its Geb candidate eliminated first. And so the choice made in the first step, for the smallest faction, will echo through the process and change the result made in the final step, the one that determines which of the third-strongest faction&#x27;s candidates makes it onto the final ballot.
-<br />
+<p>Unfortunately the first two anonymization techniques aren't good enough and (as I want to show below) the last two can change the result. The issue is that in certain unusual circumstances, EPH can be highly unstable, so that the ordering in which even very weak nominees are eliminated can make a significant difference in who ends up included in the final ballot. It seems likely to me that this sort of instability wouldn't happen much in practice, but I don't know that; it's one of the things one would like to test with real data. And it's not possible to do that if anonymization has altered the data in a way that might eliminate any instabilities.</p>
 
-<br />
-Even though some candidates may be obvious losers, omitting them can change the overall outcome. In particular, if the strongest omitted candidate is the only one omitted from its faction, its publisher will determine the publisher of the third-faction choice in the final ballot. Additionally, the pattern of defector nominations in the balloting pattern described above would be strong enough to identify the defectors (possibly by name, if we have external information about who belongs to which faction and who works for each publisher) and to identify which nominated works are by which publisher. Any permutation of nominations among voters that is strong enough to provide anonymization against this sort of identification will also likely be strong enough to break the instability.
-<br />
+<p>Specifically, consider the following scenario. It is the year 2025. Fandom has splintered into a sequence of factions, each 2/3 as numerous as the previous one in the sequence. The two remaining publishers, Geb and Roan, have remained scrupulously neutral and each publish only one book a year from the authors of each faction. Most Hugo voters nominate only the two books of their own faction, but a small fraction of voters (a consistent percentage of each faction, probably consisting of the publishers' employees) defect, and instead nominate two works of their favorite publisher, one from their own faction and one from the next larger faction. The defectors are equally split among the two publishers.</p>
 
-<br />
-Does this potential instability in EPH indicate a flaw in the system? Maybe, but all voting systems have flaws. Any time two candidates are nearly tied and on the bubble for inclusion or elimination, small differences elsewhere in the input are likely to lead to big changes in the output. A little instability, unlikely to occur in practice, seems a small price to pay for the other nice properties of EPH. But the &quot;unlikely to occur in practice&quot; part is only my opinion, with little theory to back it up, and I think the only way to be sure is to test it on unaltered real data by omitting random subsets of obvious losers and seeing whether the results change.
-<br />
+<p>What happens if we use EPH to find the five top nominees? The algorithm eliminates nominees one at a time, roughly in order by faction strength. In the first round, one of the two candidates from the weakest faction will be eliminated, but in each round after that, the weakest remaining faction will have only one candidate left. If the second weakest remaining faction also has only one candidate, the one from the weakest faction is eliminated. But if the second weakest remaining faction still has both of its candidates, the division of points will cause these two candidates to be weaker than the single candidate of the weakest faction, so one of the two candidates from the second weakest faction will be eliminated. We repeat elimination steps of these types until finally the top two factions have both of their nominees still present, but the third faction has only one of its two. Which one? That depends...</p>
 
-<br />
-The moral of the story seems to be that, if we ever do get safely-anonymized nomination data, it will only be because it has been rearranged to the point that we won&#x27;t be able to do all the experiments we would like to on it. In particular it may be difficult to test whether the nomination results are unstable or stable. The alternative would be to make the data available only in a restricted way (either giving it to researchers who could be trusted to keep it confidential or keeping it entirely private and letting the researchers submit experiment code for the guardians of the data to run). Neither seems entirely satisfactory from the point of view of increasing our understanding of how well voting systems work on real world data, but privacy of voter data is more important and that may be the best we can do.
+<p>If any one faction has its Geb candidate eliminated first, then the defectors from that faction will cause the Geb candidate for the next larger faction to be stronger, and the next larger faction will have its Roan candidate eliminated first. In the same way, if one faction has its Roan candidate eliminated first, then the next larger faction will have its Geb candidate eliminated first. And so the choice made in the first step, for the smallest faction, will echo through the process and change the result made in the final step, the one that determines which of the third-strongest faction's candidates makes it onto the final ballot.</p>
+
+<p>Even though some candidates may be obvious losers, omitting them can change the overall outcome. In particular, if the strongest omitted candidate is the only one omitted from its faction, its publisher will determine the publisher of the third-faction choice in the final ballot. Additionally, the pattern of defector nominations in the balloting pattern described above would be strong enough to identify the defectors (possibly by name, if we have external information about who belongs to which faction and who works for each publisher) and to identify which nominated works are by which publisher. Any permutation of nominations among voters that is strong enough to provide anonymization against this sort of identification will also likely be strong enough to break the instability.</p>
+
+<p>Does this potential instability in EPH indicate a flaw in the system? Maybe, but all voting systems have flaws. Any time two candidates are nearly tied and on the bubble for inclusion or elimination, small differences elsewhere in the input are likely to lead to big changes in the output. A little instability, unlikely to occur in practice, seems a small price to pay for the other nice properties of EPH. But the "unlikely to occur in practice" part is only my opinion, with little theory to back it up, and I think the only way to be sure is to test it on unaltered real data by omitting random subsets of obvious losers and seeing whether the results change.</p>
+
+<p>The moral of the story seems to be that, if we ever do get safely-anonymized nomination data, it will only be because it has been rearranged to the point that we won't be able to do all the experiments we would like to on it. In particular it may be difficult to test whether the nomination results are unstable or stable. The alternative would be to make the data available only in a restricted way (either giving it to researchers who could be trusted to keep it confidential or keeping it entirely private and letting the researchers submit experiment code for the guardians of the data to run). Neither seems entirely satisfactory from the point of view of increasing our understanding of how well voting systems work on real world data, but privacy of voter data is more important and that may be the best we can do.</p>
+
 <br /><br /><hr /><br />
 <h3>Comments:</h3>
+
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>patrickwonders</b>: <br />
 <b>2015-09-09T23:59:55Z</b><br />
-Fellow LJ-er livejournal user arvindn did his <a href="http://randomwalker.info/data-privacy/">PhD work</a> on anonymization (and deanonymization).
+<p>Fellow LJ-er livejournal user arvindn did his <a href="http://randomwalker.info/data-privacy/">PhD work</a> on anonymization (and deanonymization).</p>
 </div>
+
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>11011110</b>: <br />
 <b>2015-09-10T00:37:51Z</b><br />
-Thanks for the link. It looks like there&#x27;s a lot of interesting information there.
+<p>Thanks for the link. It looks like there's a lot of interesting information there.</p>
 
-Anonymization is a big research area, within which there are armed camps promoting different approaches and trying to shoot down others. For instance, a few years back I had a paper on some algorithms related to k-anonymity (the idea that one should achieve privacy by forming clusters of at least k people per cluster, preferably with the members of each cluster being reasonably similar, and then aggregate the data within each cluster). We had difficulty publishing this paper not because there was anything incorrect about the results we were proving but because k-anonymity by itself is often not good enough to preserve privacy and this has led some researchers to argue that any research on it is at best misguided.
+<p>Anonymization is a big research area, within which there are armed camps promoting different approaches and trying to shoot down others. For instance, a few years back I had a paper on some algorithms related to k-anonymity (the idea that one should achieve privacy by forming clusters of at least k people per cluster, preferably with the members of each cluster being reasonably similar, and then aggregate the data within each cluster). We had difficulty publishing this paper not because there was anything incorrect about the results we were proving but because k-anonymity by itself is often not good enough to preserve privacy and this has led some researchers to argue that any research on it is at best misguided.</p>
 
-For what it&#x27;s worth, I don&#x27;t consider myself a proponent of k-anonymity or any other approach; I am more interested in understanding and comparing the properties of these systems (how well they preserve anonymity, how well they preserve other useful information, how quickly one can anonymize a data set, etc) than in promoting any one of them. Many of the pages included in your link seem to be about the general principle that naive or ad-hoc approaches (within which I would include k-anonymity) can often be broken. There has also been quite a bit of interesting work on systems such as differential privacy that come with information-theoretic security guarantees; unfortunately they also come with quite severe constraints on the sorts of experiments you can run on the anonymized data.
+<p>For what it's worth, I don't consider myself a proponent of k-anonymity or any other approach; I am more interested in understanding and comparing the properties of these systems (how well they preserve anonymity, how well they preserve other useful information, how quickly one can anonymize a data set, etc) than in promoting any one of them. Many of the pages included in your link seem to be about the general principle that naive or ad-hoc approaches (within which I would include k-anonymity) can often be broken. There has also been quite a bit of interesting work on systems such as differential privacy that come with information-theoretic security guarantees; unfortunately they also come with quite severe constraints on the sorts of experiments you can run on the anonymized data.</p>
 </div>
+
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>None</b>: Run Algorithm on data instead?<br />
 <b>2015-09-10T00:30:31Z</b><br />
-If there is only a small number of things one wants to do with the data, one can simply take the algorithm to the data, instead of bringing the &quot;anonymized&quot; data to the algorithm. More precisely, if we can develop a differentially private version of the algorithm (which is often fairly simple), then we can run the private algorithm on the data and share the outcome.
-A simple thing to try is to design a version of the algorithm that can work through the PINQ interface (http://research.microsoft.com/en-us/projects/pinq/). Then the data is made available through the interface, and the data owner is assured that the privacy of the individual ballots is preserved. The new nomination scheme (or rather a differentially private version of it) can be then tested on the real dataset. Not knowing much about the voting scheme, I would expect that the results from the private version will not be too different from the non-private version if number of ballots is much much larger than the number of rounds of elimination (i.e. number of candidates - 5). I think a version with smaller privacy overhead can likely be designed by not going through the PINQ interface, but designing and analyzing from first principles.
---Kunal
+<p>If there is only a small number of things one wants to do with the data, one can simply take the algorithm to the data, instead of bringing the "anonymized" data to the algorithm. More precisely, if we can develop a differentially private version of the algorithm (which is often fairly simple), then we can run the private algorithm on the data and share the outcome.
+A simple thing to try is to design a version of the algorithm that can work through the PINQ interface (http://research.microsoft.com/en-us/projects/pinq/). Then the data is made available through the interface, and the data owner is assured that the privacy of the individual ballots is preserved. The new nomination scheme (or rather a differentially private version of it) can be then tested on the real dataset. Not knowing much about the voting scheme, I would expect that the results from the private version will not be too different from the non-private version if number of ballots is much much larger than the number of rounds of elimination (i.e. number of candidates - 5). I think a version with smaller privacy overhead can likely be designed by not going through the PINQ interface, but designing and analyzing from first principles.</p>
+<p>--Kunal</p>
 </div>
+
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>brooksmoses</b>: <br />
 <b>2015-09-10T08:28:54Z</b><br />
-A handful of not-really-baked-yet thoughts:
+<p>A handful of not-really-baked-yet thoughts:</p>
 
-Are there nomination events like this that are open-ballot, rather than sealed-ballot?  That is, voters expect going in that their votes will be publicized, so there&#x27;s no privacy issue around whether anonymization is effective?
+<p>Are there nomination events like this that are open-ballot, rather than sealed-ballot?  That is, voters expect going in that their votes will be publicized, so there's no privacy issue around whether anonymization is effective?</p>
 
-What data do we actually need?  If the experiment is to compare the results for the &quot;true&quot; ballot against the results for ballot sets with some amount of random perturbation, how much do we lose by not knowing which set is the &quot;true&quot; one (or, for that matter, only getting the perturbed sets)?  
+<p>What data do we actually need?  If the experiment is to compare the results for the "true" ballot against the results for ballot sets with some amount of random perturbation, how much do we lose by not knowing which set is the "true" one (or, for that matter, only getting the perturbed sets)?</p>
 
-What if we only get a subset of the ballots?  That breaks the ability to identify less-popular works by vote totals, which may be enough to break identification of people.  However, it&#x27;s still a real-world dataset.
+<p>What if we only get a subset of the ballots?  That breaks the ability to identify less-popular works by vote totals, which may be enough to break identification of people.  However, it's still a real-world dataset.</p>
 </div>
+
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>11011110</b>: <br />
 <b>2015-09-10T15:59:59Z</b><br />
-My concern is that the random perturbation, or the act of taking a subset of candidates, may prevent us from testing whether the votes are unstable, because these changes may tend to eliminate instabilities. So they would show that one outcome always happens, where in the real data small changes woiuld cause a nontrivial distribution of outcomes.
+<p>My concern is that the random perturbation, or the act of taking a subset of candidates, may prevent us from testing whether the votes are unstable, because these changes may tend to eliminate instabilities. So they would show that one outcome always happens, where in the real data small changes woiuld cause a nontrivial distribution of outcomes.</p>
 
-I think getting only a subset of ballots, rather than a subset of candidates, is probably not anonymizing enough: one can still get too much information about some individual voters in that subset.
+<p>I think getting only a subset of ballots, rather than a subset of candidates, is probably not anonymizing enough: one can still get too much information about some individual voters in that subset.</p>
 </div>
+
 <div style="margin-left: 0em; padding-top: 1em;">
-<b>ext_3098317</b>: Maybe it&#x27;s just me...<br />
+<b>ext_3098317</b>: Maybe it's just me...<br />
 <b>2015-09-10T21:31:53Z</b><br />
-Unless they&#x27;re using some weird hypertagged-data system as a data-base, it should be trivial to anonymize. If they are using such a system (and I have, they&#x27;re painful but they allow for incredible levels of informatic redundancy and speed-linking), well, they&#x27;re WAY ahead of the curve (and it might explain how EPH works a bit...).  Now, if folks can use a combination of social engineering and logic to unscramble who nominated what, well, that&#x27;s a different story. I&#x27;d say they should just release the numbers and go from there. 
+<p>Unless they're using some weird hypertagged-data system as a data-base, it should be trivial to anonymize. If they are using such a system (and I have, they're painful but they allow for incredible levels of informatic redundancy and speed-linking), well, they're WAY ahead of the curve (and it might explain how EPH works a bit...).  Now, if folks can use a combination of social engineering and logic to unscramble who nominated what, well, that's a different story. I'd say they should just release the numbers and go from there. </p>
 </div>
+
 <div style="margin-left: 3em; padding-top: 1em;">
-<b>11011110</b>: RE: Maybe it&#x27;s just me...<br />
+<b>11011110</b>: RE: Maybe it's just me...<br />
 <b>2015-09-10T22:39:53Z</b><br />
-That&#x27;s the problem: anonymization means making it impossible to unscramble, not just filing off the voter names and calling it done. And what&#x27;s needed in order to test EPH isn&#x27;t just numbers (how many nominations each work received) but rather a ballot-by-ballot listing of the whole set of nominated works on each ballot.
+<p>That's the problem: anonymization means making it impossible to unscramble, not just filing off the voter names and calling it done. And what's needed in order to test EPH isn't just numbers (how many nominations each work received) but rather a ballot-by-ballot listing of the whole set of nominated works on each ballot.</p>
 </div>
+
 <div style="margin-left: 6em; padding-top: 1em;">
-<b>errhead</b>: RE: Maybe it&#x27;s just me...<br />
+<b>errhead</b>: RE: Maybe it's just me...<br />
 <b>2015-09-15T22:05:23Z</b><br />
-Using the released 1984 data i made a simple slate simulator for android using a few different counting methods.
+<p>Using the released 1984 data i made a simple slate simulator for android using a few different counting methods.</p>
 
-https://play.google.com/store/apps/details?id=com.anti_climacticteleservice.hugoslatesimulator
+<p>https://play.google.com/store/apps/details?id=com.anti_climacticteleservice.hugoslatesimulator</p>
 
-It would be far more useful with access to the anonymized 2015 data. I&#x27;m leaning toward a unique ballot deslating system. If a ballot exactly matches one that is already counted, then discard it. if 250 people have an identical ballot, then it only counts as 1 ballot, each person owns 1/250th of that vote. this method alone defeats a slate no matter how big. I&#x27;d love to see what that would do with the 2015 data.
+<p>It would be far more useful with access to the anonymized 2015 data. I'm leaning toward a unique ballot deslating system. If a ballot exactly matches one that is already counted, then discard it. if 250 people have an identical ballot, then it only counts as 1 ballot, each person owns 1/250th of that vote. this method alone defeats a slate no matter how big. I'd love to see what that would do with the 2015 data.</p>
 
-Hopefully they will just change the membership ID and nominated work title randomly in a consistent manner. If they break up the ballots and unlink the categories it would make it impossible to test this method. 
+<p>Hopefully they will just change the membership ID and nominated work title randomly in a consistent manner. If they break up the ballots and unlink the categories it would make it impossible to test this method.</p>
 </div>
+
 <div style="margin-left: 9em; padding-top: 1em;">
-<b>11011110</b>: RE: Maybe it&#x27;s just me...<br />
+<b>11011110</b>: RE: Maybe it's just me...<br />
 <b>2015-09-15T23:11:36Z</b><br />
-That&#x27;s a good point. Unlinking categories would still allow testing EPH but would prevent other methods such as your suggestion from being tested.
+<p>That's a good point. Unlinking categories would still allow testing EPH but would prevent other methods such as your suggestion from being tested.</p>
 </div>
-<div style="margin-left: 9em; padding-top: 1em;">
-<b>brad_templeton</b>: RE: Maybe it&#x27;s just me...<br />
-<b>2015-10-04T04:53:51Z</b><br />
-This method doesn&#x27;t work on a 4-slate, which is content to get 4 of 5 slots.   Each ballot nominates the main 4 and a random 5th.   Alternately a slate which is 20% bigger than what is needed to dominate can get all 5 with coordination, so that every ballot picks 4 of the 5 at random, and another random one, and again it wins.
 
-In general though, I consider letting the slate have 3 or 4 of the 5 to be a failure, even 1 is a failure in my book.
+<div style="margin-left: 9em; padding-top: 1em;">
+<b>brad_templeton</b>: RE: Maybe it's just me...<br />
+<b>2015-10-04T04:53:51Z</b><br />
+<p>This method doesn't work on a 4-slate, which is content to get 4 of 5 slots.   Each ballot nominates the main 4 and a random 5th.   Alternately a slate which is 20% bigger than what is needed to dominate can get all 5 with coordination, so that every ballot picks 4 of the 5 at random, and another random one, and again it wins.</p>
+
+<p>In general though, I consider letting the slate have 3 or 4 of the 5 to be a failure, even 1 is a failure in my book.</p>
 </div>
 

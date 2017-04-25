@@ -4,46 +4,25 @@ title:  'Binary numbers without the zeros'
 date:   2012-04-17 17:09:00
 tags:   [number theory]
 ---
-Every positive integer has a unique representation using a form of base-2 place-value notation (that is, the digits represent 1&#x27;s, 2&#x27;s, 4&#x27;s, 8&#x27;s, etc just as in binary notation) but where the digits are 1 and 2 rather than 0 and 1:
-<br />
+<p>Every positive integer has a unique representation using a form of base-2 place-value notation (that is, the digits represent 1's, 2's, 4's, 8's, etc just as in binary notation) but where the digits are 1 and 2 rather than 0 and 1:</p>
 
-<br />
-1
-<br />
+<pre>1
 2
-<br />
 11
-<br />
 12
-<br />
 21
-<br />
 22
-<br />
 111
-<br />
 112
-<br />
 121
-<br />
 122
-<br />
 211
-<br />
-...
-<br />
+...</pre>
 
-<br />
-These same digit strings in the same ordering can also be interpreted as the ternary numbers that don&#x27;t have any 0 digits. The successor to a number is computed by finding the lowest-order non-two digit, incrementing it, and resetting all the lower-order 2&#x27;s back to 1&#x27;s. This differs from ternary, where the successor would reset all the lower-order 2&#x27;s to 0&#x27;s.
-<br />
+<p>These same digit strings in the same ordering can also be interpreted as the ternary numbers that don't have any 0 digits. The successor to a number is computed by finding the lowest-order non-two digit, incrementing it, and resetting all the lower-order 2's back to 1's. This differs from ternary, where the successor would reset all the lower-order 2's to 0's.</p>
 
-<br />
-It&#x27;s also easy to add these numbers directly, by the standard right-to-left method with carries. Each carry is 0, 1, or 2; in each digit, we compute the sum of the two given digits and the previous carry, write down 1 if the sum is even and 2 if it is odd, and carry half the remaining amount.
-<br />
+<p>It's also easy to add these numbers directly, by the standard right-to-left method with carries. Each carry is 0, 1, or 2; in each digit, we compute the sum of the two given digits and the previous carry, write down 1 if the sum is even and 2 if it is odd, and carry half the remaining amount.</p>
 
-<br />
-ETA: Via <a href="http://oeis.org/A007931">OEIS</a> I find <a href="http://www.jstor.org/stable/3029479">&quot;A number system without a zero&quot; (Foster, Math. Mag. 1947)</a> which does the same sort of thing in decimal.
-<br />
+<p>ETA: Via <a href="http://oeis.org/A007931">OEIS</a> I find <a href="http://www.jstor.org/stable/3029479">"A number system without a zero" (Foster, Math. Mag. 1947)</a> which does the same sort of thing in decimal.</p>
 
-<br />
-ETA2: For what this is good for, see <a href="http://11011110.livejournal.com/255787.html">this more recent post</a>.
+<p>ETA2: For what this is good for, see <a href="{{site.baseurl}}/2012/09/26/relational-events-vs.html">this more recent post</a>.</p>

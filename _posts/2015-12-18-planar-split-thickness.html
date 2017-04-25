@@ -4,20 +4,12 @@ title:  'Planar split thickness'
 date:   2015-12-18 20:37:00
 tags:   [graph drawing, papers]
 ---
-I have a few new additions to my unmet-coauthor list in my latest arXiv preprint, &quot;<a href="http://arxiv.org/abs/1512.04839">On the Planar Split Thickness of Graphs</a>&quot;, arXiv:1512.04839, to appear at <a href="http://latin2016.natix.org/">LATIN 2016</a>.
-<br />
+<p>I have a few new additions to my unmet-coauthor list in my latest arXiv preprint, "<a href="http://arxiv.org/abs/1512.04839">On the Planar Split Thickness of Graphs</a>", arXiv:1512.04839, to appear at <a href="http://latin2016.natix.org/">LATIN 2016</a>.</p>
 
-<br />
-The paper is on the following kind of graph drawing, where we draw each vertex multiple times (with labels so you can see which vertices are repeated where). To interpret the drawing, take the union of the adjacencies of the copies. For instance, the vertex d, repeated at the top of the drawing and the lower center, is adjacent to 6, 7, 2, 3, 0 (from the top), and also to 1, 4, 5, 8, 9 (from the bottom). If you check more carefully you&#x27;ll see that each letter-digit pair is adjacent, so this is a complete bipartite graph.
-<br />
+<p>The paper is on the following kind of graph drawing, where we draw each vertex multiple times (with labels so you can see which vertices are repeated where). To interpret the drawing, take the union of the adjacencies of the copies. For instance, the vertex d, repeated at the top of the drawing and the lower center, is adjacent to 6, 7, 2, 3, 0 (from the top), and also to 1, 4, 5, 8, 9 (from the bottom). If you check more carefully you'll see that each letter-digit pair is adjacent, so this is a complete bipartite graph.</p>
 
-<br />
-<div style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/2K6,10.png" /></div>
-<br />
+<p style="text-align:center"><img alt="Split drawing of K_{6,10}" src="http://www.ics.uci.edu/~eppstein/0xDE/2K6,10.png" /></p>
 
-<br />
-This drawing style is related to graph minors (where the repeated copies of each vertex need to form a connected subgraph) and graph thickness (where only one copy of each vertex is allowed per connected component of the drawing) but without the constraints of either, allowing a little more flexibility in what can be drawn with a given amount of repetition. For instance, the complete bipartite graphs K<sub>6,10</sub> (shown above), K<sub>5,16</sub>, and K<sub>7,8</sub> can all be drawn this way with only two repetitions per vertex, but cannot be drawn with thickness two.
-<br />
+<p>This drawing style is related to graph minors (where the repeated copies of each vertex need to form a connected subgraph) and graph thickness (where only one copy of each vertex is allowed per connected component of the drawing) but without the constraints of either, allowing a little more flexibility in what can be drawn with a given amount of repetition. For instance, the complete bipartite graphs K<sub>6,10</sub> (shown above), K<sub>5,16</sub>, and K<sub>7,8</sub> can all be drawn this way with only two repetitions per vertex, but cannot be drawn with thickness two.</p>
 
-<br />
-Unfortunately, it&#x27;s NP-hard to find a drawing of this type with as few repetitions per vertex as possible. But fortunately, there are some important special cases where it&#x27;s not so hard. In particular, one of our results is to solve the problem on graphs of bounded treewidth. The algorithm uses <a href="https://en.wikipedia.org/wiki/Courcelle%27s_theorem">Courcelle&#x27;s theorem</a>, so there&#x27;s probably a lot of room to make it more practical...
+<p>Unfortunately, it's NP-hard to find a drawing of this type with as few repetitions per vertex as possible. But fortunately, there are some important special cases where it's not so hard. In particular, one of our results is to solve the problem on graphs of bounded treewidth. The algorithm uses <a href="https://en.wikipedia.org/wiki/Courcelle%27s_theorem">Courcelle's theorem</a>, so there's probably a lot of room to make it more practical...</p>

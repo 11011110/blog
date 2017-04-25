@@ -4,48 +4,35 @@ title:  'Enumerating polyhedra with few edge lengths'
 date:   2015-12-07 21:35:00
 tags:   [combinatorial enumeration, geometry]
 ---
-This is related to my post yesterday, which demonstrated that simplicial convex polyhedra (all faces are triangles) with integer edge lengths can be forced to have nasty vertex coordinates, without any closed form solution. How big do the edge lengths need to be for this to happen? My guess is that lengths 1 and 2 should be enough, but I haven&#x27;t worked out an explicit example. But length 1 alone is not enough.
-<br />
+<p>This is related to my post yesterday, which demonstrated that simplicial convex polyhedra (all faces are triangles) with integer edge lengths can be forced to have nasty vertex coordinates, without any closed form solution. How big do the edge lengths need to be for this to happen? My guess is that lengths 1 and 2 should be enough, but I haven't worked out an explicit example. But length 1 alone is not enough.</p>
 
-<br />
-The simplicial polyhedra with all edge lengths 1 are called <a href="https://en.wikipedia.org/wiki/Deltahedron">deltahedra</a>, and there are only eight of them. They include three of the regular polyhedra, and five others shown below in a <a href="http://brianalexanderhofmeister.com/artwork/3139978-Convex-Deltrahedra-Acid-Magnetism-Winter-Light-and-Love.html">Neo-Platonist artwork by Brian Hofmeister</a> (see his web site for more interesting geometric art):
-<br />
+<p>The simplicial polyhedra with all edge lengths 1 are called <a href="https://en.wikipedia.org/wiki/Deltahedron">deltahedra</a>, and there are only eight of them. They include three of the regular polyhedra, and five others shown below in a <a href="http://brianalexanderhofmeister.com/artwork/3139978-Convex-Deltrahedra-Acid-Magnetism-Winter-Light-and-Love.html">Neo-Platonist artwork by Brian Hofmeister</a> (see his web site for more interesting geometric art):</p>
 
-<br />
-<div style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/BrianHofmeisterDeltahedra.jpg" alt="Convex Deltrahedra (Acid, Magnetism, Winter, Light and Love) by Brian Hofmeister, http://brianalexanderhofmeister.com/artwork/3139978-Convex-Deltrahedra-Acid-Magnetism-Winter-Light-and-Love.html" /></div>
-<br />
+<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/BrianHofmeisterDeltahedra.jpg" alt="Convex Deltrahedra (Acid, Magnetism, Winter, Light and Love) by Brian Hofmeister, http://brianalexanderhofmeister.com/artwork/3139978-Convex-Deltrahedra-Acid-Magnetism-Winter-Light-and-Love.html" /></p>
 
-<br />
-Most of the irregular deltahedra can be built out of simpler pieces, prisms and pyramids, and have relatively simple vertex coordinates. The <a href="https://en.wikipedia.org/wiki/Snub_disphenoid">snub disphenoid</a>, the light blue one in the middle, has coordinates that are more of a mess, involving the solution to a cubic equation, but still closed form.
-<br />
+<p>Most of the irregular deltahedra can be built out of simpler pieces, prisms and pyramids, and have relatively simple vertex coordinates. The <a href="https://en.wikipedia.org/wiki/Snub_disphenoid">snub disphenoid</a>, the light blue one in the middle, has coordinates that are more of a mess, involving the solution to a cubic equation, but still closed form.</p>
 
-<br />
-So next we need to look at polyhedra with edge lengths 1 and 2, but there are many of them and I don&#x27;t think they have been explicitly enumerated. How many? Finitely many, but I don&#x27;t know much more than that.
-<br />
+<p>So next we need to look at polyhedra with edge lengths \( 1 \) and \( 2 \), but there are many of them and I don't think they have been explicitly enumerated. How many? Finitely many, but I don't know much more than that.</p>
 
-<br />
-More generally, suppose you have finitely many edge lengths to use as the side lengths of your triangles. For instance, in my office I have a polyhedral construction set consisting of triangles (and some other polygons) with sides that are all either 1 or sqrt(2) (in some system of measurement). Then there are finitely many triangles you can build from these lengths, and finitely many combinations of triangles you can put together at a single vertex to get a total angle that is strictly less than 2<i>π</i> (else you can&#x27;t use that combination in a convex polyhedron). Because there are finitely many, there is some nonzero number <i>ε</i> that gives the smallest angular defect (difference from 2<i>π</i>) of any of these combinations of triangles.
-<br />
+<p>More generally, suppose you have finitely many edge lengths to use as the side lengths of your triangles. For instance, in my office I have a polyhedral construction set consisting of triangles (and some other polygons) with sides that are all either \( 1 \) or \( \sqrt{2} \) (in some system of measurement). Then there are finitely many triangles you can build from these lengths, and finitely many combinations of triangles you can put together at a single vertex to get a total angle that is strictly less than \( 2\pi \) (else you can't use that combination in a convex polyhedron). Because there are finitely many, there is some nonzero number \( \epsilon \) that gives the smallest angular defect (difference from \( 2\pi \)) of any of these combinations of triangles.</p>
 
-<br />
-But every convex polyhedron has total angular defect 4<i>π</i>, by a discrete version of the <a href="https://en.wikipedia.org/wiki/Gauss%E2%80%93Bonnet_theorem">Gauss–Bonnet theorem</a>. This means that the total number of vertices can never be more than 4<i>π</i>/<i>ε</i>, a finite number. And with finitely many vertices you can only have finitely many different polyhedra.
-<br />
+<p>But every convex polyhedron has total angular defect \( 4\pi \), by a discrete version of the <a href="https://en.wikipedia.org/wiki/Gauss%E2%80%93Bonnet_theorem">Gauss–Bonnet theorem</a>. This means that the total number of vertices can never be more than \( 4\pi/\epsilon \), a finite number. And with finitely many vertices you can only have finitely many different polyhedra.</p>
 
-<br />
-This argument is not very constructive. As I&#x27;ve written it above, it doesn&#x27;t tell you how quickly the number of integer-sided simplicial polyhedra grows as a function of the maximum edge length, for instance. And if you try to use this method to prove a bound on the growth rate, you quickly run into tricky problems in diophantine approximation: just how close can you get to zero defect while still having positive defect? I can&#x27;t even tell from this argument whether the 1—sqrt(2) triangles in my office can make more convex polyhedra than 1—2 triangles. (Note, though, that any bound has to involve the lengths and not just the number of different edge lengths, because a 1—<i>n</i>—<i>n</i> isosceles triangle can make a number of different bipyramids that&#x27;s linear in <i>n</i>.) So there&#x27;s a lot of scope for more research in this area.
+<p>This argument is not very constructive. As I've written it above, it doesn't tell you how quickly the number of integer-sided simplicial polyhedra grows as a function of the maximum edge length, for instance. And if you try to use this method to prove a bound on the growth rate, you quickly run into tricky problems in diophantine approximation: just how close can you get to zero defect while still having positive defect? I can't even tell from this argument whether the \( 1 \)—\( \sqrt{2} \) triangles in my office can make more convex polyhedra than \( 1 \)—\( 2 \) triangles. (Note, though, that any bound has to involve the lengths and not just the number of different edge lengths, because a \( 1 \)—\( n \)—\( n \) isosceles triangle can make a number of different bipyramids that's linear in \( n \).) So there's a lot of scope for more research in this area.</p>
+
 <br /><br /><hr /><br />
 <h3>Comments:</h3>
+
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>ext_887241</b>: <br />
 <b>2015-12-08T23:04:03Z</b><br />
-If you allow coplanar facets, you can build any integer-sided rectangular box using only edge lengths 1 and sqrt{2}.
+<p>If you allow coplanar facets, you can build any integer-sided rectangular box using only edge lengths \( 1 \) and \( \sqrt{2} \).</p>
 
-So as ε&gt;0 goes to zero, does the number of (strictly) convex polyhedra with edge lengths 1 and sqrt{2}+ε grow to infinity?
-
+<p>So as \( \epsilon\gt 0 \) goes to zero, does the number of (strictly) convex polyhedra with edge lengths \( 1 \) and \( \sqrt{2}+\epsilon \) grow to infinity?</p>
 </div>
+
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>11011110</b>: <br />
 <b>2015-12-08T23:16:18Z</b><br />
-I don&#x27;t think so. For these edge lengths, there are several ways to get an angular defect close to zero, but they all involve using 1–1–(sqrt(2)+ε) triangles, and more specifically using more than twice as many sharp angles of these triangles as obtuse angles from the same triangles. So every time you do this you need to make up for the imbalance by using more obtuse angles than sharp angles elsewhere, and getting a vertex whose angular defect is bounded away from zero.
+I don't think so. For these edge lengths, there are several ways to get an angular defect close to zero, but they all involve using \( 1 \)–\( 1 \)–\( (\sqrt{2}+\epsilon) \) triangles, and more specifically using more than twice as many sharp angles of these triangles as obtuse angles from the same triangles. So every time you do this you need to make up for the imbalance by using more obtuse angles than sharp angles elsewhere, and getting a vertex whose angular defect is bounded away from zero.
 </div>
-

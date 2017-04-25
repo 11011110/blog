@@ -4,120 +4,88 @@ title:  'A brief introduction to the logic of graphs'
 date:   2014-08-27 17:43:00
 tags:   [graph algorithms, graph drawing, papers]
 ---
-If you&#x27;re used to writing mathematics, but haven&#x27;t paid much attention to model theory, you probably think a fully-quantified mathematical sentence is generally either true or false. Fermat&#x27;s last theorem, for instance, can be written as the following sentence: For all positive integers <i>a</i>, <i>b</i>, <i>c</i>, and <i>n</i>, if <i>n</i> &gt; 2, then <i>a</i><sup><i>n</i></sup> + <i>b</i><sup><i>n</i></sup> ≠ <i>c</i><sup><i>n</i></sup>. This sentence is fully quantified: the four variables <i>a</i>, <i>b</i>, <i>c</i>, and <i>n</i> are all covered by the quantifier &quot;for all positive integers&quot;. It&#x27;s one of the true ones, if difficult to prove.
-<br />
+<p>If you're used to writing mathematics, but haven't paid much attention to model theory, you probably think a fully-quantified mathematical sentence is generally either true or false. Fermat's last theorem, for instance, can be written as the following sentence: For all positive integers \( a \), \( b \), \( c \), and \( n \), if \( n\gt 2 \), then \( a^n+b^n\ne c^n \). This sentence is fully quantified: the four variables \( a \), \( b \), \( c \), and \( n \) are all covered by the quantifier "for all positive integers". It's one of the true ones, if difficult to prove.</p>
 
-<br />
-But when we&#x27;re working with the logic of graphs, a (fully-quantified) sentence is itself just another mathematical object, and its truth is relative: it might be true for some graphs and false for others. Consider, for instance, the following sentence about an undirected graph: &quot;There exist vertices <i>v</i> and <i>w</i> such that <i>v</i> and <i>w</i> are adjacent, and for all vertices <i>u</i>, if <i>u</i> and <i>v</i> are adjacent, then <i>u</i> equals <i>w</i>.&quot; It can be satisfied only when <i>v</i> is a vertex whose degree is exactly one, and <i>w</i> is its unique neighbor. We can write this more concisely using a notation in which adjacency is written using a tilde:
-<br />
+<p>But when we're working with the logic of graphs, a (fully-quantified) sentence is itself just another mathematical object, and its truth is relative: it might be true for some graphs and false for others. Consider, for instance, the following sentence about an undirected graph: "There exist vertices \( v \) and \( w \) such that \( v \) and \( w \) are adjacent, and for all vertices \( u \), if \( u \) and \( v \) are adjacent, then \( u \) equals \( w \)." It can be satisfied only when \( v \) is a vertex whose degree is exactly one, and \( w \) is its unique neighbor. We can write this more concisely using a notation in which adjacency is written using a tilde:</p>
 
-<br />
-<div style="text-align:center"><img src="http://latex.codecogs.com/gif.latex?\exists&space;v,w:&space;(v\sim&space;w)\wedge&space;(\forall&space;u:&space;(u\sim&space;v)&space;\rightarrow&space;(u&space;=&space;w))" title="\exists v,w: (v\sim w)\wedge (\forall u: (u\sim v) \rightarrow (u = w))" /></div>
-<br />
+\[
+\exists v,w: (v\sim w)\wedge (\forall u: (u\sim v) \rightarrow (u = w))
+\]
 
-<br />
-Let&#x27;s give this sentence a name, <i>D</i><sub>1</sub>. Then <i>D</i><sub>1</sub> is true for a graph that has a degree-one vertex, such as the complete bipartite graph <i>K</i><sub>1,4</sub>. But it&#x27;s false for a graph that doesn&#x27;t have such a vertex, such as the complete graph <i>K</i><sub>4</sub>. If a sentence is true for a graph, we say that the graph &quot;models&quot; the sentence, and we can also write that in mathematical notation:
-<br />
+<p>Let's give this sentence a name, \( D_1 \). Then \( D_1 \) is true for a graph that has a degree-one vertex, such as the complete bipartite graph \( K_{1,4} \). But it's false for a graph that doesn't have such a vertex, such as the complete graph \( K_4 \). If a sentence is true for a graph, we say that the graph "models" the sentence, and we can also write that in mathematical notation:</p>
 
-<br />
-<div style="text-align:center"><img src="http://latex.codecogs.com/gif.latex?K_{1,4}\models&space;D_{1}" title="K_{1,4}\models D_{1}" /></div>
-<br />
+\[
+K_{1,4}\models D_{1}
+\]
 
-<br />
-This kind of logic, in which the only things we can talk about are vertices and their adjacencies, is called the first order logic of graphs, and it&#x27;s kind of weak. Each of its sentences is equivalent to an algorithm that can contain nested loops over vertices, if-then-else logic involving adjacency tests and equality, and the ability to return Boolean values, but nothing else. For instance:
-<br />
+<p>This kind of logic, in which the only things we can talk about are vertices and their adjacencies, is called the first order logic of graphs, and it's kind of weak. Each of its sentences is equivalent to an algorithm that can contain nested loops over vertices, if-then-else logic involving adjacency tests and equality, and the ability to return Boolean values, but nothing else. For instance:</p>
 
-<br />
-<pre>def d1(G):
-<br />
+{% highlight python %}
+def d1(G):
    for v in G:
-<br />
        for w in G:
-<br />
            if G.adjacent(v,w):
-<br />
                for u in G:
-<br />
                    if G.adjacent(u,v):
-<br />
                        if u != w:
-<br />
                            break
-<br />
                else:
-<br />
                    return True
-<br />
-    return False</pre>
-<br />
+    return False
+{% endhighlight %}
 
-<br />
-This is good enough to recognize some families of graphs (such as the ones with a finite set of forbidden induced subgraphs) but not many others. For instance, I don&#x27;t know how to describe the <a href="https://en.wikipedia.org/wiki/Distance-hereditary_graph">distance-hereditary graphs</a> in this way. They can be described by forbidden induced subgraphs, but infinitely many of them, and we&#x27;re not allowed to write infinitely-long sentences.
-<br />
+<p>This is good enough to recognize some families of graphs (such as the ones with a finite set of forbidden induced subgraphs) but not many others. For instance, I don't know how to describe the <a href="https://en.wikipedia.org/wiki/Distance-hereditary_graph">distance-hereditary graphs</a> in this way. They can be described by forbidden induced subgraphs, but infinitely many of them, and we're not allowed to write infinitely-long sentences.</p>
 
-<br />
-On the other hand, the weakness of first-order logic means that we can prove interesting facts about it. For instance, every first-order sentence defines a family of graphs that can be recognized in polynomial time. Also, we have the 0-1 law: if <i>S</i> is any sentence in first-order logic then the probability that a graph chosen uniformly at random among all <i>n</i>-vertex graphs models <i>S</i> is either zero or one in the limit as <i>n</i> goes to infinity. Using the 0-1 law, even though we can&#x27;t describe the distance-hereditary graphs precisely in first-order logic, we can get an approximate description that&#x27;s good enough to prove that almost all random graphs are not distance-hereditary. A distance-hereditary graph either has a degree-one vertex (it models <i>D</i><sub>1</sub>) or it has two twin vertices, vertices whose sets of neighbors (not counting the two twins themselves) are identical. The existence of twins can also be described by a first-order sentence <i>T</i>:
-<br />
+<p>On the other hand, the weakness of first-order logic means that we can prove interesting facts about it. For instance, every first-order sentence defines a family of graphs that can be recognized in polynomial time. Also, we have the 0-1 law: if \( S \) is any sentence in first-order logic then the probability that a graph chosen uniformly at random among all \( n \)-vertex graphs models \( S \) is either zero or one in the limit as \( n \) goes to infinity. Using the 0-1 law, even though we can't describe the distance-hereditary graphs precisely in first-order logic, we can get an approximate description that's good enough to prove that almost all random graphs are not distance-hereditary. A distance-hereditary graph either has a degree-one vertex (it models \( D_1 \)) or it has two twin vertices, vertices whose sets of neighbors (not counting the two twins themselves) are identical. The existence of twins can also be described by a first-order sentence \( T \):</p>
 
-<br />
-<div style="text-align:center"><img src="http://latex.codecogs.com/gif.latex?\exists&space;u,v:&space;(u\ne&space;v)\wedge\forall&space;w:&space;(u=w)\vee(v=w)\vee((u\sim&space;w)\leftrightarrow(v\sim&space;w))" title="\exists u,v: (u\ne v)\wedge\forall w: (u=w)\vee(v=w)\vee((u\sim w)\leftrightarrow(v\sim w))" /></div>
-<br />
+\[
+\exists u,v: (u\ne v)\wedge\forall w: (u=w)\vee(v=w)\vee((u\sim w)\leftrightarrow(v\sim w))
+\]
 
-<br />
-But for a uniformly random graph, both the expected number of degree-one vertices and the expected number of twin pairs, can be calculated directly from these formulas, and are exponentially small in the number <i>n</i> of vertices. So almost all graphs do not model <i>D</i><sub>1</sub>, do not model <i>T</i>, and therefore cannot be distance-hereditary.
-<br />
+<p>But for a uniformly random graph, both the expected number of degree-one vertices and the expected number of twin pairs, can be calculated directly from these formulas, and are exponentially small in the number \( n \) of vertices. So almost all graphs do not model \( D_1 \), do not model \( T \), and therefore cannot be distance-hereditary.</p>
 
-<br />
-The name &quot;first order&quot; should be a hint that there&#x27;s another kind of logic, &quot;second order logic&quot;, and there is. In second order logic, the variables can represent complicated structures built out of <i>k</i>-ary relations (for instance, entire graphs), the quantifiers quantify over these structures, and we need more primitives to be able to look at what&#x27;s inside these structures. The idea of using second order logic seems to be somewhat controversial in mathematics, in part because there&#x27;s not a uniquely-defined way of assigning meanings to statements in this logic, but there&#x27;s a restricted subset of the second order logic of graphs, called monadic second order logic, where these problems do not arise. Or actually there are two such subsets: MSO<sub>1</sub> and MSO<sub>2</sub>.
-<br />
+<p>The name "first order" should be a hint that there's another kind of logic, "second order logic", and there is. In second order logic, the variables can represent complicated structures built out of \( k \)-ary relations (for instance, entire graphs), the quantifiers quantify over these structures, and we need more primitives to be able to look at what's inside these structures. The idea of using second order logic seems to be somewhat controversial in mathematics, in part because there's not a uniquely-defined way of assigning meanings to statements in this logic, but there's a restricted subset of the second order logic of graphs, called monadic second order logic, where these problems do not arise. Or actually there are two such subsets: MSO<sub>1</sub> and MSO<sub>2</sub>.</p>
 
-<br />
-MSO<sub>1</sub> is what you get from the first order logic described above when you add another type of variable for sets of vertices (usually written with capital letters) and you allow quantification over sets of vertices. The only other feature beyond first order logic that&#x27;s necessary to define this logic is the ability to test whether a vertex belongs to a set. It&#x27;s convenient to write formulas using more complicated tests such as whether one set is a subset of another, but those can be broken down into membership tests. We can also get the effect of using these sets as variable types that can be quantified over, by instead quantifying over all vertices but then testing whether the results of the quantification belong to the given set. For instance we can write sentences <i>D</i><sub>1</sub>[<i>X</i>] and <i>T</i>[<i>X</i>] that have the same form as <i>D</i><sub>1</sub> and <i>T</i>, but restrict all their variables to be in <i>X</i>. The effect of this restriction would be to test whether the subgraph induced by <i>X</i> has a degree-one vertex or has twins. A distance-hereditary graph is a graph in which every induced subgraph of two or more vertices has a degree-zero vertex, a degree-one vertex or twins, and this logic allows us to express this definition in a sentence <i>DH</i>:
-<br />
+<p>MSO<sub>1</sub> is what you get from the first order logic described above when you add another type of variable for sets of vertices (usually written with capital letters) and you allow quantification over sets of vertices. The only other feature beyond first order logic that's necessary to define this logic is the ability to test whether a vertex belongs to a set. It's convenient to write formulas using more complicated tests such as whether one set is a subset of another, but those can be broken down into membership tests. We can also get the effect of using these sets as variable types that can be quantified over, by instead quantifying over all vertices but then testing whether the results of the quantification belong to the given set. For instance we can write sentences \( D_1[X] \) and \( T[X] \) that have the same form as \( D_1 \) and \( T \), but restrict all their variables to be in \( X \). The effect of this restriction would be to test whether the subgraph induced by \( X \) has a degree-one vertex or has twins. A distance-hereditary graph is a graph in which every induced subgraph of two or more vertices has a degree-zero vertex, a degree-one vertex or twins, and this logic allows us to express this definition in a sentence <i>DH</i>:</p>
 
-<br />
-<div style="text-align:center"><img src="http://latex.codecogs.com/gif.latex?\forall&space;X:&space;(\exists&space;u,v:&space;u\in&space;X\wedge&space;v\in&space;X\wedge&space;u\ne&space;v)\rightarrow(D_0[X]\vee&space;D_1[X]\vee&space;T[X])" title="\forall X: (\exists u,v: u\in X\wedge v\in X\wedge u\ne v)\rightarrow(D_0[X]\vee D_1[X]\vee T[X])" /></div>
-<br />
+\[
+\forall X: (\exists u,v: u\in X\wedge v\in X\wedge u\ne v)\rightarrow(D_0[X]\vee D_1[X]\vee T[X])
+\]
 
-<br />
-A graph <i>G</i> models DH if and only if <i>G</i> is distance-hereditary. MSO<sub>2</sub> is similar, but allows four types of variables: vertices, edges, and sets of vertices and edges. The ability to represent sets of edges allows it to express some properties (such as the property of having a Hamiltonian cycle) that cannot be expressed in MSO<sub>1</sub>.
-<br />
+<p>A graph \( G \) models DH if and only if \( G \) is distance-hereditary. MSO<sub>2</sub> is similar, but allows four types of variables: vertices, edges, and sets of vertices and edges. The ability to represent sets of edges allows it to express some properties (such as the property of having a Hamiltonian cycle) that cannot be expressed in MSO<sub>1</sub>.</p>
 
-<br />
-Unlike first-order logic, we don&#x27;t necessarily get efficient algorithms out of MSO expressions. Simulating the formula directly would involve an exponential-time search over all possible subsets of vertices or edges in a given graph. But that&#x27;s not the only way to turn one of these formulas into an algorithm. In particular, we can apply <a href="https://en.wikipedia.org/wiki/Courcelle%27s_theorem">Courcelle&#x27;s theorem</a>, which says that every MSO<sub>2</sub> formula can be translated into a fixed-parameter tractable algorithm on graphs parameterized by their <a href="https://en.wikipedia.org/wiki/Treewidth">treewidth</a>, and that every MSO<sub>1</sub> formula can be translated into an FPT algorithm on graphs parameterized by their <a href="https://en.wikipedia.org/wiki/Clique-width">clique-width</a>. In the example of the distance-hereditary graphs, we also know that all such graphs have bounded clique-width. So applying Courcelle and plugging in the fixed bound on the clique-width of these graphs immediately tells us that there&#x27;s a polynomial time algorithm for recognizing distance-hereditary graphs.
-<br />
+<p>Unlike first-order logic, we don't necessarily get efficient algorithms out of MSO expressions. Simulating the formula directly would involve an exponential-time search over all possible subsets of vertices or edges in a given graph. But that's not the only way to turn one of these formulas into an algorithm. In particular, we can apply <a href="https://en.wikipedia.org/wiki/Courcelle%27s_theorem">Courcelle's theorem</a>, which says that every MSO<sub>2</sub> formula can be translated into a fixed-parameter tractable algorithm on graphs parameterized by their <a href="https://en.wikipedia.org/wiki/Treewidth">treewidth</a>, and that every MSO<sub>1</sub> formula can be translated into an FPT algorithm on graphs parameterized by their <a href="https://en.wikipedia.org/wiki/Clique-width">clique-width</a>. In the example of the distance-hereditary graphs, we also know that all such graphs have bounded clique-width. So applying Courcelle and plugging in the fixed bound on the clique-width of these graphs immediately tells us that there's a polynomial time algorithm for recognizing distance-hereditary graphs.</p>
 
-<br />
-All of this is, I think, completely constructive: it&#x27;s not just that an algorithm exists, but in principle we could automatically translate the formula into the algorithm. It&#x27;s also completely useless in practice because the dependence on the parameter is ridiculously high (some kind of tower of powers). When an algorithm is found in this way, additional research is needed to find a more direct algorithm that reduces this dependence to something more reasonable like single-exponential with a small base, or even removes it to get a polynomial time algorithm. In the case of the distance-hereditary graphs, there&#x27;s an easy polynomial algorithm: look for degree one vertices or twins, and whenever one of these patterns is found use it to reduce the size of the graph by one vertex. With a little more care one can even achieve linear time for distance-hereditary graph recognition.
-<br />
+<p>All of this is, I think, completely constructive: it's not just that an algorithm exists, but in principle we could automatically translate the formula into the algorithm. It's also completely useless in practice because the dependence on the parameter is ridiculously high (some kind of tower of powers). When an algorithm is found in this way, additional research is needed to find a more direct algorithm that reduces this dependence to something more reasonable like single-exponential with a small base, or even removes it to get a polynomial time algorithm. In the case of the distance-hereditary graphs, there's an easy polynomial algorithm: look for degree one vertices or twins, and whenever one of these patterns is found use it to reduce the size of the graph by one vertex. With a little more care one can even achieve linear time for distance-hereditary graph recognition.</p>
 
-<br />
-My latest preprint, <a href="http://arxiv.org/abs/1408.6321">&quot;Crossing minimization for 1-page and 2-page drawings of graphs with bounded treewidth&quot;</a> (arXiv:1408.6321, with Michael Bannister, to appear at Graph Drawing), uses this same logical approach to attack some problems related to <a href="https://en.wikipedia.org/wiki/Book_embedding">book embedding</a>. We had a paper with Joe Simons in GD 2013 that showed that, for graphs formed from trees by adding a very small number of edges, we can find 1-page and 2-page book drawings with a minimum number of crossings in FPT time. In the new paper, we characterize these drawings using second order logic and apply Courcelle&#x27;s theorem, allowing us to generalize these algorithms to the graphs of low treewidth, a much larger class of inputs. But because we use Courcelle&#x27;s theorem, our algorithms are completely impractical. More research is needed to find a way to minimize crossings in practice.
+<p>My latest preprint, <a href="http://arxiv.org/abs/1408.6321">"Crossing minimization for 1-page and 2-page drawings of graphs with bounded treewidth"</a> (arXiv:1408.6321, with Michael Bannister, to appear at Graph Drawing), uses this same logical approach to attack some problems related to <a href="https://en.wikipedia.org/wiki/Book_embedding">book embedding</a>. We had a paper with Joe Simons in GD 2013 that showed that, for graphs formed from trees by adding a very small number of edges, we can find 1-page and 2-page book drawings with a minimum number of crossings in FPT time. In the new paper, we characterize these drawings using second order logic and apply Courcelle's theorem, allowing us to generalize these algorithms to the graphs of low treewidth, a much larger class of inputs. But because we use Courcelle's theorem, our algorithms are completely impractical. More research is needed to find a way to minimize crossings in practice.</p>
+
 <br /><br /><hr /><br />
 <h3>Comments:</h3>
+
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>None</b>: <br />
 <b>2014-08-28T07:07:40Z</b><br />
-I think the python code is slightly wrong: in the innermost &quot;return False&quot; you should conclude only that the pair (v,w) is wrong and go back to the next iteration of the w-loop. 
+I think the python code is slightly wrong: in the innermost "return False" you should conclude only that the pair (v,w) is wrong and go back to the next iteration of the w-loop. 
 </div>
+
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>11011110</b>: <br />
 <b>2014-08-28T07:33:04Z</b><br />
 Oops, fixed with a for...else. Thanks.
 </div>
+
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>None</b>: <br />
 <b>2014-08-28T11:16:37Z</b><br />
 There is actually an <a href="http://sequoia.informatik.rwth-aachen.de/sequoia/">implementation of MSO on graphs of bounded treewidth</a>; apparently, it works quite okay for treewidth up to 10 or so with simple formulas.
 </div>
+
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>11011110</b>: <br />
 <b>2014-08-28T16:13:12Z</b><br />
-Thanks for the pointer. Perhaps I should have said that the time bounds we get are completely impractical. I guess that&#x27;s different than the algorithms themselves.
+Thanks for the pointer. Perhaps I should have said that the time bounds we get are completely impractical. I guess that's different than the algorithms themselves.
 </div>
-<div style="margin-left: 0em; padding-top: 1em;">
-<b>None</b>: <br />
-<b></b><br />
 
 </div>
 <div style="margin-left: 0em; padding-top: 1em;">
@@ -125,9 +93,10 @@ Thanks for the pointer. Perhaps I should have said that the time bounds we get a
 <b>2014-08-28T22:51:58Z</b><br />
 http://arxiv.org/pdf/1308.3654v2.pdf contains some useful information related to this topic
 </div>
+
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>11011110</b>: <br />
 <b>2014-08-28T23:30:40Z</b><br />
-Thanks for the pointer. The link is &quot;<a href="http://arxiv.org/abs/1308.3654">Connection Matrices and the Definability of Graph Parameters</a>&quot; (arXiv:1308.3654, Tomer Kotek and Johann A. Makowsky) and it appears to be about methods for proving that certain graph properties are not definable in certain graph logics.
+Thanks for the pointer. The link is "<a href="http://arxiv.org/abs/1308.3654">Connection Matrices and the Definability of Graph Parameters</a>" (arXiv:1308.3654, Tomer Kotek and Johann A. Makowsky) and it appears to be about methods for proving that certain graph properties are not definable in certain graph logics.
 </div>
 
