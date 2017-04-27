@@ -6,13 +6,13 @@ tags:   [partial orders, graph drawing]
 ---
 <p>It's pretty well known that a finite <a href="https://en.wikipedia.org/wiki/Lattice_(order)">lattice</a> has <a href="https://en.wikipedia.org/wiki/Order_dimension">order dimension</a> ≤ 2 if and only if its Hasse diagram is an <a href="https://en.wikipedia.org/wiki/St-planar_graph"><i>st</i>-planar graph</a> (below left), and every <a href="https://en.wikipedia.org/wiki/Transitive_reduction">transitively reduced</a> <i>st</i>-planar graph defines a 2-dimensional lattice in this way. The reference I know of for this is Platt, "Planar lattices and planar graphs", <i>J. Comb. Th.</i> 1976. And I don't know who first observed that the 2-dimensional finite <a href="https://en.wikipedia.org/wiki/Distributive_lattice">distributive lattices</a> are the ones that can be drawn as grid graphs (below right) but my guess would be Garrett Birkhoff.</p>
 
-<p style="text-align:center"><img alt="Hasse diagrams of a two-dimensional lattice and distributive lattice" src="http://www.ics.uci.edu/~eppstein/0xDE/stplanar+grid.png" /></p>
+<p style="text-align:center"><img alt="Hasse diagrams of a two-dimensional lattice and distributive lattice" src="{{site.baseurl}}/assets/2016/stplanar+grid.svg" /></p>
 
 <p>My own paper "<a href="http://arxiv.org/abs/cs.CG/0607094">Upright-quad drawing of st-planar learning spaces</a>" described an analogous geometric representation for <a href="https://en.wikipedia.org/wiki/Antimatroid">antimatroids</a> (which in this context can be seen as another special type of lattice). So <a href="http://cstheory.stackexchange.com/questions/36510/subclasses-or-characterizations-of-modular-or-pseudo-modular-planar-graphs">a recent CS-theory stack-exchange question about planar modular graphs</a> got me wondering: what do the graphs of 2-dimensional <a href="https://en.wikipedia.org/wiki/Modular_lattice">modular lattices</a> (a subclass of the planar modular graphs) look like?</p>
 
 <p>As it turns out there is a nice answer. They are the graphs that can be drawn as grid graphs (like the distributive lattices) but then adding extra vertices within some of the grid squares, connected only to the top and bottom of the square. Like this:</p>
 
-<p style="text-align:center"><img alt="Hasse diagram of a two-dimensional modular lattice" src="http://www.ics.uci.edu/~eppstein/0xDE/2d-modular.png" /></p>
+<p style="text-align:center"><img alt="Hasse diagram of a two-dimensional modular lattice" src="{{site.baseurl}}/assets/2016/2d-modular.svg" /></p>
 
 <p>In one direction, it's straightforward to verify that the lattices drawn this way satisfy the <a href="https://en.wikipedia.org/wiki/Semimodular_lattice">semimodular law</a>. But they have the same shape when you flip them upside down, so they're both upper and lower semimodular and therefore modular.</p>
 
@@ -20,4 +20,4 @@ tags:   [partial orders, graph drawing]
 
 <p>What about modular graphs more generally? Does the same operation of subdividing a quadrilateral by adding a degree-two vertex inside it preserve modularity? Unfortunately, no. \( K_{2,3} \) (a grid with one square and one subdivision point) is modular. But adding a horizontal subdivision to each of its three quadrilaterals (the outer one too) produces a non-modular graph: the three new subdivision points have no median.</p>
 
-<p style="text-align:center"><img alt="Adding new degree-two vertices inside the three quadrilateral faces of K_2,3 makes the resulting graph non-modular" src="http://www.ics.uci.edu/~eppstein/0xDE/non-modular.png" /></p>
+<p style="text-align:center"><img alt="Adding new degree-two vertices inside the three quadrilateral faces of K_2,3 makes the resulting graph non-modular" src="{{site.baseurl}}/assets/2016/non-modular.svg" /></p>

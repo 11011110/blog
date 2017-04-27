@@ -5,39 +5,44 @@ date:   2015-07-25 00:24:00
 tags:   [algorithms, data structures]
 ---
 
-<p>One of my students, Will Devanny, is teaching a summer-session offering of our lower-division undergraduate data structures class. (My university forbids graduate students from being the instructor of record for classes during the regular term, despite allowing equally-qualified non-student lecturers, but encourages students to teach during the summer; don&#x27;t ask me why.) Anyway, he asked his students the following question: Suppose you are given as input a sorted sequence of numbers. Describe an efficient algorithm for constructing a perfectly balanced binary search tree with these numbers as keys. (Here perfectly balanced means that the depths of the leaves of the tree are all within one of each other.)</p>
+<p>One of my students, Will Devanny, is teaching a summer-session offering of our lower-division undergraduate data structures class. (My university forbids graduate students from being the instructor of record for classes during the regular term, despite allowing equally-qualified non-student lecturers, but encourages students to teach during the summer; don't ask me why.) Anyway, he asked his students the following question: Suppose you are given as input a sorted sequence of numbers. Describe an efficient algorithm for constructing a perfectly balanced binary search tree with these numbers as keys. (Here perfectly balanced means that the depths of the leaves of the tree are all within one of each other.)</p>
 
-<p>There are many different ways of answering the question correctly, of varying degrees of trickiness. If I were given the question, I&#x27;d be tempted to give an answer that uses the following function to determine the index of the parent of the item at position x (with zero-based indexing):</p>
+<p>There are many different ways of answering the question correctly, of varying degrees of trickiness. If I were given the question, I'd be tempted to give an answer that uses the following function to determine the index of the parent of the item at position x (with zero-based indexing):</p>
 
 {% highlight python %}
 def parent(x):
-    y = (x+1 &amp;~ x)
-    z = x &amp; (y+y)
-    return (x | y) &amp;~ z
+    y = (x+1 &~ x)
+    z = x & (y+y)
+    return (x | y) &~ z
 {% endhighlight %}
 
-<p>(And then I&#x27;d get marked down for a solution that has the optimal depth but is not balanced...) Instead, since the students had just learned about <a href="https://en.wikipedia.org/wiki/AVL_tree">AVL trees</a>, some of them thought that AVL trees must be part of this problem&#x27;s solution. They gave as their answer: insert the numbers into an AVL tree in sorted order.</p>
+<p>(And then I'd get marked down for a solution that has the optimal depth but is not balanced...) Instead, since the students had just learned about <a href="https://en.wikipedia.org/wiki/AVL_tree">AVL trees</a>, some of them thought that AVL trees must be part of this problem's solution. They gave as their answer: insert the numbers into an AVL tree in sorted order.</p>
 
-<p>You might think that this is a wrong answer, because AVL trees don&#x27;t have to be perfectly balanced. And probably the students giving this answer misunderstood the question, or the behavior of AVL trees, or both. But it turns out to be correct! If you insert items into an AVL tree in sorted order, without doing any deletions, you will always get a perfectly balanced tree. More precisely, as can be shown by induction, the right spine of the tree will always have a sequence of complete trees dangling from it, so that the leaves within each of these trees are all at the same level and the leaves of any two of these trees are all at levels that are within one of each other. Here are the first few steps of the process:</p>
+<p>You might think that this is a wrong answer, because AVL trees don't have to be perfectly balanced. And probably the students giving this answer misunderstood the question, or the behavior of AVL trees, or both. But it turns out to be correct! If you insert items into an AVL tree in sorted order, without doing any deletions, you will always get a perfectly balanced tree. More precisely, as can be shown by induction, the right spine of the tree will always have a sequence of complete trees dangling from it, so that the leaves within each of these trees are all at the same level and the leaves of any two of these trees are all at levels that are within one of each other. Here are the first few steps of the process:</p>
 
-<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/IncrementalAVL.png" /></p>
+<p style="text-align:center"><img alt="What happens when you insert keys into an AVL tree in sorted order" src="http://www.ics.uci.edu/~eppstein/0xDE/IncrementalAVL.png" /></p>
 
 <p>The next steps, inserting 10 and 11, do the same thing to the right subtree that the insertions of 6 and 7 did to the whole tree. But when we insert 12, we get a right subtree that looks like the whole tree for 8, too deep to balance the left subtree, so we rebalance the root making the left subtree be a complete binary tree one level deeper, etc.</p>
 
 <p>One potential flaw of the AVL tree solution is that inserting \( n \) points into an AVL tree normally takes time \( O(n\log n) \), while other solutions take linear time. But because of the special insertion order, as long as you maintain a pointer to the last node in the tree and do the insertion bottom-up instead of top-down, the total time can still be made to be linear.</p>
 
-<p>Morals of the story: check your student&#x27;s crazy answers instead of just assuming that they must be wrong. For that matter check your own answers instead of just assuming that they must be right. And remember this cute fact about AVL trees as possibly forming the basis of a homework or exam question in a more advanced class, or at least as a spoiler answer to watch out for when you ask Will&#x27;s question.</p>
+<p>Morals of the story: check your student's crazy answers instead of just assuming that they must be wrong. For that matter check your own answers instead of just assuming that they must be right. And remember this cute fact about AVL trees as possibly forming the basis of a homework or exam question in a more advanced class, or at least as a spoiler answer to watch out for when you ask Will's question.</p>
 
 <br /><br /><hr /><br />
 <h3>Comments:</h3>
+
 <div style="margin-left: 0em; padding-top: 1em;">
-<b>None</b>: <b>2015-07-25T13:40:17Z</b>This is an exercise in Lewis and Denenberg, I think. Here&#x27;s the way I asked the question earlier this year:
+<b>None</b>:<br />
+<b>2015-07-25T13:40:17Z</b><br />
+<p>This is an exercise in Lewis and Denenberg, I think. Here's the way I asked the question earlier this year:</p>
 
-Keys 1, 2, 3,..., 2^k - 1 are inserted in order into an initially empty AVL tree. Prove that the resulting tree is perfectly balanced i.e. all leaves are at the same depth, all other nodes have two children.
+<p>Keys \( 1, 2, 3, \dots, 2^k - 1 \) are inserted in order into an initially empty AVL tree. Prove that the resulting tree is perfectly balanced i.e. all leaves are at the same depth, all other nodes have two children.</p>
 
-Alex Lopez-Ortiz
+<p>Alex Lopez-Ortiz</p>
 </div>
+
 <div style="margin-left: 3em; padding-top: 1em;">
-<b>11011110</b>: <b>2015-07-25T15:56:17Z</b>Thanks for the reference. I was pretty sure this would be known, but didn&#x27;t know a source myself.
+<b>11011110</b>:<br />
+<b>2015-07-25T15:56:17Z</b><br />
+<p>Thanks for the reference. I was pretty sure this would be known, but didn't know a source myself.</p>
 </div>
-

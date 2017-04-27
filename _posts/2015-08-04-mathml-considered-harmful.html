@@ -20,11 +20,13 @@ tags:   [wikipedia, mathematics]
 
 <h4>MathJax and Wikipedia</h4>
 
-<p>Introduced in 2009 after a joint project of the AMS, SIAM, and others, MathJax provided code to do the work of turning mathematical formulas into html markup so that you don't have to. Their slogan is "it just works", and it's true. Add one line of code to your web pages:
+<p>Introduced in 2009 after a joint project of the AMS, SIAM, and others, MathJax provided code to do the work of turning mathematical formulas into html markup so that you don't have to. Their slogan is "it just works", and it's true. Add one line of code to your web pages:</p>
+
 {% highlight javascript %}
 <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 {% endhighlight %}
-and then start formatting math using <code>\<span>(...\</span>)</code> for inline formulas and <code>\<span>[...\</span>]</code> for displayed equations. (If you want <code>$...$</code> the setup is a few more lines.)</p>
+
+<p>and then start formatting math using <code>\<span>(...\</span>)</code> for inline formulas and <code>\<span>[...\</span>]</code> for displayed equations. (If you want <code>$...$</code> the setup is a few more lines.)</p>
 
 <p>MathJax has some minor issues, involving slow formatting and reflowing already-displayed text, and it's kind of a hack, but it really is easy and it really does work well, producing equations that are formatted as pieces of text, looking as sharp as any other piece of text, using fonts that match the surrounding text, and scaling properly with the surrounding text. MathJax quickly became the de facto standard for mathematics formatting on the web and has become widely used by sites including MathSciNet, MathOverflow, arXiv, the commercial journal publishers, etc.: almost everyone who publishes mathematics on the web.</p>
 
@@ -36,7 +38,15 @@ and then start formatting math using <code>\<span>(...\</span>)</code> for inlin
 
 <h4>Editors vs developers</h4>
 
-<p>Some background on Wikipedia versus Wikimedia is probably appropriate here. It's confusing because the names are so similar, but they're different things. Wikipedia is a big multi-language encyclopedia, whose volunteer contributors are usually called editors. It has a big body of text, lots of rules about how to edit, and various pieces of bureaucracy to enforce those rules, but the bureaucrats are also volunteers. Mediawiki is the software on which Wikipedia runs, and Wikimedia is the nonprofit organization that develops and runs that software. It has actual computer farms and actual paid employees, some of whom are software developers, but it also uses volunteer software developers to augment the efforts of the paid ones. The Wikipedia editors and Wikimedia developers are not the same people, and have often had major disagreements on how best to improve the Wikimedia software. Even when they share common goals, such as expanding and diversifying the base of editors (Edit Wikipedia! Contribute your knowledge!) they often disagree on how to achieve them. Major flashpoints have included<ul><li>The <a href="https://en.wikipedia.org/wiki/Wikipedia:VisualEditor">Visual Editor</a>, a GUI intended by the developers to replace text editing of wiki-markup,</li><li><a href="https://en.wikipedia.org/wiki/Wikipedia:Flow">Flow</a>, a threaded discussion system intended to replace the article talk pages used by editors to discuss controversial changes to articles, compare alternative versions of article text, or request changes that other editors might be better able to make, and</li><li><a href="https://en.wikipedia.org/wiki/Wikipedia:Pending_changes">Pending changes</a>, a system for preventing new editors' changes from becoming visible until they are vetted by more experienced editors.</li></ul>Compared to these controversies, mathematics formatting and MathML are small potatoes: a small part of the encyclopedia, important to only a small fraction of editors and developers, but very important to that small number of people.</p>
+<p>Some background on Wikipedia versus Wikimedia is probably appropriate here. It's confusing because the names are so similar, but they're different things. Wikipedia is a big multi-language encyclopedia, whose volunteer contributors are usually called editors. It has a big body of text, lots of rules about how to edit, and various pieces of bureaucracy to enforce those rules, but the bureaucrats are also volunteers. Mediawiki is the software on which Wikipedia runs, and Wikimedia is the nonprofit organization that develops and runs that software. It has actual computer farms and actual paid employees, some of whom are software developers, but it also uses volunteer software developers to augment the efforts of the paid ones. The Wikipedia editors and Wikimedia developers are not the same people, and have often had major disagreements on how best to improve the Wikimedia software. Even when they share common goals, such as expanding and diversifying the base of editors (Edit Wikipedia! Contribute your knowledge!) they often disagree on how to achieve them. Major flashpoints have included</p>
+
+<ul><li><p>The <a href="https://en.wikipedia.org/wiki/Wikipedia:VisualEditor">Visual Editor</a>, a GUI intended by the developers to replace text editing of wiki-markup,</p></li>
+
+<li><p><a href="https://en.wikipedia.org/wiki/Wikipedia:Flow">Flow</a>, a threaded discussion system intended to replace the article talk pages used by editors to discuss controversial changes to articles, compare alternative versions of article text, or request changes that other editors might be better able to make, and</p></li>
+
+<li><p><a href="https://en.wikipedia.org/wiki/Wikipedia:Pending_changes">Pending changes</a>, a system for preventing new editors' changes from becoming visible until they are vetted by more experienced editors.</p></li></ul>
+
+<p>Compared to these controversies, mathematics formatting and MathML are small potatoes: a small part of the encyclopedia, important to only a small fraction of editors and developers, but very important to that small number of people.</p>
 
 <h4>Standards-based semantic markup</h4>
 
@@ -87,7 +97,7 @@ and then start formatting math using <code>\<span>(...\</span>)</code> for inlin
 </mrow>
 {% endhighlight %}
 
-(don't ask me why this isn't surrounded by a presentation tag; I copied this expression directly from the MathML manual).</p>
+<p>(don't ask me why this isn't surrounded by a presentation tag; I copied this expression directly from the MathML manual).</p>
 
 <h4>How to edit mathematics</h4>
 
@@ -142,46 +152,53 @@ and then start formatting math using <code>\<span>(...\</span>)</code> for inlin
 
 <br /><br /><hr /><br />
 <h3>Comments:</h3>
+
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>None</b>: <br />
 <b>2015-08-05T09:20:09Z</b><br />
-KaTeX doesn't run on the server, it runs synchronously in the browser to avoid the reflow problems of MathJax.
+<p>KaTeX doesn't run on the server, it runs synchronously in the browser to avoid the reflow problems of MathJax.</p>
 </div>
+
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>None</b>: <br />
 <b>2015-08-05T15:20:51Z</b><br />
-KaTeX can run both on the server and client. Also, simply being synchronous does not avoid reflows.
+<p>KaTeX can run both on the server and client. Also, simply being synchronous does not avoid reflows.</p>
 </div>
+
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>None</b>: Peter Krautzberger, MathJax<br />
 <b>2015-08-05T13:49:38Z</b><br />
-Hi David,
+<p>Hi David,</p>
 
-Solid rant. As I wrote on phabricator, it's a shame to see the volunteer developers and the wikipedia editors fight each other while, imho, the WMF beare much of the responsibility of the situation. I understand the frustration on both sides and neither side has done a very good job at communicating. (Mostly mathematicians involved on both sides, what should you expect ;-) ) It seems to me like a F2F of volunteer devs and editors could resolve most of this.
+<p>Solid rant. As I wrote on phabricator, it's a shame to see the volunteer developers and the wikipedia editors fight each other while, imho, the WMF beare much of the responsibility of the situation. I understand the frustration on both sides and neither side has done a very good job at communicating. (Mostly mathematicians involved on both sides, what should you expect ;-) ) It seems to me like a F2F of volunteer devs and editors could resolve most of this.</p>
 
-I do think there are a lot of misconceptions about MathML, MathJax, and math accessibility in your piece. Blaming the messenger after she was put on a wooden horse, blindfolded, spun around, and pointed in the wrong direction seems unfair. Not sure in how far you're interested in that though; it's a messy area of web technology.
+<p>I do think there are a lot of misconceptions about MathML, MathJax, and math accessibility in your piece. Blaming the messenger after she was put on a wooden horse, blindfolded, spun around, and pointed in the wrong direction seems unfair. Not sure in how far you're interested in that though; it's a messy area of web technology.</p>
 </div>
+
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>ext_3253890</b>: <br />
 <b>2015-08-05T17:39:09Z</b><br />
-MathML should not be entered directly by authors in Wikipedia or anywhere else. That is not what it was intended for. It is a computer representation, not an authoring language like LaTeX. 
+<p>MathML should not be entered directly by authors in Wikipedia or anywhere else. That is not what it was intended for. It is a computer representation, not an authoring language like LaTeX.</p>
 
-I do think document authoring systems should allow MathML to be pasted (dragged-and-dropped, etc.) in order to allow authors to use direct manipulation editors (eg, MathType, my company's product) to create equations. It would also allow conversion from equations in other formats such Microsoft Word's OOML format. Computer Algebra Systems (eg, Mathematica) also can product MathML. 
+<p>I do think document authoring systems should allow MathML to be pasted (dragged-and-dropped, etc.) in order to allow authors to use direct manipulation editors (eg, MathType, my company's product) to create equations. It would also allow conversion from equations in other formats such Microsoft Word's OOML format. Computer Algebra Systems (eg, Mathematica) also can product MathML.</p>
 
-Many assume that MathML has been a failure due to its lack of direct browser support. However, MathML is the standard for professional publishing workflows and is widely implemented. Many also assume that most math is authored in LaTeX. However, if you ask professional publishers they say that 85% or more of documents that contain math are authored using Microsoft Word. If you ask high school math teachers (and many college students and faculty) what they use to type math, they will say Microsoft Word, not LaTeX. Still, I have nothing against LaTeX. It does a wonderful job.
+<p>Many assume that MathML has been a failure due to its lack of direct browser support. However, MathML is the standard for professional publishing workflows and is widely implemented. Many also assume that most math is authored in LaTeX. However, if you ask professional publishers they say that 85% or more of documents that contain math are authored using Microsoft Word. If you ask high school math teachers (and many college students and faculty) what they use to type math, they will say Microsoft Word, not LaTeX. Still, I have nothing against LaTeX. It does a wonderful job.</p>
 </div>
+
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>None</b>: <br />
 <b>2015-08-06T12:43:26Z</b><br />
-Interesting piece. I was aware that MathML existed, but didn't know about the two variants, or how much the non-existence of proper browser support has held back mathematics rendering on Wikipedia.
+<p>Interesting piece. I was aware that MathML existed, but didn't know about the two variants, or how much the non-existence of proper browser support has held back mathematics rendering on Wikipedia.</p>
 
-One minor quibble: you mix up the inline and display math notation: '\<span>(</span>' and '\<span>)</span>' are for inline, '\<span>[</spam>' and '\<span>]</span>' for display.
+<p>One minor quibble: you mix up the inline and display math notation: '\<span>(</span>' and '\<span>)</span>' are for inline, '\<span>[</span>' and '\<span>]</span>' for display.</p>
 </div>
+
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>11011110</b>: <br />
 <b>2015-08-06T13:47:25Z</b><br />
-Oops, thanks for catching that — I've fixed it.
+<p>Oops, thanks for catching that — I've fixed it.</p>
 </div>
+
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>ext_3257582</b>: Math accessibility is built on MathML<br />
 <b>2015-08-08T19:35:20Z</b><br />

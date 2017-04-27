@@ -18,7 +18,7 @@ tags:   [circles, computational geometry, papers]
 
 <p>Well, we don't actually need to use the complete graph. We just need some graph that contains a basis for the linear program. One that turns out to work is the graph formed by drawing a too-big circle around each center, one that reaches all the way to the nearest neighbor, and then take the intersection graph of these big circles.</p>
 
-<p style="text-align:center"><img alt="Circles with radius equal to nearest neighbor distance and their intersection graph" src="http://www.ics.uci.edu/~eppstein/0xDE/radius-sum-nng.png" /></p>
+<p style="text-align:center"><img alt="Circles with radius equal to nearest neighbor distance and their intersection graph" src="{{site.baseurl}}/assets/2016/radius-sum-nng.svg" /></p>
 
 <p>This graph is non-bipartite, but the same sequence of tricks (doubling the graph, matching, extracting the dual variables from the matching, and averaging them in pairs) still works. Importantly, it's sparse (the number of edges is at most proportional to the number of vertices, with a constant of proportionality depending exponentially on dimension) and obeys a <a href="https://en.wikipedia.org/wiki/Planar_separator_theorem">separator theorem</a> (again depending on dimension). So we can use a separator-based divide and conquer to speed up the matching. The general idea of using separators to speed up matching was long known, but the paper that proved it was too vague in how it handled the dual variables for me to rely on, since that's the information I need it to produce, so (in an appendix to my paper) I rederived that part, and in the process shaved a log factor from its time bound.</p>
 

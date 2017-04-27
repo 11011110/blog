@@ -12,7 +12,7 @@ tags:   [computational geometry]
 
 <p>In most cases, a convex hull edge will not have any interior grid points. Then it turns out that the candidate for each such edge must form a triangle of area 1/2 with that edge, by <a href="https://en.wikipedia.org/wiki/Pick%27s_theorem">Pick's theorem</a>, or else there would be a better candidate inside the triangle. That means that it must lie on a line parallel to the edge, the one closest to the edge that passes through at least one integer point. On this line, there are infinitely many grid points, but in most cases only one or two lie within a rectangle having the given edge as one side and the line through the candidate as the other side. The candidate must be one of these one or two rectangle points.</p>
 
-<p style="text-align:center"><img alt="The convex hull of nearest neighbors to the origin in an 11x11 grid, and two rectangles where the next nearest point might be found" src="http://www.ics.uci.edu/~eppstein/0xDE/disk-hull-candidates.png" /></p>
+<p style="text-align:center"><img alt="The convex hull of nearest neighbors to the origin in an 11x11 grid, and two rectangles where the next nearest point might be found" src="{{site.baseurl}}/assets/2016/disk-hull-candidates.svg" /></p>
 
 <p>When a convex hull edge has interior grid points, its candidate will still lie on the closest grid line, but the rectangle defined by the edge and the line may have more than one grid point on it. In these cases we can still find a single best candidate point but it will be helpful also to store a pair of closest points along the edge, in order to make it easier to construct future candidates.</p>
 

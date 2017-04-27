@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="450px" height="450px" viewBox="0 0 450 450" enable-background="new 0 0 450 450" xml:space="preserve">
+<circle fill="none" stroke="#000000" cx="225" cy="225" r="216"/>
+<g>
+	<defs>
+		<circle id="SVGID_1_" cx="225" cy="225" r="216"/>
+	</defs>
+	<clipPath id="SVGID_2_">
+		<use xlink:href="#SVGID_1_"  overflow="visible"/>
+	</clipPath>
+	<g clip-path="url(#SVGID_2_)">
+		<circle fill="none" stroke="#0081CD" cx="513" cy="225" r="360"/>
+		<circle fill="none" stroke="#0081CD" cx="729" cy="225" r="549"/>
+		<circle fill="none" stroke="#BC1E47" cx="313.996" cy="-48.905" r="360"/>
+		<circle fill="none" stroke="#BC1E47" cx="380.744" cy="-254.333" r="549"/>
+		<circle fill="none" stroke="#FEC200" cx="-7.998" cy="55.719" r="360"/>
+		<circle fill="none" stroke="#FEC200" cx="-182.745" cy="-71.243" r="549.001"/>
+		<circle fill="none" stroke="#009246" cx="-7.997" cy="394.283" r="360"/>
+		<circle fill="none" stroke="#009246" cx="-182.744" cy="521.244" r="549"/>
+		<circle fill="none" stroke="#CC33CC" cx="313.998" cy="498.905" r="360"/>
+		<circle fill="none" stroke="#CC33CC" cx="380.745" cy="704.333" r="549"/>
+	</g>
+</g>
+</svg>

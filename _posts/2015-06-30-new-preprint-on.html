@@ -4,32 +4,18 @@ title:  'New preprint on track layouts'
 date:   2015-06-30 18:11:00
 tags:   [graph drawing, papers]
 ---
-Although it only hints at the connection, one way of interpreting my latest preprint is about higher-dimensional graph drawings. The paper is &quot;<a href="http://arxiv.org/abs/1506.09145">Track Layouts, Layered Path Decompositions, and Leveled Planarity</a>&quot; (with Bannister, Devanny, Dujmović, and Wood, arXiv:1506.09145).
-<br />
+<p>Although it only hints at the connection, one way of interpreting my latest preprint is about higher-dimensional graph drawings. The paper is "<a href="http://arxiv.org/abs/1506.09145">Track Layouts, Layered Path Decompositions, and Leveled Planarity</a>" (with Bannister, Devanny, Dujmović, and Wood, arXiv:1506.09145).</p>
 
-<br />
-The track layouts of the title can be interpreted geometrically as being embeddings of the vertices of a graph on the positive coordinate axes of <i>d</i>-dimensional space, such that each edge forms a curve lying in the quarter-plane between two axes and no two edges cross. For instance, for three tracks, you get a drawing on the three rays and three quarter-planes of an orthant of three-dimensional space, and if you look at that orthant from a point of view somewhere on its symmetry axis, you get a picture looking something like the right side of this figure:
-<br />
+<p>The track layouts of the title can be interpreted geometrically as being embeddings of the vertices of a graph on the positive coordinate axes of <i>d</i>-dimensional space, such that each edge forms a curve lying in the quarter-plane between two axes and no two edges cross. For instance, for three tracks, you get a drawing on the three rays and three quarter-planes of an orthant of three-dimensional space, and if you look at that orthant from a point of view somewhere on its symmetry axis, you get a picture looking something like the right side of this figure:</p>
 
-<br />
-<div style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/3-track-spiral.png" /></div>
-<br />
+<p style="text-align:center"><img alt="A leveled planar graph drawing and its three-track spiral layout" src="http://www.ics.uci.edu/~eppstein/0xDE/3-track-spiral.png" /></p>
 
-<br />
-The left side of the figure shows a different style of graph drawing, a leveled planar drawing in which the vertices are arranged in rows and each edge connects two consecutive rows; the blue shading shows how any leveled planar drawing can be spiraled around between the three rays of the orthant to produce a 3-track drawing. Not every 3-track drawing arises in this way: for instance, you can easily find a 3-track drawing of a triangle, while every leveled planar drawing is bipartite. But it turns out that every bipartite 3-track drawing is also leveled planar. Although this is a nice and non-obvious equivalence between two seemingly different drawing styles, it&#x27;s a bit unfortunate, because testing whether a graph has a leveled planar drawing was known to be NP-complete and therefore the same is true for 3-track drawing (answering a question posed by Dujmović, Pór, and Wood in 2004).
-<br />
+<p>The left side of the figure shows a different style of graph drawing, a leveled planar drawing in which the vertices are arranged in rows and each edge connects two consecutive rows; the blue shading shows how any leveled planar drawing can be spiraled around between the three rays of the orthant to produce a 3-track drawing. Not every 3-track drawing arises in this way: for instance, you can easily find a 3-track drawing of a triangle, while every leveled planar drawing is bipartite. But it turns out that every bipartite 3-track drawing is also leveled planar. Although this is a nice and non-obvious equivalence between two seemingly different drawing styles, it's a bit unfortunate, because testing whether a graph has a leveled planar drawing was known to be NP-complete and therefore the same is true for 3-track drawing (answering a question posed by Dujmović, Pór, and Wood in 2004).</p>
 
-<br />
-Despite this hardness result, there are several natural graph classes that always have 3-track drawings, including outerplanar graphs, Halin graphs, and squaregraphs. Since outerplanar graphs have treewidth two and Halin graphs have treewidth three, you might think that the series-parallel graphs (also treewidth two but more general than outerplanar) would be sandwiched between them and also have 3-track drawings, but that turns out not to be true. Here&#x27;s a counterexample:
-<br />
+<p>Despite this hardness result, there are several natural graph classes that always have 3-track drawings, including outerplanar graphs, Halin graphs, and squaregraphs. Since outerplanar graphs have treewidth two and Halin graphs have treewidth three, you might think that the series-parallel graphs (also treewidth two but more general than outerplanar) would be sandwiched between them and also have 3-track drawings, but that turns out not to be true. Here's a counterexample:</p>
 
-<br />
-<div style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/ApexTree.png" /></div>
-<br />
+<p style="text-align:center"><img alt="Series-parallel graph formed by connecting all vertices of a complete binary tree to a single added vertex" src="http://www.ics.uci.edu/~eppstein/0xDE/ApexTree.png" /></p>
 
-<br />
-The apex vertex connected to everything else would force the rest of the graph to live on the remaining two tracks, but the only two-track graphs are caterpillars, trees in which all vertices are within distance one of a central path. Since the tree formed from this graph by removing the apex is not a caterpillar, the graph itself does not have a 3-track drawing.
-<br />
+<p>The apex vertex connected to everything else would force the rest of the graph to live on the remaining two tracks, but the only two-track graphs are caterpillars, trees in which all vertices are within distance one of a central path. Since the tree formed from this graph by removing the apex is not a caterpillar, the graph itself does not have a 3-track drawing.</p>
 
-<br />
-This paper also introduces the notion of layered pathwidth, but I don&#x27;t want to take much credit for that part because it came from some earlier not-yet-published work by Dujmović, Wood, and others. The definition is a bit too technical to repeat here (read the paper), but the leveled planar graphs turn out to be exactly the graphs of layered pathwidth one. So the hardness of testing leveled planarity also shows that testing layered pathwidth is hard. The apex-binary tree example above has bounded track-number (at most four) but unbounded layered pathwidth (for sufficiently large binary trees) showing that track-number and layered pathwidth are distinct concepts. But we think that the graphs of track number three (even the non-bipartite ones) should have bounded layered pathwidth, although we haven&#x27;t yet been able to prove that conjecture.
+<p>This paper also introduces the notion of layered pathwidth, but I don't want to take much credit for that part because it came from some earlier not-yet-published work by Dujmović, Wood, and others. The definition is a bit too technical to repeat here (read the paper), but the leveled planar graphs turn out to be exactly the graphs of layered pathwidth one. So the hardness of testing leveled planarity also shows that testing layered pathwidth is hard. The apex-binary tree example above has bounded track-number (at most four) but unbounded layered pathwidth (for sufficiently large binary trees) showing that track-number and layered pathwidth are distinct concepts. But we think that the graphs of track number three (even the non-bipartite ones) should have bounded layered pathwidth, although we haven't yet been able to prove that conjecture.</p>

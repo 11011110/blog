@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="198px" height="198px" viewBox="0 0 198 198" enable-background="new 0 0 198 198" xml:space="preserve">
+<rect fill="#FFFFFF" width="198" height="198"/>
+<rect x="27" y="27" opacity="0.4" fill="#FEC200" stroke="#000000" stroke-dasharray="2" width="144" height="144"/>
+<rect x="48.088" y="48.088" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -41.0071 99)" fill="none" stroke="#000000" stroke-width="3" width="101.823" height="101.823"/>
+<line fill="none" stroke="#000000" stroke-width="3" x1="171" y1="27" x2="27" y2="171"/>
+<line fill="none" stroke="#000000" stroke-width="3" x1="27" y1="27" x2="171" y2="171"/>
+<circle fill="#FFFFFF" stroke="#000000" cx="27" cy="27" r="18"/>
+<circle fill="#FFFFFF" stroke="#000000" cx="99" cy="27" r="18"/>
+<circle fill="#FFFFFF" stroke="#000000" cx="171" cy="27" r="18"/>
+<circle fill="#FFFFFF" stroke="#000000" cx="171" cy="99" r="18"/>
+<circle fill="#FFFFFF" stroke="#000000" cx="99" cy="99" r="18"/>
+<circle fill="#FFFFFF" stroke="#000000" cx="27" cy="99" r="18"/>
+<circle fill="#FFFFFF" stroke="#000000" cx="27" cy="171" r="18"/>
+<circle fill="#FFFFFF" stroke="#000000" cx="99" cy="171" r="18"/>
+<circle fill="#FFFFFF" stroke="#000000" cx="171" cy="171" r="18"/>
+<text transform="matrix(1 0 0 1 19.6699 36)" font-family="'Times-Italic'" font-size="24">A</text>
+<text transform="matrix(1 0 0 1 163.6699 108)" font-family="'Times-Italic'" font-size="24">A</text>
+<text transform="matrix(1 0 0 1 19.6699 180)" font-family="'Times-Italic'" font-size="24">A</text>
+<text transform="matrix(1 0 0 1 91.6699 36)" font-family="'Times-Italic'" font-size="24">B</text>
+<text transform="matrix(1 0 0 1 91.6699 180)" font-family="'Times-Italic'" font-size="24">B</text>
+<text transform="matrix(1 0 0 1 18.9961 108)" font-family="'Times-Italic'" font-size="24">C</text>
+<text transform="matrix(1 0 0 1 162.9961 180)" font-family="'Times-Italic'" font-size="24">C</text>
+<text transform="matrix(1 0 0 1 162.9961 36)" font-family="'Times-Italic'" font-size="24">C</text>
+<text transform="matrix(1 0 0 1 90.334 108)" font-family="'Times-Italic'" font-size="24">D</text>
+<circle fill="#0081CD" stroke="#000000" cx="63" cy="63" r="9"/>
+<circle fill="#0081CD" stroke="#000000" cx="135" cy="63" r="9"/>
+<circle fill="#0081CD" stroke="#000000" cx="135" cy="135" r="9"/>
+<circle fill="#0081CD" stroke="#000000" cx="63" cy="135" r="9"/>
+</svg>

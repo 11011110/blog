@@ -4,58 +4,16 @@ title:  'Graham on Erdős on Egyptian fractions'
 date:   2015-05-20 00:37:00
 tags:   [egyptian fractions, number theory]
 ---
-In a recent paper Ron Graham <a href="http://www.math.ucsd.edu/~ronspubs/13_03_Egyptian.pdf">surveys the work of Paul Erdős on Egyptian fractions</a>. Did you know that Erdős&#x27; second paper was on the subject? I didn&#x27;t. It proved that the sum of a harmonic progression can never form an Egyptian fraction representation of an integer (there is always at least one prime that appears in only one term). Graham himself is also a fan, having studied Egyptian fractions in his Ph.D. thesis.
-<br />
+<p>In a recent paper Ron Graham <a href="http://www.math.ucsd.edu/~ronspubs/13_03_Egyptian.pdf">surveys the work of Paul Erdős on Egyptian fractions</a>. Did you know that Erdős' second paper was on the subject? I didn't. It proved that the sum of a harmonic progression can never form an Egyptian fraction representation of an integer (there is always at least one prime that appears in only one term). Graham himself is also a fan, having studied Egyptian fractions in his Ph.D. thesis.</p>
 
-<br />
-Another of Erdős&#x27; papers surveyed by Graham is also somewhat related to the subject of my recent blog posts on sequences of highly composite numbers. This paper (famous for formulating the Erdős–Straus 4/n = 1/x + 1/y + 1/z conjecture) included another conjecture that every rational number x/y (between 0 and 1) has an Egyptian fraction representation with O(log log y) terms. However, the best bound known so far is larger, O(sqrt log y).
-<br />
+<p>Another of Erdős' papers surveyed by Graham is also somewhat related to the subject of my recent blog posts on sequences of highly composite numbers. This paper (famous for formulating the Erdős–Straus \( 4/n = 1/x + 1/y + 1/z \) conjecture) included another conjecture that every rational number \( x/y \) (between \( 0 \) and \( 1 \)) has an Egyptian fraction representation with \( O(\log\log y) \) terms. However, the best bound known so far is larger, \( O(\sqrt{\log y}) \).</p>
 
-<br />
-For any number z, let D(z) be the smallest number with the property that every positive integer less than z can be expressed as a sum of at most D(z) divisors of z (not necessarily distinct). Then a stronger version of Erdős&#x27; conjecture (for which the same bounds are known) is that, for every y, there exists a number z larger than y (but not too much larger) with D(z) = O(log log z). With such a z, you can split x/y into floor(xz/y)/z + remainder/yz and then use the sum-of-divisors property of z to split each of these two terms into a small number of unit fractions.
-<br />
+<p>For any number \( z \), let \( D(z) \) be the smallest number with the property that every positive integer less than \( z \) can be expressed as a sum of at most \( D(z) \) divisors of \( z \) (not necessarily distinct). Then a stronger version of Erdős' conjecture (for which the same bounds are known) is that, for every \( y \), there exists a number \( z \) larger than \( y \) (but not too much larger) with \( D(z) = O(\log\log z) \). With such a \( z \), you can split \( x/y \) into</p>
+\[
+\frac{\lfloor xz/y \rfloor}{z} + \frac{\mathrm{remainder}}{yz}
+\]
+<p>and then use the sum-of-divisors property of \( z \) to split each of these two terms into a small number of unit fractions.</p>
 
-<br />
-Computing D(z) for small values of z is not particularly hard, using a dynamic programming algorithm for the subset sum problem. So, based on the guess that the highly composite numbers would have small values of D(z), I tried looking for the biggest highly composite number with each value. In this way I found that D(24) = 3; D(180) = 4; D(5040) = 5; and D(1081080) = 6. That is, every positive integer less than 1081080 can be represented as a sum of at most six divisors of 1081080, and some require exactly six. Based on this, every x/y with y at most 1081080 can be represented as at most a 12-term Egyptian fraction.
-<br />
+<p>Computing \( D(z) \) for small values of \( z \) is not particularly hard, using a dynamic programming algorithm for the subset sum problem. So, based on the guess that the highly composite numbers would have small values of \( D(z) \), I tried looking for the biggest highly composite number with each value. In this way I found that \( D(24) = 3 \); \( D(180) = 4 \); \( D(5040) = 5 \); and \( D(1081080) = 6 \). That is, every positive integer less than \( 1081080 \) can be represented as a sum of at most six divisors of \( 1081080 \), and some require exactly six. Based on this, every \( x/y \) with \( y \) at most \( 1081080 \) can be represented as at most a \( 12 \)-term Egyptian fraction.</p>
 
-<br />
-Each number in the sequence 2, 6, 24, 180, 5040, 1081080, ... is within a small factor of the 1.6 power of the previous number; another way of saying the same thing is that the numbers in this sequence obey an approximate multiplicative Fibonacci recurrence in which each number is approximately the product of the previous two. The next number in the sequence might still be within reach of calculation, using a faster programming language than my Python implementation. If that 1.6-power pattern could be shown to continue forever, then Erdős&#x27; log-log conjecture would be true.
-<br /><br /><hr /><br />
-<h3>Comments:</h3>
-<div style="margin-left: 0em; padding-top: 1em;">
-<b>None</b>: <br />
-<b></b><br />
-
-</div>
-<div style="margin-left: 0em; padding-top: 1em;">
-<b>ext_3246578</b>: <br />
-<b></b><br />
-
-</div>
-<div style="margin-left: 0em; padding-top: 1em;">
-<b>None</b>: <br />
-<b></b><br />
-
-</div>
-<div style="margin-left: 0em; padding-top: 1em;">
-<b>ext_3262038</b>: <br />
-<b></b><br />
-
-</div>
-<div style="margin-left: 0em; padding-top: 1em;">
-<b>ext_3262038</b>: <br />
-<b></b><br />
-
-</div>
-<div style="margin-left: 0em; padding-top: 1em;">
-<b>None</b>: <br />
-<b></b><br />
-
-</div>
-<div style="margin-left: 0em; padding-top: 1em;">
-<b>None</b>: <br />
-<b></b><br />
-
-</div>
-
+<p>Each number in the sequence \( 2, 6, 24, 180, 5040, 1081080, \dots \) is within a small factor of the \( 1.6 \) power of the previous number; another way of saying the same thing is that the numbers in this sequence obey an approximate multiplicative Fibonacci recurrence in which each number is approximately the product of the previous two. The next number in the sequence might still be within reach of calculation, using a faster programming language than my Python implementation. If that \( 1.6 \)-power pattern could be shown to continue forever, then Erdős' log-log conjecture would be true.</p>

@@ -4,34 +4,29 @@ title:  'Halin graph algorithms made simple'
 date:   2015-02-18 17:49:00
 tags:   [graph algorithms, python, papers]
 ---
-I have a new paper on the arXiv, <a href="http://arxiv.org/abs/1502.05334">D3-reducible graphs</a> (arXiv:1502.05334), but it&#x27;s a small one that is not related to this week&#x27;s many conference submission deadlines (ICALP yesterday, COLT tomorrow, WADS friday). One reason for its existence was that I wanted an implementable algorithm for working with <a href="https://en.wikipedia.org/wiki/Halin_graph">Halin graphs</a> (the graphs that you get by drawing a tree in the plane, with no degree-two vertices, and then connecting the leaves by a cycle surrounding the tree) and the algorithms that I could find for them were based on linear-time planarity testing, something I haven&#x27;t yet worked up the courage to try implementing. Instead I found that it&#x27;s possible to recognize Halin graphs, and to solve a wide class of related problems (such as finding their planar embeddings, decomposing them into a tree and a cycle, or finding a Hamiltonian cycle) using a simple reduction-based algorithm that repeatedly finds and simplifies certain local configurations within the graph. The two reductions that I used are shown below; one of them collapses a triangle of degree-three vertices to a point, and the other shortens certain paths of degree-three vertices.
-<br />
+<p>I have a new paper on the arXiv, <a href="http://arxiv.org/abs/1502.05334">D3-reducible graphs</a> (arXiv:1502.05334), but it's a small one that is not related to this week's many conference submission deadlines (ICALP yesterday, COLT tomorrow, WADS friday). One reason for its existence was that I wanted an implementable algorithm for working with <a href="https://en.wikipedia.org/wiki/Halin_graph">Halin graphs</a> (the graphs that you get by drawing a tree in the plane, with no degree-two vertices, and then connecting the leaves by a cycle surrounding the tree) and the algorithms that I could find for them were based on linear-time planarity testing, something I haven't yet worked up the courage to try implementing. Instead I found that it's possible to recognize Halin graphs, and to solve a wide class of related problems (such as finding their planar embeddings, decomposing them into a tree and a cycle, or finding a Hamiltonian cycle) using a simple reduction-based algorithm that repeatedly finds and simplifies certain local configurations within the graph. The two reductions that I used are shown below; one of them collapses a triangle of degree-three vertices to a point, and the other shortens certain paths of degree-three vertices.</p>
 
-<br />
-<div style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/D3-reductions.png" /></div>
-<br />
+<p style="text-align:center"><img alt="The two D3 reductions" src="http://www.ics.uci.edu/~eppstein/0xDE/D3-reductions.png" /></p>
 
-<br />
-Every Halin graph can be simplified by these reductions to a complete graph on four vertices; in terms of the tree and cycle decomposition of the Halin graph, one of these reductions removes the children from a tree node with two leaf children, and the other removes the middle of three consecutive leaf children. But if you want to use these to recognize Halin graphs only, you need to restrict them a little, because some other graphs can also be simplified to the same four-vertex complete graph, and that&#x27;s mostly what the paper is about. I call these D3-reducible graphs, and they have a lot of properties in common with the Halin graphs: they are planar, minimally 3-vertex-connected, Hamiltonian, bounded treewidth, etc. One of the smallest examples of a D3-reducible graph that is not a Halin graph is the truncated tetrahedron graph:
-<br />
+<p>Every Halin graph can be simplified by these reductions to a complete graph on four vertices; in terms of the tree and cycle decomposition of the Halin graph, one of these reductions removes the children from a tree node with two leaf children, and the other removes the middle of three consecutive leaf children. But if you want to use these to recognize Halin graphs only, you need to restrict them a little, because some other graphs can also be simplified to the same four-vertex complete graph, and that's mostly what the paper is about. I call these D3-reducible graphs, and they have a lot of properties in common with the Halin graphs: they are planar, minimally 3-vertex-connected, Hamiltonian, bounded treewidth, etc. One of the smallest examples of a D3-reducible graph that is not a Halin graph is the truncated tetrahedron graph:</p>
 
-<br />
-<div style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/trunctet.png" /></div>
-<br />
+<p style="text-align:center"><img alt="The graph of the truncated tetrahedron, a D3-reducible graph that is not a Halin graph" src="http://www.ics.uci.edu/~eppstein/0xDE/trunctet.png" /></p>
 
-<br />
-I have updated my <a href="http://www.ics.uci.edu/~eppstein/PADS/">PADS Python algorithm library</a> to include the new Halin graph recognition algorithm, and some related algorithms, as <a href="http://www.ics.uci.edu/~eppstein/PADS/Halin.py">Halin.py</a>. (I also updated the license text for the library, to use the MIT license — you can do almost anything you want but don&#x27;t hold me responsible for it — rather than trying to claim that the code is public domain, which I&#x27;m told is not so meaningful legally.)
+<p>I have updated my <a href="http://www.ics.uci.edu/~eppstein/PADS/">PADS Python algorithm library</a> to include the new Halin graph recognition algorithm, and some related algorithms, as <a href="http://www.ics.uci.edu/~eppstein/PADS/Halin.py">Halin.py</a>. (I also updated the license text for the library, to use the MIT license — you can do almost anything you want but don't hold me responsible for it — rather than trying to claim that the code is public domain, which I'm told is not so meaningful legally.)</p>
+
 <br /><br /><hr /><br />
 <h3>Comments:</h3>
+
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>None</b>: <br />
 <b>2015-08-19T05:24:18Z</b><br />
 The first D3 operation looks like the Y−∆ operation on cubic graphs:
 http://math.wvu.edu/~cqzhang/Publication-files/my-paper/EJC-2015-Fulkerson.pdf
 </div>
+
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>11011110</b>: <br />
 <b>2015-08-19T05:33:21Z</b><br />
-∆–Y you mean? Yes, that&#x27;s one form of that operation. The second one could also be seen as another type of ∆–Y.
+∆–Y you mean? Yes, that's one form of that operation. The second one could also be seen as another type of ∆–Y.
 </div>
 

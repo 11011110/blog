@@ -6,7 +6,7 @@ tags:   [cellular automata, geometry]
 ---
 <p>In <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">Conway's Game of Life</a>, and <a href="https://en.wikipedia.org/wiki/Life-like_cellular_automaton">other cellular automata with the same neighborhood structure</a>, you can determine the values of the cells in any \( 2x\times 2x \) square of cells from their values \( x \) steps earlier in a bigger \( 4x\times 4x \) square. If we view this as a time-space diagram, with two of the dimensions as the spatial dimensions of the Life grid and the third dimension as time, we can view the bigger starting square and the smaller resulting square as the bottom and top of a sort of stepped pyramid formed by stacking concentric squares. The values of the cells in each layer of the pyramid are determined by the ones in the layer below. The squares shrink inward as they rise upward, because the other cells outside the pyramid need more information (outside the base of the pyramid) to determine their values. The image below shows this construction for \( x = 1 \), \( 2 \), and \( 4 \), with each time-space state of a cell represented as a cube.</p>
 
-<p style="text-align:center"><img alt="Pyramids of cubes with their bases 4, 8, and 16 cubes wide" src="http://www.ics.uci.edu/~eppstein/0xDE/Stepped-Pyramids.svg" style="background-color:white;" /></p>
+<p style="text-align:center"><img alt="Pyramids of cubes with their bases 4, 8, and 16 cubes wide" src="{{site.baseurl}}/assets/2016/Stepped-Pyramids.svg" style="background-color:white;" /></p>
 
 <p>The shape that these stepped pyramids approximate, for large values of \( x \), is a square pyramid with its top point chopped off. It's called a <a href="https://en.wikipedia.org/wiki/Frustum">frustum</a> (plural frusta).</p>
 
@@ -16,7 +16,7 @@ tags:   [cellular automata, geometry]
 Place four overlapping small frusta under the four small squares on the top face, connecting them to nine small squares in the middle plane of the new frustum, and nine more small frusta connecting these nine squares to the base.
 Then the top face values for the new frustum can be found by looking up the values of the nine smaller frusta on the bottom, and then using the results to look up the values for the four smaller frusta on top. In this way, we have decomposed one big frustum into 13 smaller frusta, which can in turn be decomposed recursively in the same way.</p>
 
-<p style="text-align:center"><img alt="Decomposition of a large pyramid into four overlapping smaller pyramids stacked above nine more overlapping pyramids" src="http://www.ics.uci.edu/~eppstein/0xDE/13-Frusta.svg" style="background-color:white;" /></p>
+<p style="text-align:center"><img alt="Decomposition of a large pyramid into four overlapping smaller pyramids stacked above nine more overlapping pyramids" src="{{site.baseurl}}/assets/2016/13-Frusta.svg" style="background-color:white;" /></p>
 
 <p>In fact, you don't need to know the actual values of any of the cells, except in the smallest frusta (the ones with 16 inputs and 4 outputs) to make this all work. At any higher level, you can represent each square of inputs or outputs symbolically, by a pointer to the frusta that have each of its four quarters as their bottom faces. In this way, each different frustum in the hash table can be represented by only a constant number of pointers, without also needing to store any big grids of cells.</p>
 

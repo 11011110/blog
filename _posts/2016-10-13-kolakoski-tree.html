@@ -13,7 +13,7 @@ tags:   [python, trees, number theory]
 
 <p>There are two choices for the root label, but the trees they produce are almost the same as each other, so let's say the root is labeled 2, giving the tree shown below together with its <a href="{{site.baseurl}}/2009/05/16/visualizing-bfs-as.html">spiraling breadth first search</a> order. (If the root were labeled 1, the only difference would be to add one more node labeled 1 above the node that is the root in the drawing.)</p>
 
-<p style="text-align:center"><img alt="Downwards-infinite binary tree with the node labels at each level forming the Kolakoski sequence, and its breadth-first traversal order" src="http://www.ics.uci.edu/~eppstein/0xDE/Kolakoski-tree.svg" style="background-color:white;" /></p>
+<p style="text-align:center"><img alt="Downwards-infinite binary tree with the node labels at each level forming the Kolakoski sequence, and its breadth-first traversal order" src="{{site.baseurl}}/assets/2016/Kolakoski-tree.svg" style="background-color:white;" /></p>
 
 <p>Then the breadth-first sequence of labels that we obtain is exactly the <a href="https://en.wikipedia.org/wiki/Kolakoski_sequence">Kolakoski sequence</a>, starting from its third term. The Kolakoski sequence begins 1,2,2,1,1,2,1,2,2,1,2,2... and has the property that it equals the sequence of run-lengths in itself: the numbers 1, 2, 2, etc. are exactly the numbers of consecutive 1's, 2's, 1's, etc. in the sequence. Our tree is defined in such a way that each run of consecutive equal labels comes from the same parent, so the run-lengths of the sequence equal the numbers of children of the nodes, which equal the labels of the nodes, which define the sequence itself.</p>
 

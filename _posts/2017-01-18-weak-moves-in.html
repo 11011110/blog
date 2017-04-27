@@ -7,7 +7,7 @@ date: 2017-01-18 17:24:00
 
 <p>For instance, the image below shows a four-dimensional tic-tac-toe grid, projected to the plane. Each cell of the grid becomes a colored dot; the five colors distinguish the cells by the dimension of the hypercube face that they're the midpoint of. We have vertices (blue), edges (yellow), squares (red), cubes (white), and the center of the hypercube itself (black). But I've only shown a subset of the lines, four through each point. If I included all the lines, which colors would be more powerful (on more lines), and which less?</p>
 
-<p style="text-align:center"><img alt="Four-dimensional tic-tac-toe grid, projected to the plane" src="http://www.ics.uci.edu/~eppstein/0xDE/ttt4d.png"></p>
+<p style="text-align:center"><img alt="Four-dimensional tic-tac-toe grid, projected to the plane" src="{{site.baseurl}}/assets/2017/ttt4d.svg"></p>
 
 <p>It is not hard to work out the formula for this, if we give each of these points coordinates that are \( d \)-tuples of the numbers in the set \( \{−1,0,1\} \). If \( k \) of these coordinates are equal to \( 0 \), then the given point is the middle point of \( (3^k-1)/2 \) lines. These lines can be described by replacing each zero by one of three possibilities: \( 0 \), \( x \), or \( -x \), and then plugging in \( 1 \), \( 0 \), and \( -1 \) as the value of \( x \). There are \( 3^k \) choices for how to replace each zero, one of which doesn't give a line: if we leave all the zeros as they are, then all three choices of \( x \) give the same point. But for any other set of replacements, we get a line. Each line gets represented twice, because we can negate all the replaced coordinates and get the same line. That double-counting explains the division by two in the formula.</p>
 

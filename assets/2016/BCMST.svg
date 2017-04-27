@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="531px" height="504px" viewBox="0 0 531 504" enable-background="new 0 0 531 504" xml:space="preserve">
+<line fill="none" stroke="#231F20" stroke-width="3" stroke-linejoin="bevel" stroke-miterlimit="10" x1="315" y1="72" x2="342" y2="247.5"/>
+<line fill="none" stroke="#231F20" stroke-width="3" stroke-linejoin="bevel" stroke-miterlimit="10" x1="99" y1="58.5" x2="369" y2="153"/>
+<line fill="none" stroke="#231F20" stroke-width="3" stroke-linejoin="bevel" stroke-miterlimit="10" x1="18" y1="153" x2="45" y2="436.5"/>
+<polyline fill="none" stroke="#231F20" stroke-width="3" stroke-linejoin="bevel" stroke-miterlimit="10" points="315,72 369,153 
+	85.499,18 "/>
+<polyline fill="none" stroke="#231F20" stroke-width="3" stroke-linejoin="bevel" stroke-miterlimit="10" points="71.999,153 
+	314.999,274.5 517.5,342 "/>
+<polyline fill="none" stroke="#231F20" stroke-width="3" stroke-linejoin="bevel" stroke-miterlimit="10" points="342,247.5 
+	517.5,342 436.5,490.5 517.5,396 "/>
+<line fill="none" stroke="#231F20" stroke-width="3" stroke-linejoin="bevel" stroke-miterlimit="10" x1="44.999" y1="436.5" x2="85.499" y2="490.5"/>
+<path fill="none" stroke="#231F20" stroke-width="3" stroke-linejoin="bevel" stroke-miterlimit="10" d="M85.499,18"/>
+<line fill="none" stroke="#231F20" stroke-width="3" stroke-linejoin="bevel" stroke-miterlimit="10" x1="45" y1="436.5" x2="72" y2="153"/>
+<circle fill="#BC1F48" stroke="#000000" stroke-width="1.5" stroke-miterlimit="10" cx="99" cy="58.5" r="6.75"/>
+<circle fill="#BC1F48" stroke="#000000" stroke-width="1.5" stroke-miterlimit="10" cx="18" cy="153" r="6.75"/>
+<circle fill="#BC1F48" stroke="#000000" stroke-width="1.5" stroke-miterlimit="10" cx="85.5" cy="18" r="6.75"/>
+<circle fill="#BC1F48" stroke="#000000" stroke-width="1.5" stroke-miterlimit="10" cx="72" cy="153" r="6.75"/>
+<circle fill="#1B80C4" stroke="#000000" stroke-width="1.5" stroke-miterlimit="10" cx="315" cy="274.5" r="6.75"/>
+<circle fill="#1B80C4" stroke="#000000" stroke-width="1.5" stroke-miterlimit="10" cx="342" cy="247.5" r="6.75"/>
+<circle fill="#1B80C4" stroke="#000000" stroke-width="1.5" stroke-miterlimit="10" cx="369" cy="153" r="6.75"/>
+<circle fill="#1B80C4" stroke="#000000" stroke-width="1.5" stroke-miterlimit="10" cx="45" cy="436.5" r="6.75"/>
+<circle fill="#BC1F48" stroke="#000000" stroke-width="1.5" stroke-miterlimit="10" cx="85.5" cy="490.5" r="6.75"/>
+<circle fill="#BC1F48" stroke="#000000" stroke-width="1.5" stroke-miterlimit="10" cx="517.5" cy="342" r="6.75"/>
+<circle fill="#BC1F48" stroke="#000000" stroke-width="1.5" stroke-miterlimit="10" cx="517.5" cy="396" r="6.75"/>
+<circle fill="#1B80C4" stroke="#000000" stroke-width="1.5" stroke-miterlimit="10" cx="436.5" cy="490.5" r="6.75"/>
+<circle fill="#BC1F48" stroke="#000000" stroke-width="1.5" stroke-miterlimit="10" cx="315" cy="72" r="6.75"/>
+</svg>
