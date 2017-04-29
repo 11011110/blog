@@ -8,15 +8,15 @@ tags:   [graph drawing, graph theory]
 
 <p>A couple of examples: in the right angle crossing drawing style (<a href="https://en.wikipedia.org/wiki/RAC_drawing">RAC drawing</a>), crossings are allowed, but the crossings have to be at right angles.</p>
 
-<p style="text-align:center"><img alt="RAC drawings of K_5 and K_{3,4}" src="http://www.ics.uci.edu/~eppstein/0xDE/RAC-K5-K34.png" /></p>
+<p style="text-align:center"><img alt="RAC drawings of K_5 and K_{3,4}" src="{{site.baseurl}}/assets/2015/RAC-K5-K34.svg" /></p>
 
 <p>The examples above have no bends, but bendless RAC graphs are quite restrictive. In particular they can only have most 4<i>n</i> − 10 edges (as Didimo et al proved in <a href="https://dx.doi.org/10.1007%2F978-3-642-03367-4_19">their paper introducing RAC drawing</a>). On the other hand, if you allow bends, it's easy to turn any drawing into a RAC drawing: insert new bends near each crossing to allow the edges that cross to form the correct angles with respect to each other. How many bends per edge do you need? Exactly three. The graphs with two-bend-per-edge RAC drawings are still limited to a linear number of edges, but three bends let you draw anything, with a layout like the one below for <i>K</i><sub>8</sub>.</p>
 
-<p style="text-align:center"><img alt="K_8 drawn with right-angle crossings and three bends per edge" src="http://www.ics.uci.edu/~eppstein/0xDE/K8-RAC-3bend.png" /></p>
+<p style="text-align:center"><img alt="K_8 drawn with right-angle crossings and three bends per edge" src="{{site.baseurl}}/assets/2015/K8-RAC-3bend.svg" /></p>
 
 <p>In another drawing style, three-page <a href="https://en.wikipedia.org/wiki/Book_embedding">topological book embeddings</a>, we wish to draw graphs on three half-planes in space, meeting at a 120 degree angle along a line. The vertices must be on this line, and the edges must be formed from semicircles within the half-planes.</p>
 
-<p style="text-align:center"><img alt="Three-page book embedding of K_5" src="http://www.ics.uci.edu/~eppstein/0xDE/3page-K5.png" /></p>
+<p style="text-align:center"><img alt="Three-page book embedding of K_5" src="{{site.baseurl}}/assets/2015/3page-K5.svg" /></p>
 
 <p>The graphs that can be drawn with only a single semicircle per edge form a restricted subclass of all graphs (again, with only a linear number of edges). However, all graphs can be drawn in a three-page book if the edges can be drawn as multiple semicircles that connect to each other across the spine of the drawing. Can we bound the number of spine crossings per edge that we might need?</p>
 

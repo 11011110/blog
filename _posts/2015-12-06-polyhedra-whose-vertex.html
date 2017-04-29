@@ -6,7 +6,7 @@ tags:   [geometry]
 ---
 <p>The cube has the nice symmetric set of Cartesian vertex coordinates \( (\pm 1, \pm 1, \pm 1) \). These give it an edge length of \( 2 \), but if you want any other number \( s \) just scale by \( s/2 \). Similarly, the regular octahedron can be give coordinates that are all the possible permutations of \( (0, 0, \pm 1) \), and the regular tetrahedron can be given coordinates that are a subset of the cube's vertices, the ones with an even number of plus signs; in both cases the scale factor involves the square root of two. The regular dodecahedron can be formed from the eight vertices of a cube by adding twelve more vertices with coordinates formed by cyclically permuting \( (0, \pm\varphi, \pm 1/\varphi) \), where \( \varphi \) is the golden ratio; its scaling factor also involves the golden ratio. And the regular icosahedron, with side length \( 2 \) (like the cube, and with the same scaling factor), has coordinates given by all cyclic permutations of \( (0, \pm 1, \pm\varphi) \). The three subsets of four vertices having the same cyclic permutation as each other form three golden rectangles, which interlock in the pattern of the Borromean rings and have the icosahedron as their convex hull:</p>
 
-<p style="text-align:center"><img alt="Three golden rectangles in an icosahedron" src="http://www.ics.uci.edu/~eppstein/0xDE/Icosahedron-golden-rectangles.png" />
+<p style="text-align:center"><img alt="Three golden rectangles in an icosahedron" src="{{site.baseurl}}/assets/2015/Icosahedron-golden-rectangles.svg" />
 <br />
 <small>(<a href="https://commons.wikimedia.org/wiki/File:Icosahedron-golden-rectangles.svg">image from Wikimedia commons</a>)</small></p>
 
@@ -18,7 +18,7 @@ tags:   [geometry]
 
 <p>A first hint that a closed-form formula might not exist comes from a paper by Maksym Fedorchuk and Igor Pak, "<a href="http://www.math.ucla.edu/~pak/papers/pp16.pdf">Rigidity and polynomial invariants of convex polytopes</a>", <i>Duke Math. J.</i> 2005. They use regular bipyramids (the convex hulls of a convex polygon within a plane, a point above the polygon, and a point below the polygon, but with variable edge lengths) to show that the polynomials describing the coordinates as a function of edge lengths can have exponentially high degree. But of course high degree doesn't necessarily imply no closed form solution: regardless of how high \( d \) is, the polynomial \( x^d - 2 \) has a root with the simple closed form solution \( 2^{1/d} \).</p>
 
-<p style="text-align:center"><img alt="Dodecagonal bipyramid" src="http://www.ics.uci.edu/~eppstein/0xDE/Bipyramid.png" /><br />
+<p style="text-align:center"><img alt="Dodecagonal bipyramid" src="{{site.baseurl}}/assets/2015/Bipyramid.png" /><br />
 <br />
 <small>(<a href="https://commons.wikimedia.org/wiki/File:Zw%C3%B6lfseitige_Pyramide.png">image from Wikimedia commons</a>)</small></p>
 

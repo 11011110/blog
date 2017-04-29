@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="684px" height="432px" viewBox="0 0 684 432" enable-background="new 0 0 684 432" xml:space="preserve">
+<line fill="none" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" x1="486" y1="18" x2="666" y2="414"/>
+<line fill="none" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" x1="486" y1="306" x2="549" y2="243"/>
+<line fill="none" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" x1="486" y1="18" x2="423" y2="243"/>
+<polygon fill="none" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" points="549,243 486,18 306,414 486,306 423,243
+	486,234 "/>
+<polygon fill="none" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" points="153,279 99,279 18,414 126,18 234,414 "/>
+<polyline fill="none" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" points="153,279 126,18 99,279 234,414 18,414 "/>
+<circle fill="#BC1E47" stroke="#231F20" stroke-miterlimit="10" cx="99" cy="279" r="9"/>
+<circle fill="#BC1E47" stroke="#231F20" stroke-miterlimit="10" cx="234" cy="414" r="9"/>
+<circle fill="#BC1E47" stroke="#231F20" stroke-miterlimit="10" cx="126" cy="18" r="9"/>
+<circle fill="#0081CD" stroke="#231F20" stroke-miterlimit="10" cx="423" cy="243" r="9"/>
+<circle fill="#FEC200" stroke="#231F20" stroke-miterlimit="10" cx="486" cy="18" r="9"/>
+<circle fill="#0081CD" stroke="#231F20" stroke-miterlimit="10" cx="549" cy="243" r="9"/>
+<circle fill="#FFFFFF" cx="126" cy="306" r="3"/>
+<line fill="none" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" x1="18" y1="414" x2="153" y2="279"/>
+<circle fill="#BC1E47" stroke="#231F20" stroke-miterlimit="10" cx="153" cy="279" r="9"/>
+<circle fill="#BC1E47" stroke="#231F20" stroke-miterlimit="10" cx="18" cy="414" r="9"/>
+<circle fill="#FFFFFF" cx="450" cy="270" r="3"/>
+<circle fill="#FFFFFF" cx="522" cy="270" r="3"/>
+<polyline fill="none" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" points="486,306 666,414 486,234 "/>
+<line fill="none" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" x1="486" y1="234" x2="306" y2="414"/>
+<circle fill="#0081CD" stroke="#231F20" stroke-miterlimit="10" cx="306" cy="414" r="9"/>
+<circle fill="#FEC200" stroke="#231F20" stroke-miterlimit="10" cx="486" cy="306" r="9"/>
+<circle fill="#FEC200" stroke="#231F20" stroke-miterlimit="10" cx="486" cy="234" r="9"/>
+<circle fill="#0081CD" stroke="#231F20" stroke-miterlimit="10" cx="666" cy="414" r="9"/>
+</svg>

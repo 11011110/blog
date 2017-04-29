@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="423px" height="612px" viewBox="0 0 423 612" enable-background="new 0 0 423 612" xml:space="preserve">
+<polygon opacity="0.7" fill="#FAF8FA" points="406.8,12.877 406.8,372.876 234,458.999 17.533,458.999 17.533,98.999 234,98.999 "/>
+<path fill="none" stroke="#0081CD" stroke-width="3" stroke-miterlimit="10" d="M234,278.999
+	c47.718-23.782,86.399-75.297,86.399-115.061c0-39.766-38.682-52.722-86.399-28.939"/>
+<path fill="none" stroke="#0081CD" stroke-width="3" stroke-miterlimit="10" d="M234,134.999
+	c71.575-35.674,129.601-16.239,129.601,43.408c0,59.646-58.025,136.919-129.601,172.592"/>
+<polyline opacity="0.7" fill="#FAF8FA" points="234,459 378,603 378,243 234,99 "/>
+<path fill="none" stroke="#009246" stroke-width="3" stroke-miterlimit="10" d="M234,206.999c-22.865,0-41.4-16.118-41.4-36
+	s18.535-36,41.4-36"/>
+<path fill="none" stroke="#009246" stroke-width="3" stroke-miterlimit="10" d="M234,206.999c-22.865,0-41.4,16.118-41.4,36
+	c0,19.882,18.535,36,41.4,36"/>
+<path fill="none" stroke="#009246" stroke-width="3" stroke-miterlimit="10" d="M234,278.999c-22.865,0-41.4,16.118-41.4,36
+	s18.535,36,41.4,36"/>
+<path fill="none" stroke="#009246" stroke-width="3" stroke-miterlimit="10" d="M234,206.999c-45.73,0-82.801,32.236-82.801,72
+	s37.07,72,82.801,72"/>
+<path fill="none" stroke="#009246" stroke-width="3" stroke-miterlimit="10" d="M234,350.999c-22.865,0-41.4,16.118-41.4,36
+	s18.535,36,41.4,36"/>
+<path fill="none" stroke="#009246" stroke-width="3" stroke-miterlimit="10" d="M234,134.999c-91.458,0-165.601,64.471-165.601,144
+	c0,79.529,74.143,144,165.601,144"/>
+<path fill="none" stroke="#BC1E47" stroke-width="3" stroke-miterlimit="10" d="M234,278.999
+	c39.765,39.764,71.999,104.234,71.999,144c0,39.764-32.234,39.764-71.999,0"/>
+<path fill="none" stroke="#BC1E47" stroke-width="3" stroke-miterlimit="10" d="M234,422.999
+	c59.647,59.646,107.999,59.646,107.999,0s-48.352-156.354-107.999-216"/>
+<g>
+	<g>
+		<line fill="none" stroke="#000000" stroke-width="3" stroke-miterlimit="10" x1="234" y1="63" x2="234" y2="65"/>
+			<line fill="none" stroke="#000000" stroke-width="3" stroke-miterlimit="10" stroke-dasharray="4,4" x1="234" y1="69" x2="234" y2="490.999"/>
+		<line fill="none" stroke="#000000" stroke-width="3" stroke-miterlimit="10" x1="234" y1="492.999" x2="234" y2="494.999"/>
+	</g>
+</g>
+<polyline fill="none" stroke="#0081CD" stroke-miterlimit="10" stroke-dasharray="2" points="234,98.999 406.8,12.877
+	406.8,372.876 234,458.999 "/>
+<polyline fill="none" stroke="#009246" stroke-miterlimit="10" stroke-dasharray="2" points="234,98.999 18,98.999 18,458.999
+	234,458.999 "/>
+<polyline fill="none" stroke="#BC1E47" stroke-miterlimit="10" stroke-dasharray="2" points="234,458.999 378,602.999 378,242.999
+	234,98.999 "/>
+<radialGradient id="SVGID_1_" cx="234" cy="134.9995" r="9" gradientUnits="userSpaceOnUse">
+	<stop  offset="0" style="stop-color:#FFFFFF"/>
+	<stop  offset="1" style="stop-color:#FEC200"/>
+</radialGradient>
+<circle fill="url(#SVGID_1_)" stroke="#231F20" stroke-miterlimit="10" cx="234" cy="135" r="9"/>
+<radialGradient id="SVGID_2_" cx="234" cy="206.9995" r="9" gradientUnits="userSpaceOnUse">
+	<stop  offset="0" style="stop-color:#FFFFFF"/>
+	<stop  offset="1" style="stop-color:#FEC200"/>
+</radialGradient>
+<circle fill="url(#SVGID_2_)" stroke="#231F20" stroke-miterlimit="10" cx="234" cy="207" r="9"/>
+<radialGradient id="SVGID_3_" cx="234" cy="278.999" r="9" gradientUnits="userSpaceOnUse">
+	<stop  offset="0" style="stop-color:#FFFFFF"/>
+	<stop  offset="1" style="stop-color:#FEC200"/>
+</radialGradient>
+<circle fill="url(#SVGID_3_)" stroke="#231F20" stroke-miterlimit="10" cx="234" cy="278.999" r="9"/>
+<radialGradient id="SVGID_4_" cx="234" cy="350.999" r="9" gradientUnits="userSpaceOnUse">
+	<stop  offset="0" style="stop-color:#FFFFFF"/>
+	<stop  offset="1" style="stop-color:#FEC200"/>
+</radialGradient>
+<circle fill="url(#SVGID_4_)" stroke="#231F20" stroke-miterlimit="10" cx="234" cy="350.999" r="9"/>
+<radialGradient id="SVGID_5_" cx="234" cy="422.999" r="9" gradientUnits="userSpaceOnUse">
+	<stop  offset="0" style="stop-color:#FFFFFF"/>
+	<stop  offset="1" style="stop-color:#FEC200"/>
+</radialGradient>
+<circle fill="url(#SVGID_5_)" stroke="#231F20" stroke-miterlimit="10" cx="234" cy="422.999" r="9"/>
+</svg>

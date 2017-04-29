@@ -16,11 +16,11 @@ tags:   [graph drawing, papers]
 
 <p>An NFA is just a special kind of graph, and if we apply standard graph drawing techniques to this graph we get something that resembles a syntax diagram. But not quite: what look like vertices in the syntax diagram (its train stations) are actually not vertices, but edges, in the NFA. And the parts of the syntax diagram where the parts of the track come together, that look like confluent junctions of multiple edges in a confluent graph drawing, are actually not junctions, but vertices, in the NFA. So with a little care in the layout and a little transformation of how we draw each kind of object, we can turn our graph into a diagram. For instance this NFA (optimized from a grammar for LISP 1.5 and drawn with some edges overlapping each other so that it looks confluent but isn't really):</p>
 
-<p style="text-align:center"><img alt="Nondeterministic finite automaton derived from LISP 1.5 grammar" src="http://www.ics.uci.edu/~eppstein/0xDE/LISP15-NFA.png" /></p>
+<p style="text-align:center"><img alt="Nondeterministic finite automaton derived from LISP 1.5 grammar" src="{{site.baseurl}}/assets/2015/LISP15-NFA.png" /></p>
 
 <p>turns into this syntax diagram:</p>
 
-<p style="text-align:center"><img alt="Syntax diagram for LISP 1.5 grammar" src="http://www.ics.uci.edu/~eppstein/0xDE/LISP15-syntax.png" /></p>
+<p style="text-align:center"><img alt="Syntax diagram for LISP 1.5 grammar" src="{{site.baseurl}}/assets/2015/LISP15-syntax.png" /></p>
 
 <p>With this representation in hand, we can go about optimizing the diagram to improve the visualization. There are a lot of things we could have tried, but in this paper the main ones are local optimizations to individual diagrams (such as pulling together tracks that go to the same place), replacement of tail-recursive calls of a diagram within itself to create loops, and replacement of nonterminals in one diagram by copies of the corresponding diagram, to reduce the number of different components in the visualization at the expense of making individual components more complicated.</p>
 

@@ -6,17 +6,17 @@ tags:   [origami, papers]
 ---
 <p>You're probably familiar with folding paper bags. You know, the small ones for lunches or the large ones for groceries? They have a triangular folding pattern on their sides that lets them either fold flat or open up into a brick shape. Five sides of the brick are covered by the paper of the bag, and the sixth top side makes an opening that you can put things into.</p>
 
-<p style="text-align:center"><img alt="Brown paper bags" src="http://www.ics.uci.edu/~eppstein/0xDE/BrownPaperBags.jpg" width="600" height="400" /><br />
+<p style="text-align:center"><img alt="Brown paper bags" src="{{site.baseurl}}/assets/2015/BrownPaperBags.jpg" width="600" height="400" /><br />
 <small>Image from <a href="http://bougieblackgirl.com/we-are-all-black-but-you-as-a-light-skin-person-benefit-from-light-skin-privilege/">this post on racism and the paper bag test</a></small></p>
 
 <p>But did you know that you can't actually open these bags or fold them up again purely by folding? To change them from their folded to their unfolded state, or vice versa, you also have to bend and twist the paper in the regions between the folds. Try it with a real bag: you should feel a distinct snap in the paper as you unfold it. And although you can start to fold it up again without the same snap, at least to the point where the top closes up (lke the upper middle bag in the image above), this partially folded state involves subtly twisting the sides of the bag, so that the creases down the middles of the sides are opened out near the bottom of the bag and folded up near the top of the bag. In fact, although both the folded and unfolded states keep the paper flat wherever it is not creased, none of the intermediate states between folded and unfolded can be realized with flat paper. So if you tried to make one of these bags from something more rigid like sheets of glass, connected by hinges at the creases, it wouldn't work.</p>
  
-<p style="text-align:center"><img alt="Glass cranes" src="http://www.ics.uci.edu/~eppstein/0xDE/GlassCranes.jpg" width="480" height="480" /><br />
+<p style="text-align:center"><img alt="Glass cranes" src="{{site.baseurl}}/assets/2015/GlassCranes.jpg" width="480" height="480" /><br />
 <small><a href="https://www.etsy.com/listing/209462085/stained-glass-origami-sadakos-peace">Stained glass cranes by Suncatchercreations on Etsy</a></small></p>
 
 <p>I have a small part in a new preprint analyzing this phenomenon, "<a href="http://arxiv.org/abs/1507.01644">Rigid Origami Vertices: Conditions and Forcing Sets</a>" (with Abel, Cantarella, Demaine, Hull, Ku, Lang, and Tachi, arXiv:1507.01644). Even paper bags are too complicated, so we simplify the situation by looking at folding patterns formed from a flat sheet of paper by a set of creases that all meet at a single vertex. When does such a pattern have a continuous folding motion that starts from its flat state and uses all the creases while avoiding any bends between the creases? It turns out to be necessary and sufficient for the pattern to contain what we call a "bird's foot". This is a configuration that has folds of both types (mountain and valley), such that for at least one of these two types of folds, the convex hull of the folds has the vertex in its interior. There are four different ways of doing this: there can be three mountain folds separated by angles that are all less than <i>π</i> together with a single valley fold, four mountain folds on two crossed lines together with a single valley fold, or the same things with mountains and valleys swapped. Extra folds are ok, as long as one of these patterns is in there somewhere.</p>
 
-<p style="text-align:center"><img alt="Bird's foot folding patterns" src="http://www.ics.uci.edu/~eppstein/0xDE/BirdsFeet.png" /></p>
+<p style="text-align:center"><img alt="Bird's foot folding patterns" src="{{site.baseurl}}/assets/2015/BirdsFeet.svg" /></p>
 
 <p>So how does our analysis apply to the paper bag folding pattern? Paper bags have three types of vertex:</p>
 

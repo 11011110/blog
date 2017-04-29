@@ -8,7 +8,7 @@ tags:   [graph drawing, papers]
 
 <p>The paper is on the following kind of graph drawing, where we draw each vertex multiple times (with labels so you can see which vertices are repeated where). To interpret the drawing, take the union of the adjacencies of the copies. For instance, the vertex d, repeated at the top of the drawing and the lower center, is adjacent to 6, 7, 2, 3, 0 (from the top), and also to 1, 4, 5, 8, 9 (from the bottom). If you check more carefully you'll see that each letter-digit pair is adjacent, so this is a complete bipartite graph.</p>
 
-<p style="text-align:center"><img alt="Split drawing of K_{6,10}" src="http://www.ics.uci.edu/~eppstein/0xDE/2K6,10.png" /></p>
+<p style="text-align:center"><img alt="Split drawing of K_{6,10}" src="{{site.baseurl}}/assets/2015/2K6,10.svg" /></p>
 
 <p>This drawing style is related to graph minors (where the repeated copies of each vertex need to form a connected subgraph) and graph thickness (where only one copy of each vertex is allowed per connected component of the drawing) but without the constraints of either, allowing a little more flexibility in what can be drawn with a given amount of repetition. For instance, the complete bipartite graphs K<sub>6,10</sub> (shown above), K<sub>5,16</sub>, and K<sub>7,8</sub> can all be drawn this way with only two repetitions per vertex, but cannot be drawn with thickness two.</p>
 

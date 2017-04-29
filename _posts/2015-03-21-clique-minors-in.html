@@ -6,7 +6,7 @@ tags:   [de bruijn graph, graph theory]
 ---
 <p>In my new Wikipedia article on <a href="https://en.wikipedia.org/wiki/Queue_number">the queue number of graphs</a>, the binary de Bruijn graphs form an important family of examples. These are 4-regular graphs with one vertex for every <i>n</i>-bit binary string, and with an edge from every string of the form 0s or 1s to s0 or s1. <a href="{{site.baseurl}}/2006/10/12/tale-of-two.html">I posted about them</a> here several years ago, with the following drawing, which can be interpreted as a 2-queue drawing with one queue for the edges that wrap around the left side and another for the edges that wrap around the right.</p>
 
-<p style="text-align:center"><a href="http://en.wikipedia.org/wiki/Image:DeBruijn-3-2.png"><img alt="Order-3 binary de Bruijn graph" src="http://www.ics.uci.edu/~eppstein/0xDE/dbg32b.png" /></a></p>
+<p style="text-align:center"><a href="http://en.wikipedia.org/wiki/Image:DeBruijn-3-2.png"><img alt="Order-3 binary de Bruijn graph" src="{{site.baseurl}}/assets/2015/DeBruijn-3-2.svg" /></a></p>
 
 <p>Graph minors also showed up in the article, and it occurred to me to wonder: do de Bruijn graphs belong to any minor-closed graph families? The answer should be no, because they're too highly connected, but can we quantify this? One way would be to determine the <a href="https://en.wikipedia.org/wiki/Hadwiger_number">Hadwiger number</a> of the de Bruijn graphs, i.e., the size of their largest clique minors. As long as this is not bounded by a constant, the de Bruijn graphs do not belong to any nontrivial minor-closed family. And in fact, that turns out to be true: the Hadwiger number is somewhere near the square root of the number of vertices.</p>
 
