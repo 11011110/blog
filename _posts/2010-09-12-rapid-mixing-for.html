@@ -4,128 +4,79 @@ title:  'Rapid mixing for 3-colorings'
 date:   2010-09-12 17:05:00
 tags:   [color, graph theory]
 ---
-Remember <a href="http://cstheory.stackexchange.com/questions/777/rapidly-mixing-markov-chains-on-3-colorings-of-a-cycle">my TCS exchange question</a> on whether 3-colorings of cycle graphs rapidly mix? Well, it turns out that they do. I got the following solution from Dana Randall (who has otherwise been hard at work finishing off the selection of SODA papers) so any good ideas in it are hers and any mistakes were most likely introduced by me in writing all this up.
-<br />
+<p>Remember <a href="http://cstheory.stackexchange.com/questions/777/rapidly-mixing-markov-chains-on-3-colorings-of-a-cycle">my TCS exchange question</a> on whether 3-colorings of cycle graphs rapidly mix? Well, it turns out that they do. I got the following solution from Dana Randall (who has otherwise been hard at work finishing off the selection of SODA papers) so any good ideas in it are hers and any mistakes were most likely introduced by me in writing all this up.</p>
 
-<br />
-To restate the question again: we&#x27;re trying to generate random 3-colorings of a cycle graph, by taking a random walk in a big state space of different 3-colorings. If we walk long enough, we&#x27;ll eventually become so lost that the coloring is in a uniformly random state (or so close to uniform as makes no difference). The question is, how long is long enough? We&#x27;d like it to be polynomial in the length of the cycle, rather than polynomial in the number of different colorings, because the length of the cycle is exponentially smaller than the number of colorings. If so, then the random walk is said to be &quot;rapidly mixing&quot;.
-<br />
+<p>To restate the question again: we're trying to generate random 3-colorings of a cycle graph, by taking a random walk in a big state space of different 3-colorings. If we walk long enough, we'll eventually become so lost that the coloring is in a uniformly random state (or so close to uniform as makes no difference). The question is, how long is long enough? We'd like it to be polynomial in the length of the cycle, rather than polynomial in the number of different colorings, because the length of the cycle is exponentially smaller than the number of colorings. If so, then the random walk is said to be "rapidly mixing".</p>
 
-<br />
-The short version of Dana&#x27;s solution is: instead of using the Markov chain I described, in which potentially-large two-colored regions are recolored, use a &quot;heat bath&quot; in which we repeatedly remove the colors of two vertices and then choose a valid coloring for them at random. It&#x27;s not hard to show that, if this chain mixes, then the other one does as well. But a standard path coupling argument turns out to work to show that the heat bath does indeed mix.
-<br />
+<p>The short version of Dana's solution is: instead of using the Markov chain I described, in which potentially-large two-colored regions are recolored, use a "heat bath" in which we repeatedly remove the colors of two vertices and then choose a valid coloring for them at random. It's not hard to show that, if this chain mixes, then the other one does as well. But a standard path coupling argument turns out to work to show that the heat bath does indeed mix.</p>
 
-<br />
-<b>Using a different Markov chain:</b>
-<br />
+<h3>Using a different Markov chain:</h3>
 
-<br />
-First, the easy part. The heat bath is almost the same as the modified Wang–Swendsen–Kotecký dynamics I described <a href="http://11011110.livejournal.com/204413.html">here</a>, in which we only change the colors of a 2-colored region in the cases when it consists of one or two vertices; larger regions stay fixed. The two Markov chains both have almost the same set of transitions: there&#x27;s one case of a step in the heat bath that takes two WSK steps to perform, but that&#x27;s not a big problem, and the transition probabilities are different, but only by constant factors, so that&#x27;s also not a problem. And adding the full set of Wang–Swendsen–Kotecký moves doesn&#x27;t hurt anything, so if the heat bath mixes well then so does the Wang–Swendsen–Kotecký dynamics.
-<br />
+<p>First, the easy part. The heat bath is almost the same as the modified Wang–Swendsen–Kotecký dynamics I described <a href="{{site.baseurl}}/2010/09/02/binary-model-of.html">here</a>, in which we only change the colors of a 2-colored region in the cases when it consists of one or two vertices; larger regions stay fixed. The two Markov chains both have almost the same set of transitions: there's one case of a step in the heat bath that takes two WSK steps to perform, but that's not a big problem, and the transition probabilities are different, but only by constant factors, so that's also not a problem. And adding the full set of Wang–Swendsen–Kotecký moves doesn't hurt anything, so if the heat bath mixes well then so does the Wang–Swendsen–Kotecký dynamics.</p>
 
-<br />
-<b>Coupling:</b>
-<br />
+<h3>Coupling:</h3>
 
-<br />
-The basic idea of coupling is to run two random walks in parallel: one, starting from a nonrandom state, is the one you want to prove mixes quickly, while the other one starts from a random state and therefore stays random at each step. However, the two random walks are not independent of each other, but rather have dependencies that are carefully chosen in order to make them become more similar over time. Eventually, if you perform the two coupled random walks long enough (where &quot;long enough&quot; has to be defined independently of the actual states of the two walks) they will be so close that the initially-nonrandom one has nearly the same uniform distribution as the initially random one. (There&#x27;s also a related technique called <a href="http://en.wikipedia.org/wiki/Coupling_from_the_past">coupling from the past</a> that performs the two walks backwards rather than forwards, and has a stopping rule that is not independent of the states of the chains, but still somehow can be guaranteed to generate uniformly random samples).
-<br />
+<p>The basic idea of coupling is to run two random walks in parallel: one, starting from a nonrandom state, is the one you want to prove mixes quickly, while the other one starts from a random state and therefore stays random at each step. However, the two random walks are not independent of each other, but rather have dependencies that are carefully chosen in order to make them become more similar over time. Eventually, if you perform the two coupled random walks long enough (where "long enough" has to be defined independently of the actual states of the two walks) they will be so close that the initially-nonrandom one has nearly the same uniform distribution as the initially random one. (There's also a related technique called <a href="http://en.wikipedia.org/wiki/Coupling_from_the_past">coupling from the past</a> that performs the two walks backwards rather than forwards, and has a stopping rule that is not independent of the states of the chains, but still somehow can be guaranteed to generate uniformly random samples).</p>
 
-<br />
-<b>Coupling at Hamming distance one:</b>
-<br />
+<h3>Coupling at Hamming distance one:</h3>
 
-<br />
-As a warm-up to the full coupling argument, suppose we have two 3-colorings <i>K</i> and <i>L</i> of the <i>n</i>-cycle that only differ from each other in the coloring of a single vertex. We want to define a way of performing a heat bath step on both colorings simultaneously, in such a way that they are likely to become closer together. To do so, we pick a vertex <i>v</i> of the cycle uniformly at random, and look at the chain of four consecutive vertices <nobr><i>u</i>-<i>v</i>-<i>w</i>-<i>x</i>.</nobr> We&#x27;ll uncolor and then recolor the same two vertices <i>v</i> and <i>w</i> in both <i>K</i> and <i>L</i>, but we may not be able to do so in such a way that they both end up with the same color. There are four cases:
-<br />
+<p>As a warm-up to the full coupling argument, suppose we have two 3-colorings \( K \) and \( L \) of the \( n \)-cycle that only differ from each other in the coloring of a single vertex. We want to define a way of performing a heat bath step on both colorings simultaneously, in such a way that they are likely to become closer together. To do so, we pick a vertex \( v \) of the cycle uniformly at random, and look at the chain of four consecutive vertices \( u \)-\( v \)-\( w \)-\( x \). We'll uncolor and then recolor the same two vertices \( v \) and \( w \) in both \( K \) and \( L \), but we may not be able to do so in such a way that they both end up with the same color. There are four cases:</p>
 
-<br />
-1. If the position at which <i>K</i> and <i>L</i> differ is outside the chain <nobr><i>u</i>-<i>v</i>-<i>w</i>-<i>x</i>,</nobr> then <i>u</i> has the same color in both <i>K</i> and <i>L</i>, as does x. In this case, we may choose a random coloring for <i>v</i> and <i>w</i> consistent with the colors of <i>u</i> and <i>x</i>, and use the same new coloring in both <i>K</i> and <i>L</i>. The distance between the two colorings remains unchanged by a step of this type, and (when we look at either <i>K</i> or <i>L</i> alone, ignoring what happens in the other coloring) this step correctly reproduces the transition probabilities of the heat bath on a single coloring. It happens with probability <nobr>(<i>n</i> − 4)/<i>n</i>.</nobr>
-<br />
+<ol>
+<li><p>If the position at which \( K \) and \( L \) differ is outside the chain \( u \)-\( v \)-\( w \)-\( x \), then \( u \) has the same color in both \( K \) and \( L \), as does x. In this case, we may choose a random coloring for \( v \) and \( w \) consistent with the colors of \( u \) and \( x \), and use the same new coloring in both \( K \) and \( L \). The distance between the two colorings remains unchanged by a step of this type, and (when we look at either \( K \) or \( L \) alone, ignoring what happens in the other coloring) this step correctly reproduces the transition probabilities of the heat bath on a single coloring. It happens with probability \( (n-4)/n \).</p></li>
 
-<br />
-2. If the position at which <i>K</i> and <i>L</i> differ is at <i>v</i> or <i>w</i>, then again we may choose a single random coloring for <i>v</i> and <i>w</i> and use the same colors in both <i>K</i> and <i>L</i>. This type of step happens with probability 2/<i>n</i>, and whenever it happens the distance between the two colorings decreases by one.
-<br />
+<li><p>If the position at which \( K \) and \( L \) differ is at \( v \) or \( w \), then again we may choose a single random coloring for \( v \) and \( w \) and use the same colors in both \( K \) and \( L \). This type of step happens with probability \( 2/n \), and whenever it happens the distance between the two colorings decreases by one.</p></li>
 
-<br />
-3. In the third case, the position at which <i>K</i> and <i>L</i> differs is at <i>u</i> or <i>x</i>. In each of <i>K</i> and <i>L</i>, there may be either two or three possible new colorings of <i>v</i> and <i>w</i> to choose from, but it is not always possible to use the same recoloring for both <i>K</i> and <i>L</i>. There are two subcases, up to symmetries (reversing the four-vertex chain, swapping the roles of <i>K</i> and <i>L</i>, and permuting the colors):
-<br />
+<li><p>In the third case, the position at which \( K \) and \( L \) differs is at \( u \) or \( x \). In each of \( K \) and \( L \), there may be either two or three possible new colorings of \( v \) and \( w \) to choose from, but it is not always possible to use the same recoloring for both \( K \) and \( L \). There are two subcases, up to symmetries (reversing the four-vertex chain, swapping the roles of \( K \) and \( L \), and permuting the colors):</p>
 
-<br />
-3a. <nobr><i>u</i>-<i>v</i>-<i>w</i>-<i>x</i></nobr> are colored <nobr>R-B-R-G</nobr> in <i>K</i>, and colored <nobr>R-B-R-B</nobr> in <i>L</i>. With probability 1/3, we choose the same colorings again, with probability 1/3 we choose the colorings <nobr>R-G-R-G / R-G-R-B,</nobr> and with probability 1/3 we choose the colorings <nobr>R-G-B-G / R-B-G-B.</nobr> So, if this subcase happens, then with conditional probability 2/3 the distance stays the same and with conditional probability 1/3 it increases by two units. After a step like this the expected increase in distance is <nobr>(1/3 × 0) + (1/3 × 0) + (1/3 × 2) = 2/3.</nobr>
-<br />
+<ol type="a">
+<li><p>\( u \)-\( v \)-\( w \)-\( x \) are colored R-B-R-G in \( K \), and colored R-B-R-B in \( L \). With probability \( 1/3 \), we choose the same colorings again, with probability \( 1/3 \) we choose the colorings R-G-R-G / R-G-R-B, and with probability \( 1/3 \) we choose the colorings R-G-B-G / R-B-G-B. So, if this subcase happens, then with conditional probability \( 2/3 \) the distance stays the same and with conditional probability \( 1/3 \) it increases by two units. After a step like this the expected increase in distance is</p>
+\[
+\frac{1}{3}\times 0+\frac{1}{3}\times 0+\frac{1}{3}\times 2 = \frac{2}{3}.
+\]</li>
 
-<br />
-3b. <nobr><i>u</i>-<i>v</i>-<i>w</i>-<i>x</i></nobr> are colored <nobr>R-B-G-R</nobr> in <i>K</i>, and colored <nobr>R-B-G-B</nobr> in <i>L</i>. We choose the same colorings <nobr>R-B-G-R / R-B-G-B</nobr> with probability 1/3, the colorings <nobr>R-G-B-R / R-G-R-B</nobr> with probability 1/3, the colorings <nobr>R-B-G-R / R-B-R-B</nobr> with probability 1/6, and the colorings <nobr>R-G-B-R / R-B-R-B</nobr> with probability 1/6. After a step like this the expected increase in distance is <nobr>(1/3 × 0) + (1/3 × 1) + (1/6 × 1) + (1/6 × 2) = 5/6.</nobr>
-<br />
+<li><p>\( u \)-\( v \)-\( w \)-\( x \) are colored R-B-G-R in \( K \), and colored R-B-G-B in \( L \). We choose the same colorings R-B-G-R / R-B-G-B with probability 1/3, the colorings R-G-B-R / R-G-R-B with probability \( 1/3 \), the colorings R-B-G-R / R-B-R-B with probability \( 1/6 \), and the colorings R-G-B-R / R-B-R-B with probability \( 1/6 \). After a step like this the expected increase in distance is</p>
+\[
+\frac{1}{3}\times 0+\frac{1}{3}\times 1+\frac{1}{6}\times 1+\frac{1}{6}\times 2 = \frac{5}{6}.
+\]</li>
+</ol></li></ol>
 
-<br />
-We can&#x27;t control which of the two subcases of case three happens, but we know that case 3 happens with probability 2/<i>n</i>, and that whenever it happens the expected distance between the two colorings increases by at most 5/6. Therefore, putting all of these cases together, when two colorings are at distance one we can couple them in such a way that the expected distance after a random walk step is at most <nobr>((<i>n</i> − 4)/<i>n</i> * 1) + (2/<i>n</i> * 0) + (2/<i>n</i> * 11/6) = 1 − 1/3<i>n</i>,</nobr> a tiny bit closer together in expectation.
-<br />
+<p>We can't control which of the two subcases of case three happens, but we know that case 3 happens with probability \( 2/n \), and that whenever it happens the expected distance between the two colorings increases by at most \( 5/6 \). Therefore, putting all of these cases together, when two colorings are at distance one we can couple them in such a way that the expected distance after a random walk step is at most
+\[
+\frac{n-4}{n}\times 1+\frac{2}{n}\times 0+\frac{2}{n}\times\frac{11}{6} = 1 − \frac{1}{3n},
+\]
+a tiny bit closer together in expectation.</p>
 
-<br />
-<b>Coupling at Hamming distance two:</b>
-<br />
+<h3>Coupling at Hamming distance two:</h3>
 
-<br />
-Ok, what about when the two colorings <i>K</i> and <i>L</i> are farther apart than that? The next simpler case is when <i>K</i> and <i>L</i> differ at exactly two positions, and those two positions are consecutive.
-<br />
+<p>Ok, what about when the two colorings \( K \) and \( L \) are farther apart than that? The next simpler case is when \( K \) and \( L \) differ at exactly two positions, and those two positions are consecutive.</p>
 
-<br />
-With probability <nobr>(<i>n</i> − 5)/<i>n</i></nobr> the positions <i>v</i> and <i>w</i> that we choose are far from the positions where the sequences differ, and the update doesn&#x27;t cause the distance to change.
-<br />
+<p>With probability \( (n-5)/n \) the positions \( v \) and \( w \) that we choose are far from the positions where the sequences differ, and the update doesn't cause the distance to change.</p>
 
-<br />
-With probability 1/<i>n</i> we get an update in which <i>v</i> and <i>w</i> are exactly the two positions where the sequences differ. In the recoloring step, the colorings of <i>K</i> and <i>L</i> can be chosen the same as each other, reducing the distance by two.
-<br />
+<p>With probability \( 1/n \) we get an update in which \( v \) and \( w \) are exactly the two positions where the sequences differ. In the recoloring step, the colorings of \( K \) and \( L \) can be chosen the same as each other, reducing the distance by two.</p>
 
-<br />
-With probability 2/<i>n</i> we get an update in which one of <i>u</i> and <i>x</i> has a different coloring in <i>K</i> than in <i>L</i>, and the other one is the same in both colorings. This is exactly the same as the analysis for Hamming distance one, case 3, in which the expected distance might increase by as much as 5/6.
-<br />
+<p>With probability \( 2/n \) we get an update in which one of \( u \) and \( x \) has a different coloring in \( K \) than in \( L \), and the other one is the same in both colorings. This is exactly the same as the analysis for Hamming distance one, case 3, in which the expected distance might increase by as much as \( 5/6 \).</p>
 
-<br />
-With probability 2/<i>n</i> we get an update in which <i>u</i> and <i>v</i> (or symmetrically <i>w</i> and <i>x</i>) are the two positions at which <i>K</i> and <i>L</i> differ. But this case also has exactly the same analysis as case 3 of the Hamming distance one case, except that we&#x27;ve already started out with one more unit of distance. So the next effect is to decrease the expected distance by 5/6 or better.
-<br />
+<p>With probability \( 2/n \) we get an update in which \( u \) and \( v \) (or symmetrically \( w \) and \( x \)) are the two positions at which \( K \) and \( L \) differ. But this case also has exactly the same analysis as case 3 of the Hamming distance one case, except that we've already started out with one more unit of distance. So the next effect is to decrease the expected distance by \( 5/6 \) or better.</p>
 
-<br />
-Thus, the expected distance after a random walk step is at most <nobr>2(1 − 1/4<i>n</i>),</nobr> again a tiny bit closer together than <i>K</i> and <i>L</i> were before the step.
-<br />
+<p>Thus, the expected distance after a random walk step is at most \( 2(1-1/4n) \), again a tiny bit closer together than \( K \) and \( L \) were before the step.</p>
 
-<br />
-<b>Path coupling:</b>
-<br />
+<h3>Path coupling:</h3>
 
-<br />
-Path coupling is a technique for analyzing Markov chains that was introduced by Bubley and Dyer at <a href="http://doi.ieeecomputersociety.org/10.1109/SFCS.1997.646111">FOCS 1997</a>. It allows us to look only at simple cases such as the ones above and let the messier cases take care of themselves, by performing simple coupling steps simultaneously on all edges of a shortest path in state space.
-<br />
+<p>Path coupling is a technique for analyzing Markov chains that was introduced by Bubley and Dyer at <a href="http://doi.ieeecomputersociety.org/10.1109/SFCS.1997.646111">FOCS 1997</a>. It allows us to look only at simple cases such as the ones above and let the messier cases take care of themselves, by performing simple coupling steps simultaneously on all edges of a shortest path in state space.</p>
 
-<br />
-When we start out our two coupled random walks on colorings <i>K</i> and <i>L</i>, they&#x27;re not very likely to be as close together as in the case analysis above. But in general (because the state space is connected by heat bath moves) it will be possible to find a path in the space of all 3-colorings of the cycle, having <i>K</i> and <i>L</i> as endpoints of the path and having valid colorings in between them, with the colorings in consecutive states along the path differing either in the color of a single vertex or in the colors of two consecutive vertices. Among all such paths, we choose (arbitrarily in case of ties) a shortest one, measuring the length of an edge between two adjacent colorings as the Hamming distance of the two colorings.
-<br />
+<p>When we start out our two coupled random walks on colorings \( K \) and \( L \), they're not very likely to be as close together as in the case analysis above. But in general (because the state space is connected by heat bath moves) it will be possible to find a path in the space of all 3-colorings of the cycle, having \( K \) and \( L \) as endpoints of the path and having valid colorings in between them, with the colorings in consecutive states along the path differing either in the color of a single vertex or in the colors of two consecutive vertices. Among all such paths, we choose (arbitrarily in case of ties) a shortest one, measuring the length of an edge between two adjacent colorings as the Hamming distance of the two colorings.</p>
 
-<br />
-We imagine all of the colorings along this shortest path as simultaneously performing heat bath steps, in such a way that consecutive pairs of colorings along the path are coupled exactly as in the two cases above. There&#x27;s some ambiguity in how to jointly couple all of the colorings&#x27; random walks in order to achieve this pairwise coupling, but it doesn&#x27;t matter how this ambiguity is resolved. We can then perform the heat bath steps on <i>K</i> and <i>L</i>, with probabilities determined by the way that they are pairwise coupled by this big messy joint coupling.
-<br />
+<p>We imagine all of the colorings along this shortest path as simultaneously performing heat bath steps, in such a way that consecutive pairs of colorings along the path are coupled exactly as in the two cases above. There's some ambiguity in how to jointly couple all of the colorings' random walks in order to achieve this pairwise coupling, but it doesn't matter how this ambiguity is resolved. We can then perform the heat bath steps on \( K \) and \( L \), with probabilities determined by the way that they are pairwise coupled by this big messy joint coupling.</p>
 
-<br />
-After a coupled step of this type, the expected distance between any two adjacent pairs of the path will go down by a factor of <nobr>(1 − 1/4<i>n</i>)</nobr> or better. Therefore, the expected distance of the walk in state space from <i>K</i> to <i>L</i> formed by concatenating a sequence shortest paths between the transformed versions of each of the colorings along the path is at most the old distance between <i>K</i> and <i>L</i> times this same <nobr>(1 − 1/4<i>n</i>)</nobr> factor. This walk may not be a shortest path itself, but the fact that it exists and has short expected length nevertheless implies that the new expected distance between <i>K</i> and <i>L</i> is at most the old expected distance times <nobr>(1 − 1/4<i>n</i>).</nobr>
-<br />
+<p>After a coupled step of this type, the expected distance between any two adjacent pairs of the path will go down by a factor of \( (1-1/4n) \) or better. Therefore, the expected distance of the walk in state space from \( K \) to \( L \) formed by concatenating a sequence shortest paths between the transformed versions of each of the colorings along the path is at most the old distance between \( K \) and \( L \) times this same \( (1-1/4n) \) factor. This walk may not be a shortest path itself, but the fact that it exists and has short expected length nevertheless implies that the new expected distance between \( K \) and \( L \) is at most the old expected distance times \( (1-1/4n) \).</p>
 
-<br />
-In order to complete the coupling argument, we&#x27;ll perform this same coupling step many times. At each step, the way that <i>K</i> and <i>L</i> are coupled will depend only on their joint state, so this is a Markov process, and if we look at either <i>K</i> and <i>L</i> alone we get exactly the heat bath dynamics.
-<br />
+<p>In order to complete the coupling argument, we'll perform this same coupling step many times. At each step, the way that \( K \) and \( L \) are coupled will depend only on their joint state, so this is a Markov process, and if we look at either \( K \) and \( L \) alone we get exactly the heat bath dynamics.</p>
 
-<br />
-<b>Rapid mixing:</b>
-<br />
+<h3>Rapid mixing:</h3>
 
-<br />
-A standard definition for the mixing time of a Markov process is the time it takes to achieve <a href="http://en.wikipedia.org/wiki/Total_variation_distance">total variation distance</a> at most ε from uniform, for some ε. In this case, the analysis is easy: we simply perform <nobr>4<i>n</i> ln (<i>n</i>/ε)</nobr> steps of the heat bath.
-<br />
+<p>A standard definition for the mixing time of a Markov process is the time it takes to achieve <a href="http://en.wikipedia.org/wiki/Total_variation_distance">total variation distance</a> at most \( \epsilon \) from uniform, for some \( \epsilon \). In this case, the analysis is easy: we simply perform \( 4n\ln(n/\epsilon) \) steps of the heat bath.</p>
 
-<br />
-Initially, <i>K</i> is nonrandom and <i>L</i> is uniformly random; <i>K</i> is at most <i>n</i> steps away from <i>L</i> in Hamming distance. After each step, the expected distance decreases by at least a <nobr>(1 − 1/4<i>n</i>)</nobr> factor, so after the given number of steps, the expected distance will be at most <nobr>(1 − 1/4<i>n</i>)<sup>4<i>n</i> ln (<i>n</i>/ε)</sup> ≤ ε</nobr>. And by <a href="http://en.wikipedia.org/wiki/Markov's_inequality">Markov&#x27;s inequality</a>, this means that with probability at least <nobr>1 − ε,</nobr> <i>K</i> and <i>L</i> now have the same coloring, and with probability at most ε their colorings differ. But <i>L</i> is still uniformly random, so the probability distribution on <i>K</i> is a mixture of <nobr>1 − ε</nobr> probability of being uniformly random and ε probability of something else, which is essentially the definition of being within total variation distance ε of uniform.
-<br />
+<p>Initially, \( K \) is nonrandom and \( L \) is uniformly random; \( K \) is at most \( n \) steps away from \( L \) in Hamming distance. After each step, the expected distance decreases by at least a \( (1-1/4n) \) factor, so after the given number of steps, the expected distance will be at most \( (1-1/4n) ^{4n\ln(n/\epsilon)}\le\epsilon \). And by <a href="http://en.wikipedia.org/wiki/Markov's_inequality">Markov's inequality</a>, this means that with probability at least \( 1-\epsilon \), \( K \) and \( L \) now have the same coloring, and with probability at most \( \epsilon \) their colorings differ. But \( L \) is still uniformly random, so the probability distribution on \( K \) is a mixture of \( 1-\epsilon \) probability of being uniformly random and \( \epsilon \) probability of something else, which is essentially the definition of being within total variation distance \( \epsilon \) of uniform.</p>
 
-<br />
-That is: the mixing time of the heat bath is <nobr>O(<i>n</i> log <i>n</i>).</nobr> The full Wang–Swendsen–Kotecký dynamics includes steps that perform the same recolorings as the heat bath, with probabilities that are within a constant factor the same as the heat bath probabilities, as well as some other steps that don&#x27;t hurt anything, and it has the same uniform limiting distribution as the heat bath, so its mixing time is also <nobr>O(<i>n</i> log <i>n</i>).</nobr>
+<p>That is: the mixing time of the heat bath is \( O(n\log n) \). The full Wang–Swendsen–Kotecký dynamics includes steps that perform the same recolorings as the heat bath, with probabilities that are within a constant factor the same as the heat bath probabilities, as well as some other steps that don't hurt anything, and it has the same uniform limiting distribution as the heat bath, so its mixing time is also \( O(n\log n) \).</p>

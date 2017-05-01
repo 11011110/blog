@@ -4,44 +4,38 @@ title:  'Voting on a Turing machine using constant-amortized-time counters'
 date:   2016-10-01 22:54:00
 tags:   [voting, wikipedia, algorithms]
 ---
-While fixing up <a href="https://en.wikipedia.org/wiki/Boyer%E2%80%93Moore_majority_vote_algorithm">the Wikipedia article on the constant-space streaming majority algorithm of Boyer and Moore</a> I ran across <a href="http://stackoverflow.com/questions/39182402/memory-complexity-of-boyer-moore-majority-vote-algorithm">a stackoverflow question complaining about some sloppy analysis</a> that I had already removed from the Wikipedia article. As a quick reminder, the algorithm stores one element from its input sequence, uses comparisons of that element with input values to decide whether to increment or decrement a counter, and uses comparisons of the counter with zero to decide when to replace the stored element.
-<br />
+<p>While fixing up <a href="https://en.wikipedia.org/wiki/Boyer%E2%80%93Moore_majority_vote_algorithm">the Wikipedia article on the constant-space streaming majority algorithm of Boyer and Moore</a> I ran across <a href="http://stackoverflow.com/questions/39182402/memory-complexity-of-boyer-moore-majority-vote-algorithm">a stackoverflow question complaining about some sloppy analysis</a> that I had already removed from the Wikipedia article. As a quick reminder, the algorithm stores one element from its input sequence, uses comparisons of that element with input values to decide whether to increment or decrement a counter, and uses comparisons of the counter with zero to decide when to replace the stored element.</p>
 
-<br />
-Usually in algorithm analysis we use a unit cost random access machine model in which &quot;reasonable&quot; sized objects such as input identifiers and counters take a single word of memory and basic operations on them like comparisons and arithmetic take constant time. We can argue about what &quot;reasonable&quot; means but I think it&#x27;s good enough both mathematically and in practice to assume that there&#x27;s a word size <i>w</i> that is unknown but big enough to index the input (<i>w</i> ≥ log <i>n</i>) and that the input values are machine words. So in this model the algorithm clearly takes linear time and constant space, and the old version&#x27;s claim that the space is logarithmic is wrong.
-<br />
+<p>Usually in algorithm analysis we use a unit cost random access machine model in which "reasonable" sized objects such as input identifiers and counters take a single word of memory and basic operations on them like comparisons and arithmetic take constant time. We can argue about what "reasonable" means but I think it's good enough both mathematically and in practice to assume that there's a word size \( w \) that is unknown but big enough to index the input (\( w\ge\log n \)) and that the input values are machine words. So in this model the algorithm clearly takes linear time and constant space, and the old version's claim that the space is logarithmic is wrong.</p>
 
-<br />
-On the other hand, the complexity theorists still seem to want to stick to a Turing machine model of computing. The same voting algorithm still makes sense on a Turing machine as long as we assume a separate long read-only input tape and short read-write working memory tape, with enough space to store both a counter and a single input value. The old <i>O</i>(log <i>n</i>) space claim is still wrong, though, because you don&#x27;t know how many bits long the input values are, and it might be a lot. But that&#x27;s easily fixed. What about the Turing machine runtime?
-<br />
+<p>On the other hand, the complexity theorists still seem to want to stick to a Turing machine model of computing. The same voting algorithm still makes sense on a Turing machine as long as we assume a separate long read-only input tape and short read-write working memory tape, with enough space to store both a counter and a single input value. The old \( O(\log n) \) space claim is still wrong, though, because you don't know how many bits long the input values are, and it might be a lot. But that's easily fixed. What about the Turing machine runtime?</p>
 
-<br />
-The comparisons of the stored value with the input values take linear total time, but now it&#x27;s linear in the input length which is probably something larger than <i>n</i>. The counter increments and decrements are more of a problem, though. They could take as much as <i>O</i>(log <i>n</i>) time per increment or decrement, and (if there are not many distinct input values, so their lengths are much shorter than logarithmic) these times could sum to much larger than the input length. Repeatedly incrementing a binary number is a constant-amortized-time operation, but mixing increments and decrements is not. So what can we do?
-<br />
+<p>The comparisons of the stored value with the input values take linear total time, but now it's linear in the input length which is probably something larger than \( n \). The counter increments and decrements are more of a problem, though. They could take as much as \( O(\log n) \) time per increment or decrement, and (if there are not many distinct input values, so their lengths are much shorter than logarithmic) these times could sum to much larger than the input length. Repeatedly incrementing a binary number is a constant-amortized-time operation, but mixing increments and decrements is not. So what can we do?</p>
 
-<br />
-It turns out that there&#x27;s a simple trick to reduce the amortized time per increment, decrement, or compare-with-zero to constant, while only blowing up the space by a constant factor. Instead of storing one counter, store two of them, with their bits interleaved with each other, and with the low-order bits on the end closest to the stored input value. let&#x27;s call the two counters <i>x</i> and <i>y</i>. To increment, add one to <i>x</i>, and to decrement, add one to <i>y</i>. But if either of these add-one operations causes the two interleaved bit sequences to become completely equal to each other, reset them both to zero. Now, the usual amortized analysis of increment-only counters works, and shows that all counter operations take amortized constant time.
-<br />
+<p>It turns out that there's a simple trick to reduce the amortized time per increment, decrement, or compare-with-zero to constant, while only blowing up the space by a constant factor. Instead of storing one counter, store two of them, with their bits interleaved with each other, and with the low-order bits on the end closest to the stored input value. let's call the two counters \( x \) and \( y \). To increment, add one to \( x \), and to decrement, add one to \( y \). But if either of these add-one operations causes the two interleaved bit sequences to become completely equal to each other, reset them both to zero. Now, the usual amortized analysis of increment-only counters works, and shows that all counter operations take amortized constant time.</p>
 
-<br />
-Using this data structure, the Turing machine version of the majority voting algorithm really does take linear time. But not <i>O</i>(<i>n</i>) time, so that&#x27;s one more detail <a href="https://en.wikipedia.org/w/index.php?title=Boyer%E2%80%93Moore_majority_vote_algorithm&oldid=739074025">the old version of the article</a> got wrong or at least inconsistent with the stated form of the space bound. Maybe they had in mind bit-space-complexity for a RAM algorithm whose time is still measured in word operations? Does anyone actually use that combination?
+<p>Using this data structure, the Turing machine version of the majority voting algorithm really does take linear time. But not \( O(n) \) time, so that's one more detail <a href="https://en.wikipedia.org/w/index.php?title=Boyer%E2%80%93Moore_majority_vote_algorithm&oldid=739074025">the old version of the article</a> got wrong or at least inconsistent with the stated form of the space bound. Maybe they had in mind bit-space-complexity for a RAM algorithm whose time is still measured in word operations? Does anyone actually use that combination?</p>
+
 <br /><br /><hr /><br />
 <h3>Comments:</h3>
+
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>None</b>: <br />
 <b>2016-10-02T07:06:07Z</b><br />
-I actually wonder whether the original author of the wiki text about Boyer-Moore algorithm will understand your changes, and will not be confused by the use of a more informal description of the algorithm (over java code). I think, for some java code is the main if not the only way of describing algorithms or programs.
+<p>I actually wonder whether the original author of the wiki text about Boyer-Moore algorithm will understand your changes, and will not be confused by the use of a more informal description of the algorithm (over java code). I think, for some java code is the main if not the only way of describing algorithms or programs.</p>
 </div>
+
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>11011110</b>: <br />
 <b>2016-10-02T18:38:07Z</b><br />
-I added some pseudocode. Maybe that will help those readers.
+<p>I added some pseudocode. Maybe that will help those readers.</p>
 </div>
+
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>None</b>: <br />
 <b>2016-10-02T16:19:32Z</b><br />
-Actually, being unit-cost wrt Time but log-cost wrt Space is a quite natural choice.    Time-Space trade-off lower bounds for RAMs (and other models) proved for multi-way branching programs (beginning with Borodin-Cook) naturally apply to such measures because Time is measured in terms of the # of input accesses on a computation path and Space is measured as the log of the # of storage configurations - the lower bounds apply no matter how the memory is organized.
+<p>Actually, being unit-cost wrt Time but log-cost wrt Space is a quite natural choice.    Time-Space trade-off lower bounds for RAMs (and other models) proved for multi-way branching programs (beginning with Borodin-Cook) naturally apply to such measures because Time is measured in terms of the # of input accesses on a computation path and Space is measured as the log of the # of storage configurations - the lower bounds apply no matter how the memory is organized.</p>
 
-Paul B.
+<p>Paul B.</p>
 </div>
 

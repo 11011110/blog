@@ -4,40 +4,36 @@ title:  'Preprocessing arrays for fast sorted-subarray queries'
 date:   2016-07-13 17:59:00
 tags:   [sorting, algorithms, data structures]
 ---
-Suppose you have an array of <i>n</i> real numbers (or other totally ordered values that you can compare but not treat as small integers). You want to answer queries that specify a contiguous subarray and return the sorted sequence of values within that subarray. Without any preprocessing you could query a subarray of length <i>k</i> in time <i>O</i>(<i>k</i> log <i>k</i>), by pulling out the subarray and then comparison sorting it. With preprocessing, how much better can we do?
-<br />
+<p>Suppose you have an array of \( n \) real numbers (or other totally ordered values that you can compare but not treat as small integers). You want to answer queries that specify a contiguous subarray and return the sorted sequence of values within that subarray. Without any preprocessing you could query a subarray of length \( k \) in time \( O(k\log k) \), by pulling out the subarray and then comparison sorting it. With preprocessing, how much better can we do?</p>
 
-<br />
-The obvious answer would be to sort the input, and replace each real number by an integer, its position in the sorted sequence. Doing this would allow us to use <a href="https://en.wikipedia.org/wiki/Integer_sorting">integer sorting</a> algorithms to handle each query. This works particularly well for long queries (longer than <i>n</i><sup><i>ε</i></sup> for some <i>ε</i> &gt; 0), because then you can use <a href="https://en.wikipedia.org/wiki/Radix_sort">radix sort</a> to answer the query in linear time. But it is still somewhat problematic for shorter queries, where we don&#x27;t have time to set up and then take down the big arrays used by radix sort, and where other integer sorting algorithms are both less practical than radix sort and slower than linear time.
-<br />
+<p>The obvious answer would be to sort the input, and replace each real number by an integer, its position in the sorted sequence. Doing this would allow us to use <a href="https://en.wikipedia.org/wiki/Integer_sorting">integer sorting</a> algorithms to handle each query. This works particularly well for long queries (longer than \( n^{\epsilon} \) for some \( \epsilon\gt 0 \)), because then you can use <a href="https://en.wikipedia.org/wiki/Radix_sort">radix sort</a> to answer the query in linear time. But it is still somewhat problematic for shorter queries, where we don't have time to set up and then take down the big arrays used by radix sort, and where other integer sorting algorithms are both less practical than radix sort and slower than linear time.</p>
 
-<br />
-So here&#x27;s a trick that works better. For each <i>i</i> from 1 to log<sup>*</sup> <i>n</i>, divide the array into sub-arrays of size 2<sup>2<sup><i>i</i></sup></sup>. Sort these subarrays (by merging the smaller subarrays from the next smaller value of <i>i</i>) and, for each element, write down its position in the sorted subarray; this is a 2<sup><i>i</i></sup>-bit binary number. Then, for each element of the whole big array, write down one number, the concatenation of these numbers for all the subarrays. (It works best if the bigger subarrays get more-significant bits of the concatenation.) That way, each of the original inputs gets an index number that is still only <i>O</i>(log <i>n</i>) bits long. By doing the recursive array partition top-down instead of bottom-up you can make the number of bits at most 2 log <i>n</i>, and by using a larger base than 2 you can make it at most (1 + <i>ε</i>)log <i>n</i> for any <i>ε</i> &gt; 0.
-<br />
+<p>So here's a trick that works better. For each \( i \) from \( 1 \) to \( \log^* n \), divide the array into sub-arrays of size \( 2^{2^i} \). Sort these subarrays (by merging the smaller subarrays from the next smaller value of \( i \)) and, for each element, write down its position in the sorted subarray; this is a \( 2^i \)-bit binary number. Then, for each element of the whole big array, write down one number, the concatenation of these numbers for all the subarrays. (It works best if the bigger subarrays get more-significant bits of the concatenation.) That way, each of the original inputs gets an index number that is still only \( O(\log n) \) bits long. By doing the recursive array partition top-down instead of bottom-up you can make the number of bits at most \( 2\log n \), and by using a larger base than 2 you can make it at most \( (1+\epsilon)\log n \) for any \( \epsilon\gt 0 \).</p>
 
-<br />
-Then, to handle any query subarray of length <i>k</i>, decompose the query into at most two of the subarrays of the recursive decomposition above that are both of length <i>O</i>(<i>k</i><sup>2</sup>). Mask off the higher order bits of the index numbers within those subarrays so that the remaining number of bits is <i>O</i>(log <i>k</i>), small enough that radix sort can be used to sort these numbers in linear time. Merge the two sorted subarrays to give the answer to the query.
-<br />
+<p>Then, to handle any query subarray of length \( k \), decompose the query into at most two of the subarrays of the recursive decomposition above that are both of length \( O(k^2) \). Mask off the higher order bits of the index numbers within those subarrays so that the remaining number of bits is \( O(\log k) \), small enough that radix sort can be used to sort these numbers in linear time. Merge the two sorted subarrays to give the answer to the query.</p>
 
-<br />
-The time to preprocess the input is <i>O</i>(<i>n</i> log <i>n</i>), unsurprising since we have to comparison sort somewhere. But the space for the resulting data structure is only <i>O</i>(<i>n</i>), and it allows sorted-subarray queries in time linear in the length of the subarray.
+<p>The time to preprocess the input is \( O(n\log n) \), unsurprising since we have to comparison sort somewhere. But the space for the resulting data structure is only \( O(n) \), and it allows sorted-subarray queries in time linear in the length of the subarray.</p>
+
 <br /><br /><hr /><br />
 <h3>Comments:</h3>
+
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>itman</b>: <br />
 <b>2016-07-14T03:07:24Z</b><br />
-Clever. From the practical perspective, however, you can use radix sort on floats. It will probably slower, though, compared to the radix sort on ordinal numbers. And in some sense we would treat floats as small numbers, b/c the cost of the radix sort depends on the size of the float (so there is a logarithmic constant anyways). But it might be faster in practice than quick sort. 
+<p>Clever. From the practical perspective, however, you can use radix sort on floats. It will probably slower, though, compared to the radix sort on ordinal numbers. And in some sense we would treat floats as small numbers, b/c the cost of the radix sort depends on the size of the float (so there is a logarithmic constant anyways). But it might be faster in practice than quick sort. </p>
 </div>
+
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>11011110</b>: <br />
 <b>2016-07-14T03:45:15Z</b><br />
-In the actual application I had in mind for this (though it won&#x27;t end up going in because it complicates things without actually making a difference to the final result) the numbers to be sorted are not floats, but rationals.
+<p>In the actual application I had in mind for this (though it won't end up going in because it complicates things without actually making a difference to the final result) the numbers to be sorted are not floats, but rationals.</p>
 
-In some architectures floats have the same sort order as integers of the same size, so you can just use integer sorting algorithms on them directly. But even when they don&#x27;t, as you say it&#x27;s not hard to adapt the algorithms.
+<p>In some architectures floats have the same sort order as integers of the same size, so you can just use integer sorting algorithms on them directly. But even when they don't, as you say it's not hard to adapt the algorithms.</p>
 </div>
+
 <div style="margin-left: 6em; padding-top: 1em;">
 <b>itman</b>: <br />
 <b>2016-07-14T03:54:57Z</b><br />
-ohh, rationals is a different thing.
+<p>ohh, rationals is a different thing.</p>
 </div>
 

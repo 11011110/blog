@@ -4,121 +4,67 @@ title:  'Egyptian fractions with practical denominators'
 date:   2016-11-20 15:32:00
 tags:   [egyptian fractions, number theory]
 ---
-While looking something else up on <a href="https://oeis.org/">OEIS</a> I ran across <a href="http://maths.nju.edu.cn/~zwsun/UnitFraction.pdf">a conjecture by Zhi-Wei Sun from September 2015</a> that every positive rational number has an Egyptian fraction representation in which every denominator is a <a href="https://oeis.org/A005153">practical number</a>. The conjecture turns out to be true; here&#x27;s a proof.
-<br />
+<p>While looking something else up on <a href="https://oeis.org/">OEIS</a> I ran across <a href="http://maths.nju.edu.cn/~zwsun/UnitFraction.pdf">a conjecture by Zhi-Wei Sun from September 2015</a> that every positive rational number has an Egyptian fraction representation in which every denominator is a <a href="https://oeis.org/A005153">practical number</a>. The conjecture turns out to be true; here's a proof.</p>
 
-<br />
-First, some background. An <a href="https://en.wikipedia.org/wiki/Egyptian_fraction">Egyptian fraction</a> is a representation of a given number as a sum of distinct unit fractions. And a <a href="https://en.wikipedia.org/wiki/Practical_number">practical number</a> is a number <i>n</i> such that all other numbers up to <i>n</i> can be represented by sums of distinct divisors of <i>n</i>. These two concepts were already connected: if <i>n</i> is practical then all fractions <i>m</i>/<i>n</i> have Egyptian fractions formed by representing <i>m</i> as a sum of divisors of <i>n</i> and then dividing each term of the sum by <i>n</i>. If <i>n</i> is not itself practical you can apply the same trick to <i>mp</i>/<i>np</i> where <i>p</i> is a large enough practical number (large enough to make <i>np</i> also be practical). But these methods don&#x27;t control the divisors of the unit fractions that they produce, so they don&#x27;t answer Sun&#x27;s question.
-<br />
+<p>First, some background. An <a href="https://en.wikipedia.org/wiki/Egyptian_fraction">Egyptian fraction</a> is a representation of a given number as a sum of distinct unit fractions. And a <a href="https://en.wikipedia.org/wiki/Practical_number">practical number</a> is a number \( n \) such that all other numbers up to \( n \) can be represented by sums of distinct divisors of \( n \). These two concepts were already connected: if \( n \) is practical then all fractions \( m/n \) have Egyptian fractions formed by representing \( m \) as a sum of divisors of \( n \) and then dividing each term of the sum by \( n \). If \( n \) is not itself practical you can apply the same trick to \( mp/np \) where \( p \) is a large enough practical number (large enough to make \( np \) also be practical). But these methods don't control the divisors of the unit fractions that they produce, so they don't answer Sun's question.</p>
 
-<br />
-Instead, to prove Sun&#x27;s conjecture, let&#x27;s first restrict our attention to rationals <i>m</i>/<i>n</i> with <i>m</i> &lt; <i>n</i> (we&#x27;ll handle the rest later), and turn to a different method for generating Egyptian fractions, the <a href="http://www.ics.uci.edu/~eppstein/numth/egypt/binary.html">binary remainder method</a>. To make a more concrete example, let&#x27;s use <i>m</i>/<i>n</i> = 117/129. The binary remainder method can be thought of as greedily removing power-of-two fractions:
+<p>Instead, to prove Sun's conjecture, let's first restrict our attention to rationals \( m/n \) with \( m\lt n \) (we'll handle the rest later), and turn to a different method for generating Egyptian fractions, the <a href="http://www.ics.uci.edu/~eppstein/numth/egypt/binary.html">binary remainder method</a>. To make a more concrete example, let's use \( m/n = 117/129 \). The binary remainder method can be thought of as greedily removing power-of-two fractions:</p>
 
-
-
-117/129
-
+<pre>117/129
 = 1/2 + 105/(2*129)
-
 = 1/2 + 1/4 + 81/(4*17)
-
 = 1/2 + 1/4 + 1/8 + 33/(8*17)
-
 = 1/2 + 1/4 + 1/8 + 66/(16*17)
-
 = 1/2 + 1/4 + 1/8 + 1/32 + 3/(32*17)
-
 = 1/2 + 1/4 + 1/8 + 1/32 + (2+1)/(32*17)
+= 1/2 + 1/4 + 1/8 + 1/32 + 1/2064 + 1/4128</pre>
 
-= 1/2 + 1/4 + 1/8 + 1/32 + 1/2064 + 1/4128
+<p>Each step in this sequence doubles the final denominator, and replaces the final numerator by its double mod \( n \). For instance, in the third line above, 81 = 2*105 (mod 129). We include another power of two in the expansion whenever doubling the previous numerator causes it to exceed \( n \), causing a nontrivial reduction mod \( n \). So the numerators stay below \( n \). Eventually we reach a point where the binary expansion of the numerator (its representation as a sum of powers of two, here 3=2+1) uses powers of two smaller than the ones in the denominator, and we can perform this expansion and stop.</p>
 
+<p>Unfortunately, this doesn't quite work for Sun's problem. The power-of-two fractions are practical, but the ones formed at the end from the binary expansion of the numerator might not be (although in this example they are). But there's an easy fix: continue greedily taking off powers of two until reaching a denominator of the form \( 2^i n \) where \( 2^i\gt n^2/2 \). Then, when we do the binary expansion, each denominator of one of the resulting unit fractions will itself be of the form \( 2^jn \) where \( j \) is still large, large enough that \( 2^j\gt n/2 \). This is a large enough power of two to make the denominator \( 2^jn \) be practical.</p>
 
+<p>Let's try this on another simple example:</p>
 
-Each step in this sequence doubles the final denominator, and replaces the final numerator by its double mod <i>n</i>. For instance, in the third line above, 81 = 2*105 (mod 129). We include another power of two in the expansion whenever doubling the previous numerator causes it to exceed <i>n</i>, causing a nontrivial reduction mod <i>n</i>. So the numerators stay below <i>n</i>. Eventually we reach a point where the binary expansion of the numerator (its representation as a sum of powers of two, here 3=2+1) uses powers of two smaller than the ones in the denominator, and we can perform this expansion and stop.
-
-
-
-Unfortunately, this doesn&#x27;t quite work for Sun&#x27;s problem. The power-of-two fractions are practical, but the ones formed at the end from the binary expansion of the numerator might not be (although in this example they are). But there&#x27;s an easy fix: continue greedily taking off powers of two until reaching a denominator of the form 2<sup><i>i</i></sup><i>n</i> where 2<sup><i>i</i></sup> &gt; <i>n</i><sup>2</sup>/2. Then, when we do the binary expansion, each denominator of one of the resulting unit fractions will itself be of the form 2<sup><i>j</i></sup><i>n</i> where <i>j</i> is still large, large enough that 2<sup><i>j</i></sup> &gt; <i>n</i>/2. This is a large enough power of two to make the denominator 2<sup><i>j</i></sup><i>n</i> be practical.
-<br />
-
-<br />
-Let&#x27;s try this on another simple example:
-<br />
-
-<br />
-14/17
-<br />
+<pre>14/17
 = 1/2 + 11/(2*17)
-<br />
 = 1/2 + 1/4 + 5/(4*17)
-<br />
 = 1/2 + 1/4 + 10/(8*17)
-<br />
 = 1/2 + 1/4 + 1/16 + 3/(16*17)
-<br />
 = 1/2 + 1/4 + 1/16 + 6/(32*17)
-<br />
 = 1/2 + 1/4 + 1/16 + 12/(64*17)
-<br />
 = 1/2 + 1/4 + 1/16 + 1/128 + 7/(128*17)
-<br />
 = 1/2 + 1/4 + 1/16 + 1/128 + 14/(256*17)
-<br />
 = 1/2 + 1/4 + 1/16 + 1/128 + (8+4+2)/(256*17)
-<br />
-= 1/2 + 1/4 + 1/16 + 1/128 + 1/544 + 1/1088 + 1/2176
-<br />
+= 1/2 + 1/4 + 1/16 + 1/128 + 1/544 + 1/1088 + 1/2176</pre>
 
-<br />
-We didn&#x27;t stop at 5/(4*17) and expand it into (4+1)/(4*17) = 1/17 + 1/68 because those denominators are impractical. Instead we waited until reaching a big enough power of two (256 &gt; 17<sup>2</sup>/2) to guarantee that the binary expansion would produce practical denominators.
-<br />
+<p>We didn't stop at 5/(4*17) and expand it into (4+1)/(4*17) = 1/17 + 1/68 because those denominators are impractical. Instead we waited until reaching a big enough power of two (256 &gt; 17<sup>2</sup>/2) to guarantee that the binary expansion would produce practical denominators.</p>
 
-<br />
-That method finds practical expansions for all rational numbers that are less than one. What about larger rationals? For those, we need to know that the practical numbers are distributed roughly like the prime numbers, close enough to the same distribution that the sum of inverse practical numbers diverges. So we can use a greedy algorithm that repeatedly subtracts the largest unused inverse-practical number, and this will eventually leave the remaining fraction smaller than all already-used practical numbers. At this point we can switch to the binary method. Let&#x27;s try this for the rational number 19/9:
-<br />
+<p>That method finds practical expansions for all rational numbers that are less than one. What about larger rationals? For those, we need to know that the practical numbers are distributed roughly like the prime numbers, close enough to the same distribution that the sum of inverse practical numbers diverges. So we can use a greedy algorithm that repeatedly subtracts the largest unused inverse-practical number, and this will eventually leave the remaining fraction smaller than all already-used practical numbers. At this point we can switch to the binary method. Let's try this for the rational number 19/9:</p>
 
-<br />
-19/9
-<br />
+<pre>19/9
 = 1/1 + 10/9
-<br />
 = 1/1 + 1/2 + 11/18
-<br />
 = 1/1 + 1/2 + 1/4 + 13/36
-<br />
 = 1/1 + 1/2 + 1/4 + 1/6 + 7/36
-<br />
-= 1/1 + 1/2 + 1/4 + 1/6 + 1/8 + 5/72
-<br />
+= 1/1 + 1/2 + 1/4 + 1/6 + 1/8 + 5/72</pre>
 
-<br />
-and now since 5/72 &lt; 1/8, it&#x27;s safe to switch to the binary method without worrying that it will produce any of the same fractions:
-<br />
+<p>and now since 5/72 &lt; 1/8, it's safe to switch to the binary method without worrying that it will produce any of the same fractions:</p>
 
-<br />
-5/72
-<br />
+<pre>5/72
 = 5/(8*9)
-<br />
 = 1/16 + 1/(16*9)
-<br />
 = 1/16 + 2/(32*9)
-<br />
 = 1/16 + 4/(64*9)
-<br />
-= 1/16 + 1/144
-<br />
+= 1/16 + 1/144</pre>
 
-<br />
-where, in the second-to-last line, the power of two (64) is big enough to match the half-square of the odd part (9<sup>2</sup>/2 = 40.5). Therefore,
-<br />
+<p>where, in the second-to-last line, the power of two (64) is big enough to match the half-square of the odd part (9<sup>2</sup>/2 = 40.5). Therefore,</p>
 
-<br />
-19/9 = 1/1 + 1/2 + 1/4 + 1/6 + 1/8 + 1/16 + 1/144
-<br />
+\[
+\frac{19}{9} = \frac{1}{1} + \frac{1}{2} + \frac{1}{4} + \frac{1}{6} + \frac{1}{8} + \frac{1}{16} + \frac{1}{144}.
+\]
 
-<br />
-Sun also made a similar conjecture with the numbers formed by subtracting one from a prime in place of the practical numbers. Perhaps similar methods will work there too, but this seems harder to prove. Sun offered $1000 for a proof, so it might be worthwhile to try.
+<p>Sun also made a similar conjecture with the numbers formed by subtracting one from a prime in place of the practical numbers. Perhaps similar methods will work there too, but this seems harder to prove. Sun offered $1000 for a proof, so it might be worthwhile to try.</p>
+
 <br /><br /><hr /><br />
 <h3>Comments:</h3>
 <div style="margin-left: 0em; padding-top: 1em;">
