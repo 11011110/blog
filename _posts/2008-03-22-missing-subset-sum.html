@@ -4,29 +4,26 @@ title:  'The missing subset sum'
 date:   2008-03-22 09:00:00
 tags:   [algorithms]
 ---
-Here&#x27;s a cute algorithmic puzzler that occurred to me yesterday, though perhaps it was long-known to others.
-<br />
+<p>Here's a cute algorithmic puzzler that occurred to me yesterday, though perhaps it was long-known to others.</p>
 
-<br />
-Let S be a set (or multiset) of positive integers. Describe an efficient algorithm for finding the smallest positive integer x such that x is not the sum of some subset of S.
-<br />
+<p>Let \( S \) be a set (or multiset) of positive integers. Describe an efficient algorithm for finding the smallest positive integer \( x \) such that \( x \) is not the sum of some subset of \( S \).</p>
 
-<br />
-Using dynamic programming to test each possible subset sum isn&#x27;t good enough; I want something strongly polynomial. Or, to be really concrete about it, let&#x27;s suppose that you have a computer in which W-bit integers can be added, subtracted, and compared in constant time, that additionally you have a constant time operation to compute floor(log<sub>2</sub>(k)) for any W-bit value k, and that all the members of S are W-bit numbers and that W ≥ log<sub>2</sub>|S|; I want an algorithm that runs in time O(|S|+W) in this model.
-<br />
+<p>Using dynamic programming to test each possible subset sum isn't good enough; I want something strongly polynomial. Or, to be really concrete about it, let's suppose that you have a computer in which \( W \)-bit integers can be added, subtracted, and compared in constant time, that additionally you have a constant time operation to compute \( \lfloor \log_2 k \rfloor \) for any \( W \)-bit value \( k \), and that all the members of \( S \) are \( W \)-bit numbers and that \( W\ge\log_2 |S| \); I want an algorithm that runs in time \( O(|S|+W) \) in this model.</p>
 
-<br />
-If you get stuck, the <a href="http://en.wikipedia.org/wiki/Practical_number">characterization of practical numbers</a> might give you a hint.
+<p>If you get stuck, the <a href="http://en.wikipedia.org/wiki/Practical_number">characterization of practical numbers</a> might give you a hint.</p>
+
 <br /><br /><hr /><br />
 <h3>Comments:</h3>
+
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>rgrig</b>: Nice puzzle<br />
 <b>2008-03-23T14:35:34Z</b><br />
-I <i>think</i> <a href="http://csserver.ucd.ie/~radu/bin.py.html">this</a> works. (I don&#x27;t know python so the code is probably ugly.)
+<p>I <i>think</i> <a href="http://csserver.ucd.ie/~radu/bin.py.html">this</a> works. (I don't know python so the code is probably ugly.)</p>
 </div>
+
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>11011110</b>: Re: Nice puzzle<br />
 <b>2008-03-23T16:01:20Z</b><br />
-Yes, that&#x27;s the solution I had in mind.
+<p>Yes, that's the solution I had in mind.</p>
 </div>
 

@@ -4,66 +4,65 @@ title:  'Mindmap'
 date:   2005-08-05 23:16:00
 tags:   [blogging, social networks, graph drawing]
 ---
-<a href="http://www.livejournal.com/community/weblogsociology/1788.html">Livejournal MindMap</a> appears from its description to be a graph drawing system for visualizing connections between livejournals.  The interesting part, to me, is not so much how the graphs are actually drawn (likely some kind of force-based system) but how they pick out which information to make more and less prominent in the graph via coloring, sizing, or even by choosing to include or exclude some vertices.  Livejournal has about 8 million blogs, too much for a single drawing.  Even if it&#x27;s just restricted to other journals one person connects to, it may be difficult to fit them all as labels within a single drawing — the user <b><a href="http://mcfnord.livejournal.com/"><img src="http://stat.livejournal.com/img/userinfo.gif" alt="[info]" width="17" height="17" style="vertical-align: bottom; border: 0;" />mcfnord</a></b> who wrote the entry I&#x27;m linking to has nearly 300 individual journals he or she lists as friends, and nearly 200 who list him or her as friends, not even counting community journals etc.  So obviously some amount of selectivity is necessary in order to make any useful information apparent in a drawing.
-<br />
+<p><a href="http://www.livejournal.com/community/weblogsociology/1788.html">Livejournal MindMap</a> appears from its description to be a graph drawing system for visualizing connections between livejournals.  The interesting part, to me, is not so much how the graphs are actually drawn (likely some kind of force-based system) but how they pick out which information to make more and less prominent in the graph via coloring, sizing, or even by choosing to include or exclude some vertices.  Livejournal has about 8 million blogs, too much for a single drawing.  Even if it's just restricted to other journals one person connects to, it may be difficult to fit them all as labels within a single drawing — the user <b><a href="http://mcfnord.livejournal.com/"><img src="http://stat.livejournal.com/img/userinfo.gif" alt="[info]" width="17" height="17" style="vertical-align: bottom; border: 0;" />mcfnord</a></b> who wrote the entry I'm linking to has nearly 300 individual journals he or she lists as friends, and nearly 200 who list him or her as friends, not even counting community journals etc.  So obviously some amount of selectivity is necessary in order to make any useful information apparent in a drawing.</p>
 
-<br />
-Following some links, it appears the system looks only at livejournals connected directly to yours, and does some sort of clique listing algorithm to find clusters among the graph induced by those vertices.  Vertices are displayed as bigger, brighter, and closer to the center when they belong to larger cliques.  Maybe the colors indicate different cliques?  Apparently it&#x27;s very slow if you have large maximal cliques, because they list all cliques and not just the maximal ones; perhaps they should look into less naive <a href="http://arxiv.org/abs/cs.DS/0407036">maximal clique listing algorithms</a>... (actually, not the algorithm of mine linked here, that&#x27;s intended for independent sets in sparse graphs or cliques in dense ones, but some of its references might be relevant).
-<br />
+<p>Following some links, it appears the system looks only at livejournals connected directly to yours, and does some sort of clique listing algorithm to find clusters among the graph induced by those vertices.  Vertices are displayed as bigger, brighter, and closer to the center when they belong to larger cliques.  Maybe the colors indicate different cliques?  Apparently it's very slow if you have large maximal cliques, because they list all cliques and not just the maximal ones; perhaps they should look into less naive <a href="http://arxiv.org/abs/cs.DS/0407036">maximal clique listing algorithms</a>... (actually, not the algorithm of mine linked here, that's intended for independent sets in sparse graphs or cliques in dense ones, but some of its references might be relevant).</p>
 
-<br />
-Unfortunately the email-return user interface makes it cumbersome to experiment, and anyway this journal hasn&#x27;t been around long enough to acquire an interesting neighborhood of connections.
-<br />
+<p>Unfortunately the email-return user interface makes it cumbersome to experiment, and anyway this journal hasn't been around long enough to acquire an interesting neighborhood of connections.</p>
 
-<br />
-ETA 10/8/05: <a href="http://ljmindmap.com/h.aspx?n=11011110">mindmap for this journal</a>. As I said above, not a very interesting graph yet.
+<p>ETA 10/8/05: <a href="http://ljmindmap.com/h.aspx?n=11011110">mindmap for this journal</a>. As I said above, not a very interesting graph yet.</p>
+
 <br /><br /><hr /><br />
 <h3>Comments:</h3>
+
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>mcfnord</b>: <br />
 <b>2005-10-08T08:27:07Z</b><br />
-At some point I would like to translate this from Python to C#:
-http://tucc.us/clique.py.txt
+<p>At some point I would like to translate this from Python to C#:
+http://tucc.us/clique.py.txt</p>
 
-This will go a long way to speeding things up. But all that&#x27;s an optimization, and relatively speaking, the pipeline chugs along. Speed is not my primary goal, so the old code is allowed to clunk along.
+<p>This will go a long way to speeding things up. But all that's an optimization, and relatively speaking, the pipeline chugs along. Speed is not my primary goal, so the old code is allowed to clunk along.</p>
 
-You get at a central question: what&#x27;s so big about cliques that I show them big and closer to the center?
+<p>You get at a central question: what's so big about cliques that I show them big and closer to the center?</p>
 
-Vertices are a purely practical reason why. The vertex density is highest in the largest cliques.
+<p>Vertices are a purely practical reason why. The vertex density is highest in the largest cliques.</p>
 
-My design has been criticized for lacking &quot;proper&quot; forced-based design. Just as cliques should pull together, they should repel from each other. But it is not a generalized map. It is based on a single individual. What is sensible about a cluster &quot;repelled&quot; from the individual without whom there would be no structure here at all?
+<p>My design has been criticized for lacking "proper" forced-based design. Just as cliques should pull together, they should repel from each other. But it is not a generalized map. It is based on a single individual. What is sensible about a cluster "repelled" from the individual without whom there would be no structure here at all?</p>
 
-Early in my implementation, I realized that there are so many different LJ scenarios, such as mine w/ ~200 people, and yours with 2 two-way connections. Font sizing cascades with the &quot;top two&quot; clique sizes at the largest font size... and if someone only has one clique of them and their buddy, then of course large fonts are in order. I didn&#x27;t want the product to suggest you&#x27;re &quot;smaller&quot; than anyone else... if I&#x27;m doing little more than showing you and your buddy&#x27;s name, let&#x27;s get some shine on that. I haven&#x27;t thought about this detail in some time but it was a major consideration in the initial design.
+<p>Early in my implementation, I realized that there are so many different LJ scenarios, such as mine w/ ~200 people, and yours with 2 two-way connections. Font sizing cascades with the "top two" clique sizes at the largest font size... and if someone only has one clique of them and their buddy, then of course large fonts are in order. I didn't want the product to suggest you're "smaller" than anyone else... if I'm doing little more than showing you and your buddy's name, let's get some shine on that. I haven't thought about this detail in some time but it was a major consideration in the initial design.</p>
 
-While my major motivation for each modality (size, placement, color) is of course a &quot;best guess&quot; at cleaving out some connectivity patterns and inferences, another motive was to overwhelm the viewer so people would stop seeking strict literal explanations. My dream modality is time.
+<p>While my major motivation for each modality (size, placement, color) is of course a "best guess" at cleaving out some connectivity patterns and inferences, another motive was to overwhelm the viewer so people would stop seeking strict literal explanations. My dream modality is time.</p>
 
-I have wished to add in other factors, such as available information from server logs (which can give clues about activity, not just friend bit linkage), and of course comment analysis. But you can get a lot from the clean and simple who-friends-who. I do think the clique approach is pretty good but other data sources should operate as &#x27;hinting and highlights&#x27; to draw out patterns when some vantage provides them.
+<p>I have wished to add in other factors, such as available information from server logs (which can give clues about activity, not just friend bit linkage), and of course comment analysis. But you can get a lot from the clean and simple who-friends-who. I do think the clique approach is pretty good but other data sources should operate as 'hinting and highlights' to draw out patterns when some vantage provides them.</p>
 
-I&#x27;ve also considered expanding visualization beyond the &quot;first hop&quot;... I wasn&#x27;t sure what this would try to accomplish. Showing the &quot;frontier&quot; just beyond the people you know? For context or for discovery? I settled on the new Radar feature which calculates who is up-and-coming among people i read. I now use the radar feature regularly to find cool people. It really works! In a way the whole project just feeds my junkie relationship with livejournal, and then I wired it up so everyone can play.
+<p>I've also considered expanding visualization beyond the "first hop"... I wasn't sure what this would try to accomplish. Showing the "frontier" just beyond the people you know? For context or for discovery? I settled on the new Radar feature which calculates who is up-and-coming among people i read. I now use the radar feature regularly to find cool people. It really works! In a way the whole project just feeds my junkie relationship with livejournal, and then I wired it up so everyone can play.</p>
 </div>
+
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>11011110</b>: <br />
 <b>2005-10-08T20:52:04Z</b><br />
-If you want to speed it up, I&#x27;d expect to get more mileage out of tweaking the algorithm first (easier to do while you&#x27;re still in Python), and only then if you still need it moving to a faster language.  For instance, have you tried timing it with the computation of &quot;with&quot; before the one of &quot;without&quot; instead of after?  I&#x27;d imagine the &quot;with&quot; cliques are likely to be larger, therefore provide a more likely early cutoff in the &quot;without&quot; computation.
+<p>If you want to speed it up, I'd expect to get more mileage out of tweaking the algorithm first (easier to do while you're still in Python), and only then if you still need it moving to a faster language.  For instance, have you tried timing it with the computation of "with" before the one of "without" instead of after?  I'd imagine the "with" cliques are likely to be larger, therefore provide a more likely early cutoff in the "without" computation.</p>
 
-Re the force-based design, who cares if it&#x27;s &quot;proper&quot; as long as it produces the visual results you want.  But I think you might find it interesting to look at the work of Noack that I mention in <a href="http://www.livejournal.com/users/11011110/15428.html">this entry</a>.  At least in the examples he showed, it did an amazing job of making hidden graph structure visible.
+<p>Re the force-based design, who cares if it's "proper" as long as it produces the visual results you want.  But I think you might find it interesting to look at the work of Noack that I mention in <a href="{{site.baseurl}}/2005/09/13/graph-drawing-day.html">this entry</a>.  At least in the examples he showed, it did an amazing job of making hidden graph structure visible.</p>
 
-BTW, I was interested to see the &quot;radar&quot; in the map your software made for me, listing other journals I might be interested in.  It&#x27;s just going from the friend graph structure, and my own lj&#x27;s friend structure is sparse, so it&#x27;s obviously noisy, but two or three of them (out of 80 or so) were very on-target.
+<p>BTW, I was interested to see the "radar" in the map your software made for me, listing other journals I might be interested in.  It's just going from the friend graph structure, and my own lj's friend structure is sparse, so it's obviously noisy, but two or three of them (out of 80 or so) were very on-target.</p>
 </div>
+
 <div style="margin-left: 6em; padding-top: 1em;">
 <b>mcfnord</b>: <br />
 <b>2005-10-08T22:12:03Z</b><br />
-The Python code is already fast! I just have to get it into C# and I&#x27;m on my way! I&#x27;m going to outsource this some day. Another user wrote this code for his &quot;cliques&quot; meme. I think it&#x27;s darn good but I only understand 85% of it. There&#x27;s recursion... with a twist.
+<p>The Python code is already fast! I just have to get it into C# and I'm on my way! I'm going to outsource this some day. Another user wrote this code for his "cliques" meme. I think it's darn good but I only understand 85% of it. There's recursion... with a twist.</p>
 
-What can I say about repelling force? Is there truly any data here that I can describe as representing repelling force between anyone?
+<p>What can I say about repelling force? Is there truly any data here that I can describe as representing repelling force between anyone?</p>
 
-The &quot;first run&quot; of the radar feature is about half as cool as subsequent runs. The first run was the hardest to figure out. I had no historical context, which the &quot;core&quot; approach relies on. I had to simply find another way, and until that was there, I couldn&#x27;t really provide &quot;radar&quot; without a three week wait! Another user worked closely with me to think up an acceptable &quot;first run&quot;. If your network grows very slowly, then radar might &quot;throw you back in for another three weeks&quot;... when it sees a threshhold of change, it updates the associated iamge and publishes the results.
+<p>The "first run" of the radar feature is about half as cool as subsequent runs. The first run was the hardest to figure out. I had no historical context, which the "core" approach relies on. I had to simply find another way, and until that was there, I couldn't really provide "radar" without a three week wait! Another user worked closely with me to think up an acceptable "first run". If your network grows very slowly, then radar might "throw you back in for another three weeks"... when it sees a threshhold of change, it updates the associated iamge and publishes the results.</p>
 
-I am adding a lot of my radar hits. I did some tests exposing results to &quot;really popular people&quot; and when they started drooling I knew that special sauce was ready. But it&#x27;s not visual and it&#x27;s not sensibly a meme... I could make it a meme, sorta... thankfully i already have one.
+<p>I am adding a lot of my radar hits. I did some tests exposing results to "really popular people" and when they started drooling I knew that special sauce was ready. But it's not visual and it's not sensibly a meme... I could make it a meme, sorta... thankfully i already have one.</p>
 </div>
+
 <div style="margin-left: 9em; padding-top: 1em;">
 <b>11011110</b>: <br />
 <b>2005-10-08T22:23:43Z</b><br />
-The repelling force is just to keep the labels spread out instead of landing on top of each other.  So it exists between every pair of nodes.  Think of it as being like &quot;personal space&quot; in real life — if someone steps to within a few inches of you, you&#x27;ll probably step back, or at least feel annoyed about the violation of your space.  It&#x27;s the attracting force that depends more strongly on the graph structure.
+<p>The repelling force is just to keep the labels spread out instead of landing on top of each other.  So it exists between every pair of nodes.  Think of it as being like "personal space" in real life — if someone steps to within a few inches of you, you'll probably step back, or at least feel annoyed about the violation of your space.  It's the attracting force that depends more strongly on the graph structure.</p>
 </div>
 

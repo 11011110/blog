@@ -4,99 +4,97 @@ title:  'Smooth pairs'
 date:   2007-03-23 16:40:00
 tags:   [smooth numbers, stormer's theorem, number theory]
 ---
-<a href="http://www.ics.uci.edu/~eppstein/0xDE/47limit.txt">All pairs of consecutive 47-smooth numbers</a>, calculated by <a href="http://11011110.livejournal.com/96470.html">my Python code for Lehmer&#x27;s improvement to Størmer&#x27;s theorem</a>. That is, this file lists pairs x, x+1 such that all prime factors of both x and x+1 are at most 47. There are 1502 such pairs, the largest of which is formed by 1109496723125 = 5<sup>4</sup> × 7 × 17 × 19<sup>2</sup> × 31<sup>2</sup> × 43 and 1109496723126 = 2 × 3 × 11<sup>2</sup> × 23 × 29<sup>2</sup> × 41<sup>2</sup> × 47.
-<br />
+<p><a href="http://www.ics.uci.edu/~eppstein/0xDE/47limit.txt">All pairs of consecutive 47-smooth numbers</a>, calculated by <a href="{{site.baseurl}}/2007/03/19/strmers-algorithm.html">my Python code for Lehmer's improvement to Størmer's theorem</a>. That is, this file lists pairs x, x+1 such that all prime factors of both x and x+1 are at most 47. There are 1502 such pairs, the largest of which is formed by 1109496723125 = 5<sup>4</sup> × 7 × 17 × 19<sup>2</sup> × 31<sup>2</sup> × 43 and 1109496723126 = 2 × 3 × 11<sup>2</sup> × 23 × 29<sup>2</sup> × 41<sup>2</sup> × 47.</p>
 
-<br />
-It took nearly two days on a dual-core Pentium, so the next prime 53 may be in reach but would likely take more computer time than I&#x27;m willing to devote to it. Judging by <a href="http://www.research.att.com/~njas/sequences/A002072">A002072</a>, faster codes are out there.
+<p>It took nearly two days on a dual-core Pentium, so the next prime 53 may be in reach but would likely take more computer time than I'm willing to devote to it. Judging by <a href="http://www.research.att.com/~njas/sequences/A002072">A002072</a>, faster codes are out there.</p>
+
 <br /><br /><hr /><br />
 <h3>Comments:</h3>
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>leonardo_m</b>: <br />
 <b>2007-03-24T11:51:50Z</b><br />
 There was a gmp-d library to use the multiprecision GMP with D, but it seems vanished.
-But your program look simple enough, so maybe you can translate it to C that calls the GMP (I use GMP with Python + Psyco, but if you have many small numbers it&#x27;s not a significative improvements on the python built-in longs). 
-ShedSkin doesn&#x27;t support GMP yet, but maybe it&#x27;s not difficult to use it.
+But your program look simple enough, so maybe you can translate it to C that calls the GMP (I use GMP with Python + Psyco, but if you have many small numbers it's not a significative improvements on the python built-in longs). 
+ShedSkin doesn't support GMP yet, but maybe it's not difficult to use it.
 </div>
+
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>11011110</b>: <br />
 <b>2007-03-24T23:09:41Z</b><br />
-I did make one change to my code since running the computation that should speed things up significantly: if the first solution to a given Pell equation is already not smooth, the rest of them for the same equation won&#x27;t be either, so we can stop early. As there are 32768 Pell equations (for the 47-smooth calculation) but only 1502 smooth pairs, this early escape should happen very frequently.
+I did make one change to my code since running the computation that should speed things up significantly: if the first solution to a given Pell equation is already not smooth, the rest of them for the same equation won't be either, so we can stop early. As there are 32768 Pell equations (for the 47-smooth calculation) but only 1502 smooth pairs, this early escape should happen very frequently.
 </div>
+
 <div style="margin-left: 6em; padding-top: 1em;">
-<b>mathimagics</b>: Lehmer&#x27;s Method<br />
+<b>mathimagics</b>: Lehmer's Method<br />
 <b>2007-07-12T11:42:28Z</b><br />
-For the record, Lehmer did make this point clear - in Section 6 (Implementation notes) he says &quot;since every y[n] is divisible by y[1], it is useless to examine multiple solutions if y[1] ... [is not smooth]&quot;
+<p>For the record, Lehmer did make this point clear - in Section 6 (Implementation notes) he says "since every y[n] is divisible by y[1], it is useless to examine multiple solutions if y[1] ... [is not smooth]"</p>
 
-Fixing this will not necessarily translate into dramatic speed increases in your program - the additional imposed cost of iterating the multiple solutions, assuming you check no more than M as specified, is likely to be modest compared wih the cost of computing the Pell solution.
+<p>Fixing this will not necessarily translate into dramatic speed increases in your program - the additional imposed cost of iterating the multiple solutions, assuming you check no more than M as specified, is likely to be modest compared wih the cost of computing the Pell solution.</p>
 
-For maximum speed clearly GMP (suitably CPU-targeted) is going to give the best results on most common CPU&#x27;s.  
+<p>For maximum speed clearly GMP (suitably CPU-targeted) is going to give the best results on most common CPU's.</p>
 
-Here are my times recently recorded for P = 47 and similar cases. The  test rig is an AMD64 2.2 GHz.
+<p>Here are my times recently recorded for P = 47 and similar cases. The  test rig is an AMD64 2.2 GHz.</p>
 
-Columns are no of primes, highest P, number of eqns, NS = number of pairs found, job time (seconds).
+<p>Columns are no of primes, highest P, number of eqns, NS = number of pairs found, job time (seconds).</p>
 
-13 p = 41    8K  NS =   869,       .870 s
+<pre>13 p = 41    8K  NS =   869,       .870 s
 14 p = 43   16K  NS =  1153,      7.490 s
 15 p = 47   32K  NS =  1502,     78.910 s
 16 p = 53   64K  NS =  1930,   1163.150 s
 17 P = 59  128K  NS =  2454,  15153~  4hrs 
-18 P = 61  256K  NS =  3106, 144838~ 40hrs
+18 P = 61  256K  NS =  3106, 144838~ 40hrs</pre>
 
-The first couple of runs look good, but the growth in cost of 10x per additional prime is the dominant, and crippling feature ... and that value &quot;10&quot; may also tutn out to be growing ...
+<p>The first couple of runs look good, but the growth in cost of 10x per additional prime is the dominant, and crippling feature ... and that value "10" may also tutn out to be growing ...</p>
 
-Each extra prime doubles the number of equations, but also raises the average &quot;weight&quot; of the D values, so numbers and periods get heavier and heavier....
+<p>Each extra prime doubles the number of equations, but also raises the average "weight" of the D values, so numbers and periods get heavier and heavier....</p>
 
-And, as you may have already realised, you can&#x27;t handle each additional prime &quot;incrementally&quot; - if I have all 43-smooth pairs, and want to get the additional ones for 47, I still have to redo all the previous equations (with D 43-smooth) as some of them will produce 47-smooth pairs
+<p>And, as you may have already realised, you can't handle each additional prime "incrementally" - if I have all 43-smooth pairs, and want to get the additional ones for 47, I still have to redo all the previous equations (with D 43-smooth) as some of them will produce 47-smooth pairs</p>
 
-So while an incremental approach (forcing 47 as a divisor of D) will generally identify _most_ new solutions, it will not be complete.
+<p>So while an incremental approach (forcing 47 as a divisor of D) will generally identify _most_ new solutions, it will not be complete.</p>
 
-I don&#x27;t totally understand why A002071 only lists counts for up to P = 47, yet A002072 lists maximum pair values for up to P = 97.
+<p>I don't totally understand why A002071 only lists counts for up to P = 47, yet A002072 lists maximum pair values for up to P = 97.</p>
 
-I sent an enquiry to eppstein (as A002071 suggests), but have had no reply ...  from my results, one wonders just how long the A002071 results took to produce, and just how it was done  
+<p>I sent an enquiry to eppstein (as A002071 suggests), but have had no reply ...  from my results, one wonders just how long the A002071 results took to produce, and just how it was done</p>
 
-I&#x27;ll try another enquiry, this time to Fred Schneider ... see if he has some tricks up his sleeve?
+<p>I'll try another enquiry, this time to Fred Schneider ... see if he has some tricks up his sleeve?</p>
 
-Cheers
-
- 
+<p>Cheers</p> 
 </div>
 <div style="margin-left: 9em; padding-top: 1em;">
-<b>mathimagics</b>: Re: Lehmer&#x27;s Method<br />
+<b>mathimagics</b>: Re: Lehmer's Method<br />
 <b>2007-07-12T11:44:39Z</b><br />
 
-Erratum: &quot;one wonders just how long the A002072 results took ....&quot;
+Erratum: "one wonders just how long the A002072 results took ...."
 </div>
 <div style="margin-left: 9em; padding-top: 1em;">
-<b>11011110</b>: Re: Lehmer&#x27;s Method<br />
+<b>11011110</b>: Re: Lehmer's Method<br />
 <b>2007-07-12T15:53:39Z</b><br />
-<i>I don&#x27;t totally understand why A002071 only lists counts for up to P = 47, yet A002072 lists maximum pair values for up to P = 97.
+<i>I don't totally understand why A002071 only lists counts for up to P = 47, yet A002072 lists maximum pair values for up to P = 97.
 
 I sent an enquiry to eppstein (as A002071 suggests), but have had no reply</i>
 
-That would be me. I&#x27;ve been traveling and largely away from my email. Though in the best of times I&#x27;ve been known not to reply to my emails...
+<p>That would be me. I've been traveling and largely away from my email. Though in the best of times I've been known not to reply to my emails...</p>
 
-Anyway, A002072 links to some code by Don Reble that may have been used to compute it — if so, I don&#x27;t know why it would be so much faster than the code I used to compute the additional terms in A002071.
+<p>Anyway, A002072 links to some code by Don Reble that may have been used to compute it — if so, I don't know why it would be so much faster than the code I used to compute the additional terms in A002071.</p>
 </div>
 <div style="margin-left: 12em; padding-top: 1em;">
-<b>mathimagics</b>: Re: Lehmer&#x27;s Method<br />
+<b>mathimagics</b>: Re: Lehmer's Method<br />
 <b>2007-07-12T21:37:46Z</b><br />
+<p>Hello David!</p>
 
-Hello David!
+<p>I clearly failed to notice the significance of your user id "0xDE", it does not signify Diophantine (or DIfferential) Equations!  :-)</p>
 
-I clearly failed to notice the significance of your user id &quot;0xDE&quot;, it does not signify Diophantine (or DIfferential) Equations!  :-)
+<p>I thought perhaps my email enquiry might have been skimmed by a spam-detector (understandable in these times) ...</p>
 
-I thought perhaps my email enquiry might have been skimmed by a spam-detector (understandable in these times) ...
+<p>My recent progress: I have computed the complete solution sets up to n=13 (p &lt;=97), and the maximum values I encountered do tally with those givem in A002702 (which, by the way, I would prefer to see give the explicit maximal value for each prime, rather than repeating values)</p>
 
-My recent progress: I have computed the complete solution sets up to n=13 (p &lt;=97), and the maximum values I encountered do tally with those givem in A002702 (which, by the way, I would prefer to see give the explicit maximal value for each prime, rather than repeating values)
+<p>The program I've developed took only 2 mins to do this, and involves a growth factor of just 2+e rather than 10+e for each additional prime.</p>
 
-The program I&#x27;ve developed took only 2 mins to do this, and involves a growth factor of just 2+e rather than 10+e for each additional prime.
+<p>The 40 hours it cost to produce the results for n=18 (p&lt;=61) should now buy me a solution set for n=31 (p&lt;=127), and I have just started a run with that in mind. </p>
 
-The 40 hours it cost to produce the results for n=18 (p&lt;=61) should now buy me a solution set for n=31 (p&lt;=127), and I have just started a run with that in mind. 
+<p>My values for A002071 for n=13 to 25 are:</p>
 
-My values for A002071 for n=13 to 25 are:
-
-13 p =  41   NS =   869
+<pre>13 p =  41   NS =   869
 14 p =  43   NS =  1153
 15 p =  47   NS =  1502
 16 p =  53   NS =  1930
@@ -108,87 +106,77 @@ My values for A002071 for n=13 to 25 are:
 22 P =  79   NS =  7441 
 23 P =  83   NS =  9179 
 24 P =  89   NS = 11134 
-25 P =  97   NS = 13374 
+25 P =  97   NS = 13374 </pre>
 
-a) Are you able to confirm any of these?
+<p>a) Are you able to confirm any of these?</p>
 
-b) Are you aware of any known values beyond n=25, p=97?  One of the problems with my method is that (currently) it is not yet provably correct - I need to sharpen Lehmer&#x27;s &quot;Theorem&quot; before I can claim the p=127 results will be definitive.  Meantime all I can say is that they will almost certainly be correct!
+<p>b) Are you aware of any known values beyond n=25, p=97?  One of the problems with my method is that (currently) it is not yet provably correct - I need to sharpen Lehmer's "Theorem" before I can claim the p=127 results will be definitive.  Meantime all I can say is that they will almost certainly be correct!</p>
 
-This work is not purely for fun - my current research is motivated by a broader practical application, in which one approach to the problem is dependent on having an &quot;efficient&quot; method of finding these &quot;smooth-pairs&quot;.  
+<p>This work is not purely for fun - my current research is motivated by a broader practical application, in which one approach to the problem is dependent on having an "efficient" method of finding these "smooth-pairs".</p>
 
-
-Cheers
-0xJW
-(MSI, ANU, Canberra)
- 
-
+<p>Cheers<br />
+0xJW<br />
+(MSI, ANU, Canberra)</p>
 </div>
+
 <div style="margin-left: 15em; padding-top: 1em;">
-<b>11011110</b>: Re: Lehmer&#x27;s Method
+<b>11011110</b>: Re: Lehmer's Method
 <b>2007-07-13T06:34:15Z</b>
 <i>Are you able to confirm any of these?</i>
 
-The first three terms you already know from A002071. I&#x27;m not really in a position to do anything compute-intensive while traveling. But given the 10x growth in my code&#x27;s runtime it seems that it might take several days to compute even the next term after that.
+<p>The first three terms you already know from A002071. I'm not really in a position to do anything compute-intensive while traveling. But given the 10x growth in my code's runtime it seems that it might take several days to compute even the next term after that.</p>
 </div>
 <div style="margin-left: 18em; padding-top: 1em;">
-<b>mathimagics</b>: Re: Lehmer&#x27;s Method
+<b>mathimagics</b>: Re: Lehmer's Method
 <b>2007-07-13T10:20:42Z</b>
+<p>No need to waste any time on it, then ...</p>
 
-No need to waste any time on it, then ...
+<p>I'll send those figures over to Mr Schneider (last indicated correspondent at A002072) for comment ...</p>
 
-I&#x27;ll send those figures over to Mr Schneider (last indicated correspondent at A002072) for comment ...
+<p>Regarding the "express method", this is not a new method, just a nice refinement of Lehmer's method.</p>
 
-Regarding the &quot;express method&quot;, this is not a new method, just a nice refinement of Lehmer&#x27;s method.
+<p>I only "discovered" the trick a few days ago, hence the uncertainty as to its verifiability ... I've been preoccupied with its implementation and performance ...  I am devoting this weekend, however, to a look at whether it can be shown to be correct, since ...</p>
 
-I only &quot;discovered&quot; the trick a few days ago, hence the uncertainty as to its verifiability ... I&#x27;ve been preoccupied with its implementation and performance ...  I am devoting this weekend, however, to a look at whether it can be shown to be correct, since ...
+<p>I'm giving an informal talk (as PhD candidates are obliged to do from time to time) on Monday, and I now wish to abandon my previous topic and talk about this fascinating problem ...</p>
 
-I&#x27;m giving an informal talk (as PhD candidates are obliged to do from time to time) on Monday, and I now wish to abandon my previous topic and talk about this fascinating problem ...
+<p>so I'll be knocking up some notes, which I should be able to provide shortly after...</p>
 
-so I&#x27;ll be knocking up some notes, which I should be able to provide shortly after...
-
-
-Cheers
-0xJW 
-
-
+<p>Cheers<br />
+0xJW</p>
 </div>
+
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>mathimagics</b>: Results to p = 127
 <b>2007-07-13T02:04:00Z</b>
+<p>The job for n=31, p &lt;= 127, took just 3h 20m.</p>
 
-The job for n=31, p &lt;= 127, took just 3h 20m.
+<p>Predicted A00271 terms:</p>
 
-Predicted A00271 terms:
-
-P =  97  NS = 13374
+<pre>P =  97  NS = 13374
 P = 101  NS = 16167
 P = 103  NS = 19505
 P = 107  NS = 23361
 P = 109  NS = 27939
 P = 113  NS = 33208
-P = 127  NS = 39240
+P = 127  NS = 39240</pre>
 
-Cheers
-0xJW
+<p>Cheers<br />
+0xJW</p>
 </div>
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>mathimagics</b>: Re: Results to p = 127
 <b>2007-07-13T06:56:03Z</b>
+<p>Errata:</p>
 
-Errata:
+<p>When setting up that job, I missed a "section", in which 43 additional pairs were to be found (a sparsely populated section it was, too, requiring 2 further hours to check).</p>
 
-When setting up that job, I missed a &quot;section&quot;, in which 43 additional pairs were to be found (a sparsely populated section it was, too, requiring 2 further hours to check).
-
-P =  97 NS = 13374,  max =       49956990469100001
+<pre>P =  97 NS = 13374,  max =       49956990469100001
 P = 101 NS = 16167,  max =     4108258965739505500
 P = 103 NS = 19508,  max = 19316158377073923834001 
 P = 107 NS = 23372,  max =      386539843111191225
 P = 109 NS = 27956,  max =    90550606380841216611
 P = 113 NS = 33250,  max =   205142063213188103640
-P = 127 NS = 39312,  max =    53234795127882729825
+P = 127 NS = 39312,  max =    53234795127882729825</pre>
 
-
-max for each P is the value s+1 in the highest pair (s, s+1), with P dividing either s or s+1.
-
+<p>max for each P is the value s+1 in the highest pair (s, s+1), with P dividing either s or s+1.</p>
 </div>
-

@@ -4,28 +4,29 @@ title:  'Integer partitions'
 date:   2005-08-05 14:49:00
 tags:   [partitions, python, combinatorial enumeration, number theory, algorithms]
 ---
-Today&#x27;s mail included the latest fascicle of Knuth&#x27;s AOCP volume 4, so rather than getting any real work done I had some fun implementing the partition generation algorithms he lists; <a href="http://www.ics.uci.edu/~eppstein/PADS/IntegerPartitions.py">I added the resulting implementation to PADS</a>.  Knuth gives a nonrecursive algorithm for listing all partitions of n in revlex order, in constant time per partition, but doesn&#x27;t seem to mention the similarly efficient recursive algorithm, <a href="http://aspn.activestate.com/ASPN/Cookbook/Python/Recipe/218332">which I first encountered two years ago</a>, and which can be trivially modified to produce either lex or revlex order.  Unless it&#x27;s buried in the exercises somewhere...  I included both algorithms in my implementation. Note that the ASPN version of the recursive algorithm takes O(n) time per partition, because it copies the list each time, but this can easily be reduced to O(1) per partition as I do in the new implementation. 
-<br />
+<p>Today's mail included the latest fascicle of Knuth's AOCP volume 4, so rather than getting any real work done I had some fun implementing the partition generation algorithms he lists; <a href="http://www.ics.uci.edu/~eppstein/PADS/IntegerPartitions.py">I added the resulting implementation to PADS</a>.  Knuth gives a nonrecursive algorithm for listing all partitions of n in revlex order, in constant time per partition, but doesn't seem to mention the similarly efficient recursive algorithm, <a href="http://aspn.activestate.com/ASPN/Cookbook/Python/Recipe/218332">which I first encountered two years ago</a>, and which can be trivially modified to produce either lex or revlex order.  Unless it's buried in the exercises somewhere...  I included both algorithms in my implementation. Note that the ASPN version of the recursive algorithm takes \( O(n) \) time per partition, because it copies the list each time, but this can easily be reduced to \( O(1) \) per partition as I do in the new implementation.</p>
 
-<br />
-I also added a <a href="http://www.ics.uci.edu/~eppstein/PADS/README.txt">readme file</a> putting PADS into the public domain, and a <a href="http://www.ics.uci.edu/~eppstein/PADS/PADS.tar.gz">tarball</a> for easier downloading of the whole library.
+<p>I also added a <a href="http://www.ics.uci.edu/~eppstein/PADS/README.txt">readme file</a> putting PADS into the public domain, and a <a href="http://www.ics.uci.edu/~eppstein/PADS/PADS.tar.gz">tarball</a> for easier downloading of the whole library.</p>
+
 <br /><br /><hr /><br />
 <h3>Comments:</h3>
+
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>leonardo_m</b>: Reinventing the weel<br />
 <b>2006-07-01T23:38:14Z</b><br />
-To solve a problem I created another integer partition Python program from scratch: 
+<p>To solve a problem I created another integer partition Python program from scratch:</p>
 
-http://leonardo-m.livejournal.com/6514.html
+<p>http://leonardo-m.livejournal.com/6514.html</p>
 
-It has required two hours of thinking or more, and then their Pascal version, translated to Pascal, is about twice faster than mine...
-(Your blog is very interesting, I am reading it all now)
+<p>It has required two hours of thinking or more, and then their Pascal version, translated to Pascal, is about twice faster than mine...
+(Your blog is very interesting, I am reading it all now)</p>
 </div>
+
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>None</b>: Interesting post<br />
 <b>2007-02-03T23:15:48Z</b><br />
-Your article is very informative and helped me further. 
- 
-Thanks, David
+<p>Your article is very informative and helped me further.</p>
+
+<p>Thanks, David</p>
 </div>
 
