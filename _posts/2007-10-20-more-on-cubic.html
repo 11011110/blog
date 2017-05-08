@@ -4,7 +4,7 @@ title:  'More on cubic symmetric graphs'
 date:   2007-10-20 19:07:00
 tags:   [xyz graphs]
 ---
-<p>I've now run my <a href="{{site.baseurl}}/2006/06/12/st-orientation-and-xyz.html">xyz-graph testing code</a> on the graphs of up to 56 vertices in the <a href="http://people.csse.uwa.edu.au/gordon/remote/foster/">Foster Census</a> of <a href="http://www.maa.org/editorial/mathgames/mathgames_12_29_03.html">cubic symmetric graphs</a>. That's about the limit of how large a graph it can handle before I run out of patience.</p>
+<p>I've now run my <a href="{{site.baseurl}}{% post_url 2006-06-12-st-orientation-and-xyz %}">xyz-graph testing code</a> on the graphs of up to 56 vertices in the <a href="http://people.csse.uwa.edu.au/gordon/remote/foster/">Foster Census</a> of <a href="http://www.maa.org/editorial/mathgames/mathgames_12_29_03.html">cubic symmetric graphs</a>. That's about the limit of how large a graph it can handle before I run out of patience.</p>
 
 <p>My program found that graphs \( F_8 \) (the cube), \( F_{18} \) (the Pappus graph), \( F_{24} \) (the <a href="http://en.wikipedia.org/wiki/Petersen_graph">Generalized Petersen graph</a> \( G(12,5) \)), \( F_{32} \) (the Dyck graph), \( F_{40} \) (the double cover of the dodecahedron), \( F_{42} \), \( F_{50} \), and \( F_{54} \) can be represented as xyz graphs. (Here, by convention, \( F_{k} \) denotes the cubic symmetric graph with \( k \) vertices; for each of the graphs listed, there is no other cubic symmetric graph with the same size.)</p>
 
@@ -12,7 +12,7 @@ tags:   [xyz graphs]
 \[
 \{ (x,y,z)\mid 0\le x,y,z\lt n \mbox{ and } x+y+z=0\mbox{ or } 1 \bmod n \}
 \]
-described in <a href="{{site.baseurl}}/2007/10/16/cubic-symmetric-xyz.html">my previous post</a>. The result is not just a symmetric graph, but a regular map: there are symmetries taking any vertex to any other vertex, any edge to any other edge, any face (set of points in an axis-aligned plane) to any other face, and any flag (incident triple of vertex, edge, and face) to any other flag.</p>
+described in <a href="{{site.baseurl}}{% post_url 2007-10-16-cubic-symmetric-xyz %}">my previous post</a>. The result is not just a symmetric graph, but a regular map: there are symmetries taking any vertex to any other vertex, any edge to any other edge, any face (set of points in an axis-aligned plane) to any other face, and any flag (incident triple of vertex, edge, and face) to any other flag.</p>
 
 <p>\( F_{18} \), \( F_{24} \), \( F_{42} \), and \( F_{54} \) can be explained as instances of the following construction: 3-color the <a href="http://en.wikipedia.org/wiki/Hexagonal_tiling">hexagonal tiling</a> of the plane, draw a 60-120 degree <a href="http://en.wikipedia.org/wiki/Rhombus">rhombus</a> having its vertices at the centers of four tiles of the same color, and glue opposite pairs of rhombus edges to form a torus. The resulting torus map is transitive on vertices, edges, faces, and on incident pairs of two of these three types of objects, but it is not necessarily transitive on flags — e.g., \( F_{42} \) is not regular. The same construction can be performed without the color restriction on the corners of the rhombus, and leads to symmetric maps that do not correspond to xyz graph representations; for instance, \( F_{32} \) can be drawn as a regular but not 3-face-colorable torus map in this way.</p>
 

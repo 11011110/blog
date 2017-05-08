@@ -4,7 +4,7 @@ title:  'Generating Stirling permutations'
 date:   2013-03-18 14:28:00
 tags:   [python, combinatorial enumeration]
 ---
-<p>In contrast to <a href="{{site.baseurl}}/2013/03/13/cayley-permutations.html">Cayley permutations</a>, <a href="http://en.wikipedia.org/wiki/Stirling_permutation">Stirling permutations</a> turn out to be very easy to generate by very small modifications to the <a href="http://en.wikipedia.org/wiki/Steinhaus%E2%80%93Johnson%E2%80%93Trotter_algorithm">Steinhaus–Johnson–Trotter algorithm</a>.</p>
+<p>In contrast to <a href="{{site.baseurl}}{% post_url 2013-03-13-cayley-permutations %}">Cayley permutations</a>, <a href="http://en.wikipedia.org/wiki/Stirling_permutation">Stirling permutations</a> turn out to be very easy to generate by very small modifications to the <a href="http://en.wikipedia.org/wiki/Steinhaus%E2%80%93Johnson%E2%80%93Trotter_algorithm">Steinhaus–Johnson–Trotter algorithm</a>.</p>
 
 <p>A Stirling permutation is a permutation of a multiset with two copies of each value, with the property that between these two copies only larger values can appear. In particular, the two largest values must appear consecutively. The algorithm simply sweeps this consecutive largest pair back and forth across the sequence, recursing when the largest pair reaches one of the ends of the sequence. Each step is a swap of two items that are two positions apart; it isn't possible to move the two largest items by a swap of contiguous items.</p>
 

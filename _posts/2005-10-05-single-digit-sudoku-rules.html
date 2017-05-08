@@ -17,7 +17,7 @@ forcing the 7 in that square to be placed at X as well, and so on. By a sequence
 <h3>Perfect Matching</h3>
 
 <p>The way my program attempts to make deductions like this involves perfect matching in graphs.
-It forms a bipartite graph, having 18 vertices, one for each row and one for each column of the puzzle.  We connect vertices Ri and Cj by an edge in the graph, exactly when cell RiCj is a potential placement for the digit 7.  Perfect matchings in this graph correspond to placements of 7's throughout the puzzle that cover each row and each column exactly once.  <a href="{{site.baseurl}}/2005/07/20/updated-python-library.html">By finding a single perfect matching then performing strong connectivity analysis, we can quickly identify the edges that do not belong to a perfect matching</a>, and eliminate the corresponding cells as potential placements for the digit 7.</p>
+It forms a bipartite graph, having 18 vertices, one for each row and one for each column of the puzzle.  We connect vertices Ri and Cj by an edge in the graph, exactly when cell RiCj is a potential placement for the digit 7.  Perfect matchings in this graph correspond to placements of 7's throughout the puzzle that cover each row and each column exactly once.  <a href="{{site.baseurl}}{% post_url 2005-07-20-updated-python-library %}">By finding a single perfect matching then performing strong connectivity analysis, we can quickly identify the edges that do not belong to a perfect matching</a>, and eliminate the corresponding cells as potential placements for the digit 7.</p>
 
 <p>In the example above, considering only the rows and columns involved in the marked cells, we get a graph with four perfect matchings:</p>
 
