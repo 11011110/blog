@@ -4,30 +4,25 @@ title:  'Cubic symmetric xyz graphs'
 date:   2007-10-16 15:11:00
 tags:   [xyz graphs, python]
 ---
-Ed Pegg recently asked me whether various cubic Hamiltonian graphs were xyz graphs, and to test this out I added some code for <a href="http://mathworld.wolfram.com/LCFNotation.html">LCF Notation</a> to GraphExamples.py in <a href="http://www.ics.uci.edu/~eppstein/PADS/">PADS</a> along with several specific graphs that can be described using this notation.
-<br />
+<p>Ed Pegg recently asked me whether various cubic Hamiltonian graphs were xyz graphs, and to test this out I added some code for <a href="http://mathworld.wolfram.com/LCFNotation.html">LCF Notation</a> to GraphExamples.py in <a href="http://www.ics.uci.edu/~eppstein/PADS/">PADS</a> along with several specific graphs that can be described using this notation.</p>
 
-<br />
-It turns out that most of the named graphs I tried are not xyz, but two of them are: the <a href="http://en.wikipedia.org/wiki/Pappus_graph">Pappus graph</a> and the <a href="http://mathworld.wolfram.com/DyckGraph.html">Dyck graph</a>. The Pappus graph was already shown as the rightmost graph in the figure from <a href="http://11011110.livejournal.com/56492.html">this post</a>. The Dyck graph, it turns out, was described indirectly at the bottom of the same post: for any <i>n</i>, one can embed an xyz graph with 2<i>n</i><sup>2</sup> points within an <i>n</i> × <i>n</i> × <i>n</i> grid, at the points (<i>x</i>, <i>y</i>, <i>z</i>) satisfying <i>x</i> + <i>y</i> + <i>z</i> ε {0,1} (mod <i>n</i>). For each <i>n</i>, this produces a <a href="http://mathworld.wolfram.com/CubicSymmetricGraph.html">cubic symmetric graph</a>: <i>n</i> = 2 gives the cube (the unique 8-vertex cubic symmetric graph), <i>n</i> = 3 gives the Pappus graph (the unique 18-vertex cubic symmetric graph), <i>n</i> = 4 gives the Dyck graph (the unique 32-vertex cubic symmetric graph), etc.
-<br />
+<p>It turns out that most of the named graphs I tried are not xyz, but two of them are: the <a href="http://en.wikipedia.org/wiki/Pappus_graph">Pappus graph</a> and the <a href="http://mathworld.wolfram.com/DyckGraph.html">Dyck graph</a>. The Pappus graph was already shown as the rightmost graph in the figure from <a href="{{site.baseurl}}/2006/06/09/topology-of-xyz.html">this post</a>. The Dyck graph, it turns out, was described indirectly at the bottom of the same post: for any \( n \), one can embed an xyz graph with \( 2n^2 \) points within an \( n\times n\times n \) grid, at the points \( (x,y,z) \) satisfying \( x+y+z\in\{0,1\}\pmod{n} \). For each \( n \), this produces a <a href="http://mathworld.wolfram.com/CubicSymmetricGraph.html">cubic symmetric graph</a>: \( n=2 \) gives the cube (the unique 8-vertex cubic symmetric graph), \( n=3 \) gives the Pappus graph (the unique 18-vertex cubic symmetric graph), \( n=4 \) gives the Dyck graph (the unique 32-vertex cubic symmetric graph), etc.</p>
 
-<br />
-Here&#x27;s a picture of the xyz embedding of the Dyck graph:
-<br />
+<p>Here's a picture of the xyz embedding of the Dyck graph:</p>
 
-<br />
-<div style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/dyck.png" /></div>
-<br />
+<p><div style="text-align:center"><img alt="xyz representation of the Dyck graph" src="http://www.ics.uci.edu/~eppstein/0xDE/dyck.png" /></div></p>
 
-<br />
-There is only one way of partitioning the edges of the Dyck graph into three subsets that form the parallel edge classes of an xyz representation.
+<p>There is only one way of partitioning the edges of the Dyck graph into three subsets that form the parallel edge classes of an xyz representation.</p>
+
 <br /><br /><hr /><br />
 <h3>Comments:</h3>
+
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>mcfnord</b>: <br />
 <b>2007-10-17T03:09:23Z</b><br />
 trippy
 </div>
+
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>11011110</b>: <br />
 <b>2007-10-17T06:49:54Z</b><br />
