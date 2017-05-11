@@ -4,62 +4,53 @@ title:  'Spanning trees with few leaves'
 date:   2009-12-30 16:31:00
 tags:   [graph algorithms, papers]
 ---
-While looking up something else, I found a paper by Ling-li Sun (2007): <a href="http://www.emis.ams.org/journals/AMEN/2007/060227-2.pdf">“Spanning trees with leaves bounded by independence number”, <i>Applied Mathematics E-Notes</i> <b>7</b>: 50–52</a>.
-<br />
+<p>While looking up something else, I found a paper by Ling-li Sun (2007): <a href="http://www.emis.ams.org/journals/AMEN/2007/060227-2.pdf">“Spanning trees with leaves bounded by independence number”, <i>Applied Mathematics E-Notes</i> <b>7</b>: 50–52</a>.</p>
 
-<br />
-Sun proves that any undirected graph <i>G</i> has a spanning tree with at most α(<i>G</i>) leaves (where α(<i>G</i>) is the size of the largest independent set of <i>G</i>) and that such a tree can be found in O(<i>n</i><sup>2</sup>) time. Sun&#x27;s proof is very short, and improves on <a href="http://www.emis.ams.org/journals/AMEN/2004/031115.pdf">an earlier paper by Rahman and Kaykobad</a> with a weaker result (a bound on the degree of the tree rather than its number of leaves). Here&#x27;s an even shorter proof (for a somewhat weaker version of the problem; see comments) and a faster algorithm: use a depth-first search tree. Its leaves form an independent set, therefore, its number of leaves is at most the size of the maximum independent set.
-<br />
+<p>Sun proves that any undirected graph \( G \) has a spanning tree with at most \( \alpha(G) \) leaves (where \( \alpha(G) \) is the size of the largest independent set of \( G \)) and that such a tree can be found in \( O(n^2) \) time. Sun's proof is very short, and improves on <a href="http://www.emis.ams.org/journals/AMEN/2004/031115.pdf">an earlier paper by Rahman and Kaykobad</a> with a weaker result (a bound on the degree of the tree rather than its number of leaves). Here's an even shorter proof (for a somewhat weaker version of the problem; see comments) and a faster algorithm: use a depth-first search tree. Its leaves form an independent set, therefore, its number of leaves is at most the size of the maximum independent set.</p>
 
-<br />
-One could also phrase Sun&#x27;s result as a paired approximation in the style of <a href="http://arxiv.org/abs/0909.1870">my upcoming SODA paper</a>. In any graph one can find either an approximate independent set or an approximate minimum-leaf spanning tree with an approximation ratio O(√<i>n</i>): if the DFS tree has fewer than √<i>n</i> leaves, it&#x27;s a good approximation to the minimum leaf spanning tree, and if it has more leaves then its leaves form a good approximation to the maximum independent set. However, the known inapproximability results for the minimum leaf spanning tree are relatively weak (see <a href="http://dx.doi.org/10.1016/j.ipl.2007.08.030">Salamon and Wiener, IPL 2007</a>) so it&#x27;s possible that there exists a better direct approximation for that problem by itself.
+<p>One could also phrase Sun's result as a paired approximation in the style of <a href="http://arxiv.org/abs/0909.1870">my upcoming SODA paper</a>. In any graph one can find either an approximate independent set or an approximate minimum-leaf spanning tree with an approximation ratio \( O(\sqrt{n}) \): if the DFS tree has fewer than \( \sqrt{n} \) leaves, it's a good approximation to the minimum leaf spanning tree, and if it has more leaves then its leaves form a good approximation to the maximum independent set. However, the known inapproximability results for the minimum leaf spanning tree are relatively weak (see <a href="http://dx.doi.org/10.1016/j.ipl.2007.08.030">Salamon and Wiener, IPL 2007</a>) so it's possible that there exists a better direct approximation for that problem by itself.</p>
+
 <br /><br /><hr /><br />
 <h3>Comments:</h3>
+
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>ext_220158</b>: Off by one?<br />
 <b>2009-12-31T02:25:50Z</b><br />
-Isn&#x27;t your DFS argument off by one if the root of the DFS tree ends up as a leaf?  So if there is a graph on a,b,c,d,e,f  with edges a-b and a-[c,d,e,f] and b-[c,d,e,f] (only) then alpha is 4 (c,d,e,f) but the dfs tree at a might go a-b then b-c, b-d, b-e, b-f giving 5 leaves.
+<p>Isn't your DFS argument off by one if the root of the DFS tree ends up as a leaf?  So if there is a graph on a,b,c,d,e,f  with edges a-b and a-[c,d,e,f] and b-[c,d,e,f] (only) then alpha is 4 (c,d,e,f) but the dfs tree at a might go a-b then b-c, b-d, b-e, b-f giving 5 leaves.</p>
 </div>
-<div style="margin-left: 3em; padding-top: 1em;">
-<b>11011110</b>: <br />
-<b></b><br />
 
-</div>
-<div style="margin-left: 3em; padding-top: 1em;">
-<b>11011110</b>: <br />
-<b></b><br />
-
-</div>
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>11011110</b>: Re: Off by one?<br />
 <b>2009-12-31T06:01:32Z</b><br />
-I was thinking of rooted trees. But the Sun paper is looking at unrooted trees. So I guess the DFS argument is weaker in that respect — thanks for the correction. I should also have noted that Sun&#x27;s claim is only for α &gt; 1, since a complete graph still requires two leaves in its (unrooted) spanning trees, although the (rooted) DFS tree has only one leaf in this case.
+<p>I was thinking of rooted trees. But the Sun paper is looking at unrooted trees. So I guess the DFS argument is weaker in that respect — thanks for the correction. I should also have noted that Sun's claim is only for \( \alpha\gt 1 \), since a complete graph still requires two leaves in its (unrooted) spanning trees, although the (rooted) DFS tree has only one leaf in this case.</p>
 
-Using a DFS tree as the initial tree for Sun&#x27;s algorithm does at least improve its running time to linear, since it only has to go through one iteration to get to a tree with a number of leaves at least as good as the independent set given by the leaves of the DFS tree. Sun writes the algorithm as if α is known, but in the original version of the algorithm one can just keep going until the leaves are all independent, and in the modified version one starts with a DFS tree and then (if the root is a leaf and is adjacent to some other leaves) performs a single improvement step.
+<p>Using a DFS tree as the initial tree for Sun's algorithm does at least improve its running time to linear, since it only has to go through one iteration to get to a tree with a number of leaves at least as good as the independent set given by the leaves of the DFS tree. Sun writes the algorithm as if α is known, but in the original version of the algorithm one can just keep going until the leaves are all independent, and in the modified version one starts with a DFS tree and then (if the root is a leaf and is adjacent to some other leaves) performs a single improvement step.</p>
 </div>
+
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>None</b>: a fix?<br />
 <b>2009-12-31T15:57:15Z</b><br />
-Very nice. If your solution fails, your DFS tree T must not be a path and one of its leaves must have an edge e to the root (otherwise it would be ok). Form T&#x27; by adding e to T and removing the first edge on the path from the root which goes to a vertex of degree &gt; 2 in T. T&#x27; is ok and it is still linear time.
+<p>Very nice. If your solution fails, your DFS tree \( T \) must not be a path and one of its leaves must have an edge \( e \) to the root (otherwise it would be ok). Form \( T' \) by adding \( e \) to \( T \) and removing the first edge on the path from the root which goes to a vertex of degree \( \gt 2 \) in \( T \). \( T' \) is ok and it is still linear time.</p>
 
-(Valentas)
+<p>(Valentas)</p>
 </div>
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>11011110</b>: Re: a fix?<br />
 <b>2009-12-31T16:45:03Z</b><br />
-That&#x27;s essentially what one gets by applying one round of Sun&#x27;s algorithm to he DFS tree.
+<p>That's essentially what one gets by applying one round of Sun's algorithm to the DFS tree.</p>
 </div>
+
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>None</b>: <br />
 <b>2009-12-31T16:31:34Z</b><br />
-Hi, just to point out that the result on bounding the number of leaves of a spanning tree in terms of the indipendence number (via DFS) is contained in Proposition 8 of the following paper:
-L. Gargano, M. Hammer, P. Hell, L. Stacho, U. Vaccaro 
-`Spanning Spiders and Light- Splitting Switches&#x27;&#x27;, 
-Discrete Mathematics, vol. 285, Issue 1-3, pp. 83-95, 2004.
+<p>Hi, just to point out that the result on bounding the number of leaves of a spanning tree in terms of the independence number (via DFS) is contained in Proposition 8 of the following paper:<br />
+L. Gargano, M. Hammer, P. Hell, L. Stacho, U. Vaccaro <br />
+``Spanning Spiders and Light- Splitting Switches'',<br />
+Discrete Mathematics, vol. 285, Issue 1-3, pp. 83-95, 2004.</p>
 </div>
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>11011110</b>: <br />
 <b>2009-12-31T16:44:39Z</b><br />
-Thanks!
+<p>Thanks!</p>
 </div>
 

@@ -4,69 +4,69 @@ title:  'Separators vs separation'
 date:   2010-05-17 22:51:00
 tags:   [graph theory]
 ---
-Most versions I&#x27;ve seen of the <a href="http://en.wikipedia.org/wiki/Planar_separator_theorem">planar separator theorem</a> give the primary role to the separator and the vertices: a separator is a small set of vertices the removal of which splits the remaining vertices into two subsets of roughly equal size. But when one states it in this way, one actually ends up with three parts (the separator vertices themselves form the third part). How the removal splits the remaining vertices is somewhat unclear, because it&#x27;s not just into connected components: one may get more than two connected components and then have to regroup them to form the two sides of the split. And there&#x27;s some ambiguity about where the edges go: all edges incident to the separator are deleted? We group the edges into five different sets according to which one or two vertex subsets they touch?
-<br />
+<p>Most versions I've seen of the <a href="http://en.wikipedia.org/wiki/Planar_separator_theorem">planar separator theorem</a> give the primary role to the separator and the vertices: a separator is a small set of vertices the removal of which splits the remaining vertices into two subsets of roughly equal size. But when one states it in this way, one actually ends up with three parts (the separator vertices themselves form the third part). How the removal splits the remaining vertices is somewhat unclear, because it's not just into connected components: one may get more than two connected components and then have to regroup them to form the two sides of the split. And there's some ambiguity about where the edges go: all edges incident to the separator are deleted? We group the edges into five different sets according to which one or two vertex subsets they touch?</p>
 
-<br />
-I think it makes things simpler to put the edges and the split first: a separation is a partition of the edges of the graph into subgraphs. Once you have that part clear, the separator is easy to find: it&#x27;s just the set of vertices that appear in more than one subgraph of the separation. So the planar separator theorem, rephrased in this way, states that the edges of any planar graph can be partitioned into two subgraphs, with each subgraph having at least n/3 vertices and with O(√n) shared vertices.
-<br />
+<p>I think it makes things simpler to put the edges and the split first: a separation is a partition of the edges of the graph into subgraphs. Once you have that part clear, the separator is easy to find: it's just the set of vertices that appear in more than one subgraph of the separation. So the planar separator theorem, rephrased in this way, states that the edges of any planar graph can be partitioned into two subgraphs, with each subgraph having at least \( n/3 \) vertices and with \( O(\sqrt{n}) \) shared vertices.</p>
 
-<br />
-(Why &quot;at least n/3&quot; rather than &quot;at most 2n/3&quot;? Because it matches more closely the &quot;at most 2n/3&quot; in the usual statement of the separator theorem in which the separator vertices are not counted towards either side. And because it&#x27;s not true otherwise unless you change it to 2n/3 + O(√n) or make things messier by adding &quot;for all sufficiently large n&quot;. Consider K<sub>4</sub>: its edges have no partition into two subgraphs with fewer than four vertices in the larger one.)
-<br />
+<p>(Why "at least \( n/3 \)" rather than "at most \( 2n/3 \)"? Because it matches more closely the "at most \( 2n/3 \)" in the usual statement of the separator theorem in which the separator vertices are not counted towards either side. And because it's not true otherwise unless you change it to \( 2n/3 + O(\sqrt{n}) \) or make things messier by adding "for all sufficiently large \( n \)". Consider \( K_4 \): its edges have no partition into two subgraphs with fewer than four vertices in the larger one.)</p>
 
-<br />
-It&#x27;s not a big deal; I don&#x27;t think it makes a difference in terms of correctness or usefulness in any application, but it makes the notation a little cleaner in some cases. The literature on separator theorems is big, and I&#x27;m certainly not familiar with it all, so likely this point has been made already several times in several papers. I&#x27;d be interested to find out which ones they are.
+<p>It's not a big deal; I don't think it makes a difference in terms of correctness or usefulness in any application, but it makes the notation a little cleaner in some cases. The literature on separator theorems is big, and I'm certainly not familiar with it all, so likely this point has been made already several times in several papers. I'd be interested to find out which ones they are.</p>
+
 <br /><br /><hr /><br />
 <h3>Comments:</h3>
+
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>None</b>: Separators vs separation<br />
 <b>2010-05-18T05:58:59Z</b><br />
-The separation approach is taken by Robertson and Seymour and later by Alon, Seymour and Thomas. I agree that it is much more precise. 
+<p>The separation approach is taken by Robertson and Seymour and later by Alon, Seymour and Thomas. I agree that it is much more precise.</p>
 
-- David Wood
+<p>- David Wood</p>
 </div>
+
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>11011110</b>: Re: Separators vs separation<br />
 <b>2010-05-18T06:09:11Z</b><br />
-Thanks for the references.
+<p>Thanks for the references.</p>
 </div>
+
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>None</b>: Separators vs separation<br />
 <b>2010-05-18T06:11:44Z</b><br />
-Some references that use &quot;separation&quot;.
+<p>Some references that use "separation".</p>
 
-Robertson, N. and Seymour, P. D. 1995. Graph minors. XIII. The disjoint paths problem. J. Combin. Theory Ser. B 63, 1, 65–110. 
+<p>Robertson, N. and Seymour, P. D. 1995. Graph minors. XIII. The disjoint paths problem. J. Combin. Theory Ser. B 63, 1, 65–110. </p>
 
-Alon, N., Seymour, P., and Thomas, R. 1994. Planar separators. SIAM J. Discrete Math. 7, 2, 184–193. 
+<p>Alon, N., Seymour, P., and Thomas, R. 1994. Planar separators. SIAM J. Discrete Math. 7, 2, 184–193. </p>
 
-Alon, N., Seymour, P. D., and Thomas, R. 1990b. A separator theorem for nonplanar graphs. J. Amer. Math. Soc. 3, 4, 801–808. 
+<p>Alon, N., Seymour, P. D., and Thomas, R. 1990b. A separator theorem for nonplanar graphs. J. Amer. Math. Soc. 3, 4, 801–808. </p>
 
-Reed B. and Wood. D. R., A linear time algorithm to find a separator in a graph excluding a minor, ACM Transactions on Algorithms, to appear eventually.
+<p>Reed B. and Wood. D. R., A linear time algorithm to find a separator in a graph excluding a minor, ACM Transactions on Algorithms, to appear eventually.</p>
 
-Finally, if you don&#x27;t care about algorithmic efficiency and leading constants, then I think that the Alon-Seymour-Thomas proof is by far the nicest proof of the planar separator theorem.
+<p>Finally, if you don't care about algorithmic efficiency and leading constants, then I think that the Alon-Seymour-Thomas proof is by far the nicest proof of the planar separator theorem.</p>
 </div>
+
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>11011110</b>: Re: Separators vs separation<br />
 <b>2010-05-18T06:19:34Z</b><br />
-I knew about the Alon–Seymour–Thomas minor separator paper (and the Reed–Wood followup that speeds it up at the expense of separator size) but didn&#x27;t realize they also had one on planar separators; I&#x27;ll have to take a more careful look at that one.
+<p>I knew about the Alon–Seymour–Thomas minor separator paper (and the Reed–Wood followup that speeds it up at the expense of separator size) but didn't realize they also had one on planar separators; I'll have to take a more careful look at that one.</p>
 
-Usually I do care about algorithmic efficiency, but not this time. I still like the Miller–Teng–Thurston–Vavasis proof, though, maybe because it incorporates more geometry.
+<p>Usually I do care about algorithmic efficiency, but not this time. I still like the Miller–Teng–Thurston–Vavasis proof, though, maybe because it incorporates more geometry.</p>
 </div>
+
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>mcfnord</b>: <br />
 <b>2010-05-18T06:40:31Z</b><br />
-I need something like this. AND A BRAIN TO GO WITH IT
+<p>I need something like this. AND A BRAIN TO GO WITH IT</p>
 </div>
+
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>None</b>: branch width vs tree width<br />
 <b>2010-05-18T15:50:34Z</b><br />
-On a similar note branch width is closer to separations while tree width is closer to separators. Depending on the application, one or the other is preferred. Branch width generalizes to matroids in a natural fashion while tree width does not.
-
+<p>On a similar note branch width is closer to separations while tree width is closer to separators. Depending on the application, one or the other is preferred. Branch width generalizes to matroids in a natural fashion while tree width does not.</p>
 </div>
+
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>11011110</b>: Re: branch width vs tree width<br />
 <b>2010-05-18T16:59:01Z</b><br />
-Hmm...the Wikipedia article on <a href="http://en.wikipedia.org/wiki/Branch-decomposition">branchwidth</a> is in almost as sad shape as the one on the planar separator theorem. Lots more work left to do there.
+<p>Hmm...the Wikipedia article on <a href="http://en.wikipedia.org/wiki/Branch-decomposition">branchwidth</a> is in almost as sad shape as the one on the planar separator theorem. Lots more work left to do there.</p>
 </div>
-

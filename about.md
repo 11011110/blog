@@ -4,20 +4,22 @@ title: About
 permalink: /about/
 ---
 <div class="home">
-    <p>This journal was formerly located at 11011110.livejournal.com and
-    moved to its current location in April 2017. The name comes from
-    interpreting my initials as the hexadecimal number 0xDE (decimal
-    222) and then converting the result to binary.</p>
+    <p>This journal's name comes from interpreting my initials as the
+    hexadecimal number 0xDE (decimal 222) and then converting the result
+    to binary. It was formerly located at 11011110.livejournal.com and
+    moved to its current location (with some minor reformatting of old
+    posts) in April 2017.</p>
 
     <p>For comments on recent posts, see the linked entries on <a
     href="https://plus.google.com/100003628603413742554">my Google+
     account</a>. I also post links to other web pages there, with
     roundups of those links approximately twice monthly here.</p>
 
-    <p>I am a Chancellor's Professor of Computer Science at the University
-    of California, Irvine, and an administrator on the English-language
-    Wikipedia. See <a href="http://www.ics.uci.edu/~eppstein/">my home
-    page at UC Irvine</a> or <a
+    <p>I am a Chancellor's Professor of Computer Science at the
+    University of California, Irvine, and an administrator on the
+    English-language Wikipedia. See <a
+    href="http://www.ics.uci.edu/~eppstein/">my home page at UC
+    Irvine</a> or <a
     href="https://en.wikipedia.org/wiki/User:David_Eppstein">my
     Wikipedia user page</a> for more. This is my personal blog, and
     although it may contain material related to my UCI teaching and

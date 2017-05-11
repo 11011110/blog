@@ -4,20 +4,17 @@ title:  'Debian package-manager Sudoku'
 date:   2009-01-20 14:51:00
 tags:   [sudoku]
 ---
-While poking around after my <a href="http://11011110.livejournal.com/161803.html">previous post</a>, I found dburrows&#x27; posts on <a href="http://algebraicthunk.net/~dburrows/blog/entry/package-management-sudoku/">package management Sudoku</a> and <a href="http://algebraicthunk.net/~dburrows/blog/entry/package-management-sudoku-2/">package management Sudoku 2</a>. Burrows started with an offhand remark by someone else that one wouldn&#x27;t want to have &quot;a package management system that can solve Sudoku based on package dependency rules&quot;, took it as a challenge, and found a way to translate Sudoku puzzles automatically into package dependencies and solve them with the off-the-shelf package managers.
-<br />
+<p>While poking around after my <a href="{{site.baseurl}}{% post_url 2009-01-19-confluence-and-label %}">previous post</a>, I found dburrows' posts on <a href="http://algebraicthunk.net/~dburrows/blog/entry/package-management-sudoku/">package management Sudoku</a> and <a href="http://algebraicthunk.net/~dburrows/blog/entry/package-management-sudoku-2/">package management Sudoku 2</a>. Burrows started with an offhand remark by someone else that one wouldn't want to have "a package management system that can solve Sudoku based on package dependency rules", took it as a challenge, and found a way to translate Sudoku puzzles automatically into package dependencies and solve them with the off-the-shelf package managers.</p>
 
-<br />
-A little context: as the <a href="http://www.debian.org/doc/FAQ/ch-pkg_basics.en.html">Debian linux FAQ describes</a>, a package is a collection of files (code, configuration files, etc) needed to implement a set of related linux commands. Some packages need other packages to be installed as well, and some packages conflict, meaning that they cannot both be installed in the same system (installing one of them will cause the other one to break). The package manager resolves these issues and tries to find a set of packages to install that will include the ones you want and everything else they might need.
-<br />
+<p>A little context: as the <a href="http://www.debian.org/doc/FAQ/ch-pkg_basics.en.html">Debian linux FAQ describes</a>, a package is a collection of files (code, configuration files, etc) needed to implement a set of related linux commands. Some packages need other packages to be installed as well, and some packages conflict, meaning that they cannot both be installed in the same system (installing one of them will cause the other one to break). The package manager resolves these issues and tries to find a set of packages to install that will include the ones you want and everything else they might need.</p>
 
-<br />
-As Burrows second post describes, though both Sudoku and package dependency resolution are NP-complete constraint satisfaction type problems, they have different qualities leading to different solution techniques, so solving a Sudoku puzzle in this way is surprisingly slow (though maybe the bigger surprise is that it works at all). Anyway, the idea of testing the package management system by using these puzzles has already led to improvements that should speed it up for less artificial problems as well.
+<p>As Burrows second post describes, though both Sudoku and package dependency resolution are NP-complete constraint satisfaction type problems, they have different qualities leading to different solution techniques, so solving a Sudoku puzzle in this way is surprisingly slow (though maybe the bigger surprise is that it works at all). Anyway, the idea of testing the package management system by using these puzzles has already led to improvements that should speed it up for less artificial problems as well.</p>
+
 <br /><br /><hr /><br />
 <h3>Comments:</h3>
+
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>ext_136341</b>: opium<br />
 <b>2009-01-21T16:15:28Z</b><br />
-Off-the-shelf package managers tend to be fast but tend to not always find a solution. <a href="http://scholar.google.com/scholar?hl=en&lr=&cluster=17150680805654887555">Opium</a> claims to be correct (but I haven&#x27;t tried it).
+Off-the-shelf package managers tend to be fast but tend to not always find a solution. <a href="http://scholar.google.com/scholar?hl=en&lr=&cluster=17150680805654887555">Opium</a> claims to be correct (but I haven't tried it).
 </div>
-

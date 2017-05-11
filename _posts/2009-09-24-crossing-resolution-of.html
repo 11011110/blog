@@ -4,39 +4,33 @@ title:  'Crossing resolution of bounded-degree graphs'
 date:   2009-09-24 00:05:00
 tags:   [graph drawing]
 ---
-Two of the papers presented today at Graph Drawing (and one earlier at WADS) concerned drawings in which edges that cross are required to do so at a high angle. One of today&#x27;s papers (&quot;On the perspectives opened by right angle crossing drawings&quot;, by Angelini et al) included some results on bounded degree graphs, showing that graphs with sufficiently low degree bounds could be given drawings with right-angled crossings and few bends per edge. The other paper (&quot;Area, curve complexity, and crossing resolution of non-planar graph drawings&quot;, by Di Giacomo et al) generalized the problem, looking not just at right angled drawings but at drawings in which all crossings have an angle bounded away from zero; the &quot;crossing resolution&quot; of the title is the minimum angle of any crossing. So what if we put both of these together and look at the crossing resolution of bounded-degree graphs?
-<br />
+<p>Two of the papers presented today at Graph Drawing (and one earlier at WADS) concerned drawings in which edges that cross are required to do so at a high angle. One of today's papers ("On the perspectives opened by right angle crossing drawings", by Angelini et al) included some results on bounded degree graphs, showing that graphs with sufficiently low degree bounds could be given drawings with right-angled crossings and few bends per edge. The other paper ("Area, curve complexity, and crossing resolution of non-planar graph drawings", by Di Giacomo et al) generalized the problem, looking not just at right angled drawings but at drawings in which all crossings have an angle bounded away from zero; the "crossing resolution" of the title is the minimum angle of any crossing. So what if we put both of these together and look at the crossing resolution of bounded-degree graphs?</p>
 
-<br />
-As <a href="http://11011110.livejournal.com/152413.html">I already pointed out a year ago</a>, an algorithm from <a href="http://arxiv.org/abs/cs.CG/0312056">a paper with Duncan and Kobourov</a> in SoCG 2004 already achieves good crossing angles with no bends when the degree is very small (at most three). This algorithm draws the graph with its vertices on a grid and its edges in two planar layers such that one layer of the edges connects pairs of vertices on adjacent grid columns (causing them to be close to vertical) and the other layer connects pairs of vertices on adjacent grid rows (causing them to be close to horizontal). Two edges can cross only if all four of their endpoints lie on distinct rows and columns of the grid, ruling out what would otherwise be some bad cases. So the worst case appears to be one in which a slope-3 and a slope-1/3 edge cross each other, with angle π/2 − 2tan<sup>−1</sup>(1/3), approximately 53 degrees.
-<br />
+<p>As <a href="{{site.baseurl}}{% post_url 2008-10-26-crossings-vs-crossing %}">I already pointed out a year ago</a>, an algorithm from <a href="http://arxiv.org/abs/cs.CG/0312056">a paper with Duncan and Kobourov</a> in SoCG 2004 already achieves good crossing angles with no bends when the degree is very small (at most three). This algorithm draws the graph with its vertices on a grid and its edges in two planar layers such that one layer of the edges connects pairs of vertices on adjacent grid columns (causing them to be close to vertical) and the other layer connects pairs of vertices on adjacent grid rows (causing them to be close to horizontal). Two edges can cross only if all four of their endpoints lie on distinct rows and columns of the grid, ruling out what would otherwise be some bad cases. So the worst case appears to be one in which a slope-\( 3 \) and a slope-\( 1/3 \) edge cross each other, with angle \( \pi/2 - 2\tan^{-1}(1/3) \), approximately \( 53^\circ \).</p>
 
-<br />
-A limit to the vertex degree bounds that force bendless drawings with high crossing resolution to exist is provided by <a href="http://arxiv.org/abs/math.CO/0509150">a paper by Barát, Matoušek, and Wood</a> that proves that graphs with degree nine may have unbounded <a href="http://www.ics.uci.edu/~eppstein/junkyard/thickness/">geometric thickness</a>. A drawing in which all crossings have angles bounded away from zero has bounded geometric thickness: if one partitions the edges of the graph into a constant number of subsets within which all slopes are close to each other, each subset must form a planar graph. So, since degree-9 graphs don&#x27;t have bounded geometric thickness, they also don&#x27;t have bounded crossing resolution.
-<br />
+<p>A limit to the vertex degree bounds that force bendless drawings with high crossing resolution to exist is provided by <a href="http://arxiv.org/abs/math.CO/0509150">a paper by Barát, Matoušek, and Wood</a> that proves that graphs with degree nine may have unbounded <a href="http://www.ics.uci.edu/~eppstein/junkyard/thickness/">geometric thickness</a>. A drawing in which all crossings have angles bounded away from zero has bounded geometric thickness: if one partitions the edges of the graph into a constant number of subsets within which all slopes are close to each other, each subset must form a planar graph. So, since degree-9 graphs don't have bounded geometric thickness, they also don't have bounded crossing resolution.</p>
 
-<br />
-For bendless drawings of graphs with degree from four to eight, it seems that it is still unknown how the crossing resolution may depend on the degree. And even for degree three, perhaps better crossing resolution may be achieved by some other algorithm.
-<br />
+<p>For bendless drawings of graphs with degree from four to eight, it seems that it is still unknown how the crossing resolution may depend on the degree. And even for degree three, perhaps better crossing resolution may be achieved by some other algorithm.</p>
 
-<br />
-<b>ETA:</b> János Pach points out that the same relation between geometric thickness and crossing resolution allows one to prove an O(1/n) bound on the crossing resolution of n-vertex complete graphs from known results on <a href="http://arxiv.org/abs/math/9910185">geometric thickness of complete graphs</a>, improving a logarithmic bound from the Di Giacomo et al paper and an O(1/√n) bound obtained from a result of <a href="http://dx.doi.org/10.1007/BF01215345">Aronov et al.</a> that any n points in general position have Ω(√n) pairwise crossing line segments.
+<p><b>ETA:</b> János Pach points out that the same relation between geometric thickness and crossing resolution allows one to prove an \( O(1/n) \) bound on the crossing resolution of n-vertex complete graphs from known results on <a href="http://arxiv.org/abs/math/9910185">geometric thickness of complete graphs</a>, improving a logarithmic bound from the Di Giacomo et al paper and an \( O(1/\sqrt{n}) \) bound obtained from a result of <a href="http://dx.doi.org/10.1007/BF01215345">Aronov et al.</a> that any \( n \) points in general position have \( \Omega(\sqrt{n}) \) pairwise crossing line segments.</p>
+
 <br /><br /><hr /><br />
 <h3>Comments:</h3>
+
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>None</b>: Crossing resolution of bounded-degree graphs<br />
 <b>2009-09-24T08:01:54Z</b><br />
-There is another recent paper on this topic:
+<p>There is another recent paper on this topic:</p>
 
-Notes on large angle crossing graphs
-by Vida Dujmovic, Joachim Gudmundsson, Pat Morin, Thomas Wolle
-http://arxiv.org/abs/0908.3545
+<p>Notes on large angle crossing graphs<br />
+by Vida Dujmovic, Joachim Gudmundsson, Pat Morin, Thomas Wolle<br />
+<a href="http://arxiv.org/abs/0908.3545">http://arxiv.org/abs/0908.3545</a></p>
 
-- David Wood
+<p>- David Wood</p>
 </div>
+
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>11011110</b>: Re: Crossing resolution of bounded-degree graphs<br />
 <b>2009-09-24T13:25:50Z</b><br />
-Right, thanks for reminding me.
+<p>Right, thanks for reminding me.</p>
 </div>
-

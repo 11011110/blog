@@ -8,87 +8,97 @@ tags:   [social networks, papers]
 
 <p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/FacebookDegrees.png" alt="Highly nonlinear graph on a log-log scale of the degree distribution of facebook" /></p>
 
-<p>When I gave <a href="http://www.ics.uci.edu/~eppstein/pubs/WADS09-talks/subgraphs.pdf">my talk</a> on <a href="{{site.baseurl}}{% post_url 2009-04-23-graph-h-indices-and %}">dynamic subgraph statistics</a> at <a href="http://11011110.livejournal.com/178636.html">WADS</a>, I took the opportunity to spend some time telling the audience about the exponential random graph model, a distribution on random graphs (with a fixed set of vertices) in which the log-likelihood of a graph may be computed by finding a collection of &quot;features&quot; in the graph (such as small subgraphs of different types, or vertices with given degrees) and adding the weights of the features. This model provides the main motivation for the data structures of my paper, since simulation of the model involves many steps of a Markov Chain Monte Carlo algorithm that each perform small changes to a graph and require the computation of updated feature counts after each change. The biggest question I got afterwards was &quot;why don&#x27;t you just use <a href="http://en.wikipedia.org/wiki/Scale-free_network">scale-free graphs</a>&quot;? A scale-free graph is one satisfying a power law on its degree distribution: the number of vertices with degree x should be proportional to x<sup>p</sup> for some suitable constant p. There are various methods of generating these graphs such as the <a href="http://en.wikipedia.org/wiki/Preferential_attachment">preferential attachment</a> model of Barabási and Albert or models in which every graph with a given degree distribution is equally likely as studied by Fan Chung and others.</p>
+<p>When I gave <a href="http://www.ics.uci.edu/~eppstein/pubs/WADS09-talks/subgraphs.pdf">my talk</a> on <a href="{{site.baseurl}}{% post_url 2009-04-23-graph-h-indices-and %}">dynamic subgraph statistics</a> at <a href="{{site.baseurl}}{% post_url 2009-08-24-report-from-wads %}">WADS</a>, I took the opportunity to spend some time telling the audience about the exponential random graph model, a distribution on random graphs (with a fixed set of vertices) in which the log-likelihood of a graph may be computed by finding a collection of "features" in the graph (such as small subgraphs of different types, or vertices with given degrees) and adding the weights of the features. This model provides the main motivation for the data structures of my paper, since simulation of the model involves many steps of a Markov Chain Monte Carlo algorithm that each perform small changes to a graph and require the computation of updated feature counts after each change. The biggest question I got afterwards was "why don't you just use <a href="http://en.wikipedia.org/wiki/Scale-free_network">scale-free graphs</a>"? A scale-free graph is one satisfying a power law on its degree distribution: the number of vertices with degree x should be proportional to x<sup>p</sup> for some suitable constant p. There are various methods of generating these graphs such as the <a href="http://en.wikipedia.org/wiki/Preferential_attachment">preferential attachment</a> model of Barabási and Albert or models in which every graph with a given degree distribution is equally likely as studied by Fan Chung and others.</p>
 
-<p>The short answer is, we don&#x27;t use scale-free models because the sociologists we&#x27;ve been working with (including Butts, one of the authors of the paper I linked above and the advisor of my coauthor Emma Spiro) don&#x27;t believe in them. First, Butts has often worked with small social networks (say, with double-digit numbers of vertices) where asymptotic notions such as power laws aren&#x27;t well defined, but where some modeling is still necessary; however, that objection is less salient for the facebook graph studied in the linked paper. Second, specifying a power law on the degree distribution doesn&#x27;t say much about the more detailed structure of the underlying graph (such as the tendency to form triangles by adding the third edge to a path of length two). But third and most importantly, the sociologists would be happy to use power laws if they fit the data — ERG models are capable of describing power law degree distributions very easily using the existence of a given number of vertices with a given degree as a feature, and are flexible enough to combine power laws with other structural descriptions of the graphs they generate — but there&#x27;s strong evidence that many of the social networks that have been widely claimed to obey power laws don&#x27;t. In particular, with a power law, the number of vertices of a given degree should form a curve that, plotted on a log-log scale, forms a straight line over many orders of magnitude, while the curve in the figure above is blatantly non-straight.</p>
+<p>The short answer is, we don't use scale-free models because the sociologists we've been working with (including Butts, one of the authors of the paper I linked above and the advisor of my coauthor Emma Spiro) don't believe in them. First, Butts has often worked with small social networks (say, with double-digit numbers of vertices) where asymptotic notions such as power laws aren't well defined, but where some modeling is still necessary; however, that objection is less salient for the facebook graph studied in the linked paper. Second, specifying a power law on the degree distribution doesn't say much about the more detailed structure of the underlying graph (such as the tendency to form triangles by adding the third edge to a path of length two). But third and most importantly, the sociologists would be happy to use power laws if they fit the data — ERG models are capable of describing power law degree distributions very easily using the existence of a given number of vertices with a given degree as a feature, and are flexible enough to combine power laws with other structural descriptions of the graphs they generate — but there's strong evidence that many of the social networks that have been widely claimed to obey power laws don't. In particular, with a power law, the number of vertices of a given degree should form a curve that, plotted on a log-log scale, forms a straight line over many orders of magnitude, while the curve in the figure above is blatantly non-straight.</p>
 
-<p>The Facebook paper is worth reading for other reasons, beyond this basic point. Its main results concern trying to sample uniformly from a large unknown <a href="http://en.wikipedia.org/wiki/Implicit_graph">implicit network</a> for which a direct download of all nodes is disallowed or infeasible. In Facebook, the authors found a trick for performing this sampling with perfect accuracy: generate a 32-bit id, ask Facebook whether it&#x27;s valid, and repeat if not. However, there&#x27;s no guarantee that such methods would be available for other networks nor that they&#x27;ll remain available for Facebook. Typical methods for sampling from such networks instead involve performing a breadth-first search or a random walk from a small set of seed nodes, but these methods are biased towards high-degree nodes and as the authors show they can lead to erroneous conclusions — the larger figure from which I stole the figure above compares the actual degree distribution to the distribution one might infer from one of these biased sampling methods, and shows that the two distributions are quite far apart. As the authors describe, a Metropolis-Hastings correction that is standard in other contexts (essentially, a random walk with a rule to backtrack certain steps of the walk with a backtracking probability that depends on the degrees of the endpoints of the step) can be used to sample these graphs accurately, a necessary prerequisite to statistical inference.</p>
+<p>The Facebook paper is worth reading for other reasons, beyond this basic point. Its main results concern trying to sample uniformly from a large unknown <a href="http://en.wikipedia.org/wiki/Implicit_graph">implicit network</a> for which a direct download of all nodes is disallowed or infeasible. In Facebook, the authors found a trick for performing this sampling with perfect accuracy: generate a 32-bit id, ask Facebook whether it's valid, and repeat if not. However, there's no guarantee that such methods would be available for other networks nor that they'll remain available for Facebook. Typical methods for sampling from such networks instead involve performing a breadth-first search or a random walk from a small set of seed nodes, but these methods are biased towards high-degree nodes and as the authors show they can lead to erroneous conclusions — the larger figure from which I stole the figure above compares the actual degree distribution to the distribution one might infer from one of these biased sampling methods, and shows that the two distributions are quite far apart. As the authors describe, a Metropolis-Hastings correction that is standard in other contexts (essentially, a random walk with a rule to backtrack certain steps of the walk with a backtracking probability that depends on the degrees of the endpoints of the step) can be used to sample these graphs accurately, a necessary prerequisite to statistical inference.</p>
+
 <br /><br /><hr /><br />
 <h3>Comments:</h3>
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>arvindn</b>: <br />
 <b>2009-08-27T05:22:43Z</b><br />
-another relevant measurement paper (which you&#x27;ve most probably probably seen) is Mislove et al., IMC 2007, which has in- and out-degree distributions for livejournal, orkut, flickr and youtube (among a host of other statistics.) http://www.imconf.net/imc-2007/papers/imc170.pdf
+<p>another relevant measurement paper (which you've most probably probably seen) is Mislove et al., IMC 2007, which has in- and out-degree distributions for livejournal, orkut, flickr and youtube (among a host of other statistics.) http://www.imconf.net/imc-2007/papers/imc170.pdf</p>
 
-i&#x27;m surprised the authors of this paper claim this is the first uniform sample of FB users. i&#x27;ve know other researchers who have a large uniform-sample FB crawl. maybe they got it from these authors. i need to check that.
+<p>i'm surprised the authors of this paper claim this is the first uniform sample of FB users. i've know other researchers who have a large uniform-sample FB crawl. maybe they got it from these authors. i need to check that.</p>
 </div>
+
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>11011110</b>: <br />
 <b>2009-08-27T05:38:39Z</b><br />
-That must be one of the ones my colleagues were complaining about when they talked about researchers who put up plots that are clearly far from straight on a log-log scale and who then, in the face of the obvious evidence, claim that the data is consistent with a power law for the network (see Mislove et al Figure 2 and its caption).
+<p>That must be one of the ones my colleagues were complaining about when they talked about researchers who put up plots that are clearly far from straight on a log-log scale and who then, in the face of the obvious evidence, claim that the data is consistent with a power law for the network (see Mislove et al Figure 2 and its caption).</p>
 </div>
+
 <div style="margin-left: 6em; padding-top: 1em;">
 <b>arvindn</b>: <br />
 <b>2009-08-27T05:56:39Z</b><br />
-actually they seem to be rather confused about it -- they claim the distributions &quot;show properties consistent with power law networks&quot; (which could mean anything), but also say &quot;however, the degree distributions in social networks differ from that of other power-law networks in several ways.&quot; 
+<p>actually they seem to be rather confused about it -- they claim the distributions "show properties consistent with power law networks" (which could mean anything), but also say "however, the degree distributions in social networks differ from that of other power-law networks in several ways."</p>
 
-finally they present some kind of goodness-of-fit metric, which seems to show that the power law fits, but i wonder if there is a huge methodological problem here because the metric gives an equal weight to each node, and since there are vastly more low degree nodes than high degree nodes, it essentially ignores the high degree nodes.
+<p>finally they present some kind of goodness-of-fit metric, which seems to show that the power law fits, but i wonder if there is a huge methodological problem here because the metric gives an equal weight to each node, and since there are vastly more low degree nodes than high degree nodes, it essentially ignores the high degree nodes.</p>
 
-but yeah, i agree with the overall point that the power law generally doesn&#x27;t seem to fit.
+<p>but yeah, i agree with the overall point that the power law generally doesn't seem to fit.</p>
 </div>
+
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>None</b>: <br />
 <b>2009-09-12T02:54:09Z</b><br />
-Actually, no we did not get it from &quot;these authors&quot; :). And I am very curious who are &quot;these authors&quot; you are referring to. There are some samples of Facebook available (like the one by Mislove at al. and also by others as mentioned in our related work section),  but, to the best of my knowledge none of them have good statistical properties. Some of them are complete sets of university networks, some others are simply collected via BFS.
+<p>Actually, no we did not get it from "these authors" :). And I am very curious who are "these authors" you are referring to. There are some samples of Facebook available (like the one by Mislove at al. and also by others as mentioned in our related work section),  but, to the best of my knowledge none of them have good statistical properties. Some of them are complete sets of university networks, some others are simply collected via BFS.</p>
 
-Can you please give a pointer of what is that you refer to?
+<p>Can you please give a pointer of what is that you refer to?</p>
 
-Thanks,
-Athina
+<p>Thanks,<br />
+Athina</p>
 </div>
+
 <div style="margin-left: 6em; padding-top: 1em;">
 <b>arvindn</b>: <br />
 <b>2009-09-12T05:04:51Z</b><br />
-oh, i was thinking of the first paper on this list:http://www.cl.cam.ac.uk/~jcb82/sns_bib/main.html#crawling-and-analysis (it&#x27;s a 10M node crawl.) i just went back and looked at it, and it looks like they crawl regional networks, so i guess that&#x27;s not a uniform sample. alright then.
+<p>oh, i was thinking of the first paper on this list:http://www.cl.cam.ac.uk/~jcb82/sns_bib/main.html#crawling-and-analysis (it's a 10M node crawl.) i just went back and looked at it, and it looks like they crawl regional networks, so i guess that's not a uniform sample. alright then.</p>
 
-i didn&#x27;t mean to <strike>day</strike> say that you got your data from someone else. that was very confused wording on my part. never mind.
+<p>i didn't mean to <strike>day</strike> say that you got your data from someone else. that was very confused wording on my part. never mind.</p>
 </div>
+
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>patrickwonders</b>: <br />
 <b>2009-08-27T13:42:04Z</b><br />
-:) Your detailed explanation skipped over the beginning, I think.   What are the axises of graph?  Am I right in thinking this says that a randomly selected Facebook user will have only one Facebook friend with probability 0.1? and will have 1000 friends with probabilty 0.00001?
+<p>:) Your detailed explanation skipped over the beginning, I think.   What are the axises of graph?  Am I right in thinking this says that a randomly selected Facebook user will have only one Facebook friend with probability 0.1? and will have 1000 friends with probabilty 0.00001?</p>
 
-That&#x27;s interesting.  I haven&#x27;t cruised random LJs in awhile, but I would have expected more of a threshold effect where I wouldn&#x27;t really sign up unless I already new six or ten others.  I realize that the graph here is probably greatly smoothed.  It would be interesting to see how the low degrees differ from this line.  I will have to check out the paper.
+<p>That's interesting.  I haven't cruised random LJs in awhile, but I would have expected more of a threshold effect where I wouldn't really sign up unless I already new six or ten others.  I realize that the graph here is probably greatly smoothed.  It would be interesting to see how the low degrees differ from this line.  I will have to check out the paper.</p>
 </div>
+
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>11011110</b>: <br />
 <b>2009-08-27T15:52:09Z</b><br />
-Yes, I&#x27;m pretty sure that&#x27;s what it means. The phenomenon you describe may have something to do with why the curve is flatter looking in the top left and steeper in the bottom right.
+<p>Yes, I'm pretty sure that's what it means. The phenomenon you describe may have something to do with why the curve is flatter looking in the top left and steeper in the bottom right.</p>
 </div>
+
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>arvindn</b>: <br />
 <b>2009-08-27T22:11:13Z</b><br />
-i doubt the graph is smoothed. it&#x27;s on a log-log scale, so you wouldn&#x27;t expect things to jump around too much.
+<p>i doubt the graph is smoothed. it's on a log-log scale, so you wouldn't expect things to jump around too much.</p>
 
-if by &#x27;threshold effect&#x27; you mean that frequencies are not monotonically decreasing with degree, i can assure you that that&#x27;s not true. not for this graph, not for any other social network.
+<p>if by 'threshold effect' you mean that frequencies are not monotonically decreasing with degree, i can assure you that that's not true. not for this graph, not for any other social network.</p>
 </div>
+
 <div style="margin-left: 6em; padding-top: 1em;">
 <b>patrickwonders</b>: <br />
 <b>2009-08-27T22:33:46Z</b><br />
-I can see it being decreasing after four or five.  It surpises me there are more degree one than degree two.  You&#x27;d know much better than I.  :)
+<p>I can see it being decreasing after four or five.  It surpises me there are more degree one than degree two.  You'd know much better than I.  :)</p>
 
-I have seen LJ users with only three friends.  I haven&#x27;t seen fewer, but I usually fall victim to the random (probably not very random at all) walkers bias.  :)
+<p>I have seen LJ users with only three friends.  I haven't seen fewer, but I usually fall victim to the random (probably not very random at all) walkers bias.  :)</p>
 </div>
+
 <div style="margin-left: 9em; padding-top: 1em;">
 <b>11011110</b>: <br />
 <b>2009-08-27T22:44:24Z</b><br />
-LJ provides a <a href="http://www.livejournal.com/random.bml">random journal</a> feature so unbiased sampling is easy. (At least, I assume that it provides a uniformly random sample; I don&#x27;t know, really.)
+<p>LJ provides a <a href="http://www.livejournal.com/random.bml">random journal</a> feature so unbiased sampling is easy. (At least, I assume that it provides a uniformly random sample; I don't know, really.)</p>
 
-I just tried 10 manual samples and got a distribution for the number of friend-of links (not counting self-links) of 0, 0, 0, 0, 2, 2, 6, 8, 10, 14. No idea why I missed all the odd numbers, but that at least is consistent with the idea that there are plenty of zeroes. The zeroes I found appeared to be spambots but I don&#x27;t know any principled way of removing those from consideration.
+<p>I just tried 10 manual samples and got a distribution for the number of friend-of links (not counting self-links) of 0, 0, 0, 0, 2, 2, 6, 8, 10, 14. No idea why I missed all the odd numbers, but that at least is consistent with the idea that there are plenty of zeroes. The zeroes I found appeared to be spambots but I don't know any principled way of removing those from consideration.</p>
 </div>
+
 <div style="margin-left: 12em; padding-top: 1em;">
 <b>patrickwonders</b>: <br />
 <b>2009-08-28T01:56:36Z</b><br />
-My first five were 0, 0, 45, 96, 295.  One of the zeros was all ads for a tire repair place.  The other had no posts.  Interesting.  I stand corrected.
+<p>My first five were 0, 0, 45, 96, 295.  One of the zeros was all ads for a tire repair place.  The other had no posts.  Interesting.  I stand corrected.</p>
 </div>
-
