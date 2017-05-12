@@ -77,3 +77,6 @@ body {
 .site-footer {
   border-top: 1px solid #5f1400;
 }
+
+// WTF this is not coming through in the local css but it is on github
+.site-nav .nav-trigger { display: none; }
