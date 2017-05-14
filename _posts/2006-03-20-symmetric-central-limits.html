@@ -4,20 +4,44 @@ title:  'Symmetric central limits'
 date:   2006-03-20 18:37:00
 tags:   [central limits, mathematics, statistics]
 ---
-Some progress on the problem I mentioned earlier, of <a href="{{site.baseurl}}{% post_url 2006-03-06-local-central-limit %}">density near the origin in central limits</a>. I can now handle another fairly broad case, that of centrally symmetric distributions. In fact, for these distributions, a stronger statement about density near the origin can be made, applying to all bounded-radius balls rather than merely to sufficiently large ones:
-<br />
+<p>Some progress on the problem I mentioned earlier, of <a href="{{site.baseurl}}{% post_url 2006-03-06-local-central-limit %}">density near the origin in central limits</a>. I can now handle another fairly broad case, that of centrally symmetric distributions. In fact, for these distributions, a stronger statement about density near the origin can be made, applying to all bounded-radius balls rather than merely to sufficiently large ones:</p>
 
-<br />
-<b>Theorem:</b> Let F be a centrally symmetric distribution with bounded support on <b>R</b><sup>d</sup>, and let X<sub>i</sub> be independent draws from F. Then for any K &gt; 0 and even n, P[|Σ<sub>0≤i&lt;n</sub>X<sub>i</sub>| ≤ K] = Ω(n<sup>-d/2</sup>).
-<br />
+<p><b>Theorem:</b> Let \( F \) be a centrally symmetric distribution with bounded support on \( \mathbb{R}^d \), and let \( X_i \) be independent draws from \( F. \) Then for any \( K\gt 0 \) and even \( n, \)</p>
+\[
+P\left[\left|\sum_{0\le i\lt n} X_i \right| \le K\right]
+= \Omega(n^{-d/2}).
+\]
 
-<br />
-<i>Proof:</i> Consider Y = Σ<sub>0≤i&lt;n/2</sub>X<sub>i</sub> and Z = &amp;Sigma<sub>n/2≤i&lt;n</sub>-X<sub>i</sub>. Y and Z are independent, and (by symmetry) identically distributed. By an appropriate multidimensional central limit theorem (applied to the affine hull of the support of F), with constant probability both Y and Z are bounded by O(sqrt n). Partition the ball of radius O(sqrt n) into O(n<sup>d/2</sup>) subsets S<sub>j</sub>, each of diameter at most K, and let p<sub>j</sub> be the probability that Y (or Z) belongs to S<sub>j</sub>. If both Y and Z belong to the same S<sub>j</sub>, then they are within distance K of each other, so P[|Σ<sub>0≤i&lt;n</sub>X<sub>i</sub>| ≤ K] = P[|Y-Z| ≤ K] ≥ Σ<sub>j</sub>p<sub>j</sub><sup>2</sup>. But the sum of squares of a set of variables, that together add to a fixed value, is minimized when each variable is equal, so Σ<sub>j</sub>p<sub>j</sub><sup>2</sup> = Ω(n<sup>-d/2</sup>).
-<br />
+<p><i>Proof:</i> Consider
+\[
+Y = \sum_{0\le i\lt n/2} X_i
+\]
+and
+\[
+Z = \sum_{n/2\le i\lt n} -X_i.
+\]
+\( Y \) and \( Z \) are independent, and (by symmetry) identically distributed. By an appropriate multidimensional central limit theorem (applied to the affine hull of the support of \( F \)), with constant probability both \( Y \) and \( Z \) are bounded by \( O(\sqrt{n}) \). Partition the ball of radius \( O(\sqrt{n}) \) into \( O(n^{d/2}) \) subsets \( S_j \), each of diameter at most \( K \), and let \( p_j \) be the probability that \( Y \) (or \( Z \)) belongs to \( S_j \). If both \( Y \) and \( Z \) belong to the same \( S_j \), then they are within distance \( K \) of each other, so
+\[
+P\left[\left|\sum_{0\le i\lt n} X_i \right| \le K\right]
+= P[|Y-Z|\le K]
+\ge \sum_j p_j^2.
+\]
+But the sum of squares of a set of variables, that together add to a fixed value, is minimized when each variable is equal, so</p>
+\[
+\sum_j p_j^2 = \Omega(n^{-d/2})
+\]
 
-<br />
-As a corollary, the original statement of the problem, that there exists K such that the probability of being within distance K of the origin is Ω(n<sup>-d/2</sup>) for all n (not just all even n) holds for these distributions as well. For, if n is even, it follows from the theorem above, while if n is odd, by the triangle inequality |Σ<sub>0≤i&lt;n</sub>X<sub>i</sub>| ≤ |Σ<sub>0≤i&lt;n-1</sub>X<sub>i</sub>|+|X<sub>n-1</sub>| and we can choose K to be any constant greater than the maximum possible value of |X<sub>i</sub>|. The example of a simple random walk on an integer lattice shows that this choice of K is the smallest possible.
-<br />
+<p>As a corollary, the original statement of the problem, that there exists \( K \) such that the probability of being within distance \( K \) of the origin is \( \Omega(n^{-d/2}) \) for all \( n \) (not just all even \( n \)) holds for these distributions as well. For, if \( n \) is even, it follows from the theorem above, while if \( n \) is odd, by the triangle inequality
+\[
+\left|\sum_{0\le i\lt n} X_i \right| \le
+\left|\sum_{0\le i\lt n-1} X_i \right| + |X_{n-1}|
+\]
+and we can choose \( K \) to be any constant greater than the maximum possible value of \( |X_i| \). The example of a simple random walk on an integer lattice shows that this choice of \( K \) is the smallest possible.</p>
 
-<br />
-<b>ETA:</b> The same argument seems to apply more generally to nonconstant radii, showing that P[|Σ<sub>0≤i&lt;n</sub>X<sub>i</sub>| ≤ r] = Ω(r<sup>d</sup>n<sup>-d/2</sup>) whenever r = O(sqrt n) and either n is even or r &gt; (1+ε)E[|X<sub>i</sub>|] for some constant ε &gt; 0.
+<p><b>ETA:</b> The same argument seems to apply more generally to nonconstant radii, showing that
+\[
+P\left[\left|\sum_{0\le i\lt n} X_i \right| \le r\right]
+= \Omega(r^d n^{-d/2})
+\]
+whenever \( r = O(\sqrt{n}) \) and either \( n \) is even or 
+\( r\gt (1+\epsilon)E[|X_i|] \) for some constant \( \epsilon\gt 0 \).</p>

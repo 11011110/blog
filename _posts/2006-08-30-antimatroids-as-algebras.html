@@ -4,33 +4,29 @@ title:  'Antimatroids as algebras'
 date:   2006-08-30 23:49:00
 tags:   [abstract algebra, antimatroids, partial orders]
 ---
-An antimatroid is most commonly described as a union-closed accessible family of sets, and they are also commonly formalized as prefix-closed formal languages satisfying a certain exchange axiom. Media theory leads to alternative formalizations involving geometric graphs and finite automata, and <a href="{{site.baseurl}}{% post_url 2006-07-20-upright-quad-drawing %}">my work on drawing antimatroids</a> leads to a characterization in terms of arrangements of translated orthants. But it turns out that antimatroids also have a fairly natural algebraic characterization. That is, we view antimatroids in terms of the algebraic properties of their union operation rather than as systems of explicit sets and elements.
-<br />
+<p>An antimatroid is most commonly described as a union-closed accessible family of sets, and they are also commonly formalized as prefix-closed formal languages satisfying a certain exchange axiom. Media theory leads to alternative formalizations involving geometric graphs and finite automata, and <a href="{{site.baseurl}}{% post_url 2006-07-20-upright-quad-drawing %}">my work on drawing antimatroids</a> leads to a characterization in terms of arrangements of translated orthants. But it turns out that antimatroids also have a fairly natural algebraic characterization. That is, we view antimatroids in terms of the algebraic properties of their union operation rather than as systems of explicit sets and elements.</p>
 
-<br />
-The model for this is an algebraic description of <a href="http://en.wikipedia.org/wiki/Semilattice">semilattices</a> and finite <a href="http://en.wikipedia.org/wiki/Distributive_lattice">distributive lattices</a> (equivalently, finite lattices of sets). A <i>monoid</i> consists of an associative binary operation (such as multiplication or string concatenation or function composition) on a set of objects, together with an identity object for the operation (such as, respectively, 1 or the empty string or the identity function); here we write the monoid operation as multiplication. A <i>semilattice</i> is a monoid that is commutative (xy=yx for all x,y) and idempotent (x<sup>2</sup>=x for all x). The <i>divisibility</i> relation on a semilattice (x|y if, for some z, xz=y) forms a partial order, and the semilattice operation can be interpreted as a join or least upper bound operation for that partial order. By analogy with ring theory we can define an <i>irreducible</i> object in a semilattice to be an x such that if x=yz then x=y or x=z, and we can define a <i>prime</i> object in a semilattice to be an x such that if x|yz then x|y or x|z. It turns out that the finite semilattices in which every irreducible is prime are exactly the ones that can be represented as the join operation for a finite distributive lattice; the lattice is formed by the union and intersection operations on lower sets of the restriction of the divisibility order to the primes.
-<br />
+<p>The model for this is an algebraic description of <a href="http://en.wikipedia.org/wiki/Semilattice">semilattices</a> and finite <a href="http://en.wikipedia.org/wiki/Distributive_lattice">distributive lattices</a> (equivalently, finite lattices of sets). A <i>monoid</i> consists of an associative binary operation (such as multiplication or string concatenation or function composition) on a set of objects, together with an identity object for the operation (such as, respectively, \( 1 \) or the empty string or the identity function); here we write the monoid operation as multiplication. A <i>semilattice</i> is a monoid that is commutative (\( xy=yx \) for all \( x,y \)) and idempotent (\( x^2=x \) for all \( x \)). The <i>divisibility</i> relation on a semilattice (\( x\mid y \) if, for some \( z \), \( xz=y \)) forms a partial order, and the semilattice operation can be interpreted as a join or least upper bound operation for that partial order. By analogy with ring theory we can define an <i>irreducible</i> object in a semilattice to be an \( x \) such that if \( x=yz \) then \( x=y \) or \( x=z \), and we can define a <i>prime</i> object in a semilattice to be an \( x \) such that if \( x\mid yz \) then \( x\mid y \) or \( x\mid z \). It turns out that the finite semilattices in which every irreducible is prime are exactly the ones that can be represented as the join operation for a finite distributive lattice; the lattice is formed by the union and intersection operations on lower sets of the restriction of the divisibility order to the primes.</p>
 
-<br />
-To define antimatroids in a similar way, it seems to work best to turn the notion of irreducibility upside down: define s as <i>singular</i>, with successor t, if s≠t and for every x either sx=s or t|sx. Then any finite semilattice can be represented as the union operation on sets, where the set corresponding to an object x consists of the singular objects that are not multiples of x.
-<br />
+<p>To define antimatroids in a similar way, it seems to work best to turn the notion of irreducibility upside down: define \( s \) as <i>singular</i>, with successor \( t \), if \( s\ne t \) and for every \( x \) either \( sx=s \) or \( t\mid sx \). Then any finite semilattice can be represented as the union operation on sets, where the set corresponding to an object \( x \) consists of the singular objects that are not multiples of \( x \).</p>
 
-<br />
-These sets always satisfy the union closure properties of antimatroids. It remains to formulate algebraic rules forcing these sets to also satisfy the accessibility requirement; that is, each nonempty set in the antimatroid must have a predecessor with one fewer element. The simplest rule I've found so far for this is the following: let x|y, xa≠xb, and xa≠ya=yb≠xb. Then there must exist z with x|z|y and x≠z≠y. That is, if join operation with y covers up the differences between a and b but the join with x doesn't, and the joins of a and b with y differ from the corresponding joins with x, then there must be an object z sandwiched between x and y. Any antimatroid satisfies this rule, and I can prove that the singular set representation for any finite semilattice satisfying this rule forms an antimatroid. But the proof is somewhat tedious, so I'll just stop here.
+<p>These sets always satisfy the union closure properties of antimatroids. It remains to formulate algebraic rules forcing these sets to also satisfy the accessibility requirement; that is, each nonempty set in the antimatroid must have a predecessor with one fewer element. The simplest rule I've found so far for this is the following: let \( x\mid y \), \( xa\ne xb \), and \( xa\ne ya=yb\ne xb \). Then there must exist \( z \) with \( x\mid z\mid y \) and \( x\ne z\ne y \). That is, if join operation with \( y \) covers up the differences between \( a \) and \( b \) but the join with \( x \) doesn't, and the joins of \( a \) and \( b \) with \( y \) differ from the corresponding joins with \( x \), then there must be an object \( z \) sandwiched between \( x \) and \( y \). Any antimatroid satisfies this rule, and I can prove that the singular set representation for any finite semilattice satisfying this rule forms an antimatroid. But the proof is somewhat tedious, so I'll just stop here.</p>
+
 <br /><br /><hr /><br />
 <h3>Comments:</h3>
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>None</b>: Accessible?<br />
 <b>2006-08-31T16:11:52Z</b><br />
-What does 'accessible' mean?
+<p>What does 'accessible' mean?</p>
 
-Thane 
+<p>Thane</p>
 
-http://www.plambeck.org
+<p>http://www.plambeck.org</p>
 </div>
+
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>11011110</b>: Re: Accessible?<br />
 <b>2006-08-31T16:14:26Z</b><br />
-It means that, for every nonempty set S in the system of sets, there is another set S\{x} that differs from S by the removal of a single element x.
+<p>It means that, for every nonempty set \( S \) in the system of sets, there is another set \( S\setminus \{ x \} \) that differs from \( S \) by the removal of a single element \( x \).</p>
 </div>
 

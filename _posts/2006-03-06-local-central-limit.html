@@ -4,27 +4,34 @@ title:  'A local central limit theorem?'
 date:   2006-03-06 17:29:00
 tags:   [unsolved, central limits, mathematics, exponential algorithms, statistics]
 ---
-<p>More mathematics in which I&#x27;m undereducated: local central limit theorems. That is, if we add together a bunch of independent identically distributed random variables, the central limit theorem tells us the distribution of the sum will look Gaussian on a large scale. A <i>local</i> central limit theorem will tell us that the distribution will look Gaussian on a small scale, in small neighborhoods.</p>
+<p>More mathematics in which I'm undereducated: local central limit theorems. That is, if we add together a bunch of independent identically distributed random variables, the central limit theorem tells us the distribution of the sum will look Gaussian on a large scale. A <i>local</i> central limit theorem will tell us that the distribution will look Gaussian on a small scale, in small neighborhoods.</p>
 
 <p>The reason I care is because this came up while revising my paper <a href="http://www.ics.uci.edu/~eppstein/pubs/p-qaba.html">quasiconvex analysis of backtracking algorithms</a> — I needed a result of this sort to complete a random walk argument lower bounding the value of certain multivariate recurrences. In the conference version of the paper, I said it followed from standard methods, and the referees rightly called me on it and wanted either a proof or a specific citation. The result I would like to cite goes something like this:</p>
 
-<blockquote>Let F be a distribution over <b>R</b><sup>d</sup> with bounded support and zero mean, and let X<sub>i</sub> be a sequence of i.i.d. draws from F. Then there exists a constant K such that, for any n, <nobr>P[|Σ<sub>0 ≤ i &lt; n</sub>X<sub>i</sub>| ≤ K] = Ω(n<sup>-d/2</sup>).</nobr></blockquote>
+<div style="margin-left:2em">Let \( F \) be a distribution over \( \mathbb{R}^d \) with bounded support and zero mean, and let \( X_i \) be a sequence of i.i.d. draws from \( F \). Then there exists a constant \( K \) such that, for any \( n \),
+\[
+P\left[ \left| \sum_{0\le i\lt n} X_i \right|\le K \right]
+=\Omega\bigl( n^{-d/2} \bigr).
+\]
+</div>
 
-<p>Probably the bounded support assumption should be weakened to some number of bounded moments. What I was actually able to prove (which turned out to be sufficient for my paper) was the case where F is a discrete distribution over d+1 vectors, in which case it follows easily via Stirling&#x27;s approximation for factorials. It can also be proven in the case where the coordinates of X<sub>i</sub> are independent of each other, by applying the <a href="http://en.wikipedia.org/wiki/Berry-Esseen_theorem">Berry-Esséen Theorem</a> to each coordinate. But now I&#x27;m wondering about what&#x27;s known for more general F. It seems to me the sort of thing that is likely too straightforward (if one only knows the right tools) to be an interesting research topic, but too specialized to be in the standard texts; if so, that would explain why I had trouble finding anything like it in the searches I tried.</p>
+<p>Probably the bounded support assumption should be weakened to some number of bounded moments. What I was actually able to prove (which turned out to be sufficient for my paper) was the case where \( F \) is a discrete distribution over \( d+1 \) vectors, in which case it follows easily via Stirling's approximation for factorials. It can also be proven in the case where the coordinates of \( X_i \) are independent of each other, by applying the <a href="http://en.wikipedia.org/wiki/Berry-Esseen_theorem">Berry-Esséen Theorem</a> to each coordinate. But now I'm wondering about what's known for more general \( F \). It seems to me the sort of thing that is likely too straightforward (if one only knows the right tools) to be an interesting research topic, but too specialized to be in the standard texts; if so, that would explain why I had trouble finding anything like it in the searches I tried.</p>
+
 <br /><br /><hr /><br />
 <h3>Comments:</h3>
+
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>None</b>: <br />
 <b>2010-10-22T18:47:12Z</b><br />
-I guess it&#x27;s a bit unlikely that you&#x27;re still interested in this after 4 years, but I believe the results you were looking for are contained in a 1977 paper of Halasz (&quot;Estimates for the Concentration Function of Combinatorial Number Theory and Probability&quot;).  
+<p>I guess it's a bit unlikely that you're still interested in this after 4 years, but I believe the results you were looking for are contained in a 1977 paper of Halasz ("Estimates for the Concentration Function of Combinatorial Number Theory and Probability").</p>
 
-What he proves can be thought of as saying that as long as your F are &quot;essentially d-dimensional&quot; (still have variance bounded away from 0 when projected in any direction -- in the bounded support case its equivalent to saying that your support is not contained in a hyperplane), the anticoncentration scales like N^{-d/2}.  
+<p>What he proves can be thought of as saying that as long as your \( F \) are "essentially \( d \)-dimensional" (still have variance bounded away from \( 0 \) when projected in any direction -- in the bounded support case its equivalent to saying that your support is not contained in a hyperplane), the anticoncentration scales like \( N^{-d/2} \).</p>
 
-The specific result in this case would be Theorem 4 of his paper, along with the inequalities mu&lt;=n and (in your case) D&gt;=cN for some c.  
+<p>The specific result in this case would be Theorem 4 of his paper, along with the inequalities \( \mu\le n \) and (in your case) \( D\ge cN \) for some \( c \).</p>
 </div>
+
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>11011110</b>: <br />
 <b>2010-10-22T18:59:48Z</b><br />
-Thanks, I am still interested, but I guess I need some more explanation about how this solves my question. Specifically, Halasz proves an upper bound Q ≤ something where Q looks like it is the same quantity that I&#x27;m trying to lower bound. How does the upper bound turn into a lower bound?
+Thanks, I am still interested, but I guess I need some more explanation about how this solves my question. Specifically, Halasz proves an upper bound \( Q\le{} \)something where \( Q \) looks like it is the same quantity that I'm trying to lower bound. How does the upper bound turn into a lower bound?
 </div>
-

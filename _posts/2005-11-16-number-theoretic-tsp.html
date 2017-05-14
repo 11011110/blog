@@ -4,76 +4,81 @@ title:  'A number-theoretic TSP'
 date:   2005-11-16 22:55:00
 tags:   [number theory, algorithms]
 ---
-<b><a href="http://chipuni.livejournal.com/"><img src="http://stat.livejournal.com/img/userinfo.gif" alt="[info]" width="17" height="17" style="vertical-align: bottom; border: 0;" />chipuni</a></b> <a href="http://www.livejournal.com/users/chipuni/438888.html">asks how to permute a sequence of natural numbers in order to minimize the sum of pairwise adjacent products</a>.  Most of the responses suggest interleaving the sorted sequence of the n/2 smallest values with the reverse-sorted sequence of the n/2 largest values, but <b><a href="http://nicodemusrat.livejournal.com/"><img src="http://stat.livejournal.com/img/userinfo.gif" alt="[info]" width="17" height="17" style="vertical-align: bottom; border: 0;" />nicodemusrat</a></b>&#x27;s response suggests that it&#x27;s not quite so trivial...
+<b><a href="http://chipuni.livejournal.com/"><img src="http://stat.livejournal.com/img/userinfo.gif" alt="[info]" width="17" height="17" style="vertical-align: bottom; border: 0;" />chipuni</a></b> <a href="http://www.livejournal.com/users/chipuni/438888.html">asks how to permute a sequence of natural numbers in order to minimize the sum of pairwise adjacent products</a>.  Most of the responses suggest interleaving the sorted sequence of the \( n/2 \) smallest values with the reverse-sorted sequence of the \( n/2 \) largest values, but <b><a href="http://nicodemusrat.livejournal.com/"><img src="http://stat.livejournal.com/img/userinfo.gif" alt="[info]" width="17" height="17" style="vertical-align: bottom; border: 0;" />nicodemusrat</a></b>'s response suggests that it's not quite so trivial...
+
 <br /><br /><hr /><br />
 <h3>Comments:</h3>
+
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>geomblog</b>: <br />
 <b>2005-11-17T08:31:22Z</b><br />
-interesting. nicodemusrat&#x27;s soln sounds plausible enough (the second one). do you see a proof ? 
+<p>interesting. nicodemusrat's soln sounds plausible enough (the second one). do you see a proof ? </p>
 </div>
+
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>11011110</b>: <br />
 <b>2005-11-17T08:47:13Z</b><br />
-Actually, my reaction to seeing livejournal user nicodemusrat&#x27;s comment was to start thinking that the problem could be quite difficult.  If the most obvious greedy algorithm doesn&#x27;t work, it seems unlikely that tweaking it a little like that should work any better...
+<p>Actually, my reaction to seeing livejournal user nicodemusrat's comment was to start thinking that the problem could be quite difficult.  If the most obvious greedy algorithm doesn't work, it seems unlikely that tweaking it a little like that should work any better...</p>
 </div>
+
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>11011110</b>: Proof strategy<br />
 <b>2005-11-17T21:03:23Z</b><br />
-I&#x27;m now thinking livejournal user nicodemusrat may have an optimal strategy.  Proof idea:
+<p>I'm now thinking livejournal user nicodemusrat may have an optimal strategy.  Proof idea:</p>
 
-Without loss of generality, the largest item must be first.  For, if not, you can get a better sequence by reversing the subsequence between the first item and the largest item.  By the same sort of flipping argument, the second largest item must be last, the smallest item must be next to the largest, the second smallest must be next to the second largest, etc etc.
+<p>Without loss of generality, the largest item must be first.  For, if not, you can get a better sequence by reversing the subsequence between the first item and the largest item.  By the same sort of flipping argument, the second largest item must be last, the smallest item must be next to the largest, the second smallest must be next to the second largest, etc etc.</p>
 
-Details completely un-worked-out.
-
+<p>Details completely un-worked-out.</p>
 </div>
+
 <div style="margin-left: 6em; padding-top: 1em;">
 <b>geomblog</b>: Re: Proof strategy<br />
 <b>2005-11-17T22:12:24Z</b><br />
-In fact, the following is a formal rendition of flipping: 
+<p>In fact, the following is a formal rendition of flipping:</p>
 
-given a &lt; b &lt; c &lt; d, 
-ad + bc &lt; ac + bd
+<p>given \( a\lt b\lt c\lt d \),<br />
+\( ad + bc\lt ac + bd\)</p>
 
-in other words, it is always better to &quot;nest&quot; the jumps (ad + bc) rather than interleave them (ac + bd). 
+<p>in other words, it is always better to "nest" the jumps (ad + bc) rather than interleave them (ac + bd). </p>
 
-I think this is almost sufficient. Going back to the longest path formulation, the expression to be maximized is \sum (ai-a_{i+1})^2 + a_1^2 + a_n^2. Now we can pretend that 0 is a special element, and so the last two terms are merely the squared length of arcs from a1 and a_n to 0. 
+<p>I think this is almost sufficient. Going back to the longest path formulation, the expression to be maximized is \( \sum (a_i-a_{i+1})^2 + a_1^2 + a_n^2 \). Now we can pretend that \( 0 \) is a special element, and so the last two terms are merely the squared length of arcs from \( a_1 \) and \( a_n \) to \( 0 \).</p>
 
-Now applying the &quot;no interleave rule&quot;, we clearly need to start at the largest element (creating a large arc that the rest of the tour nests in). Then we have to jump to the first element (so as to avoid interlocking). We can&#x27;t then jump to the second largest, because since ultimately we have to return to 0, that would create another interlocking, so we go to the next largest, and then so on.
+<p>Now applying the "no interleave rule", we clearly need to start at the largest element (creating a large arc that the rest of the tour nests in). Then we have to jump to the first element (so as to avoid interlocking). We can't then jump to the second largest, because since ultimately we have to return to \( 0 \), that would create another interlocking, so we go to the next largest, and then so on.</p>
 </div>
+
 <div style="margin-left: 9em; padding-top: 1em;">
 <b>geomblog</b>: Re: Proof strategy
 <b>2005-11-17T22:32:41Z</b>
-in fact the above technique is exactly right and can be made precise. the trick is to grow both ends of the &quot;loop&quot; that ends in 0. Or to state another way, grow the tour from a_1 and a_n at the same time. the argument works nicely then. 
+<p>in fact the above technique is exactly right and can be made precise. the trick is to grow both ends of the "loop" that ends in \( 0 \). Or to state another way, grow the tour from \( a_1 \) and \( a_n \) at the same time. the argument works nicely then. 
 </div>
+
 <div style="margin-left: 12em; padding-top: 1em;">
 <b>11011110</b>: Re: Proof strategy
 <b>2005-11-17T23:28:28Z</b>
-Yes, I think that&#x27;s another equivalent way of looking at it and somewhat cleaner.  I left a comment back at the original post pointing to our discussion here.
+<p>Yes, I think that's another equivalent way of looking at it and somewhat cleaner.  I left a comment back at the original post pointing to our discussion here.</p>
 </div>
+
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>geomblog</b>: 
 <b>2005-11-17T16:05:49Z</b>
-an interesting transform is this: if we compute \sum (a_i - a_{i+1})^2, then the sum is C - a_1^2 - a_n^2 - (the sum of products)
-so minimizing the pairwise sum (since guessing the start and end points is a poly choice) is equivalent to maximising the pairwise l2_2, i.e longest path on this distance function. 
-
-
+<p>an interesting transform is this: if we compute \( \sum (a_i - a_{i+1})^2 \), then the sum is \( C - a_1^2 - a_n^2 -{} \)(the sum of products)
+so minimizing the pairwise sum (since guessing the start and end points is a poly choice) is equivalent to maximising the pairwise \( l^2_2 \), i.e longest path on this distance function.</p>
 </div>
+
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>geomblog</b>: 
 <b>2005-11-17T16:07:44Z</b>
-hmm. my previous comment got nuked I think. i was saying that this problem is equivalent to longest path on the line with the distance function being l2_2: maximising the latter minimizes the former. It explains the heuristics more cleanly
+<p>hmm. my previous comment got nuked I think. i was saying that this problem is equivalent to longest path on the line with the distance function being \( l^2_2 \): maximising the latter minimizes the former. It explains the heuristics more cleanly</p>
 </div>
+
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>chipuni</b>: 
 <b>2005-11-18T04:52:58Z</b>
-Wow.  This is serious.
+<p>Wow.  This is serious.</p>
 
-I had thought that the optimal solution would be found through a dynamic programming strategy.  It seems closely related to solving the multiple-matrix multiplication problem.
+<p>I had thought that the optimal solution would be found through a dynamic programming strategy.  It seems closely related to solving the multiple-matrix multiplication problem.</p>
 
-But I wasn&#x27;t sure how to go from an optimal series a<sub>1</sub>, a<sub>2</sub>, ..., a<sub>n</sub> to adding another element.  I&#x27;m not sure that just adding a<sub>n+1</sub> to all possible places in the series, then taking the minimum product-sum, would end up giving an optimal product-sum.  (I&#x27;m neither denying it, nor accepting it.)
+<p>But I wasn't sure how to go from an optimal series \( a_1, a_2, \dots, a_n \) to adding another element.  I'm not sure that just adding \( a_{n+1} \) to all possible places in the series, then taking the minimum product-sum, would end up giving an optimal product-sum.  (I'm neither denying it, nor accepting it.)</p>
 
-This weekend, I hope that I&#x27;ll have time to try a few algoritms, and see what works...
- 
+<p>This weekend, I hope that I'll have time to try a few algoritms, and see what works...</p>
 </div>
-

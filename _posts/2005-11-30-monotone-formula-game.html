@@ -4,106 +4,111 @@ title:  'The monotone formula game'
 date:   2005-11-30 12:30:00
 tags:   [complexity theory, abstract games]
 ---
-<a href="http://sigfpe.blogspot.com/">A Neighborhood of Infinity</a> <a href="http://sigfpe.blogspot.com/2005/11/game-of-logic.html">just posted about an interesting abstract game</a> (modeling games such as hex in which it is never harmful to make a move) in which one is given a monotone Boolean formula and two players, True and False, take turns to set values of the variables of the formula in an attempt to make the formula&#x27;s overall value match their names.
-<br />
+<p><a href="http://sigfpe.blogspot.com/">A Neighborhood of Infinity</a> <a href="http://sigfpe.blogspot.com/2005/11/game-of-logic.html">just posted about an interesting abstract game</a> (modeling games such as hex in which it is never harmful to make a move) in which one is given a monotone Boolean formula and two players, True and False, take turns to set values of the variables of the formula in an attempt to make the formula's overall value match their names.</p>
 
-<br />
-Lacking a blogger account to leave a comment, or other contact information, I thought I&#x27;d post here a partial answer to one of his questions:
-<br />
-<i>Is there a nice way to evaluate any position in the game?</i>
-<br />
+<p>Lacking a blogger account to leave a comment, or other contact information, I thought I'd post here a partial answer to one of his questions:</p>
 
-<br />
-It turns out to be at least NP-hard, although PSPACE-completeness seems a more likely final classification.  To prove NP-hardness, transform any 3-SAT formula to a monotone formula by replacing each negated variable ~v<sub>i</sub> by a new variable u<sub>i</sub>; then take the disjunction of this modified formula with n terms of the form (v<sub>i</sub> and u<sub>i</sub>).  If True plays first, then she can win if and only if the original 3-SAT formula is satisfied: we can assume without loss of generality that False&#x27;s strategy is always to answer setting v<sub>i</sub>=True by setting u<sub>i</sub>=False and vice versa (otherwise True could win next turn by setting both v<sub>i</sub> and u<sub>i</sub> to True), so for this formula any strategy for True amounts to a truth assignment for the original 3-SAT formula&#x27;s variables, QED.
-<br />
+<blockquote>Is there a nice way to evaluate any position in the game?</blockquote>
 
-<br />
-<b>ETA 2 Dec: It does in fact turn out to be PSPACE-complete.</b>
-<br />
+<p>It turns out to be at least NP-hard, although PSPACE-completeness seems a more likely final classification.  To prove NP-hardness, transform any 3-SAT formula to a monotone formula by replacing each negated variable \( \lnot v_i \) by a new variable \( u_i \); then take the disjunction of this modified formula with \( n \) terms of the form \( ( v_i \wedge u_i ) \).  If True plays first, then she can win if and only if the original 3-SAT formula is satisfied: we can assume without loss of generality that False's strategy is always to answer setting \( v_i={} \)True by setting \( u_i={} \)False and vice versa (otherwise True could win next turn by setting both \( v_i \) and \( u_i \) to True), so for this formula any strategy for True amounts to a truth assignment for the original 3-SAT formula's variables, QED.</p>
 
-<br />
-To see this, we reduce from the known PSPACE-complete problem of evaluating quantified Boolean formulas: that is, formulas of the form (exists v1)(all v2)(exists v3)...p(v1,v2,v3,...).  To translate a quantified formula into a monotone formula, perform the following steps:
-<br />
+<p><b>ETA 2 Dec: It does in fact turn out to be PSPACE-complete.</b></p>
 
-<br />
-1. Use De Morgan&#x27;s rule to transform the predicate p into a formula in which the not operation applies only to variables and not to more complex subformulas.
-<br />
-2. Replace every subexpression not(vi) with a variable ui, as in the NP-hardness proof, resulting in a monotone predicate p*(v1,u1,v2,u2,...)
-<br />
-3. Create new variables xi for each pair of vi and ui.
-<br />
-4. Form the overall monotone formula ((v1 or u1) and (v1 or x1) and (u1 or x1) and ((v2 and u2) or (v2 and x2) or (u2 and x2) or ((v3 or u3) and (v3 or x3) and (u3 or x3) and ... p*)))
-<br />
+<p>To see this, we reduce from the known PSPACE-complete problem of evaluating quantified Boolean formulas: that is, formulas of the form
+\[
+\exists v_1 \forall v_2 \exists v_3 \dots p(v_1,v_2,v_3,\dots).
+\]
+To translate a quantified formula into a monotone formula, perform the following steps:</p>
 
-<br />
-I claim that the resulting game is won by T, moving first, if and only if the quantified Boolean formula is true.  This follows by induction on the number of quantifiers from the following:
-<br />
+<ol>
+<li><p>Use De Morgan's rule to transform the predicate \( p \) into a formula in which the \( \lnot \) operation applies only to variables and not to more complex subformulas.</p></li>
 
-<br />
-Lemma: the overall game is equivalent to one in which T chooses exactly one of v1 or u1 to be true, followed by a game in which F moves first in the subformula ((v2 and u2) or (v2 and x2) or (u2 and x2) or ((v3 or u3) and (v3 or x3) and (u3 or x3) and ... p*)).
-<br />
+<li><p>Replace every subexpression \( \lnot v_i \) with a variable \( u_i \), as in the NP-hardness proof, resulting in a monotone predicate \( p^*(v_1,u_1,v_2,u_2,\dots) \)</p></li>
 
-<br />
-Proof: T can cause the game to have this value by the following strategy: first move in v1 or u1, then play in the subformula until F moves in v1, u1, or x1, at which point T immediately responds at the third of these variables.  F can cause the game to have this value or better by the following strategy: first, if T avoids playing in v1, u1, or x1, then F can play in x1 and win next turn. If T plays in x1, F can play in one of v1 or u1, forcing T to respond in the other one, and F rather than T has usurped the choice of v1&#x27;s value. Finally, if T plays in v1 or u1, F plays in the other one, forcing T to respond in x1 and achieving the stated game value.  Since both T and F can force the game to have the same value, that is the overall value of the game, QED.
+<li><p>Create new variables \( x_i \) for each pair of \( v_i \) and \( u_i \).</p></li>
+
+<li><p>Form the overall monotone formula
+\[
+\begin{align}
+\biggl( (&v_1\vee u_1)\wedge (v_1\vee x_1)\wedge (u_1\vee x_1) \wedge{} \\
+  \Bigl(& (v_2\wedge u_2) \vee (v_2\wedge x_2) \vee (u_2\vee x_2) \vee{} \\
+  &\bigl( (v_3\vee u_3)\wedge (v_3\vee x_3)\wedge (v_3\vee x_3) \wedge{} \\
+  &\dots p^* \bigr) \Bigr) \biggr) \\
+\end{align}
+\]
+</p></li>
+</ol>
+
+<p>I claim that the resulting game is won by T, moving first, if and only if the quantified Boolean formula is true.  This follows by induction on the number of quantifiers from the following:</p>
+
+<p><b>Lemma:</b> the overall game is equivalent to one in which T chooses exactly one of \( v_1 \) or \( u_1 \) to be true, followed by a game in which F moves first in the subformula</p>
+\[
+\bigl((v_2\vee u_2)\wedge (v_2\vee x_2)\wedge (u_2\vee x_2)\wedge\dots p^*)\bigr).
+\]
+
+<p><i>Proof:</i> T can cause the game to have this value by the following strategy: first move in \( v_1 \) or \( u_1 \), then play in the subformula until F moves in \( v_1 \), \( u_1 \), or \( x_1 \), at which point T immediately responds at the third of these variables.  F can cause the game to have this value or better by the following strategy: first, if T avoids playing in \( v_1 \), \( u_1 \), or \( x_1 \), then F can play in \( x_1 \) and win next turn. If T plays in \( x_1 \), F can play in one of \( v_1 \) or \( u_1 \), forcing T to respond in the other one, and F rather than T has usurped the choice of \( v_1 \)'s value. Finally, if T plays in \( v_1 \) or \( u_1 \), F plays in the other one, forcing T to respond in \( x_1 \) and achieving the stated game value.  Since both T and F can force the game to have the same value, that is the overall value of the game, QED.</p>
+
 <br /><br /><hr /><br />
 <h3>Comments:</h3>
+
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>None</b>: Nice proof!<br />
 <b>2005-12-01T01:24:58Z</b><br />
-I guess this means it&#x27;s a &quot;good&quot; game in the sense that there&#x27;s no easy trick to winning :-)
+<p>I guess this means it's a "good" game in the sense that there's no easy trick to winning :-)</p>
 
-I thought that maybe because the formula was monotone there might be an easy algorithm but I suppose my intuition was wrong. I&#x27;m still guessing there is a simple algorithm in the case when each &#x27;atom&#x27; appears only once in the formula though I haven&#x27;t proved this yet.
---
-SIGFPE
-(aka Dan Piponi)
+<p>I thought that maybe because the formula was monotone there might be an easy algorithm but I suppose my intuition was wrong. I'm still guessing there is a simple algorithm in the case when each 'atom' appears only once in the formula though I haven't proved this yet.<br />
+--<br />
+SIGFPE<br />
+(aka Dan Piponi)</p>
 </div>
+
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>11011110</b>: Thanks!<br />
 <b>2005-12-01T03:07:07Z</b><br />
-<i>I&#x27;m still guessing there is a simple algorithm in the case when each &#x27;atom&#x27; appears only once in the formula</i>
+<blockquote>I'm still guessing there is a simple algorithm in the case when each 'atom' appears only once in the formula</blockquote>
 
-Yeah, in that case I think you can do dynamic programming on the subformulas to work out who would win going first or second in each game, in linear total time.
+<p>Yeah, in that case I think you can do dynamic programming on the subformulas to work out who would win going first or second in each game, in linear total time.</p>
 
-T wins going first in (f1 or f2) iff T can win going first in f1 or going first in f2. F wins going first in (f1 and f2) iff F can win going first in f1 or going first in f2. In both of these cases, the winner can just ignore one of the two subformulas.  If the first player doesn&#x27;t have a win in these cases, the second player can win by always responding to the same subformula the first player just played in.
+<p>T wins going first in (f1 or f2) iff T can win going first in f1 or going first in f2. F wins going first in (f1 and f2) iff F can win going first in f1 or going first in f2. In both of these cases, the winner can just ignore one of the two subformulas.  If the first player doesn't have a win in these cases, the second player can win by always responding to the same subformula the first player just played in.</p>
 
-T wins going first in (f1 and f2) iff (1) T wins going first in f1 and going second in f2, or (2) T wins going second in f1 and going first in f2.  In either case, T moves in the game in which she has a first-move win, and then in successive moves responds in whichever subformula F plays in.  But if T doesn&#x27;t have a first-move win in either subformula, F can win by responding in whichever subformula T plays in.  And if T doesn&#x27;t have a second-move win in one of the subformulas, F can win by always playing in that subformula.
+<p>T wins going first in (f1 and f2) iff (1) T wins going first in f1 and going second in f2, or (2) T wins going second in f1 and going first in f2.  In either case, T moves in the game in which she has a first-move win, and then in successive moves responds in whichever subformula F plays in.  But if T doesn't have a first-move win in either subformula, F can win by responding in whichever subformula T plays in.  And if T doesn't have a second-move win in one of the subformulas, F can win by always playing in that subformula.</p>
 
-Symmetrically, F wins going first in (f1 or f2) iff (1) F wins going first in f1 and going second in f2, or (2) F wins going second in f1 and going first in f2.
+<p>Symmetrically, F wins going first in (f1 or f2) iff (1) F wins going first in f1 and going second in f2, or (2) F wins going second in f1 and going first in f2.</p>
 </div>
+
 <div style="margin-left: 6em; padding-top: 1em;">
 <b>None</b>: Re: Thanks!<br />
 <b>2005-12-01T23:36:35Z</b><br />
-OK, I had a moment to work out how to do this and get the same result as you - pretty straightforward really. If you write it out in the right way it almost looks like a kind of Leibniz type rule for logical formulae. Anyway, I think this is basically the same result as the AND and OR rules presented in <a href="http://home.earthlink.net/~vanshel/VAnshelevich-ARTINT.pdf">this paper</a> but I like the setting in this more general framework. Now I&#x27;m going to look at what happens if there are some atoms shared between the two subformulae of AB and A+B.
+<p>OK, I had a moment to work out how to do this and get the same result as you - pretty straightforward really. If you write it out in the right way it almost looks like a kind of Leibniz type rule for logical formulae. Anyway, I think this is basically the same result as the AND and OR rules presented in <a href="http://home.earthlink.net/~vanshel/VAnshelevich-ARTINT.pdf">this paper</a> but I like the setting in this more general framework. Now I'm going to look at what happens if there are some atoms shared between the two subformulae of AB and A+B.</p>
 </div>
+
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>None</b>: Proven in 1978, right?<br />
 <b>2006-01-24T18:35:57Z</b><br />
-Maybe I&#x27;m missing something, but this looks like one of the two-player formula games shown PSPACE-complete by Schaefer in 1978 (&quot;On the complexity of some two-person perfect-information games&quot;). I don&#x27;t have the paper at hand, but I&#x27;m pretty sure this was one of the permutations of game conditions.
+<p>Maybe I'm missing something, but this looks like one of the two-player formula games shown PSPACE-complete by Schaefer in 1978 ("On the complexity of some two-person perfect-information games"). I don't have the paper at hand, but I'm pretty sure this was one of the permutations of game conditions.</p>
 
-Bob Hearn
-
+<p>Bob Hearn</p>
 </div>
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>11011110</b>: Re: Proven in 1978, right?<br />
 <b>2006-01-24T23:49:34Z</b><br />
-You&#x27;re most likely right.  I didn&#x27;t do a careful literature search.  The reference appears to be J. Comput. System Sci. 16 (1978) 185-225; I&#x27;m not near a library right now to check what it says.
+<p>You're most likely right.  I didn't do a careful literature search.  The reference appears to be J. Comput. System Sci. 16 (1978) 185-225; I'm not near a library right now to check what it says.</p>
 </div>
+
 <div style="margin-left: 6em; padding-top: 1em;">
 <b>None</b>: Re: Proven in 1978, right?<br />
 <b>2006-01-25T15:24:02Z</b><br />
-Actually, I misunderstood the problem statement - I thought each player was free to choose both a variable and a truth assignment on his turn. Following the link I see that the intention is that True sets a variable to true, then False sets a variable to false.
+<p>Actually, I misunderstood the problem statement - I thought each player was free to choose both a variable and a truth assignment on his turn. Following the link I see that the intention is that True sets a variable to true, then False sets a variable to false.</p>
 
-This is definitely one of Schaefer&#x27;s PSPACE-complete problems - it&#x27;s what I reduced from to show Amazons and Konane hard. It seems to be the most convenient form of QBF to reduce from for bounded two-player games with a 2d structure. 
+<p>This is definitely one of Schaefer's PSPACE-complete problems - it's what I reduced from to show Amazons and Konane hard. It seems to be the most convenient form of QBF to reduce from for bounded two-player games with a 2d structure. </p>
 
-Bob Hearn
-
+<p>Bob Hearn</p>
 </div>
+
 <div style="margin-left: 9em; padding-top: 1em;">
 <b>None</b>: Re: Proven in 1978, right?<br />
 <b>2006-01-25T17:40:00Z</b><br />
-Ah, but of course there would be no purpose for True to set a variable false, or False to set a variable true - silly me.
+<p>Ah, but of course there would be no purpose for True to set a variable false, or False to set a variable true - silly me.</p>
 
-Bob
-
+<p>Bob</p>
 </div>
-

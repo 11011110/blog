@@ -4,52 +4,43 @@ title:  'Counting nonzero bits'
 date:   2006-03-11 23:58:00
 tags:   [bit parallelism, number theory, algorithms]
 ---
-Probably a lot of people know about the <a href="http://www.inwap.com/pdp10/hbaker/hakmem/hacks.html#item169">tricks in HAKMEM</a> for counting the number of nonzero bits in a machine word. And that in practice it&#x27;s probably best to avoid multiplication, and either repeatedly remove the lowest nonzero bit with x &amp;= x-1 (if few nonzeros are expected, as in bitboard chess programs) or do a table lookup on longer blocks of bits.
-<br />
+<p>Probably a lot of people know about the <a href="http://www.inwap.com/pdp10/hbaker/hakmem/hacks.html#item169">tricks in HAKMEM</a> for counting the number of nonzero bits in a machine word. And that in practice it's probably best to avoid multiplication, and either repeatedly remove the lowest nonzero bit with \( x \mathrel{\&\!=} x-1 \) (if few nonzeros are expected, as in bitboard chess programs) or do a table lookup on longer blocks of bits.</p>
 
-<br />
-So what follows is not likely to be especially useful.
-<br />
+<p>So what follows is not likely to be especially useful.</p>
 
-<br />
-If one repeatedly removes the lowest nonzero bit, in words of length W, the worst case time is O(W). If one does table lookup with a table of size n, the time is O(W/log n). Which could be slow if you&#x27;re working on a machine with such huge words and such limited memory that W is significantly larger than log n, but that&#x27;s not an accurate description of the computers we generally use nowadays.
-<br />
+<p>If one repeatedly removes the lowest nonzero bit, in words of length \( W \), the worst case time is \( O(W) \). If one does table lookup with a table of size \( n \), the time is \( O(W/\log n) \). Which could be slow if you're working on a machine with such huge words and such limited memory that \( W \) is significantly larger than \( \log n \), but that's not an accurate description of the computers we generally use nowadays.</p>
 
-<br />
-It&#x27;s also possible to count bits by masking, shifting, and adding, as exhibited in the HAKMEM code: if M is a mask with the binary representation ...01010101, and we view an input word x as a sequence of W 1-bit numbers packed together, then y=(x&amp;M)+((x&gt;&gt;1)&amp;M) can be viewed as a sequence of W/2 2-bit numbers, each formed by adding two of the 1-bit numbers. Similarly if N is a mask with binary representation ...001100110011 then z=(y&amp;N)+((y&gt;&gt;2)&amp;N) can be viewed as a sequence of W/4 4-bit numbers, each of which counts the number of nonzeros in the corresponding 4-bit block of x. So by repeatedly shifting and masking, we can count the nonzeros in longer and longer blocks of the binary representation of the input, until we have a single block giving the number of nonzeros in the whole input. This method takes time O(log W), and it is also a contender for practicality as it uses only fast shift, add, and mask operations, and doesn&#x27;t use up as much of the memory cache as the table lookup idea.
-<br />
+<p>It's also possible to count bits by masking, shifting, and adding, as exhibited in the HAKMEM code: if \( M \) is a mask with the binary representation \( ...01010101 \), and we view an input word \( x \) as a sequence of \( W \) \( 1 \)-bit numbers packed together, then \( y=(x\mathbin{\&} M)+((x\gg 1)\mathbin{\&} M) \) can be viewed as a sequence of \( W/2 \) \( 2 \)-bit numbers, each formed by adding two of the \( 1 \)-bit numbers. Similarly if \( N \) is a mask with binary representation \( \dots 001100110011 \) then \( z=(y\mathbin{\&} N)+((y\gg 2)\mathbin{\&} N) \) can be viewed as a sequence of \( W/4 \) \( 4 \)-bit numbers, each of which counts the number of nonzeros in the corresponding \( 4 \)-bit block of \( x \). So by repeatedly shifting and masking, we can count the nonzeros in longer and longer blocks of the binary representation of the input, until we have a single block giving the number of nonzeros in the whole input. This method takes time \( O(\log W) \), and it is also a contender for practicality as it uses only fast shift, add, and mask operations, and doesn't use up as much of the memory cache as the table lookup idea.</p>
 
-<br />
-The HAKMEM trick is to realize that, as this doubling idea progresses, the numbers stored in each block are considerably smaller than the maximum value representable in the number of bits used by the block. In fact, all these numbers are at most W, because that&#x27;s the number of nonzeros in the whole input. So when we reach blocks of k=log W bits, each block is capable of storing the whole answer, and we can add the numbers in each block without fear of overflow. We can add all blocks together in a single operation, x=(x*B)&gt;&gt;(W-k) if B has the binary representation ...0<sup>k-1</sup>10<sup>k-1</sup>10<sup>k-1</sup>1, where the superscripts mean to repeat the digit that many times. The actual HAKMEM code uses a division rather than a multiplication but the idea is similar. So this method takes time O(log log W) (if one assumes constant time per operation as before) since that&#x27;s the number of shift-and-add stages needed to reach the block size from which we can do the multiplication. But it involves multiplication as well as addition, shifts, and masks, which may be a significantly slower operation on modern architectures.
-<br />
+<p>The HAKMEM trick is to realize that, as this doubling idea progresses, the numbers stored in each block are considerably smaller than the maximum value representable in the number of bits used by the block. In fact, all these numbers are at most \( W \), because that's the number of nonzeros in the whole input. So when we reach blocks of \( k=\log W \) bits, each block is capable of storing the whole answer, and we can add the numbers in each block without fear of overflow. We can add all blocks together in a single operation, \( x=(x*B)\gg (W-k) \) if \( B \) has the binary representation \( \dots ...0^{k-1}10^{k-1}100^{k-1}1 \), where the superscripts mean to repeat the digit that many times. The actual HAKMEM code uses a division rather than a multiplication but the idea is similar. So this method takes time \( O(\log\log W) \) (if one assumes constant time per operation as before) since that's the number of shift-and-add stages needed to reach the block size from which we can do the multiplication. But it involves multiplication as well as addition, shifts, and masks, which may be a significantly slower operation on modern architectures.</p>
 
-<br />
-What I realized recently is that the HAKMEM multiplication trick can be extended to all stages of the shift-and-add idea. At any stage of the algorithm, one has blocks of length 2<sup>i</sup>, that store binary numbers counting the bits in the corresponding blocks of the input; thus, these values are themselves at most 2<sup>i</sup> in magnitude but are stored in blocks capable of holding numbers up to 2<sup>2<sup>i</sup></sup>-1 in magnitude. By a constant number of shifts, adds, masks, and multiplies, one can add up groups of 2<sup>2<sup>i</sup>-i</sup> blocks at a time without overflowing into the adjoining blocks, forming new blocks of length 2<sup>2<sup>i</sup></sup>. Repeating this process finds the population count in time O(log<sup>*</sup> W), where log<sup>*</sup> x is the height of the shortest tower of powers 2<sup>2<sup>...</sup></sup> that equals or exceeds x.
-<br />
+<p>What I realized recently is that the HAKMEM multiplication trick can be extended to all stages of the shift-and-add idea. At any stage of the algorithm, one has blocks of length \( 2^i \), that store binary numbers counting the bits in the corresponding blocks of the input; thus, these values are themselves at most \( 2^i \) in magnitude but are stored in blocks capable of holding numbers up to \( 2^{2^i}-1 \) in magnitude. By a constant number of shifts, adds, masks, and multiplies, one can add up groups of \( 2^{2^i-i} \) blocks at a time without overflowing into the adjoining blocks, forming new blocks of length \( 2^{2^i} \). Repeating this process finds the population count in time \( O(\log^* W) \), where \( \log^* x \) is the height of the shortest tower of powers \( 2^{2^{2^{\dots}}} \) that equals or exceeds \( x \).</p>
 
-<br />
-Generally when one sees log<sup>*</sup> in an algorithm analysis it means it&#x27;s a very small factor that should be treated almost as if it were a constant. So it&#x27;s unusual to see a situation where a log<sup>*</sup> is beaten by a bound of the form O(input length / log). Maybe that&#x27;s the right moral for this story: be careful of constant factors and input size assumptions, because sometimes the asymptotics doesn&#x27;t tell you the right answer.
+<p>Generally when one sees log<sup>*</sup> in an algorithm analysis it means it's a very small factor that should be treated almost as if it were a constant. So it's unusual to see a situation where a \( \log^* \) is beaten by a bound of the form \( O( \mbox{input length} / \log) \). Maybe that's the right moral for this story: be careful of constant factors and input size assumptions, because sometimes the asymptotics doesn't tell you the right answer.</p>
+
 <br /><br /><hr /><br />
 <h3>Comments:</h3>
+
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>None</b>: C code<br />
 <b>2006-03-14T07:20:15Z</b><br />
-I haven&#x27;t quite followed your extension, but I was impressed with the simplicity of the C code that implements the original algorithm:
-_______________________
+<p>I haven't quite followed your extension, but I was impressed with the simplicity of the C code that implements the original algorithm:</p>
+
+{% highlight C %}
 unsigned count(unsigned n)
 {
 	unsigned masks[] = { 0x55555555, 0x33333333, 0x0F0F0F0F, 0x00FF00FF, 0x0000FFFF };
 
 	for(unsigned i=0; i&lt;5; i++) {
-		n = (n &amp; masks[i]) + ((n &gt;&gt; (1 &lt;&lt; i)) &amp; masks[i]);
+		n = (n & masks[i]) + ((n >> (1 << i)) & masks[i]);
 	}
 	
 	return n;
 }
-______________________
+{% endhighlight %}
 
-A smart compiler could unroll the loop, and replace x &amp; masks[i] with bitmasking a register against hard coded values.
+<p>A smart compiler could unroll the loop, and replace <code>x &  masks[i]</code> with bitmasking a register against hard coded values.</p>
 
-Writing a function to count the number of 1 bits in an integer was the first interview question I ever got while applying to internships. Amazing that 32 iterations can be reduced to 5, without a huge lookup table.
+<p>Writing a function to count the number of 1 bits in an integer was the first interview question I ever got while applying to internships. Amazing that 32 iterations can be reduced to 5, without a huge lookup table.</p>
 </div>
 

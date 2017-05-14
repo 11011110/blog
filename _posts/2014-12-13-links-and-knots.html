@@ -4,23 +4,23 @@ title:  'Links and knots in the graphs of four-dimensional polytopes'
 date:   2014-12-13 15:53:00
 tags:   [polytopes, knot theory, geometry]
 ---
-<p>The surface of a three-dimensional polyhedron is a two-dimensional space that&#x27;s topologically equivalent to the sphere. By the Jordan curve theorem, every cycle of edges and vertices in this space cuts the surface into two topological disks. But the surface of a four-dimensional polytope is a three-dimensional space that&#x27;s topologically equivalent to the hypersphere, or to three-dimensional Euclidean space completed by adding one point at infinity. So, just as in conventional Euclidean space, polygonal chains (such as the cycles of edges and vertices of the polytope) can be nontrivially knotted or linked. If so, this can also be seen in three-dimensions, as a knot or link in the <a href="https://en.wikipedia.org/wiki/Schlegel_diagram">Schlegel diagram</a> of the polytope (a subdivision of a convex polyhedron into smaller convex polyhedra). Does this happen for actual 4-polytopes? Yes! Actually, it&#x27;s pretty ubiquitous among them.</p>
+<p>The surface of a three-dimensional polyhedron is a two-dimensional space that's topologically equivalent to the sphere. By the Jordan curve theorem, every cycle of edges and vertices in this space cuts the surface into two topological disks. But the surface of a four-dimensional polytope is a three-dimensional space that's topologically equivalent to the hypersphere, or to three-dimensional Euclidean space completed by adding one point at infinity. So, just as in conventional Euclidean space, polygonal chains (such as the cycles of edges and vertices of the polytope) can be nontrivially knotted or linked. If so, this can also be seen in three-dimensions, as a knot or link in the <a href="https://en.wikipedia.org/wiki/Schlegel_diagram">Schlegel diagram</a> of the polytope (a subdivision of a convex polyhedron into smaller convex polyhedra). Does this happen for actual 4-polytopes? Yes! Actually, it's pretty ubiquitous among them.</p>
 
 <p>The linked 4-polytope with the fewest vertices is a <a href="https://en.wikipedia.org/wiki/Duopyramid">duopyramid</a> formed from the convex hull of two equilateral triangles centered at the origin, one in the <i>xy</i>-plane and the other in the <i>zw</i>-plane. These two triangles are not actually two-dimensional faces of the duopyramid; instead, in the Schlegel diagram, they appear as two linked triangles. This polytope has nine tetrahedral facets; in the Schlegel diagram, they appear as one outer tetrahedron, two more adjacent to the top edge of the top linked triangle, two adjacent to the bottom edge of the bottom linked triangle, and four wrapping around the middle vertical edge connecting the two links.</p>
 
-<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/linked-duopyramid.png" /></p>
+<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/linked-duopyramid.png" alt="Link in the graph of a duopyramid" /></p>
 
 <p>Similarly, a seven-vertex <a href="https://en.wikipedia.org/wiki/Neighborly_polytope">neighborly polytope</a> forms a complete graph on seven vertices. <a href="https://en.wikipedia.org/wiki/Linkless_embedding">As with every embedding</a> of the seven-vertex complete graph into space, it contains a knot.</p>
 
-<p>What about <a href="https://en.wikipedia.org/wiki/Simple_polytope">simple 4-polytopes</a>? This means that every vertex has exactly four neighbors. The duopyramid doesn&#x27;t have this property: its vertices all have five neighbors. The simple 4-polytope with the fewest vertices and facets in which I&#x27;ve found a link is a hypercube, with eight cubical facets.</p>
+<p>What about <a href="https://en.wikipedia.org/wiki/Simple_polytope">simple 4-polytopes</a>? This means that every vertex has exactly four neighbors. The duopyramid doesn't have this property: its vertices all have five neighbors. The simple 4-polytope with the fewest vertices and facets in which I've found a link is a hypercube, with eight cubical facets.</p>
 
-<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/linked-hypercube.png" /></p>
+<p style="text-align:center"><img alt="Link in the graph of a hypercube" src="http://www.ics.uci.edu/~eppstein/0xDE/linked-hypercube.png" /></p>
 
 <p>It is also possible to form a trefoil knot in the <a href="https://en.wikipedia.org/wiki/4-6_duoprism">(4,6)-duoprism</a>, the Cartesian product of a square and a hexagon, and to form a link in the (3,6)-duoprism. These are simple polytopes with ten and nine facets respectively.</p>
 
-<p>There are at least two interesting classes of 4-polytopes that don&#x27;t have nontrivial knots or links, however. One of these is the class of <a href="https://en.wikipedia.org/wiki/Polyhedral_pyramid">polyhedral pyramids</a>: 4-dimensional pyramids with a 3-dimensional polyhedron base. Their graphs are <a href="https://en.wikipedia.org/wiki/Apex_graph">apex graphs</a>, embedded nicely with no knots; they have Schlegel diagrams in which the base forms the outside face and the apex of the pyramid is the only vertex inside it, connected to all the other vertices. So any system of closed curves must stay on the planar surface of the base with the exception of one pair of edges through the apex; that&#x27;s not enough to make a knot or link.</p>
+<p>There are at least two interesting classes of 4-polytopes that don't have nontrivial knots or links, however. One of these is the class of <a href="https://en.wikipedia.org/wiki/Polyhedral_pyramid">polyhedral pyramids</a>: 4-dimensional pyramids with a 3-dimensional polyhedron base. Their graphs are <a href="https://en.wikipedia.org/wiki/Apex_graph">apex graphs</a>, embedded nicely with no knots; they have Schlegel diagrams in which the base forms the outside face and the apex of the pyramid is the only vertex inside it, connected to all the other vertices. So any system of closed curves must stay on the planar surface of the base with the exception of one pair of edges through the apex; that's not enough to make a knot or link.</p>
 
-<p>The other is the class of stacked polytopes, formed by gluing simplices face-to-face. Their Schlegel diagrams are formed by repeatedly subdividing a tetrahedron into four smaller tetrahedra meeting at an interior point of the larger tetrahedron, and their graphs are the <a href="https://en.wikipedia.org/wiki/K-tree">4-trees</a>. For any collection of vertex-edge cycles in such a polytope, it&#x27;s possible to undo one of the subdivision steps and either simplify the collection without changing its topological type, by shortcutting the subdivision vertex, or remove a cycle that forms a face of the polytope. So by induction there can be no knots.</p>
+<p>The other is the class of stacked polytopes, formed by gluing simplices face-to-face. Their Schlegel diagrams are formed by repeatedly subdividing a tetrahedron into four smaller tetrahedra meeting at an interior point of the larger tetrahedron, and their graphs are the <a href="https://en.wikipedia.org/wiki/K-tree">4-trees</a>. For any collection of vertex-edge cycles in such a polytope, it's possible to undo one of the subdivision steps and either simplify the collection without changing its topological type, by shortcutting the subdivision vertex, or remove a cycle that forms a face of the polytope. So by induction there can be no knots.</p>
 
 <br /><br /><hr /><br />
 <h3>Comments:</h3>
@@ -29,7 +29,7 @@ tags:   [polytopes, knot theory, geometry]
 <b>None</b>: Elementary polytopes<br />
 <b>2014-12-14T16:52:26Z</b><br />
 Dear David, a class of polytopes that contains both apex polytopes and stacked polytopes are &quot;elementary polytopes&quot; those polytopes which when you add to every polygonal face (k-3) non-intersecting diagonals you get overall dn -(d+1) choose 2 edges
-(or 4n -10) in the 4-dimensional case. those include also the 2-hypersimplex (convex hull of 0-1 vectors with precisely two 1&#x27;s and its dual. (This class is closed under diality). It would be interesting to check if graphs of 4-polytopes this class  
+(or 4n -10) in the 4-dimensional case. those include also the 2-hypersimplex (convex hull of 0-1 vectors with precisely two 1's and its dual. (This class is closed under diality). It would be interesting to check if graphs of 4-polytopes this class  
 have links (especially for teh hypersimplex and is dual)
 also we can consider the graph with the added diagonals...
 best regards Gil Kalai 
@@ -38,13 +38,13 @@ best regards Gil Kalai
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>11011110</b>: RE: Elementary polytopes<br />
 <b>2014-12-14T20:40:49Z</b><br />
-I don&#x27;t have a clean enough drawing yet to be convincing, but I&#x27;m pretty sure the truncated 5-simplex (the dual of a stacked polytope, so therefore also elementary) has two linked cycles in it. Decompose the 5-simplex into two edge-disjoint 5-cycles. These two cycles meet at the five vertices of the 5-simplex, but in its truncation they can be smoothed near these vertices so that they become disjoint from each other. I believe the result is a linked pair of cycles.
+I don't have a clean enough drawing yet to be convincing, but I'm pretty sure the truncated 5-simplex (the dual of a stacked polytope, so therefore also elementary) has two linked cycles in it. Decompose the 5-simplex into two edge-disjoint 5-cycles. These two cycles meet at the five vertices of the 5-simplex, but in its truncation they can be smoothed near these vertices so that they become disjoint from each other. I believe the result is a linked pair of cycles.
 </div>
 
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>11011110</b>: RE: Elementary polytopes<br />
 <b>2014-12-14T20:51:56Z</b><br />
-So here&#x27;s the drawing I was using to figure this out, by overlaying two colored cycles onto the stereographic projection of the truncated 5-cell (same topological embedding into 3d as the Schlegel diagram) from https://commons.wikimedia.org/wiki/File:Truncated_simplex_stereographic.png :
+So here's the drawing I was using to figure this out, by overlaying two colored cycles onto the stereographic projection of the truncated 5-cell (same topological embedding into 3d as the Schlegel diagram) from https://commons.wikimedia.org/wiki/File:Truncated_simplex_stereographic.png :
 
-<img src="http://www.ics.uci.edu/~eppstein/0xDE/linked-t5cell.png" />
+<img src="http://www.ics.uci.edu/~eppstein/0xDE/linked-t5cell.png" alt="Link in the graph of a truncated 5-cell" />
 </div>
