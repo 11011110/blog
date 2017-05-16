@@ -4,33 +4,28 @@ title:  'Three-colorable circle graphs and three-page book embeddings'
 date:   2014-08-09 19:13:00
 tags:   [unsolved, chord diagrams, graph drawing]
 ---
-The <a href="{{site.baseurl}}{% post_url 2011-09-25-confluence-vs-lombardi %}">GD11 contest graph that I&#x27;ve written about earlier</a> turns out to be a <a href="https://en.wikipedia.org/wiki/Circle_graph">circle graph</a>. Here&#x27;s a chord diagram representing it:
-<br />
+<p>The <a href="{{site.baseurl}}{% post_url 2011-09-25-confluence-vs-lombardi %}">GD11 contest graph that I've written about earlier</a> turns out to be a <a href="https://en.wikipedia.org/wiki/Circle_graph">circle graph</a>. Here's a chord diagram representing it:</p>
 
-<br />
-<div style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/contest-arrangement.png" /></div>
-<br />
+<p><div style="text-align:center"><img alt="The GD11 contest graph as a circle graph" src="http://www.ics.uci.edu/~eppstein/0xDE/contest-arrangement.png" /></div></p>
 
-<br />
-I&#x27;m looking at this and similar graphs because I&#x27;m trying to understand a result claimed in a STACS 1992 paper by Walter Unger, &quot;The Complexity of Colouring Circle Graphs&quot;, which claims that testing 3-colorability of circle graphs can be done in polynomial time. (More precisely  Unger claims a time bound of <i>O</i>(<i>n</i> log <i>n</i>) if a chord diagram representing the graph is given.) The problem can equivalently be stated as one of finding a three-page <a href="https://en.wikipedia.org/wiki/Book_embedding">book embedding</a> (if one exists) given a fixed ordering of vertices along the spine of the embedding, or of sorting permutations using three stacks. The paper describes an algorithm that looks for &quot;important subgraphs&quot; and uses them to formulate a <a href="https://en.wikipedia.org/wiki/2-satisfiability">2-satisfiability</a> instance that is claimed to solve the problem, but many details are missing and there seems to be no journal version filling in the missing details. I think there should be a statute of limitations on these things: a 20-year-old conference announcement that is clearly not a full archival paper and that never was turned into one should be considered a non-result. (The paper does give better details for a different result, that it&#x27;s NP-complete to test 4-colorability of circle graphs.)
-<br />
+<p>I'm looking at this and similar graphs because I'm trying to understand a result claimed in a STACS 1992 paper by Walter Unger, "The Complexity of Colouring Circle Graphs", which claims that testing 3-colorability of circle graphs can be done in polynomial time. (More precisely  Unger claims a time bound of \( O(n\log n) \) if a chord diagram representing the graph is given.) The problem can equivalently be stated as one of finding a three-page <a href="https://en.wikipedia.org/wiki/Book_embedding">book embedding</a> (if one exists) given a fixed ordering of vertices along the spine of the embedding, or of sorting permutations using three stacks. The paper describes an algorithm that looks for "important subgraphs" and uses them to formulate a <a href="https://en.wikipedia.org/wiki/2-satisfiability">2-satisfiability</a> instance that is claimed to solve the problem, but many details are missing and there seems to be no journal version filling in the missing details. I think there should be a statute of limitations on these things: a 20-year-old conference announcement that is clearly not a full archival paper and that never was turned into one should be considered a non-result. (The paper does give better details for a different result, that it's NP-complete to test 4-colorability of circle graphs.)</p>
 
-<br />
-The contest-graph example shows that it&#x27;s pointless to try to decompose circle graphs into 3-connected components (say) before trying to color them: by making multiple copies of each chord you can make the graph as highly connected as you like without changing its colorability.
-<br />
+<p>The contest-graph example shows that it's pointless to try to decompose circle graphs into 3-connected components (say) before trying to color them: by making multiple copies of each chord you can make the graph as highly connected as you like without changing its colorability.</p>
 
-<br />
-Coincidentally, another conference paper on 3- and 4-page book embeddings is also missing some important details. It&#x27;s a more famous one, by Yannakakis in STOC 1986, stating that the maximum number of pages needed for book embeddings of planar graphs is exactly four. Yannakakis did publish a journal version of the upper bound (that all planar graphs have four-page book embeddings, in JCSS 1989). But the lower bound construction (the existence of a planar graph requiring four pages), again outlined with many missing details in the conference paper, does not appear in the journal paper. Again, I think the statute of limitations has expired for this claim.
+<p>Coincidentally, another conference paper on 3- and 4-page book embeddings is also missing some important details. It's a more famous one, by Yannakakis in STOC 1986, stating that the maximum number of pages needed for book embeddings of planar graphs is exactly four. Yannakakis did publish a journal version of the upper bound (that all planar graphs have four-page book embeddings, in JCSS 1989). But the lower bound construction (the existence of a planar graph requiring four pages), again outlined with many missing details in the conference paper, does not appear in the journal paper. Again, I think the statute of limitations has expired for this claim.</p>
+
 <br /><br /><hr /><br />
 <h3>Comments:</h3>
+
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>None</b>: <br />
 <b>2014-08-10T09:07:01Z</b><br />
-I completely agree with your comments about Yannakakis&#x27; non-proof. For the same reason, Vida Dujmovic and I, in our 2007 paper &quot;Graph treewidth and geometric thickness parameters&quot;, said that determining whether every planar graph has a 3-page book embedding is an open problem. 
+<p>I completely agree with your comments about Yannakakis' non-proof. For the same reason, Vida Dujmovic and I, in our 2007 paper "Graph treewidth and geometric thickness parameters", said that determining whether every planar graph has a 3-page book embedding is an open problem. </p>
 </div>
+
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>11011110</b>: <br />
 <b>2014-08-11T21:15:58Z</b><br />
-Thanks; I added that reference to the part of the book embedding Wikipedia article about planar graphs. (It was already being used as a reference elsewhere in the article as well.)
+<p>Thanks; I added that reference to the part of the book embedding Wikipedia article about planar graphs. (It was already being used as a reference elsewhere in the article as well.)</p>
 </div>
 
