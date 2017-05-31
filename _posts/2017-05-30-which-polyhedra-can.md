@@ -28,3 +28,6 @@ I was able to find cuboids that can cage larger copies of themselves. For instan
 The fact that two of the corners protrude noticably more than just beyond the sides makes me think that this construction is not very tight.
 Are significantly larger scale factors possible for self-caged polyhedra?
 And can we prove that a cube can't cage a larger cube?
+
+(
+[Google+](https://plus.google.com/100003628603413742554/posts/M9yUTPy59NK))
