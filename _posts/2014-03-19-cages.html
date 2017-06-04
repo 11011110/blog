@@ -4,99 +4,113 @@ title:  'Cages'
 date:   2014-03-19 22:10:00
 tags:   [graph theory]
 ---
-<p>The <a href="https://en.wikipedia.org/wiki/Cage_(graph_theory)">cages</a> are a class of graphs that I think deserve to be more widely known, because they have a lot of interesting properties that make them useful as counterexamples in graph algorithms and graph theory. They&#x27;re hard to construct and we don&#x27;t have a lot of explicit descriptions of them, but that&#x27;s not so important when you&#x27;re using one as a counterexample.</p>
+<p>The <a href="https://en.wikipedia.org/wiki/Cage_(graph_theory)">cages</a> are a class of graphs that I think deserve to be more widely known, because they have a lot of interesting properties that make them useful as counterexamples in graph algorithms and graph theory. They're hard to construct and we don't have a lot of explicit descriptions of them, but that's not so important when you're using one as a counterexample.</p>
 
-<p>First, what is a cage? The cages are parameterized by two numbers, <i>r</i> and <i>g</i>. An (<i>r</i>,<i>g</i>)-cage is a graph that:
+<p>First, what is a cage? The cages are parameterized by two numbers, \( r \) and \( g \). An \( (r,g) \)-cage is a graph that:</p>
+
 <ul>
-<li>is <i>r</i>-regular: each vertex is incident to exactly <i>r</i> edges,</li>
-<li>has girth <i>g</i>: each cycle has at least <i>g</i> edges in it, and</li>
-<li>is as small as possible: no graph with fewer vertices is also <i>r</i>-regular with girth <i>g</i>.</li>
+<li><p>is \( r \)-regular: each vertex is incident to exactly \( r \) edges,</p></li>
+
+<li><p>has girth \( g \): each cycle has at least \( g \) edges in it, and</p></li>
+
+<li><p>is as small as possible: no graph with fewer vertices is also \( r \)-regular with girth \( g \).</p></li>
 </ul>
-An example is the <a href="https://en.wikipedia.org/wiki/Petersen_graph">Petersen graph</a>, which is the unique smallest 3-regular graph with girth 5 and therefore is also known as the (3,5)-cage. Another, less well known, is the <a href="https://en.wikipedia.org/wiki/Robertson_graph">Robertson (4,5)-cage</a>. Challenge: find a better layout than Robertson&#x27;s, below (which I took from Wikipedia and at least shows some hints at symmetry), or than the tangled circular layouts also shown in the Wikipedia article.</p>
 
-<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/Robertson-cage.png" /></p>
+<p>An example is the <a href="https://en.wikipedia.org/wiki/Petersen_graph">Petersen graph</a>, which is the unique smallest \( 3 \)-regular graph with girth \( 5 \) and therefore is also known as the \( (3,5) \)-cage. Another, less well known, is the <a href="https://en.wikipedia.org/wiki/Robertson_graph">Robertson \( (4,5) \)-cage</a>. Challenge: find a better layout than Robertson's, below (which I took from Wikipedia and at least shows some hints at symmetry), or than the tangled circular layouts also shown in the Wikipedia article.</p>
 
-<p>I don&#x27;t think it&#x27;s obvious that cages exist, for all combinations of <i>r</i> and <i>g</i>, but they do. They have to be big: A simple argument based on the fact that a breadth first search of depth up to half the girth can&#x27;t find any cycles shows that these graphs must have Ω((<i>r</i> − 1)<sup><i>g</i>/2 − O(1)</sup>) vertices, exponential in <i>g</i> even when <i>r</i> is bounded. Turning this around, if <i>n</i> is the number of vertices in such a graph, <i>g</i> can be at most 2 log<sub><i>r</i> − 1</sub> <i>n</i> + O(1), only logarithmically small.</p>
+<p style="text-align:center"><img alt="The Robertson (4,5)-cage, File:Robertson graph.svg on Wikimedia commons" src="{{site.baseurl}}/assets/2014/Robertson-cage.svg" /></p>
 
-<p>Bollobás and Szemerédi [&quot;Girth of sparse graphs&quot;, J. Graph. Th. 2002] say that &quot;the first good upper bound&quot; on the size of a cage was by Erdős and Sachs in 1963.  I don&#x27;t know how they proved it (it&#x27;s in German), but my first guess would be a form of the probabilistic method: <a href="http://arxiv.org/abs/cs.DM/9907002">random regular graphs have only a small number of short cycles</a>, so probably there&#x27;s some way of getting rid of them and leaving a remaining regular graph that has none at all. But as far as I know the best bounds are not probabilistic, but instead use the method of Ramanujan graphs, by Lubotzky, Phillips, and Sarnak [Combinatorica 1988].
+<p>I don't think it's obvious that cages exist, for all combinations of \( r \) and \( g, \) but they do. They have to be big: A simple argument based on the fact that a breadth first search of depth up to half the girth can't find any cycles shows that these graphs must have \( \Omega(r-1)^{g/2-O(1)} \) vertices, exponential in \( g \) even when \( r \) is bounded. Turning this around, if \( n \) is the number of vertices in such a graph, \( g \) can be at most \( 2\log_{r-1}n + O(1), \) only logarithmically small.</p>
+
+<p>Bollobás and Szemerédi ["Girth of sparse graphs", <i>J. Graph. Th.</i> 2002] say that "the first good upper bound" on the size of a cage was by Erdős and Sachs in 1963.  I don't know how they proved it (it's in German), but my first guess would be a form of the probabilistic method: <a href="http://arxiv.org/abs/cs.DM/9907002">random regular graphs have only a small number of short cycles</a>, so probably there's some way of getting rid of them and leaving a remaining regular graph that has none at all. But as far as I know the best bounds are not probabilistic, but instead use the method of Ramanujan graphs, by Lubotzky, Phillips, and Sarnak [<i>Combinatorica</i> 1988].
 A Ramanujan graph is a graph whose second eigenvalue is nearly as large as possible, which in turn implies that it is a good <a href="https://en.wikipedia.org/wiki/Expander_graph">expander</a>.
-In their paper, Lubotzky et al use an algebraic construction to find a family of graphs with <i>g</i> = (4/3 − o(1))log<sub><i>r</i> − 1</sub> <i>n</i> and they show that having such a high girth implies that the graph is a Ramanujan graph.</p>
+In their paper, Lubotzky et al use an algebraic construction to find a family of graphs with \( g = \bigl(\tfrac{4}{3} − o(1)\bigr)\log_{r-1} n \) and they show that having such a high girth implies that the graph is a Ramanujan graph.</p>
 
-<p>So we know that the girth of a cage is logarithmic in its size. But is the right constant on the logarithm 2 or 4/3? Bollobás and Szemerédi say that it should be 2, and I don&#x27;t have any reason to doubt it myself. If so, the graphs of Lubotzky et al are not themselves cages, but at least they give us an upper bound on how big cages need to be.</p>
+<p>So we know that the girth of a cage is logarithmic in its size. But is the right constant on the logarithm \( 2 \) or \( 4/3 \)? Bollobás and Szemerédi say that it should be \( 2 \), and I don't have any reason to doubt it myself. If so, the graphs of Lubotzky et al are not themselves cages, but at least they give us an upper bound on how big cages need to be.</p>
 
 <p>Beyond having high expansion, some of the other properties of cages involve high local symmetry, dense minors and high treewidth, and bad surface embeddings:</p>
+
 <ul>
-<li><p>Some of the known small cages are highly symmetric graphs, but there&#x27;s no particular reason to believe that continues for larger sizes. However, they are locally symmetric: the neighborhood of every vertex looks like every other vertex, out to a radius of half the girth, just a regular tree with no cycles to be seen.</p></li>
+<li><p>Some of the known small cages are highly symmetric graphs, but there's no particular reason to believe that continues for larger sizes. However, they are locally symmetric: the neighborhood of every vertex looks like every other vertex, out to a radius of half the girth, just a regular tree with no cycles to be seen.</p></li>
 
-<li><p>For fixed values of <i>r</i>, a cage is a sparse graph. However, the cages necessarily have much denser minors. To see this, take an arbitrary spanning tree of a cage, and choose a set of equally spaced levels of the tree spaced about <i>g</i>/4 levels apart, such that there are about 4<i>n</i>/<i>g</i> vertices in the chosen levels. Contract the tree edges connecting each node with its nearest ancestor in a chosen level (or the root if no such ancestor exists). Because the graph has high girth, these contractions won&#x27;t produce any self-loops or doubled edges, giving a minor that still has almost as many edges as it did before but with a number of vertices that has been reduced by a logarithmic factor. Even if you delete all but (1 + ε)<i>n</i> of their edges, the same argument shows that the remaining graph will still have a dense minor. And because of their high expansion, cages also do not obey anything like the <a href="https://en.wikipedia.org/wiki/Planar_separator_theorem">planar separator theorem</a>, and instead have linear treewidth.</p></li>
+<li><p>For fixed values of \( r, \) a cage is a sparse graph. However, the cages necessarily have much denser minors. To see this, take an arbitrary spanning tree of a cage, and choose a set of equally spaced levels of the tree spaced about \( g/4 \) levels apart, such that there are about \( 4n/g \) vertices in the chosen levels. Contract the tree edges connecting each node with its nearest ancestor in a chosen level (or the root if no such ancestor exists). Because the graph has high girth, these contractions won't produce any self-loops or doubled edges, giving a minor that still has almost as many edges as it did before but with a number of vertices that has been reduced by a logarithmic factor. Even if you delete all but \( (1 + \epsilon)n \) of their edges, the same argument shows that the remaining graph will still have a dense minor. And because of their high expansion, cages also do not obey anything like the <a href="https://en.wikipedia.org/wiki/Planar_separator_theorem">planar separator theorem</a>, and instead have linear treewidth.</p></li>
 
-<li><p>If a graph is embedded on a surface, <a href="https://www.ics.uci.edu/~eppstein/junkyard/euler/">Euler&#x27;s formula</a> tells us the genus of the surface as a function of its number of vertices, edges, and faces. For a cage, the number of faces must be very small (each edges is in two faces but each face has logarithmically many edges), from which it follows that the genus must be linear. In fact, the minimum genus for these graphs is very close to the maximum genus of any regular graph with the same degree. They also can&#x27;t be embedded nicely in the plane: Leighton proved that for bounded degree graphs, the number of crossings in any planar drawing is proportional to the square of the bisection width. Because they are expanders, cages have linear bisection width and quadratic <a href="https://en.wikipedia.org/wiki/Crossing_number_(graph_theory)">crossing number</a>.</p></li>
+<li><p>If a graph is embedded on a surface, <a href="https://www.ics.uci.edu/~eppstein/junkyard/euler/">Euler's formula</a> tells us the genus of the surface as a function of its number of vertices, edges, and faces. For a cage, the number of faces must be very small (each edges is in two faces but each face has logarithmically many edges), from which it follows that the genus must be linear. In fact, the minimum genus for these graphs is very close to the maximum genus of any regular graph with the same degree. They also can't be embedded nicely in the plane: Leighton proved that for bounded degree graphs, the number of crossings in any planar drawing is proportional to the square of the bisection width. Because they are expanders, cages have linear bisection width and quadratic <a href="https://en.wikipedia.org/wiki/Crossing_number_(graph_theory)">crossing number</a>.</p></li>
 </ul>
+
 <br /><br /><hr /><br />
 <h3>Comments:</h3>
+
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>ext_2497288</b>: <br />
 <b>2014-03-21T15:46:45Z</b><br />
-I took on the challenge :) After some experimenting I found a way to embed the Robertson graph on a torus by using Hamiltonian cycles. I started with a circular layout. If you take all the edges going round the circle to be one Hamiltonian cycle, then there is another &quot;orthogonal&quot; one made up of edges inside the circle. Using the ordering in each of the cycles as x and y coordinates gives the first layout. The square has periodic boundary conditions (a torus). The x (and y) coordinates of each point are unique (the vertices correspond to the ones in a permutation matrix). The edges belonging to the same Hamiltonian cycle never cross. Note that this is not the only way to connect the vertices like this for these positions.
-The layout in the square shows that it is possible to get a layout where all the edges are in one of two orthogonal directions. Such a layout is shown in the second image. Again, the parallelogram has periodic boundary conditions. The area of the parallelogram is 9*10-9-8=63. The number of crossings is 63-19=54 and the &quot;density&quot; of points in the grid is 19/63.
-These layouts do not show the symmetries of the graph, but I think they are interesting nevertheless.
+<p>I took on the challenge :) After some experimenting I found a way to embed the Robertson graph on a torus by using Hamiltonian cycles. I started with a circular layout. If you take all the edges going round the circle to be one Hamiltonian cycle, then there is another "orthogonal" one made up of edges inside the circle. Using the ordering in each of the cycles as x and y coordinates gives the first layout. The square has periodic boundary conditions (a torus). The x (and y) coordinates of each point are unique (the vertices correspond to the ones in a permutation matrix). The edges belonging to the same Hamiltonian cycle never cross. Note that this is not the only way to connect the vertices like this for these positions.
+The layout in the square shows that it is possible to get a layout where all the edges are in one of two orthogonal directions. Such a layout is shown in the second image. Again, the parallelogram has periodic boundary conditions. The area of the parallelogram is 9*10-9-8=63. The number of crossings is 63-19=54 and the "density" of points in the grid is 19/63.
+These layouts do not show the symmetries of the graph, but I think they are interesting nevertheless.</p>
 
-<img src="https://dl.dropboxusercontent.com/s/cllmvrin7gq6an2/robertson_graph_square.png" alt="square" title="Robertson Graph Square" />
-<img src="https://dl.dropboxusercontent.com/s/54cxukykwbmx964/robertson_graph_parallelogram.png" alt="parallelogram" title="Robertson Graph Parallelogram" />
+<p><img src="https://dl.dropboxusercontent.com/s/cllmvrin7gq6an2/robertson_graph_square.png" alt="Robertson Graph Square" title="Robertson Graph Square" /></p>
 
+<p><img src="https://dl.dropboxusercontent.com/s/54cxukykwbmx964/robertson_graph_parallelogram.png" alt="Robertson Graph Parallelogram" title="Robertson Graph Parallelogram" /></p>
 </div>
+
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>11011110</b>: <br />
 <b>2014-03-21T15:52:29Z</b><br />
-Neat, and an interesting style. It reminds me a bit of a style I used for 3-regular graphs in <a href="http://arxiv.org/abs/cs.CG/0312056">one of my papers</a>. I wonder how much more generally it works. I guess to construct it one needs a Hamiltonian decomposition, which doesn&#x27;t exist for all 4-regular graphs and may be hard to find.
+<p>Neat, and an interesting style. It reminds me a bit of a style I used for 3-regular graphs in <a href="http://arxiv.org/abs/cs.CG/0312056">one of my papers</a>. I wonder how much more generally it works. I guess to construct it one needs a Hamiltonian decomposition, which doesn't exist for all 4-regular graphs and may be hard to find.</p>
 </div>
+
 <div style="margin-left: 6em; padding-top: 1em;">
 <b>ext_2497288</b>: <br />
 <b>2014-03-21T16:08:52Z</b><br />
-Indeed very similar. I hadn&#x27;t seen that paper, but what I know about graph drawing is very much based on reading your posts :)
-You do need the Hamiltonian decomposition. I guess there are many for the Robertson graph, so there will be lots of layouts like the one I showed. It would be interesting to know how many essentially different ones there are. Maybe there are some with more symmetry.
-
+<p>Indeed very similar. I hadn't seen that paper, but what I know about graph drawing is very much based on reading your posts :)
+You do need the Hamiltonian decomposition. I guess there are many for the Robertson graph, so there will be lots of layouts like the one I showed. It would be interesting to know how many essentially different ones there are. Maybe there are some with more symmetry.</p>
 </div>
+
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>ext_2497288</b>: <br />
 <b>2014-03-21T20:24:14Z</b><br />
-I think this graph is the Robertson graph.
+<p>I think this graph is the Robertson graph.
 It has the correct number of vertices and edges.
 It also is 4-regular and has girth 5.
 This layout is more symmetrical.
 The red edges form a cycle of length 12.
-The whole graph has left/right, up/down and 180 rotational symmetry (each &quot;triangle&quot; keeps its orientation fixed for these transformations).
-Some of the edges come very close to vertices that they are not incident to. It is best to imagine the five &quot;triangles&quot; simultaneously rotating.
-The vertices can be labelled as follows.
-[ &quot;01&quot;, &quot;12&quot;, &quot;32&quot;, &quot;00&quot;, &quot;2*&quot;, &quot;30&quot;, &quot;0*&quot;, &quot;31&quot;, &quot;21&quot;, &quot;11&quot;, &quot;20&quot;, &quot;*2&quot;, &quot;1*&quot;, &quot;3*&quot;, &quot;22&quot;, &quot;*0&quot;, &quot;10&quot;, &quot;*1&quot;, &quot;02&quot; ]
+The whole graph has left/right, up/down and 180 rotational symmetry (each "triangle" keeps its orientation fixed for these transformations).
+Some of the edges come very close to vertices that they are not incident to. It is best to imagine the five "triangles" simultaneously rotating.
+The vertices can be labelled as follows.</p>
 
-<img src="https://dl.dropboxusercontent.com/s/iq00fv7kfnlasze/robertson_graph_D12.png" alt="" title="Robertson Graph D12 Symmetry" />
+{% highlight python %}
+[ "01", "12", "32", "00", "2*", "30", "0*", "31", "21", "11",
+  "20", "*2", "1*", "3*", "22", "*0", "10", "*1", "02" ]
+{% endhighlight %}
 
-
+<p><img src="https://dl.dropboxusercontent.com/s/iq00fv7kfnlasze/robertson_graph_D12.png" alt="Robertson Graph D12 Symmetry" title="Robertson Graph D12 Symmetry" /></p>
 </div>
+
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>11011110</b>: <br />
 <b>2014-03-21T20:39:09Z</b><br />
-If it is four-regular with 19 vertices and girth 5, then it is definitely the Robertson graph. Not all cages are unique but that one is.
+<p>If it is four-regular with 19 vertices and girth 5, then it is definitely the Robertson graph. Not all cages are unique but that one is.</p>
 </div>
+
 <div style="margin-left: 6em; padding-top: 1em;">
 <b>ext_2497288</b>: <br />
 <b>2014-03-21T20:53:15Z</b><br />
-I don&#x27;t know how the original construction works, but the one that this layout is based on is fairly straightforward.
+<p>I don't know how the original construction works, but the one that this layout is based on is fairly straightforward.
 Each vertex is labelled (i, j) with i 0, 1, 2, 3 or None and j 0, 1, 2 or None.
 The label (None, None) is excluded.
-The edges in Python:
+The edges in Python:</p>
 
+{% highlight python %}
     E0 = [ ((i, None), (i, j)) for i in range(4) for j in range(3) ]
     E1 = [ ((i, j), ((i+1)%4, (j+1)%3)) for i in range(4) for j in range(3) ]
     E2 = [ ((i, j), (None, j)) for i in range(4) for j in range(3) ]
     E4 = [ ((0, None), (2, None)), ((1, None), (3, None)) ]
     E = E0 + E1 + E2 + E4
-
+{% endhighlight %}
 </div>
+
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>ext_2497288</b>: <br />
 <b>2014-03-22T01:42:51Z</b><br />
-The survey article <a href="http://www.combinatorics.org/ojs/index.php/eljc/article/view/DS16/pdf">DS16.pdf</a> has a nice symmetric drawing of the Robertson graph using 4 colours and curved edges.
+<p>The survey article <a href="http://www.combinatorics.org/ojs/index.php/eljc/article/view/DS16/pdf">DS16.pdf</a> has a nice symmetric drawing of the Robertson graph using 4 colours and curved edges.</p>
 </div>
-

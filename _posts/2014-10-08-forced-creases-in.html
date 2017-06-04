@@ -8,25 +8,25 @@ tags:   [origami, papers]
 
 <p>One of the key ideas in the paper comes from some previous work by undergraduate co-author Jessica Ginepro with her advisor Tom Hull (<b><a href="http://tomster0.livejournal.com/"><img src="http://stat.livejournal.com/img/userinfo.gif" alt="[info]" width="17" height="17" style="vertical-align: bottom; border: 0;" />tomster0</a></b>). They showed that the different ways of folding the Miura pattern (the right way, and the many wrong ways) have a one-to-one correspondence with the different ways of properly 3-coloring a grid graph. The correspondence uses a non-obvious <a href="https://en.wikipedia.org/wiki/Boustrophedon">boustrophedon</a> pattern of sweeping the grid in alternating order, left to right, right to left, left to right, etc., using the differences between consecutive colors in the sweep to determine the direction to fold each crease.</p>
 
-<p style="text-align:center"><img alt="Bijection between Miura foldings and grid colorings" src="http://www.ics.uci.edu/~eppstein/0xDE/miura/biject.png" /></p>
+<p style="text-align:center"><img alt="Bijection between Miura foldings and grid colorings" src="{{site.baseurl}}/assets/2014/miura/biject.png" /></p>
 
 <p>Under this correspondence, a forcing set of creases in a Miura pattern becomes a forcing set of edges in the grid, such that if you label each selected edge with the difference (mod 3) of the colors of its endpoints, no other valid coloring has the same pattern of differences.</p>
 
 <p>Based on this correspondence, and some other combinatorial tools including domino tiling and planar feedback arc sets, we can show that the standard Miura folding pattern is the worst Miura, in the sense that it requires a bigger number of forced creases (approximately half of the creases) than any other way of folding the same pattern. In terms of the corresponding grid coloring, the Miura pattern forms a checkerboard of two colors, and any one of its grid squares can be recolored in a different color unless it has a forced edge incident to it, so there have to be a lot of forced edges.</p>
 
-<p style="text-align:center"><img alt="Two-colored checkerboard, corresponding to the Miura fold" src="http://www.ics.uci.edu/~eppstein/0xDE/miura/checkerboard.png" /></p>
+<p style="text-align:center"><img alt="Two-colored checkerboard, corresponding to the Miura fold" src="{{site.baseurl}}/assets/2014/miura/checkerboard.svg" /></p>
 
 <p>In constrast, some other folding patterns for the same crease set can be forced by much smaller subsets of creases, proportional only to the square root of the total number of creases. For instance, fold a sheet of paper into a strip, folding each crease the same way so that the paper spirals around itself:</p>
 
-<p style="text-align:center"><img alt="Partway towards a wrong folding of the Miura crease pattern" src="http://www.ics.uci.edu/~eppstein/0xDE/miura/FalseMiura1.png" /></p>
+<p style="text-align:center"><img alt="Partway towards a wrong folding of the Miura crease pattern" src="{{site.baseurl}}/assets/2014/miura/FalseMiura1.png" /></p>
 
 <p>Then fold the strip in a spiral around itself again, so that the second set of folds are all parallel to each other but tilted a little rather than being perpendicular to the first set of folds:</p>
 
-<p style="text-align:center"><img alt="Wrong folding of the Miura crease pattern" src="http://www.ics.uci.edu/~eppstein/0xDE/miura/FalseMiura2.png" /></p>
+<p style="text-align:center"><img alt="Wrong folding of the Miura crease pattern" src="{{site.baseurl}}/assets/2014/miura/FalseMiura2.png" /></p>
 
 <p>This corresponds to a nice regular pattern of three colors in the grid in diagonal stripes, which is much more highly determined: if you fix the colors on the boundary of the grid, everything inside has its color forced. So, it has much smaller forcing sets (in fact, the smallest possible among all wrong ways of folding the Miura).</p>
 
-<p style="text-align:center"><img alt="Three-colored checkerboard, corresponding to the wrong folding of the Miura crease pattern" src="http://www.ics.uci.edu/~eppstein/0xDE/miura/stripes.png" /></p>
+<p style="text-align:center"><img alt="Three-colored checkerboard, corresponding to the wrong folding of the Miura crease pattern" src="{{site.baseurl}}/assets/2014/miura/stripes.svg" /></p>
 
 <p>More generally, for any pattern of folding the Miura (right or wrong), we can construct a minimum subset of the pattern that forces the rest, in polynomial time.</p>
 

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="558px" height="198px" viewBox="0 0 558 198" enable-background="new 0 0 558 198" xml:space="preserve">
+<rect x="27" y="27" fill="none" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" width="144" height="144"/>
+<polyline fill="none" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" points="27,0 27,27 0,27 "/>
+<polyline fill="none" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" points="171,0 171,27 198,0 "/>
+<line fill="none" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" x1="171" y1="27" x2="198" y2="27"/>
+<line fill="none" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" x1="171" y1="171" x2="189" y2="198"/>
+<polyline fill="none" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" points="27,198 27,171 0,171 "/>
+<rect x="387" y="27" fill="none" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" width="144" height="144"/>
+<polyline fill="none" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" points="387,0 387,27 360,27 "/>
+<polyline fill="none" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" points="531,0 531,27 558,0 "/>
+<line fill="none" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" x1="531" y1="27" x2="558" y2="27"/>
+<line fill="none" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" x1="531" y1="171" x2="549" y2="198"/>
+<polyline fill="none" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" points="387,198 387,171 360,171 "/>
+<g>
+	<g>
+		<line fill="none" stroke="#FEC200" stroke-width="10" stroke-miterlimit="10" x1="243" y1="99" x2="293.876" y2="99"/>
+		<g>
+			<path fill="#FEC200" d="M315,99c-9.939,3.688-22.271,9.98-29.916,16.646L291.105,99l-6.021-16.642
+				C292.728,89.023,305.06,95.315,315,99z"/>
+		</g>
+	</g>
+</g>
+<polyline fill="none" stroke="#0081CD" stroke-width="1.5" stroke-miterlimit="10" points="387,27 432,72 486,72 486,126 432,126 
+	387,171 "/>
+<line fill="none" stroke="#0081CD" stroke-width="1.5" stroke-miterlimit="10" x1="432" y1="72" x2="432" y2="126"/>
+<line fill="none" stroke="#0081CD" stroke-width="1.5" stroke-miterlimit="10" x1="486" y1="126" x2="531" y2="171"/>
+<line fill="none" stroke="#0081CD" stroke-width="1.5" stroke-miterlimit="10" x1="486" y1="72" x2="531" y2="27"/>
+</svg>

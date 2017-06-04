@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="522px" height="468px" viewBox="0 0 522 468" enable-background="new 0 0 522 468" xml:space="preserve">
+<polygon fill="none" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" points="216,306 180,234 99,162 18,234 126,18
+	396,18 504,234 423,306 342,234 306,306 "/>
+<polygon fill="none" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" points="351,90 216,162 306,162 171,90 99,234
+	171,378 396,450 126,450 351,378 423,234 "/>
+<line fill="none" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" x1="126" y1="18" x2="351" y2="90"/>
+<line fill="none" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" x1="396" y1="18" x2="171" y2="90"/>
+<line fill="none" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" x1="504" y1="234" x2="396" y2="450"/>
+<line fill="none" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" x1="423" y1="306" x2="423" y2="234"/>
+<line fill="none" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" x1="342" y1="234" x2="306" y2="162"/>
+<line fill="none" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" x1="306" y1="306" x2="171" y2="378"/>
+<line fill="none" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" x1="216" y1="306" x2="351" y2="378"/>
+<line fill="none" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" x1="180" y1="234" x2="216" y2="162"/>
+<line fill="none" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" x1="99" y1="162" x2="99" y2="234"/>
+<line fill="none" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" x1="126" y1="450" x2="18" y2="234"/>
+<circle fill="#009246" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" cx="126" cy="18" r="9"/>
+<circle fill="#0081CD" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" cx="396" cy="18" r="9"/>
+<circle fill="#0081CD" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" cx="351" cy="90" r="9"/>
+<circle fill="#009246" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" cx="171" cy="90" r="9"/>
+<circle fill="#009246" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" cx="216" cy="162" r="9"/>
+<circle fill="#0081CD" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" cx="306" cy="162" r="9"/>
+<circle fill="#009246" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" cx="216" cy="306" r="9"/>
+<circle fill="#0081CD" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" cx="306" cy="306" r="9"/>
+<circle fill="#0081CD" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" cx="351" cy="378" r="9"/>
+<circle fill="#009246" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" cx="171" cy="378" r="9"/>
+<circle fill="#009246" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" cx="126" cy="450" r="9"/>
+<circle fill="#0081CD" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" cx="396" cy="450" r="9"/>
+<circle fill="#009246" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" cx="342" cy="234" r="9"/>
+<circle fill="#009246" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" cx="423" cy="234" r="9"/>
+<circle fill="#009246" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" cx="504" cy="234" r="9"/>
+<circle fill="#0081CD" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" cx="423" cy="306" r="9"/>
+<circle fill="#0081CD" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" cx="180" cy="234" r="9"/>
+<circle fill="#0081CD" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" cx="99" cy="234" r="9"/>
+<circle fill="#0081CD" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" cx="18" cy="234" r="9"/>
+<circle fill="#009246" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" cx="99" cy="162" r="9"/>
+</svg>

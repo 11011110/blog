@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="324px" height="288px" viewBox="0 0 324 288" enable-background="new 0 0 324 288" xml:space="preserve">
+<polygon fill="none" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" points="126,198 54,198 18,18 18,270 54,126
+	126,126 "/>
+<polygon fill="none" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" points="306,18 270,198 198,198 198,125.999
+	270,125.999 306,270 "/>
+<polygon fill="none" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" points="162,126 126,126 54,126 54,54 90,90 162,90
+	"/>
+<polygon fill="none" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" points="270,125.999 198,125.999 162,126 162,90
+	234,90 270,54 "/>
+<polygon fill="none" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" points="162,162 90,162 90,234 54,198 126,198
+	162,198 "/>
+<polygon fill="none" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" points="234,234 234,162 162,162 162,198 198,198
+	270,198 "/>
+<line fill="none" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" x1="18" y1="270" x2="234" y2="234"/>
+<line fill="none" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" x1="306" y1="18" x2="54" y2="54"/>
+<line fill="none" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" x1="18" y1="18" x2="270" y2="54"/>
+<line fill="none" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" x1="306" y1="270" x2="90" y2="234"/>
+<line fill="none" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" x1="90" y1="162" x2="90" y2="90"/>
+<line fill="none" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" x1="234" y1="90" x2="234" y2="162"/>
+<circle fill="#BC1E47" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" cx="18" cy="18" r="9"/>
+<circle fill="#BC1E47" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" cx="18" cy="270" r="9"/>
+<circle fill="#BC1E47" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" cx="54" cy="126" r="9"/>
+<circle fill="#BC1E47" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" cx="126" cy="126" r="9"/>
+<circle fill="#BC1E47" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" cx="162" cy="126" r="9"/>
+<circle fill="#BC1E47" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" cx="198" cy="126" r="9"/>
+<circle fill="#BC1E47" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" cx="162" cy="90" r="9"/>
+<circle fill="#BC1E47" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" cx="54" cy="54" r="9"/>
+<circle fill="#BC1E47" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" cx="90" cy="90" r="9"/>
+<circle fill="#BC1E47" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" cx="234" cy="90" r="9"/>
+<circle fill="#BC1E47" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" cx="270" cy="54" r="9"/>
+<circle fill="#BC1E47" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" cx="270" cy="126" r="9"/>
+<circle fill="#BC1E47" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" cx="306" cy="270" r="9"/>
+<circle fill="#BC1E47" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" cx="306" cy="18" r="9"/>
+<circle fill="#BC1E47" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" cx="270" cy="198" r="9"/>
+<circle fill="#BC1E47" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" cx="198" cy="198" r="9"/>
+<circle fill="#BC1E47" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" cx="234" cy="234" r="9"/>
+<circle fill="#BC1E47" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" cx="234" cy="162" r="9"/>
+<circle fill="#BC1E47" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" cx="162" cy="162" r="9"/>
+<circle fill="#BC1E47" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" cx="162" cy="198" r="9"/>
+<circle fill="#BC1E47" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" cx="126" cy="198" r="9"/>
+<circle fill="#BC1E47" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" cx="54" cy="198" r="9"/>
+<circle fill="#BC1E47" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" cx="90" cy="234" r="9"/>
+<circle fill="#BC1E47" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" cx="90" cy="162" r="9"/>
+</svg>

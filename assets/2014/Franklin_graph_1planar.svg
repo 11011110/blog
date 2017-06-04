@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="396px" height="324px" viewBox="0 0 396 324" enable-background="new 0 0 396 324" xml:space="preserve">
+<line fill="none" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" x1="54" y1="270" x2="342" y2="270"/>
+<polygon fill="none" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" points="90,18 306,18 378,90 376.5,304.5 18,306 
+	18,90 "/>
+<polyline fill="none" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" points="18,306 54,270 162,162 306,18 "/>
+<polyline fill="none" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" points="90,18 234,162 342,270 376.5,304.5 "/>
+<polyline fill="none" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" points="18,90 162,234 234,234 378,90 "/>
+<line fill="none" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" x1="162" y1="162" x2="234" y2="234"/>
+<line fill="none" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" x1="234" y1="162" x2="162" y2="234"/>
+<circle fill="#FEC200" stroke="#231F20" stroke-miterlimit="10" cx="90" cy="18" r="9"/>
+<circle fill="#FEC200" stroke="#231F20" stroke-miterlimit="10" cx="306" cy="18" r="9"/>
+<circle fill="#FEC200" stroke="#231F20" stroke-miterlimit="10" cx="378" cy="90" r="9"/>
+<circle fill="#FEC200" stroke="#231F20" stroke-miterlimit="10" cx="162" cy="162" r="9"/>
+<circle fill="#FEC200" stroke="#231F20" stroke-miterlimit="10" cx="234" cy="162" r="9"/>
+<circle fill="#FEC200" stroke="#231F20" stroke-miterlimit="10" cx="234" cy="234" r="9"/>
+<circle fill="#FEC200" stroke="#231F20" stroke-miterlimit="10" cx="162" cy="234" r="9"/>
+<circle fill="#FEC200" stroke="#231F20" stroke-miterlimit="10" cx="54" cy="270" r="9"/>
+<circle fill="#FEC200" stroke="#231F20" stroke-miterlimit="10" cx="342" cy="270" r="9"/>
+<circle fill="#FEC200" stroke="#231F20" stroke-miterlimit="10" cx="378" cy="306" r="9"/>
+<circle fill="#FEC200" stroke="#231F20" stroke-miterlimit="10" cx="18" cy="306" r="9"/>
+<path fill="none" stroke="#231F20" stroke-miterlimit="10" d="M90,18"/>
+<circle fill="#FEC200" stroke="#231F20" stroke-miterlimit="10" cx="18" cy="90" r="9"/>
+</svg>

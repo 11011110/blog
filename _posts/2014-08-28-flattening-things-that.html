@@ -10,7 +10,7 @@ tags:   [graph drawing, origami, papers]
 
 <p>The new paper follows an earlier one at ISAAC 2011 and IJCGA 2013, <a href="http://erikdemaine.org/papers/LinearEquilateral_IJCGA/">"Folding equilateral plane graphs"</a>, by an overlapping set of authors, in studying the flat-foldability of objects that are not just flat sheets of paper. But in order to avoid Bern and Hayes' NP-hardness proof, we again restrict our attention only to objects with a single vertex. That is, we have some sort of complex of flat polygons connected by piano hinges at their edges, but all the hinges meet at a point. As in the following illustration:</p>
 
-<p><div style="text-align:center"><img alt="A single-vertex polygon complex, with hinged edges" src="http://www.ics.uci.edu/~eppstein/0xDE/two-cycles.png" /></div></p>
+<p style="text-align:center"><img alt="A single-vertex polygon complex, with hinged edges" src="{{site.baseurl}}/assets/2014/two-cycles.svg" /></p>
 
 <p>The blue sphere highlights the vertex, but it also indicates a way to think of the problem in only two dimensions instead of three: cut the complex through the surface of the sphere so that each polygon turns into a line segment (or really a segment of a great circle), each hinge turns into a point, and what you have is just a planar graph drawing. The line segments are rigid but the hinges at their endpoints make the whole drawing floppy (within the plane it's defined in). The question is whether it is sufficiently floppy that it can be made to lie flat along a line.</p>
 

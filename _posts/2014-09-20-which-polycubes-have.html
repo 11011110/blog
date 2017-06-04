@@ -10,11 +10,11 @@ tags:   [media theory, graph theory]
 
 <p>The answer turns out to be: the polycubes that have a tree-like structure that can be formed by adding cubes one at a time, at each step adding a cube that touches the previous cubes in exactly one of its squares. One direction is easy: if you add cubes in this way, you end up changing the graph by replacing a quadrilateral face by five quadrilaterals, which preserves planarity.</p>
 
-<p style="text-align:center"><img alt="What happens to the graph when you glue a cube onto one face of a polycube" src="http://www.ics.uci.edu/~eppstein/0xDE/polycube-gluing-step.png" /></p>
+<p style="text-align:center"><img alt="What happens to the graph when you glue a cube onto one face of a polycube" src="{{site.baseurl}}/assets/2014/polycube-gluing-step.svg" /></p>
 
 <p>In the other direction, suppose you have a polycube that cannot be constructed in this way, and build it up by adding cubes one at a time in a preorder traversal of a spanning tree of the dual graph. At some point, you will add a cube \( c \) that is adjacent not only to its parent \( p \) in the tree, but to some other part of the already-constructed polycube. If you contract the parts of \( c \) and \( p \) that are not on their shared square, and contract the path in the polycube connecting those parts, you can get a \( K_{3,3} \) graph minor out of the graph of the polycube, showing that it must be nonplanar.</p>
 
-<p style="text-align:center"><img alt="Loopy polycubes are nonplanar" src="http://www.ics.uci.edu/~eppstein/0xDE/loopy-polycubes-are-nonplanar.png" /></p>
+<p style="text-align:center"><img alt="Loopy polycubes are nonplanar" src="{{site.baseurl}}/assets/2014/loopy-polycubes-are-nonplanar.svg" /></p>
 
 <p>The same question is also interesting when you ask about the graph of the boundary of the polycube, but it has a simpler answer: if the boundary is connected, then it is planar if and only if the polycube is a topological ball.</p>
 

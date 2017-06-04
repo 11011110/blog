@@ -4,44 +4,44 @@ title:  'Induced Clebsch subgraphs'
 date:   2014-03-08 19:46:00
 tags:   [hypercube, graph theory]
 ---
-<p>Today I&#x27;ve been playing with the induced subgraphs of the <a href="https://en.wikipedia.org/wiki/Clebsch_graph">Clebsch graph</a>. Several other interesting and well-known graphs can be obtained from it by deleting a small number of vertices and forming the induced subgraph of the remaining vertices.</p>
+<p>Today I've been playing with the induced subgraphs of the <a href="https://en.wikipedia.org/wiki/Clebsch_graph">Clebsch graph</a>. Several other interesting and well-known graphs can be obtained from it by deleting a small number of vertices and forming the induced subgraph of the remaining vertices.</p>
 
 <p>To begin with, one simple construction of the Clebsch graph is to take all length-four binary strings as vertices, and to make two strings neighbors when they differ either by a single bit or by all four bits. So it has sixteen vertices and 40 edges, and can be visualized as a four-dimensional hypercube with the long diagonals added.</p>
 
-<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/clebsch/clebsch.png" /></p>
+<p style="text-align:center"><img alt="The Clebsch graph as a four-dimensional hypercube with the long diagonals added" src="{{site.baseurl}}/assets/2014/clebsch/clebsch.svg" /></p>
 
 <p>It can be split into two three-dimensional cubes, by partitioning the binary strings according to the value of their first bit. Since the cube is bipartite, we can color the whole Clebsch graph with four colors, by using two colors within each cube. This is optimal, because the largest independent sets in the Clebsch graph (the sets of neighbors of a single vertex) have five vertices, not enough for three of them to cover the whole graph.</p>
 
-<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/clebsch/two-cubes.png" /></p>
+<p style="text-align:center"><img alt="Two cubes in the Clebsch graph" src="{{site.baseurl}}/assets/2014/clebsch/two-cubes.svg" /></p>
 
 <p>The Clebsch graph can also be split in a different way into two copies of the <a href="https://en.wikipedia.org/wiki/Wagner_graph">Wagner graph</a>:</p>
 
-<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/clebsch/two-wagners.png" /></p>
+<p style="text-align:center"><img alt="Two Wagner graphs in the Clebsch graph" src="{{site.baseurl}}/assets/2014/clebsch/two-wagners.svg" /></p>
 
-<p>Removing a vertex and its five neighbors from the Clebsch graph (a K<sub>1,5</sub> subgraph) leaves a copy of the <a href="https://en.wikipedia.org/wiki/Petersen_graph">Petersen graph</a> as the remaining graph. Similarly removing a maximum independent set leaves a Petersen graph together with a single isolated vertex.</p>
+<p>Removing a vertex and its five neighbors from the Clebsch graph (a \( K_{1,5} \) subgraph) leaves a copy of the <a href="https://en.wikipedia.org/wiki/Petersen_graph">Petersen graph</a> as the remaining graph. Similarly removing a maximum independent set leaves a Petersen graph together with a single isolated vertex.</p>
 
-<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/clebsch/petersen.png" /></p>
+<p style="text-align:center"><img alt="Petersen subgraph of the Clebsch graph" src="{{site.baseurl}}/assets/2014/clebsch/petersen.svg" /></p>
 
 <p>Removing a five-vertex cycle (such as the central cycle of the Petersen graph above) leaves a copy of the <a href="https://en.wikipedia.org/wiki/Gr%C3%B6tzsch_graph">Grötzsch graph</a>:</p>
 
-<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/clebsch/groetzsch.png" /></p>
+<p style="text-align:center"><img alt="Grötzsch graph as subgraph of the Clebsch graph" src="{{site.baseurl}}/assets/2014/clebsch/groetzsch.svg" /></p>
 
-<p>Removing a four-vertex maximal independent set (four independent vertices that do not have a single common neighbor) leaves a subdivision of the complete bipartite graph K<sub>4,4</sub>, in which four edges forming a matching have been subdivided:</p>
+<p>Removing a four-vertex maximal independent set (four independent vertices that do not have a single common neighbor) leaves a subdivision of the complete bipartite graph \( K_{4,4} \), in which four edges forming a matching have been subdivided:</p>
 
-<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/clebsch/subdivided-k44.png" /></p>
+<p style="text-align:center"><img alt="Subdivision of K_{4,4} in the Clebsch graph" src="{{site.baseurl}}/assets/2014/clebsch/subdivided-k44.svg" /></p>
 
 <p>Removing a four-cycle leaves a twelve-vertex torus graph with 24-way symmetry:</p>
 
-<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/clebsch/torus.png" /></p>
+<p style="text-align:center"><img alt="Symmetric 12-vertex torus graph in the Clebsch graph" src="{{site.baseurl}}/assets/2014/clebsch/torus.svg" /></p>
 
 <p>Here are a couple of less-symmetric large planar induced subgraphs.</p>
 
-<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/clebsch/planar9.png" /></p>
+<p style="text-align:center"><img alt="One of two large planar induced subgraphs of the Clebsch graph" src="{{site.baseurl}}/assets/2014/clebsch/planar9.svg" /></p>
 
-<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/clebsch/planar10.png" /></p>
+<p style="text-align:center"><img alt="One of two large planar induced subgraphs of the Clebsch graph"  src="{{site.baseurl}}/assets/2014/clebsch/planar10.svg" /></p>
 
 <p>The second of these planar graphs can be formed by removing all binary strings with equal numbers of zeros and nonzeros, a six-vertex subset that induces a three-edge matching. If we instead partition the vertices into strings with even and odd parity, we get a partition of the Clebsch graph into two eight-vertex induced matchings.</p>
 
-<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/clebsch/two-matchings.png" /></p>
+<p style="text-align:center"><img alt="Partition of the Clebsch graph into two induced matchings" src="{{site.baseurl}}/assets/2014/clebsch/two-matchings.svg" /></p>
 
-<p>The <a href="https://en.wikipedia.org/wiki/Schl%C3%A4fli_graph">Schläfli graph</a> (or its complement) has many induced Clebsch graphs inside it, so presumably it also has an interesting collection of symmetric induced subgraphs. But that&#x27;s getting a bit too large for the sort of by-hand analysis I did to get the list here; it calls for automation instead.</p>
+<p>The <a href="https://en.wikipedia.org/wiki/Schl%C3%A4fli_graph">Schläfli graph</a> (or its complement) has many induced Clebsch graphs inside it, so presumably it also has an interesting collection of symmetric induced subgraphs. But that's getting a bit too large for the sort of by-hand analysis I did to get the list here; it calls for automation instead.</p>

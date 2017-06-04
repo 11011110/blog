@@ -4,74 +4,68 @@ title:  'Indifference graphs and their construction'
 date:   2014-04-21 11:33:00
 tags:   [graph algorithms, wikipedia, graph theory]
 ---
-I just added a new article to Wikipedia on <a href="https://en.wikipedia.org/wiki/Indifference_graph">indifference graphs</a> (also known as unit interval graphs or proper interval graphs): the graphs formed from sets of points on the real line by connecting every two points whose distance is less than one.
-<br />
+<p>I just added a new article to Wikipedia on <a href="https://en.wikipedia.org/wiki/Indifference_graph">indifference graphs</a> (also known as unit interval graphs or proper interval graphs): the graphs formed from sets of points on the real line by connecting every two points whose distance is less than one.</p>
 
-<br />
-<div style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/Indifference-graph.png" /></div>
-<br />
+<p style="text-align:center"><img alt="Indifference graph" src="{{site.baseurl}}/assets/2014/Indifference-graph.svg" /></p>
 
-<br />
-There are many papers on algorithms for going from the graph to a geometric representation in linear time. The following method for the reverse problem, going from the set of points (or equivalently unit intervals) to its graph must be known, possibly in the context of its generalization to higher dimensional <a href="https://en.wikipedia.org/wiki/Unit_disk_graph">unit disk graphs</a>, but I don&#x27;t know a good reference for it.
-<br />
+<p>There are many papers on algorithms for going from the graph to a geometric representation in linear time. The following method for the reverse problem, going from the set of points (or equivalently unit intervals) to its graph must be known, possibly in the context of its generalization to higher dimensional <a href="https://en.wikipedia.org/wiki/Unit_disk_graph">unit disk graphs</a>, but I don't know a good reference for it.</p>
 
-<br />
-Given a set of real numbers:<ol><li>Round each one down to the nearest smaller integer.</li><li>Use a hash table to collect numbers that round to the same integer.</li><li>For each number <i>x</i>, use the hash table to find each other number <i>y</i> whose rounded value is within one of the rounded value of <i>x</i>.</li><li>Create an edge in the graph for every pair (<i>x</i>,<i>y</i>) found in this way whose distance is at most one.</li></ol>Each pair (<i>x</i>,<i>y</i>) can be charged against the hash table entry of <i>x</i> or <i>y</i> that has the larger number of inputs mapped to it. In this way, each hash table entry gets a charge proportional to the square of its number of values. But on the other hand every pair of inputs that map to the same hash table entry form an edge, so the number of edges is at least proportional to the sum of the squares of the hash table entry sizes. Thus, the total work is at most proportional to the total output size.
-<br />
+<p>Given a set of real numbers:</p>
 
-<br />
-Update, April 22: It appears that the correct reference for this is Bentley, Jon L.; Stanat, Donald F.; Williams, E. Hollins, Jr.
-<br />
-The complexity of finding fixed-radius near neighbors. Information Processing Lett. 6 (1977), no. 6, 209–212.
+<ol>
+<li><p>Round each one down to the nearest smaller integer.</p></li>
+
+<li><p>Use a hash table to collect numbers that round to the same integer.</p></li>
+
+<li><p>For each number \( x \), use the hash table to find each other number \( y \) whose rounded value is within one of the rounded value of \( x \).</p></li>
+
+<li><p>Create an edge in the graph for every pair \( (x,y) \) found in this way whose distance is at most one.</p></li>
+</ol>
+
+<p>Each pair \( (x,y) \) can be charged against the hash table entry of \( x \) or \( y \) that has the larger number of inputs mapped to it. In this way, each hash table entry gets a charge proportional to the square of its number of values. But on the other hand every pair of inputs that map to the same hash table entry form an edge, so the number of edges is at least proportional to the sum of the squares of the hash table entry sizes. Thus, the total work is at most proportional to the total output size.</p>
+
+<p>Update, April 22: It appears that the correct reference for this is:
+Bentley, Jon L.; Stanat, Donald F.; Williams, E. Hollins, Jr.
+The complexity of finding fixed-radius near neighbors.
+<i>Information Processing Lett.</i> 6 (1977), no. 6, 209–212.</p>
+
 <br /><br /><hr /><br />
 <h3>Comments:</h3>
-<div style="margin-left: 0em; padding-top: 1em;">
-<b>vito_from</b>: <br />
-<b></b><br />
 
-</div>
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>hlwoods</b>: <br />
 <b>2014-04-21T19:31:12Z</b><br />
-Do you need a hash table?  Can you assume the list of integers is sorted?
+<p>Do you need a hash table?  Can you assume the list of integers is sorted?</p>
 
-If the list is sorted, you can find the edges just by traversing the sorted list and edges as you encounter them.
+<p>If the list is sorted, you can find the edges just by traversing the sorted list and edges as you encounter them.</p>
 </div>
+
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>11011110</b>: <br />
 <b>2014-04-21T20:11:42Z</b><br />
-True, but the point of the hash table is to avoid nonlinear time bounds for sorting.
+<p>True, but the point of the hash table is to avoid nonlinear time bounds for sorting.</p>
 </div>
+
 <div style="margin-left: 6em; padding-top: 1em;">
 <b>brooksmoses</b>: <br />
 <b>2014-04-22T06:55:43Z</b><br />
-Ah, and you use a hash table rather than an array of lists because that way you can bound the size <i>a priori</i> (and you also avoid time dependencies on the maximal spacing between points), yes?
-
-
+<p>Ah, and you use a hash table rather than an array of lists because that way you can bound the size <i>a priori</i> (and you also avoid time dependencies on the maximal spacing between points), yes?</p>
 </div>
+
 <div style="margin-left: 9em; padding-top: 1em;">
 <b>11011110</b>: <br />
 <b>2014-04-22T07:23:00Z</b><br />
-Yes, the gaps can be huge, so an array might be too big.
+<p>Yes, the gaps can be huge, so an array might be too big.</p>
 </div>
+
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>None</b>: <br />
 <b>2014-04-22T14:37:40Z</b><br />
-There is a missing word there : &quot;The bandwidth of an arbitrary graph G is one than the size of&quot; , I could correct it but I am not sure whether it is &quot;more&quot; or &quot;less&quot;
+<p>There is a missing word there : "The bandwidth of an arbitrary graph G is one than the size of" , I could correct it but I am not sure whether it is "more" or "less"</p>
 </div>
+
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>11011110</b>: <br />
 <b>2014-04-22T15:16:36Z</b><br />
-One less. Thanks for catching that.
+<p>One less. Thanks for catching that.</p>
 </div>
-<div style="margin-left: 0em; padding-top: 1em;">
-<b>None</b>: <br />
-<b></b><br />
-
-</div>
-<div style="margin-left: 0em; padding-top: 1em;">
-<b>None</b>: <br />
-<b></b><br />
-
-</div>
-
