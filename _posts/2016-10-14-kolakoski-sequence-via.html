@@ -10,16 +10,16 @@ tags:   [bit parallelism, python, number theory]
 def Kolakoski():
     x = y = -1
     while True:
-        yield [2,1][x&amp;1]
-        f = y &amp;~ (y+1)
+        yield [2,1][x&1]
+        f = y &~ (y+1)
         x ^= f
-        y = (y+1) | (f &amp; (x>>1))
+        y = (y+1) | (f & (x>>1))
 {% endhighlight %}
 
-<p>Like the previous one, this can be understood as traversing an infinite tree. The tree is defined using essentially the same rules as before: two consecutive nodes on the same level of the tree have the same number of children if and only if they have the same parent. However, it extends infinitely upward rather than infinitely downward, with two children for each node on the leftmost path. Each level of the tree has the same sequence of degrees, which equals the Kolakoski sequence starting from its second position (the missing first position is why this starts at x = y = -1 rather than zero).</p>
+<p>Like the previous one, this can be understood as traversing an infinite tree. The tree is defined using essentially the same rules as before: two consecutive nodes on the same level of the tree have the same number of children if and only if they have the same parent. However, it extends infinitely upward rather than infinitely downward, with two children for each node on the leftmost path. Each level of the tree has the same sequence of degrees, which equals the Kolakoski sequence starting from its second position (the missing first position is why this starts at <code>x = y = -1</code> rather than zero).</p>
 
 <p style="text-align:center"><img alt="Upwards-infinite binary tree with the node labels at each level forming the Kolakoski sequence" src="{{site.baseurl}}/assets/2016/Upward-Kolakoski.svg" style="background-color:white;" /></p>
 
-<p>The algorithm traverses the bottom level of the tree in left-to-right order. As it does, the variable x maintains, in its binary representation, the numbers of children modulo 2 of the path of nodes extending infinitely upwards from the current leaf. All but finitely many (logarithmically many as a function of the position of the leaf) of these bits are zero, so (after the first step) x is a non-negative finite number with logarithmically many bits. The variable y, similarly, maintains a sequence of bits corresponding to the nodes on the same path that are 0 when the node is a left child of a degree-2 node and 1 otherwise. Again, finitely many of these bits are 1, so y is non-negative with logarithmically many bits. The bit manipulation tricks of the algorithm merely update these two variables to describe the next path in the traversal.</p>
+<p>The algorithm traverses the bottom level of the tree in left-to-right order. As it does, the variable <code>x</code> maintains, in its binary representation, the numbers of children modulo 2 of the path of nodes extending infinitely upwards from the current leaf. All but finitely many (logarithmically many as a function of the position of the leaf) of these bits are zero, so (after the first step) <code>x</code> is a non-negative finite number with logarithmically many bits. The variable <code>y</code>, similarly, maintains a sequence of bits corresponding to the nodes on the same path that are 0 when the node is a left child of a degree-2 node and 1 otherwise. Again, finitely many of these bits are 1, so <code>y</code> is non-negative with logarithmically many bits. The bit manipulation tricks of the algorithm merely update these two variables to describe the next path in the traversal.</p>
 
 <p>Update 10/16: <a href="http://jjj.de/fxt/demo/bits/#kolakoski-seq">Fast C++ implementation</a> by Jörg Arndt</p>
