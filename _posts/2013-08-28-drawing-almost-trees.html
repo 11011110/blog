@@ -4,33 +4,27 @@ title:  'Drawing almost-trees'
 date:   2013-08-28 22:49:00
 tags:   [graph drawing, papers]
 ---
-Another of my Graph Drawing papers, &quot;Fixed parameter tractability of crossing minimization of almost-trees&quot; (with Michael Bannister and Joe Simons) went up on the arXiv as <a href="http://arxiv.org/abs/1308.5741">arXiv:1308.5741</a> yesterday.
-<br />
+<p>Another of my Graph Drawing papers, "Fixed parameter tractability of crossing minimization of almost-trees" (with Michael Bannister and Joe Simons) went up on the arXiv as <a href="http://arxiv.org/abs/1308.5741">arXiv:1308.5741</a> yesterday.</p>
 
-<br />
-Although it&#x27;s mostly a technical paper about algorithms, it has a non-technical point as well: in many application areas of graph theory and graph visualization, the graphs have only a few more edges than vertices, meaning that they tend to have large tree-like parts and only a few cycles. It seems like a good idea to take advantage of this structure when visualizing these graphs, and in some of these applications the division between the tree-like and cyclic parts is important and should stand out in the visualization.
-<br />
+<p>Although it's mostly a technical paper about algorithms, it has a non-technical point as well: in many application areas of graph theory and graph visualization, the graphs have only a few more edges than vertices, meaning that they tend to have large tree-like parts and only a few cycles. It seems like a good idea to take advantage of this structure when visualizing these graphs, and in some of these applications the division between the tree-like and cyclic parts is important and should stand out in the visualization.</p>
 
-<br />
-The image below is a case in point. We redrew it from a graph in a paper by Potterat et al (reference 24 of the paper), describing the self-reported sexual contacts among a set of people treated in an AIDS outbreak. According to our references, the cyclic parts of this sort of graph (the central circle) correspond to the growth phase of an outbreak, and the tree-like parts (the outer rings) correspond to its decline phase.
-<br />
+<p>The image below is a case in point. We redrew it from a graph in a paper by Potterat et al (reference 24 of the paper), describing the self-reported sexual contacts among a set of people treated in an AIDS outbreak. According to our references, the cyclic parts of this sort of graph (the central circle) correspond to the growth phase of an outbreak, and the tree-like parts (the outer rings) correspond to its decline phase.</p>
 
-<br />
-<div style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/hiv_sun.png" /></div>
-<br />
+<p style="text-align:center"><img alt="Almost-tree drawing of an AIDS contact graph" src="http://www.ics.uci.edu/~eppstein/0xDE/hiv_sun.png" /></p>
 
-<br />
-The only tricky part about generating a drawing like this is ordering the vertices in the central circle, in order to minimize its crossings, and that&#x27;s what the technical parts of the paper (or at least the 1-page parts of it) are about.
+<p>The only tricky part about generating a drawing like this is ordering the vertices in the central circle, in order to minimize its crossings, and that's what the technical parts of the paper (or at least the 1-page parts of it) are about.</p>
+
 <br /><br /><hr /><br />
 <h3>Comments:</h3>
+
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>None</b>: <br />
 <b>2013-10-06T22:25:08Z</b><br />
-Is this problem np-complete on almost trees?
+<p>Is this problem np-complete on almost trees?</p>
 </div>
+
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>11011110</b>: <br />
 <b>2013-10-06T23:42:08Z</b><br />
-One-page crossing minimization, you mean? We show that it&#x27;s fixed-parameter tractable for k-almost-trees, parameterized by k. So for any constant k it&#x27;s polynomial time. But &quot;almost trees&quot; include all graphs — it&#x27;s just that the ones that are far from being trees have large values of k — so without a restriction on k it&#x27;s NP-complete.
+<p>One-page crossing minimization, you mean? We show that it's fixed-parameter tractable for \( k \)-almost-trees, parameterized by \( k \). So for any constant \( k \) it's polynomial time. But "almost trees" include all graphs — it's just that the ones that are far from being trees have large values of \( k \) — so without a restriction on \( k \) it's \( \mathsf{NP} \)-complete.</p>
 </div>
-

@@ -6,7 +6,7 @@ tags:   [arrangements, geometry]
 ---
 <p>The <a href="https://en.wikipedia.org/wiki/Floor_and_ceiling_functions">ceiling function</a> rounds numbers up to a not-smaller integer; it is denoted by surrounding its argument by the \lceil and \rceil symbols in LaTeX, ⌈ and ⌉ in html, or ⌈ and ⌉ in unicode. They look sort of like the top halves of square brackets. By analogy to the shape of these symbols, let's call a curve formed from two rays with a common apex, one vertically downwards and the other horizontal in either direction, a <i>ceiling</i>. Geometrically, ceilings behave a lot like lines, and with care this analogy can be made precise.</p>
 
-<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/ceiling/arrangements.png" /></p>
+<p style="text-align:center"><img alt="Combinatorially equivalent arrangements of lines and ceilings" src="http://www.ics.uci.edu/~eppstein/0xDE/ceiling/arrangements.png" /></p>
 
 <p>If a collection of ceilings is in general position (no two rays on the same line) then it is a (weak) pseudoline arrangement: each curve is topologically equivalent to a line, and each two curves are either disjoint or intersect in a single crossing point. And if a collection of points is in general position (no two having the same <i>x</i>-coordinate or the same <i>y</i>-coordinate) then each two points determine a unique ceiling, which does not pass through any other of the points. Just as a non-vertical line divides a set of points into an upper and lower halfspace, so does a ceiling: the lower halfspace is the set of points below the horizontal ray of the ceiling, and the upper halfspace is everything else. So in their basic combinatorial properties, ceilings already behave much like lines.</p>
 
@@ -14,41 +14,45 @@ tags:   [arrangements, geometry]
 
 <p>There's more than one way of finding <i>T</i>, but I think one of the simplest is a stretching transformation that I first encountered in <a href="http://arxiv.org/abs/0812.5039">a paper on weak epsilon-nets by Bukh, Matoušek, and Nivasch</a>, and that <a href="http://arxiv.org/abs/1212.6148">Tóth and Fulek</a> and <a href="http://arxiv.org/abs/1308.0403">my coauthors and I</a> borrowed for our papers on <a href="https://en.wikipedia.org/wiki/Universal_point_set">universal point sets</a>. If we move the points in <i>S</i> without changing their coordinatewise sorted order, nothing changes, so we can replace their coordinates by their positions in the sorted order, after which their coordinates are in the range from 0 to <i>n</i> − 1. Then, the point in <i>T</i> corresponding to the point (<i>x</i>,<i>y</i>) in <i>S</i> is simply (<i>x</i>,<i>n</i><sup><i>y</i></sup>). The key property that makes it work is that this vertical expansion is large enough so that, for each point, the radial order of the points below it is the same as their sorted order by their <i>x</i>-coordinates.</p>
 
-<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/ceiling/stretch.png" /></p>
+<p style="text-align:center"><img alt="Stretching a grid" src="http://www.ics.uci.edu/~eppstein/0xDE/ceiling/stretch.png" /></p>
 
 <p>I was thinking about this again after seeing a paper, "Discrete Geometry on Red and Blue Points in the Plane Lattice", by Mikio Kano and Kazuhiro Suzuki, in János Pach's recent book <i>Thirty Essays on Geometric Graph Theory</i>. Kano and Suzuki's paper is about the existence of certain sets axis-parallel polygonal paths with at most one bend (a generalization of segments of ceilings, also including floors and axis-parallel line segments) analogous to known properties of line segments. Their generalization is a little messier because it allows two paths between any two points, but if we use ceilings and stretchings everything becomes easy. Some examples:</p>
 
 <dl><dt>The ham sandwich theorem</dt>
 
 <dd><p>For every two sets of points (whose union has no three collinear points) there exists a line (the <a href="https://en.wikipedia.org/wiki/Ham_sandwich_theorem">ham sandwich cut</a>) that bisects both sets (meaning that it has equal numbers of points from the set on each of its sides, and possibly passes through one of the points). Corollary by stretching: for every two sets of points (whose union is in general position) there exists a ceiling that bisects both sets. (To show this, you have to unstretch the ham sandwich line, which you can do by shifting it until it touches exactly two points, then in the unstretched point set finding the ceiling through those two points and reversing the shift.)</p>
-<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/ceiling/ham.png" /></p></dd>
+
+<p style="text-align:center"><img alt="The ham sandwich theorem for ceilings" src="http://www.ics.uci.edu/~eppstein/0xDE/ceiling/ham.png" /></p></dd>
 
 <dt>Red-blue matching</dt>
 
 <dd><p>For every set of <i>n</i> red and <i>n</i> blue points (no three collinear) there exists a set of <i>n</i> disjoint line segments each having one red and one blue endpoint. Proof idea: Apply the ham sandwich theorem and recurse on each side. Corollary by stretching (one of Kano and Suzuki's main results): for every set of <i>n</i> red and <i>n</i> blue points in general position there exists a set of <i>n</i> disjoint ceiling segments each having one red and one blue endpoint.</p>
-<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/ceiling/matching.png" /></p></dd>
+
+<p style="text-align:center"><img alt="Red-blue matching for ceilings" src="http://www.ics.uci.edu/~eppstein/0xDE/ceiling/matching.png" /></p></dd>
 
 <dt>Convex hulls</dt>
 
 <dd><p>By <a href="https://en.wikipedia.org/wiki/Carath%C3%A9odory%27s_theorem_(convex_hull)">Carathéodory's theorem</a>, the intersection of the halfspaces that contain a point set <i>S</i> is the same shape as the union of the triangles described by triples of the points; this shape is the convex hull of <i>S</i>, and it consists of the points that cannot be separated from <i>S</i> by a line. As Csaba Tóth pointed out in his WADS 2013 talk, the shape bounded by the ceilings through three points is not a triangle but a rectangle, extending in the <i>x</i> direction between the <i>x</i>-coordinates of the bottom two points and extending in the <i>y</i> direction between the <i>y</i>-coordinates of the top two points; it is connected to the bottom point (and possibly also the top point) by axis-parallel line segments outside of these ranges. Thus, we have as a corollary by stretching: The intersection of the sides of ceilings that contain a point set <i>S</i> is the same shape as the union of rectangles (plus connecting segments) described by triples of the points; this shape consists of the points that cannot be separated from <i>S</i> by a ceiling. The ceiling hull of a point set is a little strange looking: on top it is like the bounding box of the points, but on the bottom it is instead like the <a href="https://en.wikipedia.org/wiki/Orthogonal_convex_hull">orthogonal convex hull</a>.</p>
-<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/ceiling/hull.png" /></p></dd>
+
+<p style="text-align:center"><img alt="The ceiling hull of a point set" src="http://www.ics.uci.edu/~eppstein/0xDE/ceiling/hull.png" /></p></dd>
 
 <dt>Centerpoints</dt>
 
 <dd><p>For every set <i>S</i> of <i>n</i> points (no three collinear) there exists another point <i>c</i> (the <a href="https://en.wikipedia.org/wiki/Centerpoint_(geometry)">centerpoint</a>, not necessarily belonging to <i>S</i>) such that every line through <i>c</i> contains at least <i>n</i>/3 of the points on each of the closed halfplanes it bounds. Proof idea: Use <a href="https://en.wikipedia.org/wiki/Helly's_theorem">Helly's theorem</a> on the family of halfplanes containing at least <i>n</i>/3 points. Corollary by stretching: For every set of <i>n</i> points in general position there exists another point <i>c</i> such that every ceiling through <i>c</i> has at least <i>n</i>/3 points on each of its (topologically closed) sides. There's a simpler proof and construction in this case: just find a point <i>c</i> such that the halfplane above it and the two quarterplanes below on either side each contain at least <i>n</i>/3 points of <i>S</i>.</p>
-<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/ceiling/centerpoint.png" /></p></dd>
+
+<p style="text-align:center"><img alt="A centerpoint for ceilings" src="http://www.ics.uci.edu/~eppstein/0xDE/ceiling/centerpoint.png" /></p></dd>
 
 <dt>Halving lines</dt>
 
 <dd><p>For every set <i>S</i> of <i>n</i> points in the plane (no three collinear, <i>n</i> even) there exist at most O(<i>n</i><sup>4/3</sup>) distinct ways of bisecting the points by a line [<a href="http://dx.doi.org/10.1007/PL00009354">Dey 1998</a>]. Corollary by stretching: For every set <i>S</i> of <i>n</i> points in the plane (in general position, <i>n</i> even) there exist at most O(<i>n</i><sup>4/3</sup>) distinct ways of bisecting the points by a ceiling. But actually this is a bit of a trick problem: the number of halving ceilings (for evenly many points) is at most <i>n</i> − 1, because each vertical line contains the vertical ray of exactly one halving ceiling (up to combinatorial equivalence), two vertical lines form different halving ceilings only when they are separated by a point in <i>S</i>, the two vertical lines on either side of the topmost point give the same split, and the two vertical lines to the left and right of all the points give the same split. The example below shows that this <i>n</i> − 1 bound is tight.</p>
-<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/ceiling/bisections.png" /></p></dd></dl>
+
+<p style="text-align:center"><img alt="The halving ceilings of a set of points" src="http://www.ics.uci.edu/~eppstein/0xDE/ceiling/bisections.png" /></p></dd></dl>
 
 <p>It's tempting to try to use stretching to solve Conjecture 10 of Kano and Suzuki, that every set of <i>n</i> points is in general position is universal for drawings of trees with maximum degree three using L-shaped edges. For the corresponding line segment problem, every set of <i>n</i> points (no three collinear) is universal for a much larger set of graphs, the outerplanar graphs. But unfortunately this result doesn't translate to ceilings, because two ceilings with the same endpoint could overlap, spoiling the drawing.</p>
 
 <br /><br /><hr /><br />
 <h3>Comments:</h3>
 
-</div>
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>ext_2381707</b>: <br />
 <b>2014-01-19T13:38:50Z</b><br />
@@ -62,4 +66,3 @@ tags:   [arrangements, geometry]
 
 <p>This is an interesting open problem.</p>
 </div>
-
