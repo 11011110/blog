@@ -7,7 +7,7 @@ Some time ago [I reposted a question]({{site.baseurl}}{% post_url 2014-04-05-gra
 Malyshev's graphs can be formed by starting from a pair of vertices (such as the central two vertices in the drawing below) and then repeatedly adding two more vertices adjacent to the two previously-added vertices:
 
 {: style="text-align:center"}
-![32-vertex Malyshev graph](http://www.ics.uci.edu/~eppstein/0xDE/malyshev32.png)
+![32-vertex Malyshev graph]({{site.baseurl}}/assets/2017/malyshev32.svg)
 
 Lately I've been thinking about the same graphs again, because they have an interesting combination of properties:
 
@@ -32,3 +32,5 @@ We want a sequence of permutation elements where each two elements are out-of-or
 ![A permutation representing the 32-vertex Malyshev graph]({{site.baseurl}}/assets/2017/malperm32.svg)
 
 We can convert this to [my notation for bipartite permutation graphs]({{site.baseurl}}{% post_url 2012-12-08-notation-for-321-avoiding %}) by scanning this picture from left to right, looking at the direction of the line segments at the top and bottom of the picture at each position in this scan, and recording that pair of directions by a character that slants in the same direction at its top and bottom. In this case, the result is the string "&gt;&gt;\\\\//\\\\//\\\\//\\\\//\\\\//\\\\//\\\\//&lt;&lt;". And that's what I gave my permutation-graph-drawing code as input, to get it to produce the top picture.
+
+([Discussion on Google+](https://plus.google.com/100003628603413742554/posts/DSxNzbEd3gK))
