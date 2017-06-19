@@ -3,7 +3,7 @@ layout: post
 title: The Malyshev graphs
 date: 2017-06-18 15:21
 ---
-Some time ago [I reposted a question]({{site.baseurl}}{% post_url 2014-04-05-graphs-with-many %}) from MathOverflow about whether [graphs with have long cycles with doubled edges as minors](https://mathoverflow.net/q/161006/440). The answer turned out to be no, with a counterexample found by Anton Malyshev for a related question about [paths and doubled-path minors](https://mathoverflow.net/a/162668/440).
+Some time ago [I reposted a question]({{site.baseurl}}{% post_url 2014-04-05-graphs-with-many %}) from MathOverflow about whether [graphs with many cycles have long cycles with doubled edges as minors](https://mathoverflow.net/q/161006/440). The answer turned out to be no, with a counterexample found by Anton Malyshev for a related question about [paths and doubled-path minors](https://mathoverflow.net/a/162668/440).
 Malyshev's graphs can be formed by starting from a pair of vertices (such as the central two vertices in the drawing below) and then repeatedly adding two more vertices adjacent to the two previously-added vertices:
 
 {: style="text-align:center"}
