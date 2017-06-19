@@ -1,7 +1,7 @@
 ---
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
-@charset "utf-8";
+// Customization starts here
 
 // Our variables
 // was: "Helvetica Neue", Helvetica, Arial, sans-serif; 16px; 400; 0.875; 1.5
@@ -11,16 +11,6 @@ $base-font-weight: 400;
 $small-font-size:  $base-font-size * 0.824;
 $base-line-height: 1.5;
 
-$spacing-unit:     30px;
-
-$text-color:       #111;
-$background-color: #fdfdfd;
-$brand-color:      #2a7ae2;
-
-$grey-color:       #828282;
-$grey-color-light: lighten($grey-color, 40%);
-$grey-color-dark:  darken($grey-color, 25%);
-
 // Width of the content area
 // was: 800px
 $content-width:    1000px;
@@ -28,19 +18,11 @@ $content-width:    1000px;
 $on-palm:          600px;
 $on-laptop:        800px;
 
-// Minima also includes a mixin for defining media queries.
-// Use media queries like this:
-// @include media-query($on-palm) {
-//     .wrapper {
-//         padding-right: $spacing-unit / 2;
-//         padding-left: $spacing-unit / 2;
-//     }
-// }
-
-// Import partials from the `minima` theme.
+// Import partials from the `minima` theme AFTER CHANGING FONTS!
 @import "minima";
 
-// Customization starts here
+// Next and previous links on each post
+
 .PageNavigation {
   font-size: 14px;
   display: block;
@@ -59,12 +41,17 @@ $on-laptop:        800px;
   text-align: right;
 }
 
+// Make definition lists useful
+
 dt {
   font-weight: bold;
 }
 dd {
   margin-left: 2em;
 }
+
+// Blue borders
+
 body {
   background: #99c0f8;
 }

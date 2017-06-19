@@ -21,9 +21,11 @@ Lately I've been thinking about the same graphs again, because they have an inte
 
 * They are very far from being 3-connected, so if the vertices are labeled they have many distinct planar embeddings, showing that being maximal planar bipartite is very different from being maximal planar.
 
+* They have both bounded treewidth and bounded face size, like the [nested triangles graph](https://en.wikipedia.org/wiki/Nested_triangles_graph) and the [Apollonian networks](https://en.wikipedia.org/wiki/Apollonian_network) but unlike many other planar graphs.
+
 * They are permutation graphs.
 
-One way to see this is to recognize that the drawing above is exactly the form that one gets for [a method of drawing planar bipartite permutation graphs that I described in an earlier post]({{site.baseurl}}{% post_url 2012-12-12-planar-bipartite-permutation %}), and in fact to make this drawing I used the same program as the one that I used in that post.
+One way to see this last property is to recognize that the drawing above is exactly the form that one gets for [a method of drawing planar bipartite permutation graphs that I described in an earlier post]({{site.baseurl}}{% post_url 2012-12-12-planar-bipartite-permutation %}), and in fact to make this drawing I used the same program as the one that I used in that post.
 
 Another way to see it is to find a permutation representation for these graphs.
 We want a sequence of permutation elements where each two elements are out-of-order with only the two ahead of them and the two behind them, like this:
