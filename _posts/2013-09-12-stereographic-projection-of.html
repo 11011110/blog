@@ -6,7 +6,7 @@ tags:   [graph drawing, lombardi]
 ---
 <p>This is a <a href="https://en.wikipedia.org/wiki/Snub_cube">snub cube</a>, radially projected onto its circumscribing sphere and then <a href="https://en.wikipedia.org/wiki/Stereographic_projection">stereographically projected</a> onto the plane. It's not quite a Lombardi drawing, because the angles of the quadrilateral faces are wider than the angles of the triangles. But I think it sets a good balance between optimizing the angular resolution around each vertex and preserving the property of the snub cube that, within each face, all the vertex angles are equal.</p>
 
-<p style="text-align:center"><img alt="Stereographic projection of a snub cube" src="http://www.ics.uci.edu/~eppstein/0xDE/stereographic-snub-cube.png" /></p>
+<p style="text-align:center"><img alt="Stereographic projection of a snub cube" src="{{site.baseurl}}/assets/2013/stereographic-snub-cube.svg" /></p>
 
 <br /><br /><hr /><br />
 <h3>Comments:</h3>
@@ -20,7 +20,7 @@ tags:   [graph drawing, lombardi]
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>11011110</b>: <br />
 <b>2013-12-05T04:16:10Z</b><br />
-<p>That's an equation for the coordinates of the points in the stereographic projection directly, right? But I used a different method for this drawing: <a href="http://www.ics.uci.edu/~eppstein/0xDE/stereographic-snub-cube.py">the code I used to draw</a> it constructs it in 3d, and then uses a general-purpose stereographic projection routine that would work for any set of points and great-circle arcs on the sphere.</p>
+<p>That's an equation for the coordinates of the points in the stereographic projection directly, right? But I used a different method for this drawing: <a href="{{site.baseurl}}/assets/2013/stereographic-snub-cube.py">the code I used to draw</a> it constructs it in 3d, and then uses a general-purpose stereographic projection routine that would work for any set of points and great-circle arcs on the sphere.</p>
 
 <p>The 3d vertex coordinates are permutations of \( (–1, \xi, 1/\xi) \), where
 \[
@@ -34,4 +34,3 @@ tags:   [graph drawing, lombardi]
 <b>2013-12-05T04:39:56Z</b><br />
 <p>Thank you for the response. Yes, that number is the reciprocal of the tribonacci constant. There is a nice continued fraction for it, by the way. Kindly see: http://sites.google.com/site/tpiezas/0012  P.S I find it amusing that the image for the guest post has a paper bag over the head.  :)   -- Tito</p>
 </div>
-

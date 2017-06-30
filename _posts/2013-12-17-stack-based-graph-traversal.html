@@ -22,7 +22,7 @@ def stack_traversal(G,s):
 
 <p>In trees, or in AI search contexts where the visited set is not used to eliminate duplicate vertices, this idea does indeed produce a depth-first search. But in arbitrary graphs with a visited set, the traversal that you get from this routine is not depth first. The problem is that nodes high in the tree push some of their neighbors as children too early; in a proper depth first search those children would instead be discovered as descendants farther down in the tree. Here's an example, illustrating (as usual) the tree whose edges link each vertex with the earlier vertex it was discovered from:</p>
 
-<p style="text-align:center"><img alt="Comparison of depth-first search, breadth-first search, and stack-based graph traversal" src="http://www.ics.uci.edu/~eppstein/0xDE/stack-traversal.png" /></p>
+<p style="text-align:center"><img alt="Comparison of depth-first search, breadth-first search, and stack-based graph traversal" src="{{site.baseurl}}/assets/2013/stack-traversal.svg" /></p>
 
 <p>In a depth first search tree, all edges connect ancestors and descendants. In a breadth-first search tree, all edges connect vertices in the same or adjacent levels.
 But in the stack traversal tree, all non-tree edges connect pairs of vertices that are not ancestors and descendants of each other, the opposite property to the depth first tree property. Or, to put it another way, if \( w \) is a descendant of \( v \), and is adjacent to \( v \), then \( w \) must be a direct child of \( v \).</p>

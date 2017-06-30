@@ -30,7 +30,7 @@ def rhymes(n):
 
 <p>But rather than just listing these schemes in this order, a little more structure is visible by drawing them as a graph, with two rhyme schemes adjacent when their vectors are only one unit apart. By orienting this graph from smaller to larger vectors it can also be interpreted as a <a href="https://en.wikipedia.org/wiki/Hasse_diagram">Hasse diagram</a> of the <a href="https://en.wikipedia.org/wiki/Majorization">majorization</a> ordering on the vectors. It can be drawn nicely by using the coefficients as coordinates and then projecting to the plane:</p>
 
-<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/rhymes4.png" alt="graph of length-4 rhyme schemes" /></p>
+<p style="text-align:center"><img src="{{site.baseurl}}/assets/2013/rhymes4.svg" alt="graph of length-4 rhyme schemes" /></p>
 
 <p>Sadly, this graph does not have a Hamiltonian path, ruling out certain kinds of <a href="https://en.wikipedia.org/wiki/Gray_code">Gray codes</a> for rhyme schemes. (Proof sketch: Observe that it's a bipartite graph with eight vertices on the even levels and seven on the odd levels, so any path would have to start and stop on the even levels. Thus, the edge to the top vertex and the six edges through the three odd-level degree-two vertices must all be part of any Hamiltonian path. Now do a little case analysis.) But it does look sort of cube-like. What does this mean?</p>
 
@@ -58,7 +58,7 @@ Such an antimatroid is called <a href="http://arxiv.org/abs/0712.1047">supersolv
 
 <div style="margin-left: 2em"><p><i>Proof:</i> Given a basic set \( B \), let \( \mathrm{pos}(B) \) be the set of positions of the first copy of each value in \( X \). Conversely, given a set \( P \) of positions, let \( \mathrm{basic}(P) \) be the set of pairs \( (x,y) \) where \( y \) appears in \( P \) and \( x \) is at most the rank of \( y \) in \( P \) (where the smallest element has rank \( 1 \), the second smallest has rank \( 2 \), etc). The illustration below shows one of these sets \( \mathrm{basic}(P) \) (red dots) as a subset of the set of all pairs \( (x,y) \) (red or yellow dots).</p></div>
 
-<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/rhyme-basic.png" alt="a basic set of a rhyme scheme antimatroid" /></p>
+<p style="text-align:center"><img src="{{site.baseurl}}/assets/2013/rhyme-basic.svg" alt="a basic set of a rhyme scheme antimatroid" /></p>
 
 <p>These sets are basic, because only the last element of the top row can be removed without violating one of the two conditions for one of the other elements. The "basic" mapping clearly preserves the inclusion ordering of its sets, and is invertible (its inverse is pos), so it is an order isomorphism. If \( A \) is any set of the antimatroid that is not of this form, then the last element of its upper row is removable, as is the last element of the next row down whose number of elements is too big or too small, so \( A \) cannot be basic. Therefore, basis and pos are inverse order-isomorphisms between the path poset and the hypercube as desired.</p>
 

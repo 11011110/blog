@@ -4,69 +4,63 @@ title:  'On stating the obvious'
 date:   2013-03-25 14:37:00
 tags:   [graph drawing, wikipedia]
 ---
-I&#x27;ve been working on a new Wikipedia article on <a href="http://en.wikipedia.org/wiki/Circular_layout">circular layouts</a> in graph drawing, and I wanted to say something in it about <a href="http://www.planarity.net/">Planarity</a>, a puzzle that involves moving the vertices of a graph drawing around, starting from a circular layout, to show that the graph is planar. However, despite the existence of quite a bit of academic work that explicitly states that it&#x27;s inspired by Planarity, I couldn&#x27;t find any published source that describes the initial layout of the puzzle.
-<br />
+<p>I've been working on a new Wikipedia article on <a href="http://en.wikipedia.org/wiki/Circular_layout">circular layouts</a> in graph drawing, and I wanted to say something in it about <a href="http://www.planarity.net/">Planarity</a>, a puzzle that involves moving the vertices of a graph drawing around, starting from a circular layout, to show that the graph is planar. However, despite the existence of quite a bit of academic work that explicitly states that it's inspired by Planarity, I couldn't find any published source that describes the initial layout of the puzzle.</p>
 
-<br />
-Oleg Verbitsky&#x27;s paper &quot;On the obfuscation complexity of planar graphs&quot; (<i>Theor. Comput. Sci.</i> 2008 and <a href="http://arxiv.org/abs/0705.3748">arXiv:0705.3748</a>) says in the first sentence of the abstract that it&#x27;s motivated by Planarity. The paper proves that a randomly permuted circular layout (like the one used as the initial state in Planarity) approximates the maximum possible number of crossings to within an approximation ratio of three, in expectation. But it doesn&#x27;t actually say that Planarity uses this kind of layout, or conclude from its theoretical results that this kind of layout is a good choice for this puzzle.
-<br />
+<p>Oleg Verbitsky's paper "On the obfuscation complexity of planar graphs" (<i>Theor. Comput. Sci.</i> 2008 and <a href="http://arxiv.org/abs/0705.3748">arXiv:0705.3748</a>) says in the first sentence of the abstract that it's motivated by Planarity. The paper proves that a randomly permuted circular layout (like the one used as the initial state in Planarity) approximates the maximum possible number of crossings to within an approximation ratio of three, in expectation. But it doesn't actually say that Planarity uses this kind of layout, or conclude from its theoretical results that this kind of layout is a good choice for this puzzle.</p>
 
-<br />
-Several authors have been studied the problem of planarizing a nonplanar layout by moving as few vertices as possible, and (although the problem predates the Planarity game) the paper on this problem by <a href="http://dx.doi.org/10.1007/s00454-008-9130-6">Goaoc et al. 2009</a> mentions Planarity, and mentions results involving initial vertex sets in convex position, but does not mention that this is the initial position of Planarity.
-<br />
+<p>Several authors have been studied the problem of planarizing a nonplanar layout by moving as few vertices as possible, and (although the problem predates the Planarity game) the paper on this problem by <a href="http://dx.doi.org/10.1007/s00454-008-9130-6">Goaoc et al. 2009</a> mentions Planarity, and mentions results involving initial vertex sets in convex position, but does not mention that this is the initial position of Planarity.</p>
 
-<br />
-&quot;<a href="http://alexandria.tue.nl/openaccess/Metis225962.pdf">Perceptual organization in user-generated graph layouts</a>&quot;, by van Ham and Rogowitz in IEEE TVCG 2008, studied user experiences with perceptual tasks in graph visualization within an interactive environment inspired by and similar to the game play in Planarity. They compare how well the users were able to rearrange the graphs and perform their set tasks for several different starting layouts, one of which is the randomized circular layout of Planarity. Unsurprisingly, they find that using this deliberately-tangled layout slows the users down. But they don&#x27;t say that this layout is the one used by Planarity.
-<br />
+<p>"<a href="http://alexandria.tue.nl/openaccess/Metis225962.pdf">Perceptual organization in user-generated graph layouts</a>", by van Ham and Rogowitz in IEEE TVCG 2008, studied user experiences with perceptual tasks in graph visualization within an interactive environment inspired by and similar to the game play in Planarity. They compare how well the users were able to rearrange the graphs and perform their set tasks for several different starting layouts, one of which is the randomized circular layout of Planarity. Unsurprisingly, they find that using this deliberately-tangled layout slows the users down. But they don't say that this layout is the one used by Planarity.</p>
 
-<br />
-&quot;<a href="http://homepage.cs.uiowa.edu/~hourcade/sdg-vs-mt-final.pdf">Comparing Multi-Touch Tabletops and Multi-Mouse SingleDisplay Groupware Setups</a> (Hansen and Hourcade, MexIHC&#x27;10) comes very close to what I want: in a paragraph that begins &quot;inspired by Planarity&quot; they write about a task of &quot;untangling a ring graph with randomly placed vertices&quot;. But I think here &quot;ring&quot; may be a description of the network connectivity rather than the initial placement, and in any case again they don&#x27;t say how similar or different their system is to planarity.
-<br />
+<p>"<a href="http://homepage.cs.uiowa.edu/~hourcade/sdg-vs-mt-final.pdf">Comparing Multi-Touch Tabletops and Multi-Mouse SingleDisplay Groupware Setups</a> (Hansen and Hourcade, MexIHC'10) comes very close to what I want: in a paragraph that begins "inspired by Planarity" they write about a task of "untangling a ring graph with randomly placed vertices". But I think here "ring" may be a description of the network connectivity rather than the initial placement, and in any case again they don't say how similar or different their system is to planarity.</p>
 
-<br />
-There are also mainstream media sources for Planarity itself, but I didn&#x27;t find any descriptions of its initial configuration there, either. And the Planarity site goes into great detail about how it generates its graphs but says nothing about how they are placed into the initial configuration.
-<br />
+<p>There are also mainstream media sources for Planarity itself, but I didn't find any descriptions of its initial configuration there, either. And the Planarity site goes into great detail about how it generates its graphs but says nothing about how they are placed into the initial configuration.</p>
 
-<br />
-In the absence of good enough sources for the circularity of its layouts, I ended up mentioning Planarity in a see-also link of the circular layout article, rather than actually including it in the main text of the article. It&#x27;s obvious to anyone who spends any amount of time playing Planarity that its initial layout is circular. But sometimes, being obvious isn&#x27;t enough: you have to say it.
+<p>In the absence of good enough sources for the circularity of its layouts, I ended up mentioning Planarity in a see-also link of the circular layout article, rather than actually including it in the main text of the article. It's obvious to anyone who spends any amount of time playing Planarity that its initial layout is circular. But sometimes, being obvious isn't enough: you have to say it.</p>
+
 <br /><br /><hr /><br />
 <h3>Comments:</h3>
+
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>None</b>: <br />
 <b>2013-03-25T22:43:52Z</b><br />
-Goaoc, not Gaoac !
+<p>Goaoc, not Gaoac !</p>
 </div>
+
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>11011110</b>: <br />
 <b>2013-03-25T22:53:48Z</b><br />
-Oops, fixed. Sorry about that.
+<p>Oops, fixed. Sorry about that.</p>
 </div>
+
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>ext_1721663</b>: <br />
 <b>2013-03-27T03:20:24Z</b><br />
-https://github.com/tantalor/raphael.planarity/blob/master/lib/raphael.planarity.js#L40
+<p>https://github.com/tantalor/raphael.planarity/blob/master/lib/raphael.planarity.js#L40</p>
 
-In this code (JavaScript), I first create n*(n-1)/2 vertices and lay them out in a circle &quot;in order&quot;.
+<p>In this code (JavaScript), I first create n*(n-1)/2 vertices and lay them out in a circle "in order".</p>
 
-The edges are assigned in a random fashion described by the line intersection algorithm, see http://www.johntantalo.com/wiki/Planarity#Pseudocode
+<p>The edges are assigned in a random fashion described by the line intersection algorithm, see http://www.johntantalo.com/wiki/Planarity#Pseudocode</p>
 
-Briefly, each intersection of two random lines corresponds to one vertex of the graph. That relationship is given by the pairIndex function which maps a line pair to a vertex.
+<p>Briefly, each intersection of two random lines corresponds to one vertex of the graph. That relationship is given by the pairIndex function which maps a line pair to a vertex.</p>
 
-Since the lines are random, there is no real predicable structure to the initial layout.
+<p>Since the lines are random, there is no real predicable structure to the initial layout.</p>
 
-I did a bit of investigation recently in to counting the distinct graphs made by this algorithm (ignoring layout), but I didn&#x27;t get very far.
+<p>I did a bit of investigation recently in to counting the distinct graphs made by this algorithm (ignoring layout), but I didn't get very far.</p>
 
--John
+<p>-John</p>
 </div>
+
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>11011110</b>: <br />
 <b>2013-03-27T03:25:53Z</b><br />
-The graphs constructed in this way are usually called &quot;arrangements of lines&quot;.
-There&#x27;s some material on counting them in Knuth&#x27;s book &quot;Axioms and Hulls&quot;.
+<p>The graphs constructed in this way are usually called "arrangements of lines".
+There's some material on counting them in Knuth's book "Axioms and Hulls".</p>
 </div>
+
 <div style="margin-left: 6em; padding-top: 1em;">
 <b>ext_1721663</b>: <br />
 <b>2013-03-27T03:28:41Z</b><br />
-Ah thanks! I had full confidence that I didn&#x27;t invent the things but I never knew until know what they were called.
+<p>Ah thanks! I had full confidence that I didn't invent the things but I never knew until know what they were called.</p>
 </div>
 

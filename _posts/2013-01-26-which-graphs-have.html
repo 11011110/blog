@@ -4,73 +4,58 @@ title:  'Which graphs have polynomially many connected subgraphs?'
 date:   2013-01-26 23:14:00
 tags:   [graph theory]
 ---
-I started wondering about the title question after seeing <a href="http://arxiv.org/abs/1203.2538">a talk by Kitty Meeks at FUN last summer</a> that used this property, and found it again today in my notes from then. One answer is given by a simple and easy to count parameter of any graph, that is closely related to graph minors, maximum degree, bandwidth, and the number of connected subgraphs. Because I don&#x27;t know what it might have been called before, I&#x27;ll make up a name for it: the branch count.
-<br />
+<p>I started wondering about the title question after seeing <a href="http://arxiv.org/abs/1203.2538">a talk by Kitty Meeks at FUN last summer</a> that used this property, and found it again today in my notes from then. One answer is given by a simple and easy to count parameter of any graph, that is closely related to graph minors, maximum degree, bandwidth, and the number of connected subgraphs. Because I don't know what it might have been called before, I'll make up a name for it: the branch count.</p>
 
-<br />
-To compute the branch count of a graph, perform the following steps. First, compute, for each vertex <i>v</i>, the excess of its degree over two: max{deg(<i>v</i>) − 2, 0}. Second, sum up these numbers within each connected component. Third, choose the largest number found in this way among all of the connected components.
-<br />
+<p>To compute the branch count of a graph, perform the following steps. First, compute, for each vertex \( v, \) the excess of its degree over two: \( \max\{\operatorname{deg}(v)-2,0\}. \) Second, sum up these numbers within each connected component. Third, choose the largest number found in this way among all of the connected components.</p>
 
-<br />
-This number is minor-monotone: contracting an edge between two vertices of degree two or more preserves it, because the increase by two (caused by subtracting two from a single merged vertex degree instead of separately from the degrees of two vertices) is offset by a decrease by two (caused by the removal of the two ends of the contracted edge). Other minor operations such as contracting a vertex with a degree-one endpoint or deleting an edge can only decrease the vertex degrees. Therefore, there are a finite number of minor-minimal graphs with a given branch count. In a minimal (simple) graph, every non-leaf edge must belong to a triangle, or else it could be contracted without changing the branch count. Using this fact, it is not hard to see that the unique minor minimal graph with branch count one is a claw K<sub>1,3</sub>, while for branch count two there are three minimal graphs, the star K<sub>1,4</sub>, the <a href="http://en.wikipedia.org/wiki/Bull_graph">bull graph</a>, and the <a href="http://en.wikipedia.org/wiki/Diamond_graph">diamond graph</a>.
-<br />
+<p>This number is minor-monotone: contracting an edge between two vertices of degree two or more preserves it, because the increase by two (caused by subtracting two from a single merged vertex degree instead of separately from the degrees of two vertices) is offset by a decrease by two (caused by the removal of the two ends of the contracted edge). Other minor operations such as contracting a vertex with a degree-one endpoint or deleting an edge can only decrease the vertex degrees. Therefore, there are a finite number of minor-minimal graphs with a given branch count. In a minimal (simple) graph, every non-leaf edge must belong to a triangle, or else it could be contracted without changing the branch count. Using this fact, it is not hard to see that the unique minor minimal graph with branch count one is a claw \( K_{1,3}, \) while for branch count two there are three minimal graphs, the star \( K_{1,4}, \) the <a href="http://en.wikipedia.org/wiki/Bull_graph">bull graph</a>, and the <a href="http://en.wikipedia.org/wiki/Diamond_graph">diamond graph</a>.</p>
 
-<br />
-<div style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/K14-bull-diamond.png" /></div>
-<br />
+<p style="text-align:center"><img alt="Minor-minimal graphs for branch count two" src="{{site.baseurl}}/assets/2013/K14-bull-diamond.svg" /></p>
 
-<br />
-In a graph with branch count <i>b</i>, the largest star minor may be much smaller than <i>b</i>, of the form K<sub>1,O(<i>b</i><sup>1/2</sup>)</sub>; for instance, this is true for cliques, because their branch count is so much bigger than their number of vertices. On the other hand, every graph with branch count <i>b</i> has a star minor of the form K<sub>1,Ω(<i>b</i><sup>1/3</sup>)</sub> that may be found as follows. First, contract all edges whose contraction does not change the branch count, to make the graph minimal. Second, if there is a vertex of degree <i>b</i><sup>1/3</sup>, return the star of it and its neighbors; otherwise, there are at least <i>b</i><sup>2/3</sup> vertices in the remaining graph. Third, do a breadth-first search. If one of the levels of the breadth first search has at least <i>b</i><sup>1/3</sup> vertices in it, form a star by contracting all the earlier levels and return it; otherwise, there are at least <i>b</i><sup>1/3</sup> levels. Finally, observe that (because of the triangle property) the last node in each level of the breadth first search must either have two or more neighbors on the next level of the BFS tree, or it must be a leaf of the BFS tree. Possibly by rearranging the tree (making the neighbors on the next level become the children of this last node) we can cause this node to either be an internal node with two or more children or a leaf in the tree. In this way, we get a tree in which the number of leaves plus the number of internal nodes with two or more children is at least <i>b</i><sup>1/3</sup>, and contracting the internal part of the tree gives us our desired star.
-<br />
+<p>In a graph with branch count \( b, \) the largest star minor may be much smaller than \( b, \) of the form \( K_{1,O(b^{1/2})}; \) for instance, this is true for cliques, because their branch count is so much bigger than their number of vertices. On the other hand, every graph with branch count \( b \) has a star minor of the form \( K_{1,\Omega(b^{1/3})} \) that may be found as follows. First, contract all edges whose contraction does not change the branch count, to make the graph minimal. Second, if there is a vertex of degree \( b^{1/3}, \) return the star of it and its neighbors; otherwise, there are at least \( b^{2/3} \) vertices in the remaining graph. Third, do a breadth-first search. If one of the levels of the breadth first search has at least \( b^{1/3} \) vertices in it, form a star by contracting all the earlier levels and return it; otherwise, there are at least \( b^{1/3} \) levels. Finally, observe that (because of the triangle property) the last node in each level of the breadth first search must either have two or more neighbors on the next level of the BFS tree, or it must be a leaf of the BFS tree. Possibly by rearranging the tree (making the neighbors on the next level become the children of this last node) we can cause this node to either be an internal node with two or more children or a leaf in the tree. In this way, we get a tree in which the number of leaves plus the number of internal nodes with two or more children is at least \( b^{1/3}, \) and contracting the internal part of the tree gives us our desired star.</p>
 
-<br />
-It turns out that, for a minor-closed family F, the following characterizations are all equivalent to each other
-<br />
-(1) F has bounded branch count.
-<br />
-(2) F has bounded maximum degree.
-<br />
-(3) F excludes at least one star K<sub>1,<i>n</i></sub>
-<br />
-(4) There is a polynomial bound on the number of connected subgraphs of graphs in F.
-<br />
-(5) F has bounded bandwidth
-<br />
+<p>It turns out that, for a minor-closed family \( F, \) the following characterizations are all equivalent to each other
+<ol>
+<li><p>\( F \) has bounded branch count.</p></li>
+<li><p>\( F \) has bounded maximum degree.</p></li>
+<li><p>\( F \) excludes at least one star \( K_{1,n} \).</p></li>
+<li><p>There is a polynomial bound on the number of connected subgraphs of graphs in \( F. \)</p></li>
+<li><p>\( F \) has bounded bandwidth.</p></li>
+</ol>
 
-<br />
-Proof:
-<br />
-(1) ⇒ (2): If F has bounded branch count b, it can&#x27;t have any single vertex of degree b+2 or greater.
-<br />
-(2) ⇒ (3): If F has maximum degree <i>d</i>, it excludes K<sub>1,<i>d</i> + 1</sub>
-<br />
-(4) ⇒ (3): The star K<sub>1,<i>n</i></sub> has 2<sup><i>n</i></sup> connected subgraphs, which is not polynomially bounded.
-<br />
-(1) ⇒ (4): If F has bounded branch count, its graphs have a bounded number of paths of degree-two vertices. Every connected subgraph has at most two cut edges on each such path, so the number of connected subgraphs is polynomial (with exponent at most twice the number of paths).
-<br />
-(3) ⇒ (1): This is the property of always having a star minor of size proportional to a function of the branch count, proved above.
-<br />
-(5) ⇒ (3): K<sub>1,<i>n</i></sub> has unbounded bandwidth, exactly ceiling(<i>n</i>/2).
-<br />
-(1) ⇒ (5): Sort the vertices by their distance from the set of vertices of degree three or more, breaking ties arbitrarily. There are O(<i>b</i>) vertices at each distance, so the bandwidth of this layout is O(<i>b</i>).
-<br />
+<div style="margin-left: 2em">
+<p><i>Proof:</i></p>
 
-<br />
-As a consequence, we have a polynomial time algorithm for solving any graph maximization problem on graphs of bounded branch count for which the solution is a connected subgraph, and for which the quality of a solution can be computed in polynomial time: just look at all connected subgraphs and pick the best one. For instance, the maximum weight planar subgraph fits this idea. Unfortunately this doesn&#x27;t give fixed parameter tractability, because the exponent of the polynomial might depend on the branch count.
-<br />
+<p>(1) ⇒ (2): If \( F \) has bounded branch count \( b, \) it can't have any single vertex of degree \( b+2 \) or greater.</p>
 
-<br />
-Unfortunately this also doesn&#x27;t quite give a complete answer to the question about graphs with polynomially many connected subgraphs. For instance, the trees formed by a path of length <i>n</i>, together with log <i>n</i> leaf edges attached somewhere along the path, also have this property. But they&#x27;re not as nice from the point of view of graph minor theory...
+<p>(2) ⇒ (3): If \( F \) has maximum degree \( d, \) it excludes \( K_{1,d+1}. \)</p>
+
+<p>(4) ⇒ (3): The star \( K_{1,n} \) has \( 2^n \) connected subgraphs, which is not polynomially bounded.</p>
+
+<p>(1) ⇒ (4): If \( F \) has bounded branch count, its graphs have a bounded number of paths of degree-two vertices. Every connected subgraph has at most two cut edges on each such path, so the number of connected subgraphs is polynomial (with exponent at most twice the number of paths).</p>
+
+<p>(3) ⇒ (1): This is the property of always having a star minor of size proportional to a function of the branch count, proved above.</p>
+
+<p>(5) ⇒ (3): \( K_{1,n} \) has unbounded bandwidth, exactly \( \lceil n/2 \rceil. \)</p>
+
+<p>(1) ⇒ (5): Sort the vertices by their distance from the set of vertices of degree three or more, breaking ties arbitrarily. There are \( O(b) \) vertices at each distance, so the bandwidth of this layout is \( O(b). \)</p>
+</div>
+
+<p>As a consequence, we have a polynomial time algorithm for solving any graph maximization problem on graphs of bounded branch count for which the solution is a connected subgraph, and for which the quality of a solution can be computed in polynomial time: just look at all connected subgraphs and pick the best one. For instance, the maximum weight planar subgraph fits this idea. Unfortunately this doesn't give fixed parameter tractability, because the exponent of the polynomial might depend on the branch count.</p>
+
+<p>Unfortunately this also doesn't quite give a complete answer to the question about graphs with polynomially many connected subgraphs. For instance, the trees formed by a path of length \( n, \) together with \( \log n \) leaf edges attached somewhere along the path, also have this property. But they're not as nice from the point of view of graph minor theory...</p>
+
 <br /><br /><hr /><br />
 <h3>Comments:</h3>
+
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>None</b>: <br />
 <b>2013-01-27T13:32:22Z</b><br />
 To add one characterization: I think having bounded max leaf number (see e.g. http://www.ii.uib.no/~daniello/papers/ecology1.pdf ) on the connected components gives the same class.
 </div>
+
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>11011110</b>: <br />
 <b>2013-01-27T16:30:25Z</b><br />
-Yes, that&#x27;s almost the same as having bounded star minors.
+Yes, that's almost the same as having bounded star minors.
 </div>
-

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="396px" height="324px" viewBox="198.5 126.5 396 324" enable-background="new 198.5 126.5 396 324" xml:space="preserve">
+<polyline fill="none" stroke="#231F20" stroke-width="2.5" stroke-miterlimit="10" points="360,360 396,396 432,432 "/>
+<polyline fill="none" stroke="#231F20" stroke-width="2.5" stroke-miterlimit="10" points="432,360 396,396 360,432 "/>
+<line fill="none" stroke="#231F20" stroke-width="2.5" stroke-miterlimit="10" x1="270" y1="144" x2="270" y2="216"/>
+<polygon fill="none" stroke="#231F20" stroke-width="2.5" stroke-miterlimit="10" points="324,216 270,216 216,216 216,144 270,144
+	324,144 "/>
+<line fill="none" stroke="#231F20" stroke-width="2.5" stroke-miterlimit="10" x1="288" y1="360" x2="360" y2="288"/>
+<line fill="none" stroke="#BC1E47" stroke-width="2.5" stroke-miterlimit="10" x1="504" y1="432" x2="576" y2="360"/>
+<rect x="504" y="360" fill="none" stroke="#BC1E47" stroke-width="2.5" stroke-miterlimit="10" width="72" height="72"/>
+<circle fill="#FFE180" stroke="#231F20" stroke-miterlimit="10" cx="504" cy="432" r="9"/>
+<circle fill="#FFE180" stroke="#231F20" stroke-miterlimit="10" cx="576" cy="360" r="9"/>
+<circle fill="#FFE180" stroke="#231F20" stroke-miterlimit="10" cx="576" cy="432" r="9"/>
+<rect x="432" y="288" fill="none" stroke="#231F20" stroke-width="2.5" stroke-miterlimit="10" width="72" height="72"/>
+<polyline fill="none" stroke="#0081CD" stroke-width="2.5" stroke-miterlimit="10" points="288,432 216,360 288,360 216,432 "/>
+<polyline fill="none" stroke="#0081CD" stroke-width="2.5" stroke-miterlimit="10" points="288,360 288,432 216,432 216,360 "/>
+<path fill="none" stroke="#231F20" stroke-width="2.5" stroke-miterlimit="10" d="M360,288"/>
+<polygon fill="none" stroke="#231F20" stroke-width="2.5" stroke-miterlimit="10" points="468,216 540,216 468,180 540,144 468,144
+	540,180 "/>
+<polygon fill="none" stroke="#BC1E47" stroke-width="2.5" stroke-miterlimit="10" points="360,288 468,216 432,288 "/>
+<polygon fill="none" stroke="#BC1E47" stroke-width="2.5" stroke-miterlimit="10" points="360,288 396,216 432,288 432,216 "/>
+<polygon fill="none" stroke="#BC1E47" stroke-width="2.5" stroke-miterlimit="10" points="360,288 324,216 432,288 360,216 "/>
+<circle fill="#FFE180" stroke="#231F20" stroke-miterlimit="10" cx="360" cy="288" r="9"/>
+<circle fill="#FFE180" stroke="#231F20" stroke-miterlimit="10" cx="432" cy="288" r="9"/>
+<circle fill="#FFE180" stroke="#231F20" stroke-miterlimit="10" cx="324" cy="216" r="9"/>
+<circle fill="#FFE180" stroke="#231F20" stroke-miterlimit="10" cx="360" cy="216" r="9"/>
+<circle fill="#FFE180" stroke="#231F20" stroke-miterlimit="10" cx="396" cy="216" r="9"/>
+<circle fill="#FFE180" stroke="#231F20" stroke-miterlimit="10" cx="432" cy="216" r="9"/>
+<circle fill="#FFE180" stroke="#231F20" stroke-miterlimit="10" cx="468" cy="216" r="9"/>
+<circle fill="#FFE180" stroke="#231F20" stroke-miterlimit="10" cx="468" cy="180" r="9"/>
+<circle fill="#FFE180" stroke="#231F20" stroke-miterlimit="10" cx="468" cy="144" r="9"/>
+<circle fill="#FFE180" stroke="#231F20" stroke-miterlimit="10" cx="540" cy="216" r="9"/>
+<circle fill="#FFE180" stroke="#231F20" stroke-miterlimit="10" cx="540" cy="180" r="9"/>
+<circle fill="#FFE180" stroke="#231F20" stroke-miterlimit="10" cx="540" cy="144" r="9"/>
+<circle fill="#FFE180" stroke="#231F20" stroke-miterlimit="10" cx="288" cy="360" r="9"/>
+<circle fill="#FFE180" stroke="#231F20" stroke-miterlimit="10" cx="216" cy="360" r="9"/>
+<circle fill="#FFE180" stroke="#231F20" stroke-miterlimit="10" cx="216" cy="432" r="9"/>
+<circle fill="#FFE180" stroke="#231F20" stroke-miterlimit="10" cx="288" cy="432" r="9"/>
+<circle fill="#FFE180" stroke="#231F20" stroke-miterlimit="10" cx="432" cy="360" r="9"/>
+<circle fill="#FFE180" stroke="#231F20" stroke-miterlimit="10" cx="504" cy="288" r="9"/>
+<circle fill="#FFE180" stroke="#231F20" stroke-miterlimit="10" cx="504" cy="360" r="9"/>
+<circle fill="#FFE180" stroke="#231F20" stroke-miterlimit="10" cx="270" cy="216" r="9"/>
+<circle fill="#FFE180" stroke="#231F20" stroke-miterlimit="10" cx="270" cy="144" r="9"/>
+<circle fill="#FFE180" stroke="#231F20" stroke-miterlimit="10" cx="324" cy="144" r="9"/>
+<circle fill="#FFE180" stroke="#231F20" stroke-miterlimit="10" cx="216" cy="144" r="9"/>
+<circle fill="#FFE180" stroke="#231F20" stroke-miterlimit="10" cx="216" cy="216" r="9"/>
+<circle fill="#FFE180" stroke="#231F20" stroke-miterlimit="10" cx="432" cy="432" r="9"/>
+<circle fill="#FFE180" stroke="#231F20" stroke-miterlimit="10" cx="360" cy="432" r="9"/>
+<circle fill="#FFE180" stroke="#231F20" stroke-miterlimit="10" cx="360" cy="360" r="9"/>
+<circle fill="#FFE180" stroke="#231F20" stroke-miterlimit="10" cx="396" cy="396" r="9"/>
+</svg>

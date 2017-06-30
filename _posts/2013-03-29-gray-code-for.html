@@ -4,83 +4,54 @@ title:  'A Gray code for involutions'
 date:   2013-03-29 17:54:00
 tags:   [combinatorial enumeration]
 ---
-An involution is a permutation that equals its inverse; thought of another way, it&#x27;s a <a href="http://en.wikipedia.org/wiki/Matching_(graph_theory)">matching</a> on an <i>n</i>-vertex complete graph, where a position in the permutation is mapped to its partner in the matching (or itself if it is unmatched). Here are the 26 involutions on 5 elements (26 is a <a href="http://en.wikipedia.org/wiki/Telephone_number_(mathematics)">telephone number</a>, the numbers that count involutions):
-<br />
+<p>An involution is a permutation that equals its inverse; thought of another way, it's a <a href="http://en.wikipedia.org/wiki/Matching_(graph_theory)">matching</a> on an <i>n</i>-vertex complete graph, where a position in the permutation is mapped to its partner in the matching (or itself if it is unmatched). Here are the 26 involutions on 5 elements (26 is a <a href="http://en.wikipedia.org/wiki/Telephone_number_(mathematics)">telephone number</a>, the numbers that count involutions):</p>
 
-<br />
-<pre>[0, 1, 2, 3, 4]
-<br />
+{% highlight python %}
+[0, 1, 2, 3, 4]
 [1, 0, 2, 3, 4]
-<br />
 [2, 1, 0, 3, 4]
-<br />
 [0, 2, 1, 3, 4]
-<br />
 [0, 3, 2, 1, 4]
-<br />
 [3, 1, 2, 0, 4]
-<br />
 [3, 2, 1, 0, 4]
-<br />
 [2, 3, 0, 1, 4]
-<br />
 [1, 0, 3, 2, 4]
-<br />
 [0, 1, 3, 2, 4]
-<br />
 [0, 1, 4, 3, 2]
-<br />
 [0, 4, 2, 3, 1]
-<br />
 [4, 1, 2, 3, 0]
-<br />
 [4, 2, 1, 3, 0]
-<br />
 [2, 4, 0, 3, 1]
-<br />
 [1, 0, 4, 3, 2]
-<br />
 [1, 0, 2, 4, 3]
-<br />
 [2, 1, 0, 4, 3]
-<br />
 [3, 1, 4, 0, 2]
-<br />
 [3, 4, 2, 0, 1]
-<br />
 [4, 3, 2, 1, 0]
-<br />
 [4, 1, 3, 2, 0]
-<br />
 [0, 4, 3, 2, 1]
-<br />
 [0, 3, 4, 1, 2]
-<br />
 [0, 2, 1, 4, 3]
-<br />
-[0, 1, 2, 4, 3]</pre>
-<br />
+[0, 1, 2, 4, 3]
+{% endhighlight %}
 
-<br />
-In this sequence, each two consecutive involutions differ from each other in a simple way: two consecutive elements mapped to themselves may become mapped to each other or vice versa, one of the elements of a pair of items mapped to each other may shift position by one, or two consecutive elements that belong to two different pairs may swap partners. These types of changes generate an (<i>n</i> − 1)-regular multigraph on the set of involutions, but it&#x27;s not a simple graph because sometimes it&#x27;s possible to get the same change in two different ways.
-<br />
+<p>In this sequence, each two consecutive involutions differ from each other in a simple way: two consecutive elements mapped to themselves may become mapped to each other or vice versa, one of the elements of a pair of items mapped to each other may shift position by one, or two consecutive elements that belong to two different pairs may swap partners. These types of changes generate an \( (n-1) \)-regular multigraph on the set of involutions, but it's not a simple graph because sometimes it's possible to get the same change in two different ways.</p>
 
-<br />
-The overall structure of the sequence is that it starts with all of the involutions that keep the last item fixed (recursively generated as the involutions on one fewer item), and then as in the <a href="http://en.wikipedia.org/wiki/Steinhaus%E2%80%93Johnson%E2%80%93Trotter_algorithm">Steinhaus–Johnson–Trotter algorithm</a> it sweeps the partner of the last item back and forth over the remaining items, at the end of each sweep performing a step in the recursive sequence for two fewer items. Because of the low ratio of recursive steps to sweep steps, the time to generate the sequence is constant per involution. This algorithm demonstrates the existence of a Hamiltonian cycle in the multigraph of involutions and their changes.
-<br />
+<p>The overall structure of the sequence is that it starts with all of the involutions that keep the last item fixed (recursively generated as the involutions on one fewer item), and then as in the <a href="http://en.wikipedia.org/wiki/Steinhaus%E2%80%93Johnson%E2%80%93Trotter_algorithm">Steinhaus–Johnson–Trotter algorithm</a> it sweeps the partner of the last item back and forth over the remaining items, at the end of each sweep performing a step in the recursive sequence for two fewer items. Because of the low ratio of recursive steps to sweep steps, the time to generate the sequence is constant per involution. This algorithm demonstrates the existence of a Hamiltonian cycle in the multigraph of involutions and their changes.</p>
 
-<br />
-My implementation of all this is now towards the end of <a href="http://www.ics.uci.edu/~eppstein/PADS/Permutations.py">PADS/Permutations.py</a>. I&#x27;m very glad that it was easy to do some thorough unit testing for this one; without that, I would have had a difficult time convincing myself both that the algorithm is correct and that my implementation is correct, because the details are a bit messy.
+<p>My implementation of all this is now towards the end of <a href="http://www.ics.uci.edu/~eppstein/PADS/Permutations.py">PADS/Permutations.py</a>. I'm very glad that it was easy to do some thorough unit testing for this one; without that, I would have had a difficult time convincing myself both that the algorithm is correct and that my implementation is correct, because the details are a bit messy.</p>
+
 <br /><br /><hr /><br />
 <h3>Comments:</h3>
+
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>ru_linux_geek</b>: <br />
 <b>2013-03-30T18:48:38Z</b><br />
 PADS seems like it naturally belongs in some source control repo like github.
 </div>
+
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>11011110</b>: <br />
 <b>2013-03-30T19:02:01Z</b><br />
-It is in a git repo, but one I control locally on my department servers. You can get a copy of the repo by using &quot;git clone http://www.ics.uci.edu/~eppstein/PADS/.git&quot;.
+It is in a git repo, but one I control locally on my department servers. You can get a copy of the repo by using "git clone http://www.ics.uci.edu/~eppstein/PADS/.git".
 </div>
-

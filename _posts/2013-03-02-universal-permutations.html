@@ -4,35 +4,39 @@ title:  'Universal permutations'
 date:   2013-03-02 15:07:00
 tags:   [combinatorics]
 ---
-Let&#x27;s say that a permutation on the numbers from 1 to <i>n</i> is <i>k</i>-universal if its subsequences of <i>k</i> items have all of the <i>k</i>! possible different patterns that they could have. For instance, 25314 is 3-universal: the six possible patterns 123, 132, 213, 231, 312, and 321 appear in it as 234, 253, 314, 231, 514, and 531 respectively. How short can a <i>k</i>-universal pattern be?
-<br />
+<p>Let's say that a permutation on the numbers from \( 1 \) to \( n \) is \( k \)-universal if its subsequences of \( k \) items have all of the \( k! \) possible different patterns that they could have. For instance, 25314 is 3-universal: the six possible patterns 123, 132, 213, 231, 312, and 321 appear in it as 234, 253, 314, 231, 514, and 531 respectively. How short can a \( k \)-universal pattern be?</p>
 
-<br />
-It&#x27;s not hard to find upper and lower bounds within a constant factor of each other. In one direction, the sequence k, 2k, 3k, ... k−1, 2k−1, 3k−1, ..., k−2, 2k−2, 3k−2, ... etc of length <i>k</i><sup>2</sup> is universal. (This is the same tilted grid pattern that gives the lower bound in the <a href="http://en.wikipedia.org/wiki/Erd%C5%91s%E2%80%93Szekeres_theorem">Erdős–Szekeres theorem</a>.) In the other direction, the length <i>n</i> of the universal permutation must be at least some constant times <i>k</i><sup>2</sup>, in order for it to have at least <i>k</i>! different subsets of size <i>k</i>. But what is the constant?
-<br />
+<p>It's not hard to find upper and lower bounds within a constant factor of each other. In one direction, the sequence
+\[
+k, 2k, 3k, \dots k-1, 2k-1, 3k-1, \dots, k-2, 2k-2, 3k-2, \dots
+\]
+etc of length \( k^2 \) is universal. (This is the same tilted grid pattern that gives the lower bound in the <a href="http://en.wikipedia.org/wiki/Erd%C5%91s%E2%80%93Szekeres_theorem">Erdős–Szekeres theorem</a>.) In the other direction, the length \( n \) of the universal permutation must be at least some constant times \( k^2, \) in order for it to have at least \( k! \) different subsets of size \( k. \) But what is the constant?</p>
 
-<br />
-A computer search found that there is no 4-universal permutation on 8 items (the best is 51862473 which has 23 out of the 24 possible patterns), but the 9-item permutation 162975384 is universal. So the sequence of lengths of the shortest k-universal patterns begins 1, 3, 5, 9, ... But although there are simple quadratically-growing sequences like <a href="http://oeis.org/A080827">ceiling((k^2+1)/2)</a> that begin like this, it&#x27;s not really long enough to identify this in OEIS and see whether it matches anything known.
+<p>A computer search found that there is no 4-universal permutation on 8 items (the best is 51862473 which has 23 out of the 24 possible patterns), but the 9-item permutation 162975384 is universal. So the sequence of lengths of the shortest \( k \)-universal patterns begins 1, 3, 5, 9, ... But although there are simple quadratically-growing sequences like <a href="http://oeis.org/A080827">\( \lceil (k^2+1)/2 \rceil \)</a> that begin like this, it's not really long enough to identify this in OEIS and see whether it matches anything known.</p>
+
 <br /><br /><hr /><br />
 <h3>Comments:</h3>
+
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>None</b>: <br />
 <b>2013-03-03T16:38:09Z</b><br />
-This reminds me of Ran Raz&#x27;s paper &quot;VC-DIMENSION OF SETS OF PERMUTATIONS&quot; published in Combinatorica in 2000.
+This reminds me of Ran Raz's paper "VC-DIMENSION OF SETS OF PERMUTATIONS" published in <i>Combinatorica</i> in 2000.
 </div>
+
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>11011110</b>: <br />
 <b>2013-03-03T16:53:33Z</b><br />
-Thanks, I&#x27;ll have to look that up.
+Thanks, I'll have to look that up.
 </div>
+
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>None</b>: <br />
 <b>2013-03-04T15:01:47Z</b><br />
-Check out:  Miller, Alison Asymptotic bounds for permutations containing many different patterns. J. Combin. Theory Ser. A 116 (2009), no. 1, 92-108.
+Check out:  Miller, Alison Asymptotic bounds for permutations containing many different patterns. <i>J. Combin. Theory</i> Ser. A 116 (2009), no. 1, 92–108.
 </div>
+
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>11011110</b>: <br />
 <b>2013-03-04T16:02:29Z</b><br />
-Extremely relevant, thanks! So thanks to this reference I now know that there exist k-universal permutations of size k(k+1)/2 and that it&#x27;s conjectured that the leading constant of this expression cannot be improved.
+Extremely relevant, thanks! So thanks to this reference I now know that there exist \( k \)-universal permutations of size \( k(k+1)/2 \) and that it's conjectured that the leading constant of this expression cannot be improved.
 </div>
-
