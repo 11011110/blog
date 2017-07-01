@@ -12,7 +12,7 @@ Form a family of sets of $$\tbinom{n}{i}$$ points, as follows.
 Like this:
 
 {: style="text-align:center"}
-![32-vertex Pascal's triangle of point sets]({{site.baseurl}}/assets/2017/pascal.png)
+![32-vertex Pascal's triangle of point sets]({{site.baseurl}}/assets/2017/pascal.svg)
 
 This construction can be used to generate point sets with no large convex subsets. To see this, it's easier to start with two restricted types of convex subset, called "cups" and "caps". A cup is a subset of points that lies on the graph of a convex function, and a cap lies on the graph of a concave function. These are both convex subsets, but not all convex subsets are cups or caps. For instance, in the image above, the sets in the positions of the binomial coefficients $$\tbinom{n}{1}$$ are cups and the sets in the positions of $$\tbinom{n}{n-1}$$ are caps.
 
@@ -35,3 +35,5 @@ $$\sum_{i=0}^n \binom{n}{i}=2^n$$
 points, having no convex $$(n+2)$$-gons. According to the conjectured solution to the [happy ending problem](https://en.wikipedia.org/wiki/Happy_ending_problem), every larger point set does have a convex $$(n+2)$$-gon, so (if the conjecture is true) this is the optimal construction for avoiding convex polygons using as many points as possible.
 
 Some bibliographic notes: The number of points in these configurations was already suggested as a conjecture in the original 1935 paper on the happy ending problem by Erdős and Szekeres, hinting that they might have already known of a construction like this one, but they didn't actually publish such a construction until 1961. Unfortunately, the copy of their 1961 paper on the Erdős publication archive is missing the pages describing the construction, so I'm not sure how they did it. I finally found a description in [a 2000 survey by W. Morris and V. Soltan](https://doi.org/10.1090/S0273-0979-00-00877-6). Morris and Soltan cite a 1995 paper by Kalbfleisch and Stanton that corrects "some inaccuracies in the proof" of Erdős and Szekeres; they follow the presentation of the Erdős–Szekeres construction from a 1979 book of Lovász. The construction here is based on the one from Morris and Soltan, but with a couple of minor changes, namely the arrangement of the point sets into a triangle and the use of the same gluing technique for both phases of the construction.
+
+([Comment thread on Google+](https://plus.google.com/100003628603413742554/posts/3fccYp7AV22))
