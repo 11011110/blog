@@ -21,7 +21,7 @@ And again, let's take the trees on a single row, and connect them together with 
 (and their number of nodes is one less than a power of two):
 
 {: style="text-align:center"}
-![32-vertex Binary search trees constructed from whole rows of Pascal's triangle]({{site.baseurl}}/assets/2017/pow2-trees.png)
+![32-vertex Binary search trees constructed from whole rows of Pascal's triangle]({{site.baseurl}}/assets/2017/pow2-trees.svg)
 
 Why?
 
@@ -37,3 +37,4 @@ The analysis proving this property is more or less the same as the analysis for 
 
 You pay for this by having deeper search paths, though, so this only works when the complete subtrees are the expensive part of the search. An alternative possibility would be to use a shallower and more balanced tree to link up the subtrees from a row of the triangle, making the search depth only $$\log_2 n+O(\log\log n)$$ but possibly increasing the number of complete subtrees per search by that same $$O(\log\log n)$$ term.
 
+([Google+ comment thread](https://plus.google.com/100003628603413742554/posts/DjCLvXd7NFX))
