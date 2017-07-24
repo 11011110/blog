@@ -11,7 +11,7 @@ Derka's dissertation consists of a significant body of novel research on [string
 
 * Every axis-parallel string graph with few bends can be partitioned into a polylogarithmic number of permutation graphs, and this partition leads to new approximation algorithms for maximum independent set, minimum coloring, maximum clique, and minimum clique cover.
 
-* 1-planar graphs (the graphs that can be drawn with at most one crossing per edge) with an extra restriction, that no two crossing edges induce a matching, are string graphs but may require exponentially many crossings per string.
+* 1-planar graphs (the graphs that can be drawn with at most one crossing per edge) with an extra restriction, that no two crossing edges induce a matching, are string graphs but may require more than one crossing per string.
 
 * Outer-string graphs (the string graphs that can be drawn with all strings having an endpoint on the outer face) may also sometimes require exponentially many string crossings.
 
