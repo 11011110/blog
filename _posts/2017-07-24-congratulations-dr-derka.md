@@ -16,3 +16,5 @@ Derka's dissertation consists of a significant body of novel research on [string
 * Outer-string graphs (the string graphs that can be drawn with all strings having an endpoint on the outer face) may also sometimes require exponentially many string crossings.
 
 Congratulations, Martin!
+
+([G+](https://plus.google.com/100003628603413742554/posts/hzmKJktEiek))
