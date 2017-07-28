@@ -22,3 +22,5 @@ placing non-overlapping rectangles with fixed corner positions within a larger b
 It was mainly about polyhedra (and related surfaces) that can be unfolded into shapes that tile the plane, and he made it memorable and entertaining in part by handing out props (paper, tape, and scissors) for the audience to use in constructing these polyhedra and then unfolding them.
 
 If I haven't linked a paper above, it's because I don't know where to find an individual link for it, but it can still be found somewhere in [the full proceedings](http://2017.cccg.ca/proceedings/CCCG2017.pdf).
+
+([G+](https://plus.google.com/100003628603413742554/posts/AX3v6WPa2xa))
