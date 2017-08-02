@@ -5,9 +5,9 @@ date: 2017-07-01 16:34
 ---
 Form a family of sets of $$\tbinom{n}{i}$$ points, as follows.
 
-* When $$i=0$$ or $$i=n$$, then $$\tbinom{n}{i}=1$$ and there is only one point.
+* When $$i=0$$ or $$i=n,$$ then $$\tbinom{n}{i}=1$$ and there is only one point.
 
-* For any other choice of $$i$$, place the points for $$\tbinom{n-1}{i-1}$$ below and to the left of the points for $$\tbinom{n-1}{i}$$, to form a single chain of points that is monotone in both their $$x$$ and $$y$$ coordinates. When placing these two subsets of points, use more space between them horizontally than vertically, so that all lines through pairs of points on the left side pass above the right side and all lines through pairs of points on the right side pass below the left side.
+* For any other choice of $$i,$$ place the points for $$\tbinom{n-1}{i-1}$$ below and to the left of the points for $$\tbinom{n-1}{i},$$ to form a single chain of points that is monotone in both their $$x$$ and $$y$$ coordinates. When placing these two subsets of points, use more space between them horizontally than vertically, so that all lines through pairs of points on the left side pass above the right side and all lines through pairs of points on the right side pass below the left side.
 
 Like this:
 
@@ -16,7 +16,7 @@ Like this:
 
 This construction can be used to generate point sets with no large convex subsets. To see this, it's easier to start with two restricted types of convex subset, called "cups" and "caps". A cup is a subset of points that lies on the graph of a convex function, and a cap lies on the graph of a concave function. These are both convex subsets, but not all convex subsets are cups or caps. For instance, in the image above, the sets in the positions of the binomial coefficients $$\tbinom{n}{1}$$ are cups and the sets in the positions of $$\tbinom{n}{n-1}$$ are caps.
 
-Then it turns out that the point set in position $$\tbinom{n}{i}$$ contains neither an $$(i+2)$$-cap nor an $$(n-i+2)$$-cup. For $$i=0$$ or $$i=n$$, this is easy to see directly: it doesn't have enough points. For the other positions, the left side has no $$(i+1)$$-cap (by induction) so an $$(i+2)$$-cap would have to include at least two points of the right side, only possible if the cap is entirely on the right side. But the right side has no $$(i+2)$$-cap (by induction again), so the whole point set also has no such cap. The argument for cups is symmetric.
+Then it turns out that the point set in position $$\tbinom{n}{i}$$ contains neither an $$(i+2)$$-cap nor an $$(n-i+2)$$-cup. For $$i=0$$ or $$i=n,$$ this is easy to see directly: it doesn't have enough points. For the other positions, the left side has no $$(i+1)$$-cap (by induction) so an $$(i+2)$$-cap would have to include at least two points of the right side, only possible if the cap is entirely on the right side. But the right side has no $$(i+2)$$-cap (by induction again), so the whole point set also has no such cap. The argument for cups is symmetric.
 
 There's also no convex subset of $$n+1$$ points within any of these sets.
 For, to make such a set, you would have to combine a cap on the left with a cup on the right, and the number of points you can get that way is too small.

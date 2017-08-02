@@ -8,9 +8,9 @@ Instead of point sets, we'll make binary search trees.
 
 Form a family of binary trees with $$\tbinom{n}{i}$$ leaves, as follows.
 
-* When $$i=0$$ or $$i=n$$, then $$\tbinom{n}{i}=1$$ and there is only one tree node.
+* When $$i=0$$ or $$i=n,$$ then $$\tbinom{n}{i}=1$$ and there is only one tree node.
 
-* For any other choice of $$i$$, use the tree for $$\tbinom{n-1}{i-1}$$ as the left subtree and the tree for $$\tbinom{n-1}{i}$$ as the right subtree, with an additional node as their parent.
+* For any other choice of $$i,$$ use the tree for $$\tbinom{n-1}{i-1}$$ as the left subtree and the tree for $$\tbinom{n-1}{i}$$ as the right subtree, with an additional node as their parent.
 
 Like this:
 
@@ -25,7 +25,7 @@ And again, let's take the trees on a single row, and connect them together with 
 
 Why?
 
-Well, here's one possible answer. You may know that one application of binary search trees is in handling range search queries. Suppose you have a data set organized as a binary search tree and you want to know something about the subset of the data in a range $$[L,R]$$. Then you can do a binary search for $$L$$ and $$R$$, and find the subset you want as individual nodes on the two search paths plus whole subtrees between the two paths. In the illustration below I've marked the roots of the whole subtrees in yellow. (The leaf at the far right of the blue range is on the search path, so it doesn't count as a whole subtree; the yellow subtree roots are children of search path nodes but not on the search path themselves.)
+Well, here's one possible answer. You may know that one application of binary search trees is in handling range search queries. Suppose you have a data set organized as a binary search tree and you want to know something about the subset of the data in a range $$[L,R].$$ Then you can do a binary search for $$L$$ and $$R,$$ and find the subset you want as individual nodes on the two search paths plus whole subtrees between the two paths. In the illustration below I've marked the roots of the whole subtrees in yellow. (The leaf at the far right of the blue range is on the search path, so it doesn't count as a whole subtree; the yellow subtree roots are children of search path nodes but not on the search path themselves.)
 
 {: style="text-align:center"}
 ![32-vertex Range search in a binary tree]({{site.baseurl}}/assets/2017/range-search.svg)

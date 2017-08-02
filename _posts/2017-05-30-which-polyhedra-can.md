@@ -20,7 +20,7 @@ But no, that's no good. If you try this you will get stuck with a caged cube tha
 And in fact this compound does not even form a cage! The solid cube can rotate around the shared axis of the cubes until it is aligned with the hollow cube that is supposed to be caging it, and then slither out through one of the square sides of the hollow cube.
 It doesn't seem possible for a cube to cage a larger cube, despite examples like [Prince Rupert's cube](https://en.wikipedia.org/wiki/Prince_Rupert%27s_cube) by which a cube can have a hole large enough for a larger cube to pass through. It also doesn't seem possible for a regular tetrahedron to cage another regular tetrahedron. But I have no proof of these claims.
 
-I was able to find cuboids that can cage larger copies of themselves. For instance, when $$x\approx 1.1,$$ a $$1\times x\times x^2$$ cuboid can cage a cuboid that is bigger by a factor of $$x^2\approx 1.2$$, by lining up the two cuboids so that their length-$$x^2$$ edges are parallel but with one cube rotated around an axis parallel to those edges so that, in cross-section, the corners of the smaller one protrude just beyond the sides of the larger one.
+I was able to find cuboids that can cage larger copies of themselves. For instance, when $$x\approx 1.1,$$ a $$1\times x\times x^2$$ cuboid can cage a cuboid that is bigger by a factor of $$x^2\approx 1.2,$$ by lining up the two cuboids so that their length-$$x^2$$ edges are parallel but with one cube rotated around an axis parallel to those edges so that, in cross-section, the corners of the smaller one protrude just beyond the sides of the larger one.
 
 {: style="text-align:center"}
 ![Caged cuboid]({{site.baseurl}}/assets/2017/caged-cuboid.svg)
