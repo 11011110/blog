@@ -18,3 +18,5 @@ See also my previous posts on the fair from
 [2012]({{site.baseurl}}{% post_url 2012-07-24-orange-county-fair %}),
 [2013]({{site.baseurl}}{% post_url 2013-08-02-orange-county-fair %}), and
 [2015]({{site.baseurl}}{% post_url 2015-07-27-orange-county-fair %}).
+
+([G+](https://plus.google.com/100003628603413742554/posts/jX8iHyxesXR))
