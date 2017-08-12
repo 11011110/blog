@@ -17,6 +17,8 @@ If planar graphs don't have all possible symmetries, what about [1-planar graphs
 The drawing below shows an example of this process. I started with a graph whose symmetry group is the [generalized quaternion group](https://en.wikipedia.org/wiki/Generalized_quaternion_group) $$Q_{16}$$, one of the ones that Babai's original 1972 result showed must be nonplanar. I found this graph in [Graves et al. "Smallest graphs with given generalized quaternion automorphism group"](https://doi.org/10.1002/jgt.22166); in the drawing below, its vertices are the blue ones of degree five and the yellow ones of degree three. I redrew the same graph with two crossings per edge (the drawing by Graves et al. had many more), and then added a subdivision point on each edge (the red vertices) to make it 1-planar, while keeping the same $$Q_{16}$$ symmetry group. Unfortunately the drawing doesn't show off much of the symmetry of the graph, but that's inevitable, because its symmetry group is not one of the ones that can be realized by a planar drawing.
 
 {: style="text-align:center"}
-![1-planar graph with automorphism group Q16]({{site.baseurl}}/assets/2017/Q16-1planar.png)
+![1-planar graph with automorphism group Q16]({{site.baseurl}}/assets/2017/Q16-1planar.svg)
 
 Since 1-planar graphs have [polynomial expansion](https://en.wikipedia.org/wiki/Bounded_expansion), this shows that the graphs of polynomial expansion are like the nowhere-dense graphs (which include the 3-regular graphs), and unlike the minor-closed graph families, in allowing every symmetry group to be realized.
+
+([G+](https://plus.google.com/100003628603413742554/posts/63bmgsKbewb))
