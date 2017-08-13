@@ -8,10 +8,10 @@ tags:   [circles, computational geometry, quadrilaterals, papers]
 
 <p>It's about a kind of quadrilateral mesh that you can make by starting with the <a href="http://en.wikipedia.org/wiki/Rhombille_tiling">rhombille tiling</a> (a tiling of the plane by \( 60^\circ \) rhombi that is also called "tumbling blocks" because of its resemblance to a pile of cubes) and overlaying copies of the same tiling, rotated by \( 90^\circ \) and reduced in size by a factor of \( \sqrt{3} \).</p>
 
-<p><div style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/3-colored.png" /></div></p>
+<p style="text-align:center"><img src="{{site.baseurl}}/assets/2012/3-colored.svg" alt="3-colored diamond-kite mesh" /></p>
 
 <p>As well as having the usual properties that you'd want a finite element mesh to have (bounded aspect ratio elements, easy generation by repeated refinement, optimal number of elements for a given set of constraints on element sizes, etc) it has one much more unusual property: its vertices are the centers of the circles in a circle packing:</p>
 
-<p><div style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/dk-packing.png" /></div></p>
+<p style="text-align:center"><img src="{{site.baseurl}}/assets/2012/dk-packing.svg" alt="Diamond-kite mesh and its associated circle packing" /></p>
 
 <p>This is one of two types of packing guaranteed to exist by the <a href="http://en.wikipedia.org/wiki/Circle_packing_theorem">Koebe–Andreev–Thurston circle packing theorem</a>, in which a 3-connected planar graph and its dual are represented by circles so that adjacent vertices in either graph correspond to tangent circles and adjacent vertex-face pairs correspond to perpendicular circles (the other type involves only one graph, which should be maximal planar). In either of these two cases, the packing is essentially fixed by the graph, making its geometry hard to control: small local changes to the underlying graph can make the geometric shape of the circle packing very different. But these diamond-kite meshes turn that relation around, making the graph a function of the geometry rather than vice versa and allowing arbitrary amounts of subdivision in some regions of the plane without any change to the mesh in other parts of the plane that are far enough away.</p>

@@ -4,31 +4,34 @@ title:  'Counting distinct subsequences'
 date:   2012-08-08 13:50:00
 tags:   [algorithms]
 ---
-Here&#x27;s a nice dynamic programming exercise: find a polynomial-time algorithm that takes as input a sequence of n symbols, and a number k, and produces as output the number of distinct k-character subsequences.
-<br />
+<p>Here's a nice dynamic programming exercise: find a polynomial-time algorithm that takes as input a sequence of \( n \) symbols, and a number \( k, \) and produces as output the number of distinct \( k \)-character subsequences.</p>
 
-<br />
-For instance, if the input is the string &quot;food&quot; and the number k=2, the output should be 4. There are four distinct two-character subsequences of &quot;food&quot;: they are &quot;fo&quot;, &quot;fd&quot;, &quot;oo&quot;, and &quot;od&quot;.
+<p>For instance, if the input is the string "food" and the number \( k=2, \) the output should be \( 4. \) There are four distinct two-character subsequences of "food": they are "fo", "fd", "oo", and "od".</p>
+
 <br /><br /><hr /><br />
 <h3>Comments:</h3>
+
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>ext_1343285</b>: <br />
 <b>2012-08-09T12:36:04Z</b><br />
-Construct a suffix tree, &quot;cut&quot; it at level k (counting characters, not nodes) and count the leaves.
+<p>Construct a suffix tree, "cut" it at level \( k \) (counting characters, not nodes) and count the leaves.</p>
 </div>
+
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>11011110</b>: <br />
 <b>2012-08-09T15:46:04Z</b><br />
-Subsequences, not substrings.
+<p>Subsequences, not substrings.</p>
 </div>
+
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>sgkruk</b>: <br />
 <b>2012-08-09T18:07:53Z</b><br />
+{% highlight lisp %}
 (defun dsubseq (seq k)
-  ;; (dsubseq &#x27;(F O O D ) 2)
+  ;; (dsubseq '(F O O D ) 2)
   ;; 4
   (labels ((f (seq k)
-             ;;  (format t &quot;~%(f ~a ~a)&quot; seq k)
+             ;;  (format t "~%(f ~a ~a)" seq k)
              (cond ((= k 0) nil)
                    ((= (length seq) k) (list seq))
                    ((= k 1) (mapcar (lambda (x) (list x)) seq))
@@ -37,66 +40,86 @@ Subsequences, not substrings.
                                           (cons (car right) subseq))
                                         (f (cdr right) (1- k))))
                               seq))))))
-  (length (remove-duplicates (f seq k) :test #&#x27;equal)))
-
+  (length (remove-duplicates (f seq k) :test #'equal)))
+{% endhighlight %}
 </div>
+
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>11011110</b>: <br />
 <b>2012-08-09T18:18:22Z</b><br />
-So what is the running time of this?
+<p>So what is the running time of this?</p>
 </div>
+
 <div style="margin-left: 6em; padding-top: 1em;">
 <b>sgkruk</b>: <br />
 <b>2012-08-09T18:40:47Z</b><br />
-Oops.  I wrote too fast.  This is O(2^n)  Sorry.   
+<p>Oops.  I wrote too fast.  This is \( O(2^n) \) Sorry.</p>   
 </div>
+
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>gareth_rees</b>: <br />
 <b>2012-08-09T23:05:45Z</b><br />
-Let θ(<i>S</i>, <i>k</i>) be the number of distinct <i>k</i>-character subsequences in the string <i>S</i> = <i>s</i><sub>1</sub>...<i>s</i><sub><i>n</i></sub>. Clearly θ(<i>S</i>, <i>k</i>) = 1 if <i>n</i> = <i>k</i> or <i>k</i> = 0 and θ(<i>S</i>, <i>k</i>) = 0 if <i>n</i> &lt; <i>k</i>. Otherwise, suppose that <i>S</i> contains <i>m</i> distinct characters <i>c</i><sub>1</sub>, ..., <i>c</i><sub><i>m</i></sub> such that <i>c</i><sub><i>i</i></sub> first appears in <i>S</i> at position <i>p</i>(<i>i</i>). Then θ(<i>S</i>, <i>k</i>) = Σ θ(<i>s</i><sub><i>p</i>(<i>i</i>)+1</sub>...<i>s</i><sub><i>n</i></sub>, <i>k</i> − 1). This can be computed by dynamic programming in time O(<i>n</i><sup>2</sup><i>k</i>).
+Let \( \theta(S,k) \) be the number of distinct <i>k</i>-character subsequences in the string \( S=s_1\dots s_n. \) Clearly \( \theta(S,k)=1 \) if \( n=k \) or \( k=0 \) and \( \theta(S,k)=0 \) if \( n\lt k. \) Otherwise, suppose that \( S \) contains \( m \) distinct characters \( c_1, \dots, c_m \) such that \( c_i \) first appears in \( S \) at position \( p(i). \) Then
+\[
+\theta(S,k) = \sum \theta(s_{p(i)+1}\dots s_n, k-1).
+\]
+This can be computed by dynamic programming in time \( O(n^2 k). \)
 
-So in your example,<blockquote>θ(&quot;food&quot;, 2) = θ(&quot;ood&quot;, 1) + θ(&quot;od&quot;, 1) + θ(&quot;&quot;, 1)<br />= (θ(&quot;od&quot;, 0) + θ(&quot;&quot;, 0)) + (θ(&quot;d&quot;, 0) + θ(&quot;&quot;, 0)) + 0<br />= (1 + 1) + (1 + 1)<br />= 4</blockquote>
+So in your example,
+\[
+\begin{align*}
+\theta(\text{"food"}, 2) &= \theta(\text{"ood"}, 1) + \theta(\text{"od"}, 1) + \theta(\text{""}, 1)\\
+&= (\theta(\text{"od"}, 0) + \theta(\text{""}, 0)) + (\theta(\text{"d"}, 0) + \theta(\text{""}, 0)) + 0\\
+&= (1 + 1) + (1 + 1)\\
+&= 4.
+\end{align*}
+\]
 </div>
+
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>11011110</b>: <br />
 <b>2012-08-09T23:27:15Z</b><br />
-Yes. I had a slightly different formulation in which I was counting the number of sets of k positions, ending at some position i, that are the lexicographically-first set of positions for the string they form. But I think it amounts to the same thing.
+Yes. I had a slightly different formulation in which I was counting the number of sets of \( k \) positions, ending at some position \( i, \) that are the lexicographically-first set of positions for the string they form. But I think it amounts to the same thing.
 </div>
+
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>ext_73227</b>: <br />
 <b>2012-08-14T20:52:51Z</b><br />
-Cute! Do you know about the problem of finding the most common subsequence? For example in AAABBBCCC, the most common subsequence is ABC, which occurs 27 times. 
+<p>Cute! Do you know about the problem of finding the most common subsequence? For example in AAABBBCCC, the most common subsequence is ABC, which occurs 27 times.</p>
 
-I found a couple of external links related to the problem that you mentioned, but not this other one:
+<p>I found a couple of external links related to the problem that you mentioned, but not this other one:
 http://www.sciencedirect.com/science/article/pii/S0304397508006245
-http://www.spoj.pl/problems/CSUBSEQS/
+http://www.spoj.pl/problems/CSUBSEQS/</p>
 
-It would be nice to put this in P or NPC. I&#x27;m also wondering:
+<p>It would be nice to put this in P or NPC. I'm also wondering:
 - there might be a tie for the most common subsequence (there are 4 in OOZE that appear twice) but is the longest of the most common ones unique?
-- is this map unimodal?: L -&gt; maximum frequency of any length-L subsequence
+- is this map unimodal?: \( L \) → maximum frequency of any length-\( L \) subsequence</p>
 </div>
+
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>11011110</b>: <br />
 <b>2012-08-14T21:08:37Z</b><br />
-I didn&#x27;t know about that problem before your comment, but it looks like an interesting one. Maybe worth asking again on http://cstheory.stackexchange.com/? I wouldn&#x27;t be surprised if it turns out to be NPC, though.
+<p>I didn't know about that problem before your comment, but it looks like an interesting one. Maybe worth asking again on http://cstheory.stackexchange.com/? I wouldn't be surprised if it turns out to be NPC, though.</p>
 </div>
+
 <div style="margin-left: 6em; padding-top: 1em;">
 <b>ext_73227</b>: <br />
 <b>2012-08-14T23:36:09Z</b><br />
-Thanks for the reply, I have disproved my structural questions and posted the remaining main problem here: http://cstheory.stackexchange.com/questions/12307/commonest-subsequence
+<p>Thanks for the reply, I have disproved my structural questions and posted the remaining main problem here: <a href="http://cstheory.stackexchange.com/questions/12307/commonest-subsequence">http://cstheory.stackexchange.com/questions/12307/commonest-subsequence</a></p>
 </div>
+
 <div style="margin-left: 9em; padding-top: 1em;">
 <b>11011110</b>: <br />
 <b>2012-08-14T23:58:56Z</b><br />
-I voted +1 for your question there. Are the counterexamples for the structural questions easy to describe?
+<p>I voted +1 for your question there. Are the counterexamples for the structural questions easy to describe?</p>
 </div>
+
 <div style="margin-left: 12em; padding-top: 1em;">
 <b>ext_73227</b>: <br />
 <b>2012-08-15T03:25:36Z</b><br />
-&quot;12312312&quot; disproves unimodality, since the maximums for length two to four are are 6 &quot;12&quot;s, 4 of several length-3 strings, and 5 of several length-4 strings
+<p>"12312312" disproves unimodality, since the maximums for length two to four are are 6 "12"s, 4 of several length-3 strings, and 5 of several length-4 strings</p>
 
-&quot;crash after this&quot; disproves uniqueness of the longest most frequent one, since the max frequency is 4, but there are two longest ones &#x27;cra this&#x27; and &#x27;crafthis&#x27;
+<p>"crash after this" disproves uniqueness of the longest most frequent one, since the max frequency is 4, but there are two longest ones 'cra this' and 'crafthis'</p>
 
-I didn&#x27;t try to distill them much, beyond finding them, though.
+<p>I didn't try to distill them much, beyond finding them, though.</p>
 </div>
-

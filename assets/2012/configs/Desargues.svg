@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN"    "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg
+	 xmlns="http://www.w3.org/2000/svg"     version="1.0"
+	 width="252.707" height="324.707" viewBox="0 0 252.707 324.707"
+	 xml:space="preserve">
+	<g>
+		<path style="fill:#FFFFFF;" d="M252.354,324.354h-252v-324h252V324.354z"/>
+		<path style="fill:none;stroke:#0000FF;stroke-width:3;" d="M126.354,54.354l-72,216v-72h144v72L126.354,54.354z"/>
+		<path style="fill:none;stroke:#0000FF;stroke-dasharray:3;" d="M198.354,0.354v198h54"/>
+		<path style="fill:none;stroke:#0000FF;stroke-dasharray:3;" d="M54.354,0.354v198h-54"/>
+		<path style="fill:none;stroke:#0000FF;stroke-dasharray:3;" d="M54.354,324.354v-54l-18,54"/>
+		<path style="fill:none;stroke:#0000FF;stroke-dasharray:3;" d="M216.354,324.354l-18-54v54"/>
+		<path style="fill:none;stroke:#0000FF;stroke-dasharray:3;" d="M108.354,0.354l18,54l18-54"/>
+		<path style="fill:none;stroke:#FF0000;stroke-width:3;" d="M54.354,54.354h144l-108,108l36,36l36-36L54.354,54.354z"/>
+		<path style="fill:none;stroke:#FF0000;stroke-dasharray:3;" d="M252.354,54.354h-54l54-54"/>
+		<path style="fill:none;stroke:#FF0000;stroke-dasharray:3;" d="M0.354,54.354h54l-54-54"/>
+		<path style="fill:none;stroke:#FF0000;stroke-dasharray:3;" d="M0.354,252.354l90-90l-90-90"/>
+		<path style="fill:none;stroke:#FF0000;stroke-dasharray:3;" d="M252.354,252.354l-90-90l90-90"/>
+		<path style="fill:none;stroke:#FF0000;stroke-dasharray:3;" d="M0.354,324.354l126-126l126,126"/>
+		<path d="M57.354,54.354c0,1.657-1.343,3-3,3s-3-1.343-3-3s1.343-3,3-3S57.354,52.697,57.354,54.354z"/>
+		<path d="M129.354,54.354c0,1.657-1.343,3-3,3s-3-1.343-3-3s1.343-3,3-3S129.354,52.697,129.354,54.354z"/>
+		<path d="M201.354,54.354c0,1.657-1.343,3-3,3s-3-1.343-3-3s1.343-3,3-3S201.354,52.697,201.354,54.354z"/>
+		<path d="M93.354,162.354c0,1.657-1.343,3-3,3s-3-1.343-3-3s1.343-3,3-3S93.354,160.697,93.354,162.354z"/>
+		<path d="M165.354,162.354c0,1.657-1.343,3-3,3c-1.657,0-3-1.343-3-3s1.343-3,3-3
+			C164.011,159.354,165.354,160.697,165.354,162.354z"/>
+		<path d="M129.354,198.354c0,1.657-1.343,3-3,3s-3-1.343-3-3s1.343-3,3-3S129.354,196.696,129.354,198.354z"/>
+		<path d="M57.354,198.354c0,1.657-1.343,3-3,3s-3-1.343-3-3s1.343-3,3-3S57.354,196.696,57.354,198.354z"/>
+		<path d="M57.354,270.354c0,1.657-1.343,3-3,3s-3-1.343-3-3s1.343-3,3-3S57.354,268.696,57.354,270.354z"/>
+		<path d="M201.354,270.354c0,1.657-1.343,3-3,3s-3-1.343-3-3s1.343-3,3-3S201.354,268.696,201.354,270.354z"/>
+		<path d="M201.354,198.354c0,1.657-1.343,3-3,3s-3-1.343-3-3s1.343-3,3-3S201.354,196.696,201.354,198.354z"/>
+	</g>
+</svg>

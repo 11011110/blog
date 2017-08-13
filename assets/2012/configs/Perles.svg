@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="356px" height="335px" viewBox="0 0 356 335" enable-background="new 0 0 356 335" xml:space="preserve">
+<polygon fill="#F0DCFF" points="15.66,127.706 77.973,319.484 279.621,319.484 341.934,127.706 178.797,9.18 "/>
+<polygon fill="#FFFFFF" points="178.797,9.18 140.286,127.706 15.66,127.706 116.484,200.958 77.973,319.484 178.797,246.231
+	279.621,319.484 241.109,200.958 341.934,127.706 215.667,128 "/>
+<line fill="#66CC00" stroke="#231F20" stroke-miterlimit="10" x1="279.621" y1="319.484" x2="15.66" y2="127.706"/>
+<polyline fill="none" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" points="116.484,200.958 341.934,127.706
+	15.66,127.706 241.109,200.958 "/>
+<polyline fill="none" stroke="#231F20" stroke-width="2" stroke-miterlimit="10" points="77.973,319.484 217.309,127.706
+	279.621,319.484 140.286,127.706 77.973,319.484 341.934,127.706 "/>
+<circle fill="#66CC00" stroke="#231F20" stroke-miterlimit="10" cx="140.286" cy="127.706" r="6"/>
+<circle fill="#66CC00" stroke="#231F20" stroke-miterlimit="10" cx="217.309" cy="127.706" r="6"/>
+<circle fill="#66CC00" stroke="#231F20" stroke-miterlimit="10" cx="341.934" cy="127.706" r="6"/>
+<circle fill="#66CC00" stroke="#231F20" stroke-miterlimit="10" cx="15.66" cy="127.706" r="6"/>
+<circle fill="#66CC00" stroke="#231F20" stroke-miterlimit="10" cx="178.797" cy="180.711" r="6"/>
+<circle fill="#66CC00" stroke="#231F20" stroke-miterlimit="10" cx="116.484" cy="200.958" r="6"/>
+<circle fill="#66CC00" stroke="#231F20" stroke-miterlimit="10" cx="241.109" cy="200.958" r="6"/>
+<circle fill="#66CC00" stroke="#231F20" stroke-miterlimit="10" cx="77.973" cy="319.484" r="6"/>
+<circle fill="#66CC00" stroke="#231F20" stroke-miterlimit="10" cx="279.621" cy="319.484" r="6"/>
+</svg>
