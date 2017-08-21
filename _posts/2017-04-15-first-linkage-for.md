@@ -26,7 +26,7 @@ In particular it no longer seems to be permissible to display, adapt, or redistr
 
 * [How Google Book Search got lost](https://backchannel.com/how-google-book-search-got-lost-c2d2cf77121d) ([G+](https://plus.google.com/100003628603413742554/posts/g4AUUHw7Xzc)). The project doesn't seem to be dead, exactly, but it's stagnating. Via bit_player.
 
-* [https://thinkprogress.org/new-york-times-hires-extreme-climate-denier-after-hyping-itself-as-antidote-to-fake-news-441826c4071d](After hyping itself as antidote to fake news, New York Times hires extreme climate denier) ([G+](https://plus.google.com/100003628603413742554/posts/QioGH2Hrtgs)). Bret Stephens‎ may be an anti-Trump Republican but that doesn't prevent him from being a shill on other matters.
+* [After hyping itself as antidote to fake news, New York Times hires extreme climate denier](https://thinkprogress.org/new-york-times-hires-extreme-climate-denier-after-hyping-itself-as-antidote-to-fake-news-441826c4071d) ([G+](https://plus.google.com/100003628603413742554/posts/QioGH2Hrtgs)). Bret Stephens‎ may be an anti-Trump Republican but that doesn't prevent him from being a shill on other matters.
 
 * [Soap bubble photography](http://dangerousminds.net/comments/soap_bubbles_become_psychedelic_works_of_art) by [William Horton](http://williamhortonphotography.com/) ([G+](https://plus.google.com/100003628603413742554/posts/jCgmt3147jC)). Via [Metafilter](http://www.metafilter.com/166297/Thin-line-between-heaven-and-here).
 
