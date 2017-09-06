@@ -19,3 +19,5 @@ If you want a quick overview of Japanese culture through the ages, or just to se
 ![Rabbit-eared creature at the Tokyo University of Science](http://www.ics.uci.edu/~eppstein/pix/sculptok/GiacomettiMonumentalHead2-m.jpg){: style="border-style:solid;border-color:black;"}
 
 The main show at the National Art Center in Roppongi, while we were there, was a retrospective of the sculptures of [Alberto Giacometti](https://en.wikipedia.org/wiki/Alberto_Giacometti). That doesn't sound very Japanese, but there is a Japanese connection: one of his close friends and favorite subjects was philosopher Isaku Yanaihara. The captions described Giacometti as working very hard to capture his subjects exactly as he saw them, but if so his vision must have been a bit off-kilter, with rough surfaces, exaggeratedly small or (in this case) large scale, skeletonized forms, and a deep perspective that encourages many of his works to be viewed head-on rather than from an angle.
+
+([G+](https://plus.google.com/100003628603413742554/posts/3e3dLy6zpK3))
