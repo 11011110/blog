@@ -21,3 +21,5 @@ It is only by accident that we encountered the [Seven Lucky Gods](https://en.wik
 This array of vacuum tubes is part of a [Univac 120](https://en.wikipedia.org/wiki/Remington_Rand_409). It's part of an impressive collection of old calculating devices at the Museum of Science on the Tokyo University of Science campus. Jin Akiyama's Math Experience Plaza is downstairs, accessed by an exterior stair in front of the entrance to the Museum. Unfortunately I couldn't take photos there but it has a big collection of mathematical models of concepts including [descent curves](https://en.wikipedia.org/wiki/Brachistochrone_curve), hyperboloid gears, polyhedral dissections, and [space-filling polyhedra](https://en.wikipedia.org/wiki/Category:Space-filling_polyhedra).
 
 As usual, follow the link at the top of the post for the rest of the photos.
+
+([G+](https://plus.google.com/100003628603413742554/posts/cuFE6SKBYVV))
