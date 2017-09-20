@@ -9,7 +9,7 @@ I already posted about the short one, "[Defining Equitable Geographic Districts 
 To begin with, road networks are graphs with a vertex at each intersection of roads and an edge for each segment of road between the intersections. We tend to think of them as being planar graphs, but they're not. Road segments cross each other, often without an intersection, when one segment is part of an overpass, underpass, or tunnel. Additionally, some pairs of road segments can look like they're crossing in our data, even when they don't cross in real life, because the data makes a segment of road look straight when actually it bends around the end of another road.
 
 {: style="text-align:center"}
-![High Five Interchange at the intersection of I-635 and U.S. Route 75 in Dallas, Texas, looking towards the southwest; cropped from https://commons.wikimedia.org/wiki/File:High_Five.jpg by fatguyinalittlecoat on flickr, under a CC-BY 2.0 license]({{site.baseurl}}/assets/2017/HighFive.jpg)
+![High Five Interchange at the intersection of I-635 and U.S. Route 75 in Dallas, Texas, looking towards the southwest]({{site.baseurl}}/assets/2017/HighFive.jpg 'cropped from https://commons.wikimedia.org/wiki/File:High_Five.jpg by fatguyinalittlecoat on flickr, under a CC-BY 2.0 license')
 
 But it would be nice if these graphs were planar (even if they aren't), because then we could apply all the fast algorithms researchers have developed for planar graphs. Many of these algorithms don't depend on the detailed properties of planarity, but only on the [planar separator theorem](https://en.wikipedia.org/wiki/Planar_separator_theorem). So it would be nice if these graphs obeyed a similar separator theorem.
 
