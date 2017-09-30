@@ -13,7 +13,7 @@ This first one looks like the kabbalah, but it's actually $$K_{4,6}$$, with the 
 {: style="text-align:center"}
 ![Lombardi knots]({{site.baseurl}}/assets/2017/gd-gallery/knots.png 'Lombardi knots, from "Lombardi drawings of knots and links", Kindermann et al., arXiv:1708.09819')
 
-This one depicts Lombardi drawings of knots (all crossings are at right angles and all curves between crossings are circular knots) for all the knots with eight or fewer crossings that have such drawings. It's from "Lombardi drawings of knots and links" by Kindermann et al. ([arXiv:1708.09819](http://arxiv.org/abs/1708.09819)). Maarten Löffler's talk on this was the runner-up for the best presentation award.
+This one depicts Lombardi drawings of knots (all crossings are at right angles and all curves between crossings are circular arcs) for all the knots with eight or fewer crossings that have such drawings. It's from "Lombardi drawings of knots and links" by Kindermann et al. ([arXiv:1708.09819](http://arxiv.org/abs/1708.09819)). Maarten Löffler's talk on this was the runner-up for the best presentation award.
 
 {: style="text-align:center"}
 ![Friendship graph quasi-thrackle]({{site.baseurl}}/assets/2017/gd-gallery/friendship-quasithrackle.svg 'Friendship graph quasi-thrackle, from "Thrackles: An Improved Upper Bound", Fulek and Pach, arXiv:1708.08037')
