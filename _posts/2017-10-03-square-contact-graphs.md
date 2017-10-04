@@ -8,7 +8,7 @@ I've [already written here about contact graphs of squares]({{site.baseurl}}{% p
 Here's an example, of a different kind of graph than the ones in the preprint. The squares in the image below (four of which are too big to fit and are visible near the frame of the image)...
 
 {: style="text-align:center"}
-![Contact representation of Greek cross heptacube]({{site.baseurl}}/assets/2017/gcsq.png)
+![Contact representation of Greek cross heptacube]({{site.baseurl}}/assets/2017/gcsq.svg)
 
 ...have the same pattern of contacts as the adjacencies of the following graph, a heptacube shaped like a three-dimensional Greek cross:
 
@@ -30,3 +30,5 @@ The simplest example that I know of for this phenomenon is the [square antiprism
 ![The improper representation of a square antiprism, and a graph with no square contact representation]({{site.baseurl}}/assets/2017/nested-quads.svg)
 
 Our preprint only handles some special classes of graphs. We have identified both nonempty triangles and separating antiprisms as obstacles to representation, but they seem unlikely to be the ony ones. As we write, "a characterization of the graphs having proper contact representations by squares remains elusive".
+
+([G+](https://plus.google.com/100003628603413742554/posts/9rfSXaeC55s))
