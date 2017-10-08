@@ -32,3 +32,5 @@ The octahedron still is not pentagonally symmetric. But as Schönemann wrote in 
 The neighbors of any one vertex in an icosahedron form a regular pentagon. And although this pentagon isn't a slice of the octahedron, it is a slice of the half-octahedron pyramid.
 
 This connection between pentagons and pyramids is apparently an exercise from a 1986 Russian mathematics book by I. F. Sharygin, which asks for the height of the pyramid having a regular pentagonal cross-section. I found it in "[Putting the Icosahedron into the Octahedron](http://forumgeom.fau.edu/FG2017volume17/FG201710index.html)", Paris Pamfilos, _Forum Geometricorum_ 2017, who replaces an algebraic calculation of the pyramid height by a couple of applications of [Menelaus's theorem](https://en.wikipedia.org/wiki/Menelaus%27_theorem) and from the result rediscovers Schönemann's inscription of an icosahedron within the octahedron. But I think it's simpler to go the other way: inscribe an icosahedron within an octahedron, and use it to find the pentagonal cross-section.
+
+([G+](https://plus.google.com/100003628603413742554/posts/EvRgzZgzEww))
