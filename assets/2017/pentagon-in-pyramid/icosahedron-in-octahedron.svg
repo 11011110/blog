@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="396px" height="396px" viewBox="0 0 396 396" enable-background="new 0 0 396 396" xml:space="preserve">
+<polygon opacity="0.5" fill="#FEC200" enable-background="new    " points="243,9 387,153 270,126 "/>
+<polygon opacity="0.5" fill="#FEC200" enable-background="new    " points="9,243 153,387 126,270 "/>
+<polygon opacity="0.5" fill="#FEC200" enable-background="new    " points="81,81 126,270 270,126 "/>
+<polygon opacity="0.5" fill="#FEC200" enable-background="new    " points="270,126 126,270 315,315 "/>
+<rect x="9" y="9" fill="none" stroke="#0081CD" stroke-dasharray="2,2" width="378" height="378"/>
+<line fill="none" stroke="#0081CD" stroke-dasharray="2,2" x1="9" y1="9" x2="387" y2="387"/>
+<line fill="none" stroke="#0081CD" stroke-dasharray="2,2" x1="9" y1="387" x2="387" y2="9"/>
+<polygon opacity="0.5" fill="#0081CD" points="81,81 270,126 243,9 "/>
+<polygon opacity="0.5" fill="#0081CD" points="81,81 126,270 9,243 "/>
+<polygon opacity="0.5" fill="#0081CD" points="126,270 153,387 315,315 "/>
+<polygon opacity="0.5" fill="#0081CD" points="270,126 315,315 387,153 "/>
+<polygon fill="none" stroke="#000000" enable-background="new    " points="243,9 387,153 270,126 "/>
+<polygon fill="none" stroke="#000000" enable-background="new    " points="9,243 153,387 126,270 "/>
+<polygon fill="none" stroke="#000000" enable-background="new    " points="81,81 126,270 270,126 "/>
+<polygon fill="none" stroke="#000000" enable-background="new    " points="270,126 126,270 315,315 "/>
+<polygon fill="none" stroke="#000000" points="81,81 270,126 243,9 "/>
+<polygon fill="none" stroke="#000000" points="81,81 126,270 9,243 "/>
+<polygon fill="none" stroke="#000000" points="126,270 153,387 315,315 "/>
+<polygon fill="none" stroke="#000000" points="270,126 315,315 387,153 "/>
+</svg>

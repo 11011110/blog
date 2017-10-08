@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="703px" height="360px" viewBox="0 0 703 360" enable-background="new 0 0 703 360" xml:space="preserve">
+<polygon fill="none" stroke="#999999" stroke-width="0.866" stroke-miterlimit="10" points="541.923,4.541 390.346,267.08 
+	693.5,267.08 "/>
+<polygon opacity="0.5" fill="#FEC200" stroke="#000000" stroke-width="0.866" stroke-miterlimit="10" points="617.71,48.302 
+	693.495,179.566 617.71,310.832 466.138,310.832 390.351,179.566 466.138,48.302 "/>
+<line fill="#FFFFFF" stroke="#999999" stroke-miterlimit="10" x1="160.423" y1="179.568" x2="8.846" y2="267.08"/>
+<line fill="#FFFFFF" stroke="#999999" stroke-miterlimit="10" x1="160.423" y1="179.566" x2="312" y2="267.08"/>
+<line fill="#FFFFFF" stroke="#999999" stroke-miterlimit="10" x1="160.423" y1="179.567" x2="160.423" y2="4.541"/>
+<g>
+	<g>
+		<polyline fill="none" stroke="#0081CD" stroke-miterlimit="10" points="312,266.08 312,267.08 311.134,267.58 		"/>
+		
+			<line fill="none" stroke="#0081CD" stroke-miterlimit="10" stroke-dasharray="1.9888,1.9888" x1="309.412" y1="268.574" x2="162.15" y2="353.596"/>
+		<polyline fill="none" stroke="#0081CD" stroke-miterlimit="10" points="161.289,354.093 160.423,354.593 159.557,354.093 		"/>
+		
+			<line fill="none" stroke="#0081CD" stroke-miterlimit="10" stroke-dasharray="1.9888,1.9888" x1="157.834" y1="353.099" x2="10.573" y2="268.077"/>
+		<polyline fill="none" stroke="#0081CD" stroke-miterlimit="10" points="9.712,267.58 8.846,267.08 8.846,266.08 		"/>
+		
+			<line fill="none" stroke="#0081CD" stroke-miterlimit="10" stroke-dasharray="1.9888,1.9888" x1="8.846" y1="264.091" x2="8.846" y2="94.049"/>
+		<polyline fill="none" stroke="#0081CD" stroke-miterlimit="10" points="8.846,93.055 8.846,92.055 9.712,91.555 		"/>
+		
+			<line fill="none" stroke="#0081CD" stroke-miterlimit="10" stroke-dasharray="1.9888,1.9888" x1="11.434" y1="90.56" x2="158.696" y2="5.538"/>
+		<polyline fill="none" stroke="#0081CD" stroke-miterlimit="10" points="159.557,5.041 160.423,4.541 161.289,5.041 		"/>
+		
+			<line fill="none" stroke="#0081CD" stroke-miterlimit="10" stroke-dasharray="1.9888,1.9888" x1="163.011" y1="6.036" x2="310.273" y2="91.058"/>
+		<polyline fill="none" stroke="#0081CD" stroke-miterlimit="10" points="311.134,91.555 312,92.055 312,93.055 		"/>
+		
+			<line fill="none" stroke="#0081CD" stroke-miterlimit="10" stroke-dasharray="1.9888,1.9888" x1="312" y1="95.043" x2="312" y2="265.086"/>
+	</g>
+</g>
+<polygon opacity="0.5" fill="#FEC200" stroke="#000000" stroke-width="0.866" stroke-miterlimit="10" points="236.21,48.302 
+	311.995,179.567 236.21,310.833 84.638,310.833 8.851,179.567 84.638,48.302 "/>
+<g>
+	<line fill="#FFFFFF" x1="160.423" y1="354.593" x2="160.423" y2="179.567"/>
+	<g>
+		<line fill="none" stroke="#0081CD" stroke-miterlimit="10" x1="160.423" y1="354.593" x2="160.423" y2="353.593"/>
+		
+			<line fill="none" stroke="#0081CD" stroke-miterlimit="10" stroke-dasharray="1.9888,1.9888" x1="160.423" y1="351.604" x2="160.423" y2="181.562"/>
+		<line fill="none" stroke="#0081CD" stroke-miterlimit="10" x1="160.423" y1="180.567" x2="160.423" y2="179.567"/>
+	</g>
+</g>
+<g>
+	<line fill="#FFFFFF" x1="312" y1="92.055" x2="160.423" y2="179.567"/>
+	<g>
+		<line fill="none" stroke="#0081CD" stroke-miterlimit="10" x1="312" y1="92.055" x2="311.134" y2="92.555"/>
+		
+			<line fill="none" stroke="#0081CD" stroke-miterlimit="10" stroke-dasharray="1.9888,1.9888" x1="309.412" y1="93.549" x2="162.15" y2="178.57"/>
+		<line fill="none" stroke="#0081CD" stroke-miterlimit="10" x1="161.289" y1="179.067" x2="160.423" y2="179.567"/>
+	</g>
+</g>
+<g>
+	<line fill="#FFFFFF" x1="8.846" y1="92.055" x2="160.423" y2="179.568"/>
+	<g>
+		<line fill="none" stroke="#0081CD" stroke-miterlimit="10" x1="8.846" y1="92.055" x2="9.712" y2="92.555"/>
+		
+			<line fill="none" stroke="#0081CD" stroke-miterlimit="10" stroke-dasharray="1.9888,1.9888" x1="11.434" y1="93.549" x2="158.696" y2="178.571"/>
+		<line fill="none" stroke="#0081CD" stroke-miterlimit="10" x1="159.557" y1="179.068" x2="160.423" y2="179.568"/>
+	</g>
+</g>
+<polygon fill="none" stroke="#000000" stroke-miterlimit="10" points="84.638,48.302 160.423,4.541 236.21,48.302 "/>
+<polygon fill="none" stroke="#000000" stroke-miterlimit="10" points="311.995,179.567 236.21,310.833 312,267.08 "/>
+<polygon fill="none" stroke="#000000" stroke-miterlimit="10" points="84.638,310.833 8.851,179.567 8.846,267.08 "/>
+<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="84.638" y1="310.833" x2="236.21" y2="310.833"/>
+<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="311.995" y1="179.567" x2="236.21" y2="48.302"/>
+<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="84.638" y1="48.302" x2="8.851" y2="179.567"/>
+<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="466.138" y1="310.832" x2="617.71" y2="310.832"/>
+<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="693.495" y1="179.566" x2="617.71" y2="48.301"/>
+<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="466.138" y1="48.301" x2="390.351" y2="179.566"/>
+<polygon opacity="0.5" fill="#0081CD" points="84.638,48.302 160.423,4.541 236.21,48.302 "/>
+<polygon opacity="0.5" fill="#0081CD" points="311.995,179.567 236.21,310.833 312,267.08 "/>
+<polygon opacity="0.5" fill="#0081CD" points="84.638,310.833 8.851,179.567 8.846,267.08 "/>
+<polygon fill="none" stroke="#0081CD" stroke-miterlimit="10" stroke-dasharray="2" points="693.5,267.08 541.923,354.593 
+	390.346,267.08 390.346,92.054 541.923,4.541 693.5,92.054 "/>
+<polygon fill="none" stroke="#0081CD" stroke-miterlimit="10" stroke-dasharray="2" points="390.346,92.054 693.5,92.054 
+	541.923,354.593 "/>
+<polygon opacity="0.5" fill="#0081CD" points="466.138,48.301 541.923,4.54 617.71,48.301 "/>
+<polygon opacity="0.5" fill="#0081CD" points="693.495,179.566 617.71,310.832 693.5,267.079 "/>
+<polygon opacity="0.5" fill="#0081CD" points="466.138,310.832 390.351,179.566 390.346,267.079 "/>
+<polygon fill="none" stroke="#000000" stroke-miterlimit="10" points="466.138,48.301 541.923,4.54 617.71,48.301 "/>
+<polygon fill="none" stroke="#000000" stroke-miterlimit="10" points="693.495,179.566 617.71,310.832 693.5,267.079 "/>
+<polygon fill="none" stroke="#000000" stroke-miterlimit="10" points="466.138,310.832 390.351,179.566 390.346,267.079 "/>
+</svg>
