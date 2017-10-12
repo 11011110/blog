@@ -25,3 +25,5 @@ Of course proof by picture is not very convincing. We have some theory to suppor
 The answer: pretty similar, similar enough to convince us that (in the limit as the grid becomes finer) grid peeling converges pointwise to affine curve-shortening. See the preprint for the details, but the basic story from the experiments is that for fine grids the Hausdorff distance between the peeled grid curves and the affinely shortened curves is small, and grows smaller with finer grids. Decreasing the grid spacing by a factor of 10 decreased the Hausdorff distance by a factor of about 2.65, so that suggests that the distance is a sublinear power of the grid spacing, but that's a wild extrapolation from two data points so it would probably be a mistake to guess the exponent with more than one digit of precision.
 
 Anyway, maybe this is easy to prove, to someone who has the right theoretical tools in hand (which is not us).
+
+([G+](https://plus.google.com/100003628603413742554/posts/H84hBAh1Vbg))
