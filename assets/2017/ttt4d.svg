@@ -1,258 +1,191 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="990px" height="522px" viewBox="0 0 990 522" enable-background="new 0 0 990 522" xml:space="preserve">
-<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="9" y1="423" x2="459" y2="513"/>
-<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="108" y1="378" x2="558" y2="468"/>
-<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="207" y1="333" x2="657" y2="423"/>
-<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="18" y1="270" x2="468" y2="360"/>
-<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="117" y1="225" x2="567" y2="315"/>
-<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="216" y1="180" x2="666" y2="270"/>
-<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="27" y1="117" x2="477" y2="207"/>
-<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="126" y1="72" x2="576" y2="162"/>
-<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="225" y1="27" x2="675" y2="117"/>
-<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="162" y1="414" x2="612" y2="504"/>
-<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="261" y1="369" x2="711" y2="459"/>
-<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="360" y1="324" x2="810" y2="414"/>
-<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="171" y1="261" x2="621" y2="351"/>
-<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="270" y1="216" x2="720" y2="306"/>
-<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="369" y1="171" x2="819" y2="261"/>
-<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="180" y1="108" x2="630" y2="198"/>
-<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="279" y1="63" x2="729" y2="153"/>
-<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="378" y1="18" x2="828" y2="108"/>
-<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="315" y1="405" x2="765" y2="495"/>
-<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="414" y1="360" x2="864" y2="450"/>
-<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="513" y1="315" x2="963" y2="405"/>
-<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="324" y1="252" x2="774" y2="342"/>
-<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="423" y1="207" x2="873" y2="297"/>
-<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="522" y1="162" x2="972" y2="252"/>
-<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="333" y1="99" x2="783" y2="189"/>
-<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="432" y1="54" x2="882" y2="144"/>
-<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="531" y1="9" x2="981" y2="99"/>
-<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="9" y1="423" x2="207" y2="333"/>
-<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="162" y1="414" x2="360" y2="324"/>
-<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="315" y1="405" x2="513" y2="315"/>
-<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="18" y1="270" x2="216" y2="180"/>
-<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="171" y1="261" x2="369" y2="171"/>
-<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="324" y1="252" x2="522" y2="162"/>
-<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="27" y1="117" x2="225" y2="27"/>
-<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="180" y1="108" x2="378" y2="18"/>
-<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="333" y1="99" x2="531" y2="9"/>
-<polygon fill="none" stroke="#000000" stroke-miterlimit="10" points="9,423 18,270 171,261 162,414 "/>
-<polygon fill="none" stroke="#000000" stroke-miterlimit="10" points="18,270 27,117 180,108 171,261 "/>
-<polygon fill="none" stroke="#000000" stroke-miterlimit="10" points="162,414 171,261 324,252 315,405 "/>
-<polygon fill="none" stroke="#000000" stroke-miterlimit="10" points="171,261 180,108 333,99 324,252 "/>
-<path fill="#0081CD" d="M15,423c0,3.313-2.687,6-6,6s-6-2.687-6-6s2.687-6,6-6S15,419.687,15,423"/>
-<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="9" cy="423" r="6"/>
-<path fill="#BC1E47" d="M168,414c0,3.313-2.687,6-6,6s-6-2.687-6-6s2.687-6,6-6S168,410.687,168,414"/>
-<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="162" cy="414" r="6"/>
-<path fill="#0081CD" d="M321,405c0,3.313-2.687,6-6,6s-6-2.687-6-6s2.687-6,6-6S321,401.687,321,405"/>
-<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="315" cy="405" r="6"/>
-<path fill="#BC1E47" d="M24,270c0,3.313-2.687,6-6,6s-6-2.687-6-6s2.687-6,6-6S24,266.687,24,270"/>
-<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="18" cy="270" r="6"/>
-<path fill="#FEC200" d="M177,261c0,3.312-2.687,6-6,6s-6-2.688-6-6c0-3.313,2.687-6,6-6S177,257.687,177,261"/>
-<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="171" cy="261" r="6"/>
-<path fill="#BC1E47" d="M330,252c0,3.313-2.687,6-6,6s-6-2.687-6-6s2.687-6,6-6S330,248.687,330,252"/>
-<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="324" cy="252" r="6"/>
-<path fill="#0081CD" d="M33,117c0,3.313-2.687,6-6,6s-6-2.687-6-6s2.687-6,6-6S33,113.687,33,117"/>
-<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="27" cy="117" r="6"/>
-<path fill="#BC1E47" d="M186,108c0,3.313-2.687,6-6,6s-6-2.687-6-6s2.687-6,6-6S186,104.687,186,108"/>
-<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="180" cy="108" r="6"/>
-<path fill="#0081CD" d="M339,99c0,3.313-2.687,6-6,6s-6-2.687-6-6s2.687-6,6-6S339,95.687,339,99"/>
-<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="333" cy="99" r="6"/>
-<polygon fill="none" stroke="#000000" stroke-miterlimit="10" points="108,378 117,225 270,216 261,369 "/>
-<polygon fill="none" stroke="#000000" stroke-miterlimit="10" points="117,225 126,72 279,63 270,216 "/>
-<polygon fill="none" stroke="#000000" stroke-miterlimit="10" points="261,369 270,216 423,207 414,360 "/>
-<polygon fill="none" stroke="#000000" stroke-miterlimit="10" points="270,216 279,63 432,54 423,207 "/>
-<path fill="#BC1E47" d="M114,378c0,3.313-2.687,6-6,6s-6-2.687-6-6s2.687-6,6-6S114,374.687,114,378"/>
-<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="108" cy="378" r="6"/>
-<path fill="#FEC200" d="M267,369c0,3.313-2.687,6-6,6s-6-2.687-6-6s2.687-6,6-6S267,365.687,267,369"/>
-<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="261" cy="369" r="6"/>
-<path fill="#BC1E47" d="M420,360c0,3.313-2.687,6-6,6s-6-2.687-6-6s2.687-6,6-6S420,356.687,420,360"/>
-<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="414" cy="360" r="6"/>
-<path fill="#FEC200" d="M123,225c0,3.313-2.687,6-6,6s-6-2.687-6-6s2.687-6,6-6S123,221.687,123,225"/>
-<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="117" cy="225" r="6"/>
-<path fill="#FFFFFF" d="M276,216c0,3.313-2.687,6-6,6s-6-2.687-6-6s2.687-6,6-6S276,212.687,276,216"/>
-<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="270" cy="216" r="6"/>
-<path fill="#FEC200" d="M429,207c0,3.313-2.687,6-6,6s-6-2.687-6-6s2.687-6,6-6S429,203.687,429,207"/>
-<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="423" cy="207" r="6"/>
-<path fill="#BC1E47" d="M132,72c0,3.313-2.687,6-6,6s-6-2.687-6-6s2.687-6,6-6S132,68.687,132,72"/>
-<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="126" cy="72" r="6"/>
-<path fill="#FEC200" d="M285,63c0,3.313-2.687,6-6,6s-6-2.687-6-6s2.687-6,6-6S285,59.687,285,63"/>
-<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="279" cy="63" r="6"/>
-<path fill="#BC1E47" d="M438,54c0,3.313-2.687,6-6,6s-6-2.687-6-6s2.687-6,6-6S438,50.687,438,54"/>
-<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="432" cy="54" r="6"/>
-<polygon fill="none" stroke="#000000" stroke-miterlimit="10" points="207,333 216,180 369,171 360,324 "/>
-<polygon fill="none" stroke="#000000" stroke-miterlimit="10" points="216,180 225,27 378,18 369,171 "/>
-<polygon fill="none" stroke="#000000" stroke-miterlimit="10" points="360,324 369,171 522,162 513,315 "/>
-<polygon fill="none" stroke="#000000" stroke-miterlimit="10" points="369,171 378,18 531,9 522,162 "/>
-<path fill="#0081CD" d="M213,333c0,3.313-2.687,6-6,6s-6-2.687-6-6s2.687-6,6-6S213,329.687,213,333"/>
-<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="207" cy="333" r="6"/>
-<path fill="#BC1E47" d="M366,324c0,3.313-2.687,6-6,6s-6-2.687-6-6s2.687-6,6-6S366,320.687,366,324"/>
-<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="360" cy="324" r="6"/>
-<path fill="#0081CD" d="M519,315c0,3.313-2.688,6-6,6s-6-2.687-6-6s2.688-6,6-6S519,311.687,519,315"/>
-<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="513" cy="315" r="6"/>
-<path fill="#BC1E47" d="M222,180c0,3.313-2.687,6-6,6s-6-2.687-6-6s2.687-6,6-6S222,176.687,222,180"/>
-<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="216" cy="180" r="6"/>
-<path fill="#FEC200" d="M375,171c0,3.313-2.687,6-6,6s-6-2.687-6-6s2.687-6,6-6S375,167.687,375,171"/>
-<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="369" cy="171" r="6"/>
-<path fill="#BC1E47" d="M528,162c0,3.313-2.688,6-6,6s-6-2.687-6-6s2.688-6,6-6S528,158.687,528,162"/>
-<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="522" cy="162" r="6"/>
-<path fill="#0081CD" d="M231,27c0,3.313-2.687,6-6,6s-6-2.687-6-6s2.687-6,6-6S231,23.687,231,27"/>
-<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="225" cy="27" r="6"/>
-<path fill="#BC1E47" d="M384,18c0,3.313-2.687,6-6,6s-6-2.687-6-6s2.687-6,6-6S384,14.687,384,18"/>
-<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="378" cy="18" r="6"/>
-<path fill="#0081CD" d="M537,9c0,3.313-2.688,6-6,6s-6-2.687-6-6s2.688-6,6-6S537,5.687,537,9"/>
-<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="531" cy="9" r="6"/>
-<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="234" y1="468" x2="432" y2="378"/>
-<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="387" y1="459" x2="585" y2="369"/>
-<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="540" y1="450" x2="738" y2="360"/>
-<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="243" y1="315" x2="441" y2="225"/>
-<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="396" y1="306" x2="594" y2="216"/>
-<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="549" y1="297" x2="747" y2="207"/>
-<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="252" y1="162" x2="450" y2="72"/>
-<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="405" y1="153" x2="603" y2="63"/>
-<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="558" y1="144" x2="756" y2="54"/>
-<polygon fill="none" stroke="#000000" stroke-miterlimit="10" points="234,468 243,315 396,306 387,459 "/>
-<polygon fill="none" stroke="#000000" stroke-miterlimit="10" points="243,315 252,162 405,153 396,306 "/>
-<polygon fill="none" stroke="#000000" stroke-miterlimit="10" points="387,459 396,306 549,297 540,450 "/>
-<polygon fill="none" stroke="#000000" stroke-miterlimit="10" points="396,306 405,153 558,144 549,297 "/>
-<path fill="#BC1E47" d="M240,468c0,3.313-2.687,6-6,6s-6-2.687-6-6s2.687-6,6-6S240,464.687,240,468"/>
-<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="234" cy="468" r="6"/>
-<path fill="#FEC200" d="M393,459c0,3.313-2.687,6-6,6s-6-2.687-6-6s2.687-6,6-6S393,455.687,393,459"/>
-<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="387" cy="459" r="6"/>
-<path fill="#BC1E47" d="M546,450c0,3.313-2.688,6-6,6s-6-2.687-6-6s2.688-6,6-6S546,446.687,546,450"/>
-<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="540" cy="450" r="6"/>
-<path fill="#FEC200" d="M249,315c0,3.313-2.687,6-6,6s-6-2.687-6-6s2.687-6,6-6S249,311.687,249,315"/>
-<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="243" cy="315" r="6"/>
-<path fill="#FFFFFF" d="M402,306c0,3.313-2.687,6-6,6s-6-2.687-6-6s2.687-6,6-6S402,302.687,402,306"/>
-<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="396" cy="306" r="6"/>
-<path fill="#FEC200" d="M555,297c0,3.313-2.688,6-6,6s-6-2.687-6-6s2.688-6,6-6S555,293.687,555,297"/>
-<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="549" cy="297" r="6"/>
-<path fill="#BC1E47" d="M258,162c0,3.313-2.687,6-6,6s-6-2.687-6-6s2.687-6,6-6S258,158.687,258,162"/>
-<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="252" cy="162" r="6"/>
-<path fill="#FEC200" d="M411,153c0,3.313-2.687,6-6,6s-6-2.687-6-6s2.687-6,6-6S411,149.687,411,153"/>
-<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="405" cy="153" r="6"/>
-<path fill="#BC1E47" d="M564,144c0,3.313-2.688,6-6,6s-6-2.687-6-6s2.688-6,6-6S564,140.687,564,144"/>
-<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="558" cy="144" r="6"/>
-<polygon fill="none" stroke="#000000" stroke-miterlimit="10" points="333,423 342,270 495,261 486,414 "/>
-<polygon fill="none" stroke="#000000" stroke-miterlimit="10" points="342,270 351,117 504,108 495,261 "/>
-<polygon fill="none" stroke="#000000" stroke-miterlimit="10" points="486,414 495,261 648,252 639,405 "/>
-<polygon fill="none" stroke="#000000" stroke-miterlimit="10" points="495,261 504,108 657,99 648,252 "/>
-<path fill="#FEC200" d="M339,423c0,3.313-2.687,6-6,6s-6-2.687-6-6s2.687-6,6-6S339,419.687,339,423"/>
-<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="333" cy="423" r="6"/>
-<path fill="#FFFFFF" d="M492,414c0,3.313-2.687,6-6,6s-6-2.687-6-6s2.687-6,6-6S492,410.687,492,414"/>
-<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="486" cy="414" r="6"/>
-<path fill="#FEC200" d="M645,405c0,3.313-2.688,6-6,6s-6-2.687-6-6s2.688-6,6-6S645,401.687,645,405"/>
-<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="639" cy="405" r="6"/>
-<path fill="#FFFFFF" d="M348,270c0,3.313-2.687,6-6,6s-6-2.687-6-6s2.687-6,6-6S348,266.687,348,270"/>
-<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="342" cy="270" r="6"/>
-<path d="M501,261c0,3.312-2.688,6-6,6c-3.313,0-6-2.688-6-6c0-3.313,2.687-6,6-6C498.312,255,501,257.687,501,261"/>
-<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="495" cy="261" r="6"/>
-<path fill="#FFFFFF" d="M654,252c0,3.313-2.688,6-6,6s-6-2.687-6-6s2.688-6,6-6S654,248.687,654,252"/>
-<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="648" cy="252" r="6"/>
-<path fill="#FEC200" d="M357,117c0,3.313-2.687,6-6,6s-6-2.687-6-6s2.687-6,6-6S357,113.687,357,117"/>
-<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="351" cy="117" r="6"/>
-<path fill="#FFFFFF" d="M510,108c0,3.313-2.688,6-6,6s-6-2.687-6-6s2.688-6,6-6S510,104.687,510,108"/>
-<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="504" cy="108" r="6"/>
-<path fill="#FEC200" d="M663,99c0,3.313-2.688,6-6,6s-6-2.687-6-6s2.688-6,6-6S663,95.687,663,99"/>
-<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="657" cy="99" r="6"/>
-<polygon fill="none" stroke="#000000" stroke-miterlimit="10" points="432,378 441,225 594,216 585,369 "/>
-<polygon fill="none" stroke="#000000" stroke-miterlimit="10" points="441,225 450,72 603,63 594,216 "/>
-<polygon fill="none" stroke="#000000" stroke-miterlimit="10" points="585,369 594,216 747,207 738,360 "/>
-<polygon fill="none" stroke="#000000" stroke-miterlimit="10" points="594,216 603,63 756,54 747,207 "/>
-<path fill="#BC1E47" d="M438,378c0,3.313-2.687,6-6,6s-6-2.687-6-6s2.687-6,6-6S438,374.687,438,378"/>
-<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="432" cy="378" r="6"/>
-<path fill="#FEC200" d="M591,369c0,3.313-2.688,6-6,6s-6-2.687-6-6s2.688-6,6-6S591,365.687,591,369"/>
-<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="585" cy="369" r="6"/>
-<path fill="#BC1E47" d="M744,360c0,3.313-2.688,6-6,6s-6-2.687-6-6s2.688-6,6-6S744,356.687,744,360"/>
-<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="738" cy="360" r="6"/>
-<path fill="#FEC200" d="M447,225c0,3.313-2.687,6-6,6s-6-2.687-6-6s2.687-6,6-6S447,221.687,447,225"/>
-<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="441" cy="225" r="6"/>
-<path fill="#FFFFFF" d="M600,216c0,3.313-2.688,6-6,6s-6-2.687-6-6s2.688-6,6-6S600,212.687,600,216"/>
-<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="594" cy="216" r="6"/>
-<path fill="#FEC200" d="M753,207c0,3.313-2.688,6-6,6s-6-2.687-6-6s2.688-6,6-6S753,203.687,753,207"/>
-<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="747" cy="207" r="6"/>
-<path fill="#BC1E47" d="M456,72c0,3.313-2.687,6-6,6s-6-2.687-6-6s2.687-6,6-6S456,68.687,456,72"/>
-<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="450" cy="72" r="6"/>
-<path fill="#FEC200" d="M609,63c0,3.313-2.688,6-6,6s-6-2.687-6-6s2.688-6,6-6S609,59.687,609,63"/>
-<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="603" cy="63" r="6"/>
-<path fill="#BC1E47" d="M762,54c0,3.313-2.688,6-6,6s-6-2.687-6-6s2.688-6,6-6S762,50.687,762,54"/>
-<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="756" cy="54" r="6"/>
-<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="459" y1="513" x2="657" y2="423"/>
-<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="612" y1="504" x2="810" y2="414"/>
-<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="765" y1="495" x2="963" y2="405"/>
-<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="468" y1="360" x2="666" y2="270"/>
-<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="621" y1="351" x2="819" y2="261"/>
-<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="774" y1="342" x2="972" y2="252"/>
-<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="477" y1="207" x2="675" y2="117"/>
-<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="630" y1="198" x2="828" y2="108"/>
-<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="783" y1="189" x2="981" y2="99"/>
-<polygon fill="none" stroke="#000000" stroke-miterlimit="10" points="459,513 468,360 621,351 612,504 "/>
-<polygon fill="none" stroke="#000000" stroke-miterlimit="10" points="468,360 477,207 630,198 621,351 "/>
-<polygon fill="none" stroke="#000000" stroke-miterlimit="10" points="612,504 621,351 774,342 765,495 "/>
-<polygon fill="none" stroke="#000000" stroke-miterlimit="10" points="621,351 630,198 783,189 774,342 "/>
-<path fill="#0081CD" d="M465,513c0,3.313-2.687,6-6,6s-6-2.687-6-6s2.687-6,6-6S465,509.687,465,513"/>
-<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="459" cy="513" r="6"/>
-<path fill="#BC1E47" d="M618,504c0,3.313-2.688,6-6,6s-6-2.687-6-6s2.688-6,6-6S618,500.687,618,504"/>
-<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="612" cy="504" r="6"/>
-<path fill="#0081CD" d="M771,495c0,3.313-2.688,6-6,6s-6-2.687-6-6s2.688-6,6-6S771,491.687,771,495"/>
-<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="765" cy="495" r="6"/>
-<path fill="#BC1E47" d="M474,360c0,3.313-2.687,6-6,6s-6-2.687-6-6s2.687-6,6-6S474,356.687,474,360"/>
-<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="468" cy="360" r="6"/>
-<path fill="#FEC200" d="M627,351c0,3.313-2.688,6-6,6s-6-2.687-6-6s2.688-6,6-6S627,347.687,627,351"/>
-<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="621" cy="351" r="6"/>
-<path fill="#BC1E47" d="M780,342c0,3.313-2.688,6-6,6s-6-2.687-6-6s2.688-6,6-6S780,338.687,780,342"/>
-<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="774" cy="342" r="6"/>
-<path fill="#0081CD" d="M483,207c0,3.313-2.687,6-6,6s-6-2.687-6-6s2.687-6,6-6S483,203.687,483,207"/>
-<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="477" cy="207" r="6"/>
-<path fill="#BC1E47" d="M636,198c0,3.313-2.688,6-6,6s-6-2.687-6-6s2.688-6,6-6S636,194.687,636,198"/>
-<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="630" cy="198" r="6"/>
-<path fill="#0081CD" d="M789,189c0,3.313-2.688,6-6,6s-6-2.687-6-6s2.688-6,6-6S789,185.687,789,189"/>
-<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="783" cy="189" r="6"/>
-<polygon fill="none" stroke="#000000" stroke-miterlimit="10" points="558,468 567,315 720,306 711,459 "/>
-<polygon fill="none" stroke="#000000" stroke-miterlimit="10" points="567,315 576,162 729,153 720,306 "/>
-<polygon fill="none" stroke="#000000" stroke-miterlimit="10" points="711,459 720,306 873,297 864,450 "/>
-<polygon fill="none" stroke="#000000" stroke-miterlimit="10" points="720,306 729,153 882,144 873,297 "/>
-<path fill="#BC1E47" d="M564,468c0,3.313-2.688,6-6,6s-6-2.687-6-6s2.688-6,6-6S564,464.687,564,468"/>
-<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="558" cy="468" r="6"/>
-<path fill="#FEC200" d="M717,459c0,3.313-2.688,6-6,6s-6-2.687-6-6s2.688-6,6-6S717,455.687,717,459"/>
-<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="711" cy="459" r="6"/>
-<path fill="#BC1E47" d="M870,450c0,3.313-2.688,6-6,6s-6-2.687-6-6s2.688-6,6-6S870,446.687,870,450"/>
-<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="864" cy="450" r="6"/>
-<path fill="#FEC200" d="M573,315c0,3.313-2.688,6-6,6s-6-2.687-6-6s2.688-6,6-6S573,311.687,573,315"/>
-<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="567" cy="315" r="6"/>
-<path fill="#FFFFFF" d="M726,306c0,3.313-2.688,6-6,6s-6-2.687-6-6s2.688-6,6-6S726,302.687,726,306"/>
-<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="720" cy="306" r="6"/>
-<path fill="#FEC200" d="M879,297c0,3.313-2.688,6-6,6s-6-2.687-6-6s2.688-6,6-6S879,293.687,879,297"/>
-<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="873" cy="297" r="6"/>
-<path fill="#BC1E47" d="M582,162c0,3.313-2.688,6-6,6s-6-2.687-6-6s2.688-6,6-6S582,158.687,582,162"/>
-<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="576" cy="162" r="6"/>
-<path fill="#FEC200" d="M735,153c0,3.313-2.688,6-6,6s-6-2.687-6-6s2.688-6,6-6S735,149.687,735,153"/>
-<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="729" cy="153" r="6"/>
-<path fill="#BC1E47" d="M888,144c0,3.313-2.688,6-6,6s-6-2.687-6-6s2.688-6,6-6S888,140.687,888,144"/>
-<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="882" cy="144" r="6"/>
-<polygon fill="none" stroke="#000000" stroke-miterlimit="10" points="657,423 666,270 819,261 810,414 "/>
-<polygon fill="none" stroke="#000000" stroke-miterlimit="10" points="666,270 675,117 828,108 819,261 "/>
-<polygon fill="none" stroke="#000000" stroke-miterlimit="10" points="810,414 819,261 972,252 963,405 "/>
-<polygon fill="none" stroke="#000000" stroke-miterlimit="10" points="819,261 828,108 981,99 972,252 "/>
-<path fill="#0081CD" d="M663,423c0,3.313-2.688,6-6,6s-6-2.687-6-6s2.688-6,6-6S663,419.687,663,423"/>
-<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="657" cy="423" r="6"/>
-<path fill="#BC1E47" d="M816,414c0,3.313-2.688,6-6,6s-6-2.687-6-6s2.688-6,6-6S816,410.687,816,414"/>
-<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="810" cy="414" r="6"/>
-<path fill="#0081CD" d="M969,405c0,3.313-2.688,6-6,6s-6-2.687-6-6s2.688-6,6-6S969,401.687,969,405"/>
-<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="963" cy="405" r="6"/>
-<path fill="#BC1E47" d="M672,270c0,3.313-2.688,6-6,6s-6-2.687-6-6s2.688-6,6-6S672,266.687,672,270"/>
-<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="666" cy="270" r="6"/>
-<path fill="#FEC200" d="M825,261c0,3.312-2.688,6-6,6s-6-2.688-6-6c0-3.313,2.688-6,6-6S825,257.687,825,261"/>
-<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="819" cy="261" r="6"/>
-<path fill="#BC1E47" d="M978,252c0,3.313-2.688,6-6,6s-6-2.687-6-6s2.688-6,6-6S978,248.687,978,252"/>
-<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="972" cy="252" r="6"/>
-<path fill="#0081CD" d="M681,117c0,3.313-2.688,6-6,6s-6-2.687-6-6s2.688-6,6-6S681,113.687,681,117"/>
-<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="675" cy="117" r="6"/>
-<path fill="#BC1E47" d="M834,108c0,3.313-2.688,6-6,6s-6-2.687-6-6s2.688-6,6-6S834,104.687,834,108"/>
-<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="828" cy="108" r="6"/>
-<path fill="#0081CD" d="M987,99c0,3.313-2.688,6-6,6s-6-2.687-6-6s2.688-6,6-6S987,95.687,987,99"/>
-<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="981" cy="99" r="6"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="990" height="522">
+    <path fill="none" stroke="#000" stroke-miterlimit="10" d="M9 423l450 90M108 378l450 90M207 333l450 90M18 270l450 90M117 225l450 90M216 180l450 90M27 117l450 90M126 72l450 90M225 27l450 90M162 414l450 90M261 369l450 90M360 324l450 90M171 261l450 90M270 216l450 90M369 171l450 90M180 108l450 90M279 63l450 90M378 18l450 90M315 405l450 90M414 360l450 90M513 315l450 90M324 252l450 90M423 207l450 90M522 162l450 90M333 99l450 90M432 54l450 90M531 9l450 90M9 423l198-90M162 414l198-90M315 405l198-90M18 270l198-90M171 261l198-90M324 252l198-90M27 117l198-90M180 108l198-90M333 99L531 9M9 423l9-153 153-9-9 153z"/>
+    <path fill="none" stroke="#000" stroke-miterlimit="10" d="M18 270l9-153 153-9-9 153zM162 414l9-153 153-9-9 153z"/>
+    <path fill="none" stroke="#000" stroke-miterlimit="10" d="M171 261l9-153 153-9-9 153z"/>
+    <path fill="#0081CD" d="M15 423a6 6 0 0 1-12 0 6 6 0 0 1 12 0"/>
+    <circle fill="none" stroke="#000" stroke-miterlimit="10" cx="9" cy="423" r="6"/>
+    <path fill="#BC1E47" d="M168 414a6 6 0 0 1-12 0 6 6 0 0 1 12 0"/>
+    <circle fill="none" stroke="#000" stroke-miterlimit="10" cx="162" cy="414" r="6"/>
+    <path fill="#0081CD" d="M321 405a6 6 0 0 1-12 0 6 6 0 0 1 12 0"/>
+    <circle fill="none" stroke="#000" stroke-miterlimit="10" cx="315" cy="405" r="6"/>
+    <path fill="#BC1E47" d="M24 270a6 6 0 0 1-12 0 6 6 0 0 1 12 0"/>
+    <circle fill="none" stroke="#000" stroke-miterlimit="10" cx="18" cy="270" r="6"/>
+    <path fill="#FEC200" d="M177 261c0 3.312-2.687 6-6 6s-6-2.688-6-6a6 6 0 0 1 12 0"/>
+    <circle fill="none" stroke="#000" stroke-miterlimit="10" cx="171" cy="261" r="6"/>
+    <path fill="#BC1E47" d="M330 252a6 6 0 0 1-12 0 6 6 0 0 1 12 0"/>
+    <circle fill="none" stroke="#000" stroke-miterlimit="10" cx="324" cy="252" r="6"/>
+    <path fill="#0081CD" d="M33 117a6 6 0 0 1-12 0 6 6 0 0 1 12 0"/>
+    <circle fill="none" stroke="#000" stroke-miterlimit="10" cx="27" cy="117" r="6"/>
+    <path fill="#BC1E47" d="M186 108a6 6 0 0 1-12 0 6 6 0 0 1 12 0"/>
+    <circle fill="none" stroke="#000" stroke-miterlimit="10" cx="180" cy="108" r="6"/>
+    <path fill="#0081CD" d="M339 99a6 6 0 0 1-12 0 6 6 0 0 1 12 0"/>
+    <circle fill="none" stroke="#000" stroke-miterlimit="10" cx="333" cy="99" r="6"/>
+    <path fill="none" stroke="#000" stroke-miterlimit="10" d="M108 378l9-153 153-9-9 153z"/>
+    <path fill="none" stroke="#000" stroke-miterlimit="10" d="M117 225l9-153 153-9-9 153zM261 369l9-153 153-9-9 153z"/>
+    <path fill="none" stroke="#000" stroke-miterlimit="10" d="M270 216l9-153 153-9-9 153z"/>
+    <path fill="#BC1E47" d="M114 378a6 6 0 0 1-12 0 6 6 0 0 1 12 0"/>
+    <circle fill="none" stroke="#000" stroke-miterlimit="10" cx="108" cy="378" r="6"/>
+    <path fill="#FEC200" d="M267 369a6 6 0 0 1-12 0 6 6 0 0 1 12 0"/>
+    <circle fill="none" stroke="#000" stroke-miterlimit="10" cx="261" cy="369" r="6"/>
+    <path fill="#BC1E47" d="M420 360a6 6 0 0 1-12 0 6 6 0 0 1 12 0"/>
+    <circle fill="none" stroke="#000" stroke-miterlimit="10" cx="414" cy="360" r="6"/>
+    <path fill="#FEC200" d="M123 225a6 6 0 0 1-12 0 6 6 0 0 1 12 0"/>
+    <circle fill="none" stroke="#000" stroke-miterlimit="10" cx="117" cy="225" r="6"/>
+    <path fill="#FFF" d="M276 216a6 6 0 0 1-12 0 6 6 0 0 1 12 0"/>
+    <circle fill="none" stroke="#000" stroke-miterlimit="10" cx="270" cy="216" r="6"/>
+    <path fill="#FEC200" d="M429 207a6 6 0 0 1-12 0 6 6 0 0 1 12 0"/>
+    <circle fill="none" stroke="#000" stroke-miterlimit="10" cx="423" cy="207" r="6"/>
+    <path fill="#BC1E47" d="M132 72a6 6 0 0 1-12 0 6 6 0 0 1 12 0"/>
+    <circle fill="none" stroke="#000" stroke-miterlimit="10" cx="126" cy="72" r="6"/>
+    <path fill="#FEC200" d="M285 63a6 6 0 0 1-12 0 6 6 0 0 1 12 0"/>
+    <circle fill="none" stroke="#000" stroke-miterlimit="10" cx="279" cy="63" r="6"/>
+    <path fill="#BC1E47" d="M438 54a6 6 0 0 1-12 0 6 6 0 0 1 12 0"/>
+    <circle fill="none" stroke="#000" stroke-miterlimit="10" cx="432" cy="54" r="6"/>
+    <path fill="none" stroke="#000" stroke-miterlimit="10" d="M207 333l9-153 153-9-9 153z"/>
+    <path fill="none" stroke="#000" stroke-miterlimit="10" d="M216 180l9-153 153-9-9 153zM360 324l9-153 153-9-9 153z"/>
+    <path fill="none" stroke="#000" stroke-miterlimit="10" d="M369 171l9-153 153-9-9 153z"/>
+    <path fill="#0081CD" d="M213 333a6 6 0 0 1-12 0 6 6 0 0 1 12 0"/>
+    <circle fill="none" stroke="#000" stroke-miterlimit="10" cx="207" cy="333" r="6"/>
+    <path fill="#BC1E47" d="M366 324a6 6 0 0 1-12 0 6 6 0 0 1 12 0"/>
+    <circle fill="none" stroke="#000" stroke-miterlimit="10" cx="360" cy="324" r="6"/>
+    <path fill="#0081CD" d="M519 315c0 3.313-2.688 6-6 6s-6-2.687-6-6 2.688-6 6-6 6 2.687 6 6"/>
+    <circle fill="none" stroke="#000" stroke-miterlimit="10" cx="513" cy="315" r="6"/>
+    <path fill="#BC1E47" d="M222 180a6 6 0 0 1-12 0 6 6 0 0 1 12 0"/>
+    <circle fill="none" stroke="#000" stroke-miterlimit="10" cx="216" cy="180" r="6"/>
+    <path fill="#FEC200" d="M375 171a6 6 0 0 1-12 0 6 6 0 0 1 12 0"/>
+    <circle fill="none" stroke="#000" stroke-miterlimit="10" cx="369" cy="171" r="6"/>
+    <path fill="#BC1E47" d="M528 162c0 3.313-2.688 6-6 6s-6-2.687-6-6 2.688-6 6-6 6 2.687 6 6"/>
+    <circle fill="none" stroke="#000" stroke-miterlimit="10" cx="522" cy="162" r="6"/>
+    <path fill="#0081CD" d="M231 27a6 6 0 0 1-12 0 6 6 0 0 1 12 0"/>
+    <circle fill="none" stroke="#000" stroke-miterlimit="10" cx="225" cy="27" r="6"/>
+    <path fill="#BC1E47" d="M384 18a6 6 0 0 1-12 0 6 6 0 0 1 12 0"/>
+    <circle fill="none" stroke="#000" stroke-miterlimit="10" cx="378" cy="18" r="6"/>
+    <path fill="#0081CD" d="M537 9c0 3.313-2.688 6-6 6s-6-2.687-6-6 2.688-6 6-6 6 2.687 6 6"/>
+    <circle fill="none" stroke="#000" stroke-miterlimit="10" cx="531" cy="9" r="6"/>
+    <path fill="none" stroke="#000" stroke-miterlimit="10" d="M234 468l198-90M387 459l198-90M540 450l198-90M243 315l198-90M396 306l198-90M549 297l198-90M252 162l198-90M405 153l198-90M558 144l198-90M234 468l9-153 153-9-9 153z"/>
+    <path fill="none" stroke="#000" stroke-miterlimit="10" d="M243 315l9-153 153-9-9 153zM387 459l9-153 153-9-9 153z"/>
+    <path fill="none" stroke="#000" stroke-miterlimit="10" d="M396 306l9-153 153-9-9 153z"/>
+    <path fill="#BC1E47" d="M240 468a6 6 0 0 1-12 0 6 6 0 0 1 12 0"/>
+    <circle fill="none" stroke="#000" stroke-miterlimit="10" cx="234" cy="468" r="6"/>
+    <path fill="#FEC200" d="M393 459a6 6 0 0 1-12 0 6 6 0 0 1 12 0"/>
+    <circle fill="none" stroke="#000" stroke-miterlimit="10" cx="387" cy="459" r="6"/>
+    <path fill="#BC1E47" d="M546 450c0 3.313-2.688 6-6 6s-6-2.687-6-6 2.688-6 6-6 6 2.687 6 6"/>
+    <circle fill="none" stroke="#000" stroke-miterlimit="10" cx="540" cy="450" r="6"/>
+    <path fill="#FEC200" d="M249 315a6 6 0 0 1-12 0 6 6 0 0 1 12 0"/>
+    <circle fill="none" stroke="#000" stroke-miterlimit="10" cx="243" cy="315" r="6"/>
+    <path fill="#FFF" d="M402 306a6 6 0 0 1-12 0 6 6 0 0 1 12 0"/>
+    <circle fill="none" stroke="#000" stroke-miterlimit="10" cx="396" cy="306" r="6"/>
+    <path fill="#FEC200" d="M555 297c0 3.313-2.688 6-6 6s-6-2.687-6-6 2.688-6 6-6 6 2.687 6 6"/>
+    <circle fill="none" stroke="#000" stroke-miterlimit="10" cx="549" cy="297" r="6"/>
+    <path fill="#BC1E47" d="M258 162a6 6 0 0 1-12 0 6 6 0 0 1 12 0"/>
+    <circle fill="none" stroke="#000" stroke-miterlimit="10" cx="252" cy="162" r="6"/>
+    <path fill="#FEC200" d="M411 153a6 6 0 0 1-12 0 6 6 0 0 1 12 0"/>
+    <circle fill="none" stroke="#000" stroke-miterlimit="10" cx="405" cy="153" r="6"/>
+    <path fill="#BC1E47" d="M564 144c0 3.313-2.688 6-6 6s-6-2.687-6-6 2.688-6 6-6 6 2.687 6 6"/>
+    <circle fill="none" stroke="#000" stroke-miterlimit="10" cx="558" cy="144" r="6"/>
+    <path fill="none" stroke="#000" stroke-miterlimit="10" d="M333 423l9-153 153-9-9 153z"/>
+    <path fill="none" stroke="#000" stroke-miterlimit="10" d="M342 270l9-153 153-9-9 153zM486 414l9-153 153-9-9 153z"/>
+    <path fill="none" stroke="#000" stroke-miterlimit="10" d="M495 261l9-153 153-9-9 153z"/>
+    <path fill="#FEC200" d="M339 423a6 6 0 0 1-12 0 6 6 0 0 1 12 0"/>
+    <circle fill="none" stroke="#000" stroke-miterlimit="10" cx="333" cy="423" r="6"/>
+    <path fill="#FFF" d="M492 414a6 6 0 0 1-12 0 6 6 0 0 1 12 0"/>
+    <circle fill="none" stroke="#000" stroke-miterlimit="10" cx="486" cy="414" r="6"/>
+    <path fill="#FEC200" d="M645 405c0 3.313-2.688 6-6 6s-6-2.687-6-6 2.688-6 6-6 6 2.687 6 6"/>
+    <circle fill="none" stroke="#000" stroke-miterlimit="10" cx="639" cy="405" r="6"/>
+    <path fill="#FFF" d="M348 270a6 6 0 0 1-12 0 6 6 0 0 1 12 0"/>
+    <circle fill="none" stroke="#000" stroke-miterlimit="10" cx="342" cy="270" r="6"/>
+    <path d="M501 261c0 3.312-2.688 6-6 6a6 6 0 1 1 6-6"/>
+    <circle fill="none" stroke="#000" stroke-miterlimit="10" cx="495" cy="261" r="6"/>
+    <path fill="#FFF" d="M654 252c0 3.313-2.688 6-6 6s-6-2.687-6-6 2.688-6 6-6 6 2.687 6 6"/>
+    <circle fill="none" stroke="#000" stroke-miterlimit="10" cx="648" cy="252" r="6"/>
+    <path fill="#FEC200" d="M357 117a6 6 0 0 1-12 0 6 6 0 0 1 12 0"/>
+    <circle fill="none" stroke="#000" stroke-miterlimit="10" cx="351" cy="117" r="6"/>
+    <path fill="#FFF" d="M510 108c0 3.313-2.688 6-6 6s-6-2.687-6-6 2.688-6 6-6 6 2.687 6 6"/>
+    <circle fill="none" stroke="#000" stroke-miterlimit="10" cx="504" cy="108" r="6"/>
+    <path fill="#FEC200" d="M663 99c0 3.313-2.688 6-6 6s-6-2.687-6-6 2.688-6 6-6 6 2.687 6 6"/>
+    <circle fill="none" stroke="#000" stroke-miterlimit="10" cx="657" cy="99" r="6"/>
+    <path fill="none" stroke="#000" stroke-miterlimit="10" d="M432 378l9-153 153-9-9 153z"/>
+    <path fill="none" stroke="#000" stroke-miterlimit="10" d="M441 225l9-153 153-9-9 153zM585 369l9-153 153-9-9 153z"/>
+    <path fill="none" stroke="#000" stroke-miterlimit="10" d="M594 216l9-153 153-9-9 153z"/>
+    <path fill="#BC1E47" d="M438 378a6 6 0 0 1-12 0 6 6 0 0 1 12 0"/>
+    <circle fill="none" stroke="#000" stroke-miterlimit="10" cx="432" cy="378" r="6"/>
+    <path fill="#FEC200" d="M591 369c0 3.313-2.688 6-6 6s-6-2.687-6-6 2.688-6 6-6 6 2.687 6 6"/>
+    <circle fill="none" stroke="#000" stroke-miterlimit="10" cx="585" cy="369" r="6"/>
+    <path fill="#BC1E47" d="M744 360c0 3.313-2.688 6-6 6s-6-2.687-6-6 2.688-6 6-6 6 2.687 6 6"/>
+    <circle fill="none" stroke="#000" stroke-miterlimit="10" cx="738" cy="360" r="6"/>
+    <path fill="#FEC200" d="M447 225a6 6 0 0 1-12 0 6 6 0 0 1 12 0"/>
+    <circle fill="none" stroke="#000" stroke-miterlimit="10" cx="441" cy="225" r="6"/>
+    <path fill="#FFF" d="M600 216c0 3.313-2.688 6-6 6s-6-2.687-6-6 2.688-6 6-6 6 2.687 6 6"/>
+    <circle fill="none" stroke="#000" stroke-miterlimit="10" cx="594" cy="216" r="6"/>
+    <path fill="#FEC200" d="M753 207c0 3.313-2.688 6-6 6s-6-2.687-6-6 2.688-6 6-6 6 2.687 6 6"/>
+    <circle fill="none" stroke="#000" stroke-miterlimit="10" cx="747" cy="207" r="6"/>
+    <path fill="#BC1E47" d="M456 72a6 6 0 0 1-12 0 6 6 0 0 1 12 0"/>
+    <circle fill="none" stroke="#000" stroke-miterlimit="10" cx="450" cy="72" r="6"/>
+    <path fill="#FEC200" d="M609 63c0 3.313-2.688 6-6 6s-6-2.687-6-6 2.688-6 6-6 6 2.687 6 6"/>
+    <circle fill="none" stroke="#000" stroke-miterlimit="10" cx="603" cy="63" r="6"/>
+    <path fill="#BC1E47" d="M762 54c0 3.313-2.688 6-6 6s-6-2.687-6-6 2.688-6 6-6 6 2.687 6 6"/>
+    <circle fill="none" stroke="#000" stroke-miterlimit="10" cx="756" cy="54" r="6"/>
+    <path fill="none" stroke="#000" stroke-miterlimit="10" d="M459 513l198-90M612 504l198-90M765 495l198-90M468 360l198-90M621 351l198-90M774 342l198-90M477 207l198-90M630 198l198-90M783 189l198-90M459 513l9-153 153-9-9 153z"/>
+    <path fill="none" stroke="#000" stroke-miterlimit="10" d="M468 360l9-153 153-9-9 153zM612 504l9-153 153-9-9 153z"/>
+    <path fill="none" stroke="#000" stroke-miterlimit="10" d="M621 351l9-153 153-9-9 153z"/>
+    <path fill="#0081CD" d="M465 513a6 6 0 0 1-12 0 6 6 0 0 1 12 0"/>
+    <circle fill="none" stroke="#000" stroke-miterlimit="10" cx="459" cy="513" r="6"/>
+    <path fill="#BC1E47" d="M618 504c0 3.313-2.688 6-6 6s-6-2.687-6-6 2.688-6 6-6 6 2.687 6 6"/>
+    <circle fill="none" stroke="#000" stroke-miterlimit="10" cx="612" cy="504" r="6"/>
+    <path fill="#0081CD" d="M771 495c0 3.313-2.688 6-6 6s-6-2.687-6-6 2.688-6 6-6 6 2.687 6 6"/>
+    <circle fill="none" stroke="#000" stroke-miterlimit="10" cx="765" cy="495" r="6"/>
+    <path fill="#BC1E47" d="M474 360a6 6 0 0 1-12 0 6 6 0 0 1 12 0"/>
+    <circle fill="none" stroke="#000" stroke-miterlimit="10" cx="468" cy="360" r="6"/>
+    <path fill="#FEC200" d="M627 351c0 3.313-2.688 6-6 6s-6-2.687-6-6 2.688-6 6-6 6 2.687 6 6"/>
+    <circle fill="none" stroke="#000" stroke-miterlimit="10" cx="621" cy="351" r="6"/>
+    <path fill="#BC1E47" d="M780 342c0 3.313-2.688 6-6 6s-6-2.687-6-6 2.688-6 6-6 6 2.687 6 6"/>
+    <circle fill="none" stroke="#000" stroke-miterlimit="10" cx="774" cy="342" r="6"/>
+    <path fill="#0081CD" d="M483 207a6 6 0 0 1-12 0 6 6 0 0 1 12 0"/>
+    <circle fill="none" stroke="#000" stroke-miterlimit="10" cx="477" cy="207" r="6"/>
+    <path fill="#BC1E47" d="M636 198c0 3.313-2.688 6-6 6s-6-2.687-6-6 2.688-6 6-6 6 2.687 6 6"/>
+    <circle fill="none" stroke="#000" stroke-miterlimit="10" cx="630" cy="198" r="6"/>
+    <path fill="#0081CD" d="M789 189c0 3.313-2.688 6-6 6s-6-2.687-6-6 2.688-6 6-6 6 2.687 6 6"/>
+    <circle fill="none" stroke="#000" stroke-miterlimit="10" cx="783" cy="189" r="6"/>
+    <path fill="none" stroke="#000" stroke-miterlimit="10" d="M558 468l9-153 153-9-9 153z"/>
+    <path fill="none" stroke="#000" stroke-miterlimit="10" d="M567 315l9-153 153-9-9 153zM711 459l9-153 153-9-9 153z"/>
+    <path fill="none" stroke="#000" stroke-miterlimit="10" d="M720 306l9-153 153-9-9 153z"/>
+    <path fill="#BC1E47" d="M564 468c0 3.313-2.688 6-6 6s-6-2.687-6-6 2.688-6 6-6 6 2.687 6 6"/>
+    <circle fill="none" stroke="#000" stroke-miterlimit="10" cx="558" cy="468" r="6"/>
+    <path fill="#FEC200" d="M717 459c0 3.313-2.688 6-6 6s-6-2.687-6-6 2.688-6 6-6 6 2.687 6 6"/>
+    <circle fill="none" stroke="#000" stroke-miterlimit="10" cx="711" cy="459" r="6"/>
+    <path fill="#BC1E47" d="M870 450c0 3.313-2.688 6-6 6s-6-2.687-6-6 2.688-6 6-6 6 2.687 6 6"/>
+    <circle fill="none" stroke="#000" stroke-miterlimit="10" cx="864" cy="450" r="6"/>
+    <path fill="#FEC200" d="M573 315c0 3.313-2.688 6-6 6s-6-2.687-6-6 2.688-6 6-6 6 2.687 6 6"/>
+    <circle fill="none" stroke="#000" stroke-miterlimit="10" cx="567" cy="315" r="6"/>
+    <path fill="#FFF" d="M726 306c0 3.313-2.688 6-6 6s-6-2.687-6-6 2.688-6 6-6 6 2.687 6 6"/>
+    <circle fill="none" stroke="#000" stroke-miterlimit="10" cx="720" cy="306" r="6"/>
+    <path fill="#FEC200" d="M879 297c0 3.313-2.688 6-6 6s-6-2.687-6-6 2.688-6 6-6 6 2.687 6 6"/>
+    <circle fill="none" stroke="#000" stroke-miterlimit="10" cx="873" cy="297" r="6"/>
+    <path fill="#BC1E47" d="M582 162c0 3.313-2.688 6-6 6s-6-2.687-6-6 2.688-6 6-6 6 2.687 6 6"/>
+    <circle fill="none" stroke="#000" stroke-miterlimit="10" cx="576" cy="162" r="6"/>
+    <path fill="#FEC200" d="M735 153c0 3.313-2.688 6-6 6s-6-2.687-6-6 2.688-6 6-6 6 2.687 6 6"/>
+    <circle fill="none" stroke="#000" stroke-miterlimit="10" cx="729" cy="153" r="6"/>
+    <path fill="#BC1E47" d="M888 144c0 3.313-2.688 6-6 6s-6-2.687-6-6 2.688-6 6-6 6 2.687 6 6"/>
+    <circle fill="none" stroke="#000" stroke-miterlimit="10" cx="882" cy="144" r="6"/>
+    <path fill="none" stroke="#000" stroke-miterlimit="10" d="M657 423l9-153 153-9-9 153z"/>
+    <path fill="none" stroke="#000" stroke-miterlimit="10" d="M666 270l9-153 153-9-9 153zM810 414l9-153 153-9-9 153z"/>
+    <path fill="none" stroke="#000" stroke-miterlimit="10" d="M819 261l9-153 153-9-9 153z"/>
+    <path fill="#0081CD" d="M663 423c0 3.313-2.688 6-6 6s-6-2.687-6-6 2.688-6 6-6 6 2.687 6 6"/>
+    <circle fill="none" stroke="#000" stroke-miterlimit="10" cx="657" cy="423" r="6"/>
+    <path fill="#BC1E47" d="M816 414c0 3.313-2.688 6-6 6s-6-2.687-6-6 2.688-6 6-6 6 2.687 6 6"/>
+    <circle fill="none" stroke="#000" stroke-miterlimit="10" cx="810" cy="414" r="6"/>
+    <path fill="#0081CD" d="M969 405c0 3.313-2.688 6-6 6s-6-2.687-6-6 2.688-6 6-6 6 2.687 6 6"/>
+    <circle fill="none" stroke="#000" stroke-miterlimit="10" cx="963" cy="405" r="6"/>
+    <path fill="#BC1E47" d="M672 270c0 3.313-2.688 6-6 6s-6-2.687-6-6 2.688-6 6-6 6 2.687 6 6"/>
+    <circle fill="none" stroke="#000" stroke-miterlimit="10" cx="666" cy="270" r="6"/>
+    <path fill="#FEC200" d="M825 261c0 3.312-2.688 6-6 6s-6-2.688-6-6c0-3.313 2.688-6 6-6s6 2.687 6 6"/>
+    <circle fill="none" stroke="#000" stroke-miterlimit="10" cx="819" cy="261" r="6"/>
+    <path fill="#BC1E47" d="M978 252c0 3.313-2.688 6-6 6s-6-2.687-6-6 2.688-6 6-6 6 2.687 6 6"/>
+    <circle fill="none" stroke="#000" stroke-miterlimit="10" cx="972" cy="252" r="6"/>
+    <path fill="#0081CD" d="M681 117c0 3.313-2.688 6-6 6s-6-2.687-6-6 2.688-6 6-6 6 2.687 6 6"/>
+    <circle fill="none" stroke="#000" stroke-miterlimit="10" cx="675" cy="117" r="6"/>
+    <path fill="#BC1E47" d="M834 108c0 3.313-2.688 6-6 6s-6-2.687-6-6 2.688-6 6-6 6 2.687 6 6"/>
+    <circle fill="none" stroke="#000" stroke-miterlimit="10" cx="828" cy="108" r="6"/>
+    <path fill="#0081CD" d="M987 99c0 3.313-2.688 6-6 6s-6-2.687-6-6 2.688-6 6-6 6 2.687 6 6"/>
+    <circle fill="none" stroke="#000" stroke-miterlimit="10" cx="981" cy="99" r="6"/>
 </svg>
