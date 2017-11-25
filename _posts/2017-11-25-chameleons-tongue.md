@@ -16,3 +16,5 @@ But it occurred to me that something else is shaped that way: a [paper (Chinese)
 ![Chinese yo-yo]({{site.baseurl}}/assets/2017/chinese-yo-yo.jpg)
 
 If so, it wouldn't be the only reptile he drew as if it were made out of paper: his later [_Dragon_](https://www.escherinhetpaleis.nl/story-of-escher/dragon/?lang=en) makes the connection more explicitly.
+
+([G+](https://plus.google.com/100003628603413742554/posts/82LicozVPAg))
