@@ -3,7 +3,7 @@ layout: post
 title: The chameleon's tongue
 date: 2017-11-25 0:38
 ---
-I've linked to Escher's _Stars_ before, in [a blog post about its central polyhedral compound]({{site.baseurl}}{% post_url 2011-11-23-compound-of-three %}l). But today I wanted to remark on a small connection with respect to a different detail from it.
+I've linked to [Escher's _Stars_](https://en.wikipedia.org/wiki/Stars_(M._C._Escher)) before, in [a blog post about its central polyhedral compound]({{site.baseurl}}{% post_url 2011-11-23-compound-of-three %}). But today I wanted to remark on a small connection with respect to a different detail from it.
 
 {: style="text-align:center"}
 ![The chameleon's tongue, detail from Escher's Stars]({{site.baseurl}}/assets/2017/chameleon-tongue.jpg)
