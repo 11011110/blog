@@ -3,7 +3,7 @@ layout: post
 title: Factorial change-making
 date: 2017-12-23 12:40
 ---
-I think most people make change for amounts of money using a greedy algorithm: repeatedly start with an empty pile of money, and repeatedly add the largest-valued coin or bill that keeps the value of the pile at or under the desired total, until the total is reached. This can use more coins than necessary, though, for exotic coinage systems, or even some less-exotic ones like [US coins without the nickels]({{site.base-url}}{% post_url 2009-07-27-greed-can-fail %}).
+I think most people make change for amounts of money using a greedy algorithm: repeatedly start with an empty pile of money, and repeatedly add the largest-valued coin or bill that keeps the value of the pile at or under the desired total, until the total is reached. This can use more coins than necessary, though, for exotic coinage systems, or even some less-exotic ones like [US coins without the nickels]({{site.baseurl}}{% post_url 2009-07-27-greed-can-fail %}).
 
 {: style="text-align:center"}
 ![The Moneylender and his Wife, Quentin Matsys, 1514]({{site.baseurl}}/assets/2017/MatsysMoneylender.jpg)
