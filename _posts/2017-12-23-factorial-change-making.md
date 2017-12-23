@@ -67,3 +67,5 @@ To find the next term in the sequence, we need to find the first [prime gap](htt
 
 {: style="text-align:center;font-size:75%"}
 _[Christ Driving the Money Changers from the Temple](https://commons.wikimedia.org/wiki/File:Rembrandt_Christ_Driving_the_Money_Changers_from_the_Temple.jpg)_, [Rembrandt](https://en.wikipedia.org/wiki/Rembrandt), 1626
+
+([G+](https://plus.google.com/100003628603413742554/posts/ADXAhhMNXT2))
