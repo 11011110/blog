@@ -1,41 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="396px" height="684px" viewBox="0 0 396 684" enable-background="new 0 0 396 684" xml:space="preserve">
-<path fill="#FFEBAA" stroke="#000000" stroke-width="2" stroke-miterlimit="10" d="M342,234H54V18h288V234z M270,90H126v72h144V90z"
-	/>
-<path fill="#FFEBAA" stroke="#000000" stroke-width="2" stroke-miterlimit="10" d="M377.999,486H18V270h360V486z M162,342H90v72h72
-	V342z M306,342h-72v72h72V342z"/>
-<rect x="18" y="522" fill="#FFEBAA" stroke="#000000" stroke-width="2" stroke-miterlimit="10" width="360" height="144"/>
-<line fill="none" stroke="#000000" stroke-width="3" stroke-miterlimit="10" x1="90" y1="594" x2="306" y2="594"/>
-<g>
-	<g>
-		<line fill="none" stroke="#0081CD" stroke-miterlimit="10" x1="54" y1="90" x2="55" y2="90"/>
-		<line fill="none" stroke="#0081CD" stroke-miterlimit="10" stroke-dasharray="2,2" x1="57" y1="90" x2="124" y2="90"/>
-		<polyline fill="none" stroke="#0081CD" stroke-miterlimit="10" points="125,90 126,90 126,89 		"/>
-		<line fill="none" stroke="#0081CD" stroke-miterlimit="10" stroke-dasharray="2,2" x1="126" y1="87" x2="126" y2="20"/>
-		<line fill="none" stroke="#0081CD" stroke-miterlimit="10" x1="126" y1="19" x2="126" y2="18"/>
-	</g>
-</g>
-<polyline fill="none" stroke="#0081CD" stroke-miterlimit="10" stroke-dasharray="2" points="54,162 126,162 126,234 "/>
-<line fill="none" stroke="#0081CD" stroke-miterlimit="10" stroke-dasharray="2" x1="198" y1="162" x2="198" y2="234"/>
-<line fill="none" stroke="#0081CD" stroke-miterlimit="10" stroke-dasharray="2" x1="198" y1="90" x2="198" y2="18"/>
-<path fill="none" stroke="#0081CD" stroke-miterlimit="10" stroke-dasharray="2" d="M269.999,18"/>
-<polyline fill="none" stroke="#0081CD" stroke-miterlimit="10" stroke-dasharray="2" points="269.999,18 270,90 341.999,90 "/>
-<polyline fill="none" stroke="#0081CD" stroke-miterlimit="10" stroke-dasharray="2" points="269.999,234 270,162 341.999,162 "/>
-<polyline fill="none" stroke="#0081CD" stroke-miterlimit="10" stroke-dasharray="2" points="18,342 90,342 90,270 "/>
-<polyline fill="none" stroke="#0081CD" stroke-miterlimit="10" stroke-dasharray="2" points="162,270 162,342 234,342 233.999,270 
-	"/>
-<polyline fill="none" stroke="#0081CD" stroke-miterlimit="10" stroke-dasharray="2" points="305.999,270 306,342 377.999,342 "/>
-<polyline fill="none" stroke="#0081CD" stroke-miterlimit="10" stroke-dasharray="2" points="377.999,414 306,414 305.999,486 "/>
-<polyline fill="none" stroke="#0081CD" stroke-miterlimit="10" stroke-dasharray="2" points="233.999,486 234,414 162,414 162,486 
-	"/>
-<polyline fill="none" stroke="#0081CD" stroke-miterlimit="10" stroke-dasharray="2" points="90,486 90,414 18,414 "/>
-<line fill="none" stroke="#0081CD" stroke-miterlimit="10" stroke-dasharray="2" x1="90" y1="522" x2="90" y2="666"/>
-<line fill="none" stroke="#0081CD" stroke-miterlimit="10" stroke-dasharray="2" x1="162" y1="522" x2="162" y2="666"/>
-<line fill="none" stroke="#0081CD" stroke-miterlimit="10" stroke-dasharray="2" x1="234" y1="522" x2="234" y2="666"/>
-<line fill="none" stroke="#0081CD" stroke-miterlimit="10" stroke-dasharray="2" x1="306" y1="522" x2="306" y2="666"/>
-<line fill="none" stroke="#0081CD" stroke-miterlimit="10" stroke-dasharray="2" x1="378" y1="594" x2="306" y2="594"/>
-<line fill="none" stroke="#0081CD" stroke-miterlimit="10" stroke-dasharray="2" x1="18" y1="594" x2="90" y2="594"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="396" height="684">
+    <path fill="#FFEBAA" stroke="#000" stroke-width="2" d="M342 234H54V18h288v216zM270 90H126v72h144V90zm107.999 396H18V270h360v216zM162 342H90v72h72v-72zm144 0h-72v72h72v-72zM18 522h360v144H18z"/>
+    <g fill="none">
+        <path stroke="#000" stroke-width="3" d="M90 594h216"/>
+        <g stroke="#0081CD">
+            <path d="M54 90h1M125 90h1v-1M126 19v-1"/>
+            <path stroke-dasharray="2,2" d="M57 90h67M126 87V20"/>
+            <path stroke-dasharray="2" d="M54 162h72v72m72-72v72m0-144V18m71.999 0L270 90h71.999m-72 144l.001-72h71.999M18 342h72v-72m72 0v72h72l-.001-72m72 0l.001 72h71.999m0 72H306l-.001 72m-72 0l.001-72h-72v72m-72 0v-72H18m72 108v144m72-144v144m72-144v144m72-144v144m72-72h-72m-288 0h72"/>
+        </g>
+    </g>
 </svg>

@@ -4,121 +4,93 @@ title:  'Which infinite graphs are chordal?'
 date:   2011-11-16 16:31:00
 tags:   [antimatroids, graph theory]
 ---
-Many facts and definitions that seem straightforward for finite graphs can become much messier when infinite graphs get involved. As a case in point, I&#x27;ve been thinking about <a href="http://en.wikipedia.org/wiki/Chordal_graph">chordal graphs</a>.
-<br />
+<p>Many facts and definitions that seem straightforward for finite graphs can become much messier when infinite graphs get involved. As a case in point, I've been thinking about <a href="http://en.wikipedia.org/wiki/Chordal_graph">chordal graphs</a>.</p>
 
-<br />
-There are multiple equivalent definitions that work equally well for finite chordal graphs:
-<br />
+<p>There are multiple equivalent definitions that work equally well for finite chordal graphs:</p>
 
-<br />
-(1) They are the graphs in which every cycle of length greater than three has a chord, an edge connecting two vertices that are not consecutive in the cycle.
-<br />
-(2) They are the graphs in which every induced subgraph has a simplicial vertex, a vertex all of whose neighbors form a clique.
-<br />
-(3) They are the graphs that have an elimination ordering, a total ordering on the vertices in which, for every vertex v, the neighbors of v that are later in the ordering form a clique.
-<br />
-(4) They are the intersection graphs of subtrees of a tree: the vertices of the graph can be mapped to subtrees of a tree, such that two vertices are adjacent if and only if their subtrees overlap.
-<br />
+<ol>
+<li>They are the graphs in which every cycle of length greater than three has a chord, an edge connecting two vertices that are not consecutive in the cycle.</li>
+<li>They are the graphs in which every induced subgraph has a simplicial vertex, a vertex all of whose neighbors form a clique.</li>
+<li>They are the graphs that have an elimination ordering, a total ordering on the vertices in which, for every vertex \( v, \) the neighbors of \( v \) that are later in the ordering form a clique.</li>
+<li>They are the intersection graphs of subtrees of a tree: the vertices of the graph can be mapped to subtrees of a tree, such that two vertices are adjacent if and only if their subtrees overlap.</li>
+</ol>
 
-<br />
-For infinite graphs, these are not equivalent. A doubly-infinite path does not have any simplicial vertices, but satisfies all the other properties. A complete graph whose set of vertices cannot be totally ordered (in models of set theory in which the <a href="http://en.wikipedia.org/wiki/Ordering_principle">ordering principle</a> fails) does not have an elimination ordering, but satisfies all the other properties.
-<br />
+<p>For infinite graphs, these are not equivalent. A doubly-infinite path does not have any simplicial vertices, but satisfies all the other properties. A complete graph whose set of vertices cannot be totally ordered (in models of set theory in which the <a href="http://en.wikipedia.org/wiki/Ordering_principle">ordering principle</a> fails) does not have an elimination ordering, but satisfies all the other properties.</p>
 
-<br />
-It&#x27;s not even clear what it means to be a tree or a subtree of it: is it a connected undirected acyclic graph? Must it have bounded diameter? Does a <a href="http://en.wikipedia.org/wiki/Real_tree">real tree</a> count as a tree? Should we define (rooted) trees as directed graphs, or as real trees, or should we instead use their reachability partial orderings? A finite partial order (P,≤) represents a forest (with leaves as its minimal elements) if and only if, for every x, y, and z, x ≤ y and x ≤ z together imply that either y ≤ z or z ≤ y. In a forest partial order, a subtree can be represented as a set of elements with a maximum (root) r, such that for any two other elements of the order x and y with x ≤ y ≤ r, if x is in the subtree then so is y.  However, infinite partially ordered sets that satisfy the same axioms may come from structures like the real number line that don&#x27;t look like graphs.
-<br />
+<p>It's not even clear what it means to be a tree or a subtree of it: is it a connected undirected acyclic graph? Must it have bounded diameter? Does a <a href="http://en.wikipedia.org/wiki/Real_tree">real tree</a> count as a tree? Should we define (rooted) trees as directed graphs, or as real trees, or should we instead use their reachability partial orderings? A finite partial order \( (P,\le) \) represents a forest (with leaves as its minimal elements) if and only if, for every \( x, \) \( y, \) and \( z, \) \(x\le y\) and \(x\le z\) together imply that either \(y\le z\) or \(z\le y.\) In a forest partial order, a subtree can be represented as a set of elements with a maximum (root) \(r,\) such that for any two other elements of the order \(x\) and \(y\) with \(x\le y\le r,\) if \(x\) is in the subtree then so is \(y.\)  However, infinite partially ordered sets that satisfy the same axioms may come from structures like the real number line that don't look like graphs.</p>
 
-<br />
-In this case, it seems that some simplification and unification is possible based on the theory of <a href="http://en.wikipedia.org/wiki/Well-order">well-orderings</a>, total orders that do not have any infinite descending chains (or equivalently in which every set has a minimum element). If the axiom of choice is true, every set has a well-ordering, but we can also make that assumption explicit. If we do, we get the following three definitions, which turn out to be equivalent to each other.
-<br />
+<p>In this case, it seems that some simplification and unification is possible based on the theory of <a href="http://en.wikipedia.org/wiki/Well-order">well-orderings</a>, total orders that do not have any infinite descending chains (or equivalently in which every set has a minimum element). If the axiom of choice is true, every set has a well-ordering, but we can also make that assumption explicit. If we do, we get the following three definitions, which turn out to be equivalent to each other.</p>
 
-<br />
-(5) The graphs whose vertex sets are well-orderable, in which every induced subgraph has a simplicial vertex.
-<br />
-(6) The graphs that have a well-ordering of the vertices for which, for every vertex v, the later neighbors of v form a clique.
-<br />
-(7) The graphs whose vertex sets are well-orderable, that are the intersection graphs of subtrees of well-ordered forest partial orders (forest partial orders  with a compatible well-ordering).
-<br />
+<ol start="5">
+<li>The graphs whose vertex sets are well-orderable, in which every induced subgraph has a simplicial vertex.</li>
+<li>The graphs that have a well-ordering of the vertices for which, for every vertex \( v, \) the later neighbors of \( v \) form a clique.</li>
+<li>The graphs whose vertex sets are well-orderable, that are the intersection graphs of subtrees of well-ordered forest partial orders (forest partial orders  with a compatible well-ordering).</li>
+</ol>
 
-<br />
-Proof sketch for (6) ⇒ (5): Suppose that a graph G has a well-elimination ordering. Then if S is any subset of the vertices, the vertex in S that&#x27;s first according to the ordering must be simplicial in S.
-<br />
+<p>Proof sketch for \( (6) \Rightarrow (5)\): Suppose that a graph \( G \) has a well-elimination ordering. Then if \( S \) is any subset of the vertices, the vertex in \( S \) that's first according to the ordering must be simplicial in \( S. \)</p>
 
-<br />
-Proof sketch for (5) ⇒ (6): Let ≤ be a well-ordering of G (not necessarily an elimination ordering). Let S be the set of well-orderings of subsets of G such that (a) each well-ordering in S is, as far as it goes, an elimination ordering, and (b) each well-ordering in S is lexicographically minimal, in that it is not possible to truncate the ordering at some vertex of G and replace that vertex by an earlier vertex in ≤ while preserving the elimination ordering property. Then the elements of S are linearly ordered by being extensions of each other, and this linear ordering places them in one-to-one correspondence with some prefix of the ordinals. By <a href="http://en.wikipedia.org/wiki/Transfinite_induction">transfinite induction</a> there is a maximal element in S. If this maximal element did not include all of G, then it could be extended by adding the smallest simplicial vertex in the remaining set of vertices, violating maximality. Therefore, it is a well elimination ordering for all of G.
-<br />
+<p>Proof sketch for \( (5) \Rightarrow (6)\): Let \(\le\) be a well-ordering of \(G\) (not necessarily an elimination ordering). Let \(S\) be the set of well-orderings of subsets of \(G\) such that (a) each well-ordering in \(S\) is, as far as it goes, an elimination ordering, and (b) each well-ordering in \(S\) is lexicographically minimal, in that it is not possible to truncate the ordering at some vertex of \(G\) and replace that vertex by an earlier vertex in \(\le\) while preserving the elimination ordering property. Then the elements of \(S\) are linearly ordered by being extensions of each other, and this linear ordering places them in one-to-one correspondence with some prefix of the ordinals. By <a href="http://en.wikipedia.org/wiki/Transfinite_induction">transfinite induction</a> there is a maximal element in \(S.\) If this maximal element did not include all of \(G,\) then it could be extended by adding the smallest simplicial vertex in the remaining set of vertices, violating maximality. Therefore, it is a well elimination ordering for all of \(G.\)</p>
 
-<br />
-Proof sketch for (6) ⇒ (7): Suppose that a graph G has a well-elimination ordering. Define a binary relation R whose elements are the vertices of G, in which xRy whenever x and y are neighbors in G and x is earlier than y in the elimination ordering. Let ≤ be the transitive closure of R (the relation in which x ≤ y whenever there is a finite chain xRa, aRb, bRc, cRy etc.) Then ≤ is a forest order compatible with the well-elimination ordering, for each v the set of v and its earlier neighbors is a subtree, and G is the intersection graph of these subtrees.
-<br />
+<p>Proof sketch for \((6) \Rightarrow (7)\): Suppose that a graph \(G\) has a well-elimination ordering. Define a binary relation \(R\) whose elements are the vertices of \(G,\) in which \(xRy\) whenever \(x\) and \(y\) are neighbors in \(G\) and \(x\) is earlier than \(y\) in the elimination ordering. Let \(\le\) be the transitive closure of \(R\) (the relation in which \(x\le y\) whenever there is a finite chain \(xRa, aRb, bRc, cRy\) etc.) Then \(\le\) is a forest order compatible with the well-elimination ordering, for each \(v\) the set of \(v\) and its earlier neighbors is a subtree, and \(G\) is the intersection graph of these subtrees.</p>
 
-<br />
-Proof sketch for (7) ⇒ (5): Suppose that G is the intersection graph of paths in a well-ordered forest order. If S is any set of vertices of G,
-<br />
-let v be the vertex in S whose subtree root r is earliest in the order. Then v must be simplicial in S, because all its neighbors are represented by subtrees that contain r.
-<br />
+<p>Proof sketch for \((7) \Rightarrow (5)\): Suppose that \(G\) is the intersection graph of paths in a well-ordered forest order. If \(S\) is any set of vertices of \(G,\)
+let \(v\) be the vertex in \(S\) whose subtree root \(r\) is earliest in the order. Then \(v\) must be simplicial in \(S,\) because all its neighbors are represented by subtrees that contain \(r.\)</p>
 
-<br />
-The fact that this nice equivalence exists makes me think that (5), (6), and (7) are a good definition for the infinite chordal graphs (though maybe they should be called something else since they&#x27;re not using the chordal property). But what I&#x27;m missing is another equivalent analogous to (1). What are the forbidden induced subgraphs for these infinite graphs? Along with the chordless cycles they also include doubly-infinite chordless paths, and any graph whose set of vertices cannot be well-ordered. But those aren&#x27;t the only forbidden subgraphs. For instance, the confluent drawing below shows a graph (derived in the manner of trivially perfect graphs from an infinite tree that&#x27;s well-ordered in the wrong direction, towards the root rather than towards the leaves) that does not have any of these other forbidden subgraphs but also does not have any simplicial vertices.
-<br />
+<p>The fact that this nice equivalence exists makes me think that (5), (6), and (7) are a good definition for the infinite chordal graphs (though maybe they should be called something else since they're not using the chordal property). But what I'm missing is another equivalent analogous to (1). What are the forbidden induced subgraphs for these infinite graphs? Along with the chordless cycles they also include doubly-infinite chordless paths, and any graph whose set of vertices cannot be well-ordered. But those aren't the only forbidden subgraphs. For instance, the confluent drawing below shows a graph (derived in the manner of trivially perfect graphs from an infinite tree that's well-ordered in the wrong direction, towards the root rather than towards the leaves) that does not have any of these other forbidden subgraphs but also does not have any simplicial vertices.</p>
 
-<br />
-<div style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/HolefreeNonsimplicial.png" /></div>
-<br />
+<p style="text-align:center"><img src="{{site.baseurl}}/assets/2011/HolefreeNonsimplicial.png" alt="A countably infinite graph with no chordless cycles or doubly-infinite chordless paths but no simplicial vertices" /></p>
 
-<br />
-This graph has infinitely many different induced subgraphs that, like it, have no simplicial vertices, but all of these subgraphs in turn have the graph itself as an induced subgraph. Is it possible to catalog all the forbidden induced subgraphs for the graphs satisfying definitions (5), (6), and (7)?
+<p>This graph has infinitely many different induced subgraphs that, like it, have no simplicial vertices, but all of these subgraphs in turn have the graph itself as an induced subgraph. Is it possible to catalog all the forbidden induced subgraphs for the graphs satisfying definitions (5), (6), and (7)?
 <br /><br /><hr /><br />
 <h3>Comments:</h3>
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>ext_122759</b>: A minor comment<br />
-<b>2011-11-17T01:45:39Z</b><br />
-I enjoyed this post very much.  I have previously spent some time thinking about perfect graphs (and so chordal graphs along the way), but also extending matroid axioms to infinite sets, so it was interesting.
+<b>2011-11-17T01:45:39Z</b>
+<p>I enjoyed this post very much.  I have previously spent some time thinking about perfect graphs (and so chordal graphs along the way), but also extending matroid axioms to infinite sets, so it was interesting.</p>
 
-I hate to be the nitpicking type, but your phrasing seemed a bit off in two side comments: &quot;too large to be totally ordered&quot; and &quot;too large to be well-ordered&quot;.  Perhaps you&#x27;re aware and simply avoiding technical points, but in case you&#x27;re not:
+<p>I hate to be the nitpicking type, but your phrasing seemed a bit off in two side comments: "too large to be totally ordered" and "too large to be well-ordered".  Perhaps you're aware and simply avoiding technical points, but in case you're not:</p>
 
-Being large isn&#x27;t really an obstruction to being (well-)ordered.  There are plenty of large, well-orderable sets, for example any set of ordinals.  (Indeed, the entire proper class of ordinals is well-ordered.)  This can be made precise: for any set S, there exists a well-orderable set T such that T is not less than S in the sense of cardinals.  (One can&#x27;t hope for &quot;is not less than&quot; to be replaced with &quot;is larger than&quot; for the usual axiom of choice reasons.)
+<p>Being large isn't really an obstruction to being (well-)ordered.  There are plenty of large, well-orderable sets, for example any set of ordinals.  (Indeed, the entire proper class of ordinals is well-ordered.)  This can be made precise: for any set \( S, \) there exists a well-orderable set \( T \) such that \( T \) is not less than \( S \) in the sense of cardinals.  (One can't hope for "is not less than" to be replaced with "is larger than" for the usual axiom of choice reasons.)</p>
 </div>
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>11011110</b>: Re: A minor comment<br />
-<b>2011-11-17T01:57:52Z</b><br />
-Thanks for the correction — I was just being sloppy rather than unaware, sorry about that.
+<b>2011-11-17T01:57:52Z</b>
+<p>Thanks for the correction — I was just being sloppy rather than unaware, sorry about that.</p>
 
-I was coming at this from the point of view of extending antimatroid axioms to infinite sets, actually. Elimination orderings of chordal graphs were an example I was using to think about antimatroids. The usual antimatroid axioms for set systems (closed under union, and every set has a removable element) don&#x27;t work very well because you can&#x27;t get very far removing only one element at a time without limits. I think the right approach is instead to formalize the idea that an antimatroid is a way of describing sets of orderings in which an element, once available to be added to the ordering, stays available until it actually is added.
+<p>I was coming at this from the point of view of extending antimatroid axioms to infinite sets, actually. Elimination orderings of chordal graphs were an example I was using to think about antimatroids. The usual antimatroid axioms for set systems (closed under union, and every set has a removable element) don't work very well because you can't get very far removing only one element at a time without limits. I think the right approach is instead to formalize the idea that an antimatroid is a way of describing sets of orderings in which an element, once available to be added to the ordering, stays available until it actually is added.</p>
 
-The system of axioms I came up with is that an infinite antimatroid is a family of subsets of a well-orderable set that contains the empty set and the whole set, is closed under unions, and has the property that whenever sets S and T both belong to the family with S a subset of T, then there is an element x of T \ S that can be added to S to make another set in that family.
+<p>The system of axioms I came up with is that an infinite antimatroid is a family of subsets of a well-orderable set that contains the empty set and the whole set, is closed under unions, and has the property that whenever sets \( S \) and \( T \) both belong to the family with \( S \) a subset of \( T, \) then there is an element \( x \) of \( T \setminus S \) that can be added to \( S \) to make another set in that family.</p>
 
-With these axioms, an argument much like the (5) ⇒ (6) one above shows that any family of sets with these properties has a (unique lexicographically minimal) well-ordering such that every prefix of the ordering defines a set in the family.
+<p>With these axioms, an argument much like the \( (5) \Rightarrow (6)\) one above shows that any family of sets with these properties has a (unique lexicographically minimal) well-ordering such that every prefix of the ordering defines a set in the family.</p>
 </div>
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>ext_755375</b>: <br />
-<b>2011-11-17T02:39:29Z</b><br />
-This is very interesting! Coincidentally, I recently had to consider the same question. However, the generalization I obtained is somewhat different. It can be found in my recent paper &#x27;A note on conjectures of F. Galvin and R. Rado&#x27; (arXiv:1110.6563 and DOI:10.4153/CMB-2011-192-8). My version was guided by infinite comparability graphs and interval graphs.
+<b>2011-11-17T02:39:29Z</b>
+<p>This is very interesting! Coincidentally, I recently had to consider the same question. However, the generalization I obtained is somewhat different. It can be found in my recent paper 'A note on conjectures of F. Galvin and R. Rado' (arXiv:1110.6563 and DOI:10.4153/CMB-2011-192-8). My version was guided by infinite comparability graphs and interval graphs.</p>
 
-Obviously, a comparability graph, finite or infinite, is a graph with a transitive orientation. There is another characterization, which is well known in the finite case, every odd cycle of length 5 or more has a triangular chord. This is a characterization in the infinite case too by a compactness argument.
+<p>Obviously, a comparability graph, finite or infinite, is a graph with a transitive orientation. There is another characterization, which is well known in the finite case, every odd cycle of length 5 or more has a triangular chord. This is a characterization in the infinite case too by a compactness argument.</p>
 
-Similarly, an interval graph, finite or infinite, is the intersection graph of some family of convex subsets of a linear order. There are a few well known characterizations of finite interval graphs too, a useful one is that they are chordal graphs whose complements are comparability graphs. This also characterizes infinite interval graphs, where chordal is taken to mean that every cycle of length 4 or more has a chord.
+<p>Similarly, an interval graph, finite or infinite, is the intersection graph of some family of convex subsets of a linear order. There are a few well known characterizations of finite interval graphs too, a useful one is that they are chordal graphs whose complements are comparability graphs. This also characterizes infinite interval graphs, where chordal is taken to mean that every cycle of length 4 or more has a chord.</p>
 
-From this, I inferred that the correct definition of chordal in the infinite case is the first, every cycle of length 4 or more has a chord. I then tried to generalize the second and third characterizations. It worked, but in a slightly different way than yours:
+<p>From this, I inferred that the correct definition of chordal in the infinite case is the first, every cycle of length 4 or more has a chord. I then tried to generalize the second and third characterizations. It worked, but in a slightly different way than yours:</p>
 
-(2&#x27;) Graphs in which every finite induced subgraph has a simplcial vertex.
+<p>(2') Graphs in which every finite induced subgraph has a simplcial vertex.</p>
 
-(3&#x27;) Graphs in that have a simplicial orientation, an acyclic orientation such that the in-neighbors of a vertex always form a clique (in the unoriented graph).
+<p>(3') Graphs in that have a simplicial orientation, an acyclic orientation such that the in-neighbors of a vertex always form a clique (in the unoriented graph).</p>
 
-A linear extension of the transitive closure of a simplicial orientation has the property that the neighbors of a vertex that precede it in the ordering form a clique. This is like the elimination property, but I wouldn&#x27;t call it that since the process of elimination it refers to suggests a wellordering, which is not necessarily the case here.
+<p>A linear extension of the transitive closure of a simplicial orientation has the property that the neighbors of a vertex that precede it in the ordering form a clique. This is like the elimination property, but I wouldn't call it that since the process of elimination it refers to suggests a wellordering, which is not necessarily the case here.</p>
 
-The equivalence of (1) and (2&#x27;) follows from the finite case, and the equivalence with (3&#x27;) is a compactness argument. I hadn&#x27;t really considered the fourth characterization, but I did actually carry out the core of the equivalence in my paper (Theorem 4.3, which works much like your sketch).
+<p>The equivalence of (1) and (2') follows from the finite case, and the equivalence with (3') is a compactness argument. I hadn't really considered the fourth characterization, but I did actually carry out the core of the equivalence in my paper (Theorem 4.3, which works much like your sketch).</p>
 
-Anyway, I like your generalization too! I&#x27;m really happy to learn about this alternate generalization. In fact, I think your version (4) could have been handy in the very last part of my paper...
+<p>Anyway, I like your generalization too! I'm really happy to learn about this alternate generalization. In fact, I think your version (4) could have been handy in the very last part of my paper...</p>
 
-PS: Since you seem to be concerned with choice, the equivalence of (1), (2&#x27;), (3&#x27;) and (4&#x27;) uses no more than the Boolean Prime Ideal Theorem to get from (2&#x27;) to (3&#x27;).
+<p>PS: Since you seem to be concerned with choice, the equivalence of (1), (2'), (3') and (4') uses no more than the Boolean Prime Ideal Theorem to get from (2') to (3').</p>
 </div>
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>11011110</b>: <br />
-<b>2011-11-17T03:11:30Z</b><br />
-Thanks for the references and the interesting comments.
+<b>2011-11-17T03:11:30Z</b>
+<p>Thanks for the references and the interesting comments.</p>
 
-I was thinking that the no chordless cycles definition that you prefer may also be enough to get something like an elimination ordering, but with an additional technical assumption that (the vertices are well-orderable and) there are no complete bipartite subgraphs with both sides infinite. With this assumption, one can define a <a href="http://en.wikipedia.org/wiki/Lexicographic_breadth-first_search">LexBFS</a> well-ordering, and (if there are no chordless cycles) its reversal should be an elimination ordering. I haven&#x27;t worked out the details, so I could easily be missing something. But if this works, it would strengthen your argument about topological orderings (=linear extensions of transitive closures) in that you do get a well-ordering, but in the opposite direction to the one in my definition (6).
+<p>I was thinking that the no chordless cycles definition that you prefer may also be enough to get something like an elimination ordering, but with an additional technical assumption that (the vertices are well-orderable and) there are no complete bipartite subgraphs with both sides infinite. With this assumption, one can define a <a href="http://en.wikipedia.org/wiki/Lexicographic_breadth-first_search">LexBFS</a> well-ordering, and (if there are no chordless cycles) its reversal should be an elimination ordering. I haven't worked out the details, so I could easily be missing something. But if this works, it would strengthen your argument about topological orderings (=linear extensions of transitive closures) in that you do get a well-ordering, but in the opposite direction to the one in my definition (6).</p>
 </div>
 

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="288" height="288">
+    <path fill="none" stroke="#68FFFF" d="M18 0v288M36 0v288M54 0v288M72 0v288M90 0v288M108 0v288M126 0v288M144 0v288M162 0v288M180 0v288M198 0v288M216 0v288M234 0v288M252 0v288M270 0v288M0 270h288M0 252h288M0 234h288M0 216h288M0 198h288M0 180h288M0 162h288M0 144h288M0 126h288M0 108h288M0 90h288M0 72h288M0 54h288M0 36h288M0 18h288"/>
+    <g opacity=".1">
+        <path fill="#F33" d="M36 36v216h90z"/>
+        <path fill="#3C39B2" d="M36 36l90 216h126z"/>
+    </g>
+    <g fill="none" stroke="#000">
+        <path d="M36 36v216h90z"/>
+        <path d="M36 36l90 216h126z"/>
+    </g>
+    <g font-family="'Times-Roman'" font-size="24">
+        <text transform="translate(6 198)">12</text>
+        <text transform="translate(106.992 198)">13</text>
+        <text transform="translate(204 198)">17</text>
+        <text transform="translate(66 274.008)">5</text>
+        <text transform="translate(174 274.008)">7</text>
+    </g>
+</svg>

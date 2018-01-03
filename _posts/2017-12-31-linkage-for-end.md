@@ -15,7 +15,7 @@ date: 2017-12-31 13:38
 
 * [Partisan gerrymandering with geographically compact districts](https://dustingmixon.wordpress.com/2017/12/15/partisan-gerrymandering-with-geographically-compact-districts/) ([G+](https://plus.google.com/100003628603413742554/posts/Mj8wkSDsCjc)). Why looking at the shapes of congressional districts is inadequate as a test for whether they're unfairly drawn — you have to look more carefully at the distribution of people and their preferences within those shapes. From [a preprint by Boris Alexeev and Dustin Mason](https://arxiv.org/abs/1712.05390).
 
-* [Hexahexaflakes](https://www.youtube.com/watch?v=DIyruYQ-N4Q) ([G+](https://plus.google.com/100003628603413742554/posts/UZvfwUtVH2H)). Vi Hart cuts through some baloney regarding the number of folds needed to achieve a given degree of symmetry in paper snowflakes.
+* [Hexaflexaflakes](https://www.youtube.com/watch?v=DIyruYQ-N4Q) ([G+](https://plus.google.com/100003628603413742554/posts/UZvfwUtVH2H)). Vi Hart cuts through some baloney regarding the number of folds needed to achieve a given degree of symmetry in paper snowflakes.
 
 * [Platonic solids on their summer holiday](http://myjetpack.tumblr.com/post/165047890685/cartoon-for-new-scientist-also-my-new-book-of) ([G+](https://plus.google.com/100003628603413742554/posts/e6JQxRDo18N), from "You're All Just Jealous Of My Jetpack" webcomic). With bonus hosohedron. It's now the summer holidays in the southern hemisphere, right?
 

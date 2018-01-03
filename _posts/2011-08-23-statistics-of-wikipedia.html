@@ -4,39 +4,24 @@ title:  'Statistics of the Wikipedia pseudoforest'
 date:   2011-08-23 14:41:00
 tags:   [wikipedia, graph theory]
 ---
-By now you&#x27;ve probably seen the <a href="http://xkcd.com/903/">xkcd strip</a> in which the alt text suggests the following game: start at a random Wikipedia article, and then repeatedly click the first link on the page until you get stuck or in a loop. With high probability, the page you ended up on was the one on Philosophy.
-<br />
+<p>By now you've probably seen the <a href="http://xkcd.com/903/">xkcd strip</a> in which the alt text suggests the following game: start at a random Wikipedia article, and then repeatedly click the first link on the page until you get stuck or in a loop. With high probability, the page you ended up on was the one on Philosophy.</p>
 
-<br />
-<a href="http://matpalm.com/blog/2011/08/13/wikipedia-philosophy/">mat kelcey</a> and <a href="http://en.wikipedia.org/wiki/User:Ilmari_Karonen/First_link">Ilmari Karonen</a> have crunched some numbers to show that it&#x27;s actually true: some 94% of some 3 1/2 million Wikipedia articles eventually get into the same loop with Philosophy. The next largest components have around 20,000 articles, and after that it drops rapidly, with many components having double-digit sizes, many more having single digit sizes, and a huge number of two-article components.
-<br />
+<p><a href="http://matpalm.com/blog/2011/08/13/wikipedia-philosophy/">mat kelcey</a> and <a href="http://en.wikipedia.org/wiki/User:Ilmari_Karonen/First_link">Ilmari Karonen</a> have crunched some numbers to show that it's actually true: some 94% of some 3 1/2 million Wikipedia articles eventually get into the same loop with Philosophy. The next largest components have around 20,000 articles, and after that it drops rapidly, with many components having double-digit sizes, many more having single digit sizes, and a huge number of two-article components.</p>
 
-<br />
-My first thought when I saw these numbers was &quot;Oh yes, the theory of random graphs predicts one giant component and a lot of tiny components&quot;. But then my second thought was, &quot;Oh really? This is a very different kind of graph than the ones in that theory.&quot; It&#x27;s a <a href="http://en.wikipedia.org/wiki/Pseudoforest">pseudoforest</a>, a graph with exactly one outgoing link per node. Do random pseudoforests really behave like this?
-<br />
+<p>My first thought when I saw these numbers was "Oh yes, the theory of random graphs predicts one giant component and a lot of tiny components". But then my second thought was, "Oh really? This is a very different kind of graph than the ones in that theory." It's a <a href="http://en.wikipedia.org/wiki/Pseudoforest">pseudoforest</a>, a graph with exactly one outgoing link per node. Do random pseudoforests really behave like this?</p>
 
-<br />
-To test the question, I wrote a program to generate random pseudoforests with approximately the same number of nodes (3 1/2 million), with each outgoing link chosen uniformly and independently at random from all the nodes. I ran it 200 times and made a scatterplot in which the horizontal axis is the size of the second-largest component (rather more informative than the largest, which is often near the size of the whole graph) and the vertical axis is the number of components. In my experiments the number of components ranged from 2 to 15 and the component size ranged from near zero to 1.7 million, nearly half the size of the whole graph.
-<br />
+<p>To test the question, I wrote a program to generate random pseudoforests with approximately the same number of nodes (3 1/2 million), with each outgoing link chosen uniformly and independently at random from all the nodes. I ran it 200 times and made a scatterplot in which the horizontal axis is the size of the second-largest component (rather more informative than the largest, which is often near the size of the whole graph) and the vertical axis is the number of components. In my experiments the number of components ranged from 2 to 15 and the component size ranged from near zero to 1.7 million, nearly half the size of the whole graph.</p>
 
-<br />
-<div style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/rand-pf-linlin.png" /></div>
-<br />
+<p style="text-align:center"><img src="{{site.baseurl}}/assets/2011/rand-pf-linlin.png" alt="Second-largest component sizes of random pseudoforests versus number of components" /></p>
 
-<br />
-To me, this looks not far from uniformly random, though with a bit of a positive correlation. The second largest component in Wikipedia would be at around the 1% mark on the horizontal axis, far to the left. To get a better picture of how it really fits into the data, I made a second plot with the same vertical scale but a logarithmic horizontal scale ranging from 2 to 6.5. On this scale, the Wikipedia second-largest-component size is around 52%, in the middle of the plot but not at all in the middle of the data.
-<br />
+<p>To me, this looks not far from uniformly random, though with a bit of a positive correlation. The second largest component in Wikipedia would be at around the 1% mark on the horizontal axis, far to the left. To get a better picture of how it really fits into the data, I made a second plot with the same vertical scale but a logarithmic horizontal scale ranging from 2 to 6.5. On this scale, the Wikipedia second-largest-component size is around 52%, in the middle of the plot but not at all in the middle of the data.</p>
 
-<br />
-<div style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/rand-pf-loglin.png" /></div>
-<br />
+<p style="text-align:center"><img src="{{site.baseurl}}/assets/2011/rand-pf-loglin.png" alt="Second-largest component sizes of random pseudoforests, with a logarithmic horizontal scale" /></p>
 
-<br />
-The reason Wikipedia isn&#x27;t shown on these plots is because it&#x27;s far off them. The horizontal coordinate (second largest component size) is within the plots, although far to the left of the median of the data, but the vertical coordinate (number of components) is enormous, far larger than the maximum of 15 that I saw with the random graphs.
-<br />
+<p>The reason Wikipedia isn't shown on these plots is because it's far off them. The horizontal coordinate (second largest component size) is within the plots, although far to the left of the median of the data, but the vertical coordinate (number of components) is enormous, far larger than the maximum of 15 that I saw with the random graphs.</p>
 
-<br />
-To me, this shows convincingly that the pseudoforest generated from Wikipedia is very different from a random pseudoforest. It seems like an interesting problem to come up with a mathematical model that would fit it better.
+<p>To me, this shows convincingly that the pseudoforest generated from Wikipedia is very different from a random pseudoforest. It seems like an interesting problem to come up with a mathematical model that would fit it better.</p>
+
 <br /><br /><hr /><br />
 <h3>Comments:</h3>
 <div style="margin-left: 0em; padding-top: 1em;">
@@ -47,11 +32,11 @@ To me, this shows convincingly that the pseudoforest generated from Wikipedia is
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>gareth_rees</b>: <br />
 <b>2011-08-24T15:41:50Z</b><br />
-I just tried this experimentally, starting at <a href="http://en.wikipedia.org/wiki/Special:Random">Special:Random</a>, and I got the sequence:
+<p>I just tried this experimentally, starting at <a href="http://en.wikipedia.org/wiki/Special:Random">Special:Random</a>, and I got the sequence:</p>
 
-<a href="http://en.wikipedia.org/wiki/Katre_Türkay">Katre Türkay</a> → <a href="http://en.wikipedia.org/wiki/Turkey">Turkey</a> → <a href="http://en.wikipedia.org/wiki/Eurasia">Eurasia</a> → <a href="http://en.wikipedia.org/wiki/Continent">Continent</a> → <a href="http://en.wikipedia.org/wiki/Landmass">Landmass</a> → <a href="http://en.wikipedia.org/wiki/Land">Land</a> → <a href="http://en.wikipedia.org/wiki/Earth">Earth</a> → <a href="http://en.wikipedia.org/wiki/Planet">Planet</a> → <a href="http://en.wikipedia.org/wiki/Astronomical_object">Astronomical object</a> → <a href="http://en.wikipedia.org/wiki/Entity">Entity</a> → <a href="http://en.wikipedia.org/wiki/Existence">Existence</a> → <a href="http://en.wikipedia.org/wiki/Sense">Sense</a> → <a href="http://en.wikipedia.org/wiki/Physiology">Physiology</a> → <a href="http://en.wikipedia.org/wiki/Science">Science</a> → <a href="http://en.wikipedia.org/wiki/Knowledge">Knowledge</a> → <a href="http://en.wikipedia.org/wiki/Fact">Fact</a> → <a href="http://en.wikipedia.org/wiki/Truth">Truth</a> → <a href="http://en.wikipedia.org/wiki/Fact">Fact</a> → ...
+<p><a href="http://en.wikipedia.org/wiki/Katre_Türkay">Katre Türkay</a> → <a href="http://en.wikipedia.org/wiki/Turkey">Turkey</a> → <a href="http://en.wikipedia.org/wiki/Eurasia">Eurasia</a> → <a href="http://en.wikipedia.org/wiki/Continent">Continent</a> → <a href="http://en.wikipedia.org/wiki/Landmass">Landmass</a> → <a href="http://en.wikipedia.org/wiki/Land">Land</a> → <a href="http://en.wikipedia.org/wiki/Earth">Earth</a> → <a href="http://en.wikipedia.org/wiki/Planet">Planet</a> → <a href="http://en.wikipedia.org/wiki/Astronomical_object">Astronomical object</a> → <a href="http://en.wikipedia.org/wiki/Entity">Entity</a> → <a href="http://en.wikipedia.org/wiki/Existence">Existence</a> → <a href="http://en.wikipedia.org/wiki/Sense">Sense</a> → <a href="http://en.wikipedia.org/wiki/Physiology">Physiology</a> → <a href="http://en.wikipedia.org/wiki/Science">Science</a> → <a href="http://en.wikipedia.org/wiki/Knowledge">Knowledge</a> → <a href="http://en.wikipedia.org/wiki/Fact">Fact</a> → <a href="http://en.wikipedia.org/wiki/Truth">Truth</a> → <a href="http://en.wikipedia.org/wiki/Fact">Fact</a> → ...</p>
 
-Is this the 20,000-article second-largest component? It seems quite big.
+<p>Is this the 20,000-article second-largest component? It seems quite big.</p>
 </div>
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>11011110</b>: <br />
@@ -61,14 +46,14 @@ No, Fact has been edited since the xkcd comic came out (I think in large part to
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>gareth_rees</b>: <br />
 <b>2011-08-24T15:52:33Z</b><br />
-Ah, I see from <a href="http://en.wikipedia.org/wiki/User:Ilmari_Karonen/First_link">Ilmari Karonen&#x27;s results</a> that on the date the dump was taken (2011-05-26), the first link from [[Sense]] was to [[Perception]]. But the first link was quite volatile; in a couple of days around that date, the first link changed from [[Physiology]] to [[Organism]] to [[Perception]] and back to [[Physiology]].
+Ah, I see from <a href="http://en.wikipedia.org/wiki/User:Ilmari_Karonen/First_link">Ilmari Karonen's results</a> that on the date the dump was taken (2011-05-26), the first link from [[Sense]] was to [[Perception]]. But the first link was quite volatile; in a couple of days around that date, the first link changed from [[Physiology]] to [[Organism]] to [[Perception]] and back to [[Physiology]].
 </div>
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>the_harry_b</b>: One note on the Wikipedia pseudoforest<br />
 <b>2011-08-24T17:20:05Z</b><br />
-It seems to me that if you take a random set S of nodes in the Wikipedia pseudoforest, of size &lt;&lt; N^1/2, then (if S is sufficiently large) with high probability the out-neighborhood of S will be smaller than S. This is because, due to Wikipedia&#x27;s &quot;in-house&quot; style, a high proportion of articles begin &quot;In [field of study],&quot; or &quot;[Subject] is a [nationality]...&quot;
+<p>It seems to me that if you take a random set S of nodes in the Wikipedia pseudoforest, of size &lt;&lt; N^1/2, then (if S is sufficiently large) with high probability the out-neighborhood of S will be smaller than S. This is because, due to Wikipedia's "in-house" style, a high proportion of articles begin "In [field of study]," or "[Subject] is a [nationality]..."</p>
 
-I don&#x27;t know if this is enough to account for the statistics of the second-largest component, but it&#x27;s a difference with an obvious explanation
+<p>I don't know if this is enough to account for the statistics of the second-largest component, but it's a difference with an obvious explanation</p>
 </div>
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>11011110</b>: Re: One note on the Wikipedia pseudoforest

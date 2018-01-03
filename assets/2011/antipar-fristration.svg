@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="270" height="306">
+    <g stroke="#231F20">
+        <path fill="#211DB2" d="M117 189V81l-72 36h108zm144-72H153l36 72V81zM153 225H45l36 72V189z"/>
+        <path fill="#92929B" d="M153 117l-36 72h108l-72 36zM9 189l72 36V117l36 72zM117 81l72 36V9l36 72z"/>
+        <path fill="#F33" d="M45 9L9 81h108l-72 36zm36 180l72 36V117l36 72z"/>
+        <path fill="#F33" d="M189 117H81l36 72V81z"/>
+    </g>
+</svg>

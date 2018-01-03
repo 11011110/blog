@@ -6,65 +6,56 @@ tags:   [partial orders]
 ---
 <p>Thinking about <a href="http://cstheory.stackexchange.com/questions/8717/sorting-by-euclidean-distance">this question</a> on the CStheory exchange led me to a curious observation about graph representations of partial orders.</p>
 
-<p>The <i>covering graph</i>, or <i>transitive reduction</i>, of a partially ordered set (S,≤) is a graph that has an edge x→y for every pair of distinct elements x and y in S for which x ≤ y and for which there does not exist z with x ≤ z ≤ y. It&#x27;s a directed acyclic graph in which none of the edges is redundant: if an edge x→y is removed, then there is no other path leading from x to y. Conversely every irredundant DAG is the covering graph for the partial order on its vertices in which x ≤ y whenever there is a path from x to y.</p>
+<p>The <i>covering graph</i>, or <i>transitive reduction</i>, of a partially ordered set \( (S,\le) \) is a graph that has an edge \(x\rightarrow y\) for every pair of distinct elements \( x \) and \( y \) in \( S \) for which \( x \le y \) and for which there does not exist \( z \) with \( x \le z \le y. \) It's a directed acyclic graph in which none of the edges is redundant: if an edge \( x\rightarrow y\) is removed, then there is no other path leading from \( x \) to \( y. \) Conversely every irredundant DAG is the covering graph for the partial order on its vertices in which \( x\le  y \) whenever there is a path from \( x \) to \( y. \)</p>
 
-<p>A partially ordered set also has an <i>incomparability graph</i>, an undirected graph with an edge x–y for every pair of distinct elements that are incomparable.</p>
+<p>A partially ordered set also has an <i>incomparability graph</i>, an undirected graph with an edge \( x \)–\( y \) for every pair of distinct elements that are incomparable.</p>
 
-<p>If C=(V,A) is the covering graph of a partial order, and I=(V,E) is the incomparability graph, then it turns out that |A| = O(n + |E|). For instance, the DAG shown below in blue (with incomparability graph in pink) has |A| = 4|E| – 4:</p>
+<p>If \( C=(V,A) \) is the covering graph of a partial order, and \( I=(V,E) \) is the incomparability graph, then it turns out that \( |A| = O(n + |E|). \) For instance, the DAG shown below in blue (with incomparability graph in pink) has \( |A| = 4|E| - 4 \):</p>
 
-<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/comp-vs-incomp.png" /></p>
+<p style="text-align:center"><img src="{{site.baseurl}}/assets/2011/comp-vs-incomp.png" alt="DAG formed by a chain of eight pairs of incomparable elements" /></p>
 
-<p>Somehow this seems counterintuitive to me: if you have few incomparability edges, then you have a lot of comparability edges, so why should only a small number of them be covering edges? But it&#x27;s true.</p>
+<p>Somehow this seems counterintuitive to me: if you have few incomparability edges, then you have a lot of comparability edges, so why should only a small number of them be covering edges? But it's true.</p>
 
-<p>To prove that |A| = O(n + |E|), assign a charge of one unit to each edge x→y in the covering graph. Compare whether the number of outgoing neighbors of x is larger or the number of incoming neighbors of y is larger. If x has the larger number of neighbors, k of them, then spread 1/2k units of charge to vertex x, 1/2k units to vertex y, and 1/k units to each of the k-1 incomparability graph edges yz where z ranges over the outgoing neighbors of x that are different from y.</p>
+<p>To prove that \( |A| = O(n + |E|), \) assign a charge of one unit to each edge \( x\rightarrow y \) in the covering graph. Compare whether the number of outgoing neighbors of \( x \) is larger or the number of incoming neighbors of \( y \) is larger. If \( x \) has the larger number of neighbors, \( k \) of them, then spread \( 1/2k \) units of charge to vertex \( x, \) \( 1/2k \) units to vertex \( y, \) and \( 1/k \) units to each of the \( k-1 \) incomparability graph edges \( yz \) where \( z \) ranges over the outgoing neighbors of \( x \) that are different from \( y. \)</p>
 
-<p>Each vertex gets at most one unit of charge: its k downstairs neighbors in the covering graph can each charge it at most 1/2k unit and its j upstairs neighbors can each charge it at most 1/2j units.</p>
+<p>Each vertex gets at most one unit of charge: its \( k \) downstairs neighbors in the covering graph can each charge it at most \( 1/2k \) unit and its \( j \) upstairs neighbors can each charge it at most \( 1/2j \) units.</p>
 
-<p>Each incomparability edge also gets at most four units of charge. For, if yz is an incomparability edge that belongs to t different triangles xyz where x→y and x→z are covering graph edges, then yz will be charged by at most 2t of the covering edges in these triangles. But for it to be charged by these edges, x must have at least t outgoing neighbors, because otherwise y or z (which both have at least t incoming neighbors) would have been charged instead. Therefore, each of these 2t covering edges will give edge yz at most 1/t units of charge, for a total of 2 units. Symmetrically, yz can get at most 2 units charged to it from covering edges that go out of y or z.</p>
+<p>Each incomparability edge also gets at most four units of charge. For, if \( yz \) is an incomparability edge that belongs to \( t \) different triangles \( xyz \) where \( x\rightarrow y \) and \( x\rightarrow z \) are covering graph edges, then \( yz \) will be charged by at most \( 2t \) of the covering edges in these triangles. But for it to be charged by these edges, \( x \) must have at least \( t \) outgoing neighbors, because otherwise \( y \) or \( z \) (which both have at least \( t \) incoming neighbors) would have been charged instead. Therefore, each of these \( 2t \) covering edges will give edge \( yz \) at most \( 1/t \) units of charge, for a total of \( 2 \) units. Symmetrically, \( yz \) can get at most \( 2 \) units charged to it from covering edges that go out of \( y \) or \( z. \)</p>
 
-<p>So: |A| = total charge = (charge assigned to vertices) + (charge assigned to incomparability edges) ≤ n + 4|E|.</p>
+<p>So: \(|A| ={}\)total charge\({}={}\)(charge assigned to vertices)\({}+{}\)(charge assigned to incomparability edges)\({} \le n + 4|E|. \)</p>
 
-<p>The connection to the CStheory exchange question (this won&#x27;t make sense unless you&#x27;ve read that question and my answer to it): in my answer, I suggested a data structure in which one stores (in each cell of a certain geometric partition) a total order that is O(n) inversions away from the correct sorted order, and using a somewhat complicated distribution-sensitive sorting algorithm that runs in linear time when it is given such an input. Instead, with a little more preprocessing effort, one can store a different data structure that makes for simpler queries: use the same geometric partition, find within each cell a partial order representing the order relations that are constant throughout the cell, and store within the cell both the covering graph and the incomparability graph. Then, to handle a query, compare each pair of endpoints of each edge in the incomparability graph, orient these edges according to the result of the comparison, take the union of the resulting directed graph with the stored covering graph, and find its (unique) topological ordering. The analysis in my answer shows that the number of incomparability edges is linear, and the relation shown here then implies that the number of covering edges is also linear, so the data structure takes cubic space and has linear query time.</p>
+<p>The connection to the CStheory exchange question (this won't make sense unless you've read that question and my answer to it): in my answer, I suggested a data structure in which one stores (in each cell of a certain geometric partition) a total order that is \( O(n) \) inversions away from the correct sorted order, and using a somewhat complicated distribution-sensitive sorting algorithm that runs in linear time when it is given such an input. Instead, with a little more preprocessing effort, one can store a different data structure that makes for simpler queries: use the same geometric partition, find within each cell a partial order representing the order relations that are constant throughout the cell, and store within the cell both the covering graph and the incomparability graph. Then, to handle a query, compare each pair of endpoints of each edge in the incomparability graph, orient these edges according to the result of the comparison, take the union of the resulting directed graph with the stored covering graph, and find its (unique) topological ordering. The analysis in my answer shows that the number of incomparability edges is linear, and the relation shown here then implies that the number of covering edges is also linear, so the data structure takes cubic space and has linear query time.</p>
 
-<p>What I don&#x27;t know is whether this relation between the sparsity of covering graphs are and the sparsity of the corresponding incomparability graphs appears in the literature already — I tried some searches but didn&#x27;t find anything. It seems like the sort of basic thing that should have already been known, though.</p>
+<p>What I don't know is whether this relation between the sparsity of covering graphs are and the sparsity of the corresponding incomparability graphs appears in the literature already — I tried some searches but didn't find anything. It seems like the sort of basic thing that should have already been known, though.</p>
+
 <br /><br /><hr /><br />
 <h3>Comments:</h3>
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>brooksmoses</b>: <br />
 <b>2011-10-26T00:57:09Z</b><br />
-This is probably a trivial complaint (or an amateur misunderstanding!), but I think there&#x27;s an error in your definition in &quot;an edge x→y for every pair of distinct elements x and y in S for which x ≤ y and for which there does not exist z with x ≤ z ≤ y,&quot; or at least a distinct weirdness.
+<p>This is probably a trivial complaint (or an amateur misunderstanding!), but I think there's an error in your definition in "an edge \( x\rightarrow y \) for every pair of distinct elements \( x \) and \( y \) in \( S \) for which \( x\le y \) and for which there does not exist \( z \) with \( x\le z
+\le y, \)" or at least a distinct weirdness.</p>
 
-If S has two elements x and y such that x = y, then you have edges x→y and y→x.  (This, then, is not a DAG, being cyclic.)
+<p>If \( S \) has two elements \( x \) and \( y \) such that \( x = y, \) then you have edges \( x\rightarrow y \) and \( y\rightarrow x. \)  (This, then, is not a DAG, being cyclic.)</p>
 
-However, if S has three elements x, y, and z such that x = y and y = z, then you have no edges at all, because for any pair (a,b) the relationship a ≤ c ≤ b holds where c is the third of the three elements.
+<p>However, if \( S \) has three elements \( x, \) \( y, \) and \( z \) such that \( x = y \) and \( y = z, \) then you have no edges at all, because for any pair \( (a,b) \) the relationship \( a\le c\le b \) holds where \( c \) is the third of the three elements.</p>
 
-Or does &quot;distinct&quot;, in the selection of &quot;distinct elements x and y&quot;, imply that we don&#x27;t have x = y?
+<p>Or does "distinct", in the selection of "distinct elements \( x \) and \( y \)", imply that we don't have \( x = y \)?</p>
 </div>
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>11011110</b>: <br />
 <b>2011-10-26T01:07:38Z</b><br />
-If S has two elements x and y such that x = y, then it&#x27;s not a partial order, it&#x27;s something a little more general called a <a href="http://en.wikipedia.org/wiki/Preorder">preorder</a> or quasi-order.
+<p>If \( S \) has two elements \( x \) and \( y \) such that \( x = y, \) then it's not a partial order, it's something a little more general called a <a href="http://en.wikipedia.org/wiki/Preorder">preorder</a> or quasi-order.</p>
 </div>
 <div style="margin-left: 6em; padding-top: 1em;">
 <b>brooksmoses</b>: <br />
 <b>2011-10-27T02:50:28Z</b><br />
-Ah, that makes sense.  Thanks!
-</div>
-<div style="margin-left: 0em; padding-top: 1em;">
-<b>ext_854198</b>: <br />
-<b></b><br />
-
+<p>Ah, that makes sense.  Thanks!</p>
 </div>
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>ext_854198</b>: my intuition...<br />
 <b>2011-10-27T23:26:51Z</b><br />
-Since we are limiting the types of edges we can add (no transitive edges and no edges that create cycles) it seems natural to me that the number of edges is bounded. 
+<p>Since we are limiting the types of edges we can add (no transitive edges and no edges that create cycles) it seems natural to me that the number of edges is bounded.</p>
 
-Switching an edge e from the incomparability to comparability adds another comparability edge, so at first you would think that that would break the bound. You&#x27;re making |A| larger and |E| smaller. But that reasoning is forgetting that when we toggle edge e, we have to remove any transitive edges that are created. I&#x27;m thinking about the extreme case where we have the acyclic analog of the complete graph, and there are no incomparability edges. Then what we actually have is a total order, and the covering graph is just a path. When we start adding incomparability edges, then it also gives us room to add edges to the covering graph which are not transitive.
+<p>Switching an edge \( e \) from the incomparability to comparability adds another comparability edge, so at first you would think that that would break the bound. You're making \( |A| \) larger and \( |E| \) smaller. But that reasoning is forgetting that when we toggle edge e, we have to remove any transitive edges that are created. I'm thinking about the extreme case where we have the acyclic analog of the complete graph, and there are no incomparability edges. Then what we actually have is a total order, and the covering graph is just a path. When we start adding incomparability edges, then it also gives us room to add edges to the covering graph which are not transitive.</p>
 </div>
-<div style="margin-left: 0em; padding-top: 1em;">
-<b>janelledar</b>: <br />
-<b></b><br />
-
-</div>
-

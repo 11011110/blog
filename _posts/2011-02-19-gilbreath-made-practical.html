@@ -36,7 +36,7 @@ tags:   [unsolved, cellular automata, python, number theory]
 
 <p>There are some other sequences of integers that behave a lot like the prime numbers, one of which is the <a href="http://en.wikipedia.org/wiki/Practical_number">practical numbers</a>, numbers \( q \) such that any fraction \( p/q \) less than one can be represented as an <a href="http://en.wikipedia.org/wiki/Egyptian_fraction">Egyptian fraction</a> in which all denominators are divisors of \( q \). The practical numbers are highly composite, but they have similar density properties to the prime numbers. And like the prime numbers, the first one has a different parity from all the rest. What happens if we try making a triangle in the same way from them? We get:</p>
 
-<p><pre>  1
+<pre>  1
   2 1
   4 2 1
   6 2 0 1
@@ -60,7 +60,7 @@ tags:   [unsolved, cellular automata, python, number theory]
  66 2 2 2 0 0 2 2 2 2 0 0 0 0 2 2 2 2 0 0 2 1
  72 6 4 2 0 0 0 2 0 2 0 0 0 0 0 2 0 2 0 0 0 2 1
  78 6 0 4 2 2 2 2 0 0 2 2 2 2 2 2 0 0 2 2 2 2 0 1
- 80 2 4 4 0 2 0 2 0 0 0 2 0 2 0 2 0 0 0 2 0 2 0 0 1</pre></p>
+ 80 2 4 4 0 2 0 2 0 0 0 2 0 2 0 2 0 0 0 2 0 2 0 0 1</pre>
 
 <p>Again, we get 1's all down the right side. I conjecture that this pattern continues forever. As evidence, I tried computing the first 212000 rows of the triangle (up to the practical number 2314890) and they all ended with a 1. The same argument involving Rule 90 makes provides a heuristic explanation for why counterexamples should be increasingly rare in later rows of the triangle, so that if it's true this far out it seems almost certainly true in general.</p>
 

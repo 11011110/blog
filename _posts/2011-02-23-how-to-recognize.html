@@ -4,20 +4,12 @@ title:  'How to recognize a sphere'
 date:   2011-02-23 19:49:00
 tags:   [topology, flip graphs, papers]
 ---
-What I&#x27;m reading this evening: &quot;The Pachner graph and the simpliﬁcation of 3-sphere triangulations&quot;, by Benjamin Burton, <a href="http://arxiv.org/abs/1011.4169">arXiv:1011.4169</a>. He posted it last November, but revised it again recently and somehow the revision caught my attention after the original posting didn&#x27;t. It&#x27;s also one of the papers included in the recently posted <a href="http://socg2011.inria.fr/accepted-papers">list of SoCG acceptances</a>.
-<br />
+<p>What I'm reading this evening: "The Pachner graph and the simpliﬁcation of 3-sphere triangulations", by Benjamin Burton, <a href="http://arxiv.org/abs/1011.4169">arXiv:1011.4169</a>. He posted it last November, but revised it again recently and somehow the revision caught my attention after the original posting didn't. It's also one of the papers included in the recently posted <a href="http://socg2011.inria.fr/accepted-papers">list of SoCG acceptances</a>.</p>
 
-<br />
-The basic problem it deals with is trying to tell different three-dimensional spaces apart from each other, and in particular how to distinguish the three-sphere (a space that can be formed from the familiar Euclidean space by adding a single &quot;point at infinity&quot;) from other topological spaces.
-<br />
+<p>The basic problem it deals with is trying to tell different three-dimensional spaces apart from each other, and in particular how to distinguish the three-sphere (a space that can be formed from the familiar Euclidean space by adding a single "point at infinity") from other topological spaces.</p>
 
-<br />
-The spaces given as input to the problem are described as a set of tetrahedra together with a pattern for gluing their faces together, and one way to solve this in practice is to perform flips (local operations that change the set of tetrahedra without changing the topological type of the input) until reaching a simplified and recognizable gluing pattern. It&#x27;s known that repeated flipping from any topological 3-sphere can eventually reach a canonical triangulation that consists a single tetrahedron glued to itself, but it&#x27;s not always possible to do this using flips that decrease the number of tetrahedra — sometimes one has to increase the number of tetrahedra before decreasing it again.
-<br />
+<p>The spaces given as input to the problem are described as a set of tetrahedra together with a pattern for gluing their faces together, and one way to solve this in practice is to perform flips (local operations that change the set of tetrahedra without changing the topological type of the input) until reaching a simplified and recognizable gluing pattern. It's known that repeated flipping from any topological 3-sphere can eventually reach a canonical triangulation that consists a single tetrahedron glued to itself, but it's not always possible to do this using flips that decrease the number of tetrahedra — sometimes one has to increase the number of tetrahedra before decreasing it again.</p>
 
-<br />
-What Burton does is to implement and test this algorithm on approximately 31 million different 9-tetrahedron complexes. He shows that, in these cases, all of the local minima in the flip graph are shallow: one only ever needs to increase the number of tetrahedra by two to find a path to the global minimum. This is in strong contrast to proven superexponential upper bounds on the number of additional tetrahedra.
-<br />
+<p>What Burton does is to implement and test this algorithm on approximately 31 million different 9-tetrahedron complexes. He shows that, in these cases, all of the local minima in the flip graph are shallow: one only ever needs to increase the number of tetrahedra by two to find a path to the global minimum. This is in strong contrast to proven superexponential upper bounds on the number of additional tetrahedra.</p>
 
-<br />
-Burton&#x27;s results are consistent with past experience with programs like SnapPea, suggesting that these problems are a lot easier in practice than our current theory tells us, and they&#x27;re enough for him to make some conjectures that, if true, would imply that 3-sphere recognition could be solved in polynomial time.
+<p>Burton's results are consistent with past experience with programs like SnapPea, suggesting that these problems are a lot easier in practice than our current theory tells us, and they're enough for him to make some conjectures that, if true, would imply that 3-sphere recognition could be solved in polynomial time.</p>

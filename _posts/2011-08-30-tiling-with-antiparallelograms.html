@@ -4,49 +4,34 @@ title:  'Tiling with antiparallelograms'
 date:   2011-08-30 21:56:00
 tags:   [tiling]
 ---
-It&#x27;s easy to find statements in the literature that the only two kinds of quadrilateral with a single axis of symmetry are the <a href="http://en.wikipedia.org/wiki/Kite_(geometry)">kite</a> and the <a href="http://en.wikipedia.org/wiki/Isosceles_trapezoid">isosceles trapezoid</a>. But it&#x27;s not true, unless one forbids self-crossings. There&#x27;s a third kind of bilaterally symmetric quadrilateral: the <a href="http://en.wikipedia.org/wiki/Antiparallelogram">antiparallelogram</a>, the shape formed by twisting a parallelogram so that its two longer edges cross each other.
-<br />
+<p>It's easy to find statements in the literature that the only two kinds of quadrilateral with a single axis of symmetry are the <a href="http://en.wikipedia.org/wiki/Kite_(geometry)">kite</a> and the <a href="http://en.wikipedia.org/wiki/Isosceles_trapezoid">isosceles trapezoid</a>. But it's not true, unless one forbids self-crossings. There's a third kind of bilaterally symmetric quadrilateral: the <a href="http://en.wikipedia.org/wiki/Antiparallelogram">antiparallelogram</a>, the shape formed by twisting a parallelogram so that its two longer edges cross each other.</p>
 
-<br />
-If you apply <a href="http://femto.cs.uiuc.edu/faqs/cga-faq.html#S2.01">the usual formula for computing the area of a polygon</a> to an antiparallelogram, you&#x27;ll get something strange: it&#x27;s always zero. The formula is computed as a signed quantity, where regions that are surrounded clockwise by the polygon have the opposite sign to regions that are surrounded counterclockwise. The antiparallelogram has two regions that are always congruent to each other but with opposite signs, so they cancel.
-<br />
+<p>If you apply <a href="http://femto.cs.uiuc.edu/faqs/cga-faq.html#S2.01">the usual formula for computing the area of a polygon</a> to an antiparallelogram, you'll get something strange: it's always zero. The formula is computed as a signed quantity, where regions that are surrounded clockwise by the polygon have the opposite sign to regions that are surrounded counterclockwise. The antiparallelogram has two regions that are always congruent to each other but with opposite signs, so they cancel.</p>
 
-<br />
-With that in mind, I started to wonder: which antiparallelograms tile the plane? Obviously getting a nonzero sum of signed areas from a polygon with zero area is a problem, but we can ignore the signs. And every convex quadrilateral is a tiler, but that doesn&#x27;t have to be true for a crossed quadrilateral.
-<br />
+<p>With that in mind, I started to wonder: which antiparallelograms tile the plane? Obviously getting a nonzero sum of signed areas from a polygon with zero area is a problem, but we can ignore the signs. And every convex quadrilateral is a tiler, but that doesn't have to be true for a crossed quadrilateral.</p>
 
-<br />
-It turns out that every crossed rectangle tiles the plane by translation:
-<br />
+<p>It turns out that every crossed rectangle tiles the plane by translation:</p>
 
-<br />
-<div style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/crossrect-tiling.png" /></div>
-<br />
+<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/crossrect-tiling.png" alt="Tiling of the plane by crossed rectangles" /></p>
 
-<br />
-There are also three special antiparallelograms (two of them crossed rectangles) that tile the square, regular hexagon, or equilateral triangle, which in turn tile the plane:
-<br />
+<p>There are also three special antiparallelograms (two of them crossed rectangles) that tile the square, regular hexagon, or equilateral triangle, which in turn tile the plane:</p>
 
-<br />
-<div style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/antipar-tilers.png" /></div>
-<br />
+<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/antipar-tilers.png" alt="Antiparallelograms that tile the square, regular hexagon, and equilateral triangle" /></p>
 
-<br />
-Are these the only antiparallelograms that tile? Some others seem close to working, but just can&#x27;t quite fit together...
-<br />
+<p>Are these the only antiparallelograms that tile? Some others seem close to working, but just can't quite fit together...</p>
 
-<br />
-<div style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/antipar-fristration.png" /></div>
+<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/antipar-fristration.png" alt="A failed tiling of the plane by an antiparallelogram" /></p>
+
 <br /><br /><hr /><br />
 <h3>Comments:</h3>
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>ext_769483</b>: Single line of symmetry<br />
-<b>2011-08-31T10:39:32Z</b><br />
-Why does the antiparallelogram only have a single line of symmetry?
+<b>2011-08-31T10:39:32Z</b>
+<p>Why does the antiparallelogram only have a single line of symmetry?</p>
 </div>
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>11011110</b>: Re: Single line of symmetry<br />
-<b>2011-08-31T15:49:14Z</b><br />
-Well, the crossed rectangle has more than one, just as the rectangles and rhombi (special cases of isosceles trapezoids and kites respectively) have more than one. But in the general case there is only one; for instance, this is true of the one I&#x27;ve shown inside an equilateral triangle, and the one in the last figure.
+<b>2011-08-31T15:49:14Z</b>
+<p>Well, the crossed rectangle has more than one, just as the rectangles and rhombi (special cases of isosceles trapezoids and kites respectively) have more than one. But in the general case there is only one; for instance, this is true of the one I've shown inside an equilateral triangle, and the one in the last figure.</p>
 </div>
 
