@@ -9,7 +9,8 @@ The preprint is "Grid peeling and the affine curve-shortening flow", with Sariel
 The discrete process is the one where you find the [convex layers](https://en.wikipedia.org/wiki/Convex_layers) of a grid, or a subset of a grid. That is, you find the convex hull, remove its vertices, find the convex hull of the rest of the points, remove its vertices, etc. I wrote about it briefly a month ago, in a [G+ post on a related integer sequence](https://plus.google.com/100003628603413742554/posts/32p3w4KWLXn).
 When you do this to a square grid, the layers appear to get more circular as you go inwards (until they become so small that being on a grid forces them to get more polygonal again). When you do it to a rectangular grid, they appear to get elliptical. And when you do it to a quarter-infinite grid...
 
-<div style="text-align:center"><iframe width="560" height="315" src="https://www.youtube.com/embed/rX3r8KaLHck" frameborder="0" align="middle" allowfullscreen></iframe></div>
+<div style="text-align:center">
+<iframe style="border:none" width="560" height="315" src="https://www.youtube.com/embed/rX3r8KaLHck" allowfullscreen></iframe></div>
 
 ...you appear to get a hyperbola. What's going on?
 
