@@ -1,0 +1,321 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="990" height="429">
+    <path fill="none" stroke="#000" stroke-width="2" d="M801 411h36m0-90h36m0-54h36m36-54h36m-144-99v45m-36 0l36-45 36 45m-36-90h36M558 357h36m-9 0h36M513 204l-27 45h54zm-36-99h36M189 411h36m-72-108h36m-36-198h36m288 54h36m0 0h36m-396 90h36m36 0h36M153 357h36m-36 54h36m288-108h36M801 15h36m-36 252h36m36 54h36m-108 0h36m0 45v45m-36 0l36-45 36 45M801 69h36M549 303h36m216-90h36m36 0h36M477 357h36m45 54h36m-81 0h36m36 0h36m-144 0h36"/>
+    <g fill="#0081CD" stroke="#000">
+        <circle cx="189" cy="105" r="6"/>
+        <circle cx="189" cy="249" r="6"/>
+        <circle cx="189" cy="357" r="6"/>
+        <circle cx="189" cy="411" r="6"/>
+        <circle cx="261" cy="249" r="6"/>
+        <circle cx="513" cy="303" r="6"/>
+        <circle cx="837" cy="15" r="6"/>
+        <circle cx="837" cy="267" r="6"/>
+        <circle cx="837" cy="321" r="6"/>
+        <circle cx="837" cy="114" r="6"/>
+        <circle cx="837" cy="366" r="6"/>
+        <circle cx="837" cy="69" r="6"/>
+        <circle cx="585" cy="303" r="6"/>
+        <circle cx="837" cy="213" r="6"/>
+        <circle cx="909" cy="213" r="6"/>
+        <circle cx="981" cy="213" r="6"/>
+        <circle cx="513" cy="357" r="6"/>
+        <circle cx="585" cy="357" r="6"/>
+        <circle cx="513" cy="411" r="6"/>
+        <circle cx="585" cy="411" r="6"/>
+    </g>
+    <g fill="#FEC200" stroke="#000">
+        <circle cx="153" cy="51" r="9"/>
+        <circle cx="153" cy="195" r="9"/>
+        <circle cx="189" cy="195" r="9"/>
+        <circle cx="477" cy="51" r="9"/>
+        <circle cx="486" cy="249" r="9"/>
+        <circle cx="513" cy="51" r="9"/>
+        <circle cx="513" cy="204" r="9"/>
+        <circle cx="549" cy="51" r="9"/>
+        <circle cx="801" cy="159" r="9"/>
+        <circle cx="837" cy="159" r="9"/>
+        <circle cx="873" cy="159" r="9"/>
+        <circle cx="873" cy="15" r="9"/>
+        <circle cx="909" cy="15" r="9"/>
+        <circle cx="621" cy="303" r="9"/>
+        <circle cx="540" cy="249" r="9"/>
+        <circle cx="477" cy="105" r="9"/>
+        <circle cx="513" cy="105" r="9"/>
+        <circle cx="549" cy="105" r="9"/>
+        <circle cx="477" cy="159" r="9"/>
+        <circle cx="513" cy="159" r="9"/>
+        <circle cx="549" cy="159" r="9"/>
+        <circle cx="153" cy="303" r="9"/>
+        <circle cx="189" cy="303" r="9"/>
+        <circle cx="153" cy="105" r="9"/>
+        <circle cx="153" cy="249" r="9"/>
+        <circle cx="225" cy="249" r="9"/>
+        <circle cx="153" cy="357" r="9"/>
+        <circle cx="225" cy="357" r="9"/>
+        <circle cx="153" cy="411" r="9"/>
+        <circle cx="225" cy="411" r="9"/>
+        <circle cx="477" cy="303" r="9"/>
+        <circle cx="801" cy="15" r="9"/>
+        <circle cx="873" cy="267" r="9"/>
+        <circle cx="909" cy="267" r="9"/>
+        <circle cx="801" cy="267" r="9"/>
+        <circle cx="873" cy="321" r="9"/>
+        <circle cx="909" cy="321" r="9"/>
+        <circle cx="801" cy="321" r="9"/>
+        <circle cx="801" cy="411" r="9"/>
+        <circle cx="837" cy="411" r="9"/>
+        <circle cx="873" cy="411" r="9"/>
+        <circle cx="873" cy="69" r="9"/>
+        <circle cx="909" cy="69" r="9"/>
+        <circle cx="801" cy="69" r="9"/>
+        <circle cx="549" cy="303" r="9"/>
+        <circle cx="945" cy="213" r="9"/>
+        <circle cx="801" cy="213" r="9"/>
+        <circle cx="873" cy="213" r="9"/>
+        <circle cx="621" cy="357" r="9"/>
+        <circle cx="477" cy="357" r="9"/>
+        <circle cx="549" cy="357" r="9"/>
+        <circle cx="621" cy="411" r="9"/>
+        <circle cx="477" cy="411" r="9"/>
+        <circle cx="549" cy="411" r="9"/>
+    </g>
+    <g font-family="Times,serif">
+        <g font-style="italic" font-size="18">
+            <text transform="translate(149.005 55)">
+                x
+            </text>
+            <text transform="translate(149.005 199)">
+                x
+            </text>
+            <text transform="translate(185.005 199)">
+                y
+            </text>
+            <text transform="translate(473.006 55)">
+                x
+            </text>
+            <text transform="translate(482.006 253)">
+                x
+            </text>
+            <text transform="translate(509.006 55)">
+                y
+            </text>
+            <text transform="translate(509.006 208)">
+                y
+            </text>
+            <text transform="translate(545.498 55)">
+                z
+            </text>
+            <text transform="translate(797.006 163)">
+                x
+            </text>
+            <text transform="translate(833.006 163)">
+                y
+            </text>
+            <text transform="translate(869.498 163)">
+                z
+            </text>
+            <text transform="translate(869.006 19)">
+                y
+            </text>
+            <text transform="translate(905.498 19)">
+                z
+            </text>
+            <text transform="translate(617.498 307)">
+                z
+            </text>
+            <text transform="translate(536.498 253)">
+                z
+            </text>
+            <text transform="translate(473.006 109)">
+                x
+            </text>
+            <text transform="translate(509.006 109)">
+                y
+            </text>
+            <text transform="translate(545.498 109)">
+                z
+            </text>
+            <text transform="translate(473.006 163)">
+                x
+            </text>
+            <text transform="translate(509.006 163)">
+                y
+            </text>
+            <text transform="translate(545.498 163)">
+                z
+            </text>
+            <text transform="translate(149.005 307)">
+                x
+            </text>
+            <text transform="translate(185.005 307)">
+                y
+            </text>
+            <text transform="translate(149.005 109)">
+                x
+            </text>
+            <text transform="translate(149.005 253)">
+                x
+            </text>
+            <text transform="translate(221.005 253)">
+                y
+            </text>
+            <text transform="translate(149.005 361)">
+                x
+            </text>
+            <text transform="translate(221.005 361)">
+                y
+            </text>
+            <text transform="translate(149.005 415)">
+                x
+            </text>
+            <text transform="translate(221.005 415)">
+                y
+            </text>
+            <text transform="translate(473.006 307)">
+                x
+            </text>
+            <text transform="translate(797.006 19)">
+                x
+            </text>
+            <text transform="translate(869.006 271)">
+                y
+            </text>
+            <text transform="translate(905.498 271)">
+                z
+            </text>
+            <text transform="translate(797.006 271)">
+                x
+            </text>
+            <text transform="translate(869.006 325)">
+                y
+            </text>
+            <text transform="translate(905.498 325)">
+                z
+            </text>
+            <text transform="translate(797.006 325)">
+                x
+            </text>
+            <text transform="translate(797.006 415)">
+                x
+            </text>
+            <text transform="translate(833.006 415)">
+                y
+            </text>
+            <text transform="translate(869.498 415)">
+                z
+            </text>
+            <text transform="translate(869.006 73)">
+                y
+            </text>
+            <text transform="translate(905.498 73)">
+                z
+            </text>
+            <text transform="translate(797.006 73)">
+                x
+            </text>
+            <text transform="translate(545.006 307)">
+                y
+            </text>
+            <text transform="translate(941.498 217)">
+                z
+            </text>
+            <text transform="translate(797.006 217)">
+                x
+            </text>
+            <text transform="translate(869.006 217)">
+                y
+            </text>
+            <text transform="translate(617.498 361)">
+                z
+            </text>
+            <text transform="translate(473.006 361)">
+                x
+            </text>
+            <text transform="translate(545.006 361)">
+                y
+            </text>
+            <text transform="translate(617.498 415)">
+                z
+            </text>
+            <text transform="translate(473.006 415)">
+                x
+            </text>
+            <text transform="translate(545.006 415)">
+                y
+            </text>
+        </g>
+        <g font-size="24">
+            <text transform="translate(9 24)">
+                <tspan x="0" y="0">|</tspan><tspan x="4.805" y="0" font-style="italic">T</tspan><tspan x="18.152" y="0">| = 1:</tspan>
+            </text>
+            <text transform="translate(333 24)">
+                <tspan x="0" y="0">|</tspan><tspan x="4.805" y="0" font-style="italic">T</tspan><tspan x="18.152" y="0">| = 3:</tspan>
+            </text>
+            <text transform="translate(9 168)">
+                <tspan x="0" y="0">|</tspan><tspan x="4.805" y="0" font-style="italic">T</tspan><tspan x="18.152" y="0">| = 2:</tspan>
+            </text>
+            <text transform="translate(93 57)">
+                Ø:
+            </text>
+            <text transform="translate(417 57)">
+                Ø:
+            </text>
+            <text transform="translate(93 201)">
+                Ø:
+            </text>
+            <text transform="translate(99.68 111)">
+                <tspan x="0" y="0" font-style="italic">x</tspan><tspan x="10.652" y="0">:</tspan>
+            </text>
+            <text transform="translate(99.68 363)">
+                <tspan x="0" y="0" font-style="italic">x</tspan><tspan x="10.652" y="0">:</tspan>
+            </text>
+            <text transform="translate(747.68 21)">
+                <tspan x="0" y="0" font-style="italic">x</tspan><tspan x="10.652" y="0">:</tspan>
+            </text>
+            <text transform="translate(77.027 417)">
+                <tspan x="0" y="0" font-style="italic">x, y</tspan><tspan x="33.305" y="0">:</tspan>
+            </text>
+            <text transform="translate(725.027 75)">
+                <tspan x="0" y="0" font-style="italic">x, y</tspan><tspan x="33.305" y="0">:</tspan>
+            </text>
+            <text transform="translate(703.688 147)">
+                <tspan x="0" y="0" font-style="italic">x, y, z</tspan><tspan x="54.645" y="0">:</tspan>
+            </text>
+            <text transform="translate(89.027 255)">
+                <tspan x="0" y="0" font-style="italic">xy</tspan><tspan x="21.305" y="0">:</tspan>
+            </text>
+            <text transform="translate(59.695 309)">
+                <tspan x="0" y="0">Ø, </tspan><tspan x="29.332" y="0" font-style="italic">xy</tspan><tspan x="50.637" y="0">:</tspan>
+            </text>
+            <text transform="translate(383.695 111)">
+                <tspan x="0" y="0">Ø, </tspan><tspan x="29.332" y="0" font-style="italic">xy</tspan><tspan x="50.637" y="0">:</tspan>
+            </text>
+            <text transform="translate(351.703 165)">
+                <tspan x="0" y="0">Ø, </tspan><tspan x="29.332" y="0" font-style="italic">xy, xz</tspan><tspan x="82.629" y="0">:</tspan>
+            </text>
+            <text transform="translate(319.71 228)">
+                <tspan x="0" y="0">Ø, </tspan><tspan x="29.332" y="0" font-style="italic">xy, xz, yz</tspan><tspan x="114.621" y="0">:</tspan>
+            </text>
+            <text transform="translate(413.027 309)">
+                <tspan x="0" y="0" font-style="italic">xy</tspan><tspan x="21.305" y="0">:</tspan>
+            </text>
+            <text transform="translate(727.688 219)">
+                <tspan x="0" y="0" font-style="italic">xyz</tspan><tspan x="30.645" y="0">:</tspan>
+            </text>
+            <text transform="translate(705.035 273)">
+                <tspan x="0" y="0" font-style="italic">xyz, x</tspan><tspan x="53.297" y="0">:</tspan>
+            </text>
+            <text transform="translate(682.383 327)">
+                <tspan x="0" y="0" font-style="italic">xyz, x, y</tspan><tspan x="75.949" y="0">:</tspan>
+            </text>
+            <text transform="translate(661.043 399)">
+                <tspan x="0" y="0" font-style="italic">xyz, x, y, z</tspan><tspan x="97.289" y="0">:</tspan>
+            </text>
+            <text transform="translate(381.035 363)">
+                <tspan x="0" y="0" font-style="italic">xy, xz</tspan><tspan x="53.297" y="0">:</tspan>
+            </text>
+            <text transform="translate(349.043 417)">
+                <tspan x="0" y="0" font-style="italic">xy, xz, yz</tspan><tspan x="85.289" y="0">:</tspan>
+            </text>
+        </g>
+    </g>
+</svg>
