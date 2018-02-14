@@ -3,7 +3,7 @@ layout: post
 title: "#MeToo in theoretical computer science"
 date: 2018-02-14 10:06
 ---
-This guest post was sent to me by a colleague who wishes to remain anonymous. It is also [crossposted on Suresh Venkatasubramanian's blog](http://blog.geomblog.org/2018/02/a-metoo-testimonial-that-hits-close-to.html).
+This guest post was sent to me by a colleague who wishes to remain anonymous. It is also crossposted on [Geomblog](http://blog.geomblog.org/2018/02/a-metoo-testimonial-that-hits-close-to.html) and [Ernie's 3d pancakes](http://3dpancakes.typepad.com/ernie/2018/02/metoo-guest-post.html).
 
 &nbsp;
 
