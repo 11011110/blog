@@ -11,7 +11,7 @@ For [Wikipedia's February women in mathematics edit-a-thon](https://en.wikipedia
 
 * [Lucia Caporaso](https://en.wikipedia.org/wiki/Lucia_Caporaso). Professor at Roma Tre. Researcher in algebraic geometry, arithmetic geometry, tropical geometry and enumerative geometry. Winner of the Bartolozzi Prize and invited speaker at the 2018 ICM.
 
-* [Bettye Anne Case](https://en.wikipedia.org/wiki/Bettye_Anne_Case). Olga Larson Professor Emerita of Mathematics at Florida State University. Researcher in complex variables, mathematics education, and the history of mathematics award. Editor of _Complexities: Women in Mathematics_. Lifetime Service Award winner and inaugural Fellow of the Association for Women in Mathematics.
+* [Bettye Anne Case](https://en.wikipedia.org/wiki/Bettye_Anne_Case). Olga Larson Professor Emerita of Mathematics at Florida State University. Researcher in complex variables, mathematics education, and the history of mathematics. Editor of _Complexities: Women in Mathematics_. Lifetime Service Award winner and inaugural Fellow of the Association for Women in Mathematics.
 
 * [Margaret Cheney](https://en.wikipedia.org/wiki/Margaret_Cheney). Yates Chair and Professor of Mathematics at Colorado State University. Inaugural Lise Meitner Visiting Professor at Lund University. SIAM Fellow "for contributions to inverse problems in acoustics and electromagnetic theory". Honorary doctorate from Oberlin College.
 
