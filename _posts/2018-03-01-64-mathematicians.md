@@ -67,6 +67,8 @@ For [Wikipedia's February women in mathematics edit-a-thon](https://en.wikipedia
 
 * [Julie Lutz](https://en.wikipedia.org/wiki/Julie_Lutz). Former Boeing Distinguished Professor of Mathematics and Science Education at Washington State University and professor emeritus at the University of Washington. Researcher on planetary nebulae and symbiotic binary stars. President of the Astronomical Society of the Pacific. Fellow of the RAS and AAAS. Winner of the United Negro College Fund President's Award.
 
+* [Barbara MacCluer](https://en.wikipedia.org/wiki/Barbara_MacCluer). Professor emeritus at the University of Virginia. Researcher in operator theory and composition operators; author of two books on operator theory and one textbook on functional analysis.
+
 * [Hélène Massam](https://en.wikipedia.org/wiki/H%C3%A9l%C3%A8ne_Massam). Professor of mathematics and statistics at York University, known for her research on the Wishart distribution and on graphical models. Fellow of the IMS.
 
 * [Uta Merzbach](https://en.wikipedia.org/wiki/Uta_Merzbach). Theresienstadt survivor. First curator of mathematical instruments at the Smithsonian Institution. Author of _A History of Mathematics_.
@@ -81,17 +83,15 @@ For [Wikipedia's February women in mathematics edit-a-thon](https://en.wikipedia
 
 * [Olympia Nicodemi](https://en.wikipedia.org/wiki/Olympia_Nicodemi). Distinguished Teaching Professor of Mathematics at SUNY Geneseo. Researcher on wavelets and the history of mathematics. Author of two mathematics textbooks. Significantly increased female enrollment in mathematics at her campus. Winner of the Haimo Award.
 
+* [Helena J. Nussenzveig Lopes](https://en.wikipedia.org/wiki/Helena_J._Nussenzveig_Lopes). Professor at the Federal University of Rio de Janeiro. Expert on the Euler equations for incompressible flow in fluid dynamics. Chaired the SIAM Activity Group on Analysis of Partial Differential Equations. National Order of Scientific Merit and SIAM Fellow.
+
 * [Ortrud Oellermann](https://en.wikipedia.org/wiki/Ortrud_Oellermann). Professor at the University of Winnipeg. Graph theorist, author of _Applied and Algorithmic Graph Theory_ and of well-cited papers on metric dimension and convex hulls in graphs. Invented the concept of [highly irregular graphs](https://en.wikipedia.org/wiki/Highly_irregular_graph). Winner of the Silver British Association Medal, the Naude Medal, and the Hall Medal.
+
+* [Laura Person](https://en.wikipedia.org/wiki/Laura_Person). Distinguished Teaching Professor and academic coordinator for volleyball at SUNY Potsdam. Low-dimensional topologist. Author of _Write Your Own Proofs In Set Theory and Discrete Mathematics_. Winner of the Stephens Award.
 
 * [Sonia Petrone](https://en.wikipedia.org/wiki/Sonia_Petrone). Professor at Bocconi University. Known for her use of Bernstein polynomials for nonparametric methods in Bayesian statistics. Author of _Dynamic Linear Models with R_. President of the International Society for Bayesian Analysis. Winner of the Lindley Prize and Fellow of ISBA.
 
 * [Jennifer Quinn](https://en.wikipedia.org/wiki/Jennifer_Quinn). Professor at the University of Washington Tacoma, governor of the MAA, and co-editor-in-chief of _Math Horizons_. Graph theorist, and author of _Proofs that Really Count: The Art of Combinatorial Proof_. Winner of an MAA Distinguished Teaching Award, the Haimo Award, the Choice Award, and the Beckenbach Book Prize.
-
-* [Barbara MacCluer](https://en.wikipedia.org/wiki/Barbara_MacCluer). Professor emeritus at the University of Virginia. Researcher in operator theory and composition operators; author of two books on operator theory and one textbook on functional analysis.
-
-* [Helena J. Nussenzveig Lopes](https://en.wikipedia.org/wiki/Helena_J._Nussenzveig_Lopes). Professor at the Federal University of Rio de Janeiro. Expert on the Euler equations for incompressible flow in fluid dynamics. Chaired the SIAM Activity Group on Analysis of Partial Differential Equations. National Order of Scientific Merit and SIAM Fellow.
-
-* [Laura Person](https://en.wikipedia.org/wiki/Laura_Person). Distinguished Teaching Professor and academic coordinator for volleyball at SUNY Potsdam. Low-dimensional topologist. Author of _Write Your Own Proofs In Set Theory and Discrete Mathematics_. Winner of the Stephens Award.
 
 * [Gesine Reinert](https://en.wikipedia.org/wiki/Gesine_Reinert). University Professor in Statistics at Oxford and Fellow of Keble College, of the Alan Turing Institute, and of the IMS. Researcher in the probability theory and statistics of biological sequences and biological networks.
 
