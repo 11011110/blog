@@ -70,6 +70,9 @@ table td {
   border:0px;
   background-color: #ffffff;
 }
+table {
+  border:0px;
+}
 
 // WTF this is not coming through in the local css but it is on github
 .site-nav .nav-trigger { display: none; }
