@@ -65,5 +65,11 @@ body {
   border-top: 1px solid #5f1400;
 }
 
+// Fix wonky minima table formatting
+table td {
+  border:0px;
+  background-color: #ffffff;
+}
+
 // WTF this is not coming through in the local css but it is on github
 .site-nav .nav-trigger { display: none; }
