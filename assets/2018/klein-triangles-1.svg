@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="504" height="342">
+    <g stroke="#000">
+        <path fill="#FFEBAA" d="M36 315l72-288 360 216z"/>
+        <path fill="#AAD5EF" d="M81 135l9 171 243-144z"/>
+    </g>
+    <g font-family="Times,serif" font-style="italic" font-size="30">
+        <text transform="translate(81 27)">A</text>
+        <text transform="translate(9 333)">B</text>
+        <text transform="translate(477 252)">C</text>
+        <text transform="translate(83.334 337.334)">X</text>
+        <text transform="translate(54 144)">Z</text>
+        <text transform="translate(342 162)">Y</text>
+    </g>
+</svg>

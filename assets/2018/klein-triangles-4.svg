@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="504" height="342">
+    <g stroke="#000">
+        <path fill="#FFEBAA" d="M36 315l72-288 360 216z"/>
+        <path fill="#AAD5EF" d="M81 135l9 171 243-144z"/>
+        <path fill="#009246" d="M142.826 274.695L90 306l-9-171 61.826 139.695"/>
+        <path fill="#EBE" d="M81 135L36 315l54-9z"/>
+    </g>
+    <path fill="none" stroke="#BC1E47" stroke-width="2" d="M153 468l-9-171-9-171-9-171M81 342l90-360"/>
+    <g font-family="Times,serif" font-style="italic" font-size="30">
+        <text transform="translate(81 27)">A</text>
+        <text transform="translate(9 333)">B</text>
+        <text transform="translate(477 252)">C</text>
+        <text transform="translate(99 333)">X</text>
+        <text transform="translate(54 135)">Z</text>
+        <text transform="translate(342.5 162.5)">Y</text>
+        <text transform="translate(171 27)">L</text>
+        <text transform="translate(153 333)">M</text>
+        <text transform="translate(144.333 262.666)">D</text>
+    </g>
+</svg>

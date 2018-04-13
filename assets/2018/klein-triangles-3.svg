@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="504" height="342">
+    <g stroke="#000">
+        <path fill="#FFEBAA" d="M36 315l72-288 360 216z"/>
+        <path fill="#AAD5EF" d="M81 135l9 171 243-144z"/>
+    </g>
+    <g fill="none">
+        <path stroke="#BC1E47" stroke-width="2" d="M153 468l-9-171-9-171-9-171"/>
+        <path stroke="#BC1E47" stroke-width="2" d="M81 342l90-360"/>
+        <path stroke="#009246" stroke-width="4" d="M153 54l315 189"/>
+    </g>
+    <g font-family="Times,serif">
+        <g font-style="italic" font-size="30">
+            <text transform="translate(81 27)">A</text>
+            <text transform="translate(9 333)">B</text>
+            <text transform="translate(477 252)">C</text>
+            <text transform="translate(99 333)">X</text>
+            <text transform="translate(54 135)">Z</text>
+            <text transform="translate(171 27)">L</text>
+            <text transform="translate(153 333)">M</text>
+        </g>
+        <g font-size="24" fill="#009246">
+            <text transform="rotate(30.963 -21.299 389.767)" font-style="italic">Y</text>
+            <text transform="rotate(30.963 -33.152 433.759)">must be on this segment</text>
+        </g>
+    </g>
+</svg>
