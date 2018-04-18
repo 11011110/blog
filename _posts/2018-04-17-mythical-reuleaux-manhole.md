@@ -24,4 +24,4 @@ So I think it's far enough from being a good illustration of the manhole story t
 
 If anyone does know of somewhere that uses actual Reuleaux triangle shaped manhole covers, please tell me where to find them.
 
-(This has been episode 3 of _Things That Are Not Reuleaux Triangles_. For episodes 1 and 2 see [The shape of the Kresge Auditorium]({{site.baseurl}}{% post_url 2016-04-30-shape-of-kresge %}) and [Triforce string art](https://plus.google.com/100003628603413742554/posts/DpF5krEaU9u) respectively. Maybe some day I'll continue the series with something about the Wankel rotary engine.)
+(As usual see [G+](https://plus.google.com/100003628603413742554/posts/d3spDCQ7s9Z) for comments. This has been episode 3 of _Things That Are Not Reuleaux Triangles_. For episodes 1 and 2 see [The shape of the Kresge Auditorium]({{site.baseurl}}{% post_url 2016-04-30-shape-of-kresge %}) and [Triforce string art](https://plus.google.com/100003628603413742554/posts/DpF5krEaU9u) respectively. Maybe some day I'll continue the series with something about the Wankel rotary engine.)
