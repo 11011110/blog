@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="729" height="576">
+    <g fill="none" stroke="#0081CD">
+        <path d="M162 450l72-216 72 216zm477-270l-72 216h144z"/>
+        <path d="M639 180l-63 234h126z"/>
+        <path d="M639 180l-54 252h108z"/>
+        <path d="M639 180l-45 270h90z"/>
+        <path d="M639 180l-36 288h72z"/>
+        <path d="M639 180l-27 306h54z"/>
+    </g>
+    <g fill="none" stroke="#000">
+        <circle cx="162" cy="450" r="72"/>
+        <circle cx="306" cy="450" r="72"/>
+        <circle cx="234" cy="234" r="225"/>
+    </g>
+    <path fill="none" stroke="#BC1E47" stroke-width="3" d="M234 540v-54"/>
+    <path fill="#BC1E47" d="M234 479.663c1.106 2.981 2.994 6.682 4.993 8.975L234 486.832l-4.993 1.806c1.999-2.293 3.887-5.993 4.993-8.975z"/>
+    <path fill="none" stroke="#FEC200" stroke-width="10" d="M477 261h63"/>
+    <path fill="#FEC200" d="M561.123 261c-9.939 3.688-22.271 9.98-29.914 16.642l6.02-16.642-6.02-16.642c7.643 6.662 19.975 12.955 29.914 16.642z"/>
+    <g fill="#0081CD" stroke="#000">
+        <circle cx="162" cy="450" r="3"/>
+        <circle cx="306" cy="450" r="3"/>
+        <circle cx="234" cy="234" r="3"/>
+        <circle cx="639" cy="180" r="3"/>
+        <circle cx="567" cy="396" r="3"/>
+        <circle cx="711" cy="396" r="3"/>
+        <circle cx="702" cy="414" r="3"/>
+        <circle cx="693" cy="432" r="3"/>
+        <circle cx="684" cy="450" r="3"/>
+        <circle cx="675" cy="468" r="3"/>
+        <circle cx="666" cy="486" r="3"/>
+        <circle cx="612" cy="486" r="3"/>
+        <circle cx="603" cy="468" r="3"/>
+        <circle cx="594" cy="450" r="3"/>
+        <circle cx="585" cy="432" r="3"/>
+        <circle cx="576" cy="414" r="3"/>
+    </g>
+    <g fill="#BC1E47" font-family="Times,serif" font-size="24">
+        <text transform="translate(207 567)">repeat</text>
+        <text transform="translate(566.678 90)">
+            <tspan x="0" y="0">many mutually</tspan><tspan x="-11.994" y="28.8">crossing triangles</tspan><tspan x="9.68" y="57.6">(not to scale)</tspan>
+        </text>
+    </g>
+</svg>
