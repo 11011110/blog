@@ -20,3 +20,5 @@ If what we want from principle 1 is a proper, fair, and non-corrupt editorial sy
 Also, I think there should be a principle 6: the journal should follow best practices in making its content readable by viewers, accessible to the disabled, reliable in the event of failures, and available for indexing. (That is, use standard file formats, follow the standards for those formats, set up proper backups or mirrors, provide properly formatted metadata, and inform the search engines that need informing that you and your papers exist.) If we're going to set standards for what a reputable open access journal should do, these things are important.
 
 With all that as caveat, I support the Fair Open Access principles.
+
+([G+](https://plus.google.com/100003628603413742554/posts/JcXeebfPBtG))
