@@ -11,3 +11,5 @@ Look what arrived in the mail yesterday! It's both the hardback and paperback ed
 (The props don't have much to do with the content of the book. They're mostly there because I needed something to hold the books in place while I photographed them.)
 
 I really like how it came out as a physical object. They're using a high-quality, thin but opaque enough, and very glossy paper that works well with the printing, there's color on every page, and the color reproduction looks good. (I'm still pleased with how the content came out, too, but that's more for other people to judge.)
+
+([G+](https://plus.google.com/100003628603413742554/posts/bcAdJJgogkx))
