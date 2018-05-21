@@ -3,7 +3,7 @@ layout: post
 title: Lies to children
 date: 2018-05-20 16:44
 ---
-Here's an instructive if somewhat horrifying episode in the history of the history of women in mathematics (and why we need to be careful what we consider as reliable sources, on Wikipedia and elsewhere). It's mostly drawn from [this discussion](https://en.wikipedia.org/w/index.php?title=Talk:Hypatia&oldid=842205174#"Training_program"_and_upbringing) on Wikipedia, where credit is due to Wikipedia editors Phso2 and Katolophyromai for uncovering it.
+Here's an instructive if somewhat horrifying episode in the history of the history of women in mathematics (and why we need to be careful what we consider as reliable sources, on Wikipedia and elsewhere). It's mostly drawn from [this discussion](https://en.wikipedia.org/w/index.php?title=Talk:Hypatia&oldid=842230434#"Training_program"_and_upbringing) on Wikipedia, where credit is due to Wikipedia editors Phso2 and Katolophyromai for uncovering it.
 
 It seems that in the early 20th century, [Elbert Hubbard](https://en.wikipedia.org/wiki/Elbert_Hubbard) wrote a series of historical fiction pieces aimed at children, collected in his 14-volume _Little Journeys to the Homes of Great Teachers_. [One of the volumes](https://archive.org/details/littlejourneyst191610hubb) (first published in 1908) includes a story about [Hypatia](https://en.wikipedia.org/wiki/Hypatia). We don't know much about Hypatia's actual life, so Hubbard's story is almost entirely made up from Hubbard's own imagination: the training regimen her father set her, her journey to Athens to visit Plutarch, the 20th-century rationalist doctrines her father instilled in her (later to be attributed as quotes to her), all fiction.
 
