@@ -13,3 +13,5 @@ But in the late 20th century, some authors began collecting information about th
 ![Jules Maurice Gaspard's 1908 children's-book illustration of Hypatia, now her "most iconic and widely reproduced image"]({{site.baseurl}}/assets/2018/Gaspard-Hypatia.png)
 
 Fortunately, all this has now been rooted out of the historical part of the Wikipedia Hypatia article, and relegated to a section on modern fictional treatments of Hypatia, where it is clearly marked as non-factual. But Osen, Alic, and Yount continue to be used as the sources for several other Wikipedia articles. If they were this sloppy about Hypatia, who knows what other made-up claims from them are still being treated as factual? Or which other sources, cribbing from these ones, will continue to be thought reliable?
+
+([G+](https://plus.google.com/100003628603413742554/posts/eo6RyqLn1oB))
