@@ -9,7 +9,7 @@ And when there is more than one vertex, [flat foldability is NP-complete](http:/
 But what about when there are zero vertices, like in this example?
 
 {: style="text-align:center"}
-![Triangular vertex-free impossible folding pattern]({{site.baseurl}}/assets/2018/unfoldable-triangle.png)
+![Triangular vertex-free impossible folding pattern]({{site.baseurl}}/assets/2018/unfoldable-triangle.svg)
 
 In the case of this diagram, it turns out to be impossible. No matter how you choose which of the creases should be mountain folds, and which should be valley folds, and no matter which creases you fold above which other ones, you will not be able to use all the creases shown (and only the creases shown) and make it fold flat.
 
@@ -21,3 +21,5 @@ On the other hand, I have a proof (too inelegant for this <s>margin</s> blog pos
 I think it would be interesting to characterize more generally which shapes of paper have this property, that all vertex-free patterns are flat-foldable, but it seems difficult. It's not only about the fact that the equilateral triangle has acute angles (although that seems to be important), for instance, because you could trim the corners of the diagram above and get a 120-degree hexagon folding pattern that is still not foldable.
 
 Beyond these mathematical questions, it might also be amusing to consider what recognizable shapes can be made from flat-folded vertex-free origami patterns on square paper. [Joseph Wu's one-fold stegosaurus](http://www.josephwu.com/Files/PDF/stegosaurus.pdf) is a nice example.
+
+([G+](https://plus.google.com/100003628603413742554/posts/VXhf4HfmYeP))
