@@ -3,7 +3,7 @@ layout: post
 title: Vertex-free flat folding
 date: 2018-06-22 23:21
 ---
-The diagram below shows an origami folding pattern for a sheet of triangular paper. The internal segments of the triangle should all be folded, but I haven't specified whether they should be mountain folds or valley folds. This diagram is unusual among origami folding patterns, not only for the shape of the paper, but for the fact that all of the creases go all the way across the paper without crossing each other or terminating at a vertex.
+The diagram below shows an origami folding pattern for a sheet of triangular paper. The internal segments of the triangle should all be folded, but I haven't specified whether they should be mountain folds or valley folds. This diagram is unusual among origami folding patterns, not only for the shape of the paper, but for the fact that all of the creases go all the way across the paper without crossing each other or terminating at a vertex (a point interior to the paper where multiple creases meet).
 We know how to tell whether a folding pattern with a single vertex (and no other creases) is foldable, using [Kawasaki's theorem](https://en.wikipedia.org/wiki/Kawasaki%27s_theorem) and [Maekawa's theorem](https://en.wikipedia.org/wiki/Maekawa%27s_theorem).
 And when there is more than one vertex, [flat foldability is NP-complete](http://portal.acm.org/citation.cfm?id=313852.313918).
 But what about when there are zero vertices, like in this example?
