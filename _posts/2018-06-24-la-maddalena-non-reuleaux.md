@@ -21,3 +21,5 @@ Notice how much more room there is on the top and bottom margins of the square f
 
 {: style="text-align:center"}
 ![La Maddalena at sunset](http://www.ics.uci.edu/~eppstein/pix/lamaddalena/SunsetJetty-m.jpg){: style="border-style:solid;border-color:black;"}
+
+([G+](https://plus.google.com/100003628603413742554/posts/Afocmn7aUBc))
