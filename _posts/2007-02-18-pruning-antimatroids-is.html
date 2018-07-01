@@ -4,20 +4,12 @@ title:  'Pruning antimatroids is hard'
 date:   2007-02-18 22:51:00
 tags:   [antimatroids, complexity theory]
 ---
-After working on the <a href="http://en.wikipedia.org/wiki/Antimatroid">Wikipedia Antimatroid article</a> this weekend, I was excited to realize that my <a href="http://arxiv.org/abs/cs.CG/0503023">paper on maximum subtrees</a> with <b><a href="http://chouyu_31.livejournal.com/"><img src="http://stat.livejournal.com/img/userinfo.gif" alt="[info]" width="17" height="17" style="vertical-align: bottom; border: 0;" />chouyu_31</a></b> from SWAT&#x27;06 could be interpreted as an antimatroid algorithm: there is an antimatroid whose convex sets are subtrees of a tree, so this problem is finding maximum weight convex sets in certain kinds of antimatroids. Could it be generalized to all antimatroids?
-<br />
+<p>After working on the <a href="http://en.wikipedia.org/wiki/Antimatroid">Wikipedia Antimatroid article</a> this weekend, I was excited to realize that my <a href="http://arxiv.org/abs/cs.CG/0503023">paper on maximum subtrees</a> with <b><a href="http://chouyu_31.livejournal.com/"><img src="{{site.baseurl}}/assets/lj-userinfo.gif" alt="[info]" width="17" height="17" style="vertical-align: bottom; border: 0;" />chouyu_31</a></b> from SWAT'06 could be interpreted as an antimatroid algorithm: there is an antimatroid whose convex sets are subtrees of a tree, so this problem is finding maximum weight convex sets in certain kinds of antimatroids. Could it be generalized to all antimatroids?</p>
 
-<br />
-Sadly, no. 
-<br />
+<p>Sadly, no.</p>
 
-<br />
-If one is given the family of feasible sets of an antimatroid, and a real weight for each element, it&#x27;s trivial to find the maximum weight convex set: just test the complement of each feasible set. But if one is given a more compact representation, say the path poset of the antimatroid, there&#x27;s an easy NP-completeness reduction from minimum vertex cover:
-<br />
+<p>If one is given the family of feasible sets of an antimatroid, and a real weight for each element, it's trivial to find the maximum weight convex set: just test the complement of each feasible set. But if one is given a more compact representation, say the path poset of the antimatroid, there's an easy NP-completeness reduction from minimum vertex cover:</p>
 
-<br />
-Given a graph (on which we wish to find a vertex cover), construct a path poset with sets {v} for each vertex in G and {u,{u,v}} and {v,{u,v}} for each edge {u,v} in G. Weight each vertex +1 and each edge -n. Then a convex set in the antimatroid represented by this path poset is formed by removing some vertices from G and some edges covered by the removed vertices. The maximum weight convex set has all edges removed (because their weights are too negative) and only as few vertices removed as needed to cover all edges. Its weight is n - C where C is the size of the optimal vertex cover.
-<br />
+<p>Given a graph (on which we wish to find a vertex cover), construct a path poset with sets \( \{ v \} \) for each vertex in \( G \) and \( \{ u, \{ u,v \} \} \) and \( \{ v, \{ u,v \} \} \) for each edge \( \{ u,v \} \) in G. Weight each vertex \( +1 \) and each edge \( -n \). Then a convex set in the antimatroid represented by this path poset is formed by removing some vertices from \( G \) and some edges covered by the removed vertices. The maximum weight convex set has all edges removed (because their weights are too negative) and only as few vertices removed as needed to cover all edges. Its weight is \( n-C \) where \( C \) is the size of the optimal vertex cover.</p>
 
-<br />
-For shelling antimatroids of planar point sets, though, the maximum weight convex subset can be found I think by the dynamic programming procedure in <a href="http://www.ics.uci.edu/~eppstein/pubs/EppOveRot-DCG-92.pdf">this old paper of mine</a>.
+<p>For shelling antimatroids of planar point sets, though, the maximum weight convex subset can be found I think by the dynamic programming procedure in <a href="http://www.ics.uci.edu/~eppstein/pubs/EppOveRot-DCG-92.pdf">this old paper of mine</a>.</p>
