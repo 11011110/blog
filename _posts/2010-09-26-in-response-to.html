@@ -14,32 +14,34 @@ tags:   [symmetry, graph drawing, lombardi]
 
 <p>But, when I need to draw graphs for my own purposes outside the context of graph drawing research, that's not what I do. When I write papers in other areas of graph theory or graph algorithms, or edit Wikipedia articles that relate to graphs, or write blog posts about graphs, what I typically want is a static image of a small and specific graph that shows off some aspect of its structure: a coloring of its vertices or edges, a distinguished subgraph such as a Hamiltonian cycle, or (most relevantly for \( K_7 \)) its high degree of symmetry. In 2d, the most symmetric drawings I could find of \( K_7 \) have symmetry groups of orders 12 and 14, far below the 5040 symmetries of the graph itself.</p>
 
-<div><table style="margin-left:auto;margin-right:auto"><tr align="center" valign="middle">
-<td><img src="http://www.ics.uci.edu/~eppstein/0xDE/k7/dihedral6.png" /></td><td width="20px""> </td>
-<td><img src="http://www.ics.uci.edu/~eppstein/0xDE/k7/dihedral7.png" /></td><td width="20px""> </td>
-<td><img src="http://www.ics.uci.edu/~eppstein/0xDE/k7/vennk7.png" /></td></tr></table></div>
+<div><table style="margin-left:auto;margin-right:auto">
+<tr style="text-align:center;vertical-align:middle">
+<td style="padding:10px"><img src="{{site.baseurl}}/assets/2010/k7/dihedral6.svg" alt="drawing of K_7 with 6-fold dihedral symmetry" /></td>
+<td style="padding:10px"><img src="{{site.baseurl}}/assets/2010/k7/dihedral7.svg" alt="drawing of K_7 with 7-fold dihedral symmetry" /></td>
+<td style="padding:10px"><img src="{{site.baseurl}}/assets/2010/k7/vennk7.svg" alt="drawing of K_7 with 3-fold dihedral symmetry" /></td></tr></table></div>
 
 <p>(In these drawings, some of the edges extend "to infinity and beyond" to connect diametrally opposite pairs of vertices.) Even some smaller symmetry groups are out of reach: I couldn't find drawings with 4- or 5-dihedral symmetry, for instance. But in 3d, although it's still not possible to realize all 5040 symmetries at once (that takes six dimensions) we can get a lot closer, with a symmetry group of order 48:</p>
 
-<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/k7/octahedral.png" /></p>
+<p style="text-align:center"><img src="{{site.baseurl}}/assets/2010/k7/octahedral.png" alt="3d drawing of K_7 with order-48 symmetry" /></p>
 
 <p>Another interesting 3d Lombardi drawing of \( K_7 \) involves tetrahedral symmetry: if one places four spheres with centers on the vertices of a regular tetrahedron, with the appropriate radius to make these spheres meet at right angles, and one can place \( K_7 \) with its vertices at the points of triple intersection of the spheres and its edges along the circles where two spheres intersect.</p>
 
-<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/k7/FourSpheres.png" /></p>
+<p style="text-align:center"><img src="{{site.baseurl}}/assets/2010/k7/FourSpheres.png" alt="3d drawing of K_7 as the vertices and edges of an arrangement of four spheres" /></p>
 
 <p>These four spheres, and the points, circular arcs, and triangular spherical patches formed by their intersections with each other, may also be interpreted as the stereographic projection of a 4-dimensional cross polytope. But the cross polytope itself has eight vertices and a 192-fold symmmetry group that is not a subgroup of the symmetries of \( K_7 \) (192 has too many factors of 2 to be a divisor of 5040). Where does the extra vertex of the cross polytope go in the drawing of \( K_7 \), and where do these extra symmetries of the cross polytope come from? The answer lies in the relation of \( K_7 \) to a different graph, the <a href="http://en.wikipedia.org/wiki/Cocktail_party_graph">cocktail party graph</a> K<sub>2,2,2,2</sub>, the graph of the cross polytope.</p>
 
-<div><table style="margin-left:auto;margin-right:auto"><tr align="center" valign="middle">
-<td><img src="http://www.ics.uci.edu/~eppstein/0xDE/k7/cocktail.png" /></td><td width="20px""> </td>
-<td><img src="http://www.ics.uci.edu/~eppstein/0xDE/k7/cocktail2.png" /></td></tr></table></div>
+<div><table style="margin-left:auto;margin-right:auto">
+<tr style="text-align:center;vertical-align:middle">
+<td style="padding:10px"><img src="{{site.baseurl}}/assets/2010/k7/cocktail.svg" alt="The cocktail party graph" /></td>
+<td style="padding:10px"><img src="{{site.baseurl}}/assets/2010/k7/cocktail2.svg" alt="Alternative drawing of the cocktail party graph on four circles and two lines" /></td></tr></table></div>
 
 <p>Some proofs in graph theory (for instance the reduction of the <a href="http://en.wikipedia.org/wiki/Cycle_double_cover">cycle double cover conjecture</a> to the case of <a href="http://en.wikipedia.org/wiki/Snark_(graph_theory)">snarks</a>) involve an operation called "splitting off" in which we pair up the edges incident to a common vertex and replace the resulting length-two paths by single edges connecting the same vertices. Splitting off can be accomplished visually in a drawing by replacing a vertex by a crossing point; when we do this to the left of the two 2d drawings of the cocktail party graph we get a messy multigraph, because the edges don't pair up the way we want them to at the crossing vertex, but when we do it to the right drawing, we get another drawing of \( K_7 \).</p>
 
-<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/k7/cocktail2-split.png" /></p>
+<p style="text-align:center"><img src="{{site.baseurl}}/assets/2010/k7/cocktail2-split.svg" alt="Splitting off the cocktail party graph produces K_7" /></p>
 
 <p>In exactly the same way, the 3d drawing obtained from the four sphere configuration by placing a vertex at each of the eight crossing points is a drawing of K<sub>2,2,2,2</sub>, and the 3d drawing obtained by placing a vertex at seven of these eight points and letting the eighth one remain a crossing is \( K_7 \).</p>
 
-<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/k7/splitcross.png" /></p>
+<p style="text-align:center"><img src="{{site.baseurl}}/assets/2010/k7/splitcross.png" alt="Splitting off the stereographic projection of the cross polytope" /></p>
 
 <p>The 2d projection of this 3d drawing looks a little messy but my feeling is that interactivity (another of Peter's points) would go a long way towards making it more accessible. In fact, the 48-symmetric 3d drawing of \( K_7 \) is just a Möbius transformation of this drawing, with the crossing point hidden by being transformed to infinity. If we designate a vertex of K<sub>2,2,2,2</sub> as the vertex to be split off, the resulting vertex-labeled graph has exactly 48 symmetries; alternatively, if we designate a three-edge matching of \( K_7 \) as representing the three crossing edges formed from this splitting-off process, the resulting edge-labeled graph again has exactly 48 symmetries. These 48 symmetries are exactly the symmetries represented by the more symmetric of our 3d drawings.</p>
 

@@ -4,33 +4,26 @@ title:  'van Emde Boas priority queue implementation'
 date:   2010-01-14 23:02:00
 tags:   [python, data structures]
 ---
-Just in time for my departure for <a href="http://www.siam.org/meetings/alenex10/">ALENEX</a> and <a href="http://www.siam.org/meetings/da10/">SODA</a>, a post about algorithm implementation!
-<br />
+<p>Just in time for my departure for <a href="http://www.siam.org/meetings/alenex10/">ALENEX</a> and <a href="http://www.siam.org/meetings/da10/">SODA</a>, a post about algorithm implementation!</p>
 
-<br />
-This year in <a href="http://www.ics.uci.edu/~eppstein/261/">my graduate data structures class</a> I&#x27;ve moved my coverage of <a href="http://en.wikipedia.org/wiki/Van_Emde_Boas_tree">van Emde Boas trees</a> earlier, to part of a group of lectures on priority queues rather than later when I cover the successor problem (binary search trees). vEB trees are a little simpler when they only have to be used for prioritization, but I also think they&#x27;re more likely to be useful in that application, simply because priority queues and dictionaries are more important than successors.
-<br />
+<p>This year in <a href="http://www.ics.uci.edu/~eppstein/261/">my graduate data structures class</a> I've moved my coverage of <a href="http://en.wikipedia.org/wiki/Van_Emde_Boas_tree">van Emde Boas trees</a> earlier, to part of a group of lectures on priority queues rather than later when I cover the successor problem (binary search trees). vEB trees are a little simpler when they only have to be used for prioritization, but I also think they're more likely to be useful in that application, simply because priority queues and dictionaries are more important than successors.</p>
 
-<br />
-Anyway, in order to test my own understanding of the subject, I wrote <a href="http://www.ics.uci.edu/~eppstein/PADS/IntegerHeap.py">a Python implementation</a> which I&#x27;m including in my <a href="http://www.ics.uci.edu/~eppstein/PADS/">PADS Python algorithms library</a>.
-<br />
+<p>Anyway, in order to test my own understanding of the subject, I wrote <a href="http://www.ics.uci.edu/~eppstein/PADS/IntegerHeap.py">a Python implementation</a> which I'm including in my <a href="http://www.ics.uci.edu/~eppstein/PADS/">PADS Python algorithms library</a>.</p>
 
-<br />
-In Python, built-in types such as sets and dictionaries can be much faster than user-defined types because they run in native code rather than interpreted (insert rant about Snow Leopard breaking psyco here), so it turns out that for 32-bit keys my implementation needs ~256 items in the heap before it beats a naive priority queue that maintains everything in a set object and uses a linear time min(set) every time it wants to find the minimum key. My vEB tree implementation switches to a bitvector based set data structure at its lower levels, for keys that are very small integers; my testing found that using 256-bit bitvectors for 8-bit keys is a slight win over using 16-bit bitvectors for 4-bit keys.
-<br />
+<p>In Python, built-in types such as sets and dictionaries can be much faster than user-defined types because they run in native code rather than interpreted (insert rant about Snow Leopard breaking psyco here), so it turns out that for 32-bit keys my implementation needs ~256 items in the heap before it beats a naive priority queue that maintains everything in a set object and uses a linear time min(set) every time it wants to find the minimum key. My vEB tree implementation switches to a bitvector based set data structure at its lower levels, for keys that are very small integers; my testing found that using 256-bit bitvectors for 8-bit keys is a slight win over using 16-bit bitvectors for 4-bit keys.</p>
 
-<br />
-While I was adding stuff to PADS I also fixed a deficiency in SortedSet that Mark Lawrence pointed out: the Python set object can be initialized with any iterable collection of objects, but SortedSet couldn&#x27;t. Now it can. This is an incompatible change to the API as it means that the comparison function (if any, and if not passed as a named parameter) has to come after the iterable, but it didn&#x27;t break any of my other code that uses this module and I&#x27;d be somewhat surprised if it broke anyone else&#x27;s.
+<p>While I was adding stuff to PADS I also fixed a deficiency in SortedSet that Mark Lawrence pointed out: the Python set object can be initialized with any iterable collection of objects, but SortedSet couldn't. Now it can. This is an incompatible change to the API as it means that the comparison function (if any, and if not passed as a named parameter) has to come after the iterable, but it didn't break any of my other code that uses this module and I'd be somewhat surprised if it broke anyone else's.</p>
+
 <br /><br /><hr /><br />
 <h3>Comments:</h3>
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>None</b>: <br />
 <b>2010-01-15T15:05:30Z</b><br />
-<i>I also think they&#x27;re more likely to be useful in that application, simply because priority queues and dictionaries are more important than successors.</i>
+<p><i>I also think they're more likely to be useful in that application, simply because priority queues and dictionaries are more important than successors.</i></p>
 
-Ahem. Predecessor search is the problem that must be solved for every packet arriving at an Internet router. So overall, it&#x27;s used far more often than priority queues (and there is considerable research on it in the networking community.)
+<p>Ahem. Predecessor search is the problem that must be solved for every packet arriving at an Internet router. So overall, it's used far more often than priority queues (and there is considerable research on it in the networking community.)</p>
 
-Of course, from the standpoint of a Python library, you are probably right that the vEB implementation will not get much use.
+<p>Of course, from the standpoint of a Python library, you are probably right that the vEB implementation will not get much use.</p>
 </div>
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>None</b>: <br />
@@ -41,8 +34,8 @@ I forgot to sign.
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>11011110</b>: <br />
 <b>2010-01-15T15:52:03Z</b><br />
-[citation needed].
+<p>[citation needed].</p>
 
-It is true that every packet needs to be looked up in a data structure by every router it goes through to determine how to route it. And that the data to be looked up is a small integer (a 32-bit destination IP address). I wasn&#x27;t aware that the sata structural problem to be solved in those lookups was predecessor search, though. I thought it was more of an interval search, the sort of thing that one could solve by a segment tree or interval tree (though one wants faster structures that use the integer assumption).
+<p>It is true that every packet needs to be looked up in a data structure by every router it goes through to determine how to route it. And that the data to be looked up is a small integer (a 32-bit destination IP address). I wasn't aware that the sata structural problem to be solved in those lookups was predecessor search, though. I thought it was more of an interval search, the sort of thing that one could solve by a segment tree or interval tree (though one wants faster structures that use the integer assumption).</p>
 </div>
 

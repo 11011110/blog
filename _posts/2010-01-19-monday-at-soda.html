@@ -4,78 +4,67 @@ title:  'Monday at SODA'
 date:   2010-01-19 00:44:00
 tags:   [conferences, talks]
 ---
-Second day of SODA. My attendance at talks is getting more sporadic as are my notes from the ones I did attend.
-<br />
+<p>Second day of SODA. My attendance at talks is getting more sporadic as are my notes from the ones I did attend.</p>
 
-<br />
-Unsurprisingly, the conference program features many sets of talks that interest me but that I can&#x27;t attend without a time machine due to parallel scheduling, but also plenty of blocks of time where the topics of all the parallel talks are too divergent from my own interests to draw my attention to any of them. There must be some interesting optimization problems to be solved in collecting data from prospective attendees about what talks they&#x27;re likely to want to attend, grouping the talks into tuples to be offered in parallel in order to minimize conflicts, and then grouping the parallel tuples of talks into parallel sessions in order to minimize the number of times everyone has to change sessions. Of course these problems are all likely to be NP-hard but maybe some approximation is possible.
-<br />
+<p>Unsurprisingly, the conference program features many sets of talks that interest me but that I can't attend without a time machine due to parallel scheduling, but also plenty of blocks of time where the topics of all the parallel talks are too divergent from my own interests to draw my attention to any of them. There must be some interesting optimization problems to be solved in collecting data from prospective attendees about what talks they're likely to want to attend, grouping the talks into tuples to be offered in parallel in order to minimize conflicts, and then grouping the parallel tuples of talks into parallel sessions in order to minimize the number of times everyone has to change sessions. Of course these problems are all likely to be NP-hard but maybe some approximation is possible.</p>
 
-<br />
-Antoine Vigneron spoke on some nice results concerning very general <a href="http://w3.jouy.inra.fr/unites/miaj/public/vigneron/preprints/rational.pdf">algorithms for optimizing geometric quantities described as sums of algebraic functions</a> over low-dimensional Euclidean spaces. The idea was quite simple: for each of the functions in the sum, draw a family of level sets for an exponentially spaced sequence of values, partition the space into cells by overlaying all the level sets, and try a candidate point within each cell. For instance, he mentioned the problem of finding a circle that best fits a set of n points in the plane, where the quality of a fit is measured as the sum of the Euclidean distances of the points to the circle. This quality measure can be described as a sum of algebraic functions in a three-dimensional space (coordinatized by the center and radius of the circles) and he gets a (1+ε)-approximation algorithm that (while exhibiting worse dependence on n) improves the dependence on the ε compared to a previous algorithm of Har-Peled from (1/ε)<sup>60</sup> to (1/ε)<sup>3</sup>.
-<br />
+<p>Antoine Vigneron spoke on some nice results concerning very general <a href="http://w3.jouy.inra.fr/unites/miaj/public/vigneron/preprints/rational.pdf">algorithms for optimizing geometric quantities described as sums of algebraic functions</a> over low-dimensional Euclidean spaces. The idea was quite simple: for each of the functions in the sum, draw a family of level sets for an exponentially spaced sequence of values, partition the space into cells by overlaying all the level sets, and try a candidate point within each cell. For instance, he mentioned the problem of finding a circle that best fits a set of \( n \) points in the plane, where the quality of a fit is measured as the sum of the Euclidean distances of the points to the circle. This quality measure can be described as a sum of algebraic functions in a three-dimensional space (coordinatized by the center and radius of the circles) and he gets a \( (1+\varepsilon) \)-approximation algorithm that (while exhibiting worse dependence on \( n \)) improves the dependence on the \varepsilon compared to a previous algorithm of Har-Peled from \( (1/\varepsilon)^{60} \) to \( (1/\varepsilon)^3 \).</p>
 
-<br />
-Next after Vigneron, and one of the most egregious examples of strange scheduling, was Petr Hliněný&#x27;s talk on <a href="http://en.wikipedia.org/wiki/Crossing_number_(graph_theory)">crossing numbers</a>, scheduled opposite a session that was largely about planar graphs. <a href="http://www.fi.muni.cz/~hlineny/Research/papers/cr-orientable-s.pdf">Hliněný&#x27;s result</a> is that, for certain bounded genus graphs, a very simple algorithm (that cuts open handles one at a time along dual cycles and then, once all the handles have been cut, reroutes the cut edges through the resulting planar graph) provides a constant factor approximation to the minimum possible number of crossings in a planar drawing. A key tool is a new parameter of embedded graphs that he calls stretch: the minimum product of the lengths of any two cycles that have only one crossing point (such cycles must necessarily be nonseparating). It was also an amusing surprise to see <a href="http://www.ics.uci.edu/~eppstein/0xDE/F24/3dtorus2.png">one of my drawings</a> of the Nauru graph used as the illustration for the concept of graphs embedded on surfaces.
-<br />
+<p>Next after Vigneron, and one of the most egregious examples of strange scheduling, was Petr Hliněný's talk on <a href="http://en.wikipedia.org/wiki/Crossing_number_(graph_theory)">crossing numbers</a>, scheduled opposite a session that was largely about planar graphs. <a href="http://www.fi.muni.cz/~hlineny/Research/papers/cr-orientable-s.pdf">Hliněný's result</a> is that, for certain bounded genus graphs, a very simple algorithm (that cuts open handles one at a time along dual cycles and then, once all the handles have been cut, reroutes the cut edges through the resulting planar graph) provides a constant factor approximation to the minimum possible number of crossings in a planar drawing. A key tool is a new parameter of embedded graphs that he calls stretch: the minimum product of the lengths of any two cycles that have only one crossing point (such cycles must necessarily be nonseparating). It was also an amusing surprise to see <a href="http://www.ics.uci.edu/~eppstein/0xDE/F24/3dtorus2.png">one of my drawings</a> of the Nauru graph used as the illustration for the concept of graphs embedded on surfaces.</p>
 
-<br />
-Back in the planar session, the talks described above were bookended by talks by Christian Wulff-Nilsen and Jeff Erickson that used very similar techniques to very different ends. Christian&#x27;s algorithm was for <a href="http://diku.dk/hjemmesider/ansatte/koolooz/09-03.pdf">finding the set of shortest paths in all the different graphs formed by deleting one edge from a given planar digraph</a>, and Jeff&#x27;s was on solving <a href="http://compgeom.cs.uiuc.edu/~jeffe/pubs/parshort.html">planar max-flow</a> by reformulating it as the same sort of parametric negative cycle-detection problem that I used in <a href="{{site.baseurl}}{% post_url 2009-05-04-metric-space-of %}">my WADS paper with Kevin Wortman on minimum dilation stars</a>. But they both perform a sort of network simplex algorithm for finding shortest paths in which a shortest path tree from a problem with slightly different edge lengths is rearranged by swapping edges in and out, they both use dynamic tree data structures on the complementary dual tree to find which swaps to perform, and in both cases a bound of O(n) on the number of swaps leads to an overall O(n log n) time bound.
-<br />
+<p>Back in the planar session, the talks described above were bookended by talks by Christian Wulff-Nilsen and Jeff Erickson that used very similar techniques to very different ends. Christian's algorithm was for <a href="http://diku.dk/hjemmesider/ansatte/koolooz/09-03.pdf">finding the set of shortest paths in all the different graphs formed by deleting one edge from a given planar digraph</a>, and Jeff's was on solving <a href="http://compgeom.cs.uiuc.edu/~jeffe/pubs/parshort.html">planar max-flow</a> by reformulating it as the same sort of parametric negative cycle-detection problem that I used in <a href="{{site.baseurl}}{% post_url 2009-05-04-metric-space-of %}">my WADS paper with Kevin Wortman on minimum dilation stars</a>. But they both perform a sort of network simplex algorithm for finding shortest paths in which a shortest path tree from a problem with slightly different edge lengths is rearranged by swapping edges in and out, they both use dynamic tree data structures on the complementary dual tree to find which swaps to perform, and in both cases a bound of \( O(n) \) on the number of swaps leads to an overall O(n log n) time bound.</p>
 
-<br />
-I also liked the talk by Ryan Williams on <a href="http://people.csail.mit.edu/mip/papers/sat-lbs/paper.pdf">his results with Pătraşcu</a> on the relation between lower bounds on exponential time and polynomial time algorithms. The so-called &quot;exponential time hypothesis&quot; is that 3SAT, <a href="http://en.wikipedia.org/wiki/Clique_problem">clique finding</a>, and many related problems require time 2<sup>Ω(n)</sup> to solve exactly; it&#x27;s consistent with the algorithms we know and, if any one of these problems could be solved more quickly, <a href="http://dx.doi.org/10.1006/jcss.2001.1774">they all could</a>. But as Williams and Pătraşcu show, the ETH can be translated downwards to imply that <a href="http://en.wikipedia.org/wiki/3SUM">k-SUM</a> problems require time n<sup>Ω(k)</sup>, the assumption that CNF-SAT can&#x27;t be solved in time (2-ε)<sup>n</sup> can be translated downwards to a lower bound of n<sup>k</sup> on finding k-dominating sets, etc. I have some vague memory of a talk by Gerhard Woeginger at IWPEC 2004 on similar subjects (in Woeginger&#x27;s case, an upward translation from algorithms for k-SUM to algorithms for <a href="http://en.wikipedia.org/wiki/Subset_sum_problem">subset sum</a>, which could equally well be viewed as a downward translation from hardness of subset sum to hardness of k-SUM). Williams and Pătraşcu cite <a href="http://faculty.cs.tamu.edu/chen/courses/689/2006/reading/w2.pdf">Woeginger&#x27;s paper</a> but don&#x27;t really mention this connection; on the other hand, subset sum isn&#x27;t one of the problems covered by the ETH.
-<br />
+<p>I also liked the talk by Ryan Williams on <a href="http://people.csail.mit.edu/mip/papers/sat-lbs/paper.pdf">his results with Pătraşcu</a> on the relation between lower bounds on exponential time and polynomial time algorithms. The so-called "exponential time hypothesis" is that 3SAT, <a href="http://en.wikipedia.org/wiki/Clique_problem">clique finding</a>, and many related problems require time 2<sup>Ω(n)</sup> to solve exactly; it's consistent with the algorithms we know and, if any one of these problems could be solved more quickly, <a href="http://dx.doi.org/10.1006/jcss.2001.1774">they all could</a>. But as Williams and Pătraşcu show, the ETH can be translated downwards to imply that <a href="http://en.wikipedia.org/wiki/3SUM">\( k \)-SUM</a> problems require time \( n^{\Omega(k)} \), the assumption that CNF-SAT can't be solved in time \( (2-\varepsilon)^n \) can be translated downwards to a lower bound of \( n^k \) on finding \( k \)-dominating sets, etc. I have some vague memory of a talk by Gerhard Woeginger at IWPEC 2004 on similar subjects (in Woeginger's case, an upward translation from algorithms for \( k \)-SUM to algorithms for <a href="http://en.wikipedia.org/wiki/Subset_sum_problem">subset sum</a>, which could equally well be viewed as a downward translation from hardness of subset sum to hardness of \( k \)-SUM). Williams and Pătraşcu cite <a href="http://faculty.cs.tamu.edu/chen/courses/689/2006/reading/w2.pdf">Woeginger's paper</a> but don't really mention this connection; on the other hand, subset sum isn't one of the problems covered by the ETH.</p>
 
-<br />
-Talk slides for <a href="http://arxiv.org/abs/0909.1870">my shameless attempt to cash in on the irrational enthusiasm for approximation algorithms</a>, in the same session as Williams&#x27; talk, are <a href="http://www.ics.uci.edu/~eppstein/pubs/Epp-SODA-10.pdf">here</a>.
+<p>Talk slides for <a href="http://arxiv.org/abs/0909.1870">my shameless attempt to cash in on the irrational enthusiasm for approximation algorithms</a>, in the same session as Williams' talk, are <a href="http://www.ics.uci.edu/~eppstein/pubs/Epp-SODA-10.pdf">here</a>.</p>
+
 <br /><br /><hr /><br />
 <h3>Comments:</h3>
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>None</b>: Longest path approximation<br />
 <b>2010-01-19T09:36:08Z</b><br />
-I see that the images on all your slides are properly licensed! Wow.
+<p>I see that the images on all your slides are properly licensed! Wow.</p>
 
-For the record, the longest path approximation of Andreas Björklund and myself was improved (to super-polylogarithmic length) by Hal Gabow in 2004.
+<p>For the record, the longest path approximation of Andreas Björklund and myself was improved (to super-polylogarithmic length) by Hal Gabow in 2004.</p>
 
-Harold N. Gabow: Finding Paths and Cycles of Superpolylogarithmic Length. SIAM J. Comput. 36(6): 1648-1671 (2007)
+<p>Harold N. Gabow: Finding Paths and Cycles of Superpolylogarithmic Length. SIAM J. Comput. 36(6): 1648-1671 (2007)</p>
 
-—Thore Husfeldt
+<p>—Thore Husfeldt</p>
 </div>
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>11011110</b>: Re: Longest path approximation<br />
 <b>2010-01-19T15:10:14Z</b><br />
-Yes, even the xkcd strip. Thanks for the reference; I&#x27;ll add it to future versins of the paper.
+<p>Yes, even the xkcd strip. Thanks for the reference; I'll add it to future versions of the paper.</p>
 </div>
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>ext_222099</b>: <br />
 <b>2010-01-19T15:16:49Z</b><br />
-<i>Unsurprisingly, the conference program features many sets of talks that interest me but that I can&#x27;t attend without a time machine due to parallel scheduling, but also plenty of blocks of time where the topics of all the parallel talks are too divergent from my own interests to draw my attention to any of them.</i>
+<p><i>Unsurprisingly, the conference program features many sets of talks that interest me but that I can't attend without a time machine due to parallel scheduling, but also plenty of blocks of time where the topics of all the parallel talks are too divergent from my own interests to draw my attention to any of them.</i></p>
 
-Hear, hear. I wanted to see the talk on a model for MapReduce, but alas, we both missed it (my talk was at the same time).
+<p>Hear, hear. I wanted to see the talk on a model for MapReduce, but alas, we both missed it (my talk was at the same time).</p>
 
-<i>I have some vague memory of a talk by Gerhard Woeginger at IWPEC 2004 on similar subjects (in Woeginger&#x27;s case, an upward translation from algorithms for k-SUM to algorithms for subset sum, which could equally well be viewed as a downward translation from hardness of subset sum to hardness of k-SUM). Williams and Pătraşcu cite Woeginger&#x27;s paper but don&#x27;t really mention this connection; on the other hand, subset sum isn&#x27;t one of the problems covered by the ETH.</i>
+<p><i>I have some vague memory of a talk by Gerhard Woeginger at IWPEC 2004 on similar subjects (in Woeginger's case, an upward translation from algorithms for k-SUM to algorithms for subset sum, which could equally well be viewed as a downward translation from hardness of subset sum to hardness of k-SUM). Williams and Pătraşcu cite Woeginger's paper but don't really mention this connection; on the other hand, subset sum isn't one of the problems covered by the ETH.</i></p>
 
-This is a good point. I think a subexponential algorithm for SUBSET SUM would also imply ETH is false, because with subexponential SUBSET SUM you can solve &quot;1-in-k SAT&quot; in subexponential time. (Our reduction is something similar to the below.) 
+<p>This is a good point. I think a subexponential algorithm for SUBSET SUM would also imply ETH is false, because with subexponential SUBSET SUM you can solve "1-in-k SAT" in subexponential time. (Our reduction is something similar to the below.) </p>
 
-For each variable x, make two (m+n)-bit vectors V_x and V_{not(x)}, where 
+<p>For each variable x, make two (m+n)-bit vectors V_x and V_{not(x)}, where</p> 
 
-V_x[i] = 1 iff x is in clause i, for i=1,...,m, 
-V_x[m+j] = 1 iff x is the jth variable, for j=1,...,n
-V_{not(x)}[i]=1 iff not(x) is in clause i, for i=1,...,m
-V_{not(x)}[m+j] = 1 iff x is the jth variable, for j=1,...,n
+<p>V_x[i] = 1 iff x is in clause i, for i=1,...,m, <br/>
+V_x[m+j] = 1 iff x is the jth variable, for j=1,...,n<br/>
+V_{not(x)}[i]=1 iff not(x) is in clause i, for i=1,...,m<br/>
+V_{not(x)}[m+j] = 1 iff x is the jth variable, for j=1,...,n</p>
 
-Now the task is to find a subset of vectors that sums exactly to the all-ones vector. Note our subset cannot have both V_{x} and V_{not(x)}, for all x. By a &quot;Freiman isomorphism&quot; which maps these vectors to numbers over a sufficiently large base, we get a SUBSET SUM instance where the target T is the number that the all-ones vector maps to.
+<p>Now the task is to find a subset of vectors that sums exactly to the all-ones vector. Note our subset cannot have both V_{x} and V_{not(x)}, for all x. By a "Freiman isomorphism" which maps these vectors to numbers over a sufficiently large base, we get a SUBSET SUM instance where the target T is the number that the all-ones vector maps to.</p>
 
-Cheers, ryan
+<p>Cheers, ryan</p>
 
 </div>
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>None</b>: <br />
 <b>2010-01-21T03:37:33Z</b><br />
-Perhaps I&#x27;m just repeating what Ryan said, but it&#x27;s pretty easy to assume hardness for a-SUM and derive hardness for b-SUM, for b &lt; a. Simply compute the sum of all (a/b)-tuples.
+<p>Perhaps I'm just repeating what Ryan said, but it's pretty easy to assume hardness for a-SUM and derive hardness for b-SUM, for b &lt; a. Simply compute the sum of all (a/b)-tuples.</p>
 
-So the challenge is indeed to show hardness of Subset Sum.
+<p>So the challenge is indeed to show hardness of Subset Sum.</p>
 </div>
 <div style="margin-left: 6em; padding-top: 1em;">
 <b>None</b>: <br />
@@ -85,30 +74,24 @@ Last comment was by mihai.
 <div style="margin-left: 6em; padding-top: 1em;">
 <b>11011110</b>: <br />
 <b>2010-01-21T03:46:18Z</b><br />
-Actually, I think you&#x27;re repeating what Gerhard said.
+Actually, I think you're repeating what Gerhard said.
 </div>
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>None</b>: conference scheduling<br />
 <b>2010-01-19T22:36:18Z</b><br />
-&gt; ... Of course these problems are all likely to be NP-hard 
-&gt; but maybe some approximation is possible.
+<p>&gt; ... Of course these problems are all likely to be NP-hard <br/>
+&gt; but maybe some approximation is possible.</p>
 
-There are O(1) talks and O(1) time slots, 
+<p>There are O(1) talks and O(1) time slots, 
 so there is an optimal O(1) time algorithm.
-Who needs approximations? :-)
+Who needs approximations? :-)</p>
 
-- David Wood
+<p>- David Wood</p>
 </div>
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>None</b>: Re: conference scheduling<br />
 <b>2010-01-20T06:22:32Z</b><br />
-Yes, but some constants are more constant than others :)
+<p>Yes, but some constants are more constant than others :)</p>
 
-Daniel
+<p>Daniel</p>
 </div>
-<div style="margin-left: 0em; padding-top: 1em;">
-<b>None</b>: <br />
-<b></b><br />
-
-</div>
-

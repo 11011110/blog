@@ -4,23 +4,15 @@ title:  'Cloning Voronoi diagrams'
 date:   2010-06-11 14:23:00
 tags:   [computational geometry, papers]
 ---
-I have another new preprint on arXiv, <a href="http://arxiv.org/abs/1006.1921">Cloning Voronoi Diagrams via Retroactive Data Structures</a> (with Matt Dickerson and Mike Goodrich), my contribution to the recent set of <a href="http://algo2010.csc.liv.ac.uk/esa/accepted/">papers accepted to ESA 2010</a>. (And where are the abstracts for this list of accepted papers, anyway?)
-<br />
+<p>I have another new preprint on arXiv, <a href="http://arxiv.org/abs/1006.1921">Cloning Voronoi Diagrams via Retroactive Data Structures</a> (with Matt Dickerson and Mike Goodrich), my contribution to the recent set of <a href="http://algo2010.csc.liv.ac.uk/esa/accepted/">papers accepted to ESA 2010</a>. (And where are the abstracts for this list of accepted papers, anyway?)</p>
 
-<br />
-The basic scenario for our paper is something like this: you work for Starbucks, and would like to provide your customers with a web service in which they can look up the location of the Starbucks cafe nearest them. But, you don&#x27;t want to make it easy for your competitors to use the service to build up a complete database of all your cafe locations. What can you do?
-<br />
+<p>The basic scenario for our paper is something like this: you work for Starbucks, and would like to provide your customers with a web service in which they can look up the location of the Starbucks cafe nearest them. But, you don't want to make it easy for your competitors to use the service to build up a complete database of all your cafe locations. What can you do?</p>
 
-<br />
-We formalize this problem by considering the number of queries needed to &quot;clone&quot; your web service: that is, to set up a nearest neighbor query service that either exactly matches your own service or does so to a high level of approximation (depending on the precise information provided in your service&#x27;s answers to nearest neighbor queries). Our main results are that a linear number of queries to your service, and a near-linear amount of processing time, are all that is needed for this sort of cloning attack. That is, if you want to guard against a cloning attack, you need to severely limit the number of different queries that a customer can make against your service.
-<br />
+<p>We formalize this problem by considering the number of queries needed to "clone" your web service: that is, to set up a nearest neighbor query service that either exactly matches your own service or does so to a high level of approximation (depending on the precise information provided in your service's answers to nearest neighbor queries). Our main results are that a linear number of queries to your service, and a near-linear amount of processing time, are all that is needed for this sort of cloning attack. That is, if you want to guard against a cloning attack, you need to severely limit the number of different queries that a customer can make against your service.</p>
 
-<br />
-The problem of recovering nearest neighbor data from queries turns out to be closely related to some past work on <a href="http://www.cs.duke.edu/~edels/Papers/1990-B-01-ProbingConvexPolytopes.pdf">determining the shape of a convex object by poking it</a> (or aiming a laser beam at it) and discovering the point where the object intersects the probe line: by a standard lifting transformation, a nearest neighbor query in the plane can be interpreted as a probe of a 3d convex polyhedron (the lifted image of the <a href="http://en.wikipedia.org/wiki/Voronoi_diagram">Voronoi diagram</a>) by a vertical line. However, although these past probing algorithms used a small number of probes, their running times were quadratic. To speed up these methods, we guide our probes by a version of <a href="http://en.wikipedia.org/wiki/Fortune's_algorithm">Fortune&#x27;s plane-sweep algorithm for Voronoi diagrams</a> that backs up and redoes portions of the computation when it discovers a new site that it didn&#x27;t previously know about.
-<br />
+<p>The problem of recovering nearest neighbor data from queries turns out to be closely related to some past work on <a href="http://www.cs.duke.edu/~edels/Papers/1990-B-01-ProbingConvexPolytopes.pdf">determining the shape of a convex object by poking it</a> (or aiming a laser beam at it) and discovering the point where the object intersects the probe line: by a standard lifting transformation, a nearest neighbor query in the plane can be interpreted as a probe of a 3d convex polyhedron (the lifted image of the <a href="http://en.wikipedia.org/wiki/Voronoi_diagram">Voronoi diagram</a>) by a vertical line. However, although these past probing algorithms used a small number of probes, their running times were quadratic. To speed up these methods, we guide our probes by a version of <a href="http://en.wikipedia.org/wiki/Fortune's_algorithm">Fortune's plane-sweep algorithm for Voronoi diagrams</a> that backs up and redoes portions of the computation when it discovers a new site that it didn't previously know about.</p>
 
-<br />
-The retroactive data structures of the title enable us to do this backing up process efficiently. A <a href="http://erikdemaine.org/papers/Retroactive_TALG/paper.pdf">retroactive data structure</a> is a data structure that allows you to change the past: you can perform insertions and deletions in the sequence of data structure operations that have already been performed. Specifically, we need to answer retroactive successor queries among values that are not totally ordered but for which the subset that belongs to the data structure at any one time are ordered (the breakpoints of the beach line of Fortune&#x27;s algorithm). In the non-retroactive case, this sort of comparison-based successor query problem is exactly what binary search trees are good for. We describe a relationship with <a href="http://en.wikipedia.org/wiki/Point_location">point location</a> that leads to an efficient retroactive comparison-based successor query data structure.
+<p>The retroactive data structures of the title enable us to do this backing up process efficiently. A <a href="http://erikdemaine.org/papers/Retroactive_TALG/paper.pdf">retroactive data structure</a> is a data structure that allows you to change the past: you can perform insertions and deletions in the sequence of data structure operations that have already been performed. Specifically, we need to answer retroactive successor queries among values that are not totally ordered but for which the subset that belongs to the data structure at any one time are ordered (the breakpoints of the beach line of Fortune's algorithm). In the non-retroactive case, this sort of comparison-based successor query problem is exactly what binary search trees are good for. We describe a relationship with <a href="http://en.wikipedia.org/wiki/Point_location">point location</a> that leads to an efficient retroactive comparison-based successor query data structure.</p>
 <br /><br /><hr /><br />
 <h3>Comments:</h3>
 <div style="margin-left: 0em; padding-top: 1em;">
@@ -38,14 +30,14 @@ Thanks. Is there a more detailed description of the version of the problem that 
 <b>ext_68390</b>: <br />
 <b>2010-06-12T03:42:58Z</b><br />
 (Not the original poster.) The problem they solved is something like this: There is a 2D polygon inside [0,10)x[0,10). You can make M (≤300) queries where each query, given a point (x,y), tells you whether (x,y) is inside the polygon or not. You have to estimate the area of the polygon. The polygon is convex and is generated according to some random process they describe. 
-(For more details, you can get a (free) TopCoder login, and click on PolygonArea, the problem name. It&#x27;s not very close to your problem, though... yours is a very nice problem, BTW!)
+(For more details, you can get a (free) TopCoder login, and click on PolygonArea, the problem name. It's not very close to your problem, though... yours is a very nice problem, BTW!)
 </div>
 <div style="margin-left: 9em; padding-top: 1em;">
 <b>11011110</b>: <br />
 <b>2010-06-12T03:51:10Z</b><br />
 Thanks for the explanation and the complement. It does sound fairly closely related, though as you say not the same.
 
-With a theoretician hat on, I would say that you can simulate a line probe (of a convex body that you know points inside and outside of) with a sequence of point probes. But with at most 300 probes available, you probably don&#x27;t want to pay the logarithmic factor in the number of point probes per simulated line probe.
+With a theoretician hat on, I would say that you can simulate a line probe (of a convex body that you know points inside and outside of) with a sequence of point probes. But with at most 300 probes available, you probably don't want to pay the logarithmic factor in the number of point probes per simulated line probe.
 </div>
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>kushfvua</b>: <br />

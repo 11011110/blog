@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="584.034" height="550.42">
+    <g fill="none" stroke="#76B3DF" stroke-width="3">
+        <path d="M334.508 22.488L152.431 274.79m94.481 255.31l-84.108-30.613-68.565-57.533-44.753-77.515-15.543-88.145 15.543-88.146 44.753-77.514 68.565-57.533 84.108-30.613h89.505l84.108 30.613 68.565 57.533 44.753 77.514 15.543 88.146-15.543 88.145-44.753 77.515-68.565 57.533-84.108 30.613z"/>
+        <path d="M33.943 276.294l257.722-116.361L162.804 53.101l128.861 340.193z"/>
+        <path d="M162.804 499.487l128.861-339.554 128.86 339.554-128.86-106.193z"/>
+        <path d="M291.665 393.294l257.721-117-257.721-116.361 128.86-106.832zm-138.3-117L49.486 188.148m103.879 88.146L336.417 530.1m93.231-253.806l104.196-88.146m-104.196 88.146L246.912 530.1m-93.547-253.806l335.725 165.66"/>
+        <path d="M94.239 110.634l335.409 165.66L246.912 22.488m286.931 341.951l-104.195-88.145L96.722 444.038"/>
+        <path d="M49.486 364.439l103.879-88.145 335.725-165.66"/>
+    </g>
+    <path fill="#FFF" stroke="#000" d="M60.943 277.794c0 6.627-5.373 12-12 12h-30c-6.627 0-12-5.373-12-12v-3c0-6.627 5.373-12 12-12h30c6.627 0 12 5.373 12 12v3z"/>
+    <text transform="translate(13.943 280.794)" font-family="Times,serif" font-size="14">
+        111000
+    </text>
+    <path fill="#FFF" stroke="#000" d="M76.486 189.648c0 6.627-5.373 12-12 12h-30c-6.627 0-12-5.373-12-12v-3c0-6.627 5.373-12 12-12h30c6.627 0 12 5.373 12 12v3z"/>
+    <text transform="translate(29.486 192.648)" font-family="Times,serif" font-size="14">
+        110100
+    </text>
+    <path fill="#FFF" stroke="#000" d="M121.239 112.134c0 6.627-5.373 12-12 12h-30c-6.627 0-12-5.373-12-12v-3c0-6.627 5.373-12 12-12h30c6.627 0 12 5.373 12 12v3z"/>
+    <text transform="translate(74.239 115.134)" font-family="Times,serif" font-size="14">
+        101100
+    </text>
+    <path fill="#FFF" stroke="#000" d="M189.804 54.601c0 6.627-5.373 12-12 12h-30c-6.627 0-12-5.373-12-12v-3c0-6.627 5.373-12 12-12h30c6.627 0 12 5.373 12 12v3z"/>
+    <text transform="translate(142.804 57.601)" font-family="Times,serif" font-size="14">
+        011100
+    </text>
+    <path fill="#FFF" stroke="#000" d="M273.912 23.988c0 6.627-5.373 12-12 12h-30c-6.627 0-12-5.373-12-12v-3c0-6.627 5.373-12 12-12h30c6.627 0 12 5.373 12 12v3z"/>
+    <text transform="translate(226.912 26.988)" font-family="Times,serif" font-size="14">
+        011010
+    </text>
+    <path fill="#FFF" stroke="#000" d="M363.417 23.988c0 6.627-5.372 12-12 12h-30c-6.627 0-12-5.373-12-12v-3c0-6.627 5.373-12 12-12h30c6.628 0 12 5.373 12 12v3z"/>
+    <text transform="translate(316.417 26.988)" font-family="Times,serif" font-size="14">
+        010110
+    </text>
+    <path fill="#FFF" stroke="#000" d="M447.525 54.601c0 6.627-5.372 12-12 12h-30c-6.627 0-12-5.373-12-12v-3c0-6.627 5.373-12 12-12h30c6.628 0 12 5.373 12 12v3z"/>
+    <text transform="translate(400.525 57.601)" font-family="Times,serif" font-size="14">
+        001110
+    </text>
+    <path fill="#FFF" stroke="#000" d="M516.09 112.134c0 6.627-5.372 12-12 12h-30c-6.627 0-12-5.373-12-12v-3c0-6.627 5.373-12 12-12h30c6.628 0 12 5.373 12 12v3z"/>
+    <text transform="translate(469.09 115.134)" font-family="Times,serif" font-size="14">
+        001101
+    </text>
+    <path fill="#FFF" stroke="#000" d="M560.843 189.648c0 6.627-5.372 12-12 12h-30c-6.627 0-12-5.373-12-12v-3c0-6.627 5.373-12 12-12h30c6.628 0 12 5.373 12 12v3z"/>
+    <text transform="translate(513.843 192.648)" font-family="Times,serif" font-size="14">
+        001011
+    </text>
+    <path fill="#FFF" stroke="#000" d="M576.386 277.794c0 6.627-5.372 12-12 12h-30c-6.627 0-12-5.373-12-12v-3c0-6.627 5.373-12 12-12h30c6.628 0 12 5.373 12 12v3z"/>
+    <text transform="translate(529.386 280.794)" font-family="Times,serif" font-size="14">
+        000111
+    </text>
+    <path fill="#FFF" stroke="#000" d="M560.843 365.939c0 6.627-5.372 12-12 12h-30c-6.627 0-12-5.373-12-12v-3c0-6.627 5.373-12 12-12h30c6.628 0 12 5.373 12 12v3z"/>
+    <text transform="translate(513.843 368.94)" font-family="Times,serif" font-size="14">
+        100110
+    </text>
+    <path fill="#FFF" stroke="#000" d="M516.09 443.454c0 6.627-5.372 12-12 12h-30c-6.627 0-12-5.373-12-12v-3c0-6.627 5.373-12 12-12h30c6.628 0 12 5.373 12 12v3z"/>
+    <text transform="translate(469.09 446.454)" font-family="Times,serif" font-size="14">
+        100101
+    </text>
+    <path fill="#FFF" stroke="#000" d="M447.525 500.987c0 6.627-5.372 12-12 12h-30c-6.627 0-12-5.373-12-12v-3c0-6.627 5.373-12 12-12h30c6.628 0 12 5.373 12 12v3z"/>
+    <text transform="translate(400.525 503.987)" font-family="Times,serif" font-size="14">
+        100011
+    </text>
+    <path fill="#FFF" stroke="#000" d="M363.417 531.6c0 6.627-5.372 12-12 12h-30c-6.627 0-12-5.373-12-12v-3c0-6.627 5.373-12 12-12h30c6.628 0 12 5.373 12 12v3z"/>
+    <text transform="translate(316.417 534.6)" font-family="Times,serif" font-size="14">
+        010011
+    </text>
+    <path fill="#FFF" stroke="#000" d="M273.912 531.6c0 6.627-5.372 12-12 12h-30c-6.627 0-12-5.373-12-12v-3c0-6.627 5.373-12 12-12h30c6.628 0 12 5.373 12 12v3z"/>
+    <text transform="translate(226.912 534.6)" font-family="Times,serif" font-size="14">
+        110010
+    </text>
+    <path fill="#FFF" stroke="#000" d="M189.804 500.987c0 6.627-5.372 12-12 12h-30c-6.627 0-12-5.373-12-12v-3c0-6.627 5.373-12 12-12h30c6.628 0 12 5.373 12 12v3z"/>
+    <text transform="translate(142.804 503.987)" font-family="Times,serif" font-size="14">
+        110001
+    </text>
+    <path fill="#FFF" stroke="#000" d="M121.239 443.454c0 6.627-5.372 12-12 12h-30c-6.627 0-12-5.373-12-12v-3c0-6.627 5.373-12 12-12h30c6.628 0 12 5.373 12 12v3z"/>
+    <text transform="translate(74.239 446.454)" font-family="Times,serif" font-size="14">
+        101001
+    </text>
+    <path fill="#FFF" stroke="#000" d="M76.486 365.939c0 6.627-5.372 12-12 12h-30c-6.627 0-12-5.373-12-12v-3c0-6.627 5.373-12 12-12h30c6.628 0 12 5.373 12 12v3z"/>
+    <text transform="translate(29.486 368.94)" font-family="Times,serif" font-size="14">
+        011001
+    </text>
+    <path fill="#FFF" stroke="#000" d="M180.365 277.794c0 6.627-5.372 12-12 12h-30c-6.627 0-12-5.373-12-12v-3c0-6.627 5.373-12 12-12h30c6.628 0 12 5.373 12 12v3z"/>
+    <text transform="translate(133.365 280.794)" font-family="Times,serif" font-size="14">
+        010101
+    </text>
+    <path fill="#FFF" stroke="#000" d="M318.665 161.433c0 6.627-5.372 12-12 12h-30c-6.627 0-12-5.373-12-12v-3c0-6.627 5.373-12 12-12h30c6.628 0 12 5.373 12 12v3z"/>
+    <text transform="translate(271.665 164.433)" font-family="Times,serif" font-size="14">
+        111111
+    </text>
+    <path fill="#FFF" stroke="#000" d="M318.665 394.794c0 6.627-5.372 12-12 12h-30c-6.627 0-12-5.373-12-12v-3c0-6.627 5.373-12 12-12h30c6.628 0 12 5.373 12 12v3z"/>
+    <text transform="translate(271.665 397.794)" font-family="Times,serif" font-size="14">
+        000000
+    </text>
+    <path fill="#FFF" stroke="#000" d="M456.648 277.794c0 6.627-5.372 12-12 12h-30c-6.627 0-12-5.373-12-12v-3c0-6.627 5.373-12 12-12h30c6.628 0 12 5.373 12 12v3z"/>
+    <text transform="translate(409.648 280.794)" font-family="Times,serif" font-size="14">
+        101010
+    </text>
+</svg>

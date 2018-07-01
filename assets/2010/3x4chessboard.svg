@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="252" height="180">
+    <path fill="none" stroke="#76B3DF" stroke-width="2" d="M18 162C68.67 85.994 85.996 68.671 162.001 18M162 162C85.994 111.33 68.671 94.004 18 17.999M90.001 18c76.005 50.671 93.331 67.994 144.001 144m0-144.001c-50.671 76.005-67.994 93.331-144 144.001"/>
+    <path fill="none" stroke="#76B3DF" stroke-width="2" d="M18 162L90 18l72 144 72-144zm72 0l144-72M18 162l144.001-72M234 162L90 90"/>
+    <path fill="none" stroke="#76B3DF" stroke-width="2" d="M18 162l72-72 72 72 72-72z"/>
+    <path fill="none" stroke="#76B3DF" stroke-width="2" d="M18.001 90L90 162l72.001-72L234 162zM162 162L18.001 90"/>
+    <path fill="none" stroke="#76B3DF" stroke-width="2" d="M18.001 18L90 162l72.001-144L234 162zM90 90l144-72M18 90l144.001-72M234 90L90 18"/>
+    <path fill="none" stroke="#76B3DF" stroke-width="2" d="M18 90l72-72 72 72 72-72z"/>
+    <path fill="none" stroke="#76B3DF" stroke-width="2" d="M18.001 18L90 90l72.001-72L234 90zM162 90L18.001 18"/>
+    <circle fill="red" stroke="#000" stroke-width="2" cx="18.001" cy="18" r="8"/>
+    <circle fill="red" stroke="#000" stroke-width="2" cx="18" cy="90" r="8"/>
+    <circle fill="red" stroke="#000" stroke-width="2" cx="18" cy="162" r="8"/>
+    <circle fill="red" stroke="#000" stroke-width="2" cx="90" cy="18" r="8"/>
+    <circle fill="red" stroke="#000" stroke-width="2" cx="90" cy="90" r="8"/>
+    <circle fill="red" stroke="#000" stroke-width="2" cx="90" cy="162" r="8"/>
+    <circle fill="red" stroke="#000" stroke-width="2" cx="162.001" cy="18" r="8"/>
+    <circle fill="red" stroke="#000" stroke-width="2" cx="162" cy="90" r="8"/>
+    <circle fill="red" stroke="#000" stroke-width="2" cx="162" cy="162" r="8"/>
+    <circle fill="red" stroke="#000" stroke-width="2" cx="234" cy="18" r="8"/>
+    <circle fill="red" stroke="#000" stroke-width="2" cx="234" cy="90" r="8"/>
+    <circle fill="red" stroke="#000" stroke-width="2" cx="234" cy="162" r="8"/>
+</svg>

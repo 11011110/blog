@@ -4,72 +4,57 @@ title:  'Unit distance graphs'
 date:   2010-01-04 08:04:00
 tags:   [nauru graph, unit distances, papers]
 ---
-The other day on the arXiv I saw <a href="http://arxiv.org/abs/0912.5395">an interesting paper on unit distance graphs</a> by Gerbracht (to appear at STACS) that led me to some other recent discoveries on the subject.
-<br />
+<p>The other day on the arXiv I saw <a href="http://arxiv.org/abs/0912.5395">an interesting paper on unit distance graphs</a> by Gerbracht (to appear at STACS) that led me to some other recent discoveries on the subject.</p>
 
-<br />
-A <a href="http://en.wikipedia.org/wiki/Unit_distance_graph">unit distance graph</a> is what you get if you choose some set of points in the Euclidean plane as vertices and connect pairs of points by edges when the distance between them is exactly one. It&#x27;s almost, but not quite, the same to ask for a labeling of the vertices of a graph by Euclidean points such that the endpoints of any edge have labels that are one unit apart: the two differences between these definitions are that a unit distance graph has to have each of its vertices at distinct locations, while the labeling doesn&#x27;t, and that a unit distance graph can&#x27;t have any non-adjacent pairs of vertices at unit distance from each other.
-<br />
+<p>A <a href="http://en.wikipedia.org/wiki/Unit_distance_graph">unit distance graph</a> is what you get if you choose some set of points in the Euclidean plane as vertices and connect pairs of points by edges when the distance between them is exactly one. It's almost, but not quite, the same to ask for a labeling of the vertices of a graph by Euclidean points such that the endpoints of any edge have labels that are one unit apart: the two differences between these definitions are that a unit distance graph has to have each of its vertices at distinct locations, while the labeling doesn't, and that a unit distance graph can't have any non-adjacent pairs of vertices at unit distance from each other.</p>
 
-<br />
-One of the major unanswered questions concerning unit distance graphs is how many colors are needed to color them, the so-called <a href="http://en.wikipedia.org/wiki/Hadwiger–Nelson_problem">Hadwiger–Nelson problem</a>. The answer is at least four and at most seven. The usual example of a unit distance graph requiring four colors is the seven-vertex Moser spindle, but there&#x27;s another more symmetric graph  that&#x27;s only a little larger with the same property, the <a href="http://mathworld.wolfram.com/GolombGraph.html">Golomb Graph</a>, shown below. To see that this graph cannot be 3-colored, observe that there is only one way to 3-color the seven vertices of the triangulated hexagon, as shown, up to permutations of the colors. However this partial 3-coloring forces the three points of the hexagon that attach to the inner triangle to all be the same color. No matter how the inner triangle (shown in gray) is also 3-colored, one of its colors would coincide with the color of the neighboring attachment vertex. Thus, at least four colors are needed, and conversely it is not hard to find a 4-coloring of the graph.
-<br />
+<p>One of the major unanswered questions concerning unit distance graphs is how many colors are needed to color them, the so-called <a href="http://en.wikipedia.org/wiki/Hadwiger–Nelson_problem">Hadwiger–Nelson problem</a>. The answer is at least four and at most seven. The usual example of a unit distance graph requiring four colors is the seven-vertex Moser spindle, but there's another more symmetric graph  that's only a little larger with the same property, the <a href="http://mathworld.wolfram.com/GolombGraph.html">Golomb Graph</a>, shown below. To see that this graph cannot be 3-colored, observe that there is only one way to 3-color the seven vertices of the triangulated hexagon, as shown, up to permutations of the colors. However this partial 3-coloring forces the three points of the hexagon that attach to the inner triangle to all be the same color. No matter how the inner triangle (shown in gray) is also 3-colored, one of its colors would coincide with the color of the neighboring attachment vertex. Thus, at least four colors are needed, and conversely it is not hard to find a 4-coloring of the graph.</p>
 
-<br />
-<div style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/Golomb_graph.png" /></div>
-<br />
+<p style="text-align:center"><img src="{{site.baseurl}}/assets/2010/Golomb_graph.svg" alt="The Golomb graph" /></p>
 
-<br />
-Unfortunately, it&#x27;s not at all easy to tell whether a given graph is a unit distance graph. In fact, I&#x27;m pretty sure that the <a href="http://dx.doi.org/10.1016/S0304-3975(97)84223-5">Eades–Whitesides logic engine technique</a> can be used to show that it&#x27;s NP-hard to test whether a graph is a unit distance graph, but I haven&#x27;t worked through the details carefully and I haven&#x27;t succeeded in finding a paper that states the hardness of this problem explicitly. A very closely related problem is known to be NP-hard, though: it&#x27;s also NP-hard to test whether a graph can be represented as a matchstick graph (unit distance graph without crossings): see <a href="http://dx.doi.org/10.1016/0166-218X(90)90110-X">Eades and Wormald</a> and <a href="http://www.cs.brown.edu/sites/jgaa/accepted/2007/CabelloDemaineRote2007.11.1.pdf">Cabello, Demaine, and Rote</a>.
-<br />
+<p>Unfortunately, it's not at all easy to tell whether a given graph is a unit distance graph. In fact, I'm pretty sure that the <a href="http://dx.doi.org/10.1016/S0304-3975(97)84223-5">Eades–Whitesides logic engine technique</a> can be used to show that it's NP-hard to test whether a graph is a unit distance graph, but I haven't worked through the details carefully and I haven't succeeded in finding a paper that states the hardness of this problem explicitly. A very closely related problem is known to be NP-hard, though: it's also NP-hard to test whether a graph can be represented as a matchstick graph (unit distance graph without crossings): see <a href="http://dx.doi.org/10.1016/0166-218X(90)90110-X">Eades and Wormald</a> and <a href="http://www.cs.brown.edu/sites/jgaa/accepted/2007/CabelloDemaineRote2007.11.1.pdf">Cabello, Demaine, and Rote</a>.</p>
 
-<br />
-It&#x27;s not even easy to answer the question of whether a graph is a unit distance graph for certain very specific small graphs. The Gerbracht paper answers this question for the <a href="http://en.wikipedia.org/wiki/Heawood_graph">Heawood graph</a>, which describes the <a href="http://en.wikipedia.org/wiki/Levi_graph">adjacencies between vertices and lines</a> in the <a href="http://en.wikipedia.org/wiki/Fano_plane">smallest possible finite projective plane</a>. It solves a question that had been open since 1972, when Vašek Chvátal had suggested that the graphs formed from projective planes in this way were not unit distance graphs. The Heawood graph trivially has a labeling of the type described earlier (label the vertices representing points of the Fano plane by the Euclidean point (0,0) and label the vertices representing lines by the Euclidean point (1,0)) but it&#x27;s not at all obvious that it has a unit distance representation, and despite the high degree of symmetry of the graph its unit distance representations are highly asymmetric.
-<br />
+<p>It's not even easy to answer the question of whether a graph is a unit distance graph for certain very specific small graphs. The Gerbracht paper answers this question for the <a href="http://en.wikipedia.org/wiki/Heawood_graph">Heawood graph</a>, which describes the <a href="http://en.wikipedia.org/wiki/Levi_graph">adjacencies between vertices and lines</a> in the <a href="http://en.wikipedia.org/wiki/Fano_plane">smallest possible finite projective plane</a>. It solves a question that had been open since 1972, when Vašek Chvátal had suggested that the graphs formed from projective planes in this way were not unit distance graphs. The Heawood graph trivially has a labeling of the type described earlier (label the vertices representing points of the Fano plane by the Euclidean point \( (0,0) \) and label the vertices representing lines by the Euclidean point \( (1,0) \)) but it's not at all obvious that it has a unit distance representation, and despite the high degree of symmetry of the graph its unit distance representations are highly asymmetric.</p>
 
-<br />
-Relatedly, Tomo Pisanski recently sent me a preprint of a paper by him with Žitnik and Horvat on unit distance graphs, &quot;<a href="http://www.imfm.si/preprinti/PDF/01109.pdf">All generalized Petersen graphs are unit-distance graphs</a>&quot;. A generalized Petersen graph is a graph that, like the Petersen graph or the Nauru graph G(12,5), can be formed by connecting each vertex of an outer polygon to the corresponding vertices of an inner star with the same number of points. The definition of a unit distance graph in this paper is a looser one in which vertices must be placed at distinct locations so that all edges have unit length, but some non-edges are also allowed to have unit length. As <a href="http://www.renyi.hu/~p_erdos/1965-09.pdf">Erdős, Harary, and Tutte</a> already observed, in some cases, this is easy: one can use a regular polygon for the outer polygon, a regular star with equal-length edges for the inner star, and twist the star by the correct angle to make the edges from outer to inner also have unit length. The same idea was also used by Golomb to form the layout of the Golomb graph shown above. However, this only works when the star is big enough and the outer polygon is small enough that corresponding vertices start out at less than unit distance and can have their distance increased by the twist; when the untwisted star is already at more than unit distance from the outer polygon, as happens in all but finitely many cases, this twisting idea is not enough.
-<br />
+<p>Relatedly, Tomo Pisanski recently sent me a preprint of a paper by him with Žitnik and Horvat on unit distance graphs, "<a href="http://www.imfm.si/preprinti/PDF/01109.pdf">All generalized Petersen graphs are unit-distance graphs</a>". A generalized Petersen graph is a graph that, like the Petersen graph or the Nauru graph \( G(12,5) \), can be formed by connecting each vertex of an outer polygon to the corresponding vertices of an inner star with the same number of points. The definition of a unit distance graph in this paper is a looser one in which vertices must be placed at distinct locations so that all edges have unit length, but some non-edges are also allowed to have unit length. As <a href="http://www.renyi.hu/~p_erdos/1965-09.pdf">Erdős, Harary, and Tutte</a> already observed, in some cases, this is easy: one can use a regular polygon for the outer polygon, a regular star with equal-length edges for the inner star, and twist the star by the correct angle to make the edges from outer to inner also have unit length. The same idea was also used by Golomb to form the layout of the Golomb graph shown above. However, this only works when the star is big enough and the outer polygon is small enough that corresponding vertices start out at less than unit distance and can have their distance increased by the twist; when the untwisted star is already at more than unit distance from the outer polygon, as happens in all but finitely many cases, this twisting idea is not enough.</p>
 
-<br />
-The main idea of Pisanski and his co-authors is that, in most cases, a generalized Petersen graph G(<i>n</i>,<i>k</i>) can be permuted (by an automorphism of the cyclic group <b>Z</b><sub><i>n</i></sub>) to take the form of an outer star connected to an inner star, and that by choosing the two stars carefully one can use the twist idea to form a unit distance representation. The only generalized Petersen graphs for which this twisted-double-star idea doesn&#x27;t work are the prisms and the Nauru graph. For a prism, the outer and inner star are always congruent and twisting them to be unit distance apart causes their vertices to lie on top of each other, but one can instead translate two regular polygons with respect to each other. For the Nauru graph, the number 12 has too few non-divisors, so the nontrivial automorphisms of <b>Z</b><sub><i>12</i></sub> don&#x27;t give it a different form. Instead, they find a representation of the Nauru graph in which alternating vertices in the inner star and outer dodecagon are at different distances from the center of the drawing. The resulting drawing has the same amount of symmetry as the other generalized Petersen graphs (except for the prisms, which are less symmetric), but as a dihedral symmetry group rather than as in the twisted case a cyclic symmetry group. Here, redrawn from a figure in their paper, is one more to add to my collection of drawings of the Nauru graph:
-<br />
+<p>The main idea of Pisanski and his co-authors is that, in most cases, a generalized Petersen graph \( G(n,k) \) can be permuted (by an automorphism of the cyclic group \( \mathbb{Z}_n \)) to take the form of an outer star connected to an inner star, and that by choosing the two stars carefully one can use the twist idea to form a unit distance representation. The only generalized Petersen graphs for which this twisted-double-star idea doesn't work are the prisms and the Nauru graph. For a prism, the outer and inner star are always congruent and twisting them to be unit distance apart causes their vertices to lie on top of each other, but one can instead translate two regular polygons with respect to each other. For the Nauru graph, the number \( 12 \) has too few non-divisors, so the nontrivial automorphisms of \( \mathbb{Z}_{12} \) don't give it a different form. Instead, they find a representation of the Nauru graph in which alternating vertices in the inner star and outer dodecagon are at different distances from the center of the drawing. The resulting drawing has the same amount of symmetry as the other generalized Petersen graphs (except for the prisms, which are less symmetric), but as a dihedral symmetry group rather than as in the twisted case a cyclic symmetry group. Here, redrawn from a figure in their paper, is one more to add to my collection of drawings of the Nauru graph:</p>
 
-<br />
-<div style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/Nauru_unit_distance.png" /></div>
+<p style="text-align:center"><img src="{{site.baseurl}}/assets/2010/Nauru_unit_distance.svg" alt="Unit distance embedding of the Nauru graph" /></p>
+
 <br /><br /><hr /><br />
 <h3>Comments:</h3>
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>tbiedl</b>: <br />
 <b>2010-01-04T20:11:29Z</b><br />
-Yes, the logic engine approach should definitely work.
+<p>Yes, the logic engine approach should definitely work.</p>
 
-Didn&#x27;t Jack Edmonds prove that embedding with fixed edge length (no
-planarity required) is NP-hard?  I can&#x27;t find the citation, so I may
-be wrong, but I&#x27;m sure this is known.  If you take that proof and
+<p>Didn't Jack Edmonds prove that embedding with fixed edge length (no
+planarity required) is NP-hard?  I can't find the citation, so I may
+be wrong, but I'm sure this is known.  If you take that proof and
 replace longer edges with little gadgets, you should have the result.
-(Unless, of course, the edge lengths aren&#x27;t polynomial.  But I can&#x27;t
-imagine that to be the case.)
+(Unless, of course, the edge lengths aren't polynomial.  But I can't
+imagine that to be the case.)</p>
 </div>
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>11011110</b>: <br />
 <b>2010-01-04T21:12:05Z</b><br />
-There was a result by Jeff Edmonds (not Jack) that it&#x27;s NP-hard to tell whether a metric space can be embedded in a distance preserving way into a three-dimensional L∞ space, at SODA 2007 — is that the one you were thinking of?
+<p>There was a result by Jeff Edmonds (not Jack) that it's NP-hard to tell whether a metric space can be embedded in a distance preserving way into a three-dimensional L∞ space, at SODA 2007 — is that the one you were thinking of?</p>
 
 </div>
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>None</b>: NP-hard<br />
 <b>2010-01-05T02:10:42Z</b><br />
 
-&gt;but I haven&#x27;t worked through the details carefully and I haven&#x27;t succeeded
-&gt;in finding a paper that states the hardness of this problem explicitly.
+<p>&gt;but I haven't worked through the details carefully and I haven't succeeded<br/>
+&gt;in finding a paper that states the hardness of this problem explicitly.</p>
 
-If the matchstick graph testing problem is NP-hard and it&#x27;s a subproblem of the unit distance graph testing problem, then it is also NP-hard. right?
+<p>If the matchstick graph testing problem is NP-hard and it's a subproblem of the unit distance graph testing problem, then it is also NP-hard. right?</p>
 
 </div>
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>11011110</b>: Re: NP-hard<br />
 <b>2010-01-05T03:59:20Z</b><br />
-Well, no. It could be true (though based on the logic engine argument it seems not to be true) that it&#x27;s easy to test whether a graph is a unit distance graph but hard to figure out how to get the edges to be arranged in an uncrossed way.
+<p>Well, no. It could be true (though based on the logic engine argument it seems not to be true) that it's easy to test whether a graph is a unit distance graph but hard to figure out how to get the edges to be arranged in an uncrossed way.</p>
 </div>
 

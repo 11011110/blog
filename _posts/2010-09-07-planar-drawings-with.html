@@ -12,11 +12,11 @@ tags:   [graph drawing, papers]
 
 <p>Instead, they use a modified version of the circle packing theorem that works only on graphs of bounded degree, and imposes an additional constraint on the circles: any two adjacent circles have radii that are within a constant factor of each other. They then superimpose a <a href="http://en.wikipedia.org/wiki/Quadtree">quadtree</a> on the circles, with the squares of the quadtree subdivided to a small enough size to ensure that there is a quadtree corner near each circle center, and they use these quadtree corners as the locations of the vertices of the drawing.</p>
 
-<p style="text-align:center"><img alt="Using a quadtree on top of a circle packing to draw planar graphs with few slopes" src="http://www.ics.uci.edu/~eppstein/0xDE/KesPacPal-GD-10.png" /></p>
+<p style="text-align:center"><img alt="Using a quadtree on top of a circle packing to draw planar graphs with few slopes" src="{{site.baseurl}}/assets/2010/KesPacPal-GD-10.svg" /></p>
 
 <p>Because any two neighboring circles have similar sizes, the corresponding graph vertices will be rounded to quadtree corners at a similar grid resolution, and in the grid of that resolution the two neighboring vertices will be a constant number of grid cells apart from each other. Therefore, the slope is a rational number with small integer numerator and denominator, and there are only a bounded number of possible slopes; for instance in the drawing above the only slopes are –1, 3, 1/3, 5, 1/5, and -3/5.  Although the authors don't emphasize this, their drawing also has bounded angular resolution.</p>
 
-<p>Although pretty in theory, there are some practical issues with their method, partly because circle packings are difficult to calculate exactly and partly because the dependence of <i>s</i> on <i>d</i> is badly exponential. Possibly for this reason, the authors also describe alternative methods that allow a small number of bends in the edges but that greatly reduce the number of slopes needed in their drawings.</p>
+<p>Although pretty in theory, there are some practical issues with their method, partly because circle packings are difficult to calculate exactly and partly because the dependence of \( s \) on \( d \) is badly exponential. Possibly for this reason, the authors also describe alternative methods that allow a small number of bends in the edges but that greatly reduce the number of slopes needed in their drawings.</p>
 
 <br /><br /><hr /><br />
 <h3>Comments:</h3>

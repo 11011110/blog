@@ -4,77 +4,72 @@ title:  'Diameters and domination'
 date:   2010-12-05 23:32:00
 tags:   [graph algorithms, papers]
 ---
-An old open problem asks whether the diameter of a graph (the maximum distance between any two vertices) can be computed more quickly than all pairwise shortest paths (APSP). In <a href="http://arxiv.org/abs/1011.6181">arXiv:1011.6181</a>, Raphael Yuster shows that the answer (for unweighted directed graphs) is yes. Or at least, he provides the first algorithm for computing diameter that is faster in the worst case (for dense graphs) that is faster than known APSP algorithms.
-<br />
+<p>An old open problem asks whether the diameter of a graph (the maximum distance between any two vertices) can be computed more quickly than all pairwise shortest paths (APSP). In <a href="http://arxiv.org/abs/1011.6181">arXiv:1011.6181</a>, Raphael Yuster shows that the answer (for unweighted directed graphs) is yes. Or at least, he provides the first algorithm for computing diameter that is faster in the worst case (for dense graphs) that is faster than known APSP algorithms.</p>
 
-<br />
-Both the new algorithm and the known fastest APSP algorithms are based on fast matrix multiplication techniques, and have running times that depend in complicated ways on the bounds for matrix multiplication. The APSP algorithm of Zwick (JACM 2002) takes time O(n<sup>2.616</sup>) using the best known matrix multiplication algorithms, while the new diameter algorithm takes time O(n<sup>2.575</sup>).
-<br />
+<p>Both the new algorithm and the known fastest APSP algorithms are based on fast matrix multiplication techniques, and have running times that depend in complicated ways on the bounds for matrix multiplication. The APSP algorithm of Zwick (JACM 2002) takes time \( O(n^{2.616}) \) using the best known matrix multiplication algorithms, while the new diameter algorithm takes time \( O(n^{2.575}) \).</p>
 
-<br />
-One of the things I found intriguing about this paper is the connection it makes between approximate and exact algorithms. There&#x27;s been a lot of work in recent years on algorithms for computing shortest paths approximately, more quickly than they can be computed exactly.  The main idea of Yuster&#x27;s paper seems to be that these approximations can then be used to find a small set of candidate pairs, one of which is guaranteed to be a diametral pair.
-<br />
+<p>One of the things I found intriguing about this paper is the connection it makes between approximate and exact algorithms. There's been a lot of work in recent years on algorithms for computing shortest paths approximately, more quickly than they can be computed exactly.  The main idea of Yuster's paper seems to be that these approximations can then be used to find a small set of candidate pairs, one of which is guaranteed to be a diametral pair.</p>
 
-<br />
-Another curiosity among this week&#x27;s arXiv algorithm submissions: <a href="http://arxiv.org/abs/1011.6239">two</a> <a href="http://arxiv.org/abs/1012.0012">papers</a> on the same problem, minimum dominating sets in <a href="http://en.wikipedia.org/wiki/Claw-free_graph">claw-free graphs</a>. It&#x27;s long been known that domination problems behave somewhat nicely on claw-free graphs: there exists a minimum dominating set that is also an independent set, and the largest independent set (necessarily itself a dominating set) can be found in polynomial time. However, the minimum dominating set problem remains NP-complete in these graphs. The two new papers both show that it&#x27;s fixed-parameter tractable. They don&#x27;t reference each other, which I guess means that they&#x27;re independent discoveries. I haven&#x27;t read the papers carefully enough to have an opinion on which one&#x27;s algorithms are preferable, but I like the second title better: &quot;Domination when the Stars Are Out&quot;. Shades of Lovecraft?
+<p>Another curiosity among this week's arXiv algorithm submissions: <a href="http://arxiv.org/abs/1011.6239">two</a> <a href="http://arxiv.org/abs/1012.0012">papers</a> on the same problem, minimum dominating sets in <a href="http://en.wikipedia.org/wiki/Claw-free_graph">claw-free graphs</a>. It's long been known that domination problems behave somewhat nicely on claw-free graphs: there exists a minimum dominating set that is also an independent set, and the largest independent set (necessarily itself a dominating set) can be found in polynomial time. However, the minimum dominating set problem remains NP-complete in these graphs. The two new papers both show that it's fixed-parameter tractable. They don't reference each other, which I guess means that they're independent discoveries. I haven't read the papers carefully enough to have an opinion on which one's algorithms are preferable, but I like the second title better: "Domination when the Stars Are Out". Shades of Lovecraft?</p>
+
 <br /><br /><hr /><br />
 <h3>Comments:</h3>
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>eternal_spring</b>: <br />
 <b>2010-12-06T19:56:51Z</b><br />
-With this information, might you be able to answer one -- or both -- of the following Stack/MathOverflow questions?
+<p>With this information, might you be able to answer one -- or both -- of the following Stack/MathOverflow questions?</p>
 
-Good algorithm for finding the diameter of a (sparse) graph?
+<p>Good algorithm for finding the diameter of a (sparse) graph?
 http://stackoverflow.com/q/1190543
-http://mathoverflow.net/questions/11444
+http://mathoverflow.net/questions/11444</p>
 
-Neither received satisfactory answers, and I&#x27;d be happy to accept an answer with the information you know.
+<p>Neither received satisfactory answers, and I'd be happy to accept an answer with the information you know.</p>
 
-Thanks.
+<p>Thanks.</p>
 </div>
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>11011110</b>: <br />
 <b>2010-12-06T20:01:31Z</b><br />
-Thanks for the pointers, but I don&#x27;t think this new paper really helps answer those questions. The problem is that the improvements it describes only kick in (compared to the much easier approach of doing n different BFS&#x27;s, one from each possible starting vertex) for dense graphs, whereas the overflow questions are about sparse graphs.
+<p>Thanks for the pointers, but I don't think this new paper really helps answer those questions. The problem is that the improvements it describes only kick in (compared to the much easier approach of doing n different BFS's, one from each possible starting vertex) for dense graphs, whereas the overflow questions are about sparse graphs.</p>
 
-I&#x27;ll put an answer referring to it on the mathoverflow one, though (I don&#x27;t have a stackoverflow account) because it is at least closely related enough to be worth mentioning.
+<p>I'll put an answer referring to it on the mathoverflow one, though (I don't have a stackoverflow account) because it is at least closely related enough to be worth mentioning.</p>
 </div>
 <div style="margin-left: 6em; padding-top: 1em;">
 <b>eternal_spring</b>: <br />
 <b>2010-12-06T20:13:48Z</b><br />
-Yes, I saw the dense/sparse issue.
+<p>Yes, I saw the dense/sparse issue.</p>
 
-On the other hand, you seem to have the knowledge that &quot;an old open problem asks whether the diameter of a graph (the maximum distance between any two vertices) can be computed more quickly than all pairwise shortest paths&quot;.  This also answers my questions.
+<p>On the other hand, you seem to have the knowledge that "an old open problem asks whether the diameter of a graph (the maximum distance between any two vertices) can be computed more quickly than all pairwise shortest paths".  This also answers my questions.</p>
 
-Thanks.
+<p>Thanks.</p>
 </div>
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>virgi</b>: <br />
 <b>2010-12-08T00:23:12Z</b><br />
-Just a small comment: APSP in directed unweighted graphs is in n^{2.575} time via Zwick&#x27;s algorithm (if you use rectangular matrix multiplication); Raphy shows that the diameter can be solved in slightly better than that time: n^{2.561}. I also find it interesting for the following reason: usually in shortest paths papers we split the problem into two different cases (low degree/high degree or short path/long path etc); Raphy managed to find a way to split the algorithm into three instead of two cases, thus getting an improvement. I&#x27;m actually quite convinced that APSP should be in n^{\omega} time, and this may be something like a half-step in that direction :)
+<p>Just a small comment: APSP in directed unweighted graphs is in \( n^{2.575} \) time via Zwick's algorithm (if you use rectangular matrix multiplication); Raphy shows that the diameter can be solved in slightly better than that time: \( n^{2.561} \). I also find it interesting for the following reason: usually in shortest paths papers we split the problem into two different cases (low degree/high degree or short path/long path etc); Raphy managed to find a way to split the algorithm into three instead of two cases, thus getting an improvement. I'm actually quite convinced that APSP should be in \( n^{\omega} \) time, and this may be something like a half-step in that direction :)</p>
 </div>
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>11011110</b>: <br />
 <b>2010-12-08T00:28:05Z</b><br />
-Thanks for the correction, and even more for the insight.
+<p>Thanks for the correction, and even more for the insight.</p>
 
-I didn&#x27;t know you had an LJ! But you don&#x27;t seem to be posting much to it.
+<p>I didn't know you had an LJ! But you don't seem to be posting much to it.</p>
 </div>
 <div style="margin-left: 6em; padding-top: 1em;">
 <b>virgi</b>: <br />
 <b>2010-12-08T00:40:04Z</b><br />
-Yes, I&#x27;m not much of a blogger but I do read other people&#x27;s posts occasionally :-)
+<p>Yes, I'm not much of a blogger but I do read other people's posts occasionally :-)</p>
 </div>
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>raphael_yuster</b>: <br />
 <b>2011-01-14T09:15:14Z</b><br />
-Thanks David for mentioning this.
+<p>Thanks David for mentioning this.</p>
 
-I just posted to the ArXiv a revised version that also handles the integer weighted case (both positive and negative weights) using essentially the same algorithm (and with the same sub-APSP running time).
+<p>I just posted to the ArXiv a revised version that also handles the integer weighted case (both positive and negative weights) using essentially the same algorithm (and with the same sub-APSP running time).</p>
 
-For positive only weights I included a new algorithm that runs in O(Mn^w) time (edge weights in 1...M).
+<p>For positive only weights I included a new algorithm that runs in \( O(Mn^w) \) time (edge weights in \( 1\dots M \)).</p>
 
-On the other hand, the purely unweighted case turns out to have a much simpler solution (as observed in some lecture notes of Uri Zwick) that is based on repeated squaring of boolean matrices and binary searching for the right exponent.
-This does not, however, work for the weighted case (not even for weights in {-1,0,1}) so the algorithm in the paper is indeed the first algorithm that is sub-APSP for the general integer weighted setting.
+<p>On the other hand, the purely unweighted case turns out to have a much simpler solution (as observed in some lecture notes of Uri Zwick) that is based on repeated squaring of boolean matrices and binary searching for the right exponent.
+This does not, however, work for the weighted case (not even for weights in \( \{-1,0,1\}\) ) so the algorithm in the paper is indeed the first algorithm that is sub-APSP for the general integer weighted setting.</p>
 </div>
 

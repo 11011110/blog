@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="342" height="270">
+    <path fill="none" stroke="#76B3DF" stroke-width="4" d="M27 243l72-72 72 72 72-72 72 72M27 171l72-72 72 72 72-72 72 72M27 99l72-72 72 72 72-72 72 72m-72 144V27m-72 216V27M99 243V27M27 171h288M27 99h288"/>
+    <path fill="none" stroke="#76B3DF" stroke-width="4" d="M27 27h288v216H27z"/>
+    <path fill="#FFF" stroke="#000" d="M45 33c0 6.627-5.373 12-12 12H21c-6.627 0-12-5.373-12-12V21c0-6.627 5.373-12 12-12h12c6.627 0 12 5.373 12 12v12z"/>
+    <text transform="translate(15.75 33)" font-family="Times,serif" font-size="18">
+        0,0
+    </text>
+    <path fill="#FFF" stroke="#000" d="M45 105c0 6.627-5.373 12-12 12H21c-6.627 0-12-5.373-12-12V93c0-6.627 5.373-12 12-12h12c6.627 0 12 5.373 12 12v12z"/>
+    <text transform="translate(15.75 105)" font-family="Times,serif" font-size="18">
+        2,2
+    </text>
+    <path fill="#FFF" stroke="#000" d="M45 177c0 6.627-5.373 12-12 12H21c-6.627 0-12-5.373-12-12v-12c0-6.627 5.373-12 12-12h12c6.627 0 12 5.373 12 12v12z"/>
+    <text transform="translate(15.75 177)" font-family="Times,serif" font-size="18">
+        1,0
+    </text>
+    <path fill="#FFF" stroke="#000" d="M45 249c0 6.627-5.373 12-12 12H21c-6.627 0-12-5.373-12-12v-12c0-6.627 5.373-12 12-12h12c6.627 0 12 5.373 12 12v12z"/>
+    <text transform="translate(15.75 249)" font-family="Times,serif" font-size="18">
+        0,2
+    </text>
+    <path fill="#FFF" stroke="#000" d="M117 33c0 6.627-5.373 12-12 12H93c-6.627 0-12-5.373-12-12V21c0-6.627 5.373-12 12-12h12c6.627 0 12 5.373 12 12v12z"/>
+    <text transform="translate(87.75 33)" font-family="Times,serif" font-size="18">
+        1,1
+    </text>
+    <path fill="#FFF" stroke="#000" d="M117 105c0 6.627-5.373 12-12 12H93c-6.627 0-12-5.373-12-12V93c0-6.627 5.373-12 12-12h12c6.627 0 12 5.373 12 12v12z"/>
+    <text transform="translate(87.75 105)" font-family="Times,serif" font-size="18">
+        0,3
+    </text>
+    <path fill="#FFF" stroke="#000" d="M117 177c0 6.627-5.373 12-12 12H93c-6.627 0-12-5.373-12-12v-12c0-6.627 5.373-12 12-12h12c6.627 0 12 5.373 12 12v12z"/>
+    <text transform="translate(87.75 177)" font-family="Times,serif" font-size="18">
+        2,1
+    </text>
+    <path fill="#FFF" stroke="#000" d="M117 249c0 6.627-5.373 12-12 12H93c-6.627 0-12-5.373-12-12v-12c0-6.627 5.373-12 12-12h12c6.627 0 12 5.373 12 12v12z"/>
+    <text transform="translate(87.75 249)" font-family="Times,serif" font-size="18">
+        1,3
+    </text>
+    <path fill="#FFF" stroke="#000" d="M189 33c0 6.627-5.373 12-12 12h-12c-6.627 0-12-5.373-12-12V21c0-6.627 5.373-12 12-12h12c6.627 0 12 5.373 12 12v12z"/>
+    <text transform="translate(159.75 33)" font-family="Times,serif" font-size="18">
+        0,2
+    </text>
+    <path fill="#FFF" stroke="#000" d="M189 105c0 6.627-5.373 12-12 12h-12c-6.627 0-12-5.373-12-12V93c0-6.627 5.373-12 12-12h12c6.627 0 12 5.373 12 12v12z"/>
+    <text transform="translate(159.75 105)" font-family="Times,serif" font-size="18">
+        2,0
+    </text>
+    <path fill="#FFF" stroke="#000" d="M189 177c0 6.627-5.373 12-12 12h-12c-6.627 0-12-5.373-12-12v-12c0-6.627 5.373-12 12-12h12c6.627 0 12 5.373 12 12v12z"/>
+    <text transform="translate(159.75 177)" font-family="Times,serif" font-size="18">
+        1,2
+    </text>
+    <path fill="#FFF" stroke="#000" d="M189 249c0 6.627-5.373 12-12 12h-12c-6.627 0-12-5.373-12-12v-12c0-6.627 5.373-12 12-12h12c6.627 0 12 5.373 12 12v12z"/>
+    <text transform="translate(159.75 249)" font-family="Times,serif" font-size="18">
+        0,0
+    </text>
+    <path fill="#FFF" stroke="#000" d="M261 33c0 6.627-5.373 12-12 12h-12c-6.627 0-12-5.373-12-12V21c0-6.627 5.373-12 12-12h12c6.627 0 12 5.373 12 12v12z"/>
+    <text transform="translate(231.75 33)" font-family="Times,serif" font-size="18">
+        1,3
+    </text>
+    <path fill="#FFF" stroke="#000" d="M261 105c0 6.627-5.373 12-12 12h-12c-6.627 0-12-5.373-12-12V93c0-6.627 5.373-12 12-12h12c6.627 0 12 5.373 12 12v12z"/>
+    <text transform="translate(231.75 105)" font-family="Times,serif" font-size="18">
+        0,1
+    </text>
+    <path fill="#FFF" stroke="#000" d="M261 177c0 6.627-5.373 12-12 12h-12c-6.627 0-12-5.373-12-12v-12c0-6.627 5.373-12 12-12h12c6.627 0 12 5.373 12 12v12z"/>
+    <text transform="translate(231.75 177)" font-family="Times,serif" font-size="18">
+        2,3
+    </text>
+    <path fill="#FFF" stroke="#000" d="M261 249c0 6.627-5.373 12-12 12h-12c-6.627 0-12-5.373-12-12v-12c0-6.627 5.373-12 12-12h12c6.627 0 12 5.373 12 12v12z"/>
+    <text transform="translate(231.75 249)" font-family="Times,serif" font-size="18">
+        1,1
+    </text>
+    <path fill="#FFF" stroke="#000" d="M333 33c0 6.627-5.373 12-12 12h-12c-6.627 0-12-5.373-12-12V21c0-6.627 5.373-12 12-12h12c6.627 0 12 5.373 12 12v12z"/>
+    <text transform="translate(303.75 33)" font-family="Times,serif" font-size="18">
+        0,0
+    </text>
+    <path fill="#FFF" stroke="#000" d="M333 105c0 6.627-5.373 12-12 12h-12c-6.627 0-12-5.373-12-12V93c0-6.627 5.373-12 12-12h12c6.627 0 12 5.373 12 12v12z"/>
+    <text transform="translate(303.75 105)" font-family="Times,serif" font-size="18">
+        2,2
+    </text>
+    <path fill="#FFF" stroke="#000" d="M333 177c0 6.627-5.373 12-12 12h-12c-6.627 0-12-5.373-12-12v-12c0-6.627 5.373-12 12-12h12c6.627 0 12 5.373 12 12v12z"/>
+    <text transform="translate(303.75 177)" font-family="Times,serif" font-size="18">
+        1,0
+    </text>
+    <path fill="#FFF" stroke="#000" d="M333 249c0 6.627-5.373 12-12 12h-12c-6.627 0-12-5.373-12-12v-12c0-6.627 5.373-12 12-12h12c6.627 0 12 5.373 12 12v12z"/>
+    <text transform="translate(303.75 249)" font-family="Times,serif" font-size="18">
+        0,2
+    </text>
+</svg>

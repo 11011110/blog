@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="280">
+    <g fill="none" stroke="#000">
+        <path d="M15.999 140L88.154 15.31l143.922.001 71.914 123.056-71.914 126.358H88.154z"/>
+        <path d="M15.999 140H160l143.99-1.633"/>
+        <path d="M303.99 138.367L183.052 60.1 79.006 158.838 88.154 15.31 160 140l72.076 124.725"/>
+        <path d="M183.052 60.1l33.893 140.47-128.791 64.155L160 140l72.076-124.689M216.945 200.57L79.006 158.838"/>
+    </g>
+    <circle fill="red" stroke="#000" cx="88.154" cy="15.31" r="3"/>
+    <circle fill="red" stroke="#000" cx="303.99" cy="138.367" r="3"/>
+    <circle fill="red" stroke="#000" cx="88.154" cy="264.725" r="3"/>
+    <circle fill="#003CFF" stroke="#000" cx="232.076" cy="15.311" r="3"/>
+    <circle fill="#003CFF" stroke="#000" cx="16.667" cy="139.665" r="3"/>
+    <circle fill="#003CFF" stroke="#000" cx="232.076" cy="264.725" r="3"/>
+    <circle fill="#FF0" stroke="#000" cx="160" cy="140" r="3"/>
+    <circle fill="#B2B2B2" stroke="#000" cx="183.052" cy="60.1" r="3"/>
+    <circle fill="#B2B2B2" stroke="#000" cx="216.945" cy="200.57" r="3"/>
+    <circle fill="#B2B2B2" stroke="#000" cx="79.006" cy="158.838" r="3"/>
+</svg>

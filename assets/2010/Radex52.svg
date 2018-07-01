@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="432" height="410.858">
+    <path d="M0 174.335h432M106.456 410.858L239.951 0m124.348 382.702L14.802 128.778m402.397-.001L67.703 382.702M192.048 0l133.497 410.857" fill="none" stroke="#5A3D1C"/>
+    <g fill="red" stroke="#000">
+        <circle cx="216" cy="73.715" r="3"/>
+        <circle cx="183" cy="174.335" r="3"/>
+        <circle cx="77.506" cy="174.335" r="3"/>
+        <circle cx="163.1" cy="236.522" r="3"/>
+        <circle cx="130.406" cy="337.146" r="3"/>
+        <circle cx="216" cy="274.957" r="3"/>
+        <circle cx="268.9" cy="236.522" r="3"/>
+        <circle cx="248.815" cy="174.711" r="3"/>
+        <circle cx="354.495" cy="174.335" r="3"/>
+        <circle cx="301.593" cy="337.141" r="3"/>
+    </g>
+    <g font-family="Times,serif" font-style="italic" font-size="24">
+        <text transform="translate(228 74.335)">
+            ae/c
+        </text>
+        <text transform="translate(253 166.335)">
+            ae/d
+        </text>
+        <text transform="translate(321 166.335)">
+            be/d
+        </text>
+        <text transform="translate(140 166.335)">
+            ae/b
+        </text>
+        <text transform="translate(75 166.335)">
+            ad/b
+        </text>
+        <text transform="translate(110 248.335)">
+            ac/b
+        </text>
+        <text transform="translate(278 248.335)">
+            ce/d
+        </text>
+        <text transform="translate(196 259.335)">
+            c/bd
+        </text>
+        <text transform="translate(133 352.335)">
+            c/be
+        </text>
+        <text transform="translate(253 352.335)">
+            c/ad
+        </text>
+    </g>
+</svg>

@@ -6,19 +6,19 @@ tags:   [circles]
 ---
 <p>The drawing below is in "six-to-one perspective": three-dimensional axis-parallel rays in each of the six possible directions are drawn as circular arcs that all converge to the same one point.  Axis-parallel line segments become circular arcs, right angles in space become 60 or 120-degree angles in the plane, and (in exchange for some fisheye distortion) the whole 360-degree field of view fits into a plane. If a <a href="{{site.baseurl}}{% post_url 2009-12-03-orthogonal-polyhedra %}">corner polyhedron</a> (such as a cube, below) is drawn using this projection, we can see all of its vertices, even the hidden back vertex.</p>
 
-<p style="text-align:center"><img alt="a cube in six-to-one perspective" src="http://www.ics.uci.edu/~eppstein/0xDE/621/621.png" /></p>
+<p style="text-align:center"><img alt="a cube in six-to-one perspective" src="{{site.baseurl}}/assets/2010/621/621.svg" /></p>
 
 <p>By comparison, <a href="http://en.wikipedia.org/wiki/Axonometric_projection">axonometric projection</a> uses nice straight lines and has the same 60- or 120- degree angles, but can't show the points of convergence.</p>
 
-<p style="text-align:center"><img alt="axonometric projection of a cube" src="http://www.ics.uci.edu/~eppstein/0xDE/621/axonometric.png" /></p>
+<p style="text-align:center"><img alt="axonometric projection of a cube" src="{{site.baseurl}}/assets/2010/621/axonometric.svg" /></p>
 
 <p><a href="http://en.wikipedia.org/wiki/Three-point_perspective">Three-point perspective</a> again has nice straight lines, and (when used less excessively than the view below) looks the most realistic of any of these methods, but has nonuniform angles and can only show three of the six convergence points.</p>
 
-<p style="text-align:center"><img alt="a cube in three-point perspective" src="http://www.ics.uci.edu/~eppstein/0xDE/621/threepoint.png" /></p>
+<p style="text-align:center"><img alt="a cube in three-point perspective" src="{{site.baseurl}}/assets/2010/621/threepoint.svg" /></p>
 
 <p>And six-point perspective uses circular arcs and represents all six convergence points, but again has nonuniform angles.</p>
 
-<p style="text-align:center"><img alt="a cube in six-point perspective" src="http://www.ics.uci.edu/~eppstein/0xDE/621/sixpoint.png" /></p>
+<p style="text-align:center"><img alt="a cube in six-point perspective" src="{{site.baseurl}}/assets/2010/621/sixpoint.svg" /></p>
 
 <p>In choosing the radii for the guide circles in the six-to-one perspective drawing, it turned out to work well to pick <a href="http://en.wikipedia.org/wiki/Smooth_number">smooth numbers</a>: the radii are in the proportion 3:4:6:8:12, leading to lots of triple junctions on which the vertices of the cube can be placed. Maybe for a more complex drawing I'd need to step up to a larger number of prime factors?</p>
 

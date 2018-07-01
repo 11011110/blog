@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="432" height="198">
+    <g fill="none" stroke="#009245" stroke-width="3">
+        <path d="M27 171L81 27v144l54-144v144l54-144v144l54-144v144l54-144v144l54-144v144l54-144"/>
+        <path d="M27 27h378v144H27z"/>
+    </g>
+    <g fill="#FFF" stroke="#000">
+        <circle cx="27" cy="27" r="18"/>
+        <circle cx="81" cy="27" r="18"/>
+        <circle cx="135" cy="27" r="18"/>
+        <circle cx="189" cy="27" r="18"/>
+        <circle cx="297" cy="171" r="18"/>
+        <circle cx="351" cy="171" r="18"/>
+        <circle cx="405" cy="171" r="18"/>
+        <circle cx="243" cy="27" r="18"/>
+        <circle cx="297" cy="27" r="18"/>
+        <circle cx="351" cy="27" r="18"/>
+        <circle cx="405" cy="27" r="18"/>
+        <circle cx="27" cy="171" r="18"/>
+        <circle cx="81" cy="171" r="18"/>
+        <circle cx="135" cy="171" r="18"/>
+        <circle cx="189" cy="171" r="18"/>
+        <circle cx="243" cy="171" r="18"/>
+    </g>
+    <g font-family="Times,serif" font-size="28">
+        <text transform="translate(20 36)">1</text>
+        <text transform="translate(74 36)">2</text>
+        <text transform="translate(128 36)">3</text>
+        <text transform="translate(182 36)">4</text>
+        <text transform="translate(290 180)">2</text>
+        <text transform="translate(344 180)">3</text>
+        <text transform="translate(398 180)">4</text>
+        <text transform="translate(236 36)">5</text>
+        <text transform="translate(289.999 36)">6</text>
+        <text transform="translate(343.999 36)">7</text>
+        <text transform="translate(397.999 36)">1</text>
+        <text transform="translate(20 180)">4</text>
+        <text transform="translate(74 180)">5</text>
+        <text transform="translate(127.999 180)">6</text>
+        <text transform="translate(181.999 180)">7</text>
+        <text transform="translate(235.999 180)">1</text>
+    </g>
+</svg>
