@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="771" height="401">
+    <path fill="#FFF" d="M268.5 92.3l-50.8-27.5L35.9 80 11.5 99l161.1 285.5z"/>
+    <path fill="none" stroke="#000" stroke-width="2" stroke-linejoin="round" d="M268.5 92.3l-50.8-27.5L35.9 80 11.5 99l161.1 285.5z"/>
+    <path fill="#CCC" d="M149.9 208.9l20.899 172.3 1.801 3.3 2.199-6.5L156.6 210.9z"/>
+    <path fill="none" stroke="#000" stroke-width="2" stroke-linejoin="round" d="M149.9 208.9l20.899 172.3 1.801 3.3 2.199-6.5L156.6 210.9z"/>
+    <path fill="#FFF" d="M226 13.5H125.5L17.2 43.6l143.5 178.7z"/>
+    <path fill="none" stroke="#000" stroke-width="2" stroke-linejoin="round" d="M226 13.5H125.5L17.2 43.6l143.5 178.7z"/>
+    <path fill="#FFF" d="M180.4 288.6l37.3-223.8 50.8 27.5z"/>
+    <path fill="none" stroke="#000" stroke-width="2" stroke-linejoin="round" d="M180.4 288.6l37.3-223.8 50.8 27.5z"/>
+    <path fill="#FFF" d="M165.8 206.1l14.601 82.5L226 13.5z"/>
+    <path fill="none" stroke="#000" stroke-width="2" stroke-linejoin="round" d="M165.8 206.1l14.601 82.5L226 13.5z"/>
+    <path fill="#FFF" d="M17.2 43.6L148.3 299l-6.1-99.7z"/>
+    <path fill="none" stroke="#000" stroke-width="2" stroke-linejoin="round" d="M17.2 43.6L148.3 299l-6.1-99.7z"/>
+    <path fill="#FFF" d="M35.9 80L11.5 99l136.8 200z"/>
+    <path fill="none" stroke="#000" stroke-width="2" stroke-linejoin="round" d="M35.9 80L11.5 99l136.8 200z"/>
+    <path fill="none" stroke="#0081CD" stroke-linejoin="round" stroke-dasharray="4,4" d="M389.5 22.5h360v360h-360z"/>
+    <path fill="none" stroke="#000" stroke-width="2" stroke-linejoin="round" d="M749.5 382.5l-360-360M569.5 22.5v360M389.5 202.5h360M389.5 22.5l180 74.559 180-74.559-74.559 180 74.559 180-180-74.559-180 74.559 74.559-180z"/>
+    <defs>
+        <path id="a" d="M0 0h771v401H0z"/>
+    </defs>
+    <clipPath id="b">
+        <use xlink:href="#a" overflow="visible"/>
+    </clipPath>
+    <path clip-path="url(#b)" fill="#FEC200" d="M398.5 22.5a9 9 0 0 1-9 9c-4.971 0-9-4.029-9-9s4.029-9 9-9a9 9 0 0 1 9 9"/>
+    <circle clip-path="url(#b)" fill="none" stroke="#000" stroke-linejoin="round" cx="389.5" cy="22.5" r="9"/>
+    <path clip-path="url(#b)" fill="#FEC200" d="M578.5 22.5c0 4.971-4.029 9-9 9s-9-4.029-9-9 4.029-9 9-9 9 4.029 9 9"/>
+    <circle clip-path="url(#b)" fill="none" stroke="#000" stroke-linejoin="round" cx="569.5" cy="22.5" r="9"/>
+    <path clip-path="url(#b)" fill="#FEC200" d="M758.5 22.5c0 4.971-4.029 9-9 9s-9-4.029-9-9 4.029-9 9-9 9 4.029 9 9"/>
+    <circle clip-path="url(#b)" fill="none" stroke="#000" stroke-linejoin="round" cx="749.5" cy="22.5" r="9"/>
+    <path clip-path="url(#b)" fill="#FEC200" d="M578.5 97.059c0 4.971-4.029 9-9 9s-9-4.029-9-9 4.029-9 9-9 9 4.028 9 9"/>
+    <circle clip-path="url(#b)" fill="none" stroke="#000" stroke-linejoin="round" cx="569.5" cy="97.059" r="9"/>
+    <path clip-path="url(#b)" fill="#FEC200" d="M578.5 202.5c0 4.971-4.029 9-9 9s-9-4.029-9-9 4.029-9 9-9 9 4.029 9 9"/>
+    <circle clip-path="url(#b)" fill="none" stroke="#000" stroke-linejoin="round" cx="569.5" cy="202.5" r="9"/>
+    <path clip-path="url(#b)" fill="#FEC200" d="M473.059 202.5c0 4.971-4.029 9-9 9s-9-4.029-9-9 4.029-9 9-9 9 4.029 9 9"/>
+    <circle clip-path="url(#b)" fill="none" stroke="#000" stroke-linejoin="round" cx="464.059" cy="202.5" r="9"/>
+    <path clip-path="url(#b)" fill="#FEC200" d="M398.5 202.5a9 9 0 0 1-9 9 9 9 0 0 1-9-9 9 9 0 0 1 9-9 9 9 0 0 1 9 9"/>
+    <circle clip-path="url(#b)" fill="none" stroke="#000" stroke-linejoin="round" cx="389.5" cy="202.5" r="9"/>
+    <path clip-path="url(#b)" fill="#FEC200" d="M398.5 382.5a9 9 0 0 1-9 9c-4.971 0-9-4.029-9-9s4.029-9 9-9a9 9 0 0 1 9 9"/>
+    <circle clip-path="url(#b)" fill="none" stroke="#000" stroke-linejoin="round" cx="389.5" cy="382.5" r="9"/>
+    <path clip-path="url(#b)" fill="#FEC200" d="M578.5 307.941c0 4.971-4.029 9-9 9s-9-4.029-9-9 4.029-9 9-9 9 4.03 9 9"/>
+    <circle clip-path="url(#b)" fill="none" stroke="#000" stroke-linejoin="round" cx="569.5" cy="307.941" r="9"/>
+    <path clip-path="url(#b)" fill="#FEC200" d="M578.5 382.5c0 4.971-4.029 9-9 9s-9-4.029-9-9 4.029-9 9-9 9 4.029 9 9"/>
+    <circle clip-path="url(#b)" fill="none" stroke="#000" stroke-linejoin="round" cx="569.5" cy="382.5" r="9"/>
+    <path clip-path="url(#b)" fill="#FEC200" d="M758.5 382.5c0 4.971-4.029 9-9 9s-9-4.029-9-9 4.029-9 9-9 9 4.029 9 9"/>
+    <circle clip-path="url(#b)" fill="none" stroke="#000" stroke-linejoin="round" cx="749.5" cy="382.5" r="9"/>
+    <path clip-path="url(#b)" fill="#FEC200" d="M683.941 202.5c0 4.971-4.029 9-9 9s-9-4.029-9-9 4.029-9 9-9 9 4.029 9 9"/>
+    <circle clip-path="url(#b)" fill="none" stroke="#000" stroke-linejoin="round" cx="674.941" cy="202.5" r="9"/>
+    <path clip-path="url(#b)" fill="#FEC200" d="M758.5 202.5c0 4.971-4.029 9-9 9s-9-4.029-9-9 4.029-9 9-9 9 4.029 9 9"/>
+    <circle clip-path="url(#b)" fill="none" stroke="#000" stroke-linejoin="round" cx="749.5" cy="202.5" r="9"/>
+</svg>
