@@ -8,7 +8,7 @@ A couple of months ago I wrote here about [origami folding patterns in which eac
 If you fold a piece of paper so that, in its folded state, it lies flat again (like the [bird base](https://commons.wikimedia.org/wiki/File:Bird_base.svg) from which an origami crane is made, but unlike the crane itself), and then you unfold the paper again and look at the creases that were used when it was in its folded state, those creases form straight line segments across the paper that continue until they meet other creases or the edge of the paper. They look like a planar graph! The question is: which graphs can you get in this way?
 
 {: style="text-align:center"}
-![Bird base (as illustrated by Fred the Oyster at https://commons.wikimedia.org/wiki/File:Bird_base.svg) and its unfolded graph.]({{site.baseurl}}/assets/2018/bird-base.png)
+![Bird base (as illustrated by Fred the Oyster at https://commons.wikimedia.org/wiki/File:Bird_base.svg) and its unfolded graph.]({{site.baseurl}}/assets/2018/bird-base.svg)
 
 The new paper contains two main results: every tree with even degree (at least four) at its internal vertices can be the graph of an origami folding, and every graph of an origami folding is 2-vertex-connected and 4-edge-connected. This seems contradictory, as trees are only 1-connected, but the resolution to the contradiction comes from using different mathematical models for how you construct a graph from a folding pattern.
 
@@ -24,3 +24,5 @@ Despite this tricky example, Maekawa's condition on the vertex degrees turns out
 The other result on connectivity again uses an infinite sheet of paper but it forms a graph from a folding pattern by adding one more vertex at infinity, to be the endpoint of all of the creases that form rays, rather than giving each ray its own separate ending vertex. So when you do this to a tree folding pattern, all the leaves end up being merged into a single supervertex, giving a series-parallel graph. The graphs that you get in this way from trees with degree-four internal vertices have vertex connectivity exactly 2 and edge connectivity exactly 4, showing that the connectivity bounds in the paper are tight.
 
 For some other geometric graph realization questions, like the question of [which graphs are the graphs of convex polyhedra](https://en.wikipedia.org/wiki/Steinitz%27s_theorem), connectivity tells the whole answer. A graph is the graph of a convex polyhedron if and only if it is planar and 3-vertex-connected. It would be nice to get a similar complete characterization for the graphs of origami flat folding patterns, but I don't know of one.
+
+([G+](https://plus.google.com/100003628603413742554/posts/3k9F5rBdgKv))
