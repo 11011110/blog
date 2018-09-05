@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="648" height="648">
+    <path d="M72 0v648M144 0v648M216 0v648M288 0v648M360 0v648M432 0v648M504 0v648M576 0v648M0 576h648M0 504h648M0 432h648M0 360h648M0 288h648M0 216h648M0 144h648M0 72h648" fill="none" stroke="#AAD5EF" stroke-miterlimit="10"/>
+    <path fill="none" stroke="#000" stroke-width="2" stroke-miterlimit="10" d="M72 432v-72l72-216 72-72h72l144 72 72 72 72 144v72l-72 72-144 72h-72l-144-72z"/>
+    <g fill="#BC1E47" stroke="#000" stroke-miterlimit="10">
+        <circle cx="72" cy="432" r="4"/>
+        <circle cx="72" cy="360" r="4"/>
+        <circle cx="144" cy="144" r="4"/>
+        <circle cx="216" cy="72" r="4"/>
+        <circle cx="288" cy="72" r="4"/>
+        <circle cx="432" cy="144" r="4"/>
+        <circle cx="504" cy="216" r="4"/>
+        <circle cx="576" cy="360" r="4"/>
+        <circle cx="576" cy="432" r="4"/>
+        <circle cx="504" cy="504" r="4"/>
+        <circle cx="360" cy="576" r="4"/>
+        <circle cx="288" cy="576" r="4"/>
+        <circle cx="144" cy="504" r="4"/>
+    </g>
+</svg>
