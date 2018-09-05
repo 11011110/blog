@@ -66,11 +66,12 @@ body {
 }
 
 // Fix wonky minima table formatting
-table td {
+table th, table td {
   border:0px;
   background-color: #ffffff;
 }
 table {
+  width:auto;
   border:0px;
 }
 
