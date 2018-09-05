@@ -75,3 +75,5 @@ $$k\approx 2\pi\Bigl( \frac{n}{12} \Bigr)^{3/2}.$$
 
 
 Imre Bárány and Maria Prodromou ["On maximal convex lattice polygons inscribed in a plane convex set", [_Israel J. Math._ 2006](https://doi.org/10.1007/BF02773612)] generalized this to other shapes than squares. The minimum perimeter version of the problem was already considered, again asymptotically, by Vojtěch Jarník ["Über Gitterpunkte in konvexen Kurven", _Math. Z._ 1926], the same Jarník as the namesake of the minimum spanning tree algorithm. For a survey of related problems see Bárány's "[Extremal problems for convex lattice polytopes: a survey](http://www.renyi.hu/~barany/cikkek/psurveyAMS.pdf)" [[_Contemp. Math._ 2009](https://doi.org/10.1090/conm/453/08796)].
+
+([G+](https://plus.google.com/100003628603413742554/posts/MFqdV8QKD65))
