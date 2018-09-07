@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg  version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="342" height="270" viewBox="0 0 342 270"
+	 overflow="visible" enable-background="new 0 0 342 270" xml:space="preserve">
+<path fill="none" stroke="#000000" stroke-width="1.5" d="M99,99c72,0,72.001,72,144,72s116.999-81,62.999-135S99,27,99,135
+	c0,108,152.999,153,207,99S315,99,243,99s-72,72-144,72c-72,0-117-81-63-135s207-9,207,99c0,108-153,153-207,99S26.999,99,99,99z"/>
+<circle fill="#FF0000" cx="170.996" cy="29.749" r="9"/>
+<circle fill="#FF0000" cx="105.07" cy="99.177" r="9"/>
+<circle fill="#FF0000" cx="105.071" cy="170.808" r="9"/>
+<circle fill="#FF0000" cx="170.991" cy="134.991" r="9"/>
+<circle fill="#FF0000" cx="236.915" cy="99.179" r="9"/>
+<circle fill="#FF0000" cx="236.912" cy="170.823" r="9"/>
+<circle fill="#FF0000" cx="314.93" cy="135.003" r="9"/>
+<circle fill="#FF0000" cx="27.066" cy="134.999" r="9"/>
+<circle fill="#FF0000" cx="170.992" cy="240.251" r="9"/>
+<rect fill="none" width="342" height="270"/>
+</svg>

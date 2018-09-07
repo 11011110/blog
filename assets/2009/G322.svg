@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="324" height="324" overflow="visible">
+    <g fill="none" stroke="#0060B6" stroke-width="2.5">
+        <path d="M289.186 161.016c35.147 35.146 35.147 92.131 0 127.277-35.146 35.146-92.131 35.146-127.277 0M34.629 161.014c-35.147-35.146-35.146-92.131 0-127.278 35.147-35.146 92.131-35.146 127.278 0m0 254.555c-35.147 35.148-92.132 35.148-127.279.002-35.146-35.146-35.146-92.133.001-127.279M161.91 33.736c35.147-35.146 92.13-35.146 127.278.001 35.146 35.146 35.146 92.131 0 127.277"/>
+        <path d="M34.63 161.014l38.182-89.095 89.095 38.183 89.096-38.184-38.184 89.096-50.912-50.912-50.912 50.912 50.912 50.912 89.096 38.183-89.094 38.184-89.097-38.184z"/>
+        <path d="M161.908 33.735L72.812 71.919l38.183 89.095-38.183 89.095 89.095-38.183 50.912-50.912 38.184 89.095 38.185-89.095-38.185-89.096z"/>
+    </g>
+    <g fill="#F5FFFF" stroke="#000">
+        <circle cx="251.003" cy="71.919" r="22.5"/>
+        <circle cx="161.907" cy="110.102" r="22.5"/>
+        <circle cx="212.819" cy="161.014" r="22.5"/>
+        <circle cx="161.907" cy="211.926" r="22.5"/>
+        <circle cx="110.995" cy="161.014" r="22.5"/>
+        <circle cx="72.812" cy="71.919" r="22.5"/>
+        <circle cx="161.908" cy="33.735" r="22.5"/>
+        <circle cx="289.188" cy="161.014" r="22.5"/>
+        <circle cx="251.003" cy="250.109" r="22.5"/>
+        <circle cx="161.908" cy="288.293" r="22.5"/>
+        <circle cx="72.812" cy="250.109" r="22.5"/>
+        <circle cx="34.629" cy="161.014" r="22.5"/>
+    </g>
+    <g font-family="Times,serif" font-size="21">
+        <text transform="translate(146.199 116.291)">
+            <tspan x="0" y="0">0</tspan><tspan x="10.5" y="3">*</tspan><tspan x="21" y="0">1</tspan>
+        </text>
+        <text transform="translate(197.11 170.203)">
+            <tspan x="0" y="0">*</tspan><tspan x="10.5" y="-3">11</tspan>
+        </text>
+        <text transform="translate(94.286 170.204)">
+            <tspan x="0" y="0">*</tspan><tspan x="10.5" y="-3">01</tspan>
+        </text>
+        <text transform="translate(146.199 218.114)">
+            <tspan x="0" y="0">1</tspan><tspan x="10.5" y="3">*</tspan><tspan x="21" y="0">1</tspan>
+        </text>
+        <text transform="translate(235.293 78.107)">
+            <tspan x="0" y="0">01</tspan><tspan x="21" y="3">*</tspan>
+        </text>
+        <text transform="translate(235.294 256.299)">
+            <tspan x="0" y="0">11</tspan><tspan x="21" y="3">*</tspan>
+        </text>
+        <text transform="translate(58.103 256.298)">
+            <tspan x="0" y="0">10</tspan><tspan x="21" y="3">*</tspan>
+        </text>
+        <text transform="translate(57.103 78.108)">
+            <tspan x="0" y="0">00</tspan><tspan x="21" y="3">*</tspan>
+        </text>
+        <text transform="translate(146.198 39.924)">
+            <tspan x="0" y="0">0</tspan><tspan x="10.5" y="3">*</tspan><tspan x="21" y="0">0</tspan>
+        </text>
+        <text transform="translate(272.478 170.203)">
+            <tspan x="0" y="0">*</tspan><tspan x="10.5" y="-3">10</tspan>
+        </text>
+        <text transform="translate(145.2 294.481)">
+            <tspan x="0" y="0">1</tspan><tspan x="10.5" y="3">*</tspan><tspan x="21" y="0">0</tspan>
+        </text>
+        <text transform="translate(16.92 170.202)">
+            <tspan x="0" y="0">*</tspan><tspan x="10.5" y="-3">00</tspan>
+        </text>
+    </g>
+</svg>

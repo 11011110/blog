@@ -12,43 +12,43 @@ tags:   [tools, circulants, graph drawing, wikipedia]
 
 <p>Next, I created the regular polygons that formed the outer boundaries of each graph. Illustrator has a regular polygon tool, which lies under the rectangle in the tool bar.</p>
 
-<p><div style="text-align:center"><a href="http://www.ics.uci.edu/~eppstein/0xDE/crown_graph_tutorial/I.png">(Screenshot 1)</a></div></p>
+<p style="text-align:center"><a href="{{site.baseurl}}/assets/2009/crown_graph_tutorial/I.png">(Screenshot 1)</a></p>
 
 <p>To use the polygon tool, option-click on where you want the center of the polygon to be (I picked the intersection points of some of the heavier grid lines) and fill in the details of how big to make the polygon. I chose a radius of 108 points because I knew that Adobe's grid works in multiples of 9 points, but for this particular drawing the precise radius doesn't really matter. It's also possible to click on a center and, while holding the mouse down, drag out the radius, but I wanted to use the text interface to make all three polygons the same size.</p>
 
-<p><div style="text-align:center"><a href="http://www.ics.uci.edu/~eppstein/0xDE/crown_graph_tutorial/II.png">(Screenshot 2)</a></div></p>
+<p style="text-align:center"><a href="{{site.baseurl}}/assets/2009/crown_graph_tutorial/II.png">(Screenshot 2)</a></p>
 
-<p>With all three polygons drawn, select them all (command-A), and look in the &quot;info&quot; pane (bottom right corner of my screen) for the size of their bounding box. Use the File-&gt;Document Setup command to make the size of the drawing board match the size of the image; I usually save this until last but in this case the initial drawing board's boundaries were crossing into where I wanted to draw. I added about 30 pixels to both dimensions to account for the fact that the vertices would extend past the polygon edges a little bit. Resizing like this isn't always necessary (when I'm producing svg files, as for Wikipedia, the file ends up having the bounding box of the drawing as its dimensions without me having to do any work, and sometimes I add an invisible rectangle to the drawing to control this bounding box) but my installation of pdftex needs images with good bounding boxes so this is just something I do as a default nowadays.</p>
+<p>With all three polygons drawn, select them all (command-A), and look in the "info" pane (bottom right corner of my screen) for the size of their bounding box. Use the File-&gt;Document Setup command to make the size of the drawing board match the size of the image; I usually save this until last but in this case the initial drawing board's boundaries were crossing into where I wanted to draw. I added about 30 pixels to both dimensions to account for the fact that the vertices would extend past the polygon edges a little bit. Resizing like this isn't always necessary (when I'm producing svg files, as for Wikipedia, the file ends up having the bounding box of the drawing as its dimensions without me having to do any work, and sometimes I add an invisible rectangle to the drawing to control this bounding box) but my installation of pdftex needs images with good bounding boxes so this is just something I do as a default nowadays.</p>
 
-<p><div style="text-align:center"><a href="http://www.ics.uci.edu/~eppstein/0xDE/crown_graph_tutorial/III.png">(Screenshot 3)</a></div></p>
+<p style="text-align:center"><a href="{{site.baseurl}}/assets/2009/crown_graph_tutorial/III.png">(Screenshot 3)</a></p>
 
 <p>Once the drawing area is resized, it's possible to center the content in the drawing area by selecting everything, deleting it (command-delete), centering the drawing board on the screen (command-0), and pasting everything back on (command-V). At this point, I also disabled the grid (command-quote command-shift-quote) and turned the polygons into guides (shown as light blue lines in Illustrator; clicking nearby will cause the mouse to snap to the features of the guides). To turn them into guides, use command-5.</p>
 
-<p><div style="text-align:center"><a href="http://www.ics.uci.edu/~eppstein/0xDE/crown_graph_tutorial/IV.png">(Screenshot 4)</a></div></p>
+<p style="text-align:center"><a href="{{site.baseurl}}/assets/2009/crown_graph_tutorial/IV.png">(Screenshot 4)</a></p>
 
-<p>Next, I selected the pen tool (the &quot;P&quot; key without any modifiers selects the tool) and started drawing the remaining graph edges. Click on a guide vertex to start an edge, click on the next vertex to continue a sequence of edges, command-click on any empty part of the drawing to stop the sequence and allow a new sequence to be started.</p>
+<p>Next, I selected the pen tool (the "P" key without any modifiers selects the tool) and started drawing the remaining graph edges. Click on a guide vertex to start an edge, click on the next vertex to continue a sequence of edges, command-click on any empty part of the drawing to stop the sequence and allow a new sequence to be started.</p>
 
-<p><div style="text-align:center"><a href="http://www.ics.uci.edu/~eppstein/0xDE/crown_graph_tutorial/V.png">(Screenshot 5)</a></div></p>
+<p style="text-align:center"><a href="{{site.baseurl}}/assets/2009/crown_graph_tutorial/V.png">(Screenshot 5)</a></p>
 
-<p>With all the edges drawn, it's time to begin drawing vertices. I selected the ellipse tool (the &quot;L&quot; key), and used the color palette to select a fill color for the vertices. In this case I chose red, one of the first colors I usually go to because of the bold look it creates. Then I started creating vertices by option-clicking on each guide corner and selecting a radius for the resulting circles.</p>
+<p>With all the edges drawn, it's time to begin drawing vertices. I selected the ellipse tool (the "L" key), and used the color palette to select a fill color for the vertices. In this case I chose red, one of the first colors I usually go to because of the bold look it creates. Then I started creating vertices by option-clicking on each guide corner and selecting a radius for the resulting circles.</p>
 
-<p><div style="text-align:center"><a href="http://www.ics.uci.edu/~eppstein/0xDE/crown_graph_tutorial/VI.png">(Screenshot 6)</a></div></p>
+<p style="text-align:center"><a href="{{site.baseurl}}/assets/2009/crown_graph_tutorial/VI.png">(Screenshot 6)</a></p>
 
 <p>For some drawings I create only a few of the features and then replicate them according to the symmetries of the drawing using the rotate tool, but this time I created each vertex individually. Once the red vertices were drawn, I selected a constrasting color (green, again very vibrant and also contrasting with the red by being quite a bit lighter) and drew the remaining vertices the same way.</p>
 
-<p><div style="text-align:center"><a href="http://www.ics.uci.edu/~eppstein/0xDE/crown_graph_tutorial/VII.png">(Screenshot 7)</a></div></p>
+<p style="text-align:center"><a href="{{site.baseurl}}/assets/2009/crown_graph_tutorial/VII.png">(Screenshot 7)</a></p>
 
 <p>All the features are drawn, but the guide edges won't show up when the image is saved. Unlock the guides (there's a command key for this one but I don't usually remember it and use the menus instead), select all (command-A), and release the guides turning them back into normal polygons (command key or menus).</p>
 
-<p><div style="text-align:center"><a href="http://www.ics.uci.edu/~eppstein/0xDE/crown_graph_tutorial/VIII.png">(Screenshot 8)</a></div></p>
+<p style="text-align:center"><a href="{{site.baseurl}}/assets/2009/crown_graph_tutorial/VIII.png">(Screenshot 8)</a></p>
 
 <p>The resulting drawing is complete, but still a little ugly because it uses the default coloring for the edges. The polygons should still be selected; to include all the other edges into the selection, so that their drawing attributes can be modified, use Illustrator's Select-&gt;Same-&gt;Fill &amp; Stroke command.</p>
 
-<p><div style="text-align:center"><a href="http://www.ics.uci.edu/~eppstein/0xDE/crown_graph_tutorial/IX.png">(Screenshot 9)</a></div></p>
+<p style="text-align:center"><a href="{{site.baseurl}}/assets/2009/crown_graph_tutorial/IX.png">(Screenshot 9)</a></p>
 
 <p>Using the stroke palette to make the edges thicker, turning off their fill color, and playing with the RGB sliders to get a bluish gray stroke color finishes the drawing!</p>
 
-<p><div style="text-align:center"><a href="http://www.ics.uci.edu/~eppstein/0xDE/crown_graph_tutorial/X.png">(Screenshot 10)</a></div></p>
+<p style="text-align:center"><a href="{{site.baseurl}}/assets/2009/crown_graph_tutorial/X.png">(Screenshot 10)</a></p>
 
 <p>Well, almost finished. The remaining steps aren't so visual, and I didn't take screenshots of them. I saved to an svg file, ran a Python script I've written that converts some of the idiosyncracies of the svg output from my old version of Illustrator into something Wikimedia can handle, uploaded the file to Wikimedia commons (this involves filling out a form saying where the file came from, what it's about, and what free licensing restrictions it might have), and added a link to it from the crown graph article.</p>
 
@@ -119,6 +119,6 @@ Could you elaborate on the SVG hoops you jump through, pythonically? I have been
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>11011110</b>: Re: SVG tricks?<br />
 <b>2009-01-14T15:03:29Z</b><br />
-The main things my script does are to expand xml entitites (Wikimedia can't handle them) and standardize font names (the version of Illustrator I have produces font descriptions like font-family:&quot;Times-Regular&quot; when it should be font-family:Times font-style:normal).
+The main things my script does are to expand xml entitites (Wikimedia can't handle them) and standardize font names (the version of Illustrator I have produces font descriptions like font-family:"Times-Regular" when it should be font-family:Times font-style:normal).
 </div>
 

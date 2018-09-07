@@ -6,7 +6,7 @@ tags:   [social networks, papers]
 ---
 <p>The following figure, stolen from <a href="http://arxiv.org/abs/0906.0060">A Walk in Facebook: Uniform Sampling of Users in Online Social Networks</a> by Gjoka, Kurant, Butts, and Markopolou, tells it all, I think, but the in-depth explanation is below.</p>
 
-<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/FacebookDegrees.png" alt="Highly nonlinear graph on a log-log scale of the degree distribution of facebook" /></p>
+<p style="text-align:center"><img src="{{site.baseurl}}/assets/2009/FacebookDegrees.png" alt="Highly nonlinear graph on a log-log scale of the degree distribution of facebook" /></p>
 
 <p>When I gave <a href="http://www.ics.uci.edu/~eppstein/pubs/WADS09-talks/subgraphs.pdf">my talk</a> on <a href="{{site.baseurl}}{% post_url 2009-04-23-graph-h-indices-and %}">dynamic subgraph statistics</a> at <a href="{{site.baseurl}}{% post_url 2009-08-24-report-from-wads %}">WADS</a>, I took the opportunity to spend some time telling the audience about the exponential random graph model, a distribution on random graphs (with a fixed set of vertices) in which the log-likelihood of a graph may be computed by finding a collection of "features" in the graph (such as small subgraphs of different types, or vertices with given degrees) and adding the weights of the features. This model provides the main motivation for the data structures of my paper, since simulation of the model involves many steps of a Markov Chain Monte Carlo algorithm that each perform small changes to a graph and require the computation of updated feature counts after each change. The biggest question I got afterwards was "why don't you just use <a href="http://en.wikipedia.org/wiki/Scale-free_network">scale-free graphs</a>"? A scale-free graph is one satisfying a power law on its degree distribution: the number of vertices with degree x should be proportional to x<sup>p</sup> for some suitable constant p. There are various methods of generating these graphs such as the <a href="http://en.wikipedia.org/wiki/Preferential_attachment">preferential attachment</a> model of Barabási and Albert or models in which every graph with a given degree distribution is equally likely as studied by Fan Chung and others.</p>
 
@@ -56,7 +56,7 @@ Athina</p>
 <b>2009-09-12T05:04:51Z</b><br />
 <p>oh, i was thinking of the first paper on this list:http://www.cl.cam.ac.uk/~jcb82/sns_bib/main.html#crawling-and-analysis (it's a 10M node crawl.) i just went back and looked at it, and it looks like they crawl regional networks, so i guess that's not a uniform sample. alright then.</p>
 
-<p>i didn't mean to <strike>day</strike> say that you got your data from someone else. that was very confused wording on my part. never mind.</p>
+<p>i didn't mean to <del>day</del> say that you got your data from someone else. that was very confused wording on my part. never mind.</p>
 </div>
 
 <div style="margin-left: 0em; padding-top: 1em;">

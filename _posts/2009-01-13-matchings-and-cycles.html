@@ -4,34 +4,30 @@ title:  'Matchings and cycles in complete bipartite graphs'
 date:   2009-01-13 13:01:00
 tags:   [combinatorics, graph theory]
 ---
-Remove a perfect matching from a complete bipartite graph <i>K<sub>n,n</sub></i> (forming a <a href="http://en.wikipedia.org/wiki/Crown_graph">crown graph</a>), and count the number of (directed) Hamiltonian cycles in the remaining graph. Alternatively, remove a Hamiltonian cycle from the same complete bipartite graph, and count the number of perfect matchings in the remaining graph. The two sequences of numbers generated in this way are almost the same! (They differ by a factor of (<i>n</i> − 1)! from each other.) Perhaps this will be more surprising if I list the smaller of the two sequences of numbers (the number of matchings in the graph with the cycle removed) to show that they&#x27;re not something familiar like powers of two or factorials. They are (starting at <i>n</i> = 3):
-<br />
+<p>Remove a perfect matching from a complete bipartite graph \( K_{n,n} \) (forming a <a href="http://en.wikipedia.org/wiki/Crown_graph">crown graph</a>), and count the number of (directed) Hamiltonian cycles in the remaining graph. Alternatively, remove a Hamiltonian cycle from the same complete bipartite graph, and count the number of perfect matchings in the remaining graph. The two sequences of numbers generated in this way are almost the same! (They differ by a factor of \( (n-1)! \) from each other.) Perhaps this will be more surprising if I list the smaller of the two sequences of numbers (the number of matchings in the graph with the cycle removed) to show that they're not something familiar like powers of two or factorials. They are (starting at \( n=3 \)):</p>
 
-<br />
-1, 2, 13, 80, 579, 4738, 43387, 439792, 4890741, 59216642, 775596313, ...
-<br />
+\[ 1, 2, 13, 80, 579, 4738, 43387, 439792, 4890741, 59216642, 775596313, \dots \]
 
-<br />
-Both sets of numbers come up in the <a href="http://en.wikipedia.org/wiki/M%C3%A9nage_problem">problème des ménages</a> concerning seating plans for <i>n</i> couples so that men and women alternate and nobody sits next to his or her partner. The numbers of matchings are the ménage numbers describing ways of arranging the men once the women have already been seated, while the larger numbers of Hamiltonian cycles count seating plans in which everyone is free to move but only the cyclic order of the participants, and not their precise placement into chairs, is significant.
-<br />
+<p>Both sets of numbers come up in the <a href="http://en.wikipedia.org/wiki/M%C3%A9nage_problem">problème des ménages</a> concerning seating plans for <i>n</i> couples so that men and women alternate and nobody sits next to his or her partner. The numbers of matchings are the ménage numbers describing ways of arranging the men once the women have already been seated, while the larger numbers of Hamiltonian cycles count seating plans in which everyone is free to move but only the cyclic order of the participants, and not their precise placement into chairs, is significant.</p>
 
-<br />
-I&#x27;m not sure at this point whether the symmetry between the two graph-theoretic ways of describing these numbers is a coincidence or a piece of some sort of deeper duality.
+<p>I'm not sure at this point whether the symmetry between the two graph-theoretic ways of describing these numbers is a coincidence or a piece of some sort of deeper duality.</p>
+
 <br /><br /><hr /><br />
+
 <h3>Comments:</h3>
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>None</b>: <br />
 <b>2009-01-14T18:39:39Z</b><br />
-I&#x27;m not sure if this is the explanation you&#x27;re looking for, but in Kn,n, there are n! perfect matchings and n!*(n-1)! directed Hamiltonian cycles, and the incidence relation between matchings and cycles is preserved by a symmetry group that acts transitively on both (though not at the same time).
+<p>I'm not sure if this is the explanation you're looking for, but in \( K_{n,n} \), there are \( n! \) perfect matchings and \( n!(n-1)! \) directed Hamiltonian cycles, and the incidence relation between matchings and cycles is preserved by a symmetry group that acts transitively on both (though not at the same time).</p>
 </div>
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>None</b>: <br />
 <b>2009-01-14T18:50:47Z</b><br />
-(insert rest of double counting argument here)
+<p>(insert rest of double counting argument here)</p>
 </div>
 <div style="margin-left: 6em; padding-top: 1em;">
 <b>11011110</b>: <br />
 <b>2009-01-14T19:07:45Z</b><br />
-Yes, that sounds like a good way of explaining it.
+<p>Yes, that sounds like a good way of explaining it.</p>
 </div>
 

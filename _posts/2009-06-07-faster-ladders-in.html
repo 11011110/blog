@@ -4,7 +4,7 @@ title:  'Faster ladders in Life without Death'
 date:   2009-06-07 12:28:00
 tags:   [cellular automata]
 ---
-<a href="http://en.wikipedia.org/wiki/Life_without_Death">Life without Death</a> is a cellular automaton with the same rule for creating new live cells as Conway's Game of Life, but in which no live cell ever dies. Despite the inability to create oscillators or spaceships (both of which require some cells to die sometimes) it has interesting dynamics due to the existence of ladders, patterns that grow at speed \( c/3 \) (that is, one unit of growth for every three time steps of the cellular automaton).  Typical random seeds end up with from one to four chaotic regions spreading diagonally from the starting region, spewing ladders on both sides of them so that one ends up with a pattern in which the four quarters of the pattern (as split on roughly diagonal lines) are striped by axis-parallel ladders, separated by the chaotic regions. The chaotic regions separating the striped quarters tend to grow wider, but slowly as the pattern grows, and the boundary of the chaotic regions keeps pace with the ladders (probably in a self-limiting way: there is a pattern that grows at speed \( 2c/3 \) along the side of a ladder and then erupts in chaos at the tip, so if the chaotic growth regions ever fell too far behind they would catch up using this mechanism).</p>
+<p><a href="http://en.wikipedia.org/wiki/Life_without_Death">Life without Death</a> is a cellular automaton with the same rule for creating new live cells as Conway's Game of Life, but in which no live cell ever dies. Despite the inability to create oscillators or spaceships (both of which require some cells to die sometimes) it has interesting dynamics due to the existence of ladders, patterns that grow at speed \( c/3 \) (that is, one unit of growth for every three time steps of the cellular automaton).  Typical random seeds end up with from one to four chaotic regions spreading diagonally from the starting region, spewing ladders on both sides of them so that one ends up with a pattern in which the four quarters of the pattern (as split on roughly diagonal lines) are striped by axis-parallel ladders, separated by the chaotic regions. The chaotic regions separating the striped quarters tend to grow wider, but slowly as the pattern grows, and the boundary of the chaotic regions keeps pace with the ladders (probably in a self-limiting way: there is a pattern that grows at speed \( 2c/3 \) along the side of a ladder and then erupts in chaos at the tip, so if the chaotic growth regions ever fell too far behind they would catch up using this mechanism).</p>
 
 <p>Patterns of this type can be simulated to hundreds of thousands of time steps using the <a href="http://en.wikipedia.org/wiki/Hashlife">Hashlife</a> algorithm embedded into <a href="http://golly.sourceforge.net/">Golly</a>.</p>
 
@@ -259,7 +259,7 @@ Never mind, I downloaded and ran the program to see it. It's neat although not i
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>11011110</b><br />
 <b>2009-06-08T04:58:05Z</b><br />
-<img src="http://www.ics.uci.edu/~eppstein/0xDE/LwoD-4c9.gif" />
+<img src="{{site.baseurl}}/assets/2009/LwoD-4c9.gif" alt="4c/9 ladder in Life without Death cellular automaton" />
 
 (see ETA in post for credit)
 </div>

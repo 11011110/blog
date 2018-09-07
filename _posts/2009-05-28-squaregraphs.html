@@ -12,7 +12,7 @@ tags:   [chord diagrams, media theory, papers]
 
 <p>Here's another curious fact about squaregraphs that we needed as a lemma, and is vaguely related to my recent post about <a href="{{site.baseurl}}{% post_url 2009-05-16-visualizing-bfs-as %}">visualizing breadth-first search</a>: if one performs a BFS on a squaregraph, starting at any vertex, it's always possible to connect each level of the BFS tree into a cycle, and draw these cycles concentrically around the starting vertex, in such a way that the cycle edges don't cross the squaregraph edges. That is, in graph drawing terminology, the cycles and the squaregraph have a simultaneous embedding.</p>
 
-<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/squaregraph-bfs.png" /></p>
+<p style="text-align:center"><img src="{{site.baseurl}}/assets/2009/squaregraph-bfs.png" alt="Concentric cycles formed from a breadth-first search of a squaregraph" /></p>
 
 <p>Exercise: find a planar bipartite graph \( G, \) and a starting vertex \( v, \) such that the levels of the BFS tree rooted at \( v \) cannot be connected into cycles and simultaneously embedded with \( G. \)</p>
 

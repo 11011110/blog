@@ -4,45 +4,36 @@ title:  'Procrastination and subcubes'
 date:   2009-03-21 22:10:00
 tags:   [hypercube, conferences]
 ---
-Looks like there&#x27;s <a href="http://www.metafilter.com/80204/The-boss-level-of-internet-worms">potential for internet disruption on April 1</a>. It&#x27;s probably not going to amount to much, but since the FOCS deadline is April 2, you may want to have a version of the paper into the system ahead of time just in case. Actually, ignore the malware; you shouldn&#x27;t need a reason like that to aim ahead of the deadline, it&#x27;s just a good idea regardless.
-<br />
+<p>Looks like there's <a href="http://www.metafilter.com/80204/The-boss-level-of-internet-worms">potential for internet disruption on April 1</a>. It's probably not going to amount to much, but since the FOCS deadline is April 2, you may want to have a version of the paper into the system ahead of time just in case. Actually, ignore the malware; you shouldn't need a reason like that to aim ahead of the deadline, it's just a good idea regardless.</p>
 
-<br />
-On a not-very-closely-related subject, this weekend I was thinking about intersection graphs of k-dimensional faces of hypercubes. In an n-dimensional hypercube there are (n choose k)2<sup>n-k</sup> k-faces; they can be represented as strings of n characters k of which are stars and the rest of which are 0&#x27;s and 1&#x27;s. The faces of a hypercube (interpreted as sets of vertices) have the <a href="http://en.wikipedia.org/wiki/Helly_property">Helly property</a> — if a collection of strings of 0&#x27;s, 1&#x27;s, and *&#x27;s match each other pairwise, there is a string of 0&#x27;s and 1&#x27;s that they all match — so the cliques just consist of sets of k-faces sharing a common hypercube vertex; therefore, the clique number of these graphs is (n choose k). An independent set in the graph is just a set of disjoint k-faces; by <a href="http://en.wikipedia.org/wiki/Double_counting_(proof_technique)">double counting</a> the vertices per face and faces per vertex it&#x27;s easy to see that the independence number is 2<sup>n-k</sup>. The chromatic number is (n choose k): it is at least the clique number, and partitioning faces into groups of parallel faces produces a coloring with this many colors. When one sees chromatic number equal to clique number, one should think perfect graphs, and these graphs are perfect when k=1 (the line graphs of hypercubes, like other line graphs of bipartite graphs, are perfect) but not in general.
-<br />
+<p>On a not-very-closely-related subject, this weekend I was thinking about intersection graphs of \( k \)-dimensional faces of hypercubes. In an n-dimensional hypercube there are \( \tbinom{n}{k}2^{n-k} \) \( k \)-faces; they can be represented as strings of n characters k of which are stars and the rest of which are 0's and 1's. The faces of a hypercube (interpreted as sets of vertices) have the <a href="http://en.wikipedia.org/wiki/Helly_property">Helly property</a> — if a collection of strings of 0's, 1's, and *'s match each other pairwise, there is a string of 0's and 1's that they all match — so the cliques just consist of sets of \( k \)-faces sharing a common hypercube vertex; therefore, the clique number of these graphs is (n choose k). An independent set in the graph is just a set of disjoint \( k \)-faces; by <a href="http://en.wikipedia.org/wiki/Double_counting_(proof_technique)">double counting</a> the vertices per face and faces per vertex it's easy to see that the independence number is \( 2^{n-k} \). The chromatic number is \( \tbinom{n}{k} \): it is at least the clique number, and partitioning faces into groups of parallel faces produces a coloring with this many colors. When one sees chromatic number equal to clique number, one should think perfect graphs, and these graphs are perfect when \( k=1 \) (the line graphs of hypercubes, like other line graphs of bipartite graphs, are perfect) but not in general.</p>
 
-<br />
-Here&#x27;s a drawing of one of these graphs, the intersection graph of the 1-dimensional faces (that is edges) of a three-dimensional cube.
-<br />
+<p>Here's a drawing of one of these graphs, the intersection graph of the 1-dimensional faces (that is edges) of a three-dimensional cube.</p>
 
-<br />
-<div style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/G322.png" /></div>
-<br />
+<p style="text-align:center"><img src="{{site.baseurl}}/assets/2009/G322.svg" alt="Intersection graph of the edges of a cube" /></p>
 
-<br />
-Why should one care about cliques and independent sets and colorings of these graphs, if one is a theoretical computer scientist? Because the induced subgraphs of these intersection graphs come up in the theory of <a href="http://en.wikipedia.org/wiki/PCP_(complexity)">probabilitically checkable proofs</a>. If the vertices of a hypercube represent bitstrings (and are interpreted as proofs) a k-face of the graph represents a proof checker that looks at n-k bits of a probabilistically checkable proof, doesn&#x27;t look at the other k bits, and has to decide whether to accept or reject the proof based on what it sees. The graph induced by the checkers that accept what they see has a big clique if there&#x27;s a valid proof, consisting of the checkers whose faces include the corresponding hypercube vertex, and has no big cliques otherwise (because in this case all proofs are invalid and all cliques have few accepting checkers). This basic idea, of a connection between proof checkers and cliques, comes from <a href="http://dx.doi.org/10.1145/226643.226652">a 1996 JACM paper by Feige et al</a> and has been used by many papers since, most recently <a href="http://dx.doi.org/10.1145/1132516.1132612">Zuckerman</a>, to show that clique-finding is hard.
-<br />
+<p>Why should one care about cliques and independent sets and colorings of these graphs, if one is a theoretical computer scientist? Because the induced subgraphs of these intersection graphs come up in the theory of <a href="http://en.wikipedia.org/wiki/PCP_(complexity)">probabilitically checkable proofs</a>. If the vertices of a hypercube represent bitstrings (and are interpreted as proofs) a \( k \)-face of the graph represents a proof checker that looks at \( n-k \) bits of a probabilistically checkable proof, doesn't look at the other \( k \) bits, and has to decide whether to accept or reject the proof based on what it sees. The graph induced by the checkers that accept what they see has a big clique if there's a valid proof, consisting of the checkers whose faces include the corresponding hypercube vertex, and has no big cliques otherwise (because in this case all proofs are invalid and all cliques have few accepting checkers). This basic idea, of a connection between proof checkers and cliques, comes from <a href="http://dx.doi.org/10.1145/226643.226652">a 1996 JACM paper by Feige et al</a> and has been used by many papers since, most recently <a href="http://dx.doi.org/10.1145/1132516.1132612">Zuckerman</a>, to show that clique-finding is hard.</p>
 
-<br />
-But if the intersection graphs of subcubes were perfect, so would be their induced subgraphs arising from this reduction. And since clique numbers of perfect graphs can be computed in polynomial time, it would be possible to use this idea to prove P=NP. So it&#x27;s either good news or bad that these graphs aren&#x27;t perfect: it&#x27;s bad news because it prevents the proof of an amazing result, but it&#x27;s good news because if it were true it would put a lot of complexity theorists out of work.
+<p>But if the intersection graphs of subcubes were perfect, so would be their induced subgraphs arising from this reduction. And since clique numbers of perfect graphs can be computed in polynomial time, it would be possible to use this idea to prove \( \mathsf{P}=\mathsf{NP} \). So it's either good news or bad that these graphs aren't perfect: it's bad news because it prevents the proof of an amazing result, but it's good news because if it were true it would put a lot of complexity theorists out of work.</p>
+
 <br /><br /><hr /><br />
 <h3>Comments:</h3>
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>ilyaraz</b>: offtopic<br />
 <b>2009-03-22T07:35:53Z</b><br />
-Hello, David! I&#x27;m aware of your seminal article about sparsification technique. Is it available somewhere? It would be very great, if I could read it.
+<p>Hello, David! I'm aware of your seminal article about sparsification technique. Is it available somewhere? It would be very great, if I could read it.</p>
 
-Ilya Razenshteyn.
+<p>Ilya Razenshteyn.</p>
 </div>
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>11011110</b>: Re: offtopic<br />
 <b>2009-03-22T07:52:06Z</b><br />
-The journal version is <a href="http://doi.acm.org/10.1145/265910.265914">here</a> if you have an ACM subscription or site license. If you can&#x27;t get to it that way let me know and I can email it to you.
+The journal version is <a href="http://doi.acm.org/10.1145/265910.265914">here</a> if you have an ACM subscription or site license. If you can't get to it that way let me know and I can email it to you.
 </div>
 <div style="margin-left: 6em; padding-top: 1em;">
 <b>ilyaraz</b>: Re: offtopic<br />
 <b>2009-03-22T07:53:04Z</b><br />
-I don&#x27;t have one. :)
+I don't have one. :)
 </div>
 <div style="margin-left: 6em; padding-top: 1em;">
 <b>ilyaraz</b>: Re: offtopic<br />
@@ -52,6 +43,6 @@ btw, my email is my username at gmail.com.
 <div style="margin-left: 9em; padding-top: 1em;">
 <b>11011110</b>: Re: offtopic<br />
 <b>2009-03-22T15:30:32Z</b><br />
-Ok, I&#x27;ve emailed it to that address.
+Ok, I've emailed it to that address.
 </div>
 

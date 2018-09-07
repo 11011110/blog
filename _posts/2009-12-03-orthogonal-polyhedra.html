@@ -4,35 +4,22 @@ title:  'Orthogonal polyhedra'
 date:   2009-12-03 17:17:00
 tags:   [xyz graphs, permutohedron, papers]
 ---
-Three quick puzzles concerning the <a href="http://en.wikipedia.org/wiki/Polycube">polycube</a> depicted below: (1) Cut it into two pieces that can be reassembled into a cube. (2) Fill space with translated, rotated, and reflected copies of it. (3) Fill space with translated and rotated (but not reflected) copies of it.
-<br />
+<p>Three quick puzzles concerning the <a href="http://en.wikipedia.org/wiki/Polycube">polycube</a> depicted below: (1) Cut it into two pieces that can be reassembled into a cube. (2) Fill space with translated, rotated, and reflected copies of it. (3) Fill space with translated and rotated (but not reflected) copies of it.</p>
 
-<br />
-<div style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/CornerPermutohedron.png" /></div>
-<br />
+<p style="text-align:center"><img src="{{site.baseurl}}/assets/2009/CornerPermutohedron.png" alt="orthogonal permutohedron" /></p>
 
-<br />
-This polyhedron is an axis-parallel <a href="http://en.wikipedia.org/wiki/Permutohedron">permutohedron</a>: its 24 vertices can be labeled with the 24 permutations on four objects, in such a way that each edge connects two permutations that are related by a swap of two adjacent values. My new paper with Elena Mumford, <a href="http://arxiv.org/abs/0912.0537">Steinitz Theorems for Orthogonal Polyhedra (arXiv:0912.0537)</a>, aims to provide a complete classification of orthogonal polyhedra such as this one in the same way that <a href="http://en.wikipedia.org/wiki/Steinitz%27s_theorem">Steinitz&#x27;s theorem</a> provides a complete classification of convex polyhedra.
-<br />
+<p>This polyhedron is an axis-parallel <a href="http://en.wikipedia.org/wiki/Permutohedron">permutohedron</a>: its 24 vertices can be labeled with the 24 permutations on four objects, in such a way that each edge connects two permutations that are related by a swap of two adjacent values. My new paper with Elena Mumford, <a href="http://arxiv.org/abs/0912.0537">Steinitz Theorems for Orthogonal Polyhedra (arXiv:0912.0537)</a>, aims to provide a complete classification of orthogonal polyhedra such as this one in the same way that <a href="http://en.wikipedia.org/wiki/Steinitz%27s_theorem">Steinitz's theorem</a> provides a complete classification of convex polyhedra.</p>
 
-<br />
-Convex polyhedra have graphs that are exactly the <a href="http://en.wikipedia.org/wiki/Polyhedral_graph">planar 3-connected graphs</a>, from which we know that there is (up to combinatorial equivalence) only one four-face polyhedron (the tetrahedron), two five-face polyhedra (the triangular prism and the square pyramid), <a href="https://oeis.org/A000944">etc</a>. The &quot;simple orthogonal polyhedra&quot; that we study in an analogous way have axis-parallel faces that are simple polygons, three perpendicular edges at each vertex, and the topology of the sphere. As we show, these polyhedra are exactly described by the planar bipartite 3-regular graphs with a weaker connectivity condition than Steinitz&#x27;s: removing any two vertices splits the graph into at most two connected components (counting an edge between the two removed vertices as a component). From this graph-theoretic characterization it follows that there is exactly one six-face orthogonal polyhedron (the cube), one eight-face orthogonal polyhedron (an L-shaped hexagonal prism), etc.
-<br />
+<p>Convex polyhedra have graphs that are exactly the <a href="http://en.wikipedia.org/wiki/Polyhedral_graph">planar 3-connected graphs</a>, from which we know that there is (up to combinatorial equivalence) only one four-face polyhedron (the tetrahedron), two five-face polyhedra (the triangular prism and the square pyramid), <a href="https://oeis.org/A000944">etc</a>. The "simple orthogonal polyhedra" that we study in an analogous way have axis-parallel faces that are simple polygons, three perpendicular edges at each vertex, and the topology of the sphere. As we show, these polyhedra are exactly described by the planar bipartite 3-regular graphs with a weaker connectivity condition than Steinitz's: removing any two vertices splits the graph into at most two connected components (counting an edge between the two removed vertices as a component). From this graph-theoretic characterization it follows that there is exactly one six-face orthogonal polyhedron (the cube), one eight-face orthogonal polyhedron (an L-shaped hexagonal prism), etc.</p>
 
-<br />
-The key building blocks for our classification are a more restricted class of orthogonal polyhedra: ones that, like the permutohedron above, can be viewed from a point of view from which only a single vertex is hidden behind the other faces. As we show, a planar graph forms the set of vertices and edges of a simple orthogonal polyhedron with one hidden vertex if and only if its dual graph has a structure like the one in the drawing below: a cycle or set of cycles that passes through each interior vertex and that uses exactly one edge from every white interior triangle. Geometrically, the cycles separate the mountain folds from the valley folds of the polyhedron. If the dual graph is 4-connected, then it always has a cycle cover of this type, and the other polyhedra of our classification can be constructed by gluing together polyhedra for dual-4-connected subgraphs.
-<br />
+<p>The key building blocks for our classification are a more restricted class of orthogonal polyhedra: ones that, like the permutohedron above, can be viewed from a point of view from which only a single vertex is hidden behind the other faces. As we show, a planar graph forms the set of vertices and edges of a simple orthogonal polyhedron with one hidden vertex if and only if its dual graph has a structure like the one in the drawing below: a cycle or set of cycles that passes through each interior vertex and that uses exactly one edge from every white interior triangle. Geometrically, the cycles separate the mountain folds from the valley folds of the polyhedron. If the dual graph is 4-connected, then it always has a cycle cover of this type, and the other polyhedra of our classification can be constructed by gluing together polyhedra for dual-4-connected subgraphs.</p>
 
-<br />
-<div style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/PermutohedronCycleCover.png" /></div>
-<br />
+<p style="text-align:center"><img src="{{site.baseurl}}/assets/2009/PermutohedronCycleCover.png" alt="cycle covering the white triangles of the dual graph of the orthogonal permutohedron" /></p>
 
-<br />
-In my previous paper on <a href="http://arxiv.org/abs/0709.4087">bendless orthogonal drawing</a>, I showed how to represent the permutohedron (and many other graphs) as a system of axis-parallel line segments in 3d, so that three mutually perpendicular line segments meet at each vertex. But in that paper, the line segments were allowed to cross each other, and the drawings I found were in general very far from being polyhedral. One of the results in the new paper is that, whenever a planar graph has a bendless drawing of this type, then it is the graph of a polyhedron: all crossings and other forms of self-intersections can be eliminated.
-<br />
+<p>In my previous paper on <a href="http://arxiv.org/abs/0709.4087">bendless orthogonal drawing</a>, I showed how to represent the permutohedron (and many other graphs) as a system of axis-parallel line segments in 3d, so that three mutually perpendicular line segments meet at each vertex. But in that paper, the line segments were allowed to cross each other, and the drawings I found were in general very far from being polyhedral. One of the results in the new paper is that, whenever a planar graph has a bendless drawing of this type, then it is the graph of a polyhedron: all crossings and other forms of self-intersections can be eliminated.</p>
 
-<br />
-Coincidentally, today&#x27;s arXiv papers also include another one related to Steinitz&#x27;s theorem (the real one, about convex polyhedra): <a href="http://arxiv.org/abs/0912.0712">On the number of spanning trees a planar graph can have (arXiv:0912.0712)</a> by Kevin Buchin and André Schulz. Buchin and Schulz show that, in order to realize a 3d convex polyhedron using integer coordinates, one needs only O(n) bits per coordinate, improving an exponential bound from Steinitz&#x27; original paper and <a href="http://geomblog.blogspot.com/2006/08/planar-graphs-and-steinitzs-theorem.html">several other previous polynomial bounds</a>.
+<p>Coincidentally, today's arXiv papers also include another one related to Steinitz's theorem (the real one, about convex polyhedra): <a href="http://arxiv.org/abs/0912.0712">On the number of spanning trees a planar graph can have (arXiv:0912.0712)</a> by Kevin Buchin and André Schulz. Buchin and Schulz show that, in order to realize a 3d convex polyhedron using integer coordinates, one needs only \( O(n) \) bits per coordinate, improving an exponential bound from Steinitz' original paper and <a href="http://geomblog.blogspot.com/2006/08/planar-graphs-and-steinitzs-theorem.html">several other previous polynomial bounds</a>.</p>
+
 <br /><br /><hr /><br />
 <h3>Comments:</h3>
 <div style="margin-left: 0em; padding-top: 1em;">
@@ -44,12 +31,12 @@ i am curious about how you practically think about those problems. lots of paper
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>11011110</b>: <br />
 <b>2009-12-04T03:26:10Z</b><br />
-Big whiteboards, lots of pencil and paper sketches (I&#x27;ve started carrying around one of those little squared Moleskine pocket notebooks, and I used it a lot for this), lots of examples, and lots of email back and forth. Not much in the way of software tools except drawing programs. We did a little of this in wave rather than email, but that was only in the last week or two of writing up the paper, after we already had most of it worked out and written.
+Big whiteboards, lots of pencil and paper sketches (I've started carrying around one of those little squared Moleskine pocket notebooks, and I used it a lot for this), lots of examples, and lots of email back and forth. Not much in the way of software tools except drawing programs. We did a little of this in wave rather than email, but that was only in the last week or two of writing up the paper, after we already had most of it worked out and written.
 </div>
 <div style="margin-left: 6em; padding-top: 1em;">
 <b>laurent_atl</b>: <br />
 <b>2009-12-04T03:37:41Z</b><br />
-i inherited from my master Maurice Nivat, who had a deep polyominoes habit, the taste for those :<img src="http://i.americanapparel.net/storefront/images/detail/serve.asp?media=rhodia16_Graph.jpg" />
+i inherited from my master Maurice Nivat, who had a deep polyominoes habit, the taste for those:
 http://store.americanapparel.net/rhodia16.html
 </div>
 <div style="margin-left: 9em; padding-top: 1em;">

@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="612" height="594">
+    <path fill="none" stroke="#8B5C29" stroke-width="3" d="M312 534l216-143.667M312 570l216-143.666M348 543l216-143.667M348 579l216-143.666M312 525l216-143.667M312 561l216-143.666M348 534l216-143.667M348 570l216-143.666"/>
+    <path fill="none" stroke="#8210D2" stroke-width="3" d="M24 462l216-143.667M24 498l216-143.666M60 471l216-143.667M60 507l216-143.666M24 453l216-143.667M24 489l216-143.666M60 462l216-143.667M60 498l216-143.666M312 246l216-143.667M312 282l216-143.667M348 255l216-143.667M348 291l216-143.667M312 237L528 93.333M312 273l216-143.667M348 246l216-143.667M348 282l216-143.667"/>
+    <path fill="none" stroke="#8B5C29" stroke-width="3" d="M24 174L240 30.333M24 210L240 66.333M60 183L276 39.333M60 219L276 75.333M24 165L240 21.333M24 201L240 57.333M60 174L276 30.333M60 210L276 66.333"/>
+    <path fill="none" stroke="#8210D2" stroke-width="3" d="M312 570V282m27 270V264m9 315V291m27 270V273m-68 279V264m27 270V246m9 315V273m27 270V255"/>
+    <path fill="none" stroke="#8B5C29" stroke-width="3" d="M528 426V138m27 270V120m9 315V147m27 270V129m-68 279V120m27 270V102m9 315V129m27 270V111M24 498V210m27 270V192m9 315V219m27 270V201M19 480V192m27 270V174m9 315V201m27 270V183"/>
+    <path fill="none" stroke="#8210D2" stroke-width="3" d="M240 354V66m27 270V48m9 315V75m27 270V57m-68 279V48m27 270V30m9 315V57m27 270V39"/>
+    <path fill="none" stroke="#8B5C29" stroke-width="3" d="M276 363l288 72m-261-90l288 72m-315-90l288 72m-261-90l288 72m-333-18l288 72m-261-90l288 72m-315-90l288 72m-261-90l288 72"/>
+    <path fill="none" stroke="#8210D2" stroke-width="3" d="M60 507l288 72M87 489l288 72M60 471l288 72M87 453l288 72M42 507l288 72M69 489l288 72M42 471l288 72M69 453l288 72M276 75l288 72M303 57l288 72M276 39l288 72M303 21l288 72M258 75l288 72M285 57l288 72M258 39l288 72M285 21l288 72"/>
+    <path fill="none" stroke="#8B5C29" stroke-width="3" d="M60 219l288 72M87 201l288 72M60 183l288 72M87 165l288 72M42 219l288 72M69 201l288 72M42 183l288 72M69 165l288 72"/>
+    <path fill="#FFF" stroke="#FFF" stroke-width="20" d="M312 534l27-18 36 9v36l-27 18-36-9z"/>
+    <path fill="none" stroke="#8210D2" stroke-width="3" stroke-linejoin="bevel" d="M348 579l27-18v-36m0 36l-36-9"/>
+    <path fill="none" stroke="#FFF" stroke-width="6" stroke-linejoin="bevel" d="M348 579v-36"/>
+    <path fill="none" stroke="#8B5C29" stroke-width="3" stroke-linejoin="bevel" d="M348 579v-36l27-18-36-9v36l-27 18z"/>
+    <path fill="none" stroke="#FFF" stroke-width="6" stroke-linejoin="bevel" d="M348 543l-36-9"/>
+    <path fill="none" stroke="#8210D2" stroke-width="3" stroke-linejoin="bevel" d="M339 516l-27 18v36m0-36l36 9"/>
+    <circle cx="339" cy="516" r="3"/>
+    <circle cx="312" cy="534" r="3"/>
+    <circle cx="348" cy="543" r="3"/>
+    <circle cx="375" cy="525" r="3"/>
+    <circle cx="375" cy="561" r="3"/>
+    <circle cx="348" cy="579" r="3"/>
+    <circle cx="312" cy="570" r="3"/>
+    <path fill="#FFF" stroke="#FFF" stroke-width="20" d="M24 462l27-18 36 9v36l-27 18-36-9z"/>
+    <path fill="none" stroke="#8210D2" stroke-width="3" stroke-linejoin="bevel" d="M60 507l27-18v-36m0 36l-36-9"/>
+    <path fill="none" stroke="#FFF" stroke-width="6" stroke-linejoin="bevel" d="M60 507v-36"/>
+    <path fill="none" stroke="#8B5C29" stroke-width="3" stroke-linejoin="bevel" d="M60 507v-36l27-18-36-9v36l-27 18z"/>
+    <path fill="none" stroke="#FFF" stroke-width="6" stroke-linejoin="bevel" d="M60 471l-36-9"/>
+    <path fill="none" stroke="#8210D2" stroke-width="3" stroke-linejoin="bevel" d="M51 444l-27 18v36m0-36l36 9"/>
+    <circle cx="51" cy="444" r="3"/>
+    <circle cx="24" cy="462" r="3"/>
+    <circle cx="60" cy="471" r="3"/>
+    <circle cx="87" cy="453" r="3"/>
+    <circle cx="87" cy="489" r="3"/>
+    <circle cx="60" cy="507" r="3"/>
+    <circle cx="24" cy="498" r="3"/>
+    <path fill="#FFF" stroke="#FFF" stroke-width="20" d="M528 390l27-18 36 9v36l-27 18-36-9z"/>
+    <path fill="none" stroke="#8210D2" stroke-width="3" stroke-linejoin="bevel" d="M564 435l27-18v-36m0 36l-36-9"/>
+    <path fill="none" stroke="#FFF" stroke-width="6" stroke-linejoin="bevel" d="M564 435v-36"/>
+    <path fill="none" stroke="#8B5C29" stroke-width="3" stroke-linejoin="bevel" d="M564 435v-36l27-18-36-9v36l-27 18z"/>
+    <path fill="none" stroke="#FFF" stroke-width="6" stroke-linejoin="bevel" d="M564 399l-36-9"/>
+    <path fill="none" stroke="#8210D2" stroke-width="3" stroke-linejoin="bevel" d="M555 372l-27 18v36m0-36l36 9"/>
+    <circle cx="555" cy="372" r="3"/>
+    <circle cx="528" cy="390" r="3"/>
+    <circle cx="564" cy="399" r="3"/>
+    <circle cx="591" cy="381" r="3"/>
+    <circle cx="591" cy="417" r="3"/>
+    <circle cx="564" cy="435" r="3"/>
+    <circle cx="528" cy="426" r="3"/>
+    <path fill="#FFF" stroke="#FFF" stroke-width="20" d="M240 318l27-18 36 9v36l-27 18-36-9z"/>
+    <path fill="none" stroke="#8210D2" stroke-width="3" stroke-linejoin="bevel" d="M276 363l27-18v-36m0 36l-36-9"/>
+    <path fill="none" stroke="#FFF" stroke-width="6" stroke-linejoin="bevel" d="M276 363v-36"/>
+    <path fill="none" stroke="#8B5C29" stroke-width="3" stroke-linejoin="bevel" d="M276 363v-36l27-18-36-9v36l-27 18z"/>
+    <path fill="none" stroke="#FFF" stroke-width="6" stroke-linejoin="bevel" d="M276 327l-36-9"/>
+    <path fill="none" stroke="#8210D2" stroke-width="3" stroke-linejoin="bevel" d="M267 300l-27 18v36m0-36l36 9"/>
+    <circle cx="267" cy="300" r="3"/>
+    <circle cx="240" cy="318" r="3"/>
+    <circle cx="276" cy="327" r="3"/>
+    <circle cx="303" cy="309" r="3"/>
+    <circle cx="303" cy="345" r="3"/>
+    <circle cx="276" cy="363" r="3"/>
+    <circle cx="240" cy="354" r="3"/>
+    <path fill="#FFF" stroke="#FFF" stroke-width="20" d="M312 246l27-18 36 9v36l-27 18-36-9z"/>
+    <path fill="none" stroke="#8210D2" stroke-width="3" stroke-linejoin="bevel" d="M348 291l27-18v-36m0 36l-36-9"/>
+    <path fill="none" stroke="#FFF" stroke-width="6" stroke-linejoin="bevel" d="M348 291v-36"/>
+    <path fill="none" stroke="#8B5C29" stroke-width="3" stroke-linejoin="bevel" d="M348 291v-36l27-18-36-9v36l-27 18z"/>
+    <path fill="none" stroke="#FFF" stroke-width="6" stroke-linejoin="bevel" d="M348 255l-36-9"/>
+    <path fill="none" stroke="#8210D2" stroke-width="3" stroke-linejoin="bevel" d="M339 228l-27 18v36m0-36l36 9"/>
+    <circle cx="339" cy="228" r="3"/>
+    <circle cx="312" cy="246" r="3"/>
+    <circle cx="348" cy="255" r="3"/>
+    <circle cx="375" cy="237" r="3"/>
+    <circle cx="375" cy="273" r="3"/>
+    <circle cx="348" cy="291" r="3"/>
+    <circle cx="312" cy="282" r="3"/>
+    <path fill="#FFF" stroke="#FFF" stroke-width="20" d="M24 174l27-18 36 9v36l-27 18-36-9z"/>
+    <path fill="none" stroke="#8210D2" stroke-width="3" stroke-linejoin="bevel" d="M60 219l27-18v-36m0 36l-36-9"/>
+    <path fill="none" stroke="#FFF" stroke-width="6" stroke-linejoin="bevel" d="M60 219v-36"/>
+    <path fill="none" stroke="#8B5C29" stroke-width="3" stroke-linejoin="bevel" d="M60 219v-36l27-18-36-9v36l-27 18z"/>
+    <path fill="none" stroke="#FFF" stroke-width="6" stroke-linejoin="bevel" d="M60 183l-36-9"/>
+    <path fill="none" stroke="#8210D2" stroke-width="3" stroke-linejoin="bevel" d="M51 156l-27 18v36m0-36l36 9"/>
+    <circle cx="51" cy="156" r="3"/>
+    <circle cx="24" cy="174" r="3"/>
+    <circle cx="60" cy="183" r="3"/>
+    <circle cx="87" cy="165" r="3"/>
+    <circle cx="87" cy="201" r="3"/>
+    <circle cx="60" cy="219" r="3"/>
+    <circle cx="24" cy="210" r="3"/>
+    <path fill="#FFF" stroke="#FFF" stroke-width="20" d="M528 102l27-18 36 9v36l-27 18-36-9z"/>
+    <path fill="none" stroke="#8210D2" stroke-width="3" stroke-linejoin="bevel" d="M564 147l27-18V93m0 36l-36-9"/>
+    <path fill="none" stroke="#FFF" stroke-width="6" stroke-linejoin="bevel" d="M564 147v-36"/>
+    <path fill="none" stroke="#8B5C29" stroke-width="3" stroke-linejoin="bevel" d="M564 147v-36l27-18-36-9v36l-27 18z"/>
+    <path fill="none" stroke="#FFF" stroke-width="6" stroke-linejoin="bevel" d="M564 111l-36-9"/>
+    <path fill="none" stroke="#8210D2" stroke-width="3" stroke-linejoin="bevel" d="M555 84l-27 18v36m0-36l36 9"/>
+    <circle cx="555" cy="84" r="3"/>
+    <circle cx="528" cy="102" r="3"/>
+    <circle cx="564" cy="111" r="3"/>
+    <circle cx="591" cy="93" r="3"/>
+    <circle cx="591" cy="129" r="3"/>
+    <circle cx="564" cy="147" r="3"/>
+    <circle cx="528" cy="138" r="3"/>
+    <path fill="#FFF" stroke="#FFF" stroke-width="20" d="M240 30l27-18 36 9v36l-27 18-36-9z"/>
+    <path fill="none" stroke="#8210D2" stroke-width="3" stroke-linejoin="bevel" d="M276 75l27-18V21m0 36l-36-9"/>
+    <path fill="none" stroke="#FFF" stroke-width="6" stroke-linejoin="bevel" d="M276 75V39"/>
+    <path fill="none" stroke="#8B5C29" stroke-width="3" stroke-linejoin="bevel" d="M276 75V39l27-18-36-9v36l-27 18z"/>
+    <path fill="none" stroke="#FFF" stroke-width="6" stroke-linejoin="bevel" d="M276 39l-36-9"/>
+    <path fill="none" stroke="#8210D2" stroke-width="3" stroke-linejoin="bevel" d="M267 12l-27 18v36m0-36l36 9"/>
+    <circle cx="267" cy="12" r="3"/>
+    <circle cx="240" cy="30" r="3"/>
+    <circle cx="276" cy="39" r="3"/>
+    <circle cx="303" cy="21" r="3"/>
+    <circle cx="303" cy="57" r="3"/>
+    <circle cx="276" cy="75" r="3"/>
+    <circle cx="240" cy="66" r="3"/>
+    <circle cx="51" cy="480" r="3"/>
+    <circle cx="51" cy="192" r="3"/>
+    <circle cx="267" cy="336" r="3"/>
+    <circle cx="339" cy="264" r="3"/>
+    <circle cx="339" cy="552" r="3"/>
+    <circle cx="555" cy="408" r="3"/>
+    <circle cx="555" cy="120" r="3"/>
+    <circle cx="267" cy="48" r="3"/>
+</svg>

@@ -6,7 +6,7 @@ tags:   [information visualization, trees, algorithms]
 ---
 <p>It's a pretty obvious observation that the graphic conventions we use when illustrating mathematical objects can have a lot to do with how we think of them. The standard way the computer science textbooks draw trees is like a biological tree, but upside-down, with the root at the top and the leaves at the bottom:</p>
 
-<p style="text-align:center"><a href="http://commons.wikimedia.org/wiki/File:Birnbaum_am_Lerchenberg_retouched.jpg"><img src="http://www.ics.uci.edu/~eppstein/0xDE/Upside-down-tree.jpg" alt="Upside-down tree" style="border-style:solid;border-color:black;" /></a></p>
+<p style="text-align:center"><a href="http://commons.wikimedia.org/wiki/File:Birnbaum_am_Lerchenberg_retouched.jpg"><img src="{{site.baseurl}}/assets/2009/Upside-down-tree.jpg" alt="Upside-down tree" style="border-style:solid;border-color:black;" /></a></p>
 
 <p>When we view a tree in this way, the traversal order given by <a href="http://en.wikipedia.org/wiki/Breadth-first_search">breadth-first search</a> forms a geometric pattern that scans left-to-right across the vertices in a single level of the tree (conventionally, these vertices lie along a horizontal line), then the next level, and so on, much as one reads English text left-to-right and line-by-line. And this level-by-level ordering can be useful for conveying the idea that breadth-first search sorts vertices by their distances from the root.</p>
 
@@ -14,7 +14,7 @@ tags:   [information visualization, trees, algorithms]
 
 <p>Last week, while working on the Wikipedia article on the <a href="http://en.wikipedia.org/wiki/Calkin%E2%80%93Wilf_tree">Calkin–Wilf tree</a>, I wanted to find a visual way of representing this smoothness. The Calkin–Wilf tree is a binary tree with \( 1/1 \) at the root, and where the children of \( a/b \) are \( a/(a+b) \) and \( (a+b)/b \); it contains every positive rational number exactly once, so one can list the positive rationals without duplication by performing a breadth-first search of this tree. And in fact this breadth-first search can be done by a simple formula, without any need for queues or recursion: the next number after \( q \) is \( 1/(2\lfloor q\rfloor+1-q) \). Notice, again, the lack of jumps in this sequence: the formula works the same no matter whether the next number belongs to the same level or is the start of another level in the tree. Eventually, I realized that if the tree were drawn radially, the BFS sequence could be visualized as a nice smooth spiral:</p>
 
-<p style="text-align:center"><a href="http://commons.wikimedia.org/wiki/File:Calkin-Wilf_spiral.svg"><img alt="Spiral visualization of breadth-first search of the Calkin–Wilf tree" src="http://www.ics.uci.edu/~eppstein/0xDE/Calkin-Wilf_spiral.png" /></a></p>
+<p style="text-align:center"><a href="http://commons.wikimedia.org/wiki/File:Calkin-Wilf_spiral.svg"><img alt="Spiral visualization of breadth-first search of the Calkin–Wilf tree" src="{{site.baseurl}}/assets/2009/Calkin-Wilf_spiral.png" /></a></p>
 
 <p>The same spiral layout can be used for any tree, and provides a nice graphical counterpart to the lack of jumps in the BFS algorithm. One can extend the metaphor: the head and tail of the BFS queue lie close together on two parallel tracks, and the BFS algorithm moves both of them in tandem while adding neighbors of the tail (on the inner track) to the head (on the outer track).</p>
 

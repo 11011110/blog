@@ -4,25 +4,20 @@ title:  'Why graphs?'
 date:   2009-02-11 19:03:00
 tags:   [graph theory]
 ---
-Someone today asked me: why graphs? “Why are graphs so widely used in computer science, and in related fields such as software engineering?” Here&#x27;s my glib response:
-<br />
+<p>Someone today asked me: why graphs? “Why are graphs so widely used in computer science, and in related fields such as software engineering?” Here's my glib response:</p>
 
-<br />
-The short answer is that graphs can be used to reason symbolically about any kind of pairwise relationship between any kind of entity, and that we like to think about pairwise relationships because unary relationships aren&#x27;t powerful enough and k-way relationships for k&gt;2 add extra complication without adding any real power.
-<br />
+<p>The short answer is that graphs can be used to reason symbolically about any kind of pairwise relationship between any kind of entity, and that we like to think about pairwise relationships because unary relationships aren't powerful enough and \( k \)-way relationships for \( k\gt 2 \) add extra complication without adding any real power.</p>
 
-<br />
-So already in 1736 Euler was using graphs to model transportation connections between pairs of places (the bridges of Königsberg; more modernly this idea shows up in airline ticket planning, where the vertices represent airports and the edges represent flights, or in mapquest-like route planning, where the vertices represent road intersections and the edges represent intersection-free segments of roads). We have graphs representing people and social networks connecting them (online friendships, sexual contacts, parenthood, coauthorship, etc). We have graphs representing subroutines in a computer program and caller-callee relations between them. We have graphs representing web pages and html links between them. We have graphs representing proteins in your body and the chemical interactions they participate in. Etc etc.
-<br />
+<p>So already in 1736 Euler was using graphs to model transportation connections between pairs of places (the bridges of Königsberg; more modernly this idea shows up in airline ticket planning, where the vertices represent airports and the edges represent flights, or in mapquest-like route planning, where the vertices represent road intersections and the edges represent intersection-free segments of roads). We have graphs representing people and social networks connecting them (online friendships, sexual contacts, parenthood, coauthorship, etc). We have graphs representing subroutines in a computer program and caller-callee relations between them. We have graphs representing web pages and html links between them. We have graphs representing proteins in your body and the chemical interactions they participate in. Etc etc.</p>
 
-<br />
-Graphs are powerful because the same kinds of problems and algorithms turn out to be important in many of these different applications. So by taking away the application-specific features of all of those different problems and turning them into something as abstract as a graph, we only have to solve these problems once instead of repeatedly solving the same problems in different disguises.
+<p>Graphs are powerful because the same kinds of problems and algorithms turn out to be important in many of these different applications. So by taking away the application-specific features of all of those different problems and turning them into something as abstract as a graph, we only have to solve these problems once instead of repeatedly solving the same problems in different disguises.</p>
+
 <br /><br /><hr /><br />
 <h3>Comments:</h3>
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>None</b>: <br />
 <b>2009-02-12T08:18:53Z</b><br />
-that&#x27;s the explanation I give as well. Very well written.
+that's the explanation I give as well. Very well written.
 </div>
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>11011110</b>: <br />
@@ -32,14 +27,14 @@ Thanks!
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>None</b>: k-relationships<br />
 <b>2009-02-12T08:33:46Z</b><br />
-&quot;k-way relationships for k&gt;2 add extra complication without adding any real power&quot;
+<blockquote>\( k \)-way relationships for \( k\gt 2 \) add extra complication without adding any real power</blockquote>
 
 Is there any way of understanding why this is the case, and in what way? What would be the formally equivalent statement?
 </div>
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>11011110</b>: Re: k-relationships<br />
 <b>2009-02-12T15:10:39Z</b><br />
-I meant something mildly technical by this: one can define k-ary hypergraphs for any k, of course, but they&#x27;re just the same things as bipartite graphs. So the hypergraph point of view doesn&#x27;t really get you away from graphs.
+I meant something mildly technical by this: one can define k-ary hypergraphs for any k, of course, but they're just the same things as bipartite graphs. So the hypergraph point of view doesn't really get you away from graphs.
 </div>
 <div style="margin-left: 6em; padding-top: 1em;">
 <b>None</b>: Re: k-relationships<br />
@@ -62,42 +57,46 @@ It looks fit for the Wikipedia page about graphs.
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>11011110</b>: <br />
 <b>2009-02-12T15:17:44Z</b><br />
-Yeah, I see that it has only a brief and easily missed line about this before going into the more dry technical material. I&#x27;ll have to see what I can dig up in the way of reliable sources that would let me add it there; I don&#x27;t think it should be too difficult.
+Yeah, I see that it has only a brief and easily missed line about this before going into the more dry technical material. I'll have to see what I can dig up in the way of reliable sources that would let me add it there; I don't think it should be too difficult.
 </div>
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>None</b>: Agreed!<br />
 <b>2009-02-12T14:36:32Z</b><br />
-Wow, I just did my first graph lecture for Algs and Data Structures Tuesday, and you said very nicely what I HOPE the students took away from the first part of the lecture -- where I ask them to think of examples of data that can be modelled as graphs.  But you said it very clearly.  
+<p>Wow, I just did my first graph lecture for Algs and Data Structures Tuesday, and you said very nicely what I HOPE the students took away from the first part of the lecture -- where I ask them to think of examples of data that can be modelled as graphs.  But you said it very clearly.  </p>
 
-Michael Mitzenmacher
+<p>Michael Mitzenmacher</p>
 </div>
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>11011110</b>: Re: Agreed!<br />
 <b>2009-02-12T15:18:34Z</b><br />
-Thanks! That&#x27;s where I usually put it in my algorithms classes, too.
+Thanks! That's where I usually put it in my algorithms classes, too.
 </div>
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>None</b>: Great Comments!<br />
 <b>2009-02-12T22:48:50Z</b><br />
-This is great! I hope Graph theory community also sees this comment (and perhaps it helps for grant proposal as well).. 
+<p>This is great! I hope Graph theory community also sees this comment (and perhaps it helps for grant proposal as well).. </p>
 
-Also, I hope TCS realizes how important Graph Theory is. 
-(Seriously! Graph Theory creates a lot of &quot;exciting&quot; and &quot;deep&quot; theories 
+<p>Also, I hope TCS realizes how important Graph Theory is. 
+(Seriously! Graph Theory creates a lot of "exciting" and "deep" theories 
 in the last two decades or so! If one only knows Graph Theory 30 years, 
-he or she may object this point, though..) 
+he or she may object this point, though..) </p>
 
-Thanks.
+<p>Thanks.</p>
 
-Ken-ichi Kawarabayashi
+<p>Ken-ichi Kawarabayashi</p>
 </div>
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>None</b>: Energy Landscape?<br />
 <b>2009-02-13T07:25:00Z</b><br />
-Hi,
-  I am a biologist, and I encounter the following graph-theoretic(I think) problem:
-  We have a big graph with billions of of nodes, and for each node we can assign a real value-&quot;height&quot; to it. Then we want to obtain a global view of
-this landscape and try to study some property of this graph.
-  Does this kind of situation sounds familiar to you? 
-  Thank a lot!!!
+<p>Hi,</p>
+
+<p>I am a biologist, and I encounter the following graph-theoretic(I think) problem:</p>
+
+<p>We have a big graph with billions of of nodes, and for each node we can assign a real value-"height" to it. Then we want to obtain a global view of
+this landscape and try to study some property of this graph.</p>
+
+<p>Does this kind of situation sounds familiar to you?</p>
+
+<p>Thank a lot!!!</p>
 </div>
 
