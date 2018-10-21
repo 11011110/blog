@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="837px" height="792px" viewBox="0 0 837 792" enable-background="new 0 0 837 792" xml:space="preserve">
+<line fill="none" stroke="#000000" stroke-width="3" stroke-miterlimit="10" x1="449.999" y1="171.001" x2="593.999" y2="171.001"/>
+<line fill="none" stroke="#000000" stroke-width="3" stroke-miterlimit="10" x1="683.999" y1="405.001" x2="683.999" y2="261.001"/>
+<polyline fill="none" stroke="#000000" stroke-width="3" stroke-miterlimit="10" points="449.999,405.001 593.999,405.001
+	593.999,261.001 449.999,261.001 "/>
+<path fill="none" stroke="#000000" stroke-width="3" stroke-miterlimit="10" d="M593.999,522.002c-36-36.001-108-36-144-0.001"/>
+<path fill="none" stroke="#000000" stroke-width="3" stroke-miterlimit="10" d="M449.999,522.001c36,36,108,36.002,144,0.001"/>
+<line fill="none" stroke="#BC1E47" stroke-width="3" stroke-miterlimit="10" x1="449.999" y1="522.001" x2="593.999" y2="522.001"/>
+<line fill="none" stroke="#CC33CC" stroke-width="3" stroke-miterlimit="10" x1="548.999" y1="72.001" x2="593.999" y2="27.001"/>
+<line fill="none" stroke="#CC33CC" stroke-width="3" stroke-miterlimit="10" x1="494.999" y1="72.001" x2="449.999" y2="27.001"/>
+<line fill="none" stroke="#CC33CC" stroke-width="3" stroke-miterlimit="10" x1="593.999" y1="171.001" x2="548.999" y2="126.001"/>
+<line fill="none" stroke="#CC33CC" stroke-width="3" stroke-miterlimit="10" x1="449.999" y1="171.001" x2="494.999" y2="126.001"/>
+<rect x="494.999" y="72.001" fill="none" stroke="#CC33CC" stroke-width="3" stroke-miterlimit="10" width="54" height="54"/>
+<polyline fill="none" stroke="#CC33CC" stroke-width="3" stroke-miterlimit="10" points="449.999,171.001 449.999,27.001
+	593.999,27.001 593.999,171.001 "/>
+<circle fill="#C49A6C" stroke="#231F20" stroke-miterlimit="10" cx="449.999" cy="171.001" r="9"/>
+<circle fill="#C49A6C" stroke="#231F20" stroke-miterlimit="10" cx="593.999" cy="171.001" r="9"/>
+<circle fill="#C49A6C" stroke="#231F20" stroke-miterlimit="10" cx="593.999" cy="27.001" r="9"/>
+<circle fill="#C49A6C" stroke="#231F20" stroke-miterlimit="10" cx="449.999" cy="27.001" r="9"/>
+<circle fill="#C49A6C" stroke="#231F20" stroke-miterlimit="10" cx="494.999" cy="126.001" r="9"/>
+<circle fill="#C49A6C" stroke="#231F20" stroke-miterlimit="10" cx="494.999" cy="72.001" r="9"/>
+<circle fill="#C49A6C" stroke="#231F20" stroke-miterlimit="10" cx="548.999" cy="72.001" r="9"/>
+<circle fill="#C49A6C" stroke="#231F20" stroke-miterlimit="10" cx="548.999" cy="126.001" r="9"/>
+<line fill="none" stroke="#0081CD" stroke-width="3" stroke-miterlimit="10" x1="773.999" y1="261.001" x2="728.999" y2="306.001"/>
+<line fill="none" stroke="#0081CD" stroke-width="3" stroke-miterlimit="10" x1="773.999" y1="405.001" x2="728.999" y2="360.001"/>
+<polygon fill="none" stroke="#0081CD" stroke-width="3" stroke-miterlimit="10" points="683.999,261.001 728.999,306.001
+	728.999,360.001 683.999,405.001 773.999,405.001 773.999,261.001 "/>
+<circle fill="#C49A6C" stroke="#231F20" stroke-miterlimit="10" cx="683.999" cy="261.001" r="9"/>
+<circle fill="#C49A6C" stroke="#231F20" stroke-miterlimit="10" cx="728.999" cy="306.001" r="9"/>
+<circle fill="#C49A6C" stroke="#231F20" stroke-miterlimit="10" cx="773.999" cy="261.001" r="9"/>
+<circle fill="#C49A6C" stroke="#231F20" stroke-miterlimit="10" cx="728.999" cy="360.001" r="9"/>
+<circle fill="#C49A6C" stroke="#231F20" stroke-miterlimit="10" cx="683.999" cy="405.001" r="9"/>
+<circle fill="#C49A6C" stroke="#231F20" stroke-miterlimit="10" cx="773.999" cy="405.001" r="9"/>
+<line fill="none" stroke="#FEC200" stroke-width="3" stroke-miterlimit="10" x1="449.999" y1="405.001" x2="449.999" y2="261.001"/>
+<circle fill="#C49A6C" stroke="#231F20" stroke-miterlimit="10" cx="449.999" cy="261.001" r="9"/>
+<circle fill="#C49A6C" stroke="#231F20" stroke-miterlimit="10" cx="593.999" cy="261.001" r="9"/>
+<circle fill="#C49A6C" stroke="#231F20" stroke-miterlimit="10" cx="593.999" cy="405.001" r="9"/>
+<circle fill="#C49A6C" stroke="#231F20" stroke-miterlimit="10" cx="449.999" cy="405.001" r="9"/>
+<line fill="none" stroke="#0081CD" stroke-width="3" stroke-miterlimit="10" x1="255" y1="351" x2="210" y2="396"/>
+<line fill="none" stroke="#0081CD" stroke-width="3" stroke-miterlimit="10" x1="255" y1="495" x2="210" y2="450"/>
+<polygon fill="none" stroke="#0081CD" stroke-width="3" stroke-miterlimit="10" points="165,351 210,396 210,450 165,495 255,495
+	255,351 "/>
+<line fill="none" stroke="#CC33CC" stroke-width="3" stroke-miterlimit="10" x1="120" y1="252" x2="165" y2="207"/>
+<line fill="none" stroke="#CC33CC" stroke-width="3" stroke-miterlimit="10" x1="66" y1="252" x2="21" y2="207"/>
+<line fill="none" stroke="#CC33CC" stroke-width="3" stroke-miterlimit="10" x1="165" y1="351" x2="120" y2="306"/>
+<line fill="none" stroke="#CC33CC" stroke-width="3" stroke-miterlimit="10" x1="21" y1="351" x2="66" y2="306"/>
+<rect x="66" y="252" fill="none" stroke="#CC33CC" stroke-width="3" stroke-miterlimit="10" width="54" height="54"/>
+<polyline fill="none" stroke="#CC33CC" stroke-width="3" stroke-miterlimit="10" points="21,351 21,207 165,207 165,351 "/>
+<line fill="none" stroke="#FEC200" stroke-width="3" stroke-miterlimit="10" x1="21" y1="495" x2="21" y2="351"/>
+<line fill="none" stroke="#009246" stroke-width="3" stroke-miterlimit="10" x1="93" y1="621" x2="93" y2="540"/>
+<polygon fill="none" stroke="#009246" stroke-width="3" stroke-miterlimit="10" points="21,495 93,540 165,495 93,621 "/>
+<line fill="none" stroke="#BC1E47" stroke-width="3" stroke-miterlimit="10" x1="21" y1="495" x2="165" y2="495"/>
+<circle fill="#C49A6C" stroke="#231F20" stroke-miterlimit="10" cx="21" cy="351" r="9"/>
+<circle fill="#C49A6C" stroke="#231F20" stroke-miterlimit="10" cx="165" cy="351" r="9"/>
+<circle fill="#C49A6C" stroke="#231F20" stroke-miterlimit="10" cx="165" cy="207" r="9"/>
+<circle fill="#C49A6C" stroke="#231F20" stroke-miterlimit="10" cx="21" cy="207" r="9"/>
+<circle fill="#C49A6C" stroke="#231F20" stroke-miterlimit="10" cx="66" cy="306" r="9"/>
+<circle fill="#C49A6C" stroke="#231F20" stroke-miterlimit="10" cx="66" cy="252" r="9"/>
+<circle fill="#C49A6C" stroke="#231F20" stroke-miterlimit="10" cx="120" cy="252" r="9"/>
+<circle fill="#C49A6C" stroke="#231F20" stroke-miterlimit="10" cx="120" cy="306" r="9"/>
+<circle fill="#C49A6C" stroke="#231F20" stroke-miterlimit="10" cx="210" cy="396" r="9"/>
+<circle fill="#C49A6C" stroke="#231F20" stroke-miterlimit="10" cx="255" cy="351" r="9"/>
+<circle fill="#C49A6C" stroke="#231F20" stroke-miterlimit="10" cx="210" cy="450" r="9"/>
+<circle fill="#C49A6C" stroke="#231F20" stroke-miterlimit="10" cx="165" cy="495" r="9"/>
+<circle fill="#C49A6C" stroke="#231F20" stroke-miterlimit="10" cx="255" cy="495" r="9"/>
+<circle fill="#C49A6C" stroke="#231F20" stroke-miterlimit="10" cx="21" cy="495" r="9"/>
+<circle fill="#C49A6C" stroke="#231F20" stroke-miterlimit="10" cx="93" cy="540" r="9"/>
+<circle fill="#C49A6C" stroke="#231F20" stroke-miterlimit="10" cx="93" cy="621" r="9"/>
+<line fill="none" stroke="#009246" stroke-width="3" stroke-miterlimit="10" x1="521.999" y1="765.001" x2="521.999" y2="684.001"/>
+<polygon fill="none" stroke="#009246" stroke-width="3" stroke-miterlimit="10" points="449.999,639.001 521.999,684.001
+	593.999,639.001 521.999,765.001 "/>
+<line fill="none" stroke="#000000" stroke-width="3" stroke-miterlimit="10" x1="449.999" y1="639.001" x2="593.999" y2="639.001"/>
+<circle fill="#C49A6C" stroke="#231F20" stroke-miterlimit="10" cx="593.999" cy="639.001" r="9"/>
+<circle fill="#C49A6C" stroke="#231F20" stroke-miterlimit="10" cx="449.999" cy="639.001" r="9"/>
+<circle fill="#C49A6C" stroke="#231F20" stroke-miterlimit="10" cx="593.999" cy="522.002" r="9"/>
+<circle fill="#C49A6C" stroke="#231F20" stroke-miterlimit="10" cx="449.999" cy="522.002" r="9"/>
+<circle fill="#C49A6C" stroke="#231F20" stroke-miterlimit="10" cx="521.999" cy="684.001" r="9"/>
+<circle fill="#C49A6C" stroke="#231F20" stroke-miterlimit="10" cx="521.999" cy="765.001" r="9"/>
+<path fill="none" stroke="#C49A6C" stroke-width="2" stroke-miterlimit="10" d="M417,783c-6.627,0-12-5.373-12-12V633
+	c0-6.627,5.373-12,12-12l182.999,0.002c6.627,0,12,5.373,12,12v138c0,6.627-5.373,12-12,12L417,783z"/>
+<path fill="none" stroke="#C49A6C" stroke-width="2" stroke-miterlimit="10" d="M417,477c-6.627,0-12,5.373-12,12v66
+	c0,6.627,5.373,12,12,12l182.999,0.002c6.627,0,12-5.373,12-12v-66c0-6.627-5.373-12-12-12L417,477z"/>
+<path fill="none" stroke="#C49A6C" stroke-width="2" stroke-miterlimit="10" d="M417,243c-6.627,0-12,5.373-12,12v156
+	c0,6.627,5.373,12,12,12l183,0.002c6.627,0,12-5.373,12-12v-156c0-6.627-5.373-12-12-12L417,243z"/>
+<path fill="none" stroke="#C49A6C" stroke-width="2" stroke-miterlimit="10" d="M417,9c-6.627,0-12,5.373-12,12v156
+	c0,6.627,5.373,12,12,12l183,0.002c6.627,0,12-5.373,12-12v-156c0-6.627-5.373-12-12-12L417,9z"/>
+<line fill="none" stroke="#000000" stroke-width="3" stroke-miterlimit="10" stroke-dasharray="2" x1="521.999" y1="639.001" x2="521.999" y2="549.001"/>
+<line fill="none" stroke="#000000" stroke-width="3" stroke-miterlimit="10" stroke-dasharray="2" x1="521.999" y1="495.001" x2="521.999" y2="405.001"/>
+<path fill="none" stroke="#C49A6C" stroke-width="2" stroke-miterlimit="10" d="M807,243.001c6.627,0,12,5.373,12,12v156
+	c0,6.627-5.373,12-12,12h-129c-6.627,0-12-5.373-12-12v-156c0-6.627,5.373-12,12-12H807z"/>
+<line fill="none" stroke="#000000" stroke-width="3" stroke-miterlimit="10" stroke-dasharray="2" x1="593.999" y1="333.001" x2="683.999" y2="333.001"/>
+<line fill="none" stroke="#000000" stroke-width="3" stroke-miterlimit="10" stroke-dasharray="2" x1="521.999" y1="261.001" x2="521.999" y2="171.001"/>
+<text transform="matrix(1 0 0 1 413.9995 107.9995)" font-family="Liberation Serif" font-style="normal" font-size="36">R</text>
+<text transform="matrix(1 0 0 1 413.9995 710.9995)" font-family="Liberation Serif" font-style="normal" font-size="36">R</text>
+<text transform="matrix(1 0 0 1 413.9995 341.9995)" font-family="Liberation Serif" font-style="normal" font-size="36">S</text>
+<text transform="matrix(1 0 0 1 413.9995 530.9995)" font-family="Liberation Serif" font-style="normal" font-size="36">P</text>
+<text transform="matrix(1 0 0 1 782.9995 332.9995)" font-family="Liberation Serif" font-style="normal" font-size="36">R</text>
+</svg>
