@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="252px"
+	 height="270px" viewBox="0 0 252 270" enable-background="new 0 0 252 270" xml:space="preserve">
+<g id="Layer_1">
+</g>
+<g id="Layer_2">
+	<line fill="none" stroke="#999999" x1="63" y1="18" x2="126" y2="252"/>
+	<polyline fill="none" stroke="#000000" points="18,90 18,18 63,18 126,18 	"/>
+	<line fill="none" stroke="#999999" x1="126" y1="252" x2="234.001" y2="90"/>
+	<polyline fill="none" stroke="#999999" points="126,18 126,252 234,153 	"/>
+	<polyline fill="none" stroke="#999999" points="63,90 126,252 153,153 	"/>
+	<polyline fill="none" stroke="#999999" points="18,153 126,252 63,153 	"/>
+	<line fill="none" stroke="#FFFFFF" stroke-width="6" x1="126" y1="18" x2="63" y2="90"/>
+	<polyline fill="none" stroke="#FFFFFF" stroke-width="6" points="63,90 152.999,90 126,18 188.999,54 234,18 	"/>
+	<polyline fill="none" stroke="#FFFFFF" stroke-width="6" points="63,153 63,90 18,90 	"/>
+	<polygon fill="none" stroke="#FFFFFF" stroke-width="6" points="18,153 18,90 126,18 234,18 234,90 188.999,54 152.999,90
+		152.999,153 233.999,153 152.999,90 63,153 	"/>
+	<line fill="none" stroke="#000000" x1="126" y1="18" x2="63" y2="90"/>
+	<polyline fill="none" stroke="#000000" points="63,90 153,90 126,18 189,54 234.001,18 	"/>
+	<polyline fill="none" stroke="#000000" points="63,153 63,90 18,90 	"/>
+	<polygon fill="none" stroke="#000000" points="18,153 18,90 126,18 234.001,18 234.001,90 189,54 153,90 153,153 234,153 153,90
+		63,153 	"/>
+	<circle fill="#FF0000" stroke="#000000" cx="126" cy="252" r="9"/>
+	<circle fill="#76B3DF" stroke="#000000" cx="18" cy="153" r="9"/>
+	<circle fill="#76B3DF" stroke="#000000" cx="18" cy="90" r="9"/>
+	<circle fill="#76B3DF" stroke="#000000" cx="63" cy="90" r="9"/>
+	<circle fill="#76B3DF" stroke="#000000" cx="126" cy="18" r="9"/>
+	<circle fill="#76B3DF" stroke="#000000" cx="63" cy="18" r="9"/>
+	<circle fill="#76B3DF" stroke="#000000" cx="18" cy="18" r="9"/>
+	<circle fill="#76B3DF" stroke="#000000" cx="63" cy="153" r="9"/>
+	<circle fill="#76B3DF" stroke="#000000" cx="153" cy="153" r="9"/>
+	<circle fill="#76B3DF" stroke="#000000" cx="189" cy="54" r="9"/>
+	<circle fill="#76B3DF" stroke="#000000" cx="153" cy="90" r="9"/>
+	<circle fill="#76B3DF" stroke="#000000" cx="234" cy="18" r="9"/>
+	<circle fill="#76B3DF" stroke="#000000" cx="234.001" cy="90" r="9"/>
+	<circle fill="#76B3DF" stroke="#000000" cx="234" cy="153" r="9"/>
+</g>
+</svg>
