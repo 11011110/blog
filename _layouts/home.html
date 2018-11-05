@@ -14,8 +14,7 @@ layout: default
         <h2>
           <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
         </h2>
-        {{ post.excerpt }}
-        <p>...</p>
+        <div style="margin-left:2em">{{ post.excerpt }}</div>
       </li>
     {% endfor %}
   </ul>
