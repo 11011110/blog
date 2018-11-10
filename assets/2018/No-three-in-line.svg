@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="360" overflow="visible">
+    <path fill="#FFF" d="M0 0h360v360H0z"/>
+    <path fill="#FFF" stroke="#000" stroke-width=".5" d="M18 18h324v324H18z"/>
+    <path d="M54 342V18m36 0v324m36 0V18m36 0v324m36 0V18m36 0v324m36 0V18m72 36H18m0 36h324m0 36H18m0 36h324m0 36H18m0 36h324m0 36H18M306 18v324m36-36H18" fill="none" stroke="#000" stroke-width=".5"/>
+    <g fill="red" stroke="#000">
+        <circle cx="162" cy="18" r="10"/>
+        <circle cx="54" cy="90" r="10"/>
+        <circle cx="54" cy="270" r="10"/>
+        <circle cx="90" cy="54" r="10"/>
+        <circle cx="198" cy="18" r="10"/>
+        <circle cx="18" cy="162" r="10"/>
+        <circle cx="342" cy="162" r="10"/>
+        <circle cx="342" cy="198" r="10"/>
+        <circle cx="198" cy="342" r="10"/>
+        <circle cx="162" cy="342" r="10"/>
+        <circle cx="126" cy="234" r="10"/>
+        <circle cx="126" cy="126" r="10"/>
+        <circle cx="234" cy="126" r="10"/>
+        <circle cx="234" cy="234" r="10"/>
+        <circle cx="18" cy="198" r="10"/>
+        <circle cx="270" cy="55" r="10"/>
+        <circle cx="270" cy="306" r="10"/>
+        <circle cx="306" cy="270" r="10"/>
+        <circle cx="90" cy="306" r="10"/>
+        <circle cx="306" cy="90" r="10"/>
+    </g>
+</svg>
