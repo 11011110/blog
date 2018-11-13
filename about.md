@@ -10,8 +10,8 @@ permalink: /about/
     moved to its current location (with some minor reformatting of old
     posts) in April 2017.</p>
 
-    <p>For comments on recent posts, see the linked entries on <a
-    href="https://plus.google.com/100003628603413742554">my Google+
+    <p>For comments on recent posts, see the linked entries on
+    <a rel="me" href="https://mathstodon.xyz/@11011110">my Mastodon
     account</a>. I also post links to other web pages there, with
     roundups of those links approximately twice monthly here.</p>
 
