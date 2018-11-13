@@ -68,3 +68,5 @@ The code after the optimize step produces a picture of the solution in crude ASC
 
 {: style="text-align:center"}
 ![28 points in a 14x14 grid with no three in line]({{site.baseurl}}/assets/2018/no3il14x14.svg)
+
+([G+](https://plus.google.com/100003628603413742554/posts/aEhW29MVv2H), [$$\mathbb{M}$$](https://mathstodon.xyz/@11011110/101061128588762922))
