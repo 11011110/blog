@@ -56,9 +56,9 @@ m.optimize()
 
 for i in range(n):
     for j in range(n):
-        s = ". "
+        s = "."
         if vars[i,j].x > 0.5:
-            s = "O "
+            s = "O"
         print s,
     print
 {% endhighlight %}
