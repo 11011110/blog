@@ -46,6 +46,9 @@ There are two kinds of vertex in each face: "inner vertices" incident to a diago
 
 On the other hand, planarity is essential to this argument, as we have already seen an example of a triply-Hamiltonian bipartite graph, the graph $$K_{3,3}$$. By gluing copies of $$K_{3,3}$$ together, we can get arbitrarily large triply-Hamiltonian bipartite graphs, all of which must be nonplanar.
 
+* Footnotes go here
+{:footnotes}
+
 [^t82]: Thomason, Andrew (1982), "[Cubic graphs with three Hamiltonian cycles are not always uniquely edge colorable](https://doi.org/10.1002%2Fjgt.3190060218)", _J. Graph Th._ 6 (2): 219–221.
 
 [^bh15]: belcastro, sarah-marie, and Haas, Ruth (2015), "[Triangle-free uniquely 3-edge colorable cubic graphs](https://arxiv.org/abs/1508.06934)", _Contributions to Discrete Mathematics_ 10 (2): 39–44.
