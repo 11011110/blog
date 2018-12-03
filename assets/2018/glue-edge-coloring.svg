@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="576" height="144">
-    <path d="M144 72h72M0 72h72m288 0h216" fill="none" stroke="#C3C" stroke-width="2" stroke-miterlimit="10"/>
-    <path fill="none" stroke="#FEC200" stroke-width="10" stroke-miterlimit="10" d="M252 72h50.877"/>
+    <path d="M144 72h72M0 72h72m288 0h216" fill="none" stroke="#C3C" stroke-width="2"/>
+    <path fill="none" stroke="#FEC200" stroke-width="10" d="M252 72h50.877"/>
     <path fill="#FEC200" d="M324 72c-9.939 3.688-22.271 9.98-29.916 16.646L300.105 72l-6.021-16.643C301.729 62.023 314.061 68.315 324 72z"/>
-    <path d="M144 72l72-72M0 0l72 72M360 0c54 54 162 54 216 0" fill="none" stroke="#0081CD" stroke-width="2" stroke-miterlimit="10"/>
-    <path d="M144 72l72 72M0 144l72-72m288 72c54-54 162-54 216 0" fill="none" stroke="#009246" stroke-width="2" stroke-miterlimit="10"/>
-    <g fill="#FEC200" stroke="#000" stroke-miterlimit="10">
+    <path d="M144 72l72-72M0 0l72 72M360 0c54 54 162 54 216 0" fill="none" stroke="#0081CD" stroke-width="2"/>
+    <path d="M144 72l72 72M0 144l72-72m288 72c54-54 162-54 216 0" fill="none" stroke="#009246" stroke-width="2"/>
+    <g fill="#FEC200" stroke="#000">
         <circle cx="72" cy="72" r="9"/>
         <circle cx="144" cy="72" r="9"/>
     </g>

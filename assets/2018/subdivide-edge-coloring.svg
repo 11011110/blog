@@ -1,13 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="576" height="180">
-    <path fill="none" stroke="#009246" stroke-width="2" stroke-miterlimit="10" d="M504 162V18m-72 0v144"/>
-    <path fill="none" stroke="#C3C" stroke-width="2" stroke-miterlimit="10" d="M432 18h72m0 144h72m-216 0h72"/>
-    <path fill="none" stroke="#0081CD" stroke-width="2" stroke-miterlimit="10" d="M0 18h216"/>
-    <path fill="none" stroke="#C3C" stroke-width="2" stroke-miterlimit="10" d="M0 162h216"/>
-    <path fill="none" stroke="#FEC200" stroke-width="10" stroke-miterlimit="10" d="M252 90h50.877"/>
+    <path fill="none" stroke="#009246" stroke-width="2" d="M504 162V18m-72 0v144"/>
+    <path fill="none" stroke="#C3C" stroke-width="2" d="M432 18h72m0 144h72m-216 0h72"/>
+    <path fill="none" stroke="#0081CD" stroke-width="2" d="M0 18h216"/>
+    <path fill="none" stroke="#C3C" stroke-width="2" d="M0 162h216"/>
+    <path fill="none" stroke="#FEC200" stroke-width="10" d="M252 90h50.877"/>
     <path fill="#FEC200" d="M324 90c-9.939 3.688-22.271 9.98-29.916 16.646L300.105 90l-6.021-16.642C301.729 80.023 314.061 86.315 324 90z"/>
-    <path fill="none" stroke="#0081CD" stroke-width="2" stroke-miterlimit="10" d="M360 18h72m0 144h72m0-144h72"/>
-    <circle fill="#FEC200" stroke="#231F20" stroke-miterlimit="10" cx="432" cy="18" r="9"/>
-    <circle fill="#FEC200" stroke="#231F20" stroke-miterlimit="10" cx="504" cy="18" r="9"/>
-    <circle fill="#FEC200" stroke="#231F20" stroke-miterlimit="10" cx="432" cy="162" r="9"/>
-    <circle fill="#FEC200" stroke="#231F20" stroke-miterlimit="10" cx="504" cy="162" r="9"/>
+    <path fill="none" stroke="#0081CD" stroke-width="2" d="M360 18h72m0 144h72m0-144h72"/>
+    <g fill="#FEC200" stroke="#000">
+        <circle cx="432" cy="18" r="9"/>
+        <circle cx="504" cy="18" r="9"/>
+        <circle cx="432" cy="162" r="9"/>
+        <circle cx="504" cy="162" r="9"/>
+    </g>
 </svg>
