@@ -33,7 +33,7 @@ Another operation does not preserve unique 3-edge-coloring, but it does preserve
 
 For instance, depending on how you choose the two edges, you can use this operation to get from the two-vertex multigraph to either the triangular prism or the non-planar complete bipartite graph $$K_{3,3}$$.
 
-You can't get the dodecahedron or $$G(9,2)$$ by these operations (they have neither 4-cycles nor 3-edge cuts) but by using these operations, you can get infinitely many other triply-Hamiltonian graphs. In fact, it seems difficult to find cubic graphs that are not triply-Hamiltonian!  So I'll conclude by giving two families of graphs that are not triply-Hamiltonian.
+You can't get the dodecahedron or $$G(9,2)$$ by these operations (they have neither 4-cycles nor 3-edge cuts) but by using these operations, you can get infinitely many other triply-Hamiltonian graphs. In fact, it seems difficult to find 3-vertex-connected cubic graphs that are not triply-Hamiltonian!  So I'll conclude by giving two families of graphs that are not triply-Hamiltonian.
 
 The first non-triply-Hamiltonian family is the family of [prism graphs](https://en.wikipedia.org/wiki/Prism_graph) over odd polygons: the pentagonal prism, heptagonal prism, etc. We have already seen that the first graph in this family, the triangular prism, is triply-Hamiltonian, but the rest are not. They only have one Hamiltonian cycle, up to symmetries of the graph: the cycle that uses all but one edge from each of the two non-quadrilateral faces of the prism, and connects the resulting two paths by two edges of one of the quadrilaterals. But the three-edge-coloring that you get from this Hamiltonian cycle has only two colors on some of the quadrilateral faces, so those pairs of colors do not themselves form Hamiltonian cycles.
 
@@ -49,3 +49,5 @@ On the other hand, planarity is essential to this argument, as we have already s
 [^t82]: Thomason, Andrew (1982), "[Cubic graphs with three Hamiltonian cycles are not always uniquely edge colorable](https://doi.org/10.1002%2Fjgt.3190060218)", _J. Graph Th._ 6 (2): 219–221.
 
 [^bh15]: belcastro, sarah-marie, and Haas, Ruth (2015), "[Triangle-free uniquely 3-edge colorable cubic graphs](https://arxiv.org/abs/1508.06934)", _Contributions to Discrete Mathematics_ 10 (2): 39–44.
+
+([$$\mathbb{M}$$](https://mathstodon.xyz/@11011110/101174690700738835), [G+](https://plus.google.com/100003628603413742554/posts/BA3qxsSQv8N))
