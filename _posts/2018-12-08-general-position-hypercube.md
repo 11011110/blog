@@ -22,3 +22,5 @@ Unfortunately the $$5$$-dimensional hypercube doesn't have a general-position pr
 ![hypercube of dimension 5, projected in general position into an 18x19 grid]({{site.baseurl}}/assets/2018/5cube-18x19.svg)
 
 Beyond these specific examples, it would be interesting to obtain asymptotic bounds on how big a grid is needed for all hypercubes.
+
+([$$\mathbb{M}$$](https://mathstodon.xyz/@11011110/101208363611245952), [G+](https://plus.google.com/100003628603413742554/posts/iADVC9CsL1b))
