@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="684" height="648">
+    <path d="M18 18h648v612H18zm36 0v612M90 18v612m36-612v612m36-612v612m36-612v612m36-612v612m36-612v612m36-612v612m36-612v612m36-612v612m36-612v612m36-612v612m36-612v612m36-612v612m36-612v612m36-612v612m36-612v612M18 594h648M18 558h648M18 522h648M18 486h648M18 450h648M18 414h648M18 378h648M18 342h648M18 306h648M18 270h648M18 234h648M18 198h648M18 162h648M18 126h648M18 90h648M18 54h648" fill="none" stroke="#0081CD"/>
+    <g fill="#FEC200" stroke="#000">
+        <circle cx="666" cy="54" r="9"/>
+        <circle cx="594" cy="54" r="9"/>
+        <circle cx="486" cy="18" r="9"/>
+        <circle cx="414" cy="18" r="9"/>
+        <circle cx="306" cy="126" r="9"/>
+        <circle cx="234" cy="126" r="9"/>
+        <circle cx="126" cy="90" r="9"/>
+        <circle cx="54" cy="90" r="9"/>
+        <circle cx="630" cy="198" r="9"/>
+        <circle cx="558" cy="198" r="9"/>
+        <circle cx="450" cy="162" r="9"/>
+        <circle cx="378" cy="162" r="9"/>
+        <circle cx="270" cy="270" r="9"/>
+        <circle cx="198" cy="270" r="9"/>
+        <circle cx="90" cy="234" r="9"/>
+        <circle cx="18" cy="234" r="9"/>
+        <circle cx="666" cy="414" r="9"/>
+        <circle cx="594" cy="414" r="9"/>
+        <circle cx="486" cy="378" r="9"/>
+        <circle cx="414" cy="378" r="9"/>
+        <circle cx="306" cy="486" r="9"/>
+        <circle cx="234" cy="486" r="9"/>
+        <circle cx="126" cy="450" r="9"/>
+        <circle cx="54" cy="450" r="9"/>
+        <circle cx="630" cy="558" r="9"/>
+        <circle cx="558" cy="558" r="9"/>
+        <circle cx="450" cy="522" r="9"/>
+        <circle cx="378" cy="522" r="9"/>
+        <circle cx="270" cy="630" r="9"/>
+        <circle cx="198" cy="630" r="9"/>
+        <circle cx="90" cy="594" r="9"/>
+        <circle cx="18" cy="594" r="9"/>
+    </g>
+</svg>

@@ -3,7 +3,7 @@ layout: post
 title: Gurobi versus the no-three-in-line problem
 date: 2018-11-12 16:30
 ---
-For the [no-three-in-line problem](No-three-in-line problem), it has been known since the 1990s that $$n\times n$$ grids with $$n\le 46$$ have sets of $$2n$$ points with no three in line. Those results, by Achim Flammenkamp, were based on custom search software and a lot of compute time. I was curious to see how far one could get with more-modern but generic optimization codes, so this weekend I ran a little experiment.
+For the [no-three-in-line problem](https://en.wikipedia.org/wiki/No-three-in-line_problem), it has been known since the 1990s that $$n\times n$$ grids with $$n\le 46$$ have sets of $$2n$$ points with no three in line. Those results, by Achim Flammenkamp, were based on custom search software and a lot of compute time. I was curious to see how far one could get with more-modern but generic optimization codes, so this weekend I ran a little experiment.
 
 I think that in this area, most general-purpose solvers can be reasonably divided into two categories: integer linear program solvers, and satisfiability solvers. For the no-three-in-line problem, we have $$0$$-$$1$$ integer variables ($$1$$ if a point is included, $$0$$ if it is excluded), linear constraints (the sum of variables on any line should be at most $$2$$), and a linear optimization criterion (maximize the sum of variables). So this led me to look at integer linear program solvers rather than satisfiability solvers. Based on [a comparison by Matt Strimas-Mackey](http://strimas.com/prioritization/ilp-performance/), I chose [Gurobi](http://www.gurobi.com/) over several open-source alternatives. Gurobi is not open source, but it is free for academic purposes.
 

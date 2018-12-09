@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="666" height="288">
+    <path d="M180 162h108m-108-36h108m-36 72V90m-36 0v108M180 90h108v108H180zM18 126h36v36H18zm414 144V18m36 252V18m36 252V18m36 252V18m36 252V18m36 252V18M396 54h252M396 90h252m-252 36h252m-252 36h252m-252 36h252m-252 36h252M396 18h252v252H396z" fill="none" stroke="#0081CD"/>
+    <g fill="#FEC200" stroke="#000">
+        <circle cx="396" cy="126" r="9"/>
+        <circle cx="396" cy="90" r="9"/>
+        <circle cx="432" cy="126" r="9"/>
+        <circle cx="432" cy="90" r="9"/>
+        <circle cx="540" cy="54" r="9"/>
+        <circle cx="540" cy="18" r="9"/>
+        <circle cx="576" cy="54" r="9"/>
+        <circle cx="576" cy="18" r="9"/>
+        <circle cx="468" cy="270" r="9"/>
+        <circle cx="468" cy="234" r="9"/>
+        <circle cx="504" cy="270" r="9"/>
+        <circle cx="504" cy="234" r="9"/>
+        <circle cx="18" cy="162" r="9"/>
+        <circle cx="18" cy="126" r="9"/>
+        <circle cx="54" cy="162" r="9"/>
+        <circle cx="54" cy="126" r="9"/>
+        <circle cx="180" cy="198" r="9"/>
+        <circle cx="180" cy="162" r="9"/>
+        <circle cx="216" cy="126" r="9"/>
+        <circle cx="216" cy="90" r="9"/>
+        <circle cx="252" cy="198" r="9"/>
+        <circle cx="252" cy="162" r="9"/>
+        <circle cx="288" cy="126" r="9"/>
+        <circle cx="288" cy="90" r="9"/>
+        <circle cx="612" cy="198" r="9"/>
+        <circle cx="612" cy="162" r="9"/>
+        <circle cx="648" cy="198" r="9"/>
+        <circle cx="648" cy="162" r="9"/>
+    </g>
+</svg>
