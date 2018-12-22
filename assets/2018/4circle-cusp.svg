@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="612" height="504">
+    <g fill="#FEC200" stroke="#000">
+        <circle opacity=".5" cx="144" cy="360" r="135"/>
+        <circle opacity=".5" cx="468" cy="360" r="135"/>
+        <circle opacity=".5" cx="306" cy="144" r="135"/>
+        <circle opacity=".5" cx="306" cy="360" r="27"/>
+    </g>
+    <circle fill="none" stroke="#BC1E47" stroke-width="2" cx="306" cy="279" r="85"/>
+</svg>

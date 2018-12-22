@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="684" height="522">
+    <g fill="#FEC200" stroke="#000">
+        <circle opacity=".5" cx="252" cy="441" r="72"/>
+        <circle opacity=".5" cx="108" cy="369" r="101.823"/>
+        <circle opacity=".5" cx="468" cy="297" r="203.646"/>
+        <circle opacity=".5" cx="180" cy="153" r="144"/>
+    </g>
+    <g fill="none" stroke="#BC1E47" stroke-width="2">
+        <circle cx="252" cy="297" r="162"/>
+        <circle cx="238" cy="326" r="64.266"/>
+    </g>
+</svg>
