@@ -11,12 +11,12 @@ The [motorcycle graph](http://jeffe.cs.illinois.edu/open/cycles.html) is a geome
 The motorcycles can be constrained in various ways, and one of these constrained variants is much older. It's the [Gilbert tessellation](https://en.wikipedia.org/wiki/Gilbert_tessellation), a motorcycle graph in which the motorcycles start out in pairs traveling in opposite directions, all at the same speed, with a random initial placement for the pairs. Edgar Gilbert wrote about it in 1967, as a model for the growth of [acicular (needle-shaped) crystals](https://en.wikipedia.org/wiki/Acicular_(crystal_habit)) and similar systems.
 
 {: style="text-align:center"}
-![A Gilbert tessellation]({{site.baseurl}}/assets/2018/Gilbert-tessellation.svg)
+[![A Gilbert tessellation, by Claudio Rocchini]({{site.baseurl}}/assets/2018/Gilbert-tessellation.svg)](https://commons.wikimedia.org/wiki/File:Gilbert_tessellation.svg)
 
 One obvious difference between the Gilbert tessellation and more general types of motorcycle graph is that all the Gilbert tessellation cells are convex polygons. More general motorcycle graphs leave degree-one vertices at the starting position of each motorcycle, but this is hidden by the way the Gilbert graph starts motorcycles in pairs. If we constrain the motorcycles even more, to travel in axis-parallel directions, the polygons become rectangles.
 
 {: style="text-align:center"}
-![Axis-aligned Gilbert tessellation subdivides the plane into rectangles]({{site.baseurl}}/assets/2018/Gilbert-rectangles.svg)
+[![Axis-aligned Gilbert tessellation subdivides the plane into rectangles, by Claudio Rocchini]({{site.baseurl}}/assets/2018/Gilbert-rectangles.svg)](https://commons.wikimedia.org/wiki/File:Gilbert_tessellation_axis.svg)
 
 In my paper "[Growth and decay in life-like cellular automata](https://arxiv.org/abs/0911.2890)" I noticed that the [Life-like cellular automaton](https://en.wikipedia.org/wiki/Life-like_cellular_automaton) rule B017/S1 has a very simple [replicator](https://en.wikipedia.org/wiki/Replicator_(cellular_automaton)) consisting of two orthogonally-adjacent live cells, and that initial fields consisting of very sparse randomly placed live cells become dominated by rows and columns of these replicators. Here's an example for an initial random fill density of 1%, the lowest I can go in [Golly](http://golly.sourceforge.net/).
 
