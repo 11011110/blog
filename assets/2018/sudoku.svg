@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="342" height="342">
+    <path d="M9 45h324M9 81h324M9 153h324M9 189h324M9 261h324M9 297h324M45 333V9m36 324V9m72 324V9m36 324V9m72 324V9m36 324V9" fill="none" stroke="#AAD5EF"/>
+    <g fill="none" stroke="#000">
+        <path d="M9 9h324v324H9zm0 108h324M9 225h324"/>
+        <path d="M9 9h324v324H9zm108 324V9m108 324V9"/>
+    </g>
+    <g font-family="Times,serif" font-size="30">
+        <text transform="translate(19.5 36)">
+            2
+        </text>
+        <text transform="translate(199.5 36)">
+            9
+        </text>
+        <text transform="translate(271.5 36)">
+            1
+        </text>
+        <text transform="translate(199.5 72)">
+            3
+        </text>
+        <text transform="translate(55.5 108)">
+            3
+        </text>
+        <text transform="translate(91.5 108)">
+            5
+        </text>
+        <text transform="translate(235.5 108)">
+            2
+        </text>
+        <text transform="translate(91.5 144)">
+            4
+        </text>
+        <text transform="translate(55.5 180)">
+            8
+        </text>
+        <text transform="translate(127.5 180)">
+            6
+        </text>
+        <text transform="translate(235.5 180)">
+            3
+        </text>
+        <text transform="translate(271.5 180)">
+            9
+        </text>
+        <text transform="translate(127.5 216)">
+            8
+        </text>
+        <text transform="translate(163.5 216)">
+            2
+        </text>
+        <text transform="translate(235.5 216)">
+            7
+        </text>
+        <text transform="translate(307.5 216)">
+            4
+        </text>
+        <text transform="translate(91.5 252)">
+            8
+        </text>
+        <text transform="translate(55.5 288)">
+            9
+        </text>
+        <text transform="translate(91.5 324)">
+            1
+        </text>
+        <text transform="translate(127.5 252)">
+            7
+        </text>
+        <text transform="translate(199.5 288)">
+            6
+        </text>
+        <text transform="translate(235.5 252)">
+            4
+        </text>
+        <text transform="translate(271.5 288)">
+            3
+        </text>
+    </g>
+</svg>
