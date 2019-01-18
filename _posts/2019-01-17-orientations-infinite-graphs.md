@@ -26,8 +26,13 @@ A graph has degeneracy at most $$d$$ if it has an acyclic orientation so that ea
 
 Arboricity is based on forests and there are multiple incompatible definitions of infinite forests. But the one we want to use is that a forest is a 1-degenerate graph. A graph has arboricity $$a$$ if its edges can be partitioned into $$a$$ forests. This is clearly at least as large as the degeneracy (no Rado needed). Rado's theorem shows that infinite graphs with arboricity $$a$$ are $$2a-1$$-degenerate, and that a graph has arboricity at most $$a$$ if and only if every finite $$k$$-vertex subset has at most $$a(k-1)$$ edges.
 
+* Footnotes go here
+{:footnotes}
+
 [^rado]: Rado, R. (1949), "[Axiomatic treatment of rank in infinite sets](https://doi.org/10.4153/cjm-1949-031-1)", _Canad. J. Math._ 1: 337–343.
 
 [^nw]: Nash-Williams, C. St. J. A. (1960), "[On orientations, connectivity and odd-vertex-pairings in finite graphs](https://doi.org/10.4153/cjm-1960-049-6)", _Canad. J. Math._, 12: 555–567; —— (1969), "Well-balanced orientations of finite graphs and unobtrusive odd-vertex-pairings", _Recent Progress in Combinatorics (Proc. Third Waterloo Conf. on Combinatorics, 1968)_, New York: Academic Press, pp. 133–149.
 
 [^e]: Erdős, P. (1950), "[Some remarks on set theory](https://users.renyi.hu/~p_erdos/1950-13.pdf)", _Proc. AMS_, 1: 127–141.
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/101435740463423422))
