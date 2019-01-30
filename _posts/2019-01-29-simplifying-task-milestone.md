@@ -46,3 +46,5 @@ In our example, there are no redundant edges for the first rule to remove, but t
 
 Our example has no instances of the first rule, but when it is used it removes paths from the graph. The removed paths can never be longest paths, because any path through the removed edge can be made longer by replacing that edge by a different path from X to Y.
 When we perform the second rule, we may introduce new paths that were not already present, from a predecessor of Y, through the merged vertex, to a successor of X. For instance, the new graph has a path through only the two tasks AC, which was not one of the four paths we started with. But because these new paths replace portions of existing paths by two length-zero edges, they can never be the longest path, and the resulting compacted diagram can safely be used for scheduling.
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/101502692118389818))
