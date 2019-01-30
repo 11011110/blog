@@ -39,7 +39,7 @@ If we assume that the task edges all have non-negative length (as they do in the
 
 * If a zero-length edge goes from task X to Y, every other edge into Y or out of X has length zero, and every incoming neighbor of task Y has a path to every outgoing neighbor of task X, then merge X and Y into a single vertex.
 
-In our example, there are no redundant edges for the first rule to remove, but the bottom edge meets the conditions of the second rule. Applying that rule produces an even simpler task-milestone diagram:
+In our example, the bottom edge meets the conditions of the second rule. Applying that rule produces an even simpler task-milestone diagram:
 
 {: style="text-align:center"}
 ![Additional simplification preserving longest paths]({{site.baseurl}}/assets/2019/pert4.svg)
