@@ -55,4 +55,4 @@ And for this solution (a partition of the grid into $$g$$ subsets, each of which
 
 So the probabilistic method can generate near-linear solutions, while the algebraic structure of the problem leads to solutions that are actually linear. By choosing randomly, we lose only a sublogarithmic factor, but this factor means that (without further refinements) this method doesn't tell us anything useful about the still-open research question of what the right constant factor on the linear solutions is. On the other hand, the fact that the probabilistic method gets so close in this case suggests to me that it will be difficult to apply the method of showing that all good solutions must have an algebraic structure, which has worked so well for some other problems in this area.
 
-([G+](https://plus.google.com/100003628603413742554/posts/YTjKufrifBD), [$$\mathbb{M}$$](https://mathstodon.xyz/@11011110/101049530070735894))
+([G+](https://web.archive.org/web/20190210015006/https://plus.google.com/100003628603413742554/posts/YTjKufrifBD), [$$\mathbb{M}$$](https://mathstodon.xyz/@11011110/101049530070735894))

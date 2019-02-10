@@ -4,7 +4,7 @@ title: "#MeToo in theoretical computer science"
 date: 2018-02-14 10:06
 ---
 This guest post was sent to me by a colleague who wishes to remain anonymous. It is also crossposted on [Geomblog](http://blog.geomblog.org/2018/02/a-metoo-testimonial-that-hits-close-to.html) and [Ernie's 3d pancakes](http://3dpancakes.typepad.com/ernie/2018/02/metoo-guest-post.html),
-and to several posts on Google+ ([1](https://plus.google.com/+SureshVenkatasubramanian/posts/XndbETsRpJT) [2](https://plus.google.com/118250784898510714238/posts/CVRSAq7uqzi) [3](https://plus.google.com/+JeffErickson/posts/EUV8HK48H8x) [4](https://plus.google.com/100003628603413742554/posts/apqLeqjob45)).
+and to several posts on Google+ ([1](https://web.archive.org/web/20180519082611/https://plus.google.com/+SureshVenkatasubramanian/posts/XndbETsRpJT) [2](https://web.archive.org/web/20190210072353/https://plus.google.com/118250784898510714238/posts/CVRSAq7uqzi) [3](https://web.archive.org/web/20190210072324/https://plus.google.com/+JeffErickson/posts/EUV8HK48H8x) [4](https://web.archive.org/web/20190210072239/https://plus.google.com/100003628603413742554/posts/apqLeqjob45)).
 
 &nbsp;
 

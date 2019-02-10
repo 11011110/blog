@@ -28,4 +28,4 @@ This formulation also works for the special case when all four angles are zero, 
 
 I don't know whether this theorem has appeared previously, but it's obviously related to [Miquel's six-circle theorem]({{site.baseurl}}{% post_url 2006-03-22-miquels-six-circles%}), which takes five circles (without assumption about angles) and produces a sixth in a configuration closely resembling what you get from the four given circles and two produced circles of this theorem.
 
-([$$\mathbb{M}$$](https://mathstodon.xyz/@11011110/101287137001551762), [G+](https://plus.google.com/100003628603413742554/posts/9p3Hza4hGE1))
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/101287137001551762))

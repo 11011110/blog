@@ -26,4 +26,4 @@ These networks are all outerplanar, which means that we can safely glue them int
 
 Despite solving a 30-year-old open problem, this work raises plenty of new open problems. Chief among them are: how big do matching-mimicking networks need to be, as a function of the number of terminals? Can we construct them explicitly? And is it always possible to mimic the weights of the minimum-weight perfect matching, for larger numbers of terminals than three? So even in this problem area there's plenty of scope for continued research and collaboration.
 
-([G+](https://plus.google.com/100003628603413742554/posts/64LmQMyfvtD))
+([G+](https://web.archive.org/web/20190210073343/https://plus.google.com/100003628603413742554/posts/64LmQMyfvtD))

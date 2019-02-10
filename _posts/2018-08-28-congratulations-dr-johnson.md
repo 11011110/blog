@@ -10,5 +10,3 @@ Tim has studied [low ply drawings](https://arxiv.org/abs/1808.03139), in which e
 Tim is heading to nearby Aliso Viejo, where he will be working for Microsoft as a software engineer on a cloud database project. But when I asked him about his plans, he suggested that he may not be done with research, and indeed he already has some new material, too recent to have been included in his dissertation, in the [Graph Drawing 2018 poster session](https://dccg.upc.edu/gd2018/index.php/accepted-posters/).
 
 Congratulations, Tim!
-
-([G+](https://plus.google.com/100003628603413742554/posts/LuVxDvsqDrp))

@@ -53,4 +53,4 @@ On the other hand, planarity is essential to this argument, as we have already s
 
 [^bh15]: belcastro, sarah-marie, and Haas, Ruth (2015), "[Triangle-free uniquely 3-edge colorable cubic graphs](https://arxiv.org/abs/1508.06934)", _Contributions to Discrete Mathematics_ 10 (2): 39–44.
 
-([$$\mathbb{M}$$](https://mathstodon.xyz/@11011110/101174690700738835), [G+](https://plus.google.com/100003628603413742554/posts/BA3qxsSQv8N))
+([$$\mathbb{M}$$](https://mathstodon.xyz/@11011110/101174690700738835), [G+](https://web.archive.org/web/20190210013507/https://plus.google.com/100003628603413742554/posts/BA3qxsSQv8N))

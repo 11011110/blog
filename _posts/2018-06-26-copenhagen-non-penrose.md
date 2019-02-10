@@ -31,5 +31,3 @@ The Penrose tilings include two tilings with five-fold dihedral symmetry. If we 
 ![Pentagon-diamond tiling with 10-way cyclic symmetry and a central hole]({{site.baseurl}}/assets/2018/StorkFountain.svg)
 
 For more from Copenhagen, see [my online gallery](https://www.ics.uci.edu/~eppstein/pix/copenhagen/), including the glowing nostrils of [Gefjon's oxen](Gefion Fountain), a [Nine Men's Morris](https://en.wikipedia.org/wiki/Nine_Men%27s_Morris) board built into the corner of the city hall, and an engraving of a Danish king of whom all but the head has been transformed into calligraphy.
-
-([G+](https://plus.google.com/100003628603413742554/posts/dp2RyWmRJ62))

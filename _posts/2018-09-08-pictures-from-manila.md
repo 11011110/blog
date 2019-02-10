@@ -19,5 +19,3 @@ And unrelated to Manila, but part of the same batch: I couldn't resist capturing
 
 {: style="text-align:center"}
 ![Circle arrangement pattern in the carpet at LAX](https://www.ics.uci.edu/~eppstein/pix/manila/CircleArrangementCarpetLAX-m.jpg){: style="border-style:solid;border-color:black;"}
-
-([G+](https://plus.google.com/100003628603413742554/posts/hx8UyhsRz2y))

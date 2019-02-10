@@ -48,4 +48,4 @@ It's too late to save a couple of my papers that this bug bit, but in case anyon
 
 I also [wrote about this in 2014]({{site.baseurl}}{% post_url 2014-11-25-lipics-formatting-tricks %}), for an older version of the LIPIcs formatting macros. My recommendation then was to remember not to use autoref in LIPIcs, but then I failed to follow this advice myself in some of my later papers. I think this method is more robust and produces better results.
 
-([G+](https://plus.google.com/100003628603413742554/posts/BuitS1FyXuJ))
+([G+](https://web.archive.org/web/20190210061616/https://plus.google.com/100003628603413742554/posts/BuitS1FyXuJ))

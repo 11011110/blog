@@ -12,4 +12,4 @@ Look what arrived in the mail yesterday! It's both the hardback and paperback ed
 
 I really like how it came out as a physical object. They're using a high-quality, thin but opaque enough, and very glossy paper that works well with the printing, there's color on every page, and the color reproduction looks good. (I'm still pleased with how the content came out, too, but that's more for other people to judge.)
 
-([G+](https://plus.google.com/100003628603413742554/posts/bcAdJJgogkx))
+([G+](https://web.archive.org/web/20190210062306/https://plus.google.com/100003628603413742554/posts/bcAdJJgogkx))

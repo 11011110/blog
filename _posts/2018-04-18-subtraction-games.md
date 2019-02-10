@@ -59,4 +59,4 @@ text(12,20,paste(c("c = ",2**coef(fit)[1]," * n**",coef(fit)[2]),collapse=""), c
 
 I haven't yet figured out how to get nicely formatted text with LaTeX equations for my labels, in better colors, but I'm sure it's just a matter of time and experience. In the meantime I've already used R in a similar way for another research project (not yet written up) and I'm sure I'll continue to do so for more.
 
-([G+](https://plus.google.com/100003628603413742554/posts/5iAFox1h9K9))
+([G+](https://web.archive.org/web/20190210064221/https://plus.google.com/100003628603413742554/posts/5iAFox1h9K9))

@@ -18,4 +18,4 @@ Here are two related questions I don't know the answer to:
 
 2. Do there exist arbitrarily-small-diameter monohedral tiles on the sphere? (There do exist arbitrarily-small-area tiles, as the MathOverflow question already noted.)
 
-([G+](https://plus.google.com/100003628603413742554/posts/QKj17nSEsZV))
+([G+](https://web.archive.org/web/20190210073129/https://plus.google.com/100003628603413742554/posts/QKj17nSEsZV))

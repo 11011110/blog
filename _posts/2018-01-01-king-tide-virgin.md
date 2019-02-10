@@ -18,5 +18,3 @@ Although the last shots of the set look like sunset, they were actually from aro
 
 {: style="text-align:center"}
 ![Stormy light over Virgin Creek Beach](http://www.ics.uci.edu/~eppstein/pix/kingtide/Skyglow3-m.jpg){: style="border-style:solid;border-color:black;"}
-
-([G+](https://plus.google.com/100003628603413742554/posts/iDZJxnjSutY))

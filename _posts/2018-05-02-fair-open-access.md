@@ -21,4 +21,4 @@ Also, I think there should be a principle 6: the journal should follow best prac
 
 With all that as caveat, I support the Fair Open Access principles.
 
-([G+](https://plus.google.com/100003628603413742554/posts/JcXeebfPBtG))
+([G+](https://web.archive.org/web/20190210063258/https://plus.google.com/100003628603413742554/posts/JcXeebfPBtG), [more G+ comments](https://www.ics.uci.edu/~eppstein/gplus/20180502-JcXeebfPBtG.html))

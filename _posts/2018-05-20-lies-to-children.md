@@ -14,4 +14,4 @@ But in the late 20th century, some authors began collecting information about th
 
 Fortunately, all this has now been rooted out of the historical part of the Wikipedia Hypatia article, and relegated to a section on modern fictional treatments of Hypatia, where it is clearly marked as non-factual. But Osen, Alic, and Yount continue to be used as the sources for several other Wikipedia articles. If they were this sloppy about Hypatia, who knows what other made-up claims from them are still being treated as factual? Or which other sources, cribbing from these ones, will continue to be thought reliable?
 
-([G+](https://plus.google.com/100003628603413742554/posts/eo6RyqLn1oB))
+([G+](https://web.archive.org/web/20190210061917/https://plus.google.com/100003628603413742554/posts/eo6RyqLn1oB))

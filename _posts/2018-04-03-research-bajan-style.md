@@ -16,5 +16,3 @@ What I like about these workshops is their collaborative nature: everyone works 
 <td style="padding:10px"><img src="http://www.ics.uci.edu/~eppstein/pix/bellairs18/5-m.jpg" alt="Zuzana Masárová, Christiane Schmidt, Linda Kleist, and Marty Demaine" width="360" style="border-style:solid;border-color:black;" /></td>
 <td style="padding:10px"><img src="http://www.ics.uci.edu/~eppstein/pix/bellairs18/33-m.jpg" alt="Jason Ku and Irina Kostitsyna" width="320" style="border-style:solid;border-color:black;" /></td>
 </tr></table></div>
-
-([G+](https://plus.google.com/100003628603413742554/posts/cpMyytZ1A2k))

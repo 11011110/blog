@@ -19,5 +19,3 @@ The part of Malmö that I spent most of my time in is a recently-rebuilt former 
 ![Niagara Building of the University of Malmö as seen through _Passage_ (Maha Mustafa, 2016)](http://www.ics.uci.edu/~eppstein/pix/malmo/PassageToNiagara-m.jpg){: style="border-style:solid;border-color:black;"}
 
 Sadly, I never did find any of the [tiny mouse shops](https://www.atlasobscura.com/places/anonymouse-shops-for-mice).
-
-([G+](https://plus.google.com/100003628603413742554/posts/YdNTRyEJz3c))

@@ -36,4 +36,4 @@ so we get a path of $$(k-1)^{r-1}$$ vertices (other than $$v$$) that are all now
 But the tree-depth one gets from this argument is very far from linear.
 And I don't know what layered tree-depth should mean, or whether (if it is defined properly) bounded layered tree-depth and bounded local tree-depth of minor-closed families are the same, as they are for treewidth and pathwidth.
 
-([G+](https://plus.google.com/100003628603413742554/posts/VTaBe2NJgpi), [$$\mathbb{M}$$](https://mathstodon.xyz/@11011110/100942192280467337))
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/100942192280467337))

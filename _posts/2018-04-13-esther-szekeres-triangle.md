@@ -38,5 +38,3 @@ where the left equality relates two triangles with the same base $$XZ$$ and equa
 ![Triangles XYB and XYD have the same area, and triangle XYD is contained in triangle XYZ]({{site.baseurl}}/assets/2018/klein-triangles-4.svg)
 
 Most of Szekeres's other publications were in mathematical problem columns, and included similar styles of reasoning applied to other geometry problems. Beyond geometry, the subjects of her research included [arithmetic combinatorics](https://doi.org/10.1016/S0012-365X(98)00332-X) and [graph theory](http://www.jstor.org/stable/3612854). Still, it is clear that it is in geometry, and in particular in the problem of convex polygons in point sets, where she made her most far-reaching contribution to mathematics. Her problem became foundational for two major fields, discrete geometry and Ramsey theory, and has led to a huge body of research by other mathematicians.
-
-([G+](https://plus.google.com/100003628603413742554/posts/EXetH9C3U1o))

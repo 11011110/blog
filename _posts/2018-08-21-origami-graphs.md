@@ -25,4 +25,4 @@ The other result on connectivity again uses an infinite sheet of paper but it fo
 
 For some other geometric graph realization questions, like the question of [which graphs are the graphs of convex polyhedra](https://en.wikipedia.org/wiki/Steinitz%27s_theorem), connectivity tells the whole answer. A graph is the graph of a convex polyhedron if and only if it is planar and 3-vertex-connected. It would be nice to get a similar complete characterization for the graphs of origami flat folding patterns, but I don't know of one.
 
-([G+](https://plus.google.com/100003628603413742554/posts/3k9F5rBdgKv))
+([G+](https://web.archive.org/web/20190210051430/https://plus.google.com/100003628603413742554/posts/3k9F5rBdgKv))

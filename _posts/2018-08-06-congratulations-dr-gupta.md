@@ -9,4 +9,4 @@ I've already posted here about my joint research with Sid on [modeling real-worl
 
 Congratulations, Sid!
 
-([G+](https://plus.google.com/100003628603413742554/posts/hSWWxL429eB))
+([G+](https://web.archive.org/web/20190210052352/https://plus.google.com/100003628603413742554/posts/hSWWxL429eB))

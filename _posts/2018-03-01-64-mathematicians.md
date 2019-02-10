@@ -135,4 +135,4 @@ For [Wikipedia's February women in mathematics edit-a-thon](https://en.wikipedia
 
 My guess is that there are typically some 500 new Wikipedia articles on mathematicians every year, the vast majority of them men, so this is really still only a drop in the bucket. New articles on male mathematicians can usually skate by stating only their affiliation and specialty, but new articles on women face greater scrutiny, and are likely to be proposed for deletion unless they make a clear statement of why they were significant or how their significance has been recognized. Nevertheless, there are still [large numbers of women for whom such a statement would be easy to make but for whom we still have no article](https://en.wikipedia.org/wiki/Wikipedia:WikiProject_Women_in_Red/Mathematics), so there's plenty more to do.
 
-([G+](https://plus.google.com/100003628603413742554/posts/Bwr9DqLih7w))
+([G+](https://web.archive.org/web/20190210071242/https://plus.google.com/100003628603413742554/posts/Bwr9DqLih7w))

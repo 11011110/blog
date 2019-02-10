@@ -22,4 +22,4 @@ I think it would be interesting to characterize more generally which shapes of p
 
 Beyond these mathematical questions, it might also be amusing to consider what recognizable shapes can be made from flat-folded vertex-free origami patterns on square paper. [Joseph Wu's one-fold stegosaurus](http://www.josephwu.com/Files/PDF/stegosaurus.pdf) is a nice example.
 
-([G+](https://plus.google.com/100003628603413742554/posts/VXhf4HfmYeP))
+([G+](https://web.archive.org/web/20190210055311/https://plus.google.com/100003628603413742554/posts/VXhf4HfmYeP))
