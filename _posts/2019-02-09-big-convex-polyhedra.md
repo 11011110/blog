@@ -22,6 +22,9 @@ A matching upper bound comes from a 1963 paper by G. K. Andrews,[^and] and Bár�
 What about when the dimension is not constant? The best general construction I know for high dimensions is to take all points with a fixed distance $$r$$ from the grid center. There are $$O(dr^2)$$ possible values for the distance, so this construction produces a convex polytope with $$\Omega(n^{d-2}/d)$$ vertices. It comes from a 1946 paper by Behrend, who uses this idea to find [dense sets of integers with no arithmetic progressions](https://en.wikipedia.org/wiki/Salem%E2%80%93Spencer_set).[^beh] It is never worse to use the convex hull of the ball than the points on a sphere,
 and it is tempting to guess that (at least when $$n$$ is singly exponential in $$d$$ so that $$n^{2/(d+1)}$$ becomes constant) the convex hull technique will produce slightly more vertices, $$\Omega(n^{d-2})$$, but I don't know whether this is true or if so how to prove it. A celebrated paper by Elkin from 2011 produces exactly this factor of $$d$$ improvement in Behrend's progression-free sets,[^elk] but appears to be doing it some other way than by finding larger convex polytopes.
 
+* Footnotes go here
+{:footnotes}
+
 [^and]: Andrews, George E. (1963), "A lower bound for the volume of strictly convex bodies with many boundary lattice points", _Trans. Amer. Math. Soc._ 106, pp. 270–279, [doi:10.2307/1993769](https://doi.org/10.2307/1993769), [MR0143105](https://mathscinet.ams.org/mathscinet-getitem?mr=0143105).
 
 [^bar]: Bárány, Imre (2008), "Extremal problems for convex lattice polytopes: a survey", _Surveys on Discrete and Computational Geometry_, Contemporary Mathematics 453, Amer. Math. Soc., pp. 87–103, [doi:10.1090/conm/453/08796](https://doi.org/10.1090/conm/453/08796), [MR2405678](https://mathscinet.ams.org/mathscinet-getitem?mr=2405678).
@@ -35,3 +38,5 @@ and it is tempting to guess that (at least when $$n$$ is singly exponential in $
 [^elk]: Elkin, Michael (2011), "An improved construction of progression-free sets", _Israel J. Math._ 184, pp. 93–128, [arXiv:0801.4310](https://arxiv.org/abs/0801.4310), [doi:10.1007/s11856-011-0061-1](https://doi.org/10.1007%2Fs11856-011-0061-1), [MR2823971](https://www.ams.org/mathscinet-getitem?mr=2823971).
 
 [^ruen]: Ruen, Tom (2014), "Truncated rhombicuboctahedron", CC-BY-SA 4.0, [File:Truncated rhombicuboctahedron2.png](https://commons.wikimedia.org/wiki/File:Truncated_rhombicuboctahedron2.png) on Wikimedia commons.
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/101564963348879092))
