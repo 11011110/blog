@@ -12,4 +12,4 @@ There's a huge industry in graph theory on hereditary properties of graphs (prop
 
 When I decided on this as the topic of my talk, last December, I started to write a survey paper for the proceedings to go with it. But there's no survey there now, only an abstract that's even shorter than this post. The reason is that, as I started to write it, it got away from me and grew into what is now a 250-page book draft with a signed book contract. So, the good news is that you can eventually read about it all in a lot more detail. The bad news is that it will be a year or so until it is out.
 
-([G+](https://plus.google.com/100003628603413742554/posts/CHExzyC4VRA))
+([G+](https://web.archive.org/web/20190217202402/https://plus.google.com/100003628603413742554/posts/CHExzyC4VRA))

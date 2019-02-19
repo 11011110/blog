@@ -29,5 +29,4 @@ The fact that two of the corners protrude noticably more than just beyond the si
 Are significantly larger scale factors possible for self-caged polyhedra?
 And can we prove that a cube can't cage a larger cube?
 
-(
-[Google+](https://plus.google.com/100003628603413742554/posts/M9yUTPy59NK))
+([Google+](https://web.archive.org/web/20190217230439/https://plus.google.com/100003628603413742554/posts/M9yUTPy59NK))

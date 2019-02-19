@@ -9,5 +9,3 @@ Anyway, the title of the exhibit is pretty self-explanatory: it's a collection o
 
 {: style="text-align:center"}
 ![Surasi Kusolwong, Golden Ghost (Reality Called, So I Woke Up), 2014, in the Sunshower exhibit at the Mori Museum, Tokyo](http://www.ics.uci.edu/~eppstein/pix/sunshower/SurasiKusolwongGoldenGhost1-m.jpg){: style="border-style:solid;border-color:black;"}
-
-([G+](https://plus.google.com/100003628603413742554/posts/NmXzbWtMyge))

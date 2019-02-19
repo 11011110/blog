@@ -27,5 +27,3 @@ For even slightly-less-famous bridges, it's even worse, because the decoration p
 ![Bixby Creek Bridge in 2017]({{site.baseurl}}/assets/2017/Bixby17.jpg)
 
 Replacing this with another decorative bridge-image like the one for the Golden Gate, and painting over the duplicate flattened bridge with greenery, would help. But unless Google Maps makes an expensive change to its underlying data model, it will still just be a patch that hides the problem. The actual problem is one of topology: the Earth's surface is not topologically spherical. It has handles that stick out of it and holes you can pass through; some are man-made, like these bridges, [others natural](https://en.wikipedia.org/wiki/List_of_longest_natural_arches). Some parts of the earth really have two different layers, with different things that should be shown for them. (Some have a lot more than two: within Google Street View, [Tokyo Station](https://en.wikipedia.org/wiki/Tokyo_Station) has eight levels.) And those can't be represented by elevation data over a flat or spherical surface.
-
-([G+](https://plus.google.com/100003628603413742554/posts/9RLnUPKkFVt))

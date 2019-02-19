@@ -35,4 +35,4 @@ We want a sequence of permutation elements where each two elements are out-of-or
 
 We can convert this to [my notation for bipartite permutation graphs]({{site.baseurl}}{% post_url 2012-12-08-notation-for-321-avoiding %}) by scanning this picture from left to right, looking at the direction of the line segments at the top and bottom of the picture at each position in this scan, and recording that pair of directions by a character that slants in the same direction at its top and bottom. In this case, the result is the string "&gt;&gt;\\\\//\\\\//\\\\//\\\\//\\\\//\\\\//\\\\//&lt;&lt;". And that's what I gave my permutation-graph-drawing code as input, to get it to produce the top picture.
 
-([Discussion on Google+](https://plus.google.com/100003628603413742554/posts/DSxNzbEd3gK))
+([Discussion on Google+](https://web.archive.org/web/20190217225323/https://plus.google.com/100003628603413742554/posts/DSxNzbEd3gK))

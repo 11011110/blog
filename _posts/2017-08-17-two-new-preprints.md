@@ -13,5 +13,3 @@ I have two new preprints on arXiv, from my two papers [accepted to Graph Drawing
 ![Carving decomposition of K_{3,3} and its planarization]({{site.baseurl}}/assets/2017/carving-decomposition.svg)
 
 Graph Drawing has a policy of maintaining a shadow proceedings on arXiv.org, with the same content as the official proceedings, so I think we should be seeing quite a few more of these from other authors as the early-September proceedings deadline approaches.
-
-([G+](https://plus.google.com/100003628603413742554/posts/BKV2aEL3dxm))

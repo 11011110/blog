@@ -8,7 +8,7 @@ Copenhagen is a city of oddly-shaped spires, but if you look down you might also
 {: style="text-align:center"}
 ![Amagertorv, Copenhagen](http://www.ics.uci.edu/~eppstein/pix/copenhagen/Amagertorv-m.jpg){: style="border-style:solid;border-color:black;"}
 
-This is [Amagertorv](https://en.wikipedia.org/wiki/Amagertorv), one of Copenhagen's central squares, famous for its [Stork Fountain](https://en.wikipedia.org/wiki/Stork_Fountain). Bjørn Nørgaard's pavement design, a bit covered in grime after 25 years, is also interesting, with paving stones arranged in neat regular pentagons. When I saw this, I had recently read of [Helsinki's Penrose-tiled pavement](https://plus.google.com/100003628603413742554/posts/LLTz5yRgcnA) and was excited to think that maybe there was a rival Penrose-tiled nordic capital. Could the Amagertorv tiles also be a Penrose tiling? Sadly, no.
+This is [Amagertorv](https://en.wikipedia.org/wiki/Amagertorv), one of Copenhagen's central squares, famous for its [Stork Fountain](https://en.wikipedia.org/wiki/Stork_Fountain). Bjørn Nørgaard's pavement design, a bit covered in grime after 25 years, is also interesting, with paving stones arranged in neat regular pentagons. When I saw this, I had recently read of [Helsinki's Penrose-tiled pavement](https://web.archive.org/web/20190218082842/https://plus.google.com/100003628603413742554/posts/LLTz5yRgcnA) and was excited to think that maybe there was a rival Penrose-tiled nordic capital. Could the Amagertorv tiles also be a Penrose tiling? Sadly, no.
 
 The pattern of the tiles becomes clearer if one looks at them from above, say in Google maps' satellite view.
 

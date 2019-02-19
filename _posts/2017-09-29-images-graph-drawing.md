@@ -32,5 +32,3 @@ This shows another complete bipartite graph, $$K_{4,8}$$, with a casing (over-un
 [An older paper of mine]({{site.baseurl}}{% post_url 2007-05-03-edges-and-switches %}) shows how to minimize the number of gaps per edge for a fixed drawing, but this one is about finding good drawings given only the graph. It's also closely related to [my recent paper on road crossings]({{site.baseurl}}{% post_url 2017-09-19-graphs-with-sparse %}), which showed that crossings can be assigned to road segment in real-world road networks so that there are few assigned crossings per road segment. The difference is that this paper allows cycles of gaps (see e.g. the 4-cycles above and below the central diamond of this image) while the road network paper uses an acyclic assignment.
 
 There were plenty of other interesting papers and results, if perhaps not with quite as eye-catching graphics, so check out the [full open-access proceedings](https://arxiv.org/html/1709.04228) for more.
-
-([G+](https://plus.google.com/100003628603413742554/posts/ZYHqM8AEtit))

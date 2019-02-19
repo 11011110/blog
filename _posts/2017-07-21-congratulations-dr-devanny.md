@@ -26,5 +26,3 @@ And I hope to post about the third in more detail later, because it's another jo
 Will has already been teaching at Pomona College, and as I understand it has lined up a two-year position there once he finishes at UCI.
 
 Congratulations, Will!
-
-([G+](https://plus.google.com/100003628603413742554/posts/6BkZc9ipePR))

@@ -25,5 +25,3 @@ In 1894, Steinitz showed in his dissertation that any abstract $$n_3$$-configura
 Using a projective transformation to match up the three points of one configuration with the three lines of the other shows that every glued configuration can be realized by straight lines in the plane.
 
 The configuration shown in the illustration is what you get when you glue together two copies of the Fano configuration. (In moving it around to make it more legible, I lost track of which points and lines came from which side of the gluing, and I don't know whether that can be reconstructed from the drawing or whether there are multiple valid partitions. The partition is certainly not given by the colors of the points.) Since the Fano configuration is uncolorable, so is this $$13_3$$-configuration, and so are the infinitely many configurations obtained by gluing together more than two Fanos.
-
-([G+](https://plus.google.com/100003628603413742554/posts/KeDAzkeXPVe))

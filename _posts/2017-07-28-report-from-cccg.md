@@ -22,5 +22,3 @@ I'm at Carleton University in Ottawa, Canada, where the [29th Canadian Conferenc
 It was mainly about polyhedra (and related surfaces) that can be unfolded into shapes that tile the plane, and he made it memorable and entertaining in part by handing out props (paper, tape, and scissors) for the audience to use in constructing these polyhedra and then unfolding them.
 
 All papers are in [the full proceedings](http://2017.cccg.ca/proceedings/CCCG2017.pdf) and are linked individually from the [conference program](http://2017.cccg.ca/program.html).
-
-([G+](https://plus.google.com/100003628603413742554/posts/AX3v6WPa2xa))

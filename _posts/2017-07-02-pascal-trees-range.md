@@ -36,5 +36,3 @@ In a complete binary search tree with $$2^n-1$$ nodes, such as the one shown abo
 The analysis proving this property is more or less the same as the analysis for convex polygons in point sets, but with the subtrees on the left and right sides of a search path replacing caps and cups respectively.
 
 You pay for this by having deeper search paths, though, so this only works when the complete subtrees are the expensive part of the search. An alternative possibility would be to use a shallower and more balanced tree to link up the subtrees from a row of the triangle, making the search depth only $$\log_2 n+O(\log\log n)$$ but possibly increasing the number of complete subtrees per search by that same $$O(\log\log n)$$ term.
-
-([Google+ comment thread](https://plus.google.com/100003628603413742554/posts/DjCLvXd7NFX))

@@ -18,4 +18,4 @@ My new implementation of the biclique-finding algorithm is now in my Python libr
 
 It appears to be open how big these sets can be. I didn't find any improvements to Lagrange and Leech among the later papers that cite them (of which there are not many). What I would like to be true is that for every $$n$$ one can find sets that have at least $$n$$ points on each line, but maybe that's too optimistic, and I have no good reason to believe it's true.
 
-([G+](https://plus.google.com/100003628603413742554/posts/6yT2rQuvnBR))
+([G+](https://web.archive.org/web/20190217072617/https://plus.google.com/100003628603413742554/posts/6yT2rQuvnBR))

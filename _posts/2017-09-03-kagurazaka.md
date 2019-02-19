@@ -15,4 +15,4 @@ This craft fair was set in the grounds of the Akagi Shrine, one of many shrines 
 
 I'm not sure this alley has a name (many of them don't seem to) but it's just uphill from another alley that some maps label with 見番横丁, "kenban-yokocho". This appears to mean something like "viewing alley" (someone who knows Japanese please correct me), and is so called because in older times you could view the geisha there. At a bend in the viewing alley there's a basement restaurant that serves only garlic-based dishes (with decorations from the annual garlic festival in Gilroy, California), and the entrance to an even smaller side-alley with steps down to the bathhouse behind our hotel. There are still geisha working in some of the fancier local restaurants; one of them sang and played the shamisen for us at a dinner for some of the conference participants.
 
-([G+](https://plus.google.com/100003628603413742554/posts/2MYW4sztpo5))
+([G+](https://web.archive.org/web/20190217074218/https://plus.google.com/100003628603413742554/posts/2MYW4sztpo5))

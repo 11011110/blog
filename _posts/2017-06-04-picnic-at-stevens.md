@@ -18,5 +18,3 @@ California's drought broke this winter, so the creek and the reservoir that feed
 
 {: style="text-align:center"}
 ![Flowering Buckeye tree at Stevens Creek Park, Santa Clara County, California](http://www.ics.uci.edu/~eppstein/pix/stevenscreek/Buckeye-m.jpg){: style="border-style:solid;border-color:black;"}
-
-([Google+](https://plus.google.com/100003628603413742554/posts/ANJ3WWPHS4U))

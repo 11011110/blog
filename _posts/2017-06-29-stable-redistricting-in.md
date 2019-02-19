@@ -19,4 +19,4 @@ Using the nearest-neighbor chain method we were able to solve some partitioning 
 
 It seems reasonable to hope that, under some assumptions about what the input looks like and with randomly chosen centers, the interleaved Dijkstra method can achieve near-linear runtime. But we were not able to prove this; it's one of the problems we list as open at the end of the preprint.
 
-([Comment thread on Google+](https://plus.google.com/100003628603413742554/posts/CmGxRsfo9sU))
+([Comment thread on Google+](https://web.archive.org/web/20190217224506/https://plus.google.com/100003628603413742554/posts/CmGxRsfo9sU))

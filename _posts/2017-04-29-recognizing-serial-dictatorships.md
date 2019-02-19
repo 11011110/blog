@@ -17,5 +17,3 @@ The reverse is true as well: when $$G$$ is a directed acyclic graph, its assignm
 And finally, when $$G$$ is not acyclic, $$A$$ is not stable. For, suppose $$G$$ has a cycle. Then, if we reverse that cycle and consider the new outgoing edges from each student vertex of the cycle, we will find a subset of students (the ones in the cycle) and a reassignment of those students (the new outgoing edges) that improves the assignment of everyone in the subset.
 
 Based on this characterization, we can test whether a given assignment is stable, find a serial dictatorship ordering for it when it is stable, or find an unstable subset of students when it is not, in time linear in the input size (the preference listings of all the students). The problem becomes one of testing whether a given graph is a directed acyclic graph, finding a topological ordering for it, or finding a cycle in it, all of which have standard algorithms taking linear time.
-
-[(Google+ discussion thread for this post)](https://plus.google.com/100003628603413742554/posts/7F8J5Cc5CWj)

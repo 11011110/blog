@@ -36,4 +36,4 @@ Consider what happens to the degree of a vertex $$w$$ in its induced subgraph, w
 
 This is vaguely reminiscent of [an unpublished paper on counting spanning trees](http://www.ics.uci.edu/~eppstein/pubs/Epp-TR-96-14.pdf) that I wrote some years ago. In that paper, I connected the spanning tree counting problem to the existence of a different kind of Eulerian vertex partition: a partition such that the subgraph of edges that connect one side of the partition to the other should have even degree everywhere. These kinds of partitions don't always exist, but the paper showed that they exist if and only if the graph has an even number of spanning trees. It makes me wonder whether there's a stronger connection here than just vague resemblance, and whether there's some interesting structure to the set of all Eulerian partitions of a graph.
 
-([G+](https://plus.google.com/100003628603413742554/posts/9gLQatdTreG))
+([G+](https://web.archive.org/web/20190217004246/https://plus.google.com/100003628603413742554/posts/9gLQatdTreG))

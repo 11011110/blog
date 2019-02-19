@@ -30,5 +30,3 @@ The simplest example that I know of for this phenomenon is the [square antiprism
 ![The improper representation of a square antiprism, and a graph with no square contact representation]({{site.baseurl}}/assets/2017/nested-quads.svg)
 
 Our preprint only handles some special classes of graphs. We have identified both nonempty triangles and separating antiprisms as obstacles to representation, but they seem unlikely to be the only ones. As we write, "a characterization of the graphs having proper contact representations by squares remains elusive".
-
-([G+](https://plus.google.com/100003628603413742554/posts/9rfSXaeC55s))

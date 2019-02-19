@@ -6,7 +6,7 @@ date: 2017-10-11 21:04
 My latest preprint is about two processes, one continuous and one discrete, that appear to do the same thing as each other. We don't really understand why.
 The preprint is "Grid peeling and the affine curve-shortening flow", with Sariel Har-Peled and Gabriel Nivasch ([arXiv:1710.03960](https://arxiv.org/abs/1710.03960)) and will appear at ALENEX.
 
-The discrete process is the one where you find the [convex layers](https://en.wikipedia.org/wiki/Convex_layers) of a grid, or a subset of a grid. That is, you find the convex hull, remove its vertices, find the convex hull of the rest of the points, remove its vertices, etc. I wrote about it briefly a month ago, in a [G+ post on a related integer sequence](https://plus.google.com/100003628603413742554/posts/32p3w4KWLXn).
+The discrete process is the one where you find the [convex layers](https://en.wikipedia.org/wiki/Convex_layers) of a grid, or a subset of a grid. That is, you find the convex hull, remove its vertices, find the convex hull of the rest of the points, remove its vertices, etc. I wrote about it briefly a month ago, in a [G+ post on a related integer sequence](https://web.archive.org/web/20190217074401/https://plus.google.com/100003628603413742554/posts/32p3w4KWLXn).
 When you do this to a square grid, the layers appear to get more circular as you go inwards (until they become so small that being on a grid forces them to get more polygonal again). When you do it to a rectangular grid, they appear to get elliptical. And when you do it to a quarter-infinite grid...
 
 <div style="text-align:center">
@@ -27,4 +27,4 @@ The answer: pretty similar, similar enough to convince us that (in the limit as 
 
 Anyway, maybe this is easy to prove, to someone who has the right theoretical tools in hand (which is not us).
 
-([G+](https://plus.google.com/100003628603413742554/posts/H84hBAh1Vbg))
+([G+](https://www.ics.uci.edu/~eppstein/gplus/20171011-H84hBAh1Vbg.html))

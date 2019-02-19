@@ -10,4 +10,4 @@ Anyway, while there, we took a hike along the Fern Creek trail of Russian Gulch 
 {: style="text-align:center"}
 ![Forget-me-nots and horsetails on the Fern Creek Trail, Russian Gulch State Park, California](http://www.ics.uci.edu/~eppstein/pix/ferncreek/5-m.jpg){: style="border-style:solid;border-color:black;"}
 
-[(Google+ discussion thread for this post)](https://plus.google.com/100003628603413742554/posts/6GaCjpULpBE)
+([Google+ discussion thread for this post](https://web.archive.org/web/20190218033021/https://plus.google.com/100003628603413742554/posts/6GaCjpULpBE))

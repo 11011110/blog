@@ -20,5 +20,3 @@ The drawing below shows an example of this process. I started with a graph whose
 ![1-planar graph with automorphism group Q16]({{site.baseurl}}/assets/2017/Q16-1planar.svg)
 
 Since 1-planar graphs have [polynomial expansion](https://en.wikipedia.org/wiki/Bounded_expansion), this shows that the graphs of polynomial expansion are like the nowhere-dense graphs (which include the 3-regular graphs), and unlike the minor-closed graph families, in allowing every symmetry group to be realized.
-
-([G+](https://plus.google.com/100003628603413742554/posts/63bmgsKbewb))

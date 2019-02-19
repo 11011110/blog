@@ -22,4 +22,4 @@ This array of vacuum tubes is part of a [Univac 120](https://en.wikipedia.org/wi
 
 As usual, follow the link at the top of the post for the rest of the photos.
 
-([G+](https://plus.google.com/100003628603413742554/posts/cuFE6SKBYVV))
+([G+](https://web.archive.org/web/20190217073801/https://plus.google.com/100003628603413742554/posts/cuFE6SKBYVV))
