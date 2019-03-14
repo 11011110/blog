@@ -63,3 +63,5 @@ of lines.
 [^book]: [_Forbidden Configurations in Discrete Geometry_](https://www.ics.uci.edu/~eppstein/forbidden/), Theorem 16.13.
 
 [^dual]: Ravsky, Alexander, and Verbitsky, Oleg (2011), "[On collinear sets in straight-line drawings](https://doi.org/10.1007/978-3-642-25870-1_27)", _37th Int. Worksh. Graph-Theoretic Concepts in Computer Science (WG 2011)_, LNCS 6986, Springer, pp. 295–306; Chaplick, Steven, Fleszar, Krzysztof, Lipp, Fabian, Verbitsky, Oleg, and Wolff, Alexander (2016), "[Drawing graphs on few lines and few planes](https://doi.org/10.1007/978-3-319-50106-2_14)", _24th Int. Symp. Graph Drawing and Network Visualization (GD 2016)_, LNCS 9801, Springer, pp. 166–180.
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/101747562081254313))
