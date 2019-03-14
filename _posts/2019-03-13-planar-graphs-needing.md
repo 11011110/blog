@@ -38,8 +38,8 @@ bound on the number of lines, but with a tiny exponent.[^dual]
 The new paper finds a third method:
 
 * Use a graph that has many disjoint collections of many nested cycles.
-A big-enough set nested cycles can be drawn with its vertices on a small
-number of lines only if uses up one of the crossing points of the lines.
+Drawing a big set of nested cycles on a small
+number of lines necessarily uses up one of the crossing points of the lines.
 So if there are more nests than crossing points, one of them will have
 to use many lines.
 
