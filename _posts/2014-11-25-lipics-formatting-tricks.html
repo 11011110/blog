@@ -20,7 +20,7 @@ tags:   [tools]
 \edef\thetheorem{\expandafter\noexpand\thesection\@thmcountersep\@thmcounter{theorem}}
 \makeatother</pre>
 
-<li><p>I've <a href="https://plus.google.com/100003628603413742554/posts/Fy34Vv4Xk6y">already written</a> about the problems with using the <code>\autoref</code> command of the <code>hyperref</code> package: because LIPIcs wants to use a shared numeric sequence for theorems, lemmas, etc., <code>\autoref</code> thinks they are all theorems. <a href="http://tex.stackexchange.com/questions/213821/using-cleveref-with-lipics-documentclass-fails-for-theorem-environments-sharing">Someone else also recently asked about this problem</a>. This is a more general incompatibilty between <code>amsthm</code> and <code>hyperref</code>, but LIPIcs also includes some of its own code for theorem formatting, which seems to be causing the fixes one can find for <code>amsthm</code> not to work. The solution is to fall back to the non-<code>hyperref</code> way of doing things: <code>Lemma~\ref{lem:my-lemma-name}</code> etc.</p></li>
+<li><p>I've <a href="https://web.archive.org/web/20190316225340/https://plus.google.com/100003628603413742554/posts/Fy34Vv4Xk6y">already written</a> about the problems with using the <code>\autoref</code> command of the <code>hyperref</code> package: because LIPIcs wants to use a shared numeric sequence for theorems, lemmas, etc., <code>\autoref</code> thinks they are all theorems. <a href="http://tex.stackexchange.com/questions/213821/using-cleveref-with-lipics-documentclass-fails-for-theorem-environments-sharing">Someone else also recently asked about this problem</a>. This is a more general incompatibilty between <code>amsthm</code> and <code>hyperref</code>, but LIPIcs also includes some of its own code for theorem formatting, which seems to be causing the fixes one can find for <code>amsthm</code> not to work. The solution is to fall back to the non-<code>hyperref</code> way of doing things: <code>Lemma~\ref{lem:my-lemma-name}</code> etc.</p></li>
 
 <li><p>Speaking of theorems: if you use <code>\newtheorem</code>, you probably want to have a previous line <code>\theoremstyle{definition}</code> so that whatever you're defining looks like the other theorems and lemmas.</p></li>
 
@@ -63,7 +63,7 @@ The advantage is that one can replace \bigskip with \smallskip or \medskip, depe
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>11011110</b>: RE: For the paragraph issue...<br />
 <b>2014-11-25T17:22:43Z</b><br />
-On <a href="https://plus.google.com/100003628603413742554/posts/67Lg6TVfkZQ">the G+ post</a>, there's a suggestion to use <code>\subparagraph</code>.
+On <a href="https://web.archive.org/web/20190316224154/https://plus.google.com/100003628603413742554/posts/67Lg6TVfkZQ">the G+ post</a>, there's a suggestion to use <code>\subparagraph</code>.
 </div>
 
 <div style="margin-left: 6em; padding-top: 1em;">
@@ -83,3 +83,5 @@ You should use \subparagraph*{&lt;heading&gt;.}
 <b>2014-11-26T03:29:28Z</b><br />
 Like like like the last sentence of the final bullet item (but perhaps I might have said "concisely" rather than "tersely" since I think the latter has a bit of a negative connotation).
 </div>
+
+<p>(<a href="https://web.archive.org/web/20190316224154/https://plus.google.com/100003628603413742554/posts/67Lg6TVfkZQ">More comments on Google+</a>)</p>
