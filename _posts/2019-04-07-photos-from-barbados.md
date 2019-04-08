@@ -17,3 +17,5 @@ I spent this year's spring break at Erik Demaine's annual computational geometry
 This time around, as well as the usual suspects, Erik included two high school students, incoming to MIT. You can see them at the left of the second and fourth photos.
 
 [Here are the rest of my photos](http://www.ics.uci.edu/~eppstein/pix/bellairs19/index.html).
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/101888686019377462))
