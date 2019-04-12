@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="432" height="432">
+    <path d="M54 0h54v54H54zM0 54h54v54H0zm54 54h54v54H54zM0 162h54v54H0zm54 54h54v54H54zM0 270h54v54H0zm54 54h54v54H54zM0 378h54v54H0zM162 0h54v54h-54zm-54 54h54v54h-54zm54 54h54v54h-54zm-54 54h54v54h-54zm54 54h54v54h-54zm-54 54h54v54h-54zm54 54h54v54h-54zm-54 54h54v54h-54zM270 0h54v54h-54zm-54 54h54v54h-54zm54 54h54v54h-54zm-54 54h54v54h-54zm54 54h54v54h-54zm-54 54h54v54h-54zm54 54h54v54h-54zm-54 54h54v54h-54zM378 0h54v54h-54zm-54 54h54v54h-54zm54 54h54v54h-54zm-54 54h54v54h-54zm54 54h54v54h-54zm-54 54h54v54h-54zm54 54h54v54h-54zm-54 54h54v54h-54z" fill="#E9B4A4"/>
+    <path d="M0 0h54v54H0zm54 54h54v54H54zM0 108h54v54H0zm54 54h54v54H54zM0 216h54v54H0zm54 54h54v54H54zM0 324h54v54H0zm54 54h54v54H54zM108 0h54v54h-54zm54 54h54v54h-54zm-54 54h54v54h-54zm54 54h54v54h-54zm-54 54h54v54h-54zm54 54h54v54h-54zm-54 54h54v54h-54zm54 54h54v54h-54zM216 0h54v54h-54zm54 54h54v54h-54zm-54 54h54v54h-54zm54 54h54v54h-54zm-54 54h54v54h-54zm54 54h54v54h-54zm-54 54h54v54h-54zm54 54h54v54h-54zM324 0h54v54h-54zm54 54h54v54h-54zm-54 54h54v54h-54zm54 54h54v54h-54zm-54 54h54v54h-54zm54 54h54v54h-54zm-54 54h54v54h-54zm54 54h54v54h-54z" fill="#FFEBAA"/>
+    <g fill="none" stroke="#231F20" stroke-width="2">
+        <path d="M405 405V27m-54 378V27m-54 378V27m-54 378V27m-54 378V27m-54 378V27M81 405V27M27 405V27m378 0H27l378 378H27z"/>
+        <path d="M27 81l54-54 324 324H27l54 54L405 81"/>
+        <path d="M27 135L135 27l270 270H27l108 108 270-270"/>
+        <path d="M27 189L189 27l216 216H27l162 162 216-216"/>
+        <path d="M27 243L243 27l162 162H27l216 216 162-162"/>
+        <path d="M27 297L297 27l108 108H27l270 270 108-108"/>
+        <path d="M27 351L351 27l54 54H27l324 324 54-54"/>
+    </g>
+    <g fill="#0081CD" stroke="#231F20">
+        <circle cx="27" cy="405" r="9"/>
+        <circle cx="27" cy="351" r="9"/>
+        <circle cx="27" cy="297" r="9"/>
+        <circle cx="27" cy="243" r="9"/>
+        <circle cx="81" cy="405" r="9"/>
+        <circle cx="81" cy="351" r="9"/>
+        <circle cx="81" cy="297" r="9"/>
+        <circle cx="81" cy="243" r="9"/>
+        <circle cx="27" cy="189" r="9"/>
+        <circle cx="27" cy="135" r="9"/>
+        <circle cx="27" cy="81" r="9"/>
+        <circle cx="27" cy="27" r="9"/>
+        <circle cx="81" cy="189" r="9"/>
+        <circle cx="81" cy="135" r="9"/>
+        <circle cx="81" cy="81" r="9"/>
+        <circle cx="81" cy="27" r="9"/>
+        <circle cx="135" cy="405" r="9"/>
+        <circle cx="135" cy="351" r="9"/>
+        <circle cx="135" cy="297" r="9"/>
+        <circle cx="135" cy="243" r="9"/>
+        <circle cx="189" cy="405" r="9"/>
+        <circle cx="189" cy="351" r="9"/>
+        <circle cx="189" cy="297" r="9"/>
+        <circle cx="189" cy="243" r="9"/>
+        <circle cx="135" cy="189" r="9"/>
+        <circle cx="135" cy="135" r="9"/>
+        <circle cx="135" cy="81" r="9"/>
+        <circle cx="135" cy="27" r="9"/>
+        <circle cx="189" cy="189" r="9"/>
+        <circle cx="189" cy="135" r="9"/>
+        <circle cx="189" cy="81" r="9"/>
+        <circle cx="189" cy="27" r="9"/>
+        <circle cx="243" cy="405" r="9"/>
+        <circle cx="243" cy="351" r="9"/>
+        <circle cx="243" cy="297" r="9"/>
+        <circle cx="243" cy="243" r="9"/>
+        <circle cx="297" cy="405" r="9"/>
+        <circle cx="297" cy="351" r="9"/>
+        <circle cx="297" cy="297" r="9"/>
+        <circle cx="297" cy="243" r="9"/>
+        <circle cx="243" cy="189" r="9"/>
+        <circle cx="243" cy="135" r="9"/>
+        <circle cx="243" cy="81" r="9"/>
+        <circle cx="243" cy="27" r="9"/>
+        <circle cx="297" cy="189" r="9"/>
+        <circle cx="297" cy="135" r="9"/>
+        <circle cx="297" cy="81" r="9"/>
+        <circle cx="297" cy="27" r="9"/>
+        <circle cx="351" cy="405" r="9"/>
+        <circle cx="351" cy="351" r="9"/>
+        <circle cx="351" cy="297" r="9"/>
+        <circle cx="351" cy="243" r="9"/>
+        <circle cx="405" cy="405" r="9"/>
+        <circle cx="405" cy="351" r="9"/>
+        <circle cx="405" cy="297" r="9"/>
+        <circle cx="405" cy="243" r="9"/>
+        <circle cx="351" cy="189" r="9"/>
+        <circle cx="351" cy="135" r="9"/>
+        <circle cx="351" cy="81" r="9"/>
+        <circle cx="351" cy="27" r="9"/>
+        <circle cx="405" cy="189" r="9"/>
+        <circle cx="405" cy="135" r="9"/>
+        <circle cx="405" cy="81" r="9"/>
+        <circle cx="405" cy="27" r="9"/>
+    </g>
+    <g fill="#FFF" stroke="#231F20">
+        <path d="M252 278h-6v-6h-6v6h-6v6h6v6h6v-6h6z"/>
+        <circle cx="243" cy="297" r="9"/>
+        <path d="M225 306c-18-27 18-18 18 0m18 0c18-27-18-18-18 0"/>
+        <path d="M243 303c-9.941 0-18 1.344-18 3v9h36v-9c0-1.656-8.059-3-18-3z"/>
+        <ellipse cx="243" cy="315" rx="18" ry="3"/>
+    </g>
+</svg>
