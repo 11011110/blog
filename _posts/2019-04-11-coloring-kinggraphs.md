@@ -3,7 +3,7 @@ layout: post
 title: Coloring kinggraphs
 date: 2019-04-11 21:28
 ---
-Draw a collection of quadrilaterals in the plane, meeting edge to edge, so that they don't surround any open space (the region they cover is a topological disk) and every point interior to the disk touches at least four quadrilaterals. Is it always possible to color the corners of the quadrilaterals with four colors so that all four colors appear in each quadrilateral?
+Draw a collection of quadrilaterals in the plane, meeting edge to edge, so that they don't surround any open space (the region they cover is a topological disk) and every vertex interior to the disk touches at least four quadrilaterals. Is it always possible to color the corners of the quadrilaterals with four colors so that all four colors appear in each quadrilateral?
 
 {: style="text-align:center"}
 ![4-colored kinggraph]({{site.baseurl}}/assets/2019/colored-kinggraph.svg)
