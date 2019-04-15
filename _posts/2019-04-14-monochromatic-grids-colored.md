@@ -27,3 +27,5 @@ One application of these ideas involves the theory of [superpatterns](https://en
 If $$\pi$$ is a superpattern for the permutations of size $$n$$, then we can obtain a point set by interpreting the position and value of each element of $$\pi$$ as Cartesian coordinates. This point set includes a grid-like subset of size $$\lfloor \sqrt{n} \rfloor\times \lfloor \sqrt{n} \rfloor$$, coming from a permutation of size $$n$$ that translates to a grid-like set of points.
 If the elements of the superpattern are colored with two colors, there still exists a monochromatic grid-like subset of size $$O(n^{1/4})\times O(n^{1/4})$$.
 And this monochromatic grid-like subset corresponds to a superpattern, for permutations of size $$O(n^{1/4})$$. So, whenever the elements of a superpattern are colored with two (or finitely many) colors, there remains a monochromatic subset of elements that is still a superpattern for permutations of some smaller but non-constant size.
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/101927319466372642))
