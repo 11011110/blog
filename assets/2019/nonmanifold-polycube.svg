@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="450" height="450">
+    <path fill="#998675" stroke="#000" d="M315 441l-90-54V243l90 54z"/>
+    <path fill="#736357" stroke="#000" d="M441 405l-126 36V297l126-36z"/>
+    <path fill="#C7B299" stroke="#000" d="M315 297l-90-54 126-36 90 54z"/>
+    <path fill="#998675" stroke="#000" d="M99 423L9 369V225l90 54z"/>
+    <path fill="#736357" stroke="#000" d="M225 387L99 423V279l126-36z"/>
+    <path fill="#C7B299" stroke="#000" d="M225 99l-90-54L261 9l90 54z"/>
+    <path fill="#998675" stroke="#000" d="M99 279L9 225V81l90 54z"/>
+    <path fill="#C7B299" stroke="#000" d="M99 135L9 81l126-36 90 54z"/>
+    <path fill="#736357" stroke="#000" d="M351 207l-126 36V99l126-36z"/>
+    <path fill="#998675" stroke="#000" d="M189 333l-90-54V135l90 54z"/>
+    <path fill="#736357" stroke="#000" d="M315 297l-126 36V189l126-36z"/>
+    <path fill="#C7B299" stroke="#000" d="M189 189l-90-54 126-36 90 54z"/>
+</svg>
