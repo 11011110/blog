@@ -31,3 +31,5 @@ While it was in submission to WADS, a related preprint appeared on arXiv: "The P
 {:footnotes}
 
 [^fn]: Searching on tineye finds that this image was on Amazon in 2008. Presumably it was supplied to them by Brio?
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/102029697142872437))
