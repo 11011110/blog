@@ -23,3 +23,5 @@ Because the degrees are distinct, and $$J$$ tells you the number of edges for ea
 There's even more material along these lines in Bálint's dissertation, but some of it is not yet published. I think the plan is to get all of that submitted over the summer before
 Bálint starts a new position at Google.
 Congratulations, Bálint!
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/102137081740561085))
