@@ -42,3 +42,5 @@ Based on these small examples, it's tempting to guess that when a pattern of mat
 $$\bigl\{\emptyset, \{ab\}, \{bc\}, \{cd\}, \{ad\} \bigr\},$$
 
 with the empty set at the apex of the pyramid. In this pattern, even though one can match terminal pairs <span style="white-space:nowrap">$$a$$—$$b$$ or $$c$$—$$d$$,</span> one can't take the union of those two matchings and cover all four terminals. (This is what you get by reflecting the two middle terminals of the network shown above for $$K_{2,2,1}$$; its matching-mimicking network is a tree with two interior non-terminals and four terminal leaves.) My guess is that the number of patterns of matching should grow quickly relative to the number of graphs, so for large enough numbers of terminals it should not be possible to use graphs without non-terminals or their complements. But I haven't taken the case analysis far enough to find an example of this.
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/102160605632804102))
