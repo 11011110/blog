@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="540" height="612">
+    <path fill="#0081CD" stroke="#231F20" stroke-width="2" stroke-linejoin="bevel" d="M531.001 375.883L139.5 9"/>
+    <g fill="none" stroke="#BC1E47" stroke-width="3" stroke-linejoin="bevel">
+        <path stroke-dasharray="2,2" d="M528.001 375.883h-386.5m-2.001-3.019V11.01m3-2.01H529m2.001 3.018v361.854"/>
+        <path stroke-dasharray="2.2" d="M457.615 180.925l72.596-170.074m-72.848 589.304l73.015-222.374m-392.381.718L10 601.257"/>
+    </g>
+    <path opacity=".8" fill="#AAD5EF" d="M8.999 603l447.43-419.294L139.5 9zm0 0l447.43-419.294 74.572 192.177z"/>
+    <path fill="none" stroke="#231F20" stroke-width="2" stroke-linejoin="bevel" d="M8.999 603l447.43-419.294L139.5 9zm0 0l447.43-419.294 74.572 192.177z"/>
+    <g fill="none" stroke="#BC1E47" stroke-width="3" stroke-linejoin="bevel">
+        <path stroke-dasharray="2,2" d="M453.429 603H11m-2.001-2.999V185.707m3-2.001h442.429"/>
+        <path stroke-dasharray="2.2" d="M456.429 186.705v414.294"/>
+        <path stroke-dasharray="2,2" d="M10.808 181.285L138.296 10.612"/>
+    </g>
+</svg>

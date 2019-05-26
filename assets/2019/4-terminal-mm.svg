@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="576" height="360">
+    <path d="M486 288l54 54m-54 0l54-54m-162 54l-45-27 45-27m-171 27h54m-99-27v54m81-189h54m54 0l27 45 27-45m-27-99h54m-243 0h54m270 126l45 18m-45-18l-45 18M324 54h54m135 72v54M18 153h54m-54 36h54m279-36h54M162 342l45-27-45-27m216 0v54m0 0l45-27-45-27M189 153h54m-108 0h54M18 288h54v54H18zm468 0h54v54h-54z" fill="none" stroke="#000" stroke-width="2"/>
+    <g fill="#FEC200" stroke="#000">
+        <circle cx="261" cy="315" r="9"/>
+        <circle cx="297" cy="153" r="9"/>
+        <circle cx="45" cy="54" r="9"/>
+        <circle cx="189" cy="54" r="9"/>
+        <circle cx="243" cy="54" r="9"/>
+        <circle cx="558" cy="198" r="9"/>
+        <circle cx="468" cy="198" r="9"/>
+        <circle cx="324" cy="54" r="9"/>
+        <circle cx="378" cy="54" r="9"/>
+        <circle cx="432" cy="54" r="9"/>
+        <circle cx="513" cy="126" r="9"/>
+        <circle cx="513" cy="180" r="9"/>
+        <circle cx="18" cy="153" r="9"/>
+        <circle cx="72" cy="153" r="9"/>
+        <circle cx="18" cy="189" r="9"/>
+        <circle cx="72" cy="189" r="9"/>
+        <circle cx="351" cy="153" r="9"/>
+        <circle cx="378" cy="198" r="9"/>
+        <circle cx="405" cy="153" r="9"/>
+        <circle cx="162" cy="342" r="9"/>
+        <circle cx="207" cy="315" r="9"/>
+        <circle cx="162" cy="288" r="9"/>
+        <circle cx="378" cy="342" r="9"/>
+        <circle cx="423" cy="315" r="9"/>
+        <circle cx="333" cy="315" r="9"/>
+        <circle cx="378" cy="288" r="9"/>
+        <circle cx="135" cy="153" r="9"/>
+        <circle cx="189" cy="153" r="9"/>
+        <circle cx="243" cy="153" r="9"/>
+        <circle cx="18" cy="288" r="9"/>
+        <circle cx="72" cy="288" r="9"/>
+        <circle cx="18" cy="342" r="9"/>
+        <circle cx="72" cy="342" r="9"/>
+        <circle cx="486" cy="288" r="9"/>
+        <circle cx="540" cy="288" r="9"/>
+        <circle cx="486" cy="342" r="9"/>
+        <circle cx="540" cy="342" r="9"/>
+    </g>
+    <text transform="translate(33.497 25.986)">
+        <tspan x="0" y="0" font-family="Times,serif" font-style="italic" font-size="21">K</tspan><tspan x="14.007" y="4" font-family="Times,serif" font-size="18">1</tspan>
+    </text>
+    <text transform="translate(204.496 25.986)">
+        <tspan x="0" y="0" font-family="Times,serif" font-style="italic" font-size="21">K</tspan><tspan x="14.007" y="4" font-family="Times,serif" font-size="18">2</tspan>
+    </text>
+    <text transform="translate(481.246 97.986)">
+        <tspan x="0" y="0" font-family="Times,serif" font-style="italic" font-size="21">K</tspan><tspan x="14.007" y="4" font-family="Times,serif" font-size="18">1,1,1,1</tspan>
+    </text>
+    <text transform="translate(481.246 259.986)">
+        <tspan x="0" y="0" font-family="Times,serif" font-style="italic" font-size="21">K</tspan><tspan x="14.007" y="4" font-family="Times,serif" font-size="18">2,2,2,2</tspan>
+    </text>
+    <text transform="translate(26.747 124.986)">
+        <tspan x="0" y="0" font-family="Times,serif" font-style="italic" font-size="21">K</tspan><tspan x="14.007" y="4" font-family="Times,serif" font-size="18">2,2</tspan>
+    </text>
+    <text transform="translate(366.496 124.986)">
+        <tspan x="0" y="0" font-family="Times,serif" font-style="italic" font-size="21">K</tspan><tspan x="14.007" y="4" font-family="Times,serif" font-size="18">4</tspan>
+    </text>
+    <text transform="translate(175.246 259.986)">
+        <tspan x="0" y="0" font-family="Times,serif" font-style="italic" font-size="21">K</tspan><tspan x="14.007" y="4" font-family="Times,serif" font-size="18">2,2,1,1</tspan>
+    </text>
+    <text transform="translate(346.247 259.986)">
+        <tspan x="0" y="0" font-family="Times,serif" font-style="italic" font-size="21">K</tspan><tspan x="14.007" y="4" font-family="Times,serif" font-size="18">2,2,2,1</tspan>
+    </text>
+    <text transform="translate(366.496 25.986)">
+        <tspan x="0" y="0" font-family="Times,serif" font-style="italic" font-size="21">K</tspan><tspan x="14.007" y="4" font-family="Times,serif" font-size="18">3</tspan>
+    </text>
+    <text transform="translate(190.996 124.986)">
+        <tspan x="0" y="0" font-family="Times,serif" font-style="italic" font-size="21">K</tspan><tspan x="14.007" y="4" font-family="Times,serif" font-size="18">2,2,1</tspan>
+    </text>
+    <text transform="translate(19.997 259.986)">
+        <tspan x="0" y="0" font-family="Times,serif" font-style="italic" font-size="21">K</tspan><tspan x="14.007" y="4" font-family="Times,serif" font-size="18">2,2,2</tspan>
+    </text>
+</svg>
