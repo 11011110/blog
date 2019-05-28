@@ -73,3 +73,5 @@ If these problems are not $$\mathsf{NP}$$- and $$\#\mathsf{P}$$-complete, what a
 [^mr]: Manurangsi, Pasin, and Rubinstein, Aviad (2017), "[Inapproximability of VC dimension and Littlestone’s dimension](http://proceedings.mlr.press/v65/manurangsi17a.html)", _Proc. 2017 Conf. Learning Theory (COLT 2017)_, Proceedings of Machine Learning Research 65, pp. 1432–1460.
 
 [^py]: Papadimitriou, Christos H., and Yannakakis, Mihalis (1996), "[On limited nondeterminism and the complexity of the V–C dimension](https://doi.org/10.1006/jcss.1996.0058)", _J. Comput. Syst. Sci._ 53 (2): 161–170.
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/102170815471019923))
