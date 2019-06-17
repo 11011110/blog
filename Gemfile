@@ -9,7 +9,7 @@ ruby RUBY_VERSION
 #
 # This will help ensure the proper Jekyll version is running.
 # Happy Jekylling!
-gem "jekyll", "~> 3.7.4"
+gem "jekyll", "~> 3.8.5"
 
 # Temp fix for listen wrong # arguments error,
 # https://github.com/jekyll/jekyll/issues/6189
