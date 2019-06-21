@@ -16,3 +16,5 @@ I've been in Portland, Oregon this week for [Computational Geometry Week](http:/
 </tr></table></div>
 
 [Here are the rest of my photos](http://www.ics.uci.edu/~eppstein/pix/portland/index.html).
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/102306697775168322))
