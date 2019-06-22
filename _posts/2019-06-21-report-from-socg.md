@@ -38,3 +38,5 @@ The conference business meeting was also Thursday, and ran very smoothly.
 Next year SoCG will be in Zurich; the year after that, in Buffalo. We now have an officially incorporated society, [The Society for Computational Geometry](http://www.computational-geometry.org/society/index.html), so that we can maintain buffer funds for the conference from one year to the next; it will be supported by an increase of $30-$35 in non-student registration fees. And the attendees voted overwhelmingly in favor of both [the SafeTOC anti-harassment guidelines](https://www.ics.uci.edu/~irani/safetoc.html) and ensuring and better advertising the availability of childcare at future conferences.
 
 The conference was dedicated to the memory of [Ricky Pollack](https://en.wikipedia.org/wiki/Richard_M._Pollack), but it also included a celebration on Friday of a living computational geometer: [John Hershberger](https://en.wikipedia.org/wiki/John_Hershberger), who led the effort to bring SoCG to Oregon, and turned 60 just before the conference began. Happy birthday, John!
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/102313609521577006))
