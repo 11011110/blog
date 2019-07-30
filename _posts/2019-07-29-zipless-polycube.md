@@ -16,3 +16,5 @@ It does have an unfolding, though (figure made by Erik using [OrigamiSimulator](
 ![Unfolding a zipless polycube]({{site.baseurl}}/assets/2019/zipless.gif)
 
 The paper also has a smaller example that's a little tricker to prove zipless. It's a small enough advance that we probably won't bother trying to turn it into a conference or journal paper. (If it were just me, I'd probably have just made a blog post about it. And here we are!)
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/102528987575312068))
