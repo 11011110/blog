@@ -22,3 +22,5 @@ From the business meeting, we learned that attendance and paper submissions were
 WADS is moving towards a more democratically elected steering committee formed from some combination of past PC chairs and at-large elections. They have already started implementing the [SafeTOC recommendations](https://www.ics.uci.edu/~irani/safetoc.html) for combatting harassment and discrimination in theory conferences. And in a show of hands at the business meeting, the attendees were strongly in favor of moving towards double blind peer review for submissions. The conference is not really open access, though (its proceedings are published by Springer LNCS with special issues in Springer's _Algorithmica_ and Elsevier's _Computational Geometry_) and there seems to be little pressure for that to change any time soon.
 
 On to CCCG!
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/102578298917323647))
