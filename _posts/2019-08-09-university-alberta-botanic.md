@@ -14,3 +14,5 @@ Here are a few photos I took there:
 <td style="padding:10px"><a href="http://www.ics.uci.edu/~eppstein/pix/uabg/AgaKhanMahtabi.html"><img src="http://www.ics.uci.edu/~eppstein/pix/uabg/AgaKhanMahtabi-m.jpg" alt="University of Alberta Botanic Gardens, Aga Khan Garden, Mahtabi" width="390" style="border-style:solid;border-color:black;" /></a></td>
 <td style="padding:10px"><a href="http://www.ics.uci.edu/~eppstein/pix/uabg/WetlandWalkMaysDock.html"><img src="http://www.ics.uci.edu/~eppstein/pix/uabg/WetlandWalkMaysDock-m.jpg" alt="University of Alberta Botanic Gardens, Wetland Walk, May's Dock" width="385" style="border-style:solid;border-color:black;" /></a></td>
 </tr></table></div>
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/102588301669141700))
