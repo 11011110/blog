@@ -1,0 +1,18 @@
+disk alternator -0.4 6.8 0.25
+disk ribbed-idler 0.7 5.9 0.35
+disk smooth-idler 1.3 6.5 -0.35
+disk power-steering-pump 3 6.8 0.5
+disk air-conditioning 3.3 4.7 0.5
+disk water-pump 2.2 6 -0.5
+disk belt-tensioner 3 5.6 -0.35
+disk crankshaft 1.6 5 0.5
+belt crankshaft belt-tensioner water-pump ribbed-idler alternator smooth-idler power-steering-pump air-conditioning
+disk alt -0.4 2.8 0.25
+disk rid 0.7 1.9 0.35
+disk sid 1.3 2.5 -0.35
+disk psp 3 2.8 0.5
+disk ac 3.3 0.7 0.5
+disk wp 2.2 2 -0.5
+disk ten 3 1.6 -0.35
+disk crank 1.6 1 0.5
+belt crank rid wp sid alt psp ac ten
