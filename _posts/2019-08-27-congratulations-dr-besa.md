@@ -12,3 +12,5 @@ He also has papers on which I was not involved, on chess knights' tours with few
 Juan has dual Chilean and Spanish citizenship, and (having the usual double-barreled Spanish surname "Besa Vial") had to deal with the difficulties of getting that name format understood in non-Spanish-speaking countries; he ended up choosing to truncate it to "Besa" in his recent publications. He is heading to England to work at a machine learning company there. With Brexit coming up quickly, I worry about how that will work out, but I hope it does work well for him.
 
 Congratulations, Juan!
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/102692015309277308))
