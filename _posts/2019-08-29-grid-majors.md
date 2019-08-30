@@ -19,4 +19,4 @@ Because grid-major height behaves nicely under graph minor operations, it is aut
 Simple grid-major height is nicer from the algorithmic point of view, but still not entirely satisfactory. Our paper describes the existence of a simple grid major using the [logic of graphs](https://en.wikipedia.org/wiki/Logic_of_graphs). When $$h$$ is bounded this gives us a linear-time algorithm via [Courcelle's theorem](https://en.wikipedia.org/wiki/Courcelle%27s_theorem). The algorithm could in principle be written out explicitly as a program,
 with $$h$$ given as an input to the program rather than hardcoded into it. There is no problem with unknown lists of obstacles. But the logical description is huge and the dependence of Courcelle's theorem on the size of the logical description is very high, so although the time is linear in the size of the graph it gets multiplied by a very quickly growing function <span style="white-space:nowrap">of $$h$$.</span>
 
-([Discuss on Mastodon](https://mathstodon.xyz/@11011110/102703909560253906))
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/102706636079725648))
