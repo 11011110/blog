@@ -20,3 +20,5 @@ As you might imagine, this makes for a long dissertation; unlike some other plac
 I think Nil already has a strong record of research and would do well continuing in that direction, but he has decided that he doesn't want to, and I wouldn't want to pressure him to change that decision even if I thought it would be successful. He tells me that he has a love-hate relation with research: he loves doing it, but he hates that (for him) to do it well, he has to make it the most important thing in his life. Instead, now that he has completed his doctorate, he will be looking for a job in industry.
 
 Anyway, congratulations, Nil!
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/102862578075877620))
