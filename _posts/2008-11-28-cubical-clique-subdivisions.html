@@ -4,24 +4,14 @@ title:  'Cubical clique subdivisions'
 date:   2008-11-28 20:18:00
 tags:   [media theory]
 ---
-This evening I&#x27;m reading “Isometric Embeddings of Subdivided Complete Graphs in the Hypercube,” by Beaudou, Gravier, and Meslem <small>[<a href="http://dx.doi.org/10.1137/070681909">SIAM J. Discrete Math. 22(3): 1226–1238, 2008</a>; there&#x27;s also an earlier version online <a href="http://www-fourier.ujf-grenoble.fr/~lbeaudou/docs/eurocomb07.pdf">from Eurocomb 2007</a>]</small>.
-<br />
+<p>This evening I'm reading “Isometric Embeddings of Subdivided Complete Graphs in the Hypercube,” by Beaudou, Gravier, and Meslem <small>[<a href="http://dx.doi.org/10.1137/070681909">SIAM J. Discrete Math. 22(3): 1226–1238, 2008</a>; there's also an earlier version online <a href="http://www-fourier.ujf-grenoble.fr/~lbeaudou/docs/eurocomb07.pdf">from Eurocomb 2007</a>]</small>.</p>
 
-<br />
-Another way of describing an isometric embedding into a hypercube is that it&#x27;s a way of labeling vertices of a graph by sets, in such a way that the <a href="http://en.wikipedia.org/wiki/Hamming_distance">Hamming distance</a> of the set labels is the same as the graph distance. For a clique in which every edge has been <a href="http://en.wikipedia.org/wiki/Subdivision_(graph_theory)">subdivided</a> by a single vertex (such as the subdivision of K<sub>8</sub> below), such a labeling is easy to find: simply use a singleton set for each of the original clique vertices, and a doubleton for the subdivision vertices.
-<br />
+<p>Another way of describing an isometric embedding into a hypercube is that it's a way of labeling vertices of a graph by sets, in such a way that the <a href="http://en.wikipedia.org/wiki/Hamming_distance">Hamming distance</a> of the set labels is the same as the graph distance. For a clique in which every edge has been <a href="http://en.wikipedia.org/wiki/Subdivision_(graph_theory)">subdivided</a> by a single vertex (such as the subdivision of \(K_8\) below), such a labeling is easy to find: simply use a singleton set for each of the original clique vertices, and a doubleton for the subdivision vertices.</p>
 
-<br />
-<div style="text-align:center"><a href="http://www.ics.uci.edu/~eppstein/junkyard/thickness/"><img src="http://www.ics.uci.edu/~eppstein/junkyard/thickness/k8gt2.png" border="0" /></a></div>
-<br />
+<p style="text-align:center"><a href="http://www.ics.uci.edu/~eppstein/junkyard/thickness/"><img src="{{site.baseurl}}/assets/2008/k8gt2.svg" alt="Subdivision of K_8" /></a></p>
 
-<br />
-In the other class of subdivided cliques that have an isometric hypercube embedding, there is one central clique vertex (shown red in the subdivided K<sub>6</sub> below) such that all incident clique edges are unsubdivided, and every other clique edge has been subdivided by adding an odd number of vertices along it (the small white vertices in the figure). For these graphs, a labeling can be found by using the empty set for the central vertex, and singleton sets for the other original clique vertices (green in the figure). A subdivision vertex on an edge that has been subdivided only once can be represented by a doubleton, but we need to do something a little more complicated involving the introduction of additional set elements for the clique edges with larger numbers of subdivision vertices. Perhaps it&#x27;s worth pointing out that some of the edges could also be deleted instead of subdivided and the result would still be a partial cube.
-<br />
+<p>In the other class of subdivided cliques that have an isometric hypercube embedding, there is one central clique vertex (shown red in the subdivided \(K_6\) below) such that all incident clique edges are unsubdivided, and every other clique edge has been subdivided by adding an odd number of vertices along it (the small white vertices in the figure). For these graphs, a labeling can be found by using the empty set for the central vertex, and singleton sets for the other original clique vertices (green in the figure). A subdivision vertex on an edge that has been subdivided only once can be represented by a doubleton, but we need to do something a little more complicated involving the introduction of additional set elements for the clique edges with larger numbers of subdivision vertices. Perhaps it's worth pointing out that some of the edges could also be deleted instead of subdivided and the result would still be a partial cube.</p>
 
-<br />
-<div style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/k6-subdiv.png" /></div>
-<br />
+<p style="text-align:center"><img src="{{site.baseurl}}/assets/2008/k6-subdiv.svg" alt="Subdivision of K_6" /></p>
 
-<br />
-The hard part of the paper (and the part that, to be frank, I didn&#x27;t find very enlightening) is the proof that these are the only possibilities: any other subdivided clique is not a partial cube. The authors claim in the abstract that this result shows that any graph is a minor of a partial cube, but I think we knew that already (it follows merely from the fact that hypercubes have nonlinear numbers of edges) and it&#x27;s not mentioned in the text of the paper. But I think this result is interesting in that it finds a broad class of sparse graphs that are examples of partial cubes.
+<p>The hard part of the paper (and the part that, to be frank, I didn't find very enlightening) is the proof that these are the only possibilities: any other subdivided clique is not a partial cube. The authors claim in the abstract that this result shows that any graph is a minor of a partial cube, but I think we knew that already (it follows merely from the fact that hypercubes have nonlinear numbers of edges) and it's not mentioned in the text of the paper. But I think this result is interesting in that it finds a broad class of sparse graphs that are examples of partial cubes.</p>

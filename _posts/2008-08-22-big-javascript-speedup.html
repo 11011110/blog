@@ -4,73 +4,68 @@ title:  'Big JavaScript speedup'
 date:   2008-08-22 22:34:00
 tags:   [python, uci]
 ---
-<a href="http://arstechnica.com/news.ars/post/20080822-firefox-to-get-massive-javascript-performance-boost.html">Ars Technica: Firefox to get massive JavaScript performance boost</a>.
-<br />
+<p><a href="http://arstechnica.com/news.ars/post/20080822-firefox-to-get-massive-javascript-performance-boost.html">Ars Technica: Firefox to get massive JavaScript performance boost</a>.</p>
 
-<br />
-<a href="http://blog.mozilla.com/schrep/2008/08/22/what-can-you-do-when-your-browser-is-7-times-faster/">Mozilla Blog: What can you do when your browser is 7 times faster?</a>.
-<br />
+<p><a href="http://blog.mozilla.com/schrep/2008/08/22/what-can-you-do-when-your-browser-is-7-times-faster/">Mozilla Blog: What can you do when your browser is 7 times faster?</a>.</p>
 
-<br />
-The technology behind these speedups is trace-based optimization, a method of <a href="http://en.wikipedia.org/wiki/Performance_prediction">performance prediction</a> that can use the information about which parts of some code have been important already to concentrate compiler-optimization power on making the same code run faster the next time. The researchers behind this are UCI computer scientist <a href="http://www.ics.uci.edu/~franz/">Michael Franz</a> and his post-doc Andreas Gal.
-<br />
+<p>The technology behind these speedups is trace-based optimization, a method of <a href="http://en.wikipedia.org/wiki/Performance_prediction">performance prediction</a> that can use the information about which parts of some code have been important already to concentrate compiler-optimization power on making the same code run faster the next time. The researchers behind this are UCI computer scientist <a href="http://www.ics.uci.edu/~franz/">Michael Franz</a> and his post-doc Andreas Gal.</p>
 
-<br />
-Personally, I&#x27;m not so thrilled about JavaScript, despite my browser using it all the time on various web sites. But I&#x27;m interested in this for another reason: I do a lot of my programming in Python, and sometimes when I do I feel like I need to apologize for Python&#x27;s poor performance compared to C. But this technology should work just as well in Python as in JavaScript, and gives me hope that eventually my Python code will be as fast as if I had taken the extra effort to write in a compiled and optimized language.
+<p>Personally, I'm not so thrilled about JavaScript, despite my browser using it all the time on various web sites. But I'm interested in this for another reason: I do a lot of my programming in Python, and sometimes when I do I feel like I need to apologize for Python's poor performance compared to C. But this technology should work just as well in Python as in JavaScript, and gives me hope that eventually my Python code will be as fast as if I had taken the extra effort to write in a compiled and optimized language.</p>
+
 <br /><br /><hr /><br />
 <h3>Comments:</h3>
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>brooksmoses</b>: <br />
 <b>2008-08-23T08:14:00Z</b><br />
-Just as fast, or faster.  One of my former coworkers ended up working on this when he left us for Mozilla, and he was telling me about it.  Apparently some of the early work on this was done with hardware emulators -- and they found that the emulator, when running on the machine it was emulating, sometimes ran faster than the native code once it had collected enough traces.
+<p>Just as fast, or faster.  One of my former coworkers ended up working on this when he left us for Mozilla, and he was telling me about it.  Apparently some of the early work on this was done with hardware emulators -- and they found that the emulator, when running on the machine it was emulating, sometimes ran faster than the native code once it had collected enough traces.</p>
 
-It sounds like really neat stuff, in any case.
+<p>It sounds like really neat stuff, in any case.</p>
 </div>
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>leonardo_m</b>: <br />
 <b>2008-08-23T10:23:24Z</b><br />
-7-times speedup is probably too much, the real speedup is about 1.5-4 on average programs, and 4-8 on number crunching programs.
+<p>7-times speedup is probably too much, the real speedup is about 1.5-4 on average programs, and 4-8 on number crunching programs.</p>
 
-There is already a system for Python that performs really similar things in a similar manner, it&#x27;s Psyco (that will &#x27;soon&#x27; have a major upgrade).
+<p>There is already a system for Python that performs really similar things in a similar manner, it's Psyco (that will 'soon' have a major upgrade).</p>
 
-If you want your Python code to run quite fast you may try ShedSkin.
+<p>If you want your Python code to run quite fast you may try ShedSkin.</p>
 </div>
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>None</b>: Let us not get ahead of ourselves!<br />
 <b>2008-08-23T12:17:39Z</b><br />
-There is no question that Python can be made to run very fast. If you use it like I do, and write the core parts in C++ and then use SWIG to wrap your C++, then you get to use Python with a C++ performance, right now.
+<p>There is no question that Python can be made to run very fast. If you use it like I do, and write the core parts in C++ and then use SWIG to wrap your C++, then you get to use Python with a C++ performance, right now.</p>
 
-Also, if you want to benefit from a sophisticated JIT compiler right now, try Jython. I bet a lot of your code runs unchanged on Jython (hint: it will use the Java JIT compiler!).
+<p>Also, if you want to benefit from a sophisticated JIT compiler right now, try Jython. I bet a lot of your code runs unchanged on Jython (hint: it will use the Java JIT compiler!).</p>
 
-Ok, but how fast can JavaScript and Python get compared to compiled languages? Well, there are typically 1000x slower. So, can you boost their performance by a factor of 10 and be 100x slower? Sure.
+<p>Ok, but how fast can JavaScript and Python get compared to compiled languages? Well, there are typically 1000x slower. So, can you boost their performance by a factor of 10 and be 100x slower? Sure.</p>
 
-In some corner cases, you can get to be only 10x slower. Or, you may even get to be *faster* in some instances.
+<p>In some corner cases, you can get to be only 10x slower. Or, you may even get to be *faster* in some instances.</p>
 
-People do not believe me, but back in 1999 I was writing image processing software, and on some operations, my Java code was faster than hand-crafted C++ code! Yet, nobody back in 1999 would take Java as an image processing library seriously. And they were right too!
+<p>People do not believe me, but back in 1999 I was writing image processing software, and on some operations, my Java code was faster than hand-crafted C++ code! Yet, nobody back in 1999 would take Java as an image processing library seriously. And they were right too!</p>
 
-You see, being faster in some tests is not too exciting. Over time, your non-trivial software will do a lot of wicked things... it is the overall performance that matters. Can JavaScript or Python match C++ in overall performance? I doubt it very much. I doubt it will ever happen.
+<p>You see, being faster in some tests is not too exciting. Over time, your non-trivial software will do a lot of wicked things... it is the overall performance that matters. Can JavaScript or Python match C++ in overall performance? I doubt it very much. I doubt it will ever happen.</p>
 
-Ah! But does it matter?
+<p>Ah! But does it matter?</p>
 
-If you do wicked database research like I do, you often need ever little once of performance because you need to process gigabytes of data and run thousands of tests... even Java is not appropriate as a language in some cases.
+<p>If you do wicked database research like I do, you often need ever little once of performance because you need to process gigabytes of data and run thousands of tests... even Java is not appropriate as a language in some cases.</p>
 
-However, 99.9% of software out there can afford to be 10x or even 100x slower than C++.
+<p>However, 99.9% of software out there can afford to be 10x or even 100x slower than C++.</p>
 
---
-Daniel Lemire
-http://www.daniel-lemire.com/
+<p>--<br />
+Daniel Lemire<br />
+http://www.daniel-lemire.com/</p>
 </div>
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>chouyu_31</b>: Re: Let us not get ahead of ourselves!<br />
 <b>2008-08-23T14:51:13Z</b><br />
-Python is rarely 1000x slower than C/C++.  Raw numbers for most benchmarks (available from http://shootout.alioth.debian.org/gp4/benchmark.php?test=all&amp;lang=python&amp;lang2=gcc ) put it at single-digit, moderate double-digit, or rarely 100-300x slower than straight C.  With a bit of Psyco, Python worst-case (in those same benchmarks) drops to 50x as slow, with many of the benchmarks showing low 1-digit slowdowns.
+<p>Python is rarely 1000x slower than C/C++.  Raw numbers for most benchmarks (available from http://shootout.alioth.debian.org/gp4/benchmark.php?test=all&amp;lang=python&amp;lang2=gcc ) put it at single-digit, moderate double-digit, or rarely 100-300x slower than straight C.  With a bit of Psyco, Python worst-case (in those same benchmarks) drops to 50x as slow, with many of the benchmarks showing low 1-digit slowdowns.</p>
 
-You may be right in the general case for Python/JavaScript to not be faster in the future than C/C++, but most C is also not any faster than Fortran, yet we made the transition anyways ;) .
+<p>You may be right in the general case for Python/JavaScript to not be faster in the future than C/C++, but most C is also not any faster than Fortran, yet we made the transition anyways ;) .</p>
 </div>
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>leonardo_m</b>: Re: Let us not get ahead of ourselves!<br />
 <b>2008-08-23T18:46:42Z</b><br />
-For many programs Python is way less than 1000 times slower, it&#x27;s more about 10-20 times slower.
-And Jython is generally quite slower than CPython, so it isn&#x27;t a match for Psyco.
+<p>For many programs Python is way less than 1000 times slower, it's more about 10-20 times slower.
+And Jython is generally quite slower than CPython, so it isn't a match for Psyco.</p>
 </div>
 

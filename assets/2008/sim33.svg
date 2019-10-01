@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="648" height="468">
+    <path fill="none" stroke="#000" d="M459 413v-27h-27m-117 27v-27h-27"/>
+    <path fill="none" stroke="#BF0000" stroke-width="3" d="M72 414l360-144L288 54z"/>
+    <path fill="none" stroke="#0060B6" d="M18 450l486-324M0 414h648M288 0v468M432 0v468"/>
+    <path fill="none" stroke="#00A33D" stroke-width="3" d="M387.667 203.999l44.667 209.668-144.667.332z"/>
+    <circle fill="#FFF" stroke="#000" cx="72" cy="414" r="3"/>
+    <circle fill="#FFF" stroke="#000" cx="576" cy="414" r="3"/>
+    <circle fill="#FFF" stroke="#000" cx="288" cy="54" r="3"/>
+    <circle fill="#FFF" stroke="#000" cx="432" cy="270" r="3"/>
+    <circle fill="#FFF" stroke="#000" cx="288" cy="414" r="3"/>
+    <circle fill="#FFF" stroke="#000" cx="432" cy="414" r="3"/>
+    <circle fill="#FFF" stroke="#000" cx="387.691" cy="203.539" r="3"/>
+    <text transform="translate(65 437)" font-family="Times,serif" font-style="italic" font-size="24">
+        A
+    </text>
+    <text transform="translate(292 51)" font-family="Times,serif" font-style="italic" font-size="24">
+        B
+    </text>
+    <text transform="translate(439 281)" font-family="Times,serif" font-style="italic" font-size="24">
+        C
+    </text>
+    <text transform="translate(570 437)" font-family="Times,serif" font-style="italic" font-size="24">
+        D
+    </text>
+    <text transform="translate(291 437)" font-family="Times,serif" font-style="italic" font-size="24">
+        B’
+    </text>
+    <text transform="translate(405 437)" font-family="Times,serif" font-style="italic" font-size="24">
+        C’
+    </text>
+    <text transform="translate(355 210)" font-family="Times,serif" font-style="italic" font-size="24">
+        A’
+    </text>
+    <path fill="none" stroke="#000" d="M402.669 226.004l22.465-14.978-14.978-22.464"/>
+</svg>

@@ -14,11 +14,11 @@ tags:   [graph algorithms]
 
 <p>Dijkstra's algorithm, applied to the problem of finding a shortest path from a given start vertex to a given goal vertex that are at distance \( D \) from each other, will end up examining all vertices within distance \( D \) of the start. Geometrically, we can visualize this by drawing a circle, centered at the start with the shortest path to the goal as its radius; the algorithm will search everything inside the circle. The part that it searches along the actual shortest path is necessary, but everything else is wasted work.</p>
 
-<p style="text-align:center"><img alt="The portion of a graph searched by Dijkstra's algorithm" src="http://www.ics.uci.edu/~eppstein/0xDE/A-star/circle.png" /></p>
+<p style="text-align:center"><img alt="The portion of a graph searched by Dijkstra's algorithm" src="{{site.baseurl}}/assets/2008/A-star/circle.svg" /></p>
 
 <p>The basic idea of A* is to change the distances in the graph in such a way that the shortest paths remain unchanged, but so that vertices that aren't on the shortest path appear farther from the start, causing fewer vertices to be expanded. The changed distances cause the "circle" to be distorted, in a way that (we hope) makes it smaller.</p>
 
-<p style="text-align:center"><img alt="A smaller search region, as might be found by A*" src="http://www.ics.uci.edu/~eppstein/0xDE/A-star/ellipse.png" /></p>
+<p style="text-align:center"><img alt="A smaller search region, as might be found by A*" src="{{site.baseurl}}/assets/2008/A-star/ellipse.svg" /></p>
 
 <p>To change the edge lengths, suppose we have a real number \( f(v) \) for every vertex \( v \) of a directed graph. Replace the edge length \( L_{u,v} \) of an edge \( (u,v) \) by the new length 
 \[
@@ -44,13 +44,13 @@ and use these new lengths to measure the distances \( d^*(u,v) \) between pairs 
 
 <p>A* is often described in terms of an <i>admissible heuristic</i>: a non-negative weight function \( f \) such that, for every vertex \( v \),  \( f(v) \)  is at most equal to the true distance to the goal. But, if we don't require monotonicity, it's easy to come up with examples of graphs in which the reweighted edges are negative, and in which Dijkstra can be tricked into finding a non-shortest path. In the example below, the lower path with length six to the penultimate vertex is expanded before the shorter upper path of length four is found, causing the algorithm to eventually find the wrong path to the goal.</p>
 
-<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/A-star/nonmon.png" /></p>
+<p style="text-align:center"><img alt="Example of A* with a non-monotonic heuristic" src="{{site.baseurl}}/assets/2008/A-star/nonmon.svg" /></p>
 
 <p>So what is wrong? Isn't A* supposed to work for any admissible heuristic? It is, but it's missing a step in this case.</p>
 
 <p>Graphs with non-negative edges aren't the only graphs for which Dijkstra's algorithm works correctly. Another important class of graphs on which it works are the trees. If the graph we're given isn't a tree, we can replace it by a <i>path tree</i> that has as its nodes the paths from the given starting vertex, where the parent of a node in the path tree is the prefix of the corresponding path formed by omitting the path's final edge.</p>
 
-<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/A-star/pathtree.png" /></p>
+<p style="text-align:center"><img alt="Expanded tree of paths for the non-monotonic heuristic" src="{{site.baseurl}}/assets/2008/A-star/pathtree.svg" /></p>
 
 <p>The version of A* for an admissible but not monotonic heuristic is to choose the heuristic, use it to reweight the graph, and then apply Dijkstra to the path tree of the reweighted graph. As soon as any copy of the goal node is closed by Dijkstra's algorithm, we return the corresponding path as the shortest path to the goal. Admissibility of the heuristic implies that, before we could expand any non-shortest path to a copy of the goal vertex, we would have found all nodes on the true shortest path and therefore the shortest path itself. Therefore, if the heuristic is admissible, this algorithm finds the correct shortest path. Of course, it may expand many more nodes than Dijkstra due to the repetition of nodes caused by the path tree expansion, but this may be made up for by the reduction in nodes due to the A* reweighting.</p>
 

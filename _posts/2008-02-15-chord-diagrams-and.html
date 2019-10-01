@@ -8,11 +8,11 @@ tags:   [knot theory, chord diagrams, graph theory]
 
 <p>One application of these diagrams is in knot theory: if one has a plane drawing of a knot, one can form a <a href="http://cornellmath.wordpress.com/2007/12/13/chord-diagrams/">chord diagram for the knot drawing</a> by mapping the knot itself to a circle and connecting pairs of points on the circle that correspond to the two points of a crossing in the drawing.</p>
 
-<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/chord-diag/knot6alt.png" /></p>
+<p style="text-align:center"><img src="{{site.baseurl}}/assets/2008/chord-diag/knot6alt.svg" alt="A knot and its chord diagram" /></p>
 
 <p>This application is an example of a more general construction, in which a chord diagram describes an <a href="http://en.wikipedia.org/wiki/Eulerian_path">Euler tour</a> of a <a href="http://en.wikipedia.org/wiki/Regular_graph">4-regular graph</a>, by listing the vertices in the order they are visited by the tour and connecting the two copies of each vertex in the list. The graph itself (and the associated Euler tour) may be recovered from the diagram, by forming a vertex for each chord and an edge for each pair of chords that have endpoints one position apart.</p>
 
-<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/chord-diag/euler.png" /></p>
+<p style="text-align:center"><img src="{{site.baseurl}}/assets/2008/chord-diag/euler.svg" alt="An Euler tour of a 4-regular graph and its chord diagram" /></p>
 
 <p>In the knot theoretic application, the 4-regular graph has a vertex for each crossing and an edge for each uncrossed segment of curve, and the Euler tour is the one that goes straight through each crossing. Note that in this case, though, the knot diagram itself may not be determined by the chord diagram, even ignoring the information about which strand is on top and which on the bottom at each crossing, because one may independently invert any two-edge-connected component of the graph.</p>
 

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="378" height="342">
+    <path fill="none" stroke="#8C8C8C" d="M171 18v216l189 36"/>
+    <path fill="none" stroke="#FFF" stroke-width="6" d="M360 53.999L18 288"/>
+    <path fill="none" stroke="#8C8C8C" d="M360 53.999L18 288m0 .001L171 234 360 54m0 216L18 288.001m0 0L171 18"/>
+    <path fill="none" stroke="#FFF" stroke-width="6" d="M207 324.001V108L18 72"/>
+    <path fill="none" stroke="#FFF" stroke-width="6" d="M18 288.001L207 108l153-54m0 0L207 324.001M18 72l342-18"/>
+    <path fill="none" stroke="#000" stroke-width="2" d="M207 324V108L18 72"/>
+    <path fill="none" stroke="#000" stroke-width="2" d="M18 288l189-180 153-54.001m0 0L207 324M18 72l342-18.001M18 288l189 36M18 72v216M360 53.999l-189-36M360 270V53.999M207 324l153-54M171 17.999L18 72"/>
+    <circle fill="#66E296" cx="171" cy="234" r="7.5"/>
+    <g fill="#0C3">
+        <circle cx="18" cy="72" r="9"/>
+        <circle cx="360" cy="270.001" r="9"/>
+        <circle cx="207" cy="324.001" r="10.5"/>
+        <circle cx="207" cy="108" r="10.5"/>
+        <circle cx="171" cy="18" r="7.5"/>
+    </g>
+    <g fill="red">
+        <circle cx="18" cy="288.001" r="9"/>
+        <circle cx="360" cy="54" r="9"/>
+    </g>
+</svg>

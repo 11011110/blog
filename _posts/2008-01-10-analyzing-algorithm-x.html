@@ -30,7 +30,7 @@ The problem studied in Knuth's paper is <a href="http://en.wikipedia.org/wiki/Ex
 
 <p>Exact cover is one of the <a href="http://en.wikipedia.org/wiki/Karp%27s_21_NP-complete_problems">21 NP-complete problems</a> in Karp's 1972 “<a href="http://www.cs.berkeley.edu/~luca/cs172/karp.pdf">Reducibility Among Combinatorial Problems</a>,” a paper that forms (together with <a href="http://en.wikipedia.org/wiki/Cook%27s_theorem">Cook's theorem</a>) the foundation of NP-completeness theory. Knuth describes applications of exact cover in finding <a href="http://en.wikipedia.org/wiki/Polyomino">polyomino</a> tilings, using sets of the cells that can be covered by each possible placement of each polyomino. The seven exact covers above can be interpreted in this way as the tilings of a \( 2\times 2 \) square by monominos and dominos:</p>
 
-<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/knuth/domtile.png" /></p>
+<p style="text-align:center"><img src="{{site.baseurl}}/assets/2008/knuth/domtile.svg" alt="Tilings of a 2x2 square by monominos and dominos" /></p>
 
 <p>Sudoku puzzles can also be <a href="http://www.garethrees.org/2007/06/10/zendoku-generation/">expressed as exact cover problems</a>, in which there is one element for each cell, one element for each combination of a digit and a group of nine cells, and one set for each combination of a digit and a single cell. Another standard combinatorial problem, the <a href="http://en.wikipedia.org/wiki/Eight_queens_problem">eight queens problem</a>, is not quite an exact cover problem directly (the selected queen placements must cover each row and column of a chessboard but only cover 16 of the 30 diagonals) but can be made into one by adding seven additional “virtual pieces” that may each cover two perpendicular diagonals but no rows or columns. If all sets in an exact cover instance have exactly two elements (as for instance, in the eight rooks problem, in which the set representing each rook placement contains a single row and a single column), the problem becomes that of <a href="http://mathworld.wolfram.com/PerfectMatching.html">perfect matching</a>, a polynomially-solvable but nontrivial special case.</p>
 
@@ -43,12 +43,12 @@ The problem studied in Knuth's paper is <a href="http://en.wikipedia.org/wiki/Ex
 <dd><ul>
 <li>If \( U \) is empty, return the empty cover</li>
 <li>Choose arbitrarily an element \( x \) of \( U \)</li>
-<li>For each set \( S_i \) in \( F \) that contains \( x \):</li>
+<li>For each set \( S_i \) in \( F \) that contains \( x \):
 <ul>
 <li>Form a set family \( F' \) consisting of the sets in \( F \) that are disjoint from \( S_i \)</li>
 <li>Solve recursively the exact cover problem \( (U\setminus S_i,F') \)</li>
 <li>If a solution is found, add \( S_i \) to the solution and return it</li>
-</ul></ul>
+</ul></li></ul>
 </dd></dl>
 
 <p>Different choices of the “pivot” \( x \) may lead to different running times — for instance, if one can choose a pivot that is not contained in any of the sets, it is preferably to do so, because then the algorithm will immediately backtrack rather than fruitlessly searching unsolvable subproblems. But what can we say more rigorously about the worst case performance of Algorithm X? If \( n \) is the number of sets in the input family, what function \( f(n) \) describes the running time of the algorithm? Because of the way the dancing links implementation reduces the input size of the subproblems in the recursive calls, the time per call at the bottommost levels of the recursion (where most of the work happens) will be constant, so we may equivalently ask how many recursive calls are made.</p>
@@ -69,11 +69,11 @@ and for an algorithm that always pivots on an element contained in as many sets 
 
 <p><i>Proof sketch</i>: We show by induction that, if the first \( i \) components of \( \mathbf{s} \) are equal to \( k+i \), then the first \( i \) sets are totally ordered by inclusion and each are subsets of all remaining sets, and further that in this case \( s_i+1\ge k+i+1 \). As a base case, the total ordering holds vacuously for \( i=0 \), and in this case the lower bound \( s_1\ge k \) holds as \( S_1 \) must intersect each of the \( k \) sets \( S_i \). In the inductive case, suppose that all sets up to but not including \( S_i \) have the minimum size allowed by the lemma. Then by the induction hypothesis, \( S_i \) is a superset of \( S_{i-1} \), and has a nonempty intersection with all of the \( k+i-2 \) sets that \( S_{i-1} \) intersects. Because it is a superset, \( Y = S_i\setminus S_{i-1} \) is nonempty; each element \( y \) in \( Y \) must be contained in at least \( k \) sets of the set system \( F \), none of which can be among the \( i-1 \) sets earlier in the sequence. At most \( k-1 \) of the sets containing \( y \) can be among the \( k+i-2 \) sets already known to intersect \( S_i \), for the \( i-1 \) sets occurring earlier in the sequence do not contain \( y \). Thus, there must be at least one additional set containing \( y \). If there is exactly one additional set \( T_i \) that contains each \( y \) in \( Y \), then \( Y \) is contained in all subsequent sets \( S_j \) for \( j\gt i \), and \( s_i\ge k+i-1 \); otherwise, there are two or more additional sets intersecting with \( Y \), and \( s_i\ge k+i \). In either case the induction hypothesis holds and the lemma is proven.</p></div>
 
-<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/knuth/chain.png" /></p>
+<p style="text-align:center"><img src="{{site.baseurl}}/assets/2008/knuth/chain.svg" alt="Illustration of induction proof of lemma" /></p>
 
-<p>Using this lemma, we may proceed to analyze cases. In general, each case will lead to a recurrence of the type \( T(n)=\sum T(n-s_i) \), which is solved as \( \kappa^n \) where \( \kappa \) is a root of the function \( 1-\sum\kappa^{-s_i} \). A numerical approximation to \( \kappa \) may easily be found <a href="http://www.ics.uci.edu/~eppstein/0xDE/knuth/recur.py">by binary search</a>, or by more sophisticated numerical search procedures, as this function is negative for \( \kappa \) between one and the desired root, and positive for all \( \kappa \) larger than the root. For instance, the graph of the function \( 1-1/\kappa^3-2/\kappa^5 \) shown below (created with Walter Zorn's <a href="http://www.walterzorn.com/grapher/grapher_e.htm">function grapher</a>) shows how well behaved this function is for \( \mathbf{s}=(3,5,5) \). The overall worst-case behavior of an algorithm of this type can be bounded as the maximum among the solutions of the different recurrences arising from the different cases. We need only determine the minimal vectors \( \mathbf{s} \) allowable by the lemma, search for the roots corresponding to each vector, and choose the maximum value κ among the different roots found by these searches.</p>
+<p>Using this lemma, we may proceed to analyze cases. In general, each case will lead to a recurrence of the type \( T(n)=\sum T(n-s_i) \), which is solved as \( \kappa^n \) where \( \kappa \) is a root of the function \( 1-\sum\kappa^{-s_i} \). A numerical approximation to \( \kappa \) may easily be found <a href="{{site.baseurl}}/assets/2008/knuth/recur.py">by binary search</a>, or by more sophisticated numerical search procedures, as this function is negative for \( \kappa \) between one and the desired root, and positive for all \( \kappa \) larger than the root. For instance, the graph of the function \( 1-1/\kappa^3-2/\kappa^5 \) shown below (created with Walter Zorn's <a href="http://www.walterzorn.com/grapher/grapher_e.htm">function grapher</a>) shows how well behaved this function is for \( \mathbf{s}=(3,5,5) \). The overall worst-case behavior of an algorithm of this type can be bounded as the maximum among the solutions of the different recurrences arising from the different cases. We need only determine the minimal vectors \( \mathbf{s} \) allowable by the lemma, search for the roots corresponding to each vector, and choose the maximum value κ among the different roots found by these searches.</p>
 
-<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/knuth/plot355.png" /></p>
+<p style="text-align:center"><img src="{{site.baseurl}}/assets/2008/knuth/plot355.png" alt="graph of 1-1/k^3-2/k^5" /></p>
 
 <p>Thus, for Algorithm X, with the pivot rule in which the algorithm chooses \( x \) to be contained in as few sets as possible and using Lemma 1 to bound \( \mathbf{s} \), we have the following cases.</p>
 <ul>
@@ -114,28 +114,28 @@ replace \( U \) with \( U\setminus S_1 \), remove \( S_1 \) from \( F \), and al
 <dd><ul>
 <li>If \( U \) is empty, return the empty cover</li>
 <li>Choose arbitrarily an element \( x \) of \( U \)</li>
-<li>If some set \( Y \) does not contain \( x \) but intersects all sets containing \( x \):</li>
+<li>If some set \( Y \) does not contain \( x \) but intersects all sets containing \( x \):
 <ul>
 <li>Remove \( Y \) from \( F \)</li>
 <li>Solve the resulting smaller instance</li>
-</ul>
-<li>Else if the sets containing \( x \) form a nonempty nest:</li>
+</ul></li>
+<li>Else if the sets containing \( x \) form a nonempty nest:
 <ul>
 <li>Form the modified instance \( (U',F') \) as described above</li>
 <li>Solve recursively the modified instance</li>
 <li>If a solution is found, form the corresponding solution to the original problem as described above and return it.</li>
-</ul>
-<li>Else, for each set \( S_i \) in \( F \) that contains \( x \):</li>
+</ul></li>
+<li>Else, for each set \( S_i \) in \( F \) that contains \( x \):
 <ul>
 <li>Form a set family \( F' \) consisting of the sets in \( F \) that are disjoint from \( S_i \)</li>
 <li>Solve recursively the exact cover problem \( (U\setminus S_i, F') \)</li>
 <li>If a solution is found, add \( S_i \) to the solution and return it</li>
-</ul></ul>
+</ul></li></ul>
 </dd></dl>
 
 <p>As an example, consider applying Algorithm Y to the example instance we started with, with eight sets, four elements, and seven exact covers. The recursion tree has only one multiway branch, at the outermost level of recursion; each successive call after that leads to an instance of the nesting rule, until the problem reduces to instances with a single set:</p>
 
-<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/knuth/yex.png" /></p>
+<p style="text-align:center"><img src="{{site.baseurl}}/assets/2008/knuth/yex.svg" alt="Recursion tree for example instance of Algorithm X" /></p>
 
 <p>The \( 7^{n/8} \) lower bound no longer applies to this algorithm, because different exact covers do not necessarily lead to different leaves of the recursion tree.</p>
 
@@ -148,7 +148,7 @@ replace \( U \) with \( U\setminus S_1 \), remove \( S_1 \) from \( F \), and al
 
 <li><p>If the algorithm branches on \( x \), and \( x \) is contained in three sets of \( F \), \( \mathbf{s} \) must equal or be componentwise larger than either \( (3,5,5) \) or \( (4,4,5) \): as shown below, Lemma 1 rules out \( (3,4,5) \) and smaller vectors, while Lemma 2 rules out \( (4,4,4) \). The \( (3,5,5) \) case gives us a recurrence solving to approximately \( 1.29803^n \), while the \( (4,4,5) \) case solves to approximately \( 1.29065^n \).</p>
 
-<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/knuth/cases3d.png" /></p></li>
+<p style="text-align:center"><img src="{{site.baseurl}}/assets/2008/knuth/cases3d.svg" alt="Case analysis for three-way branching in Algorithm Y" /></p></li>
 
 <li><p>If the algorithm branches on \( x \), and \( x \) is contained in four sets of \( F \), \( \mathbf{s} \) must equal or be componentwise larger than \( (4,5,7,7) \), \( (4,6,6,6) \), \( (5,5,6,6) \), or \( (5,5,5,7) \). The four resulting recurrences solve to approximately \( 1.28449^n \), \( 1.29294^n \), \( 1.28854^n \), and \( 1.29193^n \) respectively.</p></li>
 

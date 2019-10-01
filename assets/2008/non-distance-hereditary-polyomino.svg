@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="478" height="479">
+    <path fill="#E1FFFF" stroke="#000" stroke-width="4" d="M130 60h72v72h-72zm72 0h72v72h-72zm-72 72h72v72h-72zm72 0h72v72h-72zm72 0h72v72h-72zm72 0h72v72h-72zm-72 72h72v72h-72zm72 0h72v72h-72zm-144 72h72v72h-72zm72 0h72v72h-72zm-72 72h72v72h-72zm72 0h72v72h-72zM58 204h72v72H58zm72 0h72v72h-72zm-72 72h72v72H58zm72 0h72v72h-72zm72-72h72v72h-72z"/>
+    <path fill="none" stroke="#FF10B1" stroke-width="2" stroke-dasharray="4" d="M4.106 239.991h468.001M48.796 102.449c80.799 101.75 411.858 65.231 411.858 65.231m-33.237 209.853C346.39 277.48 15.56 312.301 15.56 312.301"/>
+    <path fill="none" stroke="#FF7F00" stroke-width="2" stroke-dasharray="4" d="M238.107 5.99v468.002m-137.543-44.691c101.55-81.591 65.232-411.857 65.232-411.857m209.852 33.237c-99.488 80.999-65.231 411.858-65.231 411.858"/>
+    <path fill="none" stroke="#FF10B1" stroke-width="2" stroke-dasharray="4" d="M100.565 50.681c30.557 80.998 172.353 83.061 209.852-33.237m-144.62 445.095c35.554-114.83 181.096-114.242 209.852-33.238"/>
+    <path fill="none" stroke="#FF7F00" stroke-width="2" stroke-dasharray="4" d="M460.654 312.301c-115.028-35.584-114.805-181.829-33.237-209.852M15.56 167.681c114.799 34.99 114.271 180.135 33.237 209.853"/>
+    <circle fill="none" stroke="#B2B2B2" cx="238" cy="240" r="233.58"/>
+</svg>

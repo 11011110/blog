@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="316.794" height="244.274">
+    <circle opacity=".2" fill="#8C8C8C" cx="175.702" cy="139.74" r="72"/>
+    <circle opacity=".2" fill="#8C8C8C" cx="193.702" cy="139.74" r="72"/>
+    <circle opacity=".2" fill="#8C8C8C" cx="220.703" cy="139.74" r="89.999"/>
+    <circle opacity=".2" fill="#8C8C8C" cx="121.702" cy="121.74" r="117"/>
+    <path fill="#FFF" d="M238.702 121.74c0-6.716-.574-13.298-1.661-19.705-11.183-18.155-30.199-30.953-52.339-33.716a71.565 71.565 0 0 0-31.474 11.872c-14.015 15.868-22.524 36.713-22.524 59.549s8.509 43.681 22.524 59.549a71.565 71.565 0 0 0 31.474 11.872 71.54 71.54 0 0 0 17.418-4.444c22.526-21.325 36.582-51.509 36.582-84.977z"/>
+    <circle fill="none" stroke="#00A33D" stroke-width="2" cx="175.702" cy="139.74" r="72"/>
+    <circle fill="none" stroke="#00F" stroke-width="2" cx="193.702" cy="139.74" r="72"/>
+    <circle fill="none" stroke="#D010B1" stroke-width="2" cx="220.703" cy="139.74" r="89.999"/>
+    <circle fill="none" stroke="#FF4000" stroke-width="2" cx="121.702" cy="121.74" r="117"/>
+</svg>
