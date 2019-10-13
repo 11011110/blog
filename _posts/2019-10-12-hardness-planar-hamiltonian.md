@@ -43,3 +43,5 @@ Maybe the same idea of having a truth-setting gadget that passes through the cla
 [^m]: Martin, Pierre (1976), "Cycles hamiltoniens dans les graphes 4-réguliers 4-connexes", _Aequationes Mathematicae_ 14 (1/2): 37–40, [doi:10.1007/BF01836203](https://doi.org/10.1007/BF01836203).
 
 [^gjs]: Garey, M. R., Johnson, D. S., and Stockmeyer, L. (1974), "Some simplified <span style="white-space:nowrap">$$\mathsf{NP}$$-complete</span> problems", _Proc. 6th ACM Symposium on Theory of Computing (STOC '74)_, pp. 47–63, [doi:10.1145/800119.803884](https://doi.org/10.1145/800119.803884).
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/102952166572844694))
