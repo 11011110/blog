@@ -56,3 +56,5 @@ document.addEventListener('DOMContentLoaded', function(){
 {% endhighlight %}
 
 If you see any mathematics glitches in any of my old or new posts, please tell me; they could be more interactions like this that I haven't spotted yet.
+
+([Discuss on Mathstodon](https://mathstodon.xyz/@11011110/102982168716719916), which [also recently switched to MathJax 3](https://mathstodon.xyz/@christianp/102955345066926415))
