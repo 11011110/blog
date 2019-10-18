@@ -10,6 +10,25 @@
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
     <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ "/feed.xml" | relative_url }}">
     <link rel="icon" href="{{ "/assets/favicon.ico" | relative_url }}" type="image/x-icon">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-AMS_CHTML" async>
+
+    {% if page.nomath %}{% else %}
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+            function stripcdata(x) {
+                if (x.startsWith('% <![CDATA[') && x.endsWith('%]]>'))
+                    return x.substring(11,x.length-4);
+                return x;
+            }
+            document.querySelectorAll("script[type='math/tex']").forEach(function(el) {
+              el.outerHTML = "\\(" + stripcdata(el.textContent) + "\\)";
+            });
+            document.querySelectorAll("script[type='math/tex; mode=display']").forEach(function(el) {
+              el.outerHTML = "\\[" + stripcdata(el.textContent) + "\\]";
+            });
+            var script = document.createElement('script');
+            script.src = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js";
+            document.head.appendChild(script);
+        }, false);
     </script>
+    {% endif %}
 </head>

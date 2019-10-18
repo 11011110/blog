@@ -55,9 +55,9 @@ $$
 \begin{align}
 \operatorname{matched}(v)\equiv
 \forall x\exists!y\Bigl(
-&\bigl(x=v\rightarrow y=v\bigr) \wedge\\
-&\bigl(x\sim v\rightarrow (x\sim y\wedge \lnot(v\sim y))\bigr) \wedge\\
-&\bigl(\lnot(x=v\vee x\sim v)\rightarrow (x\sim y \wedge y\sim v)\bigr)
+& \bigl(x=v\rightarrow y=v\bigr) \wedge\\
+& \bigl(x\sim v\rightarrow (x\sim y\wedge \lnot(v\sim y))\bigr) \wedge\\
+& \bigl(\lnot(x=v\vee x\sim v)\rightarrow (x\sim y \wedge y\sim v)\bigr)
 \Bigr).
 \end{align}
 $$
