@@ -58,3 +58,7 @@ document.addEventListener('DOMContentLoaded', function(){
 If you see any mathematics glitches in any of my old or new posts, please tell me; they could be more interactions like this that I haven't spotted yet.
 
 ([Discuss on Mathstodon](https://mathstodon.xyz/@11011110/102982168716719916), which [also recently switched to MathJax 3](https://mathstodon.xyz/@christianp/102955345066926415))
+
+
+Edited (2019-10-31) to add: Thanks to 
+Alexander Kalinin for pointing me to [the official solution](http://docs.mathjax.org/en/latest/upgrading/v2.html#changes-in-the-mathjax-api) (see final bullet point under "Changes in the MathJax API"; [via](https://github.com/mathjax/MathJax/issues/2220)). It does much the same replacement by text, but at MathJax processing time rather than at DOMContentLoaded time, and (I'm told) works for CDATA without special handling.
