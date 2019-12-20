@@ -1,0 +1,10 @@
+# run with "R -f highpoint.R"
+library('mblm')
+tab <- read.table('highpoint.txt')
+x <- sapply(tab[,1],log2)
+y <- sapply(tab[,2],log2)
+fit <- mblm(y~x)
+pdf("highpoint.pdf")
+plot(x,y,xlab="log2 n", ylab="a_n / n")
+abline(fit, col="red")
+text(15,0.25,paste(c("a_n / n = ",coef(fit)[1]," + ",coef(fit)[2]," log2 n"),collapse=""), col="red")

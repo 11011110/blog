@@ -1,0 +1,10 @@
+# run with "R -f blocks.R"
+library('mblm')
+tab <- read.table('blocks.txt')
+x <- sapply(tab[,1],log2)
+y <- sapply(tab[,2],log2)
+fit <- mblm(y~x)
+pdf("blocks.pdf")
+plot(x,y,xlab="log2 n", ylab="A(n) / B(n)")
+abline(fit, col="red")
+text(14,0.2,paste(c("A(n) / B(n) = ",coef(fit)[1]," + ",coef(fit)[2]," log2 n"),collapse=""), col="red")

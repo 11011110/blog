@@ -1,0 +1,10 @@
+# run with "R -f alternations.R"
+library('mblm')
+tab <- read.table('alternations.txt')
+x <- sapply(tab[,1],log2)
+y <- sapply(tab[,2],log2)
+fit <- mblm(y~x)
+pdf("alternations.pdf")
+plot(x,y,xlab="log2 n", ylab="log2 A(n)")
+abline(fit, col="red")
+text(10,15,paste(c("A(n) = ",2**coef(fit)[1]," * n**",coef(fit)[2]),collapse=""), col="red")

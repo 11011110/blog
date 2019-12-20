@@ -1,0 +1,10 @@
+# run with "R -f density.R"
+library('mblm')
+tab <- read.table('density.txt')
+x <- sapply(tab[,1],log2)
+y <- sapply(tab[,2],log2)
+fit <- mblm(y~x)
+pdf("density.pdf")
+plot(x,y,xlab="log2 n", ylab="log2 a_n")
+abline(fit, col="red")
+text(10,25,paste(c("a = ",2**coef(fit)[1]," * n**",coef(fit)[2]),collapse=""), col="red")
