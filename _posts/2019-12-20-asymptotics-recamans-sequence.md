@@ -3,7 +3,7 @@ layout: post
 title: Asymptotics of Recamán's sequence
 date: 2019-12-20 00:02
 ---
-[Recamán's sequence](https://en.wikipedia.org/wiki/Recam%C3%A1n%27s_sequence) is a sequence of natural numbers in which the first number is zero and the $$n$$th number adds or subtracts $$n$$ from the previous number, subtracting if that would lead to a new value and adding otherwise. It was popularized in a 2018 Numberphile video that showed both an interesting visualization of it using nested circles and a spooky piano composition obtained by using its values as notes.
+[Recamán's sequence](https://en.wikipedia.org/wiki/Recam%C3%A1n%27s_sequence) is a sequence of natural numbers in which the zeroth number is zero and the $$n$$th number adds or subtracts $$n$$ from the previous number, subtracting if that would lead to a new value and adding otherwise. It was popularized in a 2018 Numberphile video that showed both an interesting visualization of it using nested circles and a spooky piano composition obtained by using its values as notes.
 
 <iframe src="https://www.youtube.com/embed/FGC5TdIiT9U" allowfullscreen style="width:560px;height:315px;display:block;margin:auto;border:0"></iframe>
 
