@@ -69,3 +69,5 @@ but again this is unproven.
 * This is still not anywhere near fast enough to get $$10^{230}$$ elements, nor even $$10^{230}$$ as the largest generated value. So either something is wrong with that claim (most likely a typo in the number of elements), or there are significant algorithmic achievements to be gained beyond just using alternations and blocks.
 
 For the source code for these plots, see [density generation]({{site.baseurl}}/assets/2019/recaman/density.py)/[analysis]({{site.baseurl}}/assets/2019/recaman/density.R), [high point generation]({{site.baseurl}}/assets/2019/recaman/highpoint.py)/[analysis]({{site.baseurl}}/assets/2019/recaman/highpoint.R), [alternation generation]({{site.baseurl}}/assets/2019/recaman/alternations.py)/[analysis]({{site.baseurl}}/assets/2019/recaman/alternations.R), and [block generation]({{site.baseurl}}/assets/2019/recaman/blocks.py)/[analysis]({{site.baseurl}}/assets/2019/recaman/blocks.R).
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/103339144033179034))
