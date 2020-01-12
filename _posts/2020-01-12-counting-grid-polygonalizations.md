@@ -61,4 +61,4 @@ $$\frac{\varphi^{5n}}{66n}.$$
 
 Why the golden ratio? I don't know.
 
-([Discuss on Mastodon](https://mathstodon.xyz/@11011110/103472876896755155))
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/103472952839621766))
