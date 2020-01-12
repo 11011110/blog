@@ -60,3 +60,5 @@ Probably if you go through the same estimation process more carefully, you can r
 $$\frac{\varphi^{5n}}{66n}.$$
 
 Why the golden ratio? I don't know.
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/103472876896755155))
