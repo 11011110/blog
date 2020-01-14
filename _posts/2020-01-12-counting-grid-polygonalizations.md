@@ -34,7 +34,7 @@ with base case $$S_z^x(0)=1$$. Then the total number of polygonalizations can be
 
 $$1, 8, 62, 532, 4846, 45712, 441458, 4337468, 43187630, \dots$$
 
-(not yet in OEIS but I will submit it).
+(<s>not yet in OEIS but I will submit it</s> update 2020-01-14: [OEIS A331235](https://oeis.org/A331235)).
 
 The next question is: how quickly does this sequence grow? It's singly exponential (because that's true of all 2d non-crossing geometric graph counting problems) but what is the base of the exponential? We can make a rough estimate by ignoring faxtors that are polynomial or smaller. The first estimate I tried was wrong: it was that there are roughly $$2^n$$ ways of choosing whether each letter is upper or lower case, most of which assign roughly half of the letters to each case, and roughly $$(3\sqrt{3}/2)^n$$ ways of choosing an upper or lower case substring of length $$n/2$$, for a total of $$13.5^n$$ choices. But this is an overestimate, because it doesn't take into account the requirement that each letter be contiguous. It would allow strings like $$aBa$$ which don't correspond to polygonalizations, and that turns out to matter in the estimation.
 
