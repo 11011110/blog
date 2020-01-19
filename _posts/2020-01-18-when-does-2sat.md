@@ -20,3 +20,5 @@ The relaxation of any 2SAT instance contains the point whose coordinates all equ
 
 Finally, suppose that there are two complementary solutions, and flip the variables if necessary so that these are the all-false and all-true assignments to the variables. (This flipping simplifies the problem without changing any of the three conditions.) Consider any fractional solution $$S$$, and construct from it a probability distribution on truth assignments as follows: choose a uniformly random number $$x\in [0,1]$$, set to true the variables whose coordinate value is at least $$x$$, and set to false the remaining variables.
 All truth assignments generated in this way solve the 2SAT problem, because any violation of an implication constraint in the 2SAT problem would translate to a violation of the corresponding coordinate inequality constraint in the relaxation. The given fractional solution $$S$$ is a weighted average of the resulting collection of 2SAT solutions, where the weight of a solution is the probability of generating it. Therefore, the second condition implies the first condition.
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/103507316629491293))
