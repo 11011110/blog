@@ -23,11 +23,11 @@ The paving stones consist of dark triangles and light spacers that, together, fo
 {: style="text-align:center"}
 ![Pentagon-diamond tiling with 5-way dihedral symmetry]({{site.baseurl}}/assets/2018/Amagertorv.svg)
 
-The smaller connecting stones force the dark-light pentagons and red diamonds to meet at only two types of vertex: a degree-four vertex with three pentagons and the sharp corner of a diamond, and a degree-three vertex with two pentagons and the acute corner of a diamond.
+The smaller connecting stones force the dark-light pentagons and red diamonds to meet at only two types of vertex: a degree-four vertex with three pentagons and the sharp corner of a diamond, and a degree-three vertex with two pentagons and the obtuse corner of a diamond.
 
 The Penrose tilings include two tilings with five-fold dihedral symmetry. If we try to replicate the same symmetry with these regular pentagons and diamonds, we must put a pentagon in the center, adjacent to five other pentagons. But once these choices have been made, the whole tiling is fixed: the remaining tiles must spread out in five periodically-tiled wedges from the center, as I have shown above. By leaving a hole at the center of symmetry (covered with the Stork Fountain), Nørgaard found a different symmetric solution, with ten narrower periodically-tiled wedges, but I think this only has cyclic symmetry and not dihedral symmetry. (That is, it is slightly different from its mirror reflection, and so has only the same total number of symmetries as the five-fold tiling.) Because the pentagon and diamond tiles (with their two types of constrained vertices) have no symmetric but aperiodic tiling, they cannot be made to form arbitrary Penrose tilings.
 
 {: style="text-align:center"}
 ![Pentagon-diamond tiling with 10-way cyclic symmetry and a central hole]({{site.baseurl}}/assets/2018/StorkFountain.svg)
 
-For more from Copenhagen, see [my online gallery](https://www.ics.uci.edu/~eppstein/pix/copenhagen/), including the glowing nostrils of [Gefjon's oxen](Gefion Fountain), a [Nine Men's Morris](https://en.wikipedia.org/wiki/Nine_Men%27s_Morris) board built into the corner of the city hall, and an engraving of a Danish king of whom all but the head has been transformed into calligraphy.
+For more from Copenhagen, see [my online gallery](https://www.ics.uci.edu/~eppstein/pix/copenhagen/), including the glowing nostrils of [Gefjon's oxen](https://en.wikipedia.org/wiki/Gefion_Fountain), a [Nine Men's Morris](https://en.wikipedia.org/wiki/Nine_Men%27s_Morris) board built into the corner of the city hall, and an engraving of a Danish king of whom all but the head has been transformed into calligraphy.
