@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="612" height="144">
+    <g fill="none" stroke="#000" stroke-width="2">
+        <path d="M144 18l-27 54 27 54 27-54z"/>
+        <path d="M144 18L72 72l72 54 72-54z"/>
+        <path d="M144 18L18 72l126 54 126-54zm324 0l-27 54 27 54 27-54z"/>
+        <path d="M468 18l-72 54 72 54 72-54z"/>
+        <path d="M468 18L342 72l126 54h126V18z"/>
+    </g>
+    <g fill="#0F0" stroke="#000" stroke-width="2">
+        <circle cx="18" cy="72" r="10"/>
+        <circle cx="72" cy="72" r="10"/>
+        <circle cx="117" cy="72" r="10"/>
+        <circle cx="171" cy="72" r="10"/>
+        <circle cx="216" cy="72" r="10"/>
+        <circle cx="270" cy="72" r="10"/>
+        <circle cx="144" cy="126" r="10"/>
+        <circle cx="144" cy="18" r="10"/>
+        <circle cx="468" cy="18" r="10"/>
+        <circle cx="468" cy="126" r="10"/>
+        <circle cx="342" cy="72" r="10"/>
+        <circle cx="396" cy="72" r="10"/>
+        <circle cx="441" cy="72" r="10"/>
+        <circle cx="495" cy="72" r="10"/>
+        <circle cx="540" cy="72" r="10"/>
+        <circle cx="594" cy="18" r="10"/>
+        <circle cx="594" cy="126" r="10"/>
+    </g>
+</svg>

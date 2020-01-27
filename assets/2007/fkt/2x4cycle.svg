@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="279" height="270">
+    <g fill="none" stroke="#0060B6" stroke-width="1.5">
+        <path d="M72 207c36-36 108-36 144 0M72 63c36 45 36 108 0 144M216 63c-36 36-36 108 0 144M72 63c36 36 108 36 144 0"/>
+        <path d="M72 63c36-36 108-36 144 0s36 108 0 144-108 36-144 0-45-99 0-144z"/>
+    </g>
+    <g font-family="Times,serif" font-size="36">
+        <text transform="translate(136.01 81)">a</text>
+        <text transform="translate(131.001 27)">A</text>
+        <text transform="translate(198 144)">b</text>
+        <text transform="translate(248.994 144)">B</text>
+        <text transform="translate(72 144)">d</text>
+        <text transform="translate(5.001 144)">D</text>
+        <text transform="translate(136.01 204)">c</text>
+        <text transform="translate(131.994 265)">C</text>
+    </g>
+    <g fill="red" stroke="#000">
+        <circle cx="72" cy="63" r="6"/>
+        <circle cx="216" cy="63" r="6"/>
+        <circle cx="72" cy="207" r="6"/>
+        <circle cx="216" cy="207" r="6"/>
+    </g>
+</svg>

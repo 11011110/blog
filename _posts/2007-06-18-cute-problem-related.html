@@ -4,25 +4,22 @@ title:  'Cute problem related to integer sorting'
 date:   2007-06-18 19:26:00
 tags:   [algorithms]
 ---
-<a href="http://discuss.techinterview.org/default.asp?interview.11.509354">Find the max gap among <i>n</i> integers, in linear time and space.</a>
-<br />
+<p><a href="http://discuss.techinterview.org/default.asp?interview.11.509354">Find the max gap among \(n\) integers, in linear time and space.</a></p>
 
-<br />
-The problem is stated in an ambiguous way that could be interpreted as asking for the largest difference between successive elements of the unsorted sequence, but regardless of what the original questioner wanted, what I want is the largest gap in the sequence formed by sorting the input.
-<br />
+<p>The problem is stated in an ambiguous way that could be interpreted as asking for the largest difference between successive elements of the unsorted sequence, but regardless of what the original questioner wanted, what I want is the largest gap in the sequence formed by sorting the input.</p>
 
-<br />
-Of course, since <a href="http://scholar.google.com/scholar?q=max-gap+lower-bound">max gap has an n log n lower bound</a> in certain real-number computation models, one has to use the fact that the inputs are integers and assume a reasonable set of binary integer operations. On the other hand, I haven&#x27;t said how much precision the inputs have, which makes the obvious linear-time integer sorting solution problematic. But the precision doesn&#x27;t matter! After subtracting the minimum value from all the inputs, and determining the highest nonzero bit of any remaining value, to normalize the range, one can bucket-sort the inputs by their first log<sub>2</sub> <i>n</i> + O(1) bits, and the max gap will be between the max of some bucket and the min of the next nonempty bucket.
+<p>Of course, since <a href="http://scholar.google.com/scholar?q=max-gap+lower-bound">max gap has an \(n\log n\) lower bound</a> in certain real-number computation models, one has to use the fact that the inputs are integers and assume a reasonable set of binary integer operations. On the other hand, I haven't said how much precision the inputs have, which makes the obvious linear-time integer sorting solution problematic. But the precision doesn't matter! After subtracting the minimum value from all the inputs, and determining the highest nonzero bit of any remaining value, to normalize the range, one can bucket-sort the inputs by their first \(\log^2 n + O(1)\) bits, and the max gap will be between the max of some bucket and the min of the next nonempty bucket.</p>
+
 <br /><br /><hr /><br />
 <h3>Comments:</h3>
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>None</b>: <br />
 <b>2007-06-19T05:58:25Z</b><br />
-... and of course this is known at least since Gonzalez 1975 according to Preparata and Shamos &quot;Computational Geometry&quot; page 261. Still, a real gem.
+... and of course this is known at least since Gonzalez 1975 according to Preparata and Shamos "Computational Geometry" page 261. Still, a real gem.
 </div>
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>11011110</b>: <br />
 <b>2007-06-19T06:08:33Z</b><br />
-I didn&#x27;t think this was likely to be at all new, but hadn&#x27;t taken the effort to track down the proper reference — thanks for doing so!
+I didn't think this was likely to be at all new, but hadn't taken the effort to track down the proper reference — thanks for doing so!
 </div>
 

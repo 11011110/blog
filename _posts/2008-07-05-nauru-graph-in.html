@@ -4,9 +4,9 @@ title:  'The Nauru graph in 3d'
 date:   2008-07-05 15:45:00
 tags:   [tools, graph drawing]
 ---
-<p>You remember that genus-four surface embedding of the <a href="{{site.baseurl}}{% post_url 2007-12-12-many-faces-of %}">Nauru graph</a> (the unique 3-regular 24-vertex symmetric graph) that I <a href="{{site.baseurl}}{% post_url 2007-12-17-3d-rendering-difficulty %}">couldn't figure out how to model in SketchUp</a>? This weekend I tried modeling it again. This time I wrote a <a href="http://www.ics.uci.edu/~eppstein/0xDE/F24/nauru3d.py">Python program</a> to output a <a href="http://www.ics.uci.edu/~eppstein/0xDE/F24/nauru3d.pov">POVray program</a> to generate the model. Here it is:</p>
+<p>You remember that genus-four surface embedding of the <a href="{{site.baseurl}}{% post_url 2007-12-12-many-faces-of %}">Nauru graph</a> (the unique 3-regular 24-vertex symmetric graph) that I <a href="{{site.baseurl}}{% post_url 2007-12-17-3d-rendering-difficulty %}">couldn't figure out how to model in SketchUp</a>? This weekend I tried modeling it again. This time I wrote a <a href="{{site.baseurl}}/assets/2007/nauru/nauru3d.py">Python program</a> to output a <a href="{{site.baseurl}}/assets/2007/nauru/nauru3d.pov">POVray program</a> to generate the model. Here it is:</p>
 
-<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/F24/nauru3d.png" style="border-style:solid;border-color:black;" alt="The Nauru graph in 3d" /></p>
+<p style="text-align:center"><img src="{{site.baseurl}}/assets/2007/nauru/nauru3d.png" style="border-style:solid;border-color:black;" alt="The Nauru graph in 3d" /></p>
 
 <p>The flat surface texture, the dark outline of the graph edges, and the rough points where the edges bend around sharp corners and don't quite meet correctly at the corners all add up to a vaguely cartoony appearance, despite this being a high-quality antialiased raytrace, but I kind of like it that way.</p>
 

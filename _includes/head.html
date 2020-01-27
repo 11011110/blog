@@ -12,7 +12,7 @@
     <link rel="icon" href="{{ "/assets/favicon.ico" | relative_url }}" type="image/x-icon">
 
     {% if page.nomath %}{% else %}
-    <script type="text/javascript">
+    <script>
         document.addEventListener('DOMContentLoaded', function() {
             function stripcdata(x) {
                 if (x.startsWith('% <![CDATA[') && x.endsWith('%]]>'))

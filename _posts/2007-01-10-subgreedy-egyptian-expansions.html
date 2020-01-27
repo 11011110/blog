@@ -4,36 +4,20 @@ title:  'Subgreedy Egyptian Expansions'
 date:   2007-01-10 09:46:00
 tags:   [unsolved, egyptian fractions, number theory]
 ---
-The <a href="http://en.wikipedia.org/wiki/Greedy_algorithm_for_Egyptian_fractions">greedy algorithm for Egyptian fractions</a> takes as input a fraction x/y, and repeatedly expands x/y = 1/d + x&#x27;/y&#x27;, where d=ceiling(y/x) is the smallest possible denominator such that 1/d is at most x/y. Once one reaches a remaining fraction x/y such that (in its simplest form) x = 1, the algorithm terminates.
-<br />
+<p>The <a href="http://en.wikipedia.org/wiki/Greedy_algorithm_for_Egyptian_fractions">greedy algorithm for Egyptian fractions</a> takes as input a fraction \(x/y\), and repeatedly expands \(x/y = 1/d + x'/y'\), where \(d=\lceil y/x\rceil\) is the smallest possible denominator such that \(1/d\) is at most \(x/y\). Once one reaches a remaining fraction \(x/y\) such that (in its simplest form) \(x = 1\), the algorithm terminates.</p>
 
-<br />
-Analogously, define a <i>subgreedy expansion</i> of x/y to be the result of repeatedly expanding either x/y = 1/d + x&#x27;/y&#x27; as above, or x/y = 1/(d+1) + x&#x27;/y&#x27;, where d=ceiling(y/x) as before. Also as before, the expansion terminates as soon as the remaining fraction has a unit numerator in its simplest form.
-<br />
+<p>Analogously, define a <i>subgreedy expansion</i> of \(x/y\) to be the result of repeatedly expanding either \(x/y = 1/d + x'/y'\) as above, or \(x/y = 1/(d+1) + x'/y'\), where \(d=\lceil y/x\rceil\) as before. Also as before, the expansion terminates as soon as the remaining fraction has a unit numerator in its simplest form.</p>
 
-<br />
-To keep the definitions simple we allow repeated unit fractions such as 2/3 = 1/3 + 1/3, unlike traditional Egyptian fractions which require all denominators to differ from each other. We also count 1/2 + 1/3 + ... as different from 1/3 + 1/2 + ... However, these details make little difference for the questions we pose here.
-<br />
+<p>To keep the definitions simple we allow repeated unit fractions such as \(2/3 = 1/3 + 1/3\), unlike traditional Egyptian fractions which require all denominators to differ from each other. We also count \(1/2 + 1/3 + \cdots\) as different from \(1/3 + 1/2 + \cdots\). However, these details make little difference for the questions we pose here.</p>
 
-<br />
-For instance, the greedy expansion of 3/7 is 1/3 + 1/11 + 1/231. However, after the first greedy step 3/7 = 1/3 + 2/21, a different subgreedy expansion is possible, by choosing the next fraction to be 1/12 instead of 1/11: 3/7 = 1/3 + 1/12 + 1/84. The other two possible subgreedy expansions are 1/4 + 1/6 + 1/84 and 1/4 + 1/7 + 1/28. The expansion 3/7 = 1/3 + 1/15 + 1/35 is not subgreedy, because the second denominator 15 is too much higher than the greedy choice 11, and the expansion 3/7 = 1/4 + 1/7 + 1/29 + 1/812 is not subgreedy because we must stop as soon as the remaining fraction 1/28 has a unit denominator rather than continuing to expand it as 1/28 = 1/29 + 1/812.
-<br />
+<p>For instance, the greedy expansion of \(3/7 is 1/3 + 1/11 + 1/231\). However, after the first greedy step \(3/7 = 1/3 + 2/21\), a different subgreedy expansion is possible, by choosing the next fraction to be \(1/12\) instead of \(1/11\): \(3/7 = 1/3 + 1/12 + 1/84\). The other two possible subgreedy expansions are \(1/4 + 1/6 + 1/84\) and \(1/4 + 1/7 + 1/28\). The expansion \(3/7 = 1/3 + 1/15 + 1/35\) is not subgreedy, because the second denominator \(15\) is too much higher than the greedy choice \(11\), and the expansion \(3/7 = 1/4 + 1/7 + 1/29 + 1/812\) is not subgreedy because we must stop as soon as the remaining fraction \(1/28\) has a unit denominator rather than continuing to expand it as \(1/28 = 1/29 + 1/812\).</p>
 
-<br />
-<b>Conjecture</b>. Any fraction x/y has a finite number of subgreedy expansions. More precisely for x/y &lt; 1 the number of expansions is O(y).
-<br />
+<p><b>Conjecture</b>. Any fraction \(x/y\) has a finite number of subgreedy expansions. More precisely for \(x/y \lt 1\) the number of expansions is \(O(y)\).</p>
 
-<br />
-The significance of this conjecture is that the <a href="http://en.wikipedia.org/wiki/Odd_greedy_expansion">odd greedy expansion</a> is a subgreedy expansion. It&#x27;s a well-studied open problem whether the odd greedy algorithm always terminates, but its termination would follow directly from this conjecture, because if the odd greedy algorithm didn&#x27;t terminate one could find infinitely many subgreedy expansions by running odd greedy for some number of steps then switching to greedy. However, the conjecture abstracts away the complications of oddness, leaving a perhaps simpler problem. In addition it allows the focus to be on the number of solutions rather than the length of an individual solution, which seems a more promising line of attack.
-<br />
+<p>The significance of this conjecture is that the <a href="http://en.wikipedia.org/wiki/Odd_greedy_expansion">odd greedy expansion</a> is a subgreedy expansion. It's a well-studied open problem whether the odd greedy algorithm always terminates, but its termination would follow directly from this conjecture, because if the odd greedy algorithm didn't terminate one could find infinitely many subgreedy expansions by running odd greedy for some number of steps then switching to greedy. However, the conjecture abstracts away the complications of oddness, leaving a perhaps simpler problem. In addition it allows the focus to be on the number of solutions rather than the length of an individual solution, which seems a more promising line of attack.</p>
 
-<br />
-As evidence for the conjecture, I verified computationally that there are finitely many expansions for all fractions with 0 &lt; x &lt; y ≤ 2500. For y ≤ 1000, the largest ratio of the number of expansions to y that I found was for 27/29, which has 59 expansions for a ratio of 2.0345. However fractions with significantly larger denominators still can have many expansions; for instance 207/211 has 276 expansions, 318/347 has 384 expansions, 327/373 has 423 expansions, 418/457 has 469 expansions, and 855/983 has 998 expansions.
-<br />
+<p>As evidence for the conjecture, I verified computationally that there are finitely many expansions for all fractions with \(0 \lt x \lt y ≤ 2500\). For \(y \le 1000\), the largest ratio of the number of expansions to \(y\) that I found was for \(27/29\), which has \(59\) expansions for a ratio of \(2.0345\). However fractions with significantly larger denominators still can have many expansions; for instance \(207/211\) has \(276\) expansions, \(318/347\) has \(384\) expansions, \(327/373\) has \(423\) expansions, \(418/457\) has \(469\) expansions, and \(855/983\) has \(998\) expansions.</p>
 
-<br />
-As with the odd greedy algorithm, it is not easy to calculate the denominators of all subgreedy expansions because they grow doubly exponentially with the lengths of the expansions, rapidly becoming too large for computer memory. However, the numerators of the remaining fractions x/y after each step of the expansion can be calculated more easily using modular arithmetic. Essentially, everything need be done only modulo the product of the numerators seen so far. For instance, there is a 29-term subgreedy expansion of 247/313 for which the remaining numerators after each step (in simplest form) are 247, 181, 279, 497, 561, 268, 471, 89, 171, 277, 379, 563, 929, 317, 279, 367, 709, 549, 191, 243, 379, 271, 353, 659, 1033, 53, 41, 71, 1. This pattern seems much more random than the <a href="http://www.mathpages.com/home/kmath478.htm">numerator sequences seen in known long odd greedy expansions</a>.
-<br />
+<p>As with the odd greedy algorithm, it is not easy to calculate the denominators of all subgreedy expansions because they grow doubly exponentially with the lengths of the expansions, rapidly becoming too large for computer memory. However, the numerators of the remaining fractions \(x/y\) after each step of the expansion can be calculated more easily using modular arithmetic. Essentially, everything need be done only modulo the product of the numerators seen so far. For instance, there is a \(29\)-term subgreedy expansion of \(247/313\) for which the remaining numerators after each step (in simplest form) are \(247\), \(181\), \(279\), \(497\), \(561\), \(268\), \(471\), \(89\), \(171\), \(277\), \(379\), \(563\), \(929\), \(317\), \(279\), \(367\), \(709\), \(549\), \(191\), \(243\), \(379\), \(271\), \(353\), \(659\), \(1033\), \(53\), \(41\), \(71\), \(1\). This pattern seems much more random than the <a href="http://www.mathpages.com/home/kmath478.htm">numerator sequences seen in known long odd greedy expansions</a>.</p>
 
-<br />
-The length of the longest expansion seems to grow more slowly than the square root of y, but I haven&#x27;t run enough analysis to conclude anything more definite about that.
+<p>The length of the longest expansion seems to grow more slowly than the square root of \(y\), but I haven't run enough analysis to conclude anything more definite about that.</p>

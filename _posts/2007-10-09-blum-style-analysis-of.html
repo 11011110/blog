@@ -4,7 +4,7 @@ title:  'Blum-style analysis of Quickselect'
 date:   2007-10-09 16:57:00
 tags:   [algorithms]
 ---
-<p>So you&#x27;re all familiar with <s>Avrim Blum&#x27;s</s> Motwani and Raghavan&#x27;s (?) slick analysis of <a href="http://en.wikipedia.org/wiki/Quicksort">quicksort</a> in <a href="http://en.wikipedia.org/wiki/Introduction_to_Algorithms">CLRS</a>, avoiding probabilistic recurrences and easily getting the correct constant in the leading term, right? (If not, I review it below.) What CLRS doesn&#x27;t tell you is that the same analysis works almost as well for <a href="http://en.wikipedia.org/wiki/Quickselect">quickselect</a>.</p>
+<p>So you're all familiar with <s>Avrim Blum's</s> Motwani and Raghavan's (?) slick analysis of <a href="http://en.wikipedia.org/wiki/Quicksort">quicksort</a> in <a href="http://en.wikipedia.org/wiki/Introduction_to_Algorithms">CLRS</a>, avoiding probabilistic recurrences and easily getting the correct constant in the leading term, right? (If not, I review it below.) What CLRS doesn't tell you is that the same analysis works almost as well for <a href="http://en.wikipedia.org/wiki/Quickselect">quickselect</a>.</p>
 
 <p><b>Quicksort</b></p>
 
@@ -21,7 +21,7 @@ def quicksort(L):
     return quicksort(parts[0]) + parts[1] + quicksort(parts[2])
 {% endhighlight %}
     
-<p>An equivalent view of the algorithm (though not how one would usually program it) is that, before the recursion starts, we pick a random permutation \( \sigma \); then, in each recursive call, we pick the pivot to be the value among the inputs given to that call that&#x27;s earliest in \( \sigma \). It&#x27;s not hard to see that this gives the same uniform probability that any pivot is chosen. What we want to count is the number of calls to cmp over the course of the algorithm.</p>
+<p>An equivalent view of the algorithm (though not how one would usually program it) is that, before the recursion starts, we pick a random permutation \( \sigma \); then, in each recursive call, we pick the pivot to be the value among the inputs given to that call that's earliest in \( \sigma \). It's not hard to see that this gives the same uniform probability that any pivot is chosen. What we want to count is the number of calls to cmp over the course of the algorithm.</p>
 
 <p>The expected number of comparisons is (by <a href="http://en.wikipedia.org/wiki/Expected_value#Linearity">linearity of expectation</a>) the same as the sum, over pairs of data values, of the probability that the algorithm compares that pair. If \( x_i \) denotes the value in position \( i \) of the sorted output array, and \( i \lt j \), then \( x_i \) and \( x_j \) are compared exactly when one of these two values is the earliest in \( \sigma \) in the range of values \( x_i, x_{i+1}, \dots, x_{j-1}, x_j \). For, until a pivot within this range is chosen, \( x_i \) and \( x_j \) will stay in the same subproblem as each other, but after such a pivot is chosen, they will be separated. Each item in this range is equally likely to be the first one chosen as pivot, so the probability that the first in this range is one of the two endpoints is exactly \( \tfrac{2}{j-i+1} \). Thus, using this expression as the probability that a pair is compared, the expected number of comparisons is (using the known logarithmic evaluation of <a href="http://en.wikipedia.org/wiki/Harmonic_number">harmonic numbers</a>)</p>
 \[
@@ -50,15 +50,15 @@ def quickselect(L,k):
 
 <p>The results of calling this should be the same as calling quicksort on \( L \) and then indexing the \( k \)th entry in the sorted array.</p>
 
-<p>Pretty much the same analysis as before goes through, changed only in the last part. The expected number of comparisons is the same as the sum, over pairs of data values, of the probability that the algorithm compares that pair. Values \( x_i \) and \( x_j \) are compared exactly when one of these two values is the earliest in \( \sigma \) in a certain range of values, but now the range is bigger (making the probability of comparison smaller): it&#x27;s the minimal consecutive range of values containing \( x_i \), \( x_j \), and \( x_k \). For, if a pivot is chosen between \( x_i \) and \( x_j \) then they are placed in separate subproblems and not compared, while if a pivot is chosen between both of these values and \( x_k \) then both values are eliminated and not compared. Thus, we need only replace the probability \( \tfrac{2}{j-i+1} \) in the quicksort analysis by the slightly more complicated formula</p>
+<p>Pretty much the same analysis as before goes through, changed only in the last part. The expected number of comparisons is the same as the sum, over pairs of data values, of the probability that the algorithm compares that pair. Values \( x_i \) and \( x_j \) are compared exactly when one of these two values is the earliest in \( \sigma \) in a certain range of values, but now the range is bigger (making the probability of comparison smaller): it's the minimal consecutive range of values containing \( x_i \), \( x_j \), and \( x_k \). For, if a pivot is chosen between \( x_i \) and \( x_j \) then they are placed in separate subproblems and not compared, while if a pivot is chosen between both of these values and \( x_k \) then both values are eliminated and not compared. Thus, we need only replace the probability \( \tfrac{2}{j-i+1} \) in the quicksort analysis by the slightly more complicated formula</p>
 
 \[
 \frac2{\max(j-i+1,j-k+1,k-i+1)},
 \]
 
-<p>sum over all pairs, and we&#x27;re done. The following diagram shows graphically how the sum decomposes the \( (i,j) \) plane into regions, for \( k \lt n/2 \) (the case for larger \( k \) is symmetric); along the colored lines within each region the probability given by the formula is constant.</p>
+<p>sum over all pairs, and we're done. The following diagram shows graphically how the sum decomposes the \( (i,j) \) plane into regions, for \( k \lt n/2 \) (the case for larger \( k \) is symmetric); along the colored lines within each region the probability given by the formula is constant.</p>
 
-<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/quickselsum.png" /></p>
+<p style="text-align:center"><img src="{{site.baseurl}}/assets/2007/quickselsum.svg" alt="Diagram for the decomposition of the 2d sum for the analysis of quickselect" /></p>
 
 <ul>
 <li>Within the tangerine-colored triangle on the lower left, \( i \) and \( j \) are both less than \( k \). The \( q \)th column within the triangle, through the vertical line \( i = k - q \), has approximately \( q \) entries within it, each of which is approximately \( 2/q \), and there are \( k \) columns, so the sum within this triangle is (ignoring lower order terms) \( 2k \).</li>

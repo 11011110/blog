@@ -4,57 +4,47 @@ title:  'Retrograde Analysis for Sandpiles'
 date:   2007-01-09 23:46:00
 tags:   [combinatorics]
 ---
-A little more detail on the sandpile conjecture from the Babai-Gorodezky talk (and it turns out also from their proceedings paper) that I mentioned very briefly Monday.
-<br />
+<p>A little more detail on the sandpile conjecture from the Babai–Gorodezky talk (and it turns out also from their proceedings paper) that I mentioned very briefly Monday.</p>
 
-<br />
-A <i>sandpile</i>, in the problem studied by B+G, is an n×n grid of nonnegative integers, thought of as counting grains of sand in each cell. Whenever a grid cell contains four or more sand grains, one can <i>tip it over</i> by moving four of its grains one unit in each of the four orthogonal directions. This usually results in adding one to the numbers stored in four neighboring cells, but if the tipped cell is on the boundary of the grid some grains fall off the grid and are removed from the problem.
-<br />
+<p>A <i>sandpile</i>, in the problem studied by B+G, is an \(n\times n\) grid of nonnegative integers, thought of as counting grains of sand in each cell. Whenever a grid cell contains four or more sand grains, one can <i>tip it over</i> by moving four of its grains one unit in each of the four orthogonal directions. This usually results in adding one to the numbers stored in four neighboring cells, but if the tipped cell is on the boundary of the grid some grains fall off the grid and are removed from the problem.</p>
 
-<br />
-For example:<pre>   0 3 2    1 3 2    1 4 2    2 0 3
+<p>For example:</p>
+
+<pre>   0 3 2    1 3 2    1 4 2    2 0 3
    4 3 1 =&gt; 0 4 1 =&gt; 1 0 2 =&gt; 1 1 2
-   2 2 0    3 2 0    3 3 0    3 3 0</pre>It turns out that it doesn&#x27;t matter in what order cells are tipped; once no more can be tipped, the result is always the same <i>stable configuration</i>, which we call the <i>stabilization</i> of the initial configuration; the initial configuration is a <i>predecessor</i> of its stabilization. B+G define the <i>rank</i> of a stable configuration to be the minimum number of nonzeros in any predecessor of the configuration, and conjecture that almost all stable configurations have quadratic rank; it is this conjecture that I proved.
-<br />
+   2 2 0    3 2 0    3 3 0    3 3 0</pre>
+   
+<p>It turns out that it doesn't matter in what order cells are tipped; once no more can be tipped, the result is always the same <i>stable configuration</i>, which we call the <i>stabilization</i> of the initial configuration; the initial configuration is a <i>predecessor</i> of its stabilization. B+G define the <i>rank</i> of a stable configuration to be the minimum number of nonzeros in any predecessor of the configuration, and conjecture that almost all stable configurations have quadratic rank; it is this conjecture that I proved.</p>
 
-<br />
-The idea is to look at small pieces of the stable configuration and analyze how they could have arisen. The first observation is in any pair of adjacent cells, once one of them becomes nonzero it always remains the case that at least one of them is nonzero. Therefore, if you see a pair of adjacent zeros in a stable configuration, they must always have been zero.
-<br />
+<p>The idea is to look at small pieces of the stable configuration and analyze how they could have arisen. The first observation is in any pair of adjacent cells, once one of them becomes nonzero it always remains the case that at least one of them is nonzero. Therefore, if you see a pair of adjacent zeros in a stable configuration, they must always have been zero.</p>
 
-<br />
-The second observation is that if a nonzero is surrounded by pairs of adjacent zeros, it must always have been nonzero. For, its nonzero value could not have been created by tipping an adjacent cell since we know all adjacent cells have always been zero.
-<br />
+<p>The second observation is that if a nonzero is surrounded by pairs of adjacent zeros, it must always have been nonzero. For, its nonzero value could not have been created by tipping an adjacent cell since we know all adjacent cells have always been zero.</p>
 
-<br />
-So to prove the conjecture, consider a random stable configuration (that is, a configuration in which each cell has between 0 and 3 grains, chosen uniformly and independently at random). Partition the grid into 3×3 squares; each square has probability 3/4<sup>9</sup> of having the outer eight cells empty and the inner one nonempty, so the expected number of squares of this time is Ω(n<sup>2</sup>). By a standard Chernoff bound, with high probability the number of squares of this type is near its expectation. That is, for almost all stable configurations, there are quadratically many squares in which the only nonzero is in the center. But each such square contributes one to the rank, so for almost all stable configurations the rank is quadratic.
-<br />
+<p>So to prove the conjecture, consider a random stable configuration (that is, a configuration in which each cell has between \(0\) and \(3\) grains, chosen uniformly and independently at random). Partition the grid into \(3\times 3\) squares; each square has probability \(3/4^9\) of having the outer eight cells empty and the inner one nonempty, so the expected number of squares of this time is \(\Omega(n^2)\). By a standard Chernoff bound, with high probability the number of squares of this type is near its expectation. That is, for almost all stable configurations, there are quadratically many squares in which the only nonzero is in the center. But each such square contributes one to the rank, so for almost all stable configurations the rank is quadratic.</p>
 
-<br />
-Of course, we&#x27;re undercounting the rank. A slight improvement can be formed by tiling the grid by 7-cell heptominoes, formed by overlapping two 2×2 squares, but better would be to count the number of islands of nonzeros among the non-isolated zeros of the configuration. Maybe the percolation theorists would have a better idea how to perform such a count more accurately.
-<br />
+<p>Of course, we're undercounting the rank. A slight improvement can be formed by tiling the grid by \(7\)-cell heptominoes, formed by overlapping two \(2\times 2\) squares, but better would be to count the number of islands of nonzeros among the non-isolated zeros of the configuration. Maybe the percolation theorists would have a better idea how to perform such a count more accurately.</p>
 
-<br />
-The same analysis also seems to generalize in a straightforward way to bounded-degree graphs, showing that the rank is almost always proportional to the number of vertices...
+<p>The same analysis also seems to generalize in a straightforward way to bounded-degree graphs, showing that the rank is almost always proportional to the number of vertices...</p>
+
 <br /><br /><hr /><br />
 <h3>Comments:</h3>
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>atheorist</b>: <br />
 <b>2007-01-10T23:55:16Z</b><br />
+<p>A ripple-carry register is a sandpile. Wouldn't the rank of any ripple-carry sandpile always be less than 2?</p>
 
-A ripple-carry register is a sandpile. Wouldn&#x27;t the rank of any ripple-carry sandpile always be less than 2? 
-
-Possibly the directed acyclic nature of the ripple-carry graph is what causes it to have sublinear rank?
+<p>Possibly the directed acyclic nature of the ripple-carry graph is what causes it to have sublinear rank?</p>
 </div>
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>11011110</b>: <br />
 <b>2007-01-11T01:55:23Z</b><br />
-<i>Wouldn&#x27;t the rank of any ripple-carry sandpile always be less than 2?</i>
+<p><i>Wouldn't the rank of any ripple-carry sandpile always be less than 2?</i></p>
 
-Yes, you can get to any number by adding ones to the bottommost bit, so the rank is always zero or one. I agree that directedness seems to have something to do with it; it destroys the property that 00&#x27;s must always have been 00, for instance.
+<p>Yes, you can get to any number by adding ones to the bottommost bit, so the rank is always zero or one. I agree that directedness seems to have something to do with it; it destroys the property that 00's must always have been 00, for instance.</p>
 </div>
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>11011110</b>: <br />
 <b>2007-01-11T01:58:31Z</b><br />
-PS Another result in the SODA paper was that the recurrent states of an n×n grid (that is, the stable states with infinitely many predecessors) have rank O(n). But in the carry register example all states are recurrent. So maybe that has more to do with it than directedness? I don&#x27;t know.
+<p>PS Another result in the SODA paper was that the recurrent states of an n×n grid (that is, the stable states with infinitely many predecessors) have rank O(n). But in the carry register example all states are recurrent. So maybe that has more to do with it than directedness? I don't know.</p>
 </div>
 
