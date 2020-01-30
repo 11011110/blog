@@ -15,3 +15,5 @@ This question was already considered in 2002 by Carmen Hernando, Michael E. Houl
 More, the same polygon also cannot be changed by another kind of step that Hernando et al. call a VE-flip, in which one removes three edges, two of which are attached to the same point, and replaces them by a different three edges. In effect, this step moves the point to a different part of the polygon while leaving the cyclic sequence of the other points unchanged.
 
 Hernando et al. ask whether there is any finite bound on the number of edges one may need to remove and replace in each step, in order to be able to convert any polygon into any other polygon on the same points. As far as I know, this 18-year-old problem remains open.
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/103570191718435766))
