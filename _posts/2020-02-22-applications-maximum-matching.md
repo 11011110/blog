@@ -12,3 +12,5 @@ Another application, closer to the real world, comes from a problem of matching 
 If pairwise compatibility is an equivalence relation then the matching part is trivial (it's just matching in a [disjoint union of cliques](https://en.wikipedia.org/wiki/Cluster_graph)) but this framework is flexible enough to handle arbitrary non-transitive compatibility relations.
 
 I learned of the kidney donor matching application a little too late to incorporate it into my introductory lecture on matching, so I used the other one. But next time I'll be prepared with both!
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/103705828147671738))
