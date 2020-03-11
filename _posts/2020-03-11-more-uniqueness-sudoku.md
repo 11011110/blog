@@ -23,3 +23,5 @@ This is where my program gets stuck and has to resort to more powerful deduction
 Even if the 7 in the center cell weren't there, the same reasoning would apply. Since this closed system with a non-unique solution would happen automatically if we confine the digit 3 to the same three center-block cells as the digit 5, the digit 3 must be elsewhere in the center block, which can only mean that it is in column 4. Once we make this deduction, the rest of the puzzle falls into place.
 
 My program only has built into it a couple of ad-hoc rules to prevent closed systems of four cells with two solutions, and it misses the one in this example because it involves six cells. It's making me think that I need a more general description of the possible closed systems (at least the ones involving only two digit values, like this), in order to match the deductions I'm making by hand and make my program's difficulty estimates more accurate.
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/103803219892010865))
