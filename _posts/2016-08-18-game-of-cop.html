@@ -4,11 +4,11 @@ title:  'A game of cop and robber'
 date:   2016-08-18 18:33:00
 tags:   [game theory, wikipedia, graph theory]
 ---
-<p>Suppose we play the following game. We place a bunch of hexagonal game board tiles on a table, edge-to-edge, to form our playing field. On the field, we place two game pieces, a cop (blue) and a robber (red). The cop and robber take turns, either moving to an adjacent hex or passing (staying put). The cop wins if he can end a turn on the same hex as the robber. The robber wins by evading the cop forever. Who has the advantage?</p>
+<p>Suppose we play the following game. We place a bunch of hexagonal game board tiles on a table, edge-to-edge, to form our playing field. On the field, we place two game pieces, a cop (blue) and a robber (red). The cop and robber take turns, either moving to an adjacent hex or passing (staying put). The cop wins by ending a turn on the same hex as the robber. The robber wins by evading the cop forever. Who has the advantage?</p>
 
 <p style="text-align:center"><img alt="A position in the cop-and-robber game" src="{{site.baseurl}}/assets/2016/polyhex-cop-win.svg" /></p>
 
-<p>It turns out to depend on what game board shapes are allowed. If the hexes of the board can completely surround a hole (a shape where one or more hexes could have been placed, but weren't) then the robber can win by keeping the hole between himself and the robber. But if there are no holes, then the cop always wins.</p>
+<p>It turns out to depend on what game board shapes are allowed. If the hexes of the board can completely surround a hole (a shape where one or more hexes could have been placed, but weren't) then the robber can win by keeping the hole between himself and the cop. But if there are no holes, then the cop always wins.</p>
 
 <p>Probably there is a direct strategy that shows this, but it's also possible to prove that the cop wins by using the theory of <a href="https://en.wikipedia.org/wiki/Cop-win_graph">cop-win graphs</a>, graphs in which the cop wins a generalized version of this game, with the players moving on the vertices of a graph rather than the hexes of a game board. Cop-win graphs are the same as dismantlable graphs, the graphs that can be reduced to a single vertex by repeatedly removing a vertex whose closed neighborhood is a subset of another vertex's closed neighborhood. And the adjacency graphs of systems of hexes with no holes are always dismantlable.</p>
 
