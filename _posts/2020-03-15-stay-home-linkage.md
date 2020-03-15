@@ -1,0 +1,32 @@
+---
+layout: post
+title: Stay-at-home linkage
+date: 2020-03-15 16:40
+---
+Looks like we'll all be seeing a long time at home with little to do but go online. So here is my usual update of links I recently found interesting. (I'm deliberately not linking Coronavirus information, despite its importance, both because I'm not an expert and have neither useful original opinions to contribute nor adequate filters between information and misinformation, and because I suspect that many people's mental health depends on not getting overloaded with that stuff while there's so little to do but staying isolated and avoiding becoming part of the problem).
+
+* [Claim: Any partition of a unit square into $$k$$ rectangles has an axis-parallel line crossing a subset of rectangles with area $$\Omega(1/\sqrt{k})$$](https://mathstodon.xyz/@11011110/103750490648260310)). Proof: Rectangles of area $$\lt 1/2k$$ cover less than half the square, so larger ones cover at least half. Random axis-parallel lines cross rectangles with probability proportional to perimeter, $$\Omega(1/\sqrt{k})$$ for large rectangles. Some line crosses at least the expected area: the sum over rectangles of area × probability.
+
+* Mary Beard is "Britain’s best known classicist, a Cambridge don with formidable intellect and a knack for getting people interested in all things ancient". She was also a nominee for trustee of the British Museum, but (in the latest iteration of politicians sticking their nose where it isn't wanted or needed) [was vetoed by the Tory government for opposing Brexit](https://www.theguardian.com/books/2020/mar/01/british-museum-put-mary-beard-on-the-board-despite-downing-st-veto) ([$$\mathbb{M}$$](https://mathstodon.xyz/@11011110/103756819167366612)). Result: the museum will use one of the slots it controls to appoint her despite the veto.
+
+* If you really want to see some links I posted on US politics related to the Coronavirus, a couple weeks before we realized how immediate the problem was, see [here](https://mathstodon.xyz/@11011110/103763260041701547).
+
+* [A Chinese blog on new solutions to the orchard planting problem with four trees per line](https://emathgroup.github.io/blog/orchard-planting-problem) ([$$\mathbb{M}$$](https://mathstodon.xyz/@11011110/103769258677244712), [via](http://www.mathpuzzle.com/), [see also](https://en.wikipedia.org/wiki/Orchard-planting_problem)). It seems to be quite readable through Google translate.
+
+* [When Bloom filters don't bloom](https://blog.cloudflare.com/when-bloom-filters-dont-bloom/) ([$$\mathbb{M}$$](https://mathstodon.xyz/@11011110/103774986303898695), [via](https://news.ycombinator.com/item?id=22463979)). A cautionary tale by Marek Majkowski of how when your filter doesn't fit into cache it can actually slow you down instead of speeding you up.
+
+* [Computing the area of a thin triangle](https://www.johndcook.com/blog/2020/02/27/numerical-heron/) ([$$\mathbb{M}$$](https://mathstodon.xyz/@jsiehler/103765201263486902)). How to avoid numerical accuracy issues when using Heron's formula.
+
+* [Australian cryptographer Vanessa Teague resigns from her University of Melbourne professorship](https://www.theguardian.com/australia-news/2020/mar/08/melbourne-professor-quits-after-health-department-pressures-her-over-data-breach) ([$$\mathbb{M}$$](https://mathstodon.xyz/@11011110/103785134816639696), [via](https://news.ycombinator.com/item?id=22515193)), in protest of the government refusal to notify citizens whose medical data was breached, pressure to silence her over the discovery of the breach, and efforts to prevent her from continuing to study the problem. See also [Teague's twitter post](https://twitter.com/VTeagueAus/status/1233241830994481152) and [government-university correspondence](https://www.righttoknow.org.au/request/correspondence_on_re_identificat).
+
+* [Adjacency labelling for planar graphs (and beyond)](https://arxiv.org/abs/2003.04280) ([$$\mathbb{M}$$](https://mathstodon.xyz/@patmorin/103796330052092318)). You can assign labels to the vertices of a planar graph, with $$\bigl(1+o(1)\bigr)\log_2 n$$ bits per label, and test whether vertices are adjacent by looking over their label. This implies also that planar graphs are induced subgraphs of [universal graphs](https://en.wikipedia.org/wiki/Universal_graph) of near-linear size. New preprint by Dujmović, Esperet, Joret, Gavoille, Micek, and Morin.
+
+* [Options for giving math talks and lectures online](https://terrytao.wordpress.com/2020/03/10/options-for-giving-math-talks-and-lectures-online/) ([$$\mathbb{M}$$](https://mathstodon.xyz/@11011110/103800856267350730), [see also](https://erikdemaine.org/classes/recording/)). Now that we have to. Best choices for me at this point are looking like YuJa and Zoom.
+
+* [My favorite shared to-do-list, Wunderlist, is going away](https://www.wunderlist.com/blog/join-us-on-our-new-journey/) ([$$\mathbb{M}$$](https://mathstodon.xyz/@11011110/103810987800264328)) and being replaced by a Microsoft thing requiring a Microsoft account that I don't want or have. All I want is multiple to-do lists, with or without deadlines; ability to share individual lists with other users; OS X, iPhone, and Android integration. Anyone have suggestions for replacements?
+
+* [Pair up!](https://mathstodon.xyz/@jsiehler/103810743052286323) @jsiehler posts an animation of a result from [Lambek and Moser (1959)](https://doi.org/10.4153%2FCMB-1959-013-x): the partition of the non-negative integers into [odious numbers](https://en.wikipedia.org/wiki/Odious_number) and [evil numbers](https://en.wikipedia.org/wiki/Evil_number) is uniquely determined by the property that the two subsets have equal multisets of pairwise sums.
+
+* [Brian Hayes converts to MathJax 3.0](http://bit-player.org/2020/mathjax-turns-3-0) ([$$\mathbb{M}$$](https://mathstodon.xyz/@11011110/103825076990194154), [see also](https://news.ycombinator.com/item?id=22582343)). With an interesting discussion at the end about how, after initially seeming like a hack and a patchover of the failure of more principled solutions like MathML to actually work, browser-side MathJax is starting to seem like the right way to do things after all.
+
+* [People with "and" in their names cause problems in BibTeX](https://mathstodon.xyz/@kimreece/103812593467637467). And they [actually exist](https://en.wikipedia.org/wiki/Alex_And). Probably you can work around it using extra curly brackets in the name.
