@@ -13,3 +13,5 @@ I brought my camera along, but chose to focus on the nearby brush rather than th
 ![UCI Ecological Preserve](https://www.ics.uci.edu/~eppstein/pix/uciep/6-m.jpg){: style="border-style:solid;border-color:black;"}
 
 The rest are in [my online gallery](https://www.ics.uci.edu/~eppstein/pix/uciep/index.html).
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/103869119505106054))
