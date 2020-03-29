@@ -13,3 +13,5 @@ A few photos from my garden:
 <td style="padding:10px"><a href="http://www.ics.uci.edu/~eppstein/pix/backyard/RockAndTreeShadow.html"><img src="http://www.ics.uci.edu/~eppstein/pix/backyard/RockAndTreeShadow-m.jpg" alt="Rock and tree shadow" width="350" style="border-style:solid;border-color:black;" /></a></td>
 <td style="padding:10px"><a href="http://www.ics.uci.edu/~eppstein/pix/backyard/TruffulaTree.html"><img src="http://www.ics.uci.edu/~eppstein/pix/backyard/TruffulaTree-m.jpg" alt="Truffula tree" width="252" style="border-style:solid;border-color:black;" /></a></td>
 </tr></table></div>
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/103908517022371423))
