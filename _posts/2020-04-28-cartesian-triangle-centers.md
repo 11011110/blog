@@ -28,3 +28,5 @@ But a Cartesian triangle center does not have to be determined coordinatewise in
 You can tell it's not a coordinatewise center because, in the figure above, the triangle vertices have equally spaced $$y$$-coordinates, from which it follows that all coordinatewise centers lie on the horizontal line with median $$y$$-coordinate, but this center doesn't.
 
 In general, the geometry of the plane with Cartesian instead of Euclidean transformations does not seem to have been very thoroughly explored. These examples show, I think, that there are interesting things to find there.
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/104079992540248342))
