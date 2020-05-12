@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="828" height="450">
+    <g stroke="#000" stroke-width="1.5" stroke-linejoin="bevel">
+        <path fill="#FFEBAA" d="M9 9h810v432H9z"/>
+        <path fill="#0081CD" d="M819 171L657 9 9 441z"/>
+        <path fill="#BC1E47" d="M535.5 90H738v108H535.5z"/>
+        <path fill="none" d="M657 225l-243-54"/>
+        <path fill="#FFEBAA" d="M657 9v432m162-270H9"/>
+        <path fill="#AAD5EF" d="M9 441l405-270 243 54z"/>
+    </g>
+</svg>
