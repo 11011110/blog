@@ -35,3 +35,5 @@ For more details of all this, see:
 [^sp]: Shung, J. B. & Pennock, G. R. (1994), "Geometry for trochoidal-type machines with conjugate envelopes", _Mechanism and Machine Theory_ 29 (1): 25–42, [doi:10.1016/0094-114X(94)90017-5](https://doi.org/10.1016/0094-114X(94)90017-5)
 
 [^drogosz]: Drogosz, P. (2010), "Geometry of the Wankel rotary engine", _Journal of KONES_ 17 (3): 69–74, [http://yadda.icm.edu.pl/yadda/element/bwmeta1.element.baztech-article-BUJ5-0031-0018](http://yadda.icm.edu.pl/yadda/element/bwmeta1.element.baztech-article-BUJ5-0031-0018)
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/104464015428969365))
