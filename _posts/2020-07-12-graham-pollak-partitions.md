@@ -21,3 +21,5 @@ More generally, whenever one has a partition of $$K_n$$, one can form a partitio
 This still leaves many questions. How many Graham–Pollak partitions does $$K_n$$ have, as a function of $$n$$? How complicated can they be? If we define a state space whose states are Graham–Pollak partitions, and whose state transitions correspond to re-partitioning the subgraph formed by two of the complete bipartite graphs, is it connected? Can a graph traversal of this state space list all the Graham–Pollak partitions faster than a brute force search? What does a random partition look like?
 
 It's too bad Ron's no longer around to help answer some of them.
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/104503441875881282))
