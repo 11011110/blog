@@ -19,3 +19,5 @@ We can represent a set of items or group of athletes as points in the plane, who
 There are other applications for this sort of rank aggregation beyond athletics; see the paper for details.
 
 Because CCCG is online this year, I also have a video talk prepared, but it's not yet online; I'll post a link later. In the meantime, [registration for CCCG is free this year, with a deadline of July 25](http://vga.usask.ca/cccg2020/), and enables both early access to the videos and access to the Q&A sessions with each speaker at the conference itself.
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/104526553486422823))
