@@ -27,3 +27,5 @@ So to answer the question about Euclidean polyhedra with all unfoldings convex, 
 
 The unfoldings of the dihedra have two copies of their face, mirrored across a joining edge. The tetrahedra with all-convex unfoldings are exactly the [disphenoids](https://en.wikipedia.org/wiki/Disphenoid), the tetrahedra whose four faces are congruent. They unfold either to a copy of the same face shape,
 expanded by a factor of two in each dimension and creased into four copies along its [medial triangle](https://en.wikipedia.org/wiki/Medial_triangle), or a parallelogram, creased to form a strip of four congruent triangles. Their unfoldings were discussed by Jin Akiyama in his paper "Tile-makers and semi-tile-makers" (_American Mathematical Monthly_ 2007, [doi:10.1080/00029890.2007.11920450](https://doi.org/10.1080/00029890.2007.11920450), [jstor:27642275](https://www.jstor.org/stable/27642275)), as part of a broader investigation of polyhedra whose every unfolding tiles the plane.
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/104601177683049272))
