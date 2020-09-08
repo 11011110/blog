@@ -34,3 +34,5 @@ Grünbaum's example can be realized convexly with only two edge lengths, and my 
 ![Non-convex polyhedron with congruent isosceles-triangle faces]({{site.baseurl}}/assets/2020/nwb.svg)
 
 [^2]: Grünbaum, Branko (2001), "[A convex polyhedron which is not equifacettable](https://sites.math.washington.edu/~grunbaum/Nonequifacettablesphere.pdf)", _Geombinatorics_ 10: 165–171. I don't know how to access old papers on this journal in general, but fortunately Grünbaum made his one available on his web site.
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/104794000861684463))
