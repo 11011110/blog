@@ -36,3 +36,5 @@ Each triconnected component is a minor, so it must also be (prism,$$K_{3,3}$$)-m
 [^wagner]: K. Wagner. Über eine Erweiterung des Satzes von Kuratowski. _Deutsche Mathematik_, 2:280–285, 1937.
 
 [^hall]: D. W. Hall. A note on primitive skew curves. _Bulletin of the American Mathematical Society_, 49(12):935–936, 1943. [doi:10.1090/ S0002-9904-1943-08065-2](https://doi.org/10.1090/ S0002-9904-1943-08065-2).
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/105058649830809584))
