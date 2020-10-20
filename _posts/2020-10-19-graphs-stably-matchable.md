@@ -26,3 +26,5 @@ The last one shows a sparse graph that can be represented as a graph of stably-m
 
 {: style="text-align:center"}
 ![Outerplanar graph of stably matchable pairs with a factorial number of potential preference systems]({{site.baseurl}}/assets/2020/factorial.svg)
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/105065476283424319))
