@@ -11,17 +11,17 @@ tags:   [media theory, triangulation]
 <dl>
 <dt>All triangles in a triangulation have area 1/2.</dt>
 <dd>
-<p>Proof sketch: By Pick&#x27;s formula, any larger triangle would have an interior or boundary grid point through which it could be subdivided.</p>
+<p>Proof sketch: By Pick's formula, any larger triangle would have an interior or boundary grid point through which it could be subdivided.</p>
 </dd>
 
 <dt>An edge from (a,b) to (a+x,b+y) can be part of a triangulation if and only if gcd(x,y) = 1.</dt>
 <dd>
-<p>Proof sketch: Any grid line segment passes through gcd(x,y)-1 integer points, so by Pick&#x27;s formula any triangle formed from an edge with gcd(x,y) &gt; 1 would have area greater than 1/2.</p>
+<p>Proof sketch: Any grid line segment passes through gcd(x,y)-1 integer points, so by Pick's formula any triangle formed from an edge with gcd(x,y) &gt; 1 would have area greater than 1/2.</p>
 </dd>
 
 <dt>Two triangles can be flipped if and only if they form a parallelogram.</dt>
 <dd>
-<p>Proof sketch: In one direction, it is clear that any parallelogram is flippable. In the other, suppose we have a flippable pair of triangles. We can transform the integer lattice by an appropriate transformation (derived from the extended Euclidean algorithm) so that the shared edge has length one, so that the two triangles have apexes on the two grid lines parallel to and nearest the shared edge, and so that one of the two triangles is right isosceles. Then the other triangle must also be right isosceles, forming a parallelogram, because no other point on the grid line containing the other triangle&#x27;s apex is visible to the first apex.</p>
+<p>Proof sketch: In one direction, it is clear that any parallelogram is flippable. In the other, suppose we have a flippable pair of triangles. We can transform the integer lattice by an appropriate transformation (derived from the extended Euclidean algorithm) so that the shared edge has length one, so that the two triangles have apexes on the two grid lines parallel to and nearest the shared edge, and so that one of the two triangles is right isosceles. Then the other triangle must also be right isosceles, forming a parallelogram, because no other point on the grid line containing the other triangle's apex is visible to the first apex.</p>
 </dd>
 
 <dt>For any edge of length ≥ sqrt(2), there is a unique pair of triangles that, when flipped, leads to a new edge of equal or shorter length. The length of the new edge is equal to the length of the old one if and only if the length of both edges is sqrt(2).</dt>
@@ -50,57 +50,46 @@ Then any flip of an edge with length ≠ sqrt(2) changes the content by a single
 <p>Proof sketch: Each flip changes one bit of the labeling, so the flip distance is at least equal to the Hamming distance between labels. To find a flip sequence with length at most the Hamming distance, flip the largest differing edge between the two triangulations and continue recursively with the resulting flipped triangulation.</p>
 </dd></dl>
 
-<p>Note that the number of bits in these labels, for an n×n grid, is Θ(n<sup>4</sup>), so this doesn&#x27;t contradict Emo&#x27;s argument that the flip graph has diameter Θ(n<sup>3</sup>).</p>
+<p>Note that the number of bits in these labels, for an n×n grid, is Θ(n<sup>4</sup>), so this doesn't contradict Emo's argument that the flip graph has diameter Θ(n<sup>3</sup>).</p>
 
 <br /><br /><hr /><br />
 <h3>Comments:</h3>
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>None</b>: <br />
 <b>2006-09-26T15:03:00Z</b><br />
-wow!
+<p>wow!</p>
 </div>
-<div style="margin-left: 0em; padding-top: 1em;">
-<b>canis_est</b>: <br />
-<b></b><br />
 
-</div>
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>None</b>: triangulations of grids<br />
 <b>2006-10-02T21:49:27Z</b><br />
-Are all triangulations of a grid regular?
-
-
+<p>Are all triangulations of a grid regular?</p>
 </div>
+
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>11011110</b>: <br />
 <b>2006-10-02T23:38:32Z</b><br />
-I don&#x27;t think so. In the triangulation below, the four red edges have a cyclic overlap pattern as viewed from the point in the center of the grid, which I think Edelsbrunner proved can&#x27;t happen in regular triangulations.
+<p>I don't think so. In the triangulation below, the four red edges have a cyclic overlap pattern as viewed from the point in the center of the grid, which I think Edelsbrunner proved can't happen in regular triangulations.</p>
 
-<img src="http://www.ics.uci.edu/~eppstein/0xDE/grid-nonreg-tri.png" />
+<p style="text-align:center"><img src="{{site.baseurl}}/assets/2006/grid-nonreg-tri.svg" alt="A non-regular triangulation of a 6x6 grid" /></p>
 </div>
+
 <div style="margin-left: 6em; padding-top: 1em;">
 <b>None</b>: <br />
 <b>2006-10-03T04:57:26Z</b><br />
-cool. 
+<p>cool.</p>
 
-After you posted this, I stumbled on a Zeigler paper which showed that &quot;most&quot; triangulations of an nxn grid aren&#x27;t regular.  
+<p>After you posted this, I stumbled on a Zeigler paper which showed that "most" triangulations of an nxn grid aren't regular.</p>
 
-Where are you going with this?  Higher dimensions?  
-
-
+<p>Where are you going with this?  Higher dimensions?</p>
 </div>
-<div style="margin-left: 9em; padding-top: 1em;">
-<b>11011110</b>: <br />
-<b></b><br />
 
-</div>
 <div style="margin-left: 9em; padding-top: 1em;">
 <b>11011110</b>: <br />
 <b>2006-10-03T05:01:47Z</b><br />
-<i>Where are you going with this? Higher dimensions?</i>
+<p><i>Where are you going with this? Higher dimensions?</i></p>
 
-No idea. At this point it&#x27;s just an isolated result.
+<p>No idea. At this point it's just an isolated result.</p>
 
-In higher dimensions we don&#x27;t even really understand the triangulations of the hypercube; how can we hope to generalize to grids?
+<p>In higher dimensions we don't even really understand the triangulations of the hypercube; how can we hope to generalize to grids?</p>
 </div>
-

@@ -4,36 +4,20 @@ title:  'Modular Egyptian fractions'
 date:   2006-12-12 18:21:00
 tags:   [prime numbers, egyptian fractions, number theory]
 ---
-For a prime p, define f(p) to be the minimum i such that all residues mod p can be expressed as sums of subsets of the values {1/1, 1/2, 1/3, ...1/i} mod p. We need only consider residues other than 0 and 1, since 0 is always the sum of the empty subset and 1 = 1/1. E.g.,
-<br />
+<p>For a prime \( p \), define \( f(p) \) to be the minimum \( i \) such that all residues mod \( p \) can be expressed as sums of subsets of the values \( \{\tfrac{1}{1}, \tfrac{1}{2}, \tfrac{1}{3}, \dots \tfrac{1}{i} \} \bmod p \). We need only consider residues other than \( 0 \) and \( 1 \), since \( 0 \) is always the sum of the empty subset and \( 1 = \tfrac{1}{1} \). E.g.,
 
-<br />
-f(2) = 1, because 1 = 1/1.
-<br />
+<p>\( f(2) = 1 \), because \( 1 = \tfrac{1}{1} \).</p>
 
-<br />
-f(3) = 2, because 2 = 1/2 mod 3.
-<br />
+<p>\( f(3) = 2 \), because \( 2 = \tfrac{1}{2} \bmod 3 \).</p>
 
-<br />
-f(5) = 3, because 2 = 1/3, 3 = 1/2, and 4 = 1/1 + 1/2 mod 5.
-<br />
+<p>\( f(5) = 3 \), because \( 2 = \tfrac{1}{3} \), \( 3 = \tfrac{1}{2} \), and \( 4 = \tfrac{1}{1} + \tfrac{1}{2} \bmod 5 \).</p>
 
-<br />
-f(7) = 3, because 2 = 1/2 + 1/3, 3 = 1/1 + 1/2 + 1/3, 4 = 1/2, 5 = 1/3, and 6 = 1/1 + 1/3 mod 7.
-<br />
+<p>\( f(7) = 3 \), because \( 2 = \tfrac{1}{2} + \tfrac{1}{3} \), \( 3 = \tfrac{1}{1} + \tfrac{1}{2} + \tfrac{1}{3} \), \( 4 = \tfrac{1}{2} \), \( 5 = \tfrac{1}{3} \), and \( 6 = \tfrac{1}{1} + \tfrac{1}{3} \bmod 7 \).</p>
 
-<br />
-f(11) = 4, because 2 = 1/2 + 1/3 + 1/4, 3 = 1/4, 4 = 1/3, 5 = 1/1 + 1/3, 6 = 1/2, 7 = 1/1 + 1/2, 8 = 1/1 + 1/3 + 1/4, 9 = 1/2 + 1/4, and 10 = 1/2 + 1/3 mod 11.
-<br />
+<p>\( f(11) = 4 \), because \( 2 = \tfrac{1}{2} + \tfrac{1}{3} + \tfrac{1}{4} \), \( 3 = \tfrac{1}{4} \), \( 4 = \tfrac{1}{3} \), \( 5 = \tfrac{1}{1} + \tfrac{1}{3} \), \( 6 = \tfrac{1}{2} \), \( 7 = \tfrac{1}{1} + \tfrac{1}{2} \), \( 8 = \tfrac{1}{1} + \tfrac{1}{3} + \tfrac{1}{4} \), \( 9 = \tfrac{1}{2} + \tfrac{1}{4} \), and \( 10 = \tfrac{1}{2} + \tfrac{1}{3} \bmod 11 \).</p>
 
-<br />
-f(13) = 5. 2 = 1/2 + 1/5 (mod 13) and 12 = 1/1 + 1/2 + 1/3 + 1/5 (mod 13); all other residues can be expressed as sums of subsets of {1/1, 1/2, 1/3, 1/4}.
-<br />
+<p>\( f(13) = 5 \). \( 2 = \tfrac{1}{2} + \tfrac{1}{5} \bmod 13 \) and \( 12 = \tfrac{1}{1} + \tfrac{1}{2} + \tfrac{1}{3} + \tfrac{1}{5} \bmod 13 \); all other residues can be expressed as sums of subsets of \( \{\tfrac{1}{1}, \tfrac{1}{2}, \tfrac{1}{3}, \tfrac{1}{4} \} \).</p>
 
-<br />
-How quickly does f(p) grow with p? It must be at least log<sub>2</sub>p else there would not be enough different subsets to cover all the residues. It seems plausible to me (e.g. using an argument in which we replace each unit fraction by a random variable) that f(p) = Θ(log p).
-<br />
+<p>How quickly does \( f(p) \) grow with \( p \)? It must be at least \( \log_2 p \) else there would not be enough different subsets to cover all the residues. It seems plausible to me (e.g. using an argument in which we replace each unit fraction by a random variable) that \( f(p) = \Theta(\log p) \).</p>
 
-<br />
-The relevance of this is for bounding the maximum denominator of an Egyptian fraction as a function of its denominator. For each p, some fraction x/p requires a maximum denominator of at least f(p)p in any Egyptian fraction expansion, as can be seen by considering only the terms in the expansion in which the denominator is a multiple of p. The simple lower bound for f(p) above thus leads to a lower bound of Ω(y log y) on the maximum denominator in an expansion of x/y, for infinitely many pairs x, y. On the other hand, it seems plausible (although not completely obvious due to issues with repeated fractions and overlarge expansions) that something like the prime-multiples method of my Egyptian fraction code can expand any fraction x/y using max denominator f(p)y, where p is the prime factor of y with the largest value of f(p). This approach might have some hope of improving the <a href="http://www.ics.uci.edu/~eppstein/numth/egypt/refs.html#TY90">Tenenbaum-Yokota</a> O(y log^2 y / log log y) upper bound on the max denominator.
+<p>The relevance of this is for bounding the maximum denominator of an Egyptian fraction as a function of its denominator. For each \( p \), some fraction \( x/p \) requires a maximum denominator of at least \( f(p)p \) in any Egyptian fraction expansion, as can be seen by considering only the terms in the expansion in which the denominator is a multiple of \( p \). The simple lower bound for \( f(p) \) above thus leads to a lower bound of \( \Omega(y log y) \) on the maximum denominator in an expansion of \( x/y \), for infinitely many pairs \( x, y \). On the other hand, it seems plausible (although not completely obvious due to issues with repeated fractions and overlarge expansions) that something like the prime-multiples method of my Egyptian fraction code can expand any fraction \( x/y \) using max denominator \( f(p)y \), where \( p \) is the prime factor of \( y \) with the largest value of \( f(p) \). This approach might have some hope of improving the <a href="http://www.ics.uci.edu/~eppstein/numth/egypt/refs.html#TY90">Tenenbaum–Yokota</a> \( O(y \log^2 y / \log\log y) \) upper bound on the max denominator.</p>

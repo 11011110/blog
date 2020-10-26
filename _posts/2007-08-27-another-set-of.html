@@ -8,7 +8,7 @@ tags:   [graph drawing, talks, papers]
 
 <p>I've written about this here before, I think, but the problem we were studying is one of graph drawing: if one has drawn a graph, in such a way that the edges of the graph are represented by curves in the plane, it is a standard graphical convention (sometimes called "casing") to draw a crossing between two edges by breaking one of the edges as it passes through the crossing, making it look like one of the edges goes over and one of the edges goes under. See, e.g., <a href="{{site.baseurl}}{% post_url 2006-10-13-another-gratuitously-nonplanar-drawing %}">this drawing</a> of the flip graph of a hexagon, where I drew four crossings with this convention. A convenient way to achieve this effect in a drawing program is to draw two copies of the upper edge, a thick white one and a thin colored one on top of it — the thick white copy provides a margin around the edge that produces the breaking effect whenever it overlies another edge.</p>
 
-<p style="text-align:center"><a href="{{site.baseurl}}{% post_url 2006-10-13-another-gratuitously-nonplanar-drawing %}"><img src="http://www.ics.uci.edu/~eppstein/0xDE/fg6.png" alt="flip graph of a hexagon" /></a></p>
+<p style="text-align:center"><a href="{{site.baseurl}}{% post_url 2006-10-13-another-gratuitously-nonplanar-drawing %}"><img src="{{site.baseurl}}/assets/2006/fg6.png" alt="flip graph of a hexagon" /></a></p>
 
 <p>But how do we choose which edge to go under and which to go over? In the flip graph example, the graph is the skeleton of a polyhedron and I could use that three-dimensional information to make the decisions, but for other graphs the choice is less obvious.</p>
 

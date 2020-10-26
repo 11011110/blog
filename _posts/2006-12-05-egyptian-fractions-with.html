@@ -4,128 +4,119 @@ title:  'Egyptian fractions with small denominators'
 date:   2006-12-05 08:30:00
 tags:   [prime numbers, egyptian fractions, number theory]
 ---
-The Egyptians expanded 2/101 = 1/101 + 1/202 + 1/303 + 1/606. That expansion is not the shortest (1/51 + 1/5151) but it has the smallest possible maximum denominator (606) of any expansion as a sum of distinct unit fractions. The expansion 2/n = 1/n + 1/2n + 1/3n + 1/6n works for all n; for how many other values of n does it produce the optimal result?
-<br />
+<p>The Egyptians expanded \( 2/101 = 1/101 + 1/202 + 1/303 + 1/606 \). That expansion is not the shortest \(( 1/51 + 1/5151 )\) but it has the smallest possible maximum denominator \(( 606 )\) of any expansion as a sum of distinct unit fractions. The expansion \( 2/n = 1/n + 1/2n + 1/3n + 1/6n \) works for all n; for how many other values of n does it produce the optimal result?</p>
 
-<br />
-Answer: infinitely many, by the following theorem.
-<br />
+<p>Answer: infinitely many, by the following theorem.</p>
 
-<br />
-Theorem. Let D(q) denote the smallest d such that q has an Egyptian fraction with maximum denominator d, and let k be a fixed integer. Then for all but finitely many prime numbers p, D(k/p) = p D(k).
-<br />
+<p>Theorem. Let \( D(q) \) denote the smallest \( d \) such that \( q \) has an Egyptian fraction with maximum denominator \( d \), and let \( k \) be a fixed integer. Then for all but finitely many prime numbers \( p \), \( D(k/p) = p D(k) \).</p>
 
-<br />
-Proof: First note that D(k/p) ≤ p D(k), for we can divide each term of an expansion of k by p. Consider all fractions of the form 1/(a_i p) in the optimal expansion of k/p, and let x = k - sum 1/a_i. Then either x = 0, in which case we have an expansion of k showing that D(k/p) = p D(k), or x is a rational y/z with p dividing y. But only finitely many such rationals can be formed from the finitely many choices of a_i up to D(k)-1. QED.
-<br />
+<p>Proof: First note that \( D(k/p) \le p D(k) \), for we can divide each term of an expansion of \( k \) by \( p \). Consider all fractions of the form \( 1/(a_i p) \) in the optimal expansion of \( k/p \), and let \( x = k - \sum 1/a_i \). Then either \( x = 0 \), in which case we have an expansion of \( k \) showing that \( D(k/p) = p D(k) \), or \( x \) is a rational \( y/z \) with \( p \) dividing \( y \). But only finitely many such rationals can be formed from the finitely many choices of \( a_i \) up to \( D(k)-1 \). QED.</p>
 
-<br />
-Testing all expressions of the form 2 - sum 1/a_i for a_i ≤ 5 shows that the only possible odd primes with 2/n expansions having denominators better than 6n are 2, 3, 5, 7, 11, 13, 17, 29, 31, 43, and 73. Here are some better expansions for these numbers:
-<br />
+<p>Testing all expressions of the form \( 2 - \sum 1/a_i \) for \( a_i \le 5 \) shows that the only possible odd primes with \( 2/n \) expansions having denominators better than \( 6n \) are \( 2 \), \( 3\), \( 5\), \( 7\), \( 11\), \( 13\), \( 17\), \( 29\), \( 31\), \( 43\), and  \( 73 \). Here are some better expansions for these numbers:
 
-<br />
-2/3 = 1/2 + 1/6
-<br />
-2/5 = 1/3 + 1/15
-<br />
-2/7 = 1/4 + 1/28 = 1/6 + 1/14 + 1/21
-<br />
-2/13 = 1/10 + 1/26 + 1/65
-<br />
-2/17 = 1/12 + 1/51 + 1/68
-<br />
-2/29 = 1/30 + 1/58 + 1/87 + 1/145
-<br />
-2/31 = 1/20 + 1/124 + 1/155
-<br />
-2/43 = 1/60 + 1/86 + 1/129 + 1/172 + 1/215
-<br />
-2/73 = 1/60 + 1/219 + 1/292 + 1/365
-<br />
+\[ 2/3 = 1/2 + 1/6 \]
 
-<br />
-For infinitely many composites, the expansion 2/pq = 1/pr + 1/qr (r = (p+q)/2)) has a better denominator than 6n. But this doesn&#x27;t work for all composites, and sometimes when it doesn&#x27;t work other expansions do (e.g., 2/4009 = 1/3990 + 1/7385 + 1/8862). So it remains unclear how easy it is to determine which composite n have expansions for 2/n with denominator better than 6n.
+\[ 2/5 = 1/3 + 1/15 \]
+
+\[ 2/7 = 1/4 + 1/28 = 1/6 + 1/14 + 1/21 \]
+
+\[ 2/13 = 1/10 + 1/26 + 1/65 \]
+
+\[ 2/17 = 1/12 + 1/51 + 1/68 \]
+
+\[ 2/29 = 1/30 + 1/58 + 1/87 + 1/145 \]
+
+\[ 2/31 = 1/20 + 1/124 + 1/155 \]
+
+\[ 2/43 = 1/60 + 1/86 + 1/129 + 1/172 + 1/215 \]
+
+\[ 2/73 = 1/60 + 1/219 + 1/292 + 1/365 \]
+
+<p>For infinitely many composites, the expansion \( 2/pq = 1/pr + 1/qr \ ( r = (p+q)/2) )\) has a better denominator than \( 6n \). But this doesn't work for all composites, and sometimes when it doesn't work other expansions do (e.g., \( 2/4009 = 1/3990 + 1/7385 + 1/8862 \)). So it remains unclear how easy it is to determine which composite \( n \) have expansions for \( 2/n \) with denominator better than \( 6n \).</p>
+
 <br /><br /><hr /><br />
 <h3>Comments:</h3>
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>None</b>: Hultsch-Bruins and its optimal series<br />
 <b>2006-12-05T22:26:32Z</b><br />
-Using H-B, and citing the 2/7, 2/13, 2/16, 2/28, 2/43 and 2/73 cases,
+<p>Using H-B, and citing the 2/7, 2/13, 2/16, 2/28, 2/43 and 2/73 cases,</p>
 
-1. Let me begin with 2/7.
+<ol>
+<li><p>Let me begin with 2/7.</p>
 
-Find A between 7/2 &lt; A &lt; 7. 4 and 6 are the alternatives or
+<p>Find A between 7/2 &lt; A &lt; 7. 4 and 6 are the alternatives or</p>
 
-a. 2/7 = 1/4 + 1/28 or
+<ol type="a">
+<li><p>2/7 = 1/4 + 1/28 or</p></li>
+<li><p>2/7 = 1/6 + 1/42.</p></li>
+</ol>
 
-b. 2/7 = 1/6 + 1/42. 
+<p>Between A  =4 and A =6, A = 4 is better, hence optimal</p></li>
 
-Between A  =4 and A =6, A = 4 is better, hence optimal
+<li><p>2/13, A = 8, 10, 12, or</p>
 
-2. 2/13, A = 8, 10, 12, or
+<ol type="a">
+<li><p>2/13 = 1/8 + (2 + 1)/(8*13) = 8' 52' 104'</p></li>
+<li><p>2/13 = 1/10 + (5 + 2)/(10*13) = 10' 26' 65'</p></li>
+<li><p>2/13 = 1/12 + (6 + 3 + 2)/(12*13) = 12' 26' 52' 78'</p></li>
+</ol>
+</ol>
 
-a. 2/13 = 1/8 + (2 + 1)/(8*13) = 8&#x27; 52&#x27; 104&#x27;
+<p>Agreed, 10' 26' 65' is better, hence optimal</p>
 
-b. 2/13 = 1/10 + (5 + 2)/(10*13) = 10&#x27; 26&#x27; 65&#x27;
+<p>I'll proceed in this manner, and request your comments.</p>
 
-c. 2/13 = 1/12 + (6 + 3 + 2)/(12*13) = 12&#x27; 26&#x27; 52&#x27; 78&#x27;
+<p>Best Regards,</p>
 
-Agreed, 10&#x27; 26&#x27; 65&#x27; is better, hence optimal
-
-
-I&#x27;ll proceed in this manner, and request your comments.
-
-Best Regards,
-
-Milo Gardner
-  
-  
+<p>Milo Gardner</p>
 </div>
+
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>11011110</b>: Re: Hultsch-Bruins and its optimal series
 <b>2006-12-05T23:46:02Z</b>
-Thank you for providing such a perfect illustration of why I am so mistrustful of the Hultsch-Bruins analysis. It provides an accurate description of the expansions themselves, but it is a very bad description of how these expansions were found. Specifically, I did not use H-B or anything resembling it to find the expansions I posted here.
+<p>Thank you for providing such a perfect illustration of why I am so mistrustful of the Hultsch-Bruins analysis. It provides an accurate description of the expansions themselves, but it is a very bad description of how these expansions were found. Specifically, I did not use H-B or anything resembling it to find the expansions I posted here.</p>
 
-To be clear: H-B refers to expanding 2/p by choosing a smooth number A in the range p/2 &lt; A &lt; p, expanding 2/p = 1/A + (2A-p)/Ap, finding a representation of 2A-p as a sum of divisors of A, and expanding (2A-p) as a sum of unit fractions of the form d/Ap where d is one of the divisors in the sum. <a href="http://www.ics.uci.edu/~eppstein/numth/egypt/egypt.py">The program I used to find the expansions here</a> does not implement this method per se, but it does implement a very similar method in which one can choose A and find a representation of 2A as a sum of divisors of Ap: the command line for this is &quot;egypt 2/p divisor --multiplier=A&quot;. Special cases of this method are also provided in which A is a factorial or a power of two. I did not use this method, nor any method that starts by choosing a round number A.
+<p>To be clear: H-B refers to expanding 2/p by choosing a smooth number A in the range p/2 &lt; A &lt; p, expanding 2/p = 1/A + (2A-p)/Ap, finding a representation of 2A-p as a sum of divisors of A, and expanding (2A-p) as a sum of unit fractions of the form d/Ap where d is one of the divisors in the sum. <a href="http://www.ics.uci.edu/~eppstein/numth/egypt/egypt.py">The program I used to find the expansions here</a> does not implement this method per se, but it does implement a very similar method in which one can choose A and find a representation of 2A as a sum of divisors of Ap: the command line for this is &quot;egypt 2/p divisor --multiplier=A&quot;. Special cases of this method are also provided in which A is a factorial or a power of two. I did not use this method, nor any method that starts by choosing a round number A.</p>
 
-Rather, the method I used for most of these expansions was the &quot;prime-multiples&quot; method implemented in my program. This method expands a number a/p (where p is prime) by exhaustively trying all combinations of unit fractions of the form 1/(i*p) for small integers i. That is, it tries 1/p, 1/2p, 1/p+1/2p, 1/3p, 1/p+1/3p, 1/2p+1/3p, 1/p+1/2p+1/3p, etc., until it finds a combination such that the remaining fraction left after subtracting these unit fractions is of the form x/y where p does not divide y. It then switches automatically (if necessary) to another method to expand x/y, but that was not necessary for the expansions shown here, as in each case it turned out that x=1. This method is sufficient to find almost all the expansions listed here without any additional human intervention. That is, if I tell my program to use the prime multiples method, without any additional numeric arguments or other guidance, it will find these expansions.
+<p>Rather, the method I used for most of these expansions was the &quot;prime-multiples&quot; method implemented in my program. This method expands a number a/p (where p is prime) by exhaustively trying all combinations of unit fractions of the form 1/(i*p) for small integers i. That is, it tries 1/p, 1/2p, 1/p+1/2p, 1/3p, 1/p+1/3p, 1/2p+1/3p, 1/p+1/2p+1/3p, etc., until it finds a combination such that the remaining fraction left after subtracting these unit fractions is of the form x/y where p does not divide y. It then switches automatically (if necessary) to another method to expand x/y, but that was not necessary for the expansions shown here, as in each case it turned out that x=1. This method is sufficient to find almost all the expansions listed here without any additional human intervention. That is, if I tell my program to use the prime multiples method, without any additional numeric arguments or other guidance, it will find these expansions.</p>
 
-The one exceptional expansion in the listing here is 2/7 = 1/4 + 1/28, which does not have the optimal denominator but is shorter than the optimal denominator expansion 1/6 + 1/14 + 1/21. To find that expansion, I used an exhaustive backtracking search technique to list all the possible expansions for 2/7 that have maximum denominator 28, and chose by hand the two best of these as shown in the post. The same backtracking method could have been used to find any other expansion in this table; the result would have been the same, only the computation time would have been longer.
+<p>The one exceptional expansion in the listing here is 2/7 = 1/4 + 1/28, which does not have the optimal denominator but is shorter than the optimal denominator expansion 1/6 + 1/14 + 1/21. To find that expansion, I used an exhaustive backtracking search technique to list all the possible expansions for 2/7 that have maximum denominator 28, and chose by hand the two best of these as shown in the post. The same backtracking method could have been used to find any other expansion in this table; the result would have been the same, only the computation time would have been longer.</p>
 
-So you see, a description of a pattern in a table of calculations is not enough to infer how those calculations were made.
+<p>So you see, a description of a pattern in a table of calculations is not enough to infer how those calculations were made.</p>
 </div>
+
 <div style="margin-left: 6em; padding-top: 1em;">
 <b>None</b>: Re: Hultsch-Bruins and its optimal series
 <b>2006-12-06T12:49:41Z</b>
-David, 
+<p>David,</p>
 
-Thank you for the extended conversions and conversation. Modern methods do find better conversions of many rational numbers than scribes like Ahmes cited. However, I am not trying to compete with Ahmes or the EMLR student scribe. My work on and in this subject stresses my training as a cryptanalyst, trying to determine in advance, and after the fact, what method or methods that scribed used and would have used in a particular case, given the scribe&#x27;s knowledge.
+<p>Thank you for the extended conversions and conversation. Modern methods do find better conversions of many rational numbers than scribes like Ahmes cited. However, I am not trying to compete with Ahmes or the EMLR student scribe. My work on and in this subject stresses my training as a cryptanalyst, trying to determine in advance, and after the fact, what method or methods that scribed used and would have used in a particular case, given the scribe's knowledge.</p>
 
-The Coptic era Akhmim P, as Kevin Brown and I posted on MAD discussing its
-n/17 and n/19 table makes an important point. By 400 AD scribes were able to find many more &#x27;optimal&#x27; series than Ahmes or any of the Egyptian scribes would have cited. By 400 AD the finding of final Egyptian fraction series was possibly a recreational activity. Again, my work is to fairly read the historical data by working backwards, and then cite the methods that may have been used.
+<p>The Coptic era Akhmim P, as Kevin Brown and I posted on MAD discussing its
+n/17 and n/19 table makes an important point. By 400 AD scribes were able to find many more 'optimal' series than Ahmes or any of the Egyptian scribes would have cited. By 400 AD the finding of final Egyptian fraction series was possibly a recreational activity. Again, my work is to fairly read the historical data by working backwards, and then cite the methods that may have been used.</p>
 
-The same can be said of Fibonacci and 1202 AD data. Clearly, if you can read German (and mine is weak, having spent 1957-59 in Bavaria) Heinz Lueneburg&#x27;s 1993 book in the Liber Abbaci (Heinz&#x27;s spelling) you may see that the search for first partitions reached 2/p, and that the methods used looked more that indetermimate equation&#x27;s use of parameter K&#x27;s, than anything that looked Middle Kingdom Egyptian. Heinz is also a working math professor, at the U. of Kasierslatern, or K-town, as us GI&#x27;s used to call it, so his work should not be overlooked.
+<p>The same can be said of Fibonacci and 1202 AD data. Clearly, if you can read German (and mine is weak, having spent 1957-59 in Bavaria) Heinz Lueneburg's 1993 book in the Liber Abbaci (Heinz's spelling) you may see that the search for first partitions reached 2/p, and that the methods used looked more that indetermimate equation's use of parameter K's, than anything that looked Middle Kingdom Egyptian. Heinz is also a working math professor, at the U. of Kasierslatern, or K-town, as us GI's used to call it, so his work should not be overlooked.</p>
 
-Milo
-
+<p>Milo</p>
 </div>
+
 <div style="margin-left: 9em; padding-top: 1em;">
 <b>11011110</b>: Re: Hultsch-Bruins and its optimal series
 <b>2006-12-06T18:10:32Z</b>
-<i>My work on and in this subject stresses my training as a cryptanalyst, trying to determine in advance, and after the fact, what method or methods that scribed used and would have used in a particular case, given the scribe&#x27;s knowledge.</i>
+<p><i>My work on and in this subject stresses my training as a cryptanalyst, trying to determine in advance, and after the fact, what method or methods that scribed used and would have used in a particular case, given the scribe's knowledge.</i></p>
 
-Sure. But my point is: if it&#x27;s not possible to tell just from the list in this post what method I used yesterday to construct the expansions in the list, when the list was constructed yesterday and you have access to a lot of extra information (like the program I used), how can you hope to tell from similar lists what methods Ahmes used several thousand years ago?
+<p>Sure. But my point is: if it's not possible to tell just from the list in this post what method I used yesterday to construct the expansions in the list, when the list was constructed yesterday and you have access to a lot of extra information (like the program I used), how can you hope to tell from similar lists what methods Ahmes used several thousand years ago?</p>
 </div>
+
 <div style="margin-left: 12em; padding-top: 1em;">
 <b>None</b>: Re: Hultsch-Bruins and its optimal series
 <b>2006-12-06T21:08:39Z</b>
-David,
+<p>David,</p>
 
-I could tell that H-B was not used for two of your conversions that exceed the range p/2 &lt; A &lt; p. Only Fibonacci allowed 2p first partitions. Again, jump over to MAD and read the n/17 and n/19 tables, as Kevin Brown and I worked out several years ago. Working backwards on five classes of Egyptian fraction series, as 2/p, 2/pq, (2/35, 2/91), 2/95 and 2/101 do require the use of analytical thinking. I just happened to use my military training of almost 50 years ago to decrease the difficulty of the task.
+<p>I could tell that H-B was not used for two of your conversions that exceed the range p/2 &lt; A &lt; p. Only Fibonacci allowed 2p first partitions. Again, jump over to MAD and read the n/17 and n/19 tables, as Kevin Brown and I worked out several years ago. Working backwards on five classes of Egyptian fraction series, as 2/p, 2/pq, (2/35, 2/91), 2/95 and 2/101 do require the use of analytical thinking. I just happened to use my military training of almost 50 years ago to decrease the difficulty of the task.</p>
 
-Best Regards,
+<p>Best Regards,</p>
 
-Milo Gardner
-
+<p>Milo Gardner</p>
 </div>
 

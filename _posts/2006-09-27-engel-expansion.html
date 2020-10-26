@@ -4,36 +4,59 @@ title:  'Engel expansion'
 date:   2006-09-27 22:53:00
 tags:   [egyptian fractions, python, number theory]
 ---
-<a href="http://en.wikipedia.org/wiki/Engel_expansion">Engel expansion</a>! How did I overlook this in my previous investigations of how to generate Egyptian fractions?  As I just finished including in that article, this technique was apparently known to Fibonacci, who also investigated the more well known greedy method for Egyptian fractions.
-<br />
+<p><a href="http://en.wikipedia.org/wiki/Engel_expansion">Engel expansion</a>! How did I overlook this in my previous investigations of how to generate Egyptian fractions?  As I just finished including in that article, this technique was apparently known to Fibonacci, who also investigated the more well known greedy method for Egyptian fractions.</p>
 
-<br />
-Anyway, my <a href="http://www.ics.uci.edu/~eppstein/numth/egypt/egypt.py">Egyptian fraction Python code</a> now knows how to generate expansions of this type. If you run, e.g.,<blockquote>egypt.py 7/17 engel</blockquote>you will get the expansion<blockquote>1/3 + 1/15 + 1/90 + 1/1530</blockquote>where each denominator is a multiple of the previous one: 3, 3×5, 3×5×6, 3×5×6×17. By default it generates the standard expansion in which these multipliers 3, 5, 6, 17 are nondecreasing, but it can also generate infinitely many other expansions without this nondecreasing property, so the -a option should only be used in conjunction with -d or -l.
+<p>Anyway, my <a href="http://www.ics.uci.edu/~eppstein/numth/egypt/egypt.py">Egyptian fraction Python code</a> now knows how to generate expansions of this type. If you run, e.g.,</p>
+
+{% highlight shell %}
+egypt.py 7/17 engel
+{% endhighlight %}
+
+<p>you will get the expansion</p>
+
+{% highlight shell %}
+1/3 + 1/15 + 1/90 + 1/1530
+{% endhighlight %}
+
+<p>where each denominator is a multiple of the previous one: \( 3 \), \( 3\times 5 \), \( 3\times 5\times 6 \), \( 3\times 5\times 6\times 17 \). By default it generates the standard expansion in which these multipliers \( 3, 5, 6, 17 \) are nondecreasing, but it can also generate infinitely many other expansions without this nondecreasing property, so the -a option should only be used in conjunction with -d or -l.</p>
+
 <br /><br /><hr /><br />
 <h3>Comments:</h3>
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>leonardo_m</b>: <br />
 <b>2006-09-28T11:43:33Z</b><br />
-Nice. Few notes to the code:
+<p>Nice. Few notes to the code:</p>
 
-When the user doesn&#x27;t give any input, the program can show a tiny usage demo, that shows what the module is capable of (like your  7/17 engel  example).
+<p>When the user doesn't give any input, the program can show a tiny usage demo, that shows what the module is capable of (like your  7/17 engel  example).</p>
 
-In singleSolution function the final return seems useless.
+<p>In singleSolution function the final return seems useless.</p>
 
-When Python 2.5 will be more widespread, the itemCounts function can be written like:
+<p>When Python 2.5 will be more widespread, the itemCounts function can be written like:</p>
+
+{% highlight python %}
 from collections import defaultdict
 items = defaultdict(int)
 for x in S: items[x] += 1
-But now lot of people don&#x27;t have Python 2.5 so your code is better.
+{% endhighlight %}
 
-This line:
+<p>But now lot of people don't have Python 2.5 so your code is better.</p>
+
+<p>This line:</p>
+
+{% highlight python %}
 yield reduce(operator.mul,[x**i for x,i in dd.items()],1)
-Is probably better like this:
+{% endhighlight %}
+
+<p>Is probably better like this:</p>
+
+{% highlight python %}
 yield reduce(mul, (x**i for x,i in dd.iteritems()), 1)
+{% endhighlight %}
 </div>
+
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>11011110</b>: <br />
 <b>2006-09-28T14:00:14Z</b><br />
-Thanks. Note that I&#x27;m still running Python 2.3, so I can&#x27;t use the comprehension without brackets.
+<p>Thanks. Note that I'm still running Python 2.3, so I can't use the comprehension without brackets.</p>
 </div>
 
