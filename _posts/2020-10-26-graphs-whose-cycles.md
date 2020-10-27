@@ -18,4 +18,4 @@ The six edges of the two four-vertex paths between the pole vertices include an 
 
 Therefore the graphs constructed in this way have arbitrarily large girth, have all cycles touching, and contain four vertex-disjoint cycles. It also has feedback vertex number four. The MathOverflow question asks whether the four vertex-disjoint cycles can be replaced by an arbitrarily large number of cycles, or equivalently whether the feedback vertex number can be increased, but at this point I don't even know whether either number can be replaced by five.
 
-([Discuss on Mastodon](https://mathstodon.xyz/@11011110/105103682009797639))
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/105103937279022043))
