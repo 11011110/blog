@@ -35,3 +35,5 @@ It's also possible to form closed curves with only one tangent line of each slop
 ![A curved five-point star with one tangent line in each direction]({{site.baseurl}}/assets/2020/cuspy-star.svg)
 
 What happens when the rotating line segment is too short, so that it doesn't reach one or more of the cusps? I'm not sure in general, but for the deltoid the result can be the same deltoid (for which the rotating line segment is one possibility for Goldberg's "rotor within a rotor", although the rotor he describes is larger) or another similar but smaller deltoid inside it. See the mathcurve link for details.
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/105144037558097550))
