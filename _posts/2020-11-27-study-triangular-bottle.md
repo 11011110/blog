@@ -15,3 +15,5 @@ We acquired this small blue glass bottle nearly 15 years ago, as a prop for a Ha
 </tr></table></div>
 
 As you can see, it has an unusual triangular cross-section. The final image, with a Reuleaux triangle overlaid, shows that the curvature of this cross-section is less than a Reuleaux triangle would have. I don't think its outline was chosen with any particular mathematics in mind, but only (as so many other curved triangles) to make an interesting shape.
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/105286711285736529))
