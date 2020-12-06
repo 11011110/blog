@@ -49,3 +49,5 @@ Sadly, the same argument doesn't work for improper three-colorings, because they
 
 {: style="text-align:center"}
 ![Improper 3-coloring of grid squares so that 2-colored regions are all small]({{site.baseurl}}/assets/2020/plaid2.svg)
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/105335210914176059))
