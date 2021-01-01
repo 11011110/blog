@@ -34,7 +34,7 @@ date: 2020-12-31 21:32
 
   Relatedly, [IEEE relents on corrections to conference papers](https://statmodeling.stat.columbia.edu/2020/12/23/update-on-ieees-refusal-to-issue-corrections/).
 
-* [What winter looks like in different parts of the world](https://mathstodon.xyz/@christianp/105465163493715434). Long photo-thread responding to a request by Christian Lawson-Perfect's 3-year-old. Here's [my contribution](https://mathstodon.xyz/@11011110/105466532506211765), with prickly pairs and the distant snow-topped San Gabriel mountains in Southern California:
+* [What winter looks like in different parts of the world](https://mathstodon.xyz/@christianp/105465163493715434). Long photo-thread responding to a request by Christian Lawson-Perfect's 3-year-old. Here's [my contribution](https://mathstodon.xyz/@11011110/105466532506211765), with prickly pears and the distant snow-topped San Gabriel mountains in Southern California:
 
   {: style="text-align:center"}
 ![Coastal prickly pear (opuntia littoralis) with visible fruit in the University of California, Irvine Ecological Preserve, looking north towards the San Gabriel Mountains, covered in snow from a recent storm](https://www.ics.uci.edu/~eppstein/pix/pricklypearmountains/PricklyPearMountains-m.jpg){: style="border-style:solid;border-color:black;" width="80%" }
