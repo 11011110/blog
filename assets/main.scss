@@ -41,13 +41,21 @@ $on-laptop:        800px;
   text-align: right;
 }
 
-// Make definition lists useful
-
+// Make definition lists and block quotes useful
 dt {
   font-weight: bold;
 }
 dd {
   margin-left: 2em;
+}
+blockquote {
+  all: initial;
+  font-size: inherit;
+  border-left: 4px solid #c7deff;
+  padding-left: 15px
+}
+pre,code {
+  background-color: #c7deff;
 }
 
 // Blue borders
