@@ -28,6 +28,9 @@ So as Wester stated, this does work for rhombic Penrose tilings, as long as one 
 
 However, some algorithmic aspects of this theory may depend more strongly on the fact that for square grids, the intersection graphs of their zones have a very simple structure. Square grids have complete bipartite zone intersection graphs, but more general tilings of disks by parallel-sided quadrilaterals have arbitrary [circle graphs](https://en.wikipedia.org/wiki/Circle_graph) and squaregraphs have triangle-free circle graphs. Extending a partial bracing to a minimal rigid bracing is just a matter of extending a forest to a spanning tree, easy in all graphs, but the corresponding problem for tension bracing is more complicated. Gabow and Jordán solve it for square grids (equivalently, adding as few edges as possible to a bipartite directed graph to make it strongly connected, while respecting its given bipartition) in linear time.[^gj] But it is not at all obvious that it's as easy to extend a directed subgraph of a circle graph to a minimal strongly connected subgraph of the same circle graph.
 
+* Footnotes go here
+{:footnotes}
+
 [^bc]: Bolker, Ethan D., and Crapo, Henry (1977), "How to brace a one-story building", _Environment and Planning B: Planning and Design_ 4 (2): 125–152, [doi:10.1068/b040125](https://doi.org/10.1068/b040125).
 
 [^bg]: Baglivo, Jenny A., and Graver, Jack E. (1983), "3.10 Bracing structures", _Incidence and Symmetry in Design and Architecture_, Cambridge University Press, pp. 76–87.
@@ -39,3 +42,5 @@ However, some algorithmic aspects of this theory may depend more strongly on the
 [^ew]: Eppstein, David, and Wortman, Kevin (2011), "Optimal angular resolution for face-symmetric drawings", _J. Graph Algorithms and Applications_ 15 (4): 551–564, [doi:10.7155/jgaa.00238](https://doi.org/10.7155/jgaa.00238).
 
 [^gj]: Gabow, Harold N., and Jordán, Tibor (2000), "How to make a square grid framework with cables rigid", _SIAM Journal on Computing_ 30 (2): 649–680, [doi:10.1137/S0097539798347189](https://doi.org/10.1137/S0097539798347189).
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/105603974591107625))
