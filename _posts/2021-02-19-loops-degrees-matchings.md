@@ -17,3 +17,5 @@ This doesn't quite work for the problem of finding a matching that maximizes the
 In the case of my student, I only provided the conventional answer, because really all they wanted to know was whether these issues affected how they answered one of the homework questions, and the answer was that the question didn't involve and didn't need loops. However it seems that the more-complicated answer is that even if you allow loops to count only one unit towards degree, and to be included in matchings, they don't change the matching problem much.
 
 $$^*$$ This is only actually a covering graph under the convention that the degree of a loop is one. For the usual degree-2 convention for loops, you would need to replace each loop by a pair of parallel edges, forming a multigraph, to preserve the degrees of the vertices.
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/105762400402127534))
