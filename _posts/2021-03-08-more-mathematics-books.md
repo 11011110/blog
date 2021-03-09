@@ -85,3 +85,5 @@ Fan Chung and Ronald Graham. The open problems in graph theory from this book ha
 * _[Women in Mathematics](https://en.wikipedia.org/wiki/Women_in_Mathematics)_ (1974), Lynn Osen. This is the one that based its coverage of Hypatia on an early-20th-century children's book that gave her a made-up backstory and attributed made-up modern rationalist quotes to her. Not recommended, and included mainly as a warning not to use this as a reference.
 
 To keep from ending on a sour note, I'll add one more, that I found recently on Wikipedia (although the article there is very old) and I think is worthy of expansion: _[Logic Made Easy: How to Know When Language Deceives You](https://en.wikipedia.org/wiki/Logic_Made_Easy)_ (2004), Deborah J. Bennett, a popular-audience book on how to translate English phrases into logical formalisms and use that translation to understand more clearly what they mean.
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/105857580884627445))
