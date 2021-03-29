@@ -6,12 +6,14 @@ tags:   [graph drawing, conferences, talks]
 ---
 <p>There was some speculation prior to the Graph Drawing Conference, on how many talks into the conference would be the first limerick. Elena Mumford wins, at talk #9, her paper on rectilinear cartograms with Mark de Berg and Bettina Speckmann. Elena may not wish to have her poetry skills memorialized, but here it is:</p>
 
-<blockquote>
-There was a graph triangulated<br />
-whose vertices were heavy weighted.<br />
-  So, smart and cruel,<br />
-  we chopped its dual.<br />
-Cartography is now outdated.
-</blockquote>
+<ul style="list-style-type:none;">
+<li>There was a graph triangulated</li>
+<li>whose vertices were heavy weighted.</li>
+<ul style="list-style-type:none;margin-bottom:0;">
+<li>So, smart and cruel,</li>
+<li>we chopped its dual.</li>
+</ul>
+<li>Cartography is now outdated.</li>
+</ul>
 
 <p>Kurt Mehlhorn also gave a very nice invited talk, with the title changed after the program was printed to something about minimum cycle bases.  But really it involved graph drawing: it turns out that there's a nice algorithm for drawing graphs on a torus, similar to Tutte's force-based convex plane embedding, in which we form a linear system of equations by making a variable for each edge (or rather a pair of variables forced to be the negative of each other, one for each orientation of the edge), and require the variables at each vertex and around each face to add to zero.  One each of the variable and face constraints are redundant, so (applying Euler's formula to count constraints) this system has two degrees of freedom; that is, all its solutions are the weighted sums of two basic solution vectors.  We pick one vertex as a base point at the origin, use one of the solution vectors as the offsets in \( x \) coordinate between each pair of adjacent vertices, and use the other solution vector as the offsets in \( y \) coordinates.  The amazing part is that this works even if you don't know the torus graph you're trying to embed, as long as (1) its facial cycles are all shorter than the torus's nonseparating cycles, and (2) you are given a supergraph of the torus graph, in which the extra edges have endpoints that are connected by paths in the torus graph that are shorter than the torus's nonseparating cycles.  You just have to compute a minimum cycle basis of your supergraph, throw away the two long nonseparating cycles, and use constraints for the remaining short cycles in place of the face constraints, and you get the same solution as if you really knew what the faces were.  He uses this for solving surface reconstruction problems for toroidal objects, by applying it to a \( k \)-nearest-neighbor graph with \( k \) chosen large enough that the graph contains a good mesh.</p>
