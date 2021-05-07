@@ -12,3 +12,5 @@ The general topic of Pedro's research is "exact learning", the inference of stru
 After finishing his doctorate, Pedro's next position will be working for Facebook.
 
 Congratulations, Pedro!
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/106196168129163033))
