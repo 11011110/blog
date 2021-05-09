@@ -26,3 +26,5 @@ The ordinary triangles tile by translation and rotation, and the three-curved-si
 ![Tiling by arc-triangles with two curved sides, without reflection]({{site.baseurl}}/assets/2021/pinwheels.svg)
 
 A curious property of the arc-triangles that tile is that they all have interior angles summing to $$\pi$$, something that is not true of most arc-triangles. On the other hand, it is easy to find arc-triangles with angles summing to $$\pi$$ that do not tile, so the angle sum does not completely characterize the tilers among the arc-triangles.
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/106207851143984141))
