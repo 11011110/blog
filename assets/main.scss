@@ -50,6 +50,9 @@ dd {
 }
 blockquote {
   all: initial;
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
   font-size: inherit;
   border-left: 4px solid #c7deff;
   padding-left: 15px
