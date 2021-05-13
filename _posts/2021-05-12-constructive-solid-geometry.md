@@ -27,3 +27,5 @@ The preprint also includes a packing argument that transforms the resulting $$\O
 ![Six-vertex series-parallel graph with 12 parametric minimum spanning trees]({{site.baseurl}}/assets/2021/parametric-mst.svg)
 
 It would be interesting either to find a different construction proving that the halfspace / piecewise linear function / bottleneck path problem can have complexity $$\Omega(n\log n)$$, matching this new result, or to prove an upper bound separating this problem from the lower bound on the parametric minimum spanning tree problem, but that will have to wait for another day.
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/106225329805495195))
