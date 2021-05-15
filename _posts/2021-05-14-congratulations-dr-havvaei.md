@@ -10,3 +10,5 @@ Haleh is Iranian, but came to UC Irvine via Florida in 2016, after working for a
 Her next step will be taking a position at Twitter in San Francisco, as a data scientist.
 
 Congratulations, Haleh!
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/106236739159044402))
