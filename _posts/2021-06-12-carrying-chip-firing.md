@@ -102,6 +102,9 @@ You can convert a binary number to Zeckendorf with the same idea, computing the 
 
 As the article I linked at the start hints, the direct algorithms described here are a bit unsatisfactory from the point of view of circuit complexity: the circuit size is ok but the circuit depth is much larger than it would be for binary arithmetic. I'm not convinced that this is a serious deficiency, because we're not likely to build computers that use this arithmetic at the circuit level. Any algorithms like this are more likely to be used only in specialized situations where Zeckendorf arithmetic is relevant, like the analysis of certain combinatorial games.
 
+* Footnotes go here
+{:footnotes}
+
 [^a]: Connor Ahlbach, Jeremy Usatine, Christiane Frougny, and Nicholas Pippenger (2013), "Efficient algorithms for Zeckendorf arithmetic", _Fibonacci Quarterly_ 51 (3): 249–255, [arXiv:1207.4497](https://arxiv.org/abs/1207.4497), [MR3093678](https://www.ams.org/mathscinet-getitem?mr=3093678).
 
 [^bls]: Anders Björner, László Lovász, and Peter Shor (1991), "Chip-firing games on graphs", _European Journal on Combinatorics_ 12 (4): 283–291, [doi:10.1016/S0195-6698(13)80111-4](https://doi.org/10.1016/S0195-6698(13)80111-4), [MR1120415](https://www.ams.org/mathscinet-getitem?mr=1120415).
@@ -109,3 +112,5 @@ As the article I linked at the start hints, the direct algorithms described here
 [^k]: Kolja Knauer (2009), "Chip-firing, antimatroids, and polyhedra", EuroComb 2009, _Electronic Notes in Discrete Mathematics_ 34: 9–13, [doi:10.1016/j.endm.2009.07.002](https://doi.org/10.1016/j.endm.2009.07.002), [MR2591410](https://www.ams.org/mathscinet-getitem?mr=2591410).
 
 [^s]: I. S. Sergeev (2018), "On the complexity of Fibonacci coding", _Problems of Information Transmission_ 54: 343–350, [doi:10.1134/S0032946018040038](https://doi.org/10.1134/S0032946018040038), [MR3917588](https://www.ams.org/mathscinet-getitem?mr=3917588).
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/106399026271211456))
