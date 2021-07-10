@@ -28,3 +28,5 @@ The motivating application for all of this is graph drawing, and more specifical
 ![An embedded cactus that has no planar Lombardi drawing]({{site.baseurl}}/assets/2021/badhat.svg)
 
 But beyond graph drawing, I think that the long history and many applications of arc-polygons justifies more study of their general properties. For instance, what about arc-polygons with more than three sides? What can their angles be? Our paper has a partial answer, enough to answer the questions we asked in our Lombardi drawing application, but a complete characterization for arc-polygons of more than three sides is still open.
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/106557711895868173))
