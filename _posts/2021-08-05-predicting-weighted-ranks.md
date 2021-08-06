@@ -100,3 +100,5 @@ And the final ranking:
 # The future
 
 I think the moral of the story is that this ranking system is too hard to understand and a little too random (with players trading places too much depending on what other players do). To some extent this is unavoidable (a version of [Arrow's impossibility theorem for rank aggregation](https://en.wikipedia.org/wiki/Arrow%27s_impossibility_theorem)), but the scuttlebutt seems to be that this system will be replaced for future competitions. Which, sadly, makes all of this algorithm design a little redundant...
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/106707759220927820))
