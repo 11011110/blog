@@ -23,7 +23,7 @@ Each of 20 competitors gets a rank from 1 to 20 in each of the three disciplines
 
 - In lead climbing, the ranks are based on how high each competitor climbs, with ties broken by time, so any competitor who has not yet climbed can slot into the ranking in any position.
 
-In screens like the one shown above, the livestream showed the standings of the competitor, ordered by their product of ranks: the product of two ranks for competitors who had not yet climbed and the product of all three current ranks for competitors who had already climbed. It predicted qualification for competitors who had already climbed and were in the top eight in this ordering.This seems reasonable, at first glance: their ordering among the people who have already climbed is set, and the people who have not yet climbed can only go down in the ordering, so they will stay in the top eight.
+In screens like the one shown above, the livestream showed the standings of the competitor, ordered by their product of ranks: the product of two ranks for competitors who had not yet climbed and the product of all three current ranks for competitors who had already climbed. It predicted qualification for competitors who had already climbed and were in the top eight in this ordering. This seems reasonable, at first glance: their ordering among the people who have already climbed is set, and the people who have not yet climbed can only go down in the ordering, so they will stay in the top eight.
 
 But their ordering among competitors who had already climbed is _not_ set. In the example shown above, before Janja Garnbret climbed, Meshkova was ahead of two other climbers, Aleksandra Miroslaw and Anouck Jaubert, both of whom had done well in speed and badly in lead. Garnbret climbed better than Meshkova, bumping Meshkova's lead ranking down from fourth to fifth. That hurt Meshkova's combined score a lot more than it hurt Miroslaw's and Jaubert's, because Miroslaw and Jaubert already had very high ranks in lead. At the end of the competition, Meshkova was behind Miroslaw and Jaubert, and out of the competition.
 
@@ -95,7 +95,7 @@ And the final ranking:
 ![Final ranking in the 2021 Olympic women's sport climbing qualifying event, top ten]({{site.baseurl}}/assets/2021/rank-product/6a.jpg){: width="80%" }
 
 {: style="text-align:center"}
-![Final ranking in the 2021 Olympic women's sport climbing qualifying event, bottom ten]({{site.baseurl}}/assets/2021/rank-product/6a.jpg){: width="80%" }
+![Final ranking in the 2021 Olympic women's sport climbing qualifying event, bottom ten]({{site.baseurl}}/assets/2021/rank-product/6b.jpg){: width="80%" }
 
 # The future
 
