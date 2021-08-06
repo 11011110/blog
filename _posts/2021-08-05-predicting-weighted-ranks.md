@@ -25,7 +25,7 @@ Each of 20 competitors gets a rank from 1 to 20 in each of the three disciplines
 
 In screens like the one shown above, the livestream showed the standings of the competitor, ordered by their product of ranks: the product of two ranks for competitors who had not yet climbed and the product of all three current ranks for competitors who had already climbed. It predicted qualification for competitors who had already climbed and were in the top eight in this ordering. This seems reasonable, at first glance: the ordering among the people who have already climbed is set, and the people who have not yet climbed can only go down in the ordering, so they will stay in the top eight.
 
-But the ordering among competitors who had already climbed is _not_ set. In the example shown above, before Janja Garnbret climbed, Meshkova was ahead of two other climbers, Aleksandra Miroslaw and Anouck Jaubert, both of whom had done well in speed and badly in lead. Garnbret climbed better than Meshkova, bumping Meshkova's lead ranking down from fourth to fifth. That hurt Meshkova's combined score a lot more than it hurt Miroslaw's and Jaubert's, because Miroslaw and Jaubert already had very high ranks in lead. At the end of the competition, Meshkova was behind Miroslaw and Jaubert, and out of the competition.
+But the ordering among competitors who had already climbed is _not_ set. In the example shown above, before Janja Garnbret climbed, Meshkova was ahead of two other climbers, Aleksandra Mirosław and Anouck Jaubert, both of whom had done well in speed and badly in lead. Garnbret climbed better than Meshkova, bumping Meshkova's lead ranking down from fourth to fifth. That hurt Meshkova's combined score a lot more than it hurt Mirosław's and Jaubert's, because Mirosław and Jaubert already had very high ranks in lead. At the end of the competition, Meshkova was behind Mirosław and Jaubert, and out of the competition.
 
 # Analysis
 
@@ -72,7 +72,7 @@ With all that in mind, and assuming that (somehow) I've implemented this correct
 {: style="text-align:center"}
 ![Ranking with five climbs to go in the 2021 Olympic women's sport climbing qualifying event]({{site.baseurl}}/assets/2021/rank-product/2.jpg){: width="80%" }
 
-At this stage of the qualifications, five competitors are left to climb. NBC predicted that Seo, Raboutou, and Pilz had already qualified, and my implementation agrees for Seo and Raboutou (both can finish at worst 8th) but it was incorrect for Pilz, who could drop to 9th if Miroslaw miraculously finished 2nd and Garnbret 3rd. More surprising to me, Garnbret was still not an automatic qualifier: if she finished 20th, enough other competitors could better her score to put her into 9th place.
+At this stage of the qualifications, five competitors are left to climb. NBC predicted that Seo, Raboutou, and Pilz had already qualified, and my implementation agrees for Seo and Raboutou (both can finish at worst 8th) but it was incorrect for Pilz, who could drop to 9th if Mirosław miraculously finished 2nd and Garnbret 3rd. More surprising to me, Garnbret was still not an automatic qualifier: if she finished 20th, enough other competitors could better her score to put her into 9th place.
 
 {: style="text-align:center"}
 ![Ranking with three climbs to go in the 2021 Olympic women's sport climbing qualifying event]({{site.baseurl}}/assets/2021/rank-product/3.jpg){: width="80%" }
@@ -82,12 +82,12 @@ After two more climbs, the faulty NBC algorithm claims that five climbers have q
 {: style="text-align:center"}
 ![Ranking with two climbs to go in the 2021 Olympic women's sport climbing qualifying event]({{site.baseurl}}/assets/2021/rank-product/4.jpg){: width="80%" }
 
-Shauna Coxsey, climbing with an injured knee, has climbed into the middle of the pack, falling off the top ten ranking, and her place has been taken by Kyra Condie. Garnbret is now at worst 6th and should have been marked as qualified. Noguchi is not quite guaranteed yet, with a scenario in which she could rank 9th. Seo is now at worst 5th, Nonaka at worst 4th, Raboutou at worst 5th, and Pilz at worst 8th (now guaranteeing her spot). But Jaubert and Miroslaw each could end 9th; at most one of Jaubert, Miroslaw, or Nonaka will be eliminated, but we can't yet guarantee any of their spots.
+Shauna Coxsey, climbing with an injured knee, has climbed into the middle of the pack, falling off the top ten ranking, and her place has been taken by Kyra Condie. Garnbret is now at worst 6th and should have been marked as qualified. Noguchi is not quite guaranteed yet, with a scenario in which she could rank 9th. Seo is now at worst 5th, Nonaka at worst 4th, Raboutou at worst 5th, and Pilz at worst 8th (now guaranteeing her spot). But Jaubert and Mirosław each could end 9th; at most one of Jaubert, Mirosław, or Nonaka will be eliminated, but we can't yet guarantee any of their spots.
 
 {: style="text-align:center"}
 ![Ranking with one climb to go in the 2021 Olympic women's sport climbing qualifying event]({{site.baseurl}}/assets/2021/rank-product/5.jpg){: width="80%" }
 
-Until now, all of the "Q" markings shown on the livestream, while mathematically incorrect in many cases, were at least correct in hindsight: the people marked that way did end up qualifying. This one, though, a repeat of the first image in this post, gets it wrong in practice as well as in theory. Meshkova is marked as qualifying, but did not. Coxsey has moved back into the top ten. Miroslaw and Jaubert could still have ended up 9th (under different scenarios, obviously) and should not have been marked as qualifying. Seo is at worst 4th, Nonaka is at most 3rd, Noguch is at most 4th, Raboutou is at most 5th, and Pilz is at most 6th.
+Until now, all of the "Q" markings shown on the livestream, while mathematically incorrect in many cases, were at least correct in hindsight: the people marked that way did end up qualifying. This one, though, a repeat of the first image in this post, gets it wrong in practice as well as in theory. Meshkova is marked as qualifying, but did not. Coxsey has moved back into the top ten. Mirosław and Jaubert could still have ended up 9th (under different scenarios, obviously) and should not have been marked as qualifying. Seo is at worst 4th, Nonaka is at most 3rd, Noguch is at most 4th, Raboutou is at most 5th, and Pilz is at most 6th.
 
 And the final ranking: 
 
