@@ -1,0 +1,10 @@
+Garnbret 14 1
+Miroslaw 1 20
+Noguchi 9 3
+Nonaka 4 8
+Coxsey 16 4
+Seo 17 5 1
+Raboutou 12 2 5
+Pilz 11 9 2
+Meshkova 15 6 3
+Jaubert 2 13 11
