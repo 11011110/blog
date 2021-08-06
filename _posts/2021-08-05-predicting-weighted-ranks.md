@@ -82,7 +82,7 @@ After two more climbs, the faulty NBC algorithm claims that five climbers have q
 {: style="text-align:center"}
 ![Ranking with two climbs to go in the 2021 Olympic women's sport climbing qualifying event]({{site.baseurl}}/assets/2021/rank-product/4.jpg){: width="80%" }
 
-Shauna Coxsey, climbing with an injured knee, has climbed into the middle of the pack, falling off the top ten ranking, and her place has been taken by Kyra Condie. Garnbret is now at worst 6th and should have been marked as qualified. Noguchi is not quite guaranteed yet, with a scenario in which she could rank 9th. Seo is now at worst 5th, Nonaka at worst 4th, Raboutou at worst 5th, and Pilz at worst 8th (now guaranteeing her spot). But Jaubert and Mirosław each could end 9th; at most one of Jaubert, Mirosław, or Nonaka will be eliminated, but we can't yet guarantee any of their spots.
+Shauna Coxsey, climbing with an injured knee, has climbed into the middle of the pack, falling off the top ten ranking, and her place has been taken by Kyra Condie. Garnbret is now at worst 6th and should have been marked as qualified. Noguchi is not quite guaranteed yet, with a scenario in which she could rank 9th. Seo is now at worst 5th, Nonaka at worst 4th, Raboutou at worst 5th, and Pilz at worst 8th (now guaranteeing her spot). But Jaubert and Mirosław each could end 9th; at most one of Jaubert, Mirosław, or Noguchi will be eliminated, but we can't yet guarantee any of their spots.
 
 {: style="text-align:center"}
 ![Ranking with one climb to go in the 2021 Olympic women's sport climbing qualifying event]({{site.baseurl}}/assets/2021/rank-product/5.jpg){: width="80%" }
