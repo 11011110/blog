@@ -22,3 +22,5 @@ Behind the palo verde and against the house are some [kangaroo paws](https://en.
 Lining the path to the door is [senecio / blue chalksticks](https://en.wikipedia.org/wiki/Curio_repens), and there's more of it around the base of the mesquite. The groundcover in front is [dymondia / silver carpet](https://en.wikipedia.org/wiki/Dymondia) (well, and some crabgrass and spurge, but let's not count that), with some [myoporum parvifolium](Myoporum parvifolium) behind it (the low spreading groundcover with white flowers); there's more myoporum barely visible near the porch bench.
 
 The neighbor ended up replacing the liquidambar (at the far left of the Street View shot) with a [podocarpus henkelii](Podocarpus henkelii) and some bottlebrushes.
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/106735698135397706))
