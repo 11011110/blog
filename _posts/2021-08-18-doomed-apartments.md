@@ -21,3 +21,5 @@ Because of its imminent demise, I made a project this summer of visiting Las Lom
 ![Las Lomas Apartments, UC Irvine](https://www.ics.uci.edu/~eppstein/pix/laslomas/K-m.jpg){: style="border-style:solid;border-color:black" }
 
 [The rest of the photo album](https://www.ics.uci.edu/~eppstein/pix/laslomas/).
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/106779815577019752))
