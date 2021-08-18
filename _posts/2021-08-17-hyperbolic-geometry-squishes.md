@@ -35,3 +35,5 @@ Of course, there still exist plenty of graphs other than the trees and the bad e
 ![Order-5 square tiling of the hyperbolic plane, viewed in the Poincaré disk model]({{site.baseurl}}/assets/2021/45tess.svg){: width="60%" }
 
 I'll be presenting this at [this year's Graph Drawing symposium](https://algo.inf.uni-tuebingen.de/gd2021/), in mid-September, for which registration is currently open. They're trying a hybrid conference with both limited in-person participation (in Tübingen, Germany) and online participation; I'll be on the online side, but I'm curious to see how this format works.
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/106775723303189658))
