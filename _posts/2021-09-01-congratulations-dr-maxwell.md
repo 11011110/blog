@@ -16,3 +16,5 @@ A newer paper, "[Generalized max-flows and min-cuts in simplicial complexes](htt
 The SoCG 2020 and ESA 2021 papers form two chapters in the dissertation, with a final chapter on a third direction of generalization that appears not to be public yet. After finalizing his dissertation, Will will be heading to Washington, DC to work as a Department of Defense researcher on (non-classified) applications of topological computation in artificial intelligence.
 
 Congratulations, Will!
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/106859447279378949))
