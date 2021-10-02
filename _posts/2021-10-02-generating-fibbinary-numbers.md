@@ -49,3 +49,5 @@ def fibbinary():
 {% endhighlight %}
 
 The inner loop ends immediately at fibbinary numbers whose successor is odd (at positions given by the ones of the [Fibonacci word](https://en.wikipedia.org/wiki/Fibonacci_word)), whose fraction of the total is $$1-1/\varphi\approx 0.382$$, where $$\varphi$$ is the golden ratio. It ends in two steps for the remaining values when their next bit is odd, in the same proportion, and so on. So the average number of steps for the inner loop adds in a geometric series to $$O(1)$$.
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/107034017632258123))
