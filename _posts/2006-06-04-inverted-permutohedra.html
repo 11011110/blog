@@ -6,15 +6,15 @@ tags:   [xyz graphs, media theory, geometry]
 ---
 <p>The \( n! \) permutations of the vector \( (1,2,3,\dots,n) \) lie on a hyperplane, so their convex hull forms an \( (n-1) \)-dimensional shape, known as the <i>permutohedron</i>.  E.g., the three-dimensional permutohedron, representing the permutations on four items, is below.</p>
 
-<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/junkyard/ukraine/ukraine_3_3_0^4.gif" /></p>
+<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/junkyard/ukraine/ukraine_3_3_0%5E4.gif" alt="Permutohedron" /></p>
 
-<p>Two permutations are connected by an edge in this shape if they differ by swapping two items that differ in value by one. The graph of vertices and edges of this shape is one of the standard examples of partial cubes, although it doesn&#x27;t look very cubical in this form.</p>
+<p>Two permutations are connected by an edge in this shape if they differ by swapping two items that differ in value by one. The graph of vertices and edges of this shape is one of the standard examples of partial cubes, although it doesn't look very cubical in this form.</p>
 
 <p>But now imagine the same graph, rearranged by moving every permutation to its inverse.  What do you get?</p>
 
-<p>Here&#x27;s a picture, made a little clearer without changing the connection pattern by transforming the shape linearly: instead of the symmetric placement of  permutohedron vertices shown above, I used prefix-sum coordinates, so e.g. the permutation \( (3,1,4,2,6,5) \) would be placed at coordinates \( (3,3+1,3+1+4,3+1+4+2,3+1+4+2+6) \), omitting the \( n \)th coordinate as it is always \( n(n+1)/2 \). I then rearranged the graph as described above, and got the following picture:</p>
+<p>Here's a picture, made a little clearer without changing the connection pattern by transforming the shape linearly: instead of the symmetric placement of  permutohedron vertices shown above, I used prefix-sum coordinates, so e.g. the permutation \( (3,1,4,2,6,5) \) would be placed at coordinates \( (3,3+1,3+1+4,3+1+4+2,3+1+4+2+6) \), omitting the \( n \)th coordinate as it is always \( n(n+1)/2 \). I then rearranged the graph as described above, and got the following picture:</p>
 
-<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/invertohedron.png" /></p>
+<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/0xDE/invertohedron.png" alt="Invertohedron" /></p>
 
 <p>Now two permutations are connected by an edge if their prefix-sum representations differ in a single coordinate; that is, if they differ by swapping two items that differ in position by one. So, unlike the usual permutohedron, the edges fall into \( n-1 \) parallel classes, which in the prefix-sum representation are parallel to the coordinate axes.</p>
 

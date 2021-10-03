@@ -4,35 +4,26 @@ title:  'Updated Python library: Repetitivity, Sudoku'
 date:   2005-07-20 16:40:00
 tags:   [sudoku, python, algorithms, graph theory]
 ---
-I figured it might be useful to collect the updates to different parts of my web existence in a single place, and easier to use livejournal than to roll my own.  So here&#x27;s the first one:
-<br />
+<p>I figured it might be useful to collect the updates to different parts of my web existence in a single place, and easier to use livejournal than to roll my own.  So here's the first one:</p>
 
-<br />
-I just updated my Python algorithms library, <a href="http://www.ics.uci.edu/~eppstein/PADS/">PADS</a>.  Newly added are <a href="http://www.ics.uci.edu/~eppstein/PADS/Sudoku.py">Sudoku.py</a>, a command-line Sudoku puzzle solver/generator (type &quot;python Sudoku.py -h&quot; at a command line in the PADS directory for more information on how to use it), <a href="http://www.ics.uci.edu/~eppstein/PADS/Repetitivity.py">Repetitivity.py</a>, analysis of paths in graphs that have no two equal consecutive edge labels (see forthcoming paper, used by Sudoku), and <a href="http://www.ics.uci.edu/~eppstein/PADS/StrongConnectivity.py">StrongConnectivity.py</a>, DFS-based construction of strongly connected components in digraphs.  I also added code to <a href="http://www.ics.uci.edu/~eppstein/PADS/BipartiteMatching.py">BipartiteMatching.py</a> to find edges that can not participate in any perfect matching of a given graph (also used by Sudoku).
-<br />
+<p>I just updated my Python algorithms library, <a href="http://www.ics.uci.edu/~eppstein/PADS/">PADS</a>.  Newly added are <a href="http://www.ics.uci.edu/~eppstein/PADS/Sudoku.py">Sudoku.py</a>, a command-line Sudoku puzzle solver/generator (type &quot;python Sudoku.py -h&quot; at a command line in the PADS directory for more information on how to use it), <a href="http://www.ics.uci.edu/~eppstein/PADS/Repetitivity.py">Repetitivity.py</a>, analysis of paths in graphs that have no two equal consecutive edge labels (see forthcoming paper, used by Sudoku), and <a href="http://www.ics.uci.edu/~eppstein/PADS/StrongConnectivity.py">StrongConnectivity.py</a>, DFS-based construction of strongly connected components in digraphs.  I also added code to <a href="http://www.ics.uci.edu/~eppstein/PADS/BipartiteMatching.py">BipartiteMatching.py</a> to find edges that can not participate in any perfect matching of a given graph (also used by Sudoku).</p>
 
-<br />
-I thought the trick for finding unmatchable edges in bipartite graphs was cute; it was new to me, though probably familiar to matching specialists.  Find a single perfect matching in the bipartite graph, orient the unmatched edges from one side of the bipartition to the other, and orient the matched edges in the opposite direction.  The unmatchable edges are the unmatched ones that have endpoints in different strongly connected components of the resulting digraph.
+<p>I thought the trick for finding unmatchable edges in bipartite graphs was cute; it was new to me, though probably familiar to matching specialists.  Find a single perfect matching in the bipartite graph, orient the unmatched edges from one side of the bipartition to the other, and orient the matched edges in the opposite direction.  The unmatchable edges are the unmatched ones that have endpoints in different strongly connected components of the resulting digraph.</p>
 <br /><br /><hr /><br />
 <h3>Comments:</h3>
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>None</b>: Graph library in Python<br />
-<b>2005-08-02T21:30:36Z</b><br />
-David:  I haven&#x27;t looked at PADS much, but you might find this interesting if you&#x27;re not aware of it. Did you know that Boost has a graph library (in C++) with Python bindings? It&#x27;s experimental, the documentation isn&#x27;t on the web yet, but will be very shortly. You can see it (and build it) if you download the code from the CVS (see http://www.boost.org/).  You have access to all BGL algorithms, listed on http://www.boost.org/libs/graph/doc/table_of_contents.html
+<b>2005-08-02T21:30:36Z</b>
+<p>David:  I haven't looked at PADS much, but you might find this interesting if you're not aware of it. Did you know that Boost has a graph library (in C++) with Python bindings? It's experimental, the documentation isn't on the web yet, but will be very shortly. You can see it (and build it) if you download the code from the CVS (see http://www.boost.org/).  You have access to all BGL algorithms, listed on http://www.boost.org/libs/graph/doc/table_of_contents.html</p>
 
-Herve Br.
-</div>
-<div style="margin-left: 3em; padding-top: 1em;">
-<b>11011110</b>: <br />
-<b></b><br />
-
+<p>Herve Br.</p>
 </div>
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>11011110</b>: Re: Graph library in Python<br />
 <b>2005-08-02T23:18:17Z</b><br />
-Hi, Hervé.  Didn&#x27;t know about Boost and Python, I&#x27;ll have to look into that.
+<p>Hi, Hervé.  Didn't know about Boost and Python, I'll have to look into that.</p>
 
-PADS is primarily just a collection of algorithms I&#x27;ve needed implementations for at some point or another, so its coverage is not very complete.  But some things are much much more straightforward in Python than in C++.  For instance the <a href="http://www.boost.org/libs/graph/doc/quick_tour.html">Boost quick tour</a> takes about ten lines of messy code to define a 5-vertex 11-arc graph (the one in their Figure 2):
+<p>PADS is primarily just a collection of algorithms I've needed implementations for at some point or another, so its coverage is not very complete.  But some things are much much more straightforward in Python than in C++.  For instance the <a href="http://www.boost.org/libs/graph/doc/quick_tour.html">Boost quick tour</a> takes about ten lines of messy code to define a 5-vertex 11-arc graph (the one in their Figure 2):</p>
 {% highlight python %}
     enum { A, B, C, D, E, N };
     const int num_vertices = N;
@@ -45,77 +36,65 @@ PADS is primarily just a collection of algorithms I&#x27;ve needed implementatio
     for (int i = 0; i < num_edges; ++i)
       add_edge(edge_array[i].first, edge_array[i].second, g);
 {% endhighlight %}
-The same thing can be done in Python as:
+<p>The same thing can be done in Python as:</p>
 {% highlight python %}
     G = {0:[1,2,3,4], 1:[], 2:[0,4], 3:[0,1,4], 4:[0,1]}
 {% endhighlight %}
-I&#x27;d be interested to find out whether the Boost Python binding allows the continued use of such simplified definitions.
+<p>I'd be interested to find out whether the Boost Python binding allows the continued use of such simplified definitions.</p>
 
-Will send you a copy by email since I&#x27;m not sure how regularly you&#x27;re likely to read here.
+<p>Will send you a copy by email since I'm not sure how regularly you're likely to read here.</p>
 </div>
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>None</b>: Re: Graph library in Python<br />
 <b>2005-08-03T13:55:14Z</b><br />
-I don&#x27;t know if I sm doing something wrong, but I have some test examples where Boost is a fair bit slower than raw Python code (not even using PADS). 
+<p>I don't know if I sm doing something wrong, but I have some test examples where Boost is a fair bit slower than raw Python code (not even using PADS). </p>
 
--- Suresh
+<p>-- Suresh</p>
 </div>
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>None</b>: input file for Sudoku.py<br />
 <b>2005-09-06T19:00:42Z</b><br />
-David,
+<p>David,</p>
 
-I am a Python beginner/enthusiast and just recently I found your sudoku script and I am enjoying using it. I wanted to experiment with imput files but I failed:
-- what is the correct format of an input file?
-- what is the correct command line form when using an input file?
+<p>I am a Python beginner/enthusiast and just recently I found your sudoku script and I am enjoying using it. I wanted to experiment with imput files but I failed:</p>
+<ul><li><p>what is the correct format of an input file?</p></li>
+<li><p>what is the correct command line form when using an input file?</p></li></ul>
 
-Could you help me please.
+<p>Could you help me please.</p>
 
-Thank you
+<p>Thank you</p>
 
-Andrzej Kolinski
+<p>Andrzej Kolinski</p>
 </div>
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>11011110</b>: Re: input file for Sudoku.py<br />
 <b>2005-09-07T01:38:18Z</b><br />
-<i>what is the correct format of an input file?</i>
+<blockquote><p><i>what is the correct format of an input file?</i></p></blockquote>
 
-Any text file that lists the cells in order, having a single digit for each given and some other character for the blank cells.  By default the blank cells should be given as either a period or a zero, but there is an option to allow any other character to count as a blank cell.  Any character other than the digits or the blank cells is ignored.
+<p>Any text file that lists the cells in order, having a single digit for each given and some other character for the blank cells.  By default the blank cells should be given as either a period or a zero, but there is an option to allow any other character to count as a blank cell.  Any character other than the digits or the blank cells is ignored.</p>
 
-So, the output the program produces is suitable to reuse as input.
+<p>So, the output the program produces is suitable to reuse as input.</p>
 
-<i>what is the correct command line form when using an input file?</i>
+<blockquote><p><i>what is the correct command line form when using an input file?</i></p></blockquote>
 
-python Sudoku.py &lt;filename
+{% highlight console %}
+python Sudoku.py < filename
+{% endhighlight %}
 
-or
+<p>or</p>
 
-python Sudoku.py -xC &lt;filename
-to use C as the blank character
+{% highlight console %}
+python Sudoku.py -xC < filename
+{% endhighlight %}
+<p>to use C as the blank character</p>
 
-I suppose, since you found this unclear, I should work on documenting it more thoroughly...
-</div>
-<div style="margin-left: 3em; padding-top: 1em;">
-<b>11011110</b>: Re: input file for Sudoku.py<br />
-<b>2005-09-07T01:40:10Z</b><br />
-Sorry, my comment got cut off due to my forgetting to mark up the &lt; and &gt; signs appropriately in HTML.  Here&#x27;s the rest of the answer.
-
-<i> what is the correct command line form when using an input file?</i>
-
-python Sudoku.py &lt;inputfile
-
-or
-
-python Sudoku.py -xC &lt;inputfile
-where C is the character you want to use to denote a blank cell.
-
-I suppose, since you found this confusing, I should work on documenting it more thoroughly...
+<p>I suppose, since you found this unclear, I should work on documenting it more thoroughly...</p>
 </div>
 <div style="margin-left: 6em; padding-top: 1em;">
 <b>None</b>: Re: input file for Sudoku.py<br />
 <b>2005-09-07T12:14:37Z</b><br />
-sudoku.py -g option works fine (and I enjoy using your script very much). But python Sudoku.py &lt;sud1.txt -2 -ft &gt; sud2.txt command line where sud1.txt is for example (I tried many other input file formats):
- ----------------------------------- 
+<p>sudoku.py -g option works fine (and I enjoy using your script very much). But python Sudoku.py &lt;sud1.txt -2 -ft &gt; sud2.txt command line where sud1.txt is for example (I tried many other input file formats):
+<pre> ----------------------------------- 
 | 3   .   8 | .   .   . | 9   .   . |
 |           |           |           |
 | 7   .   6 | .   .   3 | .   2   . |
@@ -133,61 +112,58 @@ sudoku.py -g option works fine (and I enjoy using your script very much). But py
 | .   4   . | 2   .   . | 8   .   6 |
 |           |           |           |
 | .   .   7 | .   .   . | 4   .   2 |
- ----------------------------------- 
+ ----------------------------------- </pre>
 is still giving me the same message:
-IOError: [Errno 9] Bad file descriptor (I know this error message by heart already) 
+IOError: [Errno 9] Bad file descriptor (I know this error message by heart already) </p>
 
-What am I doing wrong?
+<p>What am I doing wrong?</p>
 
-Andrzej Kolinski
+<p>Andrzej Kolinski</p>
 </div>
 <div style="margin-left: 9em; padding-top: 1em;">
 <b>11011110</b>: Re: input file for Sudoku.py<br />
 <b>2005-09-07T19:55:29Z</b><br />
-This sounds like more a problem with how your python and command line are set up and less with how my code works.  That command line should cause python to run in such a way that commands to read input from the standard input stream get their input from the filename.  My code doesn&#x27;t see the &lt;filename part, it just reads from standard input.  Does it work to run any other python programs with input redirected?
+<p>This sounds like more a problem with how your python and command line are set up and less with how my code works.  That command line should cause python to run in such a way that commands to read input from the standard input stream get their input from the filename.  My code doesn't see the &lt;filename part, it just reads from standard input.  Does it work to run any other python programs with input redirected?</p>
 
-One workaround might be, instead of redirecting input from a file, just run the program without the redirection so that it expects you to type the input, and then copy and paste it into your console window.  That&#x27;s the way I usually run it, actually.
+<p>One workaround might be, instead of redirecting input from a file, just run the program without the redirection so that it expects you to type the input, and then copy and paste it into your console window.  That's the way I usually run it, actually.</p>
 </div>
 <div style="margin-left: 12em; padding-top: 1em;">
 <b>None</b>: Re: input file for Sudoku.py<br />
 <b>2005-09-08T13:10:13Z</b><br />
-Does the fact that I am in the windowsXP-land have anything to do with these command line problems?
+<p>Does the fact that I am in the windowsXP-land have anything to do with these command line problems?</p>
 </div>
 <div style="margin-left: 15em; padding-top: 1em;">
 <b>11011110</b>: Re: input file for Sudoku.py<br />
 <b>2005-09-08T18:43:52Z</b><br />
-Probably, but it also means it&#x27;s going to be hard for me to diagnose them in more detail.  I mostly use OS X and occasionally Solaris.
+<p>Probably, but it also means it's going to be hard for me to diagnose them in more detail.  I mostly use OS X and occasionally Solaris.</p>
 </div>
 <div style="margin-left: 18em; padding-top: 1em;">
 <b>None</b>: Re: input file for Sudoku.py<br />
 <b>2005-10-28T11:52:04Z</b><br />
-I returned back to using your excellent program. Mainly because my wife is now after an &quot;evil&quot; level. Could you please just show me how you input data into the command line to solve a puzzle. 
-ex.:
+<p>I returned back to using your excellent program. Mainly because my wife is now after an &quot;evil&quot; level. Could you please just show me how you input data into the command line to solve a puzzle. </p>
+
+<p>ex.:</p>
+{% highlight console %}
 c:\dir\sudoku.py -g -ftext &gt; s1.txt (to generate and save)
 c:\dir\sudoku.py -g -2 -ftext &gt; s1.txt (to generate, solve and save)
-but
+{% endhighlight %}
+<p>but</p>
+{% highlight console %}
 c:\dir\sudoku.py -? (to input a puzzle to be solved)
-Maybe I will then be able to figure out the way on my os (Windows XP) :-).
+{% endhighlight %}
+<p>Maybe I will then be able to figure out the way on my os (Windows XP) :-).</p>
 
-Thank you
+<p>Thank you</p>
 
-Andrzej Kolinski
+<p>Andrzej Kolinski</p>
 </div>
 <div style="margin-left: 21em; padding-top: 1em;">
 <b>11011110</b>: Re: input file for Sudoku.py<br />
 <b>2005-10-28T21:59:12Z</b><br />
+{% highlight console %}
 c:\dir\sudoku.py &lt; s1.txt
-(to solve the puzzle in that file)
-
-</div>
-<div style="margin-left: 0em; padding-top: 1em;">
-<b>11011110</b>: 
-<b></b>
-
-</div>
-<div style="margin-left: 0em; padding-top: 1em;">
-<b>None</b>: 
-<b></b>
+{% endhighlight %}
+<p>(to solve the puzzle in that file)</p>
 
 </div>
 
