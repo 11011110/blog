@@ -86,5 +86,16 @@ table {
   border:0px;
 }
 
+// Syntax highlighting (c1=comment nb=built-in mi=number bp=Boolean)
+.highlight .c1 {
+    color: #c90;
+    font-style: italic; }
+.highlight .nb {
+    color: #0a0; }
+.highlight .bp {
+    color: #670; }
+.highlight .mi {
+    color: #670; }
+
 // WTF this is not coming through in the local css but it is on github
 .site-nav .nav-trigger { display: none; }
