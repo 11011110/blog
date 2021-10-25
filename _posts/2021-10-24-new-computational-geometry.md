@@ -38,3 +38,5 @@ To emphasize the breadth of the interpretation of computational geometry and top
 [https://www.cgt-journal.org/index.php/cgt](https://www.cgt-journal.org/index.php/cgt)
 
 ---
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/107159503144164449))
