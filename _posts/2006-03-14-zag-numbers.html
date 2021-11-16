@@ -4,11 +4,10 @@ title:  'Zag numbers'
 date:   2006-03-14 13:07:00
 tags:   [cellular automata, python, number theory]
 ---
-<a href="http://sigfpe.blogspot.com/">A Neighborhood of Infinity</a> finds <a href="https://oeis.org/A000182">the power series expansion of tan(x)</a> (somehow related to Joyce trees and Tremolo permutations) using a cute <a href="http://sigfpe.blogspot.com/2006/03/cellular-automaton-puzzle.html">cellular-automaton-like iteration</a>.
-<br />
+<p><a href="http://sigfpe.blogspot.com/">A Neighborhood of Infinity</a> finds <a href="https://oeis.org/A000182">the power series expansion of tan(x)</a> (somehow related to Joyce trees and Tremolo permutations) using a cute <a href="http://sigfpe.blogspot.com/2006/03/cellular-automaton-puzzle.html">cellular-automaton-like iteration</a>.</p>
 
-<br />
-Here&#x27;s the Python code I used to try it out:
+<p>Here's the Python code I used to try it out:</p>
+
 {% highlight python %}
     v=[0,1]
     for i in range(0,20):
@@ -17,27 +16,19 @@ Here&#x27;s the Python code I used to try it out:
         v = [v[1]] + [(i-1)*v[i-1]+(i+1)*v[i+1] for i in range(1,len(v)-1)]
 {% endhighlight %}
 
-<br />
-
-<br />
-<b>ETA:</b> <a href="http://sigfpe.blogspot.com/2006/03/answers-and-questions.html">ANoI&#x27;s explanation</a>
+<p><b>ETA:</b> <a href="http://sigfpe.blogspot.com/2006/03/answers-and-questions.html">ANoI's explanation</a></p>
 <br /><br /><hr /><br />
 <h3>Comments:</h3>
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>None</b>: tan(x) actually<br />
 <b>2006-03-14T21:41:26Z</b><br />
-If you want to evaluate the exact automaton in my post that should be v=[1,0,1]. That&#x27;ll fix the extraneous 1+..
---
-Dan, aka sigfpe
-</div>
-<div style="margin-left: 3em; padding-top: 1em;">
-<b>11011110</b>: <br />
-<b></b><br />
-
+<p>If you want to evaluate the exact automaton in my post that should be <code>v=[1,0,1]</code>. That'll fix the extraneous <code>1+</code>.<br/>
+--<br/>
+Dan, aka sigfpe</p>
 </div>
 <div style="margin-left: 3em; padding-top: 1em;">
 <b>11011110</b>: <br />
 <b>2006-03-15T01:07:00Z</b><br />
-I edited the post to change it from 1+tan(x) to tan(x) by starting with [0,1] instead of [1,1].
+<p>I edited the post to change it from <code>1+tan(x)</code> to <code>tan(x)</code> by starting with <code>[0,1]</code> instead of <code>[1,1]</code>.</p>
 </div>
 
