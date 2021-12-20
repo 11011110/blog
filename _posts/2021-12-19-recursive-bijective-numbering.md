@@ -25,3 +25,5 @@ The same idea can be represented graphically. Given a number represented by this
 ![Equivalence between recursive bijective numbering and tree enumeration]({{site.baseurl}}/assets/2021/recursive-bijective.svg){: width="60%" }
 
 It follows that the sequences of numbers of representable values for $$i$$-digit strings and for $$\le i$$-digit strings, above, also give the numbers of ordered trees that obey this degree constraint, with root degree $$i$$ or $$\le i$$, respectively.
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/107478037784682149))
