@@ -57,3 +57,5 @@ With all of this as setup, and with the algorithms on normal curves from a paper
 * Convert the known edge coordinate of $$p_x$$ to an arc coordinate (Erickson and Nayyeri, Theorem 6.3), add $$2ns$$ (modulo $$X$$) to this arc coordinate, convert the resulting arc coordinate back into an edge coordinate in its arc (Erickson and Nayyeri, Theorem 6.4), and then back into an edge coordinate in the whole curve. This edge coordinate is the number we want to compute, $$f^{(n)}(x)$$.
 
 The topological subroutines used by this algorithm all take time quadratic in the size of the triangulation and logarithic in the number of crossings of the normal curve, so for the triangulation and normal curve constructed above this time bound is $$O(k^2\log N)$$.
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/107714613861230488))
