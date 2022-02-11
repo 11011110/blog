@@ -45,3 +45,5 @@ The input hypergraph is shown with its hypervertices as large blue disks and its
 * If some vertex has fewer than three neighbors that are not excluded, you must exclude it.
 
 It follows from this sort of reasoning that the only non-empty cubic induced subgraphs are like the ones shown by the dark red vertices in these gadgets: a vertex for each of the the hyperedges in a matching (such as the matching of dark-yellow hyperedges), and a corresponding subset of the vertices in every hypervertex gadget. Because finding a cubic induced subgraph is <span style="white-space:nowrap">$$\mathsf{NP}$$-complete,</span> its complementary problem, testing whether a graph is cubic-free, is <span style="white-space:nowrap">$$\mathsf{coNP}$$-complete.</span>
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/107776994325248199))
