@@ -49,3 +49,5 @@ Now let's do the same thing, stepped up a dimension!
 * Any map of the triangulated 3d grid onto the plane can be composed with the map from the complete 2-complex to the grid, giving a map of the complete complex onto the plane. Because of the low congestion of the map to the grid, a point of the plane that is covered by $$\Omega(n^3)$$ triangles of the complete complex must also be covered by $$\Omega(n)$$ triangles of the triangulated grid. Since this is true for all maps to a plane, the triangulated grid has book thickness $$\Omega(n^{1/3})$$.
 
 For details, generalizations to triangulated products of trees and non-grid tessellations of space, matching upper bounds on book thickness, and more, please see the preprint.
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/107795266201400204))
