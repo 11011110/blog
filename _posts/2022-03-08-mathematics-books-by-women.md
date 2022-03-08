@@ -68,3 +68,5 @@ If you know of more reviews for these, please let me know! I need at least three
 * _Topics from One-Dimensional Dynamics_ (2004), [Karen Brucks](https://en.wikipedia.org/wiki/Karen_Brucks) and Henk Bruin. Advanced undergraduate or introductory graduate text on dynamical systems theory. Reviewed by [MathSciNet](https://mathscinet.ams.org/mathscinet-getitem?mr=2080037) and [zbMATH](https://zbmath.org/?q=an:1074.37022).
 
 * _Unitals in Projective Planes_ (2008), Susan Barwick and Gary Ebert. Research monograph on structures in finite geometries. Reviewed in [zbMATH](https://zbmath.org/?q=an%3A1156.51006). MathSciNet has only the publisher's blurb.
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/107920020659204328))
