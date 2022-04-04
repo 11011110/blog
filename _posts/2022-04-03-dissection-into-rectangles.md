@@ -52,6 +52,8 @@ So the Dehn invariant cannot be used to prove that such a thing is impossible, b
 
 But this is not possible without rotation. Every periodic tiling of the plane has a [fundamental region](https://en.wikipedia.org/wiki/Fundamental_domain) in the shape of an axis-parallel hexagon, like the hexagons in this periodic tiling.  If one or more copies of a polygon could be cut up by axis-parallel cuts and reassembled by translations to form a single polygon that can tile the plane periodically, it would also be possible to dissect copies of the polygon (possibly a larger number of copies of it) into an axis-parallel hexagon. But these hexagons have a Dehn invariant with rank at most two (they can be cut into two rectangles), while any number of copies of our stealth shape combine to have rank three (making more copies just multiplies the matrix by a scalar). Because the Dehn invariants have different ranks, no dissection is possible.
 
+This same rank analysis can also be applied to the more familiar polyhedral form of the Dehn invariant. For that form, a polyhedron whose Dehn invariant has high rank cannot be dissected into another polyhedron with fewer edges than the rank.
+
 * Footnotes go here
 {:footnotes}
 
