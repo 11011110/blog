@@ -20,3 +20,5 @@ Martha Osegueda, one of Mike Goodrich's students at UC Irvine, successfully defe
 * "Diamonds are forever in the blockchain: Geometric polyhedral point-set pattern matching" is her newest work, in submission. It studies problems of aligning a polyhedron to sample points from a similarly-shaped surface, motivated by an application in tracing the provenance of ethically sourced diamonds.
 
 Despite all of these good publications, Mike tells me that it was difficult to persuade Martha that she had done enough for a doctorate. But she had, easily, and now she's moving on to a position at Meta. Congratulations, Martha!
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/108342653334960089))
