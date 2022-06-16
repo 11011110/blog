@@ -6,12 +6,12 @@ date: 2022-04-03 18:45
 It's easy to cut a Greek cross into pieces that can be reassembled into a rectangle:
 
 {: style="text-align:center"}
-![Dissection of a Grek cross to a 4x5 rectangle]({{site.baseurl}}/assets/2022/cross2rect.svg){: width="60%" }
+![Dissection of a Grek cross to a 4x5 rectangle]({{site.baseurl}}/assets/2022/cross2rect.svg){: style="width:100%;max-width:540px" }
 
 Here's another example. The three yellow rectangles below have dimensions <span style="white-space:nowrap">$$2^{2/3}\times 1$$,</span> <span style="white-space:nowrap">$$2^{1/3}\times 2^{1/3}$$,</span> <span style="white-space:nowrap">and $$1\times 2^{2/3}$$.</span> (The order of multiplication matters here!) Put them together, and you get the blue stealth aircraft shape. Can you cut this shape into pieces and reassemble them into a single rectangle?
 
 {: style="text-align:center"}
-![Union of three irrational rectangles]({{site.baseurl}}/assets/2022/trirect.svg){: width="80%" }
+![Union of three irrational rectangles]({{site.baseurl}}/assets/2022/trirect.svg){: style="width:100%;max-width:720px" }
 
 The answer is yes; any polygon can be cut and reassembled into a rectangle, or into any other polygon of the same area. This is the [Wallace–Bolyai–Gerwien theorem](https://en.wikipedia.org/wiki/Wallace%E2%80%93Bolyai%E2%80%93Gerwien_theorem). But the Greek cross dissection above uses only axis-parallel cuts and translation of the pieces. To get a single rectangle from the stealth shape, you're going to need a more general class of operations that cut it at odd angles and rotate the pieces. It's impossible to make a rectangle from this shape using only axis-parallel cuts and translation. And even for the Greek cross, although you can make a rectangle as shown, it's impossible to make a square using only axis-parallel cuts and translation.
 
@@ -43,12 +43,12 @@ Suppose that we could dissect a <span style="white-space:nowrap">polygon $$P$$,<
 Another use of the polyhedral Dehn invariant, besides dissection of one shape into another, involves tiling. Any polyhedron that tiles space must have Dehn invariant zero, and any polyhedron with Dehn invariant zero can be dissected into a different polyhedron that tiles space. For the axis-parallel polygonal Dehn invariant we're looking at here, things don't work out quite so neatly. The Greek cross can tile, but has nonzero Dehn invariant. More, any axis-parallel polygon can be cut into multiple rectangles, and these can tile space aperiodically by grouping them into rows of the same type of rectangle. 
 
 {: style="text-align:center"}
-![Aperiodic tiling by three irrational rectangles]({{site.baseurl}}/assets/2022/trirect-row-tiling.svg){: width="65%" }
+![Aperiodic tiling by three irrational rectangles]({{site.baseurl}}/assets/2022/trirect-row-tiling.svg){: style="width:100%;max-width:600px" }
 
 So the Dehn invariant cannot be used to prove that such a thing is impossible, because it is always possible. If we could rotate pieces, we could also form these three rectangles into a single-piece axis-parallel hexagon that can tile the plane:
 
 {: style="text-align:center"}
-![Periodic tiling by a hexagon formed from three irrational rectangles]({{site.baseurl}}/assets/2022/trirect-flip-tiling.svg){: width="80%" }
+![Periodic tiling by a hexagon formed from three irrational rectangles]({{site.baseurl}}/assets/2022/trirect-flip-tiling.svg){: style="width:100%;max-width:720px" }
 
 But this is not possible without rotation. Every periodic tiling of the plane has a [fundamental region](https://en.wikipedia.org/wiki/Fundamental_domain) in the shape of an axis-parallel hexagon, like the hexagons in this periodic tiling.  If one or more copies of a polygon could be cut up by axis-parallel cuts and reassembled by translations to form a single polygon that can tile the plane periodically, it would also be possible to dissect copies of the polygon (possibly a larger number of copies of it) into an axis-parallel hexagon. But these hexagons have a Dehn invariant with rank at most two (they can be cut into two rectangles), while any number of copies of our stealth shape combine to have rank three (making more copies just multiplies the matrix by a scalar). Because the Dehn invariants have different ranks, no dissection is possible.
 

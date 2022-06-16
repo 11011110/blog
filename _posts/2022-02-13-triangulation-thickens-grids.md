@@ -6,12 +6,12 @@ date: 2022-02-13 22:54
 If you zigzag back and forth through the columns (or rows) of an ordinary two-dimensional grid graph, following a pattern dignified with the fancy name "[boustrophedon](https://en.wikipedia.org/wiki/Boustrophedon)", you get a one-dimensional ordering of the vertices that can be used as the basis of a nice planar [arc diagram](https://en.wikipedia.org/wiki/Arc_diagram) of this graph.
 
 {: style="text-align:center"}
-![Boustrophedon layout of a 2d grid]({{site.baseurl}}/assets/2022/boustrophedon.svg){: width="80%" }
+![Boustrophedon layout of a 2d grid]({{site.baseurl}}/assets/2022/boustrophedon.svg){: style="width:100%;max-width:720px" }
 
 The same idea works in 3d. You can divide a 3d grid graph into 2d layers, zigzag within each layer, and then reverse the same zigzagging order in alternating layers, to get another nice one-dimensional ordering of the vertices. It doesn't give a planar drawing (this graph is not planar), but it does allow it to be drawn without crossings on the four half-planes of a four-page [book embedding](https://en.wikipedia.org/wiki/Book_embedding). More generally, any $$d$$-dimensional grid graph can be drawn in the same way as a book embedding with $$2(d-1)$$ pages.
 
 {: style="text-align:center"}
-![Double boustrophedon layout of a 3d grid]({{site.baseurl}}/assets/2022/double-boustrophedon.svg){: width="80%" }
+![Double boustrophedon layout of a 3d grid]({{site.baseurl}}/assets/2022/double-boustrophedon.svg){: style="width:100%;max-width:720px" }
 
 I'm a coauthor on a new preprint showing that this one-dimensional layout is very sensitive to the way you connect nearby vertices in the 3d grid. If you modify the grid just a little bit, triangulating it by adding a diagonal to each grid square, then the resulting graph no longer has a book embedding with a constant number of pages. Instead, for a triangulated $$n\times n\times n$$ grid, $$\Theta(n^{1/3})$$ pages are necessary (and sufficient). The preprint is "Three-dimensional graph products with unbounded stack-number", with Robert Hickingbotham, Laura Merker, Sergey Norin, Michał T. Seweryn, and David R. Wood, [arXiv:2202.05327](https://arxiv.org/abs/2202.05327); the long coauthor list is because it comes from a collaboration that began at the Banff workshop on Graph Product Structure Theory last November.
 
@@ -26,7 +26,7 @@ There are many other related results packed into the same preprint, but rather t
 * For a 2d grid graph, we can associate each vertex with a subgraph consisting of the union of the row and column of the grid containing that vertex.
 
   {: style="text-align:center"}
-![Bramble associating each grid vertex with the union of its row and column]({{site.baseurl}}/assets/2022/grid-bramble.svg){: width="50%" }
+![Bramble associating each grid vertex with the union of its row and column]({{site.baseurl}}/assets/2022/grid-bramble.svg){: style="width:100%;max-width:450px" }
 
   This family of subgraphs is a [bramble](https://en.wikipedia.org/wiki/Bramble_(graph_theory)), meaning that all of the subgraphs are connected and touch each other. In this case, they all touch at shared vertices, but brambles also allow subgraphs to touch across edges. In the bramble for an $$n\times n$$ grid graph, each graph vertex or edge belongs to $$O(n)$$ subgraphs.
 
