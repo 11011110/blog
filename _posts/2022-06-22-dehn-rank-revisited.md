@@ -26,3 +26,5 @@ However, the 3d Dehn rank is not exactly equal to the minimum number of edges af
 Nevertheless, I was hoping that the rank of the Dehn invariant would be usable as a constant-factor approximation to the minimum number of edges after dissection. To prove this, I'd need to find a polyhedron, having the same Dehn invariant as any given polyhedron, but with a number of edges proportional to the rank. The existence of a dissection would then follow from known results. But finding this few-edge polyhedron would have to use some knowledge of the starting polyhedron (unlike my set-of-rectangles construction), because not all tensors are realizable as Dehn invariants. So far, I haven't been able to find any construction of these few-edge polyhedra.
 
 So: does every polyhedron, of Dehn rank $$r$$, have an equivalent polyhedron with $$O(r)$$ edges? Or are there some polyhedra that cannot be dissected into another polyhedron with few edges, even though their Dehn invariants have low rank?
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/108524203085266737))
