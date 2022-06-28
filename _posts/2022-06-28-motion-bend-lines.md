@@ -49,3 +49,5 @@ There is actually quite a lot of freedom in the pattern of bend lines of the cen
 But after that point, the entangled loops block the twisting from going any farther. They cannot be disentangled from each other without being pulled around the rigid central bend line, and they are too short for that to be possible, so the surface is locked.
 
 It's not clear to me whether all simple polygons are unlocked, or whether it's possible to make locked polygons without holes. I also don't have any algorithmic results in this area; it seems likely that testing whether a surface is locked or unlocked is hard, but I don't know how to prove it.
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/108557742866716208))
