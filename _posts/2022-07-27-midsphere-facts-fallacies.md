@@ -24,3 +24,5 @@ For most polyhedra having an insphere and a midsphere, or a midsphere and a circ
 ![Metabidiminished icosahedron, CC-BY-SA image by AndrewKepert, November 1, 2004, from https://commons.wikimedia.org/wiki/File:Metabidiminished_icosahedron.png]({{site.baseurl}}/assets/2022/metabidiminished.png)
 
 It may possibly be the case that the inradius is always less than the midradius (when both exist) and that the midradius is always less than the circumradius (when both exist). I don't have a proof, but I also don't have a counterexample.
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/108722887534301591))
