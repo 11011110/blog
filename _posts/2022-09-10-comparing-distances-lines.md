@@ -36,3 +36,5 @@ No! The problem is <span style="white-space:nowrap">$$\mathsf{NP}$$-complete.</s
 ![Vertex gadget for reduction from 3-coloring to linear distance comparison, consisting of six inequalities abs(x) ≤ abs(y-4), abs(x+2) ≥ abs(y-2), abs(x-2) ≥ abs(y-2), abs(x+1) ≥ abs(y+1), abs(x-1) ≥ abs(y+1), and abs(x) ≤ abs(y+2), that force the two variables (x,y) to have one of the three combinations of values (3,1), (-3,1), or (0,0)]({{site.baseurl}}/assets/2022/vertex-gadget.svg)
 
 So somehow, the geometry of Gilbert tessellations is essential for the ability to convert their recognition problem into a linear program, and solve it efficiently.
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/108977122069764388))
