@@ -28,6 +28,8 @@ $$\frac{n}{4}(3^{n-1}+3)$$
 
 if we are counting one-point zero-length paths, or
 
-$$\frac{n}{4}(3^{n-1}-1)$$
+$$\frac{n}{4}(3^{n-1}-1),$$
 
-(the formula from OEIS) if we are not counting them.
+the formula from OEIS, if we are not counting them.
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/109039364670401641))
