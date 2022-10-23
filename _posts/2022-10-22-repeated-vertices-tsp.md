@@ -26,3 +26,5 @@ Instead of counting edges, another way to define sparse graphs involves forbidde
 
 {: style="text-align:center"}
 ![Subdividing the edges of the complete graph $$K_7$$ produces a minimal Eulerian graph with $$K_7$$ as a 1-shallow minor.]({{site.baseurl}}/assets/2022/subdivided-K7.svg)
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/109214811068499556))
