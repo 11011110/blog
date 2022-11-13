@@ -85,3 +85,5 @@ The contributed papers were organized by topic, both in the conference sessions 
 The best paper award (named in memory of Alejandro López-Ortiz) was given to "[Theoretical analysis of `git` bisect](https://doi.org/10.1007/978-3-031-20624-5_10)" by Julien Courtiel, Paul Dorbec, and Romain Lecoq (who unfortunately could not present it). The conference also has a "test of time" award, named for [Imre Simon](https://en.wikipedia.org/wiki/Imre_Simon), which went to "[Optimal succinctness for range minimum queries](https://doi.org/10.1007/978-3-642-12200-2_16)" by Johannes Fischer from 2010.
 
 All in all, a very successful conference, and one I'm very happy to have traveled to.
+
+([Discuss on Mastodon](https://mathstodon.xyz/web/@11011110/109338576841926898))
