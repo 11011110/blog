@@ -1,0 +1,46 @@
+---
+layout: post
+title: First linkage of the new year
+date: 2023-01-15 23:21
+---
+* [MathSciNet on my "Counting polygon triangulations is hard"](https://mathscinet.ams.org/mathscinet-getitem?mr=4183362) <span style="white-space:nowrap">([$$\mathbb{M}$$](https://mathstodon.xyz/@11011110/109618156827776286))</span> says: "Of course, every <span style="white-space:nowrap">$$\mathsf{NP}$$-complete</span> problem gives rise to a <span style="white-space:nowrap">$$\#\mathsf{P}$$-hard</span> problem". I assume it means: the counting problem for a  witness-checker for an <span style="white-space:nowrap">$$\mathsf{NP}$$-complete</span> problem must be <span style="white-space:nowrap">$$\#\mathsf{P}$$-hard.</span> But is it true? The [Berman–Hartmanis conjecture](https://en.wikipedia.org/wiki/Berman%E2%80%93Hartmanis_conjecture) and [Mahaney's theorem](https://en.wikipedia.org/wiki/Mahaney%27s_theorem) seem relevant. [Goldreich is more careful](https://www.wisdom.weizmann.ac.il/~oded/PSX/cc-text15.pdf): "many counting problems associated with <span style="white-space:nowrap">$$\mathsf{NP}$$-complete</span> search problems are <span style="white-space:nowrap">$$\#\mathsf{P}$$-complete".</span>
+
+* Probably most researchers have felt snubbed when some new paper failed to cite their vaguely-related work <span style="white-space:nowrap">([$$\mathbb{M}$$](https://mathstodon.xyz/@11011110/109622597689281123)).</span> Usually it merely means research has moved on and the uncited paper is not up-to-date on its topic; one should get over it and publish more research for people to cite. But sometimes, the missing citation really is problematic, because its absence creates the false impression that something old is new. [Lipton and Regan describe a case from CACM on mutation testing](https://rjlipton.wpcomstaging.com/2022/12/15/a-mutation-carol-2/).
+
+* Every smooth arc with total absolute curvature $$\le\pi$$ is monotonic in some direction (and therefore non-self-crossing); if the curvature is everywhere $$\ge0$$ then it is a convex arc <span style="white-space:nowrap">([$$\mathbb{M}$$](https://mathstodon.xyz/@11011110/109626775003632072)).</span> This is a sharp threshold: a curve whose total absolute curvature exceeds $$\pi$$ can self-cross. Does this sound familiar to anyone? I'd like to add it to [the Wikipedia article on convex curves](https://en.wikipedia.org/wiki/Convex_curve) but I need a published source.
+
+  {: style="text-align:center"}
+  ![Three curves demonstrating the effect of limited curvature on crossings. The upper left curve has total curvature pi and is convex; the upper right curve has total curvature pi, is non-convex, but does not cross; the lower curve has total curvature slightly more than pi and crosses itself.]({{site.baseurl}}/assets/2023/3curves.svg){: style="width:100%;max-width:600px" }
+
+* [Experiments with paper airplanes reveal surprisingly complex aerodynamics](https://arstechnica.com/science/2023/01/experiments-with-paper-airplanes-reveal-surprisingly-complex-aerodynamics/) <span style="white-space:nowrap">([$$\mathbb{M}$$](https://mathstodon.xyz/@11011110/109633500547078803),</span> [original research paper](https://doi.org/10.1017/jfm.2022.89)). The wide flat wings of paper planes allow them to fly stably without a separate tail stabilizer, but require careful placement of the center of mass, forward of the center of the wing but not too close to its front edge so that when the wing pitches out of the right angle the aerodynamic forces right it.
+
+* [Joshua Mensah writes](https://mathstodon.xyz/@jpkmensah@mas.to/109590321219123830): "It's wild how computer programming went from exclusively women's work to 'we're not sexist we just don't think women are interested in it' in like 40 years."
+
+* [Sunset in Mendocino](https://www.ics.uci.edu/~eppstein/pix/swpss/index.html) <span style="white-space:nowrap">([$$\mathbb{M}$$](https://mathstodon.xyz/@11011110/109639770183944526))</span> after a big storm that left us powerless and incommunicado for 12 hours the previous night. Another rolled in the next evening. Fortunately the roads were clear (except for a 20-minute detour to avoid the always-flooded CA-128) for my return travel between it and the one after.
+
+  {: style="text-align:center"}
+![Sunset in Mendocino](https://www.ics.uci.edu/~eppstein/pix/swpss/swpss-m.jpg){: style="border-style:solid;border-color:black" }
+
+* [Mark Gritter writes about algorithms for counting primes](https://mathstodon.xyz/@markgritter/109632821623787814), writing "It comes as a surprise to many people that there are more efficient ways to count the primes than generating all of them!" He discusses both a practical <span style="white-space:nowrap">$$O(n^{2/3}/\log^2 n)$$-time</span> algorithm and a theoretically-better <span style="white-space:nowrap">$$O(n^{1/2+\varepsilon})$$-time</span> algorithm.
+
+* Are women held to a higher standard in publishing <span style="white-space:nowrap">([$$\mathbb{M}$$](https://mathstodon.xyz/@11011110/109657999153288421))?</span> According to [research by Diane Alexander, Olga Gorelkina, and Erin Hengel](https://erinhengel.github.io/time/time.pdf) reported on [in _The Chronicle of Higher Education_](https://www.chronicle.com/article/are-women-held-to-a-higher-standard-in-publishing), economics journal submissions by women average three to six month longer review times than submissions by men, after controlling for other factors, adding friction to their authors' academic careers.
+
+* ["Mathematicians, Hopeful and Hurting"](https://www.insidehighered.com/news/2023/01/09/mathematicians-resume-person-meetings-trying-times) <span style="white-space:nowrap">([$$\mathbb{M}$$](https://mathstodon.xyz/@11011110/109660772439283602)):</span> _Inside Higher Ed_ on the Joint Mathematics Meetings, formerly AMS+MAA and now AMS-only as the MAA runs a separate Mathfest. Although this split is supposedly financial, the article discusses diverging opinions on diversity issues; some participants feel ghettoized in special sections at JMM rather than integrated into mainstream sessions, and controversy lingers over a 2019 anti-diversity-statement editorial in the _Notices_.
+
+* [Boldly contrasted maps by Spencer Schien visualize population density data](https://www.thisiscolossal.com/2023/01/spencer-schien-population-maps/) <span style="white-space:nowrap">([$$\mathbb{M}$$](https://mathstodon.xyz/@colossal@mastodon.art/109637050037451131)).</span> See also [Schien's population density gallery](https://spencerschien.info/gallery/population-density/).
+
+* [What do the colors mean in those visualizations of optimal circle packings into squares?](https://mathstodon.xyz/@joshmillard@mastodon.social/109672113857964612) The answer seems to be: pink for loose circles ("rattlers"), blue for circles that could be loose but happen to have two contacts in the depicted diagram, orange for circles that bound a triangular void, and yellow for all remaining circles.
+
+* [Convex curve](https://en.wikipedia.org/wiki/Convex_curve) <span style="white-space:nowrap">([$$\mathbb{M}$$](https://mathstodon.xyz/@11011110/109680010200309315)),</span> another Wikipedia Good Article:  Some stuff I learned while working on it:
+
+  * Archimedes gave a modern-looking definition of these but then the subject languished until its 19th-century revival.
+
+  * Any convex curve has 2nd derivatives and curvatures at all points outside a set of measure zero, but this set can be comeager.
+
+  * Every cyclic quadrilateral can be inscribed in every smooth closed convex curve, but might not be inscribable in an obtuse triangle.
+
+* [The walrus](https://conwaylife.com/wiki/Walrus) <span style="white-space:nowrap">([$$\mathbb{M}$$](https://mathstodon.xyz/@11011110/109684693817917909)),</span> a new and surprisingly small $$c/8$$ diagonal spaceship in Conway's Game of Life. Also included: a walrus eater and a stable walrus-to-glider converter. This discovery highlights the power of [modern cellular automaton pattern search codes](https://conwaylife.com/wiki/Ikpx), which integrate SAT solvers to provide deeper lookahead and quickly detect and prune sterile search branches, compared to the hardcoded limited-depth lookahead of previous software.
+
+* [Izabella Łaba on the Coven–Meyerowitz conjecture](https://ilaba.wordpress.com/2023/01/08/the-coven-meyerowitz-conjecture/) <span style="white-space:nowrap">([$$\mathbb{M}$$](https://mathstodon.xyz/@ilaba/109655872586109083)),</span> a reformulation of the question of which patterns tile the integers in terms of factorization by cyclotomic polynomials.
+
+* [Kevin McCurley on peer review](https://mathstodon.xyz/@mccurley@sigcrap.org/109667512050082457). He points out how unreasonable it is to expect reviewers to find subtle errors in 100-page papers for now credit, how reliance on peer review may lead research communities in safe rather than creative directions, and how it might help readers to publish some kind of rating for papers instead of only a single bit of information from the peer review (it is accepted or not).
