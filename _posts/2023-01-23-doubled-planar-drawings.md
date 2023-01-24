@@ -29,3 +29,5 @@ If you repeat the Kleetope construction, you get a polyhedron enclosed by multip
 Each time you layer on more pyramids, any possible biplanar drawing of the result gets more and more constrained, until with enough layers it becomes completely impossible.
 
 Because not all planar blowups are biplanar, the question arises: which ones are, and which ones aren't? Is there an efficient algorithm that takes as input a planar graph, produces a biplanar drawing of its blowup if such a drawing exists, and tells you when such a drawing doesn't exist? I don't know.
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/109742463628336203))
