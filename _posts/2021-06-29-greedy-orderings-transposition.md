@@ -69,7 +69,7 @@ The argument for distance-hereditary orderings is even easier. If $$x$$ and $$y$
 If we can't obtain an antimatroid from the cop-win or distance-hereditary graphs, we might at least hope for a more general structure, a greedoid. The key property of greedoids (viewed as hereditary normal languages rather than their usual definition as set systems) is the following axiom:
 
 Exchange:
-: If $$S$$ is a longer string in the language of a greedoid, and $$T$$ is a longer string in the same language, then there is a character $$x$$ in $$T$$ such that $$Sx$$ is a string in the language.
+: If $$S$$ is a string in the language of a greedoid, and $$T$$ is a longer string in the same language, then there is a character $$x$$ in $$T$$ such that $$Sx$$ is a string in the language.
 
 This implies that all maximal strings in the language have the same length, and in the cop-win and distance-hereditary cases it implies that all greedy dismantling or deconstruction sequences reach a single vertex without getting stuck along the way. The greedoid exchange property also immediately implies the strong version of the obliviousness property, by plugging in a permutation of $$Sx$$ as the string $$T$$ in the exchange property.
 
