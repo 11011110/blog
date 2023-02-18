@@ -12,3 +12,5 @@ Beyond the papers used in his thesis, Ramtin is a coauthor on more papers in [SP
 His next step is to work for Google in the San Francisco Bay Area, involving a temporary two-body problem while his wife finishes her own studies at the University of Southern California.
 
 Congratulations, Ramtin!
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/109882878328905995))
