@@ -145,3 +145,5 @@ It still might be possible that the number of cops needed to catch a robber on t
 [^t2]: See Corollary 3.6 of Toruńczyk (2023)[^t]
 
 [^tw3]: See Lemma 13 of  Édouard Bonnet, Colin Geniet, Eun Jung Kim, Stéphan Thomassé, and Rémi Watrigant, "Twin-width III: Max Independent Set and Coloring", [arXiv:2007.14161v2](https://arxiv.org/abs/2007.14161v2) (this lemma is not in the _ICALP_ 2021 version and numbered differently in other arXiv versions)
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/109901138706218444))
