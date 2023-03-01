@@ -25,7 +25,8 @@ date: 2023-02-15 18:37
 
 * I just returned from a week-long workshop at the Bellairs Research Institute in Barbados, my first since the pandemic started <span style="white-space:nowrap">([$$\mathbb{M}$$](https://mathstodon.xyz/@11011110/109849258853460072)).</span> This time, Bellairs double-booked us with another workshop, so we met in Seabourne House and its ocean-view garden instead of the usual picnic table area. This worked surprisingly well, especially for the morning sessions. The photo below shows some of this area; [the full gallery](https://www.ics.uci.edu/~eppstein/pix/seabourne/) has a few other shots of architectural details.
 
-  ![Seabourne House, Bellairs Research Institute, Holetown, Barbados](https://www.ics.uci.edu/~eppstein/pix/seabourne/CommonRoom-m.jpg){: style="border-style:solid;border-color:black" }
+  {: style="text-align:center"}
+![Seabourne House, Bellairs Research Institute, Holetown, Barbados](https://www.ics.uci.edu/~eppstein/pix/seabourne/CommonRoom-m.jpg){: style="border-style:solid;border-color:black" }
 
 * [Three unit regular tetrahedra pack neatly into a unit cube](https://i.stack.imgur.com/k61In.png) <span style="white-space:nowrap">([$$\mathbb{M}$$](https://mathstodon.xyz/@uzulim/109742191472459313)).</span>
 
