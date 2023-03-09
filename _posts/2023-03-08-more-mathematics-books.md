@@ -48,3 +48,5 @@ For the last several years, I've been celebrating International Women's Day by p
 * _[Ad Quadratum: The Practical Application of Geometry in Medieval Architecture](https://en.wikipedia.org/wiki/Ad_Quadratum:_The_Practical_Application_of_Geometry_in_Medieval_Architecture)_ (2002), Nancy Y. Wu. An edited volume of papers on geometry in medieval architecture, mostly of Gothic cathedrals.
 
 * _[Do Not Erase: Mathematicians and their Chalkboards](https://en.wikipedia.org/wiki/Do_Not_Erase:_Mathematicians_and_their_Chalkboards)_ (2021), Jessica Wynne. A photo-essay pairing photographs of mathematician's chalkboards with reflections on their contents by the mathematicians. I listed this in last year's collection of books for which I could not find enough reviews, but in this case I subsequently did find them.
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/109990803163597638))
