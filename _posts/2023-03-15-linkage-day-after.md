@@ -28,6 +28,6 @@ Somehow I hadn't previously seen this 2014 post by Anders Sandberg arguing that 
 
 * [zbMATH rejects a journal](https://mathstodon.xyz/@zbMATH/110016022739362318), not merely because its most recent issue contained dubious proofs of both the twin prime conjecture and the Riemann hypothesis, but because too many earlier issues were packed with apparently automatically generated papers by apparently automatically generated authors.
 
-* [Caitlin Hudon pieces a $$\pi$$ quilt](https://mathstodon.xyz/@beeonaposy@recsys.social/110022283260307887) with color-coded squares for the first 143 decimal digits of $$pi$$. (The decimal point also occupies a square.)
+* [Caitlin Hudon pieces a $$\pi$$ quilt](https://mathstodon.xyz/@beeonaposy@recsys.social/110022283260307887) with color-coded squares for the first 143 decimal digits of $$\pi$$. (The decimal point also occupies a square.)
 
 * [TCS aggregator bot for Mastodon](https://mathstodon.xyz/@cstheory).
