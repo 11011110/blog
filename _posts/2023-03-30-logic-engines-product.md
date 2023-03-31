@@ -25,6 +25,9 @@ We also prove that row treedepth, defined in the same way, is hard, even to test
 
 Even accurately approximating the row treewidth is hard, at least if you believe that approximating treewidth itself is hard. The hardness of approximation of treewidth has not been proven rigorously, but instead rests on an unproven assumption, the [small set expansion hypothesis](https://en.wikipedia.org/wiki/Small_set_expansion_hypothesis), a variant of the [unique games conjecture](https://en.wikipedia.org/wiki/Unique_games_conjecture). But if this assumption is true, then it is impossible to approximate treewidth to within any constant factor. If you add a universal vertex to a graph, you don't change its treewidth much, but you force its row treewidth to be within a constant factor of its treewidth, because it prevents you from using path factors that are longer than two edges. So, under this assumption, it is also impossible to approximate row treewidth to within any constant factor.
 
+* Footnotes go here
+{:footnotes}
+
 [^bc]: Sandeep Bhatt and Stavros Cosmadakis (1987), "The complexity of minimizing wire lengths in VLSI layouts", _IPL_ 25 (4): 263–267, [doi:10.1016/0020-0190(87)90173-6](https://doi.org/10.1016/0020-0190(87)90173-6)
 
 [^bod]: Hans L. Bodlaender (1996), "A linear time algorithm for finding tree-decompositions of small treewidth", _SICOMP_ 25 (6): 1305–1317, [doi:10.1137/S0097539793251219](https://doi.org/10.1137/S0097539793251219).
@@ -34,3 +37,5 @@ Even accurately approximating the row treewidth is hard, at least if you believe
 [^duj]: Vida Dujmović, Gwenaël Joret, Piotr Micek, Pat Morin, Torsten Ueckerdt, and David R. Wood (2020), "Planar graphs have bounded queue-number", _JACM_ 67 (4): Art. 22, [doi:10.1145/3385731](https://doi.org/10.1145/3385731), [arXiv:1904.04791](https://arxiv.org/abs/1904.04791).
 
 [^ew]: Peter Eades and Sue Whitesides (1996), "The logic engine and the realization problem for nearest neighbor graphs", _TCS_ 169 (1): 23–27, [doi:10.1016/S0304-3975(97)84223-5](https://doi.org/10.1016/S0304-3975(97)84223-5).
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/110115277230448668))
