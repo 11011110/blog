@@ -26,7 +26,7 @@ They have the same combinatorial structure (their dual graphs form the same infi
 Now let's take it down to only some fixed level, rather than recursing infinitely all the way down, and number the vertices in binary.
 
 {: style="text-align:center"}
-![A fractal arbelos]({{site.baseurl}}/assets/2023/numbered-arbelos.svg)
+![Fewer levels of the fractal arbelos, with its vertices numbered in binary]({{site.baseurl}}/assets/2023/numbered-arbelos.svg)
 
 We can read off a lot of information from these numbers:
 
@@ -37,3 +37,5 @@ We can read off a lot of information from these numbers:
 The same numbering system can be extended to all tiles in the halfplane, using [dyadic rationals](https://en.wikipedia.org/wiki/Dyadic_rational) in place of integers. The one-dimensional symmetry group is then apparent from the numbers: it's just multiplication or division by finite powers of two.
 
 If the existence of a special point $$0$$, with no arbelos above it, is a concern, then you can replace $$0$$ by any [2-adic integer](https://en.wikipedia.org/wiki/P-adic_number) whose left-infinite binary representation has infinitely many zeros and infinitely many ones, and number from there in the same way. You can either choose a number with a periodic binary representation (in which case you still get a one-dimensional symmetry group) or an aperiodic representation (producing a tiling with no symmetries at all).
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/110211494756432130))
