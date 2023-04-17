@@ -30,7 +30,7 @@ Now let's take it down to only some fixed level, rather than recursing infinitel
 
 We can read off a lot of information from these numbers:
 
-* For each numbered point, with number $$x$$, each point numbered $$x$$ is connected by arcs to other numbers $$x\pm 2^i$$, where $$2^i$$ is less than or equal to the smallest power of two used in the binary representation of $$x$$ (its rightmost one-bit). In the special case $$x=0$$, any power of two is allowed.
+* Each numbered point, with number $$x$$, is connected by arcs to other numbers $$x\pm 2^i$$, where $$2^i$$ is less than or equal to the smallest power of two used in the binary representation of $$x$$ (its rightmost one-bit). In the special case $$x=0$$, any power of two is allowed.
 
 * Each numbered point, with nonzero number $$x$$, is the middle point of exactly one arbelos-shaped tile. If $$p$$ is the largest power of two in the binary representation of $$x$$, then the two smaller tiles under this one are numbered $$x\pm p/2$$. The larger tile above it is either $$x+p$$ or $$x-p$$, depending on whether the next bit in the binary representation of $$x$$ is a $$0$$ or a $$1$$, respectively.
 
