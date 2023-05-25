@@ -3,7 +3,7 @@ layout: post
 title: Congratulations, Dr. Frishberg!
 date: 2023-05-24 21:06
 ---
-My student Daniel Frishberg successfully passed his dissertation defense today!
+My student [Daniel Frishberg](https://www.ics.uci.edu/~dfrishbe/) successfully passed his dissertation defense today!
 
 I've written here already about several of our joint papers:
 * "[New applications of nearest-neighbor chains: Euclidean TSP and motorcycle graphs]({{site.baseurl}}{% post_url 2019-02-21-mutual-nearest-neighbors %})" (with Mamano, Efrat, Goodrich, Kobourov, Matias, and Polishchuk, [ISAAC 2019](https://doi.org/10.4230/LIPIcs.ISAAC.2019.51))
@@ -38,3 +38,5 @@ There are always three flips that move one of the vertices of the central triang
 The next step for Daniel will be to start an assistant professor position at Cal Poly in San Luis Obispo in the fall.
 
 Congratulations, Daniel!
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/110427368041366794))
