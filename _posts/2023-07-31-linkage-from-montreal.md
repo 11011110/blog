@@ -1,0 +1,37 @@
+---
+layout: post
+title: Linkage from Montréal
+date: 2023-07-31 14:48
+---
+* [The Higher Geometer gets grumpy over paywalls for back issues of _The Duke Mathematical Journal_](https://mathstodon.xyz/@highergeometer/110721297663109842). Some but not all of them [can also be found on the Internet Archive](https://archive.org/details/sim_duke-mathematical-journal_1935_1/page/n3). But everything before 1943 is out of copyright and should be free.
+
+* "[Zip-zip Trees: Making Zip Trees More Balanced, Biased, Compact, or Persistent](https://arxiv.org/abs/2307.07660)" <span style="white-space:nowrap">([$$\mathbb{M}$$](https://mathstodon.xyz/@11011110/110733424371983435))</span> is this year's winner of the WADS best paper award for its authors, Ofek Gila, Mike Goodrich, and Bob Tarjan. Gila is one of Mike's students at UCI. The paper continues a line of research on random binary search trees (where the keys are assumed to be insertion-only, arriving in random order), treaps (which use randomly chosen priorities and rotations to get behavior like that of random arrivals for inputs with non-random insertion and deletion operations), and zip trees (which simplify treaps using a zip-and-unzip mechanism in place of rotations, but give up some amount of balance to do so). The new zip-zip trees have the same random shape distribution as random trees and treaps, the same zip mechanism and low number of random bits as zip trees, and the same strong history-independence properties as zip trees (useful in some crypto applications).
+
+* [Graph Drawing 2023 accepted papers](https://gd2023.ing.unipg.it/accepted-papers.html) <span style="white-space:nowrap">([$$\mathbb{M}$$](https://mathstodon.xyz/@11011110/110738661479763112)).</span> These should start appearing slowly on arXiv but the proceedings deadline is not until early September so some of them may cut it close to then.
+
+* My wife caught one of the kittens in his new favorite box <span style="white-space:nowrap">([$$\mathbb{M}$$](https://mathstodon.xyz/@11011110/110742207983654090)),</span> a little stylized by her phonecam.
+
+  {: style="text-align:center"}
+![Gray kitten peeking out from a Republic of Tea box]({{site.baseurl}}/assets/2023/republic-of-tea.jpg){: style="border-style:solid;border-color:black;width:100%;max-width:600px" }
+
+* [UnsolvedMrE asks: which rectangles have two-piece dissections into a square?](https://mathstodon.xyz/@UnsolvedMrE/110713538224014561)
+
+* Isaac Grosof posts: [The first period-41 oscillator in Conway's Game of Life was just found by Nico Brown](https://conwaylife.com/forums/viewtopic.php?p=163972#p163972) <span style="white-space:nowrap">([$$\mathbb{M}$$](https://mathstodon.xyz/@isaacg/110755002934690587)).</span> With that, oscillators of every period are known: Conway's Game of Life is omniperiodic! This has been one of the major open problems in the study of Conway's Game of Life even since its invention over fifty years ago. This comes just 7 days after the second-to-last period, period 19, was discovered.
+
+* In case anyone, like me, has a link to a Wikipedia user page from their Mastodon profile, and wants it to be marked in green as a verified link (via the rel=me attribute at the user page your profile links to), [you can now do this](https://www.mediawiki.org/wiki/Help:Extension:RealMe) <span style="white-space:nowrap">([$$\mathbb{M}$$](https://mathstodon.xyz/@11011110/110765682341893177))!</span> This adds a special code to your Wikipedia user page so that your Mastodon profile can verify that it really belongs to you.
+
+* Somehow recent events in social media remind me of [this song by X about a former friend who turned super-racist and had to go away](https://www.youtube.com/watch?v=fUiZHt6sqg4) <span style="white-space:nowrap">([$$\mathbb{M}$$](https://mathstodon.xyz/@11011110/110770532110263884)).</span>
+
+* Origami-inspired art by Australian artist Cassandra Laing <span style="white-space:nowrap">([$$\mathbb{M}$$](https://mathstodon.xyz/@11011110/110777774337568601)):</span> "[Fortune Teller (it will all end in stars)](http://aramblingmeels.blogspot.com/2010/06/art-crush-cassandra-laing.html)", and "[No Time To Waste](https://inside.artbank.gov.au/page/6#/post/91330485243/our-registrars-and-art-handlers-are-big-stars-this)"
+(also visible with three other similar pieces in [this gallery view](https://www.mca.com.au/artists-works/exhibitions/i-walk-the-line-new-australian-drawing/)). They look like photos of origami but are actually large photorealistic pencil drawings. [A newspaper story about Laing in _The Age_](https://www.theage.com.au/entertainment/art-and-design/endless-matter-of-life-and-death-20070328-ge4j36.html) mentions two more, "My Paper Ancestors" with an origami dinosaur, and "Last migration", in which "flocks of origami pteranodons fly over the Antarctic icebergs", but I haven't been able to find online images of them.
+
+* [Women of the Manhattan Project](https://youtu.be/Ojr5AITcCrs) <span style="white-space:nowrap">([$$\mathbb{M}$$](https://mathstodon.xyz/@highergeometer/110762990490766452)).</span>
+
+* On [a thread about why `expm1` and `log1p` are included in mathematics libraries when we could almost as easily write $$\exp(x)-1$$ and $$\log(1+x)$$](https://mathstodon.xyz/@rygorous@mastodon.gamedev.place/110727728478194221)
+(answer: because they're commonly used for $$x$$ close to zero, for which those other expressions would be numerically unstable) [Jannis Harder points out an important use case](https://mathstodon.xyz/@jix/110728285898409151): If you want to compute $$(1-p)^n$$, the probability of success after many trials with a low failure probability, you should use `exp(n*log1p(-p))`. Doing it that way rather than the more obvious expression results in a much smoother and more accurate approximation to the correct answer.
+
+* [Why wavy brick walls use fewer bricks than straight walls](https://twistedsifter.com/2020/06/how-wavy-crinkle-crankle-walls-use-less-bricks-than-straight-walls/) <span style="white-space:nowrap">([$$\mathbb{M}$$](https://mathstodon.xyz/@11011110/110799734608149868),</span> [via](https://news.ycombinator.com/item?id=36892970)): because you don't need to make them so thick to prevent them from falling down.
+
+* [Sophie makes an epicycle clock app](https://mathstodon.xyz/@Sophie@dice.camp/110587865363562590). The minute hand is attached to the end of the hour hand and traces out a loopy path. There's also a not-very-helpful second-hand version.
+
+* The independent set version of the Hadwiger–Nelson problem <span style="white-space:nowrap">([$$\mathbb{M}$$](https://mathstodon.xyz/@11011110/110810118775049296),</span> on coloring the infinite unit distance graph of points in the plane) asks: what fraction of the plane can you cover by points that are all at least one unit of distance apart? You can get 1/7 by using one of the seven color classes of a 7-coloring of the plane, but a significantly larger area, roughly 23%, is possible. [_Quanta_ magazine reports on progress in the other direction, bringing the upper bound below 25%](https://www.quantamagazine.org/mathematicians-break-bounds-in-coloring-problem-20230719/). Based on "[The density of planar sets avoiding unit distances](https://arxiv.org/abs/2207.14179)", Gergely Ambrus, Adrián Csiszárik, Máté Matolcsi, Dániel Varga, and Pál Zsámboki.
