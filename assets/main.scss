@@ -6,9 +6,9 @@
 // Our variables
 // was: "Helvetica Neue", Helvetica, Arial, sans-serif; 16px; 400; 0.875; 1.5
 $base-font-family: Georgia, Times, "Times New Roman", serif;
-$base-font-size:   18px;
+$base-font-size:   1.125rem;
 $base-font-weight: 400;
-$small-font-size:  $base-font-size * 0.83333;
+$small-font-size:  0.9375rem;
 $base-line-height: 1.6;
 
 // Width of the content area
@@ -24,7 +24,7 @@ $on-laptop:        800px;
 // Next and previous links on each post
 
 .PageNavigation {
-  font-size: 14px;
+  font-size: 0.875rem;
   display: block;
   width: auto;
   overflow: hidden;
