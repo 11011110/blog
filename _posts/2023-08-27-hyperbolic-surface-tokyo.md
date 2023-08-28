@@ -21,3 +21,5 @@ Sugimoto is a photographer as well as a sculptor, famous for his blurred archite
 ![The skyscrapers of Otemachi reflected in Hiroshi Sugimoto's sculpture Sundial (2018)](https://www.ics.uci.edu/~eppstein/pix/sugsun/ReflectedSkyscrapers-m.jpg){: style="border-style:solid;border-color:black" }
 
 If you're not in Japan, another similar sculpture by Sugimoto, _Point of Infinity_, has [recently been installed](https://www.archpaper.com/2023/06/hiroshi-sugimotos-point-of-infinity-installed-yerba-buena-island/) in a park on Yerba Buena island, near San Francisco.
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/110964305525128696))
