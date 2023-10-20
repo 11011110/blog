@@ -31,3 +31,5 @@ This may seem like an obvious fact, but the proof is a little subtle. One way is
 Not at all difficult, but you can see why it would get tedious to have to go through the same proof over and over again for quadtrees and [stable matching and topological sorting]({{site.baseurl}}{% post_url 2023-09-30-linkage-start-academic %}) and [simulating chip-firing systems]({{site.baseurl}}{% post_url 2021-06-12-carrying-chip-firing %}) and [hierarchical clustering]({{site.baseurl}}{% post_url 2019-02-21-mutual-nearest-neighbors %}) and [graph degeneracy]({{site.baseurl}}{% post_url 2018-11-15-linkage %}) and graph reachability and ...
 
 Saying "it's an antimatroid!" saves you from that tedium. It's an antimatroid, so using an algorithm that pulls things from a ready list works and gives you the same result regardless of the order that it chooses.
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/111264471182298247))
