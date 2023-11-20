@@ -33,3 +33,5 @@ For the example with <span style="white-space:nowrap">$$n_1=3$$,</span> <span st
 $$5a, 8a, 5b, 5c, 8b, 5a, 8c, 5b, 5c, 8a, 5a, 5b, 8b, 5c, 8c, 5a, 5b, \dots$$
 
 So this method gives an aperiodic schedule, for any instance of pinwheel scheduling with two distinct repeat times and with density less than one, and an easy proof that having density at most one suffices for a schedule to exist when there are two repeat times.
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/111440411902244020))
