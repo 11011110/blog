@@ -53,3 +53,5 @@ Now on to some real-world pyramids, the first two of which are mentioned in the 
 ![The Walter Pyramid at CSU Long Beach, CC-BY photo by Buchanan-Hermit from https://commons.wikimedia.org/wiki/File:Csulb-pyr1.jpg, May 14, 2007]({{site.baseurl}}/assets/2023/walter-pyramid.jpg){: style="width:100%;max-width:720px" }
 
 What about Barsch's pyramids? Assuming they are viewed side-on, from an unlikely orthogonal perspective, they appear from their visible angles to have a height-to-width ratio of roughly 0.59, close enough to the Egyptian pyramids to be a plausible match for them but not really the same as the two fringe theories for the pyramids.
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/111446282217434452))
