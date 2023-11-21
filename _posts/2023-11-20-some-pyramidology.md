@@ -34,7 +34,7 @@ giving height to width ratio $$\tfrac12\sqrt{\pi^2/4-1}\approx 0.6057$$.
 
 - The [canonical polyhedron](https://en.wikipedia.org/wiki/Canonical_polyhedron) form of the square pyramid has the property that, if you twist it by $$45^\circ$$ and flip it upside down, the result can be aligned with the original pyramid so that every edge of the original pyramid crosses perpendicularly to an edge of the twisted and flipped pyramid, with a single sphere tangent to all of these crossings. If I have calculated it correctly, its height to width ratio is
 
-  $$\frac{1}{\sqrt{\sqrt{2}-1}}\approx 1.554,$$
+  $$\sqrt{1+\sqrt{2}}\approx 1.554,$$
 
   extremely pointy. I've drawn a schematic view below in which you see the outline of one pyramid (blue) side-on, its dual flipped and twisted copy (red) edge-on, and the midsphere through their crossing points (yellow).
 
