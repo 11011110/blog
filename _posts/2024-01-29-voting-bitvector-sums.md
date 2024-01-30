@@ -14,7 +14,7 @@ The second specification contains the seeds of my answer, which applies more gen
 
 Starting with $$n$$ bitvectors, we get approximately $$2n/3$$ vectors of two-bit quantities, then $$4n/15$$ vectors of four-bit quantities, then $$8n/255$$ vectors of eight-bit quantities, etc. Each stage reduces the total length by at least a constant factor, until you get down to subproblems of one or two packed vectors. You could stop there and solve those subproblems directly, or you could continue recursing, taking time proportional to the subproblem dimension. Either way, the result is that we can solve this problem, for <span style="white-space:nowrap">$$b$$-dimensional</span> bitvectors, in <span style="white-space:nowrap">time $$O(n+b)$$.</span>
 
-I implemented this in Python, without early stopping:
+I implemented this in Python, without early stopping, below. My implementation uses $$O(b\log b)$$ time coming back out of the recursion to shuffle the coefficients of the sum into their proper places but that is an unnecessary slowdown that could be avoided by storing them directly into their places in an array instead.
 
 {% highlight python %}
 import functools
