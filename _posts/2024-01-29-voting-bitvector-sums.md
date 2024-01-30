@@ -75,3 +75,5 @@ The total number of ballots affected by eliminations <span style="white-space:no
 If you have a really big word size you could also use packed vectors of more than one bit, and multiply each affected ballot by its adjustment amount, avoiding the need to group affected ballots by their numbers of remaining candidates. I don't think the assumption of huge word size and fast multiplication makes as much sense as the assumption that $$k^2=O(n)$$, though, so I haven't analyzed that variation in any detail.
 
 As for what algorithm the implementors of software for tallying votes in this system should use in practice: the simplest naive algorithm, because it's least likely to be buggy and most likely to convince others of its correctness. All this theory is just theory. The actual parameters of the problem are such that anything will work quickly enough; speed is not the issue.
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/111843645298789825))
