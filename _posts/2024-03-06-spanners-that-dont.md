@@ -22,3 +22,5 @@ For instance, the [greedy geometric spanner](https://en.wikipedia.org/wiki/Greed
 Our contribution is to relax the requirement of fast updates. Instead of measuring the complexity of an update by how much computation time it takes, we measure how much change it makes to the spanner. The spanners from the new preprint are accurate, light, have bounded degree, and work in doubling spaces; the amount of change per update is small (amortized constant per insertion and logarithmic per deletion) but the time per update can still be large.
 
 The question of whether one can achieve all the things (dynamic, accurate, light, bounded degree, in doubling spaces) remains open. But from the fact that not much change to the spanner is needed per update, finding that change quickly seems more in reach.
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/112053189195340711))
