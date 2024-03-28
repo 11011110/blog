@@ -13,3 +13,5 @@ It turns out that there is a single 12-sided face. I think it's easier to draw a
 You could also stretch the bottom left shape into a regular hexagon, with the white vertices at its corners and the colored vertices in the middle of each side. Then you would glue it opposite edge to opposite edge to form a torus, just like the starting square. But somehow gluing opposite edges of a hexagon to make a torus seems much less intuitive to me than gluing opposite edges of a square.
 
 You can read off the clockwise ordering from the upper right: each white vertex is surrounded by three neighbors in the clockwise order blue, green, red. The 12-vertex face cycle that the students were supposed to find is what you see on the lower right. Because there are five vertices, six edges, and one face, the Euler characteristic is $$5-6+1=0$$. This is not $$2$$, so the surface is non-planar. (It's a torus, but I didn't require the students to say that.)
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/112174434644027633))
