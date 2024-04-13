@@ -34,3 +34,5 @@ I don't think I ever heard much detail about his work in the magnetic storage in
 After photography, I think his biggest hobby was woodworking, and much of his home furniture was hand-made, very skilfully. I still have a handmade mantle clock he made for me, like a grandfather clock but smaller. I remember well him helping me with several woodworking projects, when I was a teen, but this is a habit that has not stuck as well with me.
 
 That effort to stay busy and constructive, that craftsmanship, and that inspirational presence, encouraging myself and others to follow, is how I would like to remember him.
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/112262300138237344))
