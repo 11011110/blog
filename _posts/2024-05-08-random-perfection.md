@@ -140,3 +140,5 @@ $$P_{\mathcal{G}}[\mathsf{imperfect}]\ge 1-\kappa t^{-1/4}-o(1).$$
 We can make this arbitrarily close to $$1$$ by fixing an appropriate choice of $$t$$ and letting $$n$$ be sufficiently large. Therefore, the probability of being imperfect, for a random graph with edge probability $$\approx\tfrac1n$$, is $$1-o(1)$$.
 
 This situation, where we have a system of events in which each event is dependent with a low expected weight of other events, and we get an outcome similar to one where the events are entirely independent, reminds me a little of the [Lovász local lemma](https://en.wikipedia.org/wiki/Lov%C3%A1sz_local_lemma). I wonder whether there's a more general result about union lower bounds for nearly-independent distributions hiding here, or more likely whether someone has already published the more general result that I would need and I just don't know about it yet.
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/112409464896457680))
