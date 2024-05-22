@@ -18,3 +18,5 @@ His dissertation concerns experimental algorithms, road networks, and noisy sort
 At the defense, Evrim gave a very impressive talk in which he managed to cover all of these many results, smoothly, clearly and in detail, within the one-hour time and despite being interrupted quite a few times by questions from the audience (ok, mostly me). His next step is to go to LinkedIn as a data scientist, after previously interning for them.
 
 Congratulations, Evrim!
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/112487428618953731))
