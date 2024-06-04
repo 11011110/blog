@@ -18,3 +18,5 @@ Hadi came to UCI from Sharif University in Iran. By now he has many strong publi
 His other papers include works on healthcare monitoring, route monitoring in road networks, and networked applications of invertible Bloom filters. His next step is to go to Google in Sunnyvale, for work unlikely to concern spanners.
 
 Congratulations, Hadi!
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/112556619494902348))
