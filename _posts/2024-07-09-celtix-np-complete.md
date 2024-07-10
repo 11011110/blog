@@ -44,6 +44,8 @@ To prove hardness of Celtix, without artificially imposing the restriction of us
 {: style="text-align:center"}
 ![Crossover gadget (top) and half-crossover gadget (bottom) from Lynch's NP-completeness proof for connecting pairs of grid cells by paths]({{site.baseurl}}/assets/2024/lynch-redux.svg){: style="width:100%;max-width:540px" }
 
+(I'm a little worried that as I drew them the variables can sneak through unused clause paths and flip their values, but that can be patched by replacing each path used for the variables by a thickened set of multiple paths, so that there isn't enough bandwidth to sneak all of them through.)
+
 There is a lot of space between all these wires that, when translated into Celtix, turns into little loops that each occupy a single $$2\times 2$$ block. For instance, here's a small wiring diagram with a right turn (top), a three-way junction (middle), and a four-way junction (bottom), where to make it more visually apparent I have drawn the wires as twisted pairs rather than polyominoes.
 
 {: style="text-align:center"}
