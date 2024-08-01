@@ -23,7 +23,7 @@ date: 2023-10-31 17:21
 
 * [A recent proposal in _Nature_ to allow multiple simultaneous journal submissions](https://www.nature.com/articles/d41586-023-03196-y) <span style="white-space:nowrap">([$$\mathbb{M}$$](https://mathstodon.xyz/@11011110/111304041670266825),</span>  [via](https://news.ycombinator.com/item?id=37850593)) must have been written by someone in a field where reviewing involves glancing over a paper and guessing at its significance rather than careful in-depth checking of mathematical proofs. Looking up the author, he appears to be a psychologist. Check.
 
-* [New _Introduction to Probability for Computing_ book by Mor Harchol-Balter](https://www.cs.cmu.edu/~harchol/Probability/book.html) <span style="white-space:nowrap">([$$\mathbb{M}$$](https://mathstodon.xyz/@fortnow@fediscience.org/111307429996193442)).</span> Chapters free to download for personal use.
+* [New _Introduction to Probability for Computing_ book by Mor Harchol-Balter](https://www.cs.cmu.edu/~harchol/Probability/book.html) <span style="white-space:nowrap">([$$\mathbb{M}$$](https://fediscience.org/@fortnow/111307429950273574)).</span> Chapters free to download for personal use.
 
 * [Plate lattice architectures](https://mathstodon.xyz/@alisonmartin57@mastodon.social/111243532000121153). Alison Martin makes 3d compressible and expandible structures from modular origami.
 

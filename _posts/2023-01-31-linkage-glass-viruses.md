@@ -11,7 +11,7 @@ date: 2023-01-31 23:04
 
 * [The release of works into the public domain in Canada goes into a 20-year hiatus](https://blog.archive.org/2023/01/17/as-the-us-public-domain-expands-20-year-pause-for-the-canadian-public-domain-begins/) <span style="white-space:nowrap">([$$\mathbb{M}$$](https://mathstodon.xyz/@11011110/109719958934723525))</span> after its North American partners forced Canada into using Life+70 instead of Life+50 protection terms.
 
-* [ICML banned ChatGPT for writing submissions](https://icml.cc/Conferences/2023/CallForPapers) <span style="white-space:nowrap">([$$\mathbb{M}$$](https://mathstodon.xyz/@fortnow@fediscience.org/109677987334540502))</span> and then [walked it back](https://icml.cc/Conferences/2023/llm-policy).
+* [ICML banned ChatGPT for writing submissions](https://icml.cc/Conferences/2023/CallForPapers) <span style="white-space:nowrap">([$$\mathbb{M}$$](https://fediscience.org/@fortnow/109677985980365648))</span> and then [walked it back](https://icml.cc/Conferences/2023/llm-policy).
 
 * [The difficulty of of making machines to make machines to make the things you want](https://www.thebulwark.com/the-economic-secret-hidden-in-a-tiny-discontinued-pasta/) <span style="white-space:nowrap">([$$\mathbb{M}$$](https://mathstodon.xyz/@Leahwrenn@mastodon.social/109701058818221148));</span> in this case, tiny star-shaped pasta.
 
