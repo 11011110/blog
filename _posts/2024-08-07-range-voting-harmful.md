@@ -46,3 +46,5 @@ But if we use range voting, and all voters are strategic, we get approval voting
 To be fair, there is one situation where I think range voting can work: where all participants are collectivist. In that situation, range voting collects more nuanced information than approval voting, exactly what the voters want to do. But although the assumption of collectivism might be true of some academic program committees and grant panels, I don't think it's true of most single-winner political elections.
 
 Or, if you are strategic and think that your faction is going to be clever enough to vote strategically and your opponents are more likely to vote honestly, giving you an unfair advantage, then continue to advocate for range voting.
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/112923756640262841))
