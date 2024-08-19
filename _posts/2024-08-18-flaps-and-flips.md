@@ -47,3 +47,5 @@ What I'd like to prove is something a little closer to actual origami: that for 
 ![Flaps folded from a single sheet of paper]({{site.baseurl}}/assets/2024/flap-3d.svg){: style="width:100%;max-width:540px" }
 
 The last two images are from the [origami maze font generator](https://erikdemaine.org/fonts/maze/) by Erik Demaine, Martin Demaine, and Jason Ku, using just punctuation as text: `',''`. Check it out and design yourself crease patterns that fold to your favorite message!
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/112986869194181917))
