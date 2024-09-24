@@ -19,3 +19,5 @@ The thesis concludes with a third result: there exist links that are split (ther
 I think these are very interesting results based on powerful new machinery that could prove very useful in continued research in this area. My understanding is that Corentin is continuing as a postdoctoral researcher in Montpellier, but he will go on the job market again soon, and should be a very strong candidate when he does.
 
 Congratulations, Corentin!
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/113189834207259524))
