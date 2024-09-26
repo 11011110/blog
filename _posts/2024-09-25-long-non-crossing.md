@@ -34,3 +34,5 @@ The path construction for even numbers of points is simplest. Its basic ideas ar
 ![Schematic view of construction for a point set whose longest path has no crossings]({{site.baseurl}}/assets/2024/long-uncrossed-path.svg){: style="width:100%;max-width:720px" }
 
 To construct uncrossed longest paths with odd numbers of points we choose <span style="white-space:nowrap">$$x$$-coordinates</span> a little more carefully, and then merely omit the topmost point. The cycle construction uses a similar idea, but in two variations depending on whether the number of points is supposed to be odd or even. For evenly many points we double each point except the first and last in the non-crossing path path and carefully place its two copies so that a thin polygon can zigzag in the same way as the path. For odd points we find a polygon that adds one vertex and two edges to the long path to connect it into a polygon. See the paper for details.
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/113202058916276911))
