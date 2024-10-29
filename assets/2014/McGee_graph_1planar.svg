@@ -1,44 +1,37 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="540px" height="468px" viewBox="54.5 90.5 540 468" enable-background="new 54.5 90.5 540 468" xml:space="preserve">
-<polygon fill="none" stroke="#000000" stroke-width="2" points="216.5,180.5 288.5,180.5 360.5,180.5 288.5,252.5 216.5,324.5
-	72.5,180.5 288.5,108.5 "/>
-<polyline fill="none" stroke="#000000" stroke-width="2" points="288.5,108.5 432.5,180.5 432.5,252.5 360.5,252.5 288.5,252.5 "/>
-<polyline fill="none" stroke="#000000" stroke-width="2" points="432.5,252.5 432.5,324.5 504.5,108.5 "/>
-<polyline fill="none" stroke="#000000" stroke-width="2" points="360.5,180.5 360.5,324.5 360.5,396.5 288.5,396.5 288.5,324.5
-	360.5,252.5 "/>
-<polyline fill="none" stroke="#000000" stroke-width="2" points="288.5,324.5 216.5,252.5 216.5,180.5 "/>
-<polyline fill="none" stroke="#000000" stroke-width="2" points="72.5,180.5 144.5,468.5 576.5,540.5 504.5,108.5 288.5,180.5 "/>
-<line fill="none" stroke="#000000" stroke-width="2" x1="144.5" y1="468.5" x2="288.5" y2="396.5"/>
-<polyline fill="none" stroke="#000000" stroke-width="2" points="216.5,324.5 216.5,396.5 144.5,324.5 72.5,540.5 576.5,540.5 "/>
-<line fill="none" stroke="#000000" stroke-width="2" x1="144.5" y1="324.5" x2="216.5" y2="252.5"/>
-<polyline fill="none" stroke="#000000" stroke-width="2" points="216.5,396.5 360.5,468.5 360.5,396.5 "/>
-<polyline fill="none" stroke="#000000" stroke-width="2" points="360.5,324.5 504.5,468.5 72.5,540.5 "/>
-<line fill="none" stroke="#000000" stroke-width="2" x1="504.5" y1="468.5" x2="432.5" y2="180.5"/>
-<line fill="none" stroke="#000000" stroke-width="2" x1="360.5" y1="468.5" x2="432.5" y2="324.5"/>
-<circle fill="#0081CD" stroke="#000000" stroke-width="2" cx="576.5" cy="540.5" r="9"/>
-<circle fill="#0081CD" stroke="#000000" stroke-width="2" cx="288.5" cy="108.5" r="9"/>
-<circle fill="#0081CD" stroke="#000000" stroke-width="2" cx="216.5" cy="180.5" r="9"/>
-<circle fill="#0081CD" stroke="#000000" stroke-width="2" cx="288.5" cy="180.5" r="9"/>
-<circle fill="#0081CD" stroke="#000000" stroke-width="2" cx="360.5" cy="180.5" r="9"/>
-<circle fill="#0081CD" stroke="#000000" stroke-width="2" cx="288.5" cy="252.5" r="9"/>
-<circle fill="#0081CD" stroke="#000000" stroke-width="2" cx="216.5" cy="324.5" r="9"/>
-<circle fill="#0081CD" stroke="#000000" stroke-width="2" cx="72.5" cy="180.5" r="9"/>
-<circle fill="#0081CD" stroke="#000000" stroke-width="2" cx="144.5" cy="468.5" r="9"/>
-<circle fill="#0081CD" stroke="#000000" stroke-width="2" cx="216.5" cy="252.5" r="9"/>
-<circle fill="#0081CD" stroke="#000000" stroke-width="2" cx="288.5" cy="324.5" r="9"/>
-<circle fill="#0081CD" stroke="#000000" stroke-width="2" cx="360.5" cy="252.5" r="9"/>
-<circle fill="#0081CD" stroke="#000000" stroke-width="2" cx="432.5" cy="252.5" r="9"/>
-<circle fill="#0081CD" stroke="#000000" stroke-width="2" cx="432.5" cy="324.5" r="9"/>
-<circle fill="#0081CD" stroke="#000000" stroke-width="2" cx="360.5" cy="324.5" r="9"/>
-<circle fill="#0081CD" stroke="#000000" stroke-width="2" cx="360.5" cy="396.5" r="9"/>
-<circle fill="#0081CD" stroke="#000000" stroke-width="2" cx="288.5" cy="396.5" r="9"/>
-<circle fill="#0081CD" stroke="#000000" stroke-width="2" cx="216.5" cy="396.5" r="9"/>
-<circle fill="#0081CD" stroke="#000000" stroke-width="2" cx="144.5" cy="324.5" r="9"/>
-<circle fill="#0081CD" stroke="#000000" stroke-width="2" cx="360.5" cy="468.5" r="9"/>
-<circle fill="#0081CD" stroke="#000000" stroke-width="2" cx="72.5" cy="540.5" r="9"/>
-<circle fill="#0081CD" stroke="#000000" stroke-width="2" cx="504.5" cy="468.5" r="9"/>
-<circle fill="#0081CD" stroke="#000000" stroke-width="2" cx="504.5" cy="108.5" r="9"/>
-<circle fill="#0081CD" stroke="#000000" stroke-width="2" cx="432.5" cy="180.5" r="9"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="540" height="468">
+    <g fill="none" stroke="#000" stroke-width="2">
+        <path d="M162 90h216l-144 72-72 72L18 90l216-72-72 72z"/>
+        <path d="M234 18l216 72-72 72H234"/>
+        <path d="M378 162v72L522 18M378 90l-72 144v72h-72v-72l72-72m-72 72l-72-72V90"/>
+        <path d="M18 90l72 288 432 72V18L234 90M90 378l144-72"/>
+        <path d="M162 234v72l-72-72-72 216h504M90 234l72-72"/>
+        <path d="M162 306l144 72v-72"/>
+        <path d="M306 234l144 144-432 72m432-72V90M306 378l72-144"/>
+        <g fill="#0081cd">
+            <circle cx="522" cy="450" r="9"/>
+            <circle cx="234" cy="18" r="9"/>
+            <circle cx="162" cy="90" r="9"/>
+            <circle cx="234" cy="90" r="9"/>
+            <circle cx="378" cy="90" r="9"/>
+            <circle cx="234" cy="162" r="9"/>
+            <circle cx="162" cy="234" r="9"/>
+            <circle cx="18" cy="90" r="9"/>
+            <circle cx="90" cy="378" r="9"/>
+            <circle cx="162" cy="162" r="9"/>
+            <circle cx="234" cy="234" r="9"/>
+            <circle cx="306" cy="162" r="9"/>
+            <circle cx="378" cy="162" r="9"/>
+            <circle cx="378" cy="234" r="9"/>
+            <circle cx="306" cy="234" r="9"/>
+            <circle cx="306" cy="306" r="9"/>
+            <circle cx="234" cy="306" r="9"/>
+            <circle cx="162" cy="306" r="9"/>
+            <circle cx="90" cy="234" r="9"/>
+            <circle cx="306" cy="378" r="9"/>
+            <circle cx="18" cy="450" r="9"/>
+            <circle cx="450" cy="378" r="9"/>
+            <circle cx="522" cy="18" r="9"/>
+            <circle cx="450" cy="90" r="9"/>
+        </g>
+    </g>
 </svg>
