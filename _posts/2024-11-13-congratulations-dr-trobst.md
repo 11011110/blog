@@ -20,3 +20,5 @@ The papers he incorporated into his thesis (to which I've added likely-inaccurat
 Unfortunately for academia, but maybe fortunately for Thorben, he is moving to e-commerce. His next destination is London, where he will be working with Optiver.
 
 Congratulations, Thorben!
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/113478966806272054))
