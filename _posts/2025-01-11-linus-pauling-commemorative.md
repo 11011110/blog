@@ -40,3 +40,5 @@ When I mentioned the mural to a friend who lives nearby, he recalled that Paulin
 ![Tiles from the Linus Pauling Commemorative Ceramic Mural (Ross Drago, 2000), Palo Alto](https://www.ics.uci.edu/~eppstein/pix/pauling/7-m.jpg){: style="border-style:solid;border-color:black" }
 
 Some of the key milestones of Pauling's life, including his work on atomic bonds, a protein alpha-helix, his peace and anti-nuclear activism, and his time at Caltech, are clearly visible in the tiles of the mural. At least one tile mentions vitamin C, but with an abstract rather than repesentational design. The portrait of Pauling himself, in a tile next to the title tile, appears to be modeled after several photos of Pauling wearing his habitual beret taken late in his life, in the 1980s. At least one tile appears to have fallen and become lost or destroyed. My photos here show the tiles in left-to-right order, but it is not obvious to me whether they were intended to follow any sort of logical or chronological order.
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/113812719179286888))
