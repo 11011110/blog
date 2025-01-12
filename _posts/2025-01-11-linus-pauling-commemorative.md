@@ -8,7 +8,7 @@ While in Palo Alto for the holidays, I stumbled on a piece of public art I didn'
 {: style="text-align:center"}
 ![Tiles from the Linus Pauling Commemorative Ceramic Mural (Ross Drago, 2000), Palo Alto](https://www.ics.uci.edu/~eppstein/pix/pauling/1-m.jpg){: style="border-style:solid;border-color:black" }
 
-It's a set of individually decorated ceramic tiles, installed on a wall along the sidewalk of Oregon Expressway, near its north corner with El Camino Real. It's not an area that attracts much foot traffic. If you're driving by you won't see it behind the oleander bushes that separate the sidewalk from the street, although there are some more purely decorative tiles further along the wall that are more visible. So to find it you either have to be randomly exploring (as I was) or know that it's there and go out of your way to see it.
+It's a set of individually decorated ceramic tiles, installed on a wall along the sidewalk on the north side of Oregon Expressway, near its corner with El Camino Real. It's not an area that attracts much foot traffic. If you're driving by you won't see it behind the oleander bushes that separate the sidewalk from the street, although there are some more purely decorative tiles further along the wall that are more visible. So to find it you either have to be randomly exploring (as I was) or know that it's there and go out of your way to see it.
 
 {: style="text-align:center"}
 ![Tiles from the Linus Pauling Commemorative Ceramic Mural (Ross Drago, 2000), Palo Alto](https://www.ics.uci.edu/~eppstein/pix/pauling/2-m.jpg){: style="border-style:solid;border-color:black" }
