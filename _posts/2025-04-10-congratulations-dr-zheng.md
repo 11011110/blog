@@ -18,3 +18,5 @@ The defense concluded with a description of unpublished work on subquadratic alg
 Needless to say, with so much successful research publications, the defense was a resounding success. Next, David is heading to the Institute of Science and Technology Austria near Vienna, for postdoctoral research with Monika Henzinger.
 
 Congratulations, David!
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/114316873533474102))
