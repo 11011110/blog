@@ -18,3 +18,5 @@ It remains to show that every graph that can be completely searched has one of t
 On the other hand, suppose that no vertex is repeated infinitely often. Find an infinite ray $$R$$ in the depth-first search tree that, from each vertex $$v$$ in the path (starting from the root) chooses the next vertex in the ray to be the last vertex explored from $$v$$. If any finite path $$P$$ is removed from the graph, $$P$$ and its depth-first ancestors can only cover finitely many vertices of $$R$$. If $$P$$ is removed, the rest of $$R$$ and the finite branches of the depth-first search tree explored between repetitions along the rest of $$R$$ all belong to a single infinite component. There are only finitely many other vertices which can form only finitely many finite components. So the graph must have the second of the two connectivity properties.
 
 This may well all be known; I didn't search very hard for prior work and my searches mostly turned up material on the more general normal spanning trees. If it is known, I would appreciate pointers to where it might be published.
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/114374044563662947))
