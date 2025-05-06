@@ -26,3 +26,5 @@ You might expect the memory required by this method to be $$O(w)$$, with one cou
 ![Transposing an array of binary counters to pack them into fewer machine words]({{site.baseurl}}/assets/2025/packed-counters.svg){: style="width:100%;max-width:640px" }
 
 An important generalization of the Boyer–Moore majority algorithm, the [Misra–Gries summary](https://en.wikipedia.org/wiki/Misra%E2%80%93Gries_summary), maintains some number $$k$$ of value–counter pairs, at each step incrementing one counter, replacing one value, or simultaneously decrementing all of the counters. It can be used to estimate the frequency of any value with an additive error at most $$n/(k+1)$$, or to list a superset of the elements that occur more than $$n/(k+1)$$ times. I don't know how to do these things with the bit-parallel turnstile majority algorithm above. They can be done in the turnstile model, with high probability by a randomized sketching method, the [count-min sketch](https://en.wikipedia.org/wiki/Count%E2%80%93min_sketch), but not as simply.
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/114458368876060103))
