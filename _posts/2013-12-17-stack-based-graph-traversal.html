@@ -4,7 +4,7 @@ title:  'Stack-based graph traversal ≠ depth first search'
 date:   2013-12-17 16:10:00
 tags:   [graph algorithms, teaching]
 ---
-<p>I just finished teaching our required undergraduate algorithms class, and in grading their final exams I discovered that a few of the students have (not from me) acquired the incorrect belief that modifying the standard version of the breadth first search algorithm by replacing the stack with a queue makes it into depth first search. Embarrassingly, the Wikipedia <a href="https://en.wikipedia.org/wiki/Depth-first_search">depth first search</a> article made the same mistake (until today), as do some textbooks (for example Skiena's <i>Algorithm Design Manual</i> p. 169; Jeff Edmonds' <i>How to Think about Algorithms</i>, pp. 175–178; Gilberg and Forouzan <i>Data Structures: A Pseudocode Approach Using C</i>, 2nd ed., p. 497).</p>
+<p>I just finished teaching our required undergraduate algorithms class, and in grading their final exams I discovered that a few of the students have (not from me) acquired the incorrect belief that modifying the standard version of the breadth first search algorithm by replacing the queue with a stack makes it into depth first search. Embarrassingly, the Wikipedia <a href="https://en.wikipedia.org/wiki/Depth-first_search">depth first search</a> article made the same mistake (until today), as do some textbooks (for example Skiena's <i>Algorithm Design Manual</i> p. 169; Jeff Edmonds' <i>How to Think about Algorithms</i>, pp. 175–178; Gilberg and Forouzan <i>Data Structures: A Pseudocode Approach Using C</i>, 2nd ed., p. 497).</p>
 
 <p>Here's what you get if you swap a stack for the queue in breadth first search:</p>
 
