@@ -36,3 +36,5 @@ The part of Kanazawa between the station and the fish market is dominated by maj
 ![Geometric art in an underpass at the north corner of Omicho Market, Kanazawa. A tower of glass octahedra rises within a square glass column. Above the column, wooden roof beams radiate in all directions from a patterned wooden disk.](https://ics.uci.edu/~eppstein/pix/kanazawa/MarketUnderpass-m.jpg){: style="border-style:solid;border-color:black" }
 
 Also seen but not photographed: another large ornamental gate near the back entrance of the station, made of slanted concrete pillars and resembling a support structure for an elevated highway; a black stone monkey saddle in the basement level of the station, near a scale model of Tsuzumimon; a tangled tree of shiny stainless steel tubes across the street from my hotel (a block south of the station); a stylized sundial between the station and the fish market (not very effective in the rain); and many public fountains.
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/114781059766989547))
