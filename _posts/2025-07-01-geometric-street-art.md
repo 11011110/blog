@@ -10,7 +10,7 @@ The first thing you see as you enter the city by the main entrance of its train 
 {: style="text-align:center"}
 ![One of the legs of Tsuzumimon, the ornamental gate at the entrance to the Kanazawa train station, set against the lattice pattern of the lintel and the space frame dome above both.](https://ics.uci.edu/~eppstein/pix/kanazawa/Tsuzumimon-m.jpg){: style="border-style:solid;border-color:black" }
 
-[Tsuzumi](https://en.wikipedia.org/wiki/Tsuzumi) are a certain type of Japanese hand drum, so Tsuzumimon means drum gate, because of the resemblance of the pillars to these drums. But instead, what it most reminds me of is a [partition of space into skew lines]({{site.baseurl}}{% post_url 2010-02-08-skew-lines %}) that I ray-traced in 2010 and use as the header for [my Mastodon account page](https://mathstodon.xyz/@11011110_).
+[Tsuzumi](https://en.wikipedia.org/wiki/Tsuzumi) are a certain type of Japanese hand drum, so Tsuzumimon means drum gate, because of the resemblance of the pillars to these drums. But instead, what it most reminds me of is a [partition of space into skew lines]({{site.baseurl}}{% post_url 2010-02-08-skew-lines %}) that I ray-traced in 2010 and use as the header for [my Mastodon account page](https://mathstodon.xyz/@11011110).
 
 {: style="text-align:center"}
 ![Fibration of 3-space by skew lines]({{site.baseurl}}/assets/2010/skewlines.png)
