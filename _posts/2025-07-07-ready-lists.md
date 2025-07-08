@@ -115,3 +115,5 @@ Bottleneck cycle
   * Find and output any cycle in the subgraph of edges in $$S$$
 
 For this one, a direct implementation on a graph with $$n$$ vertices and $$m$$ edges would take time $$O(m\log n)$$, not really better than the obvious binary search. However, it can be made to run in linear time for graphs with edges already sorted by length, and this presorted version can be used as a subroutine in a different algorithm for graphs with unsorted edges, in time $$O(m\log^* n)$$. In turn, bottleneck cycles can be used as a subroutine in an algorithm for finding the max-min angle closed polygonal curve for 3d points, allowing the curve to pass repeatedly through points and segments, in time $$O(n^3\log^* n)$$. For details see the preprint.
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/114815823766596754))
