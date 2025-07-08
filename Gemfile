@@ -32,3 +32,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Still needed for Jekyll 3.10.0
 gem "kramdown-parser-gfm"
+
+# Security update 2025-07-01
+gem "webrick", ">= 1.8.2"
