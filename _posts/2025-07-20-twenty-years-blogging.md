@@ -52,3 +52,5 @@ Anyway, I thought at this anniversary it would be appropriate to make a roundup 
 * [Random perfection]({{site.baseurl}}{% post_url 2024-05-08-random-perfection %}), May 8, 2024. Another Wikipedia editor asked me: how likely is it that a random graph is a perfect graph? It depends on the density of the graph, with two phase transitions between densities for which it is very likely and densities for which it is very unlikely, less sharp than the phase transitions for many other properties. My longest recent post, and maybe one of my most technical.
 
 * [The ancient Greek mathematics of distorted airplane propeller photos]({{site.baseurl}}{% post_url 2025-03-22-ancient-greek-mathematics %}), March 22, 2025. One of the things I particularly enjoy about Wikipedia editing, when it happens, is discovering unexpected connections between things I didn't know were related. This one is on a connection between the distortions caused by rolling shutters and ancient Greek work on trisecting angles and squaring the circle.
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/114884394531553221))
