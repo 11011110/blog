@@ -1,0 +1,20 @@
+---
+layout: post
+title: Enclosures that minimize the sum of area and perimeter
+date: 2025-08-25 17:37
+---
+If you want to enclose a bounded subset of the plane with the shortest possible fence (the perimeter of your enclosure), use its convex hull. If you want to enclose it with the minimum possible total area, use the set itself. This might be disconnected, but it doesn't make any difference to ask for the minimum-area connected enclosure: for well-behaved subsets you can connect the pieces with a spanning tree or Steiner tree with zero additional area.
+
+My recent preprint "Bicriteria polygon aggregation with arbitrary shapes" ([arXiv:2507.11212](https://arxiv.org/abs/2507.11212), with 
+Lotte Blank, Jan-Henrik Haunert, Herman Haverkort, Benedikt Kolbe, Philip Mayer, Petra Mutzel, Alexander Naumann, and Jonas Sauer) asks: what if you measure the quality of your enclosure by a linear combination of area and perimeter? For this to make sense you need scale factor, in units of length, so that you can add the area to the product of the perimeter with this factor. In this way, the results of this enclosure can be seen as a multi-scale way of studying the shape of a subset. It can also be viewed as a clustering method, where the clusters are the parts of a disconnected input (like a point set) that become connected in the optimal enclosure.
+
+Here's an example from Fig. 1 of the paper: the buildings of the village of Bokeloh, in Lower Saxony (shown in blue) clustered at three different scale factors (shades of orange). Actually, there's a fourth level of clustering: the buildings themselves form their own clusters for scale factors small enough that the perimeter part of the quality becomes negligible and all you're left with is area.
+
+{: style="text-align:center"}
+![Three levels of clustering of the village of Bokeloh]({{site.baseurl}}/assets/2025/Bokeloh.svg){: style="width:100%;max-width:720px" }
+
+What you might already see in this figure is that the boundaries of the clusters form circular arcs, all the same radius. This is closely related to the fact that two-dimensional soap bubbles and foams also consist of circles and circular arcs. The endpoints of the arcs are either input vertices or tangencies with the sides of input polygons, and they can be connected by segments of cluster boundary that lie along the polygon sides edges. If the input were a point set, you would still get a picture like this, but with cluster boundaries consisting only of circular arcs, meeting at some of the points.
+
+It turns out that this analysis of the optimal cluster shape is enough to lead to a polynomial time algorithm. An input consisting of $$n$$ points, or of polygons with $$n$$ total sides, has $$O(n^2)$$ circular arcs of the correct radius ending at vertices or tangencies. If all of these arcs are overlaid, they subdivide the plane into $$O(n^4)$$ regions, large but still polynomial. One can then set up a minimum cut problem (following prior work by an overlapping set of authors) where the input polygons are connected to a source terminal, the cost of cutting one region from another is the scaled length of their shared boundary, and the cost of cutting an outside region from the destination terminal is its area. Because minimum cut can be solved in polynomial time, so can this clustering problem.
+
+Earlier work on this clustering problem approached it more heuristically, using constrained Delaunay triangulation instead of circular arcs to divide the free space into regions, and then setting up the same min cut problem to enclose some of the regions with minimum total cost. But there's no clear connection between Delaunay triangulation and this optimizal enclosure problem, so that did not provide any guarantee of solution quality. The circular arc boundaries of the optimal enclosure might be seen as a drawback of our solution, though, so in the preprint we also find a polygonal approximation to it. (This part was one focus of the work of Petra and myself when she visited on sabbatical last year; we then joined forces with the rest of the coauthors, who had already been working on the same problems.)
