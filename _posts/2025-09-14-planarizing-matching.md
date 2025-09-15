@@ -26,3 +26,5 @@ It is a reduction from [nondeterministic constraint logic](https://en.wikipedia.
 ![Gadgets for a reduction from nondeterministic constraint logic to degree-5 planarizing matching. Grey vertices form the "substrate", a grid with subdivided edges, across which other vertices, colored blue, red, and yellow, represent the wires and gates of an NCL circuit.]({{site.baseurl}}/assets/2025/planarize-npc-deg5.svg)
 
 Beyond planarizing matching, it would also be interesting to extend our recognition algorithm to string graphs with higher degrees than three. Is there a polynomial time algorithm for recognizing string graphs with bounded treewidth and bounded degree? Bounded treewidth alone? I don't know.
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/115205720134995156))
