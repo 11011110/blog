@@ -24,3 +24,5 @@ The weather cooperated beautifully the entire time: we had crisp fall temperatur
 ![Looking upstream towards the falls from the park outside the lower level of the Louis de Geer Concert & Congress. The blue sky is reflected off the glass windows of the concert hall at the left, and off the river flowing towards the lower right. The falls are partly visible behind a concrete bridge. Rose-gold buildings rise behind them, center, while industrial machinery is still visible on the upper right.](https://www.ics.uci.edu/~eppstein/pix/norrkopingsfallen/1-m.jpg){: style="border-style:solid;border-color:black" }
 
 For more of my pictures from Norrköping (in and around this part of the city), see [my photo gallery](https://www.ics.uci.edu/~eppstein/pix/norrkopingsfallen/index.html).
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/115277463523394452))
