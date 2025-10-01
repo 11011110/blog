@@ -1,0 +1,40 @@
+---
+layout: post
+title: Linkage with feijoas
+date: 2025-09-30 18:47
+---
+* The season's first feijoas (aka pineapple guavas) fell from the trees in my front garden (that's how to tell they are ripe). They are the ones in the bowl on the right; other fruit included for scale <span style="white-space:nowrap">([$$\mathbb{M}$$](https://mathstodon.xyz/@11011110/115216169683098648)).</span> 
+
+  {: style="text-align:center"}
+![Four ripe green feijoas sit in a small blue pottery bowl on a green marble surface. Next to the bowl are a large green mango, two magenta plums, and a yellow lemon. The largest of the feijoas is comparable in size to the lemon; the other four are smaller, closer to the size of the plums.](https://ics.uci.edu/~eppstein/pix/feijoas/Feijoas-m.jpg){: style="border-style:solid;border-color:black" }
+
+* The image for [the Wikipedia entry for The Dictionary of Old English](https://en.wikipedia.org/wiki/Dictionary_of_Old_English) <span style="white-space:nowrap">([$$\mathbb{M}$$](https://mastodon.social/@oschene/115140763797432896))</span> is a modular origami rhombicosidodecahedron, made of discarded research material.
+
+* [Academia.edu goes evil](https://mathstodon.xyz/@peterrowlett/115224315402221496), and starts using member-provided research papers to generate AI podcasts, reviews, and the like, after [changing its terms of use](https://scholar.social/@JubalBarca/115221910386050907) to grant itself the right to [do anything it likes with your content, your face, your voice, your signature, and your identity](https://mathstodon.xyz/@johncarlosbaez/115221878119623753).
+
+* [Why you should be happy that you can use sin and cos in your web stylesheets](https://css-tricks.com/the-most-hated-css-feature-cos-and-sin/) <span style="white-space:nowrap">([$$\mathbb{M}$$](https://mathstodon.xyz/@11011110/115233382813755959),</span> [via](https://news.ycombinator.com/item?id=45267336)), even though the State of CSS 2025 results listed them as "most hated feature".
+
+* [A question about splitting the sphere into 100 equal shapes](https://www.reddit.com/r/math/comments/1nliy90/can_i_have_100_equal_hexagons_on_the_surface_of_a/) <span style="white-space:nowrap">([$$\mathbb{M}$$](https://mathstodon.xyz/@highergeometer/115236269004764847))</span> leads to a different question: are there polyhedra with 100 hexagonal faces, six quadrilateral faces, and nothing else? [Answer: yes](https://mathstodon.xyz/@11011110/115237821279822640). Here's what it might look like inside of one, a square corridor of 100 hexagons capped at both ends by a strip of three quadrilaterals.
+
+  {: style="text-align:center"}
+![View from inside a polyhedron formed from a tube of hexagons capped at each end by a strip of three quadrilaterals. In the center is one of the strips of quadrilaterals, seen as a central pink square with two red trapezoids above and below it. Surrounding it are irregular hexagons, alternating light and dark blue to the left and right of the central quadrilaterals and light and dark yellow above and below them.]({{site.baseurl}}/assets/2025/chickenwire-corridor.svg)
+
+* [Meschers: geometry processing of impossible objects](https://anadodik.github.io/publication/meschers/) <span style="white-space:nowrap">([$$\mathbb{M}$$](https://mathstodon.xyz/@robinhouston/115155725072108763)).</span> "Unlike a typical mesh, which stores per-vertex 3D positions, a mescher stores per-vertex 2D screen-space positions and a per-edge depth difference. Whereas differences in depth across edges must sum up to zero as we travel around a standard mesh, this is not necessarily the case for a mescher. It is a mathematical way of describing the perceptual impossibility."
+
+* [Accessible conferences and events](https://www.staff.ncl.ac.uk/christian.perfect/accessibility-checklist-for-events/index.html) <span style="white-space:nowrap">([$$\mathbb{M}$$](https://mathstodon.xyz/@christianp/115214682034078215)),</span> with case studies and a checklist for what event organizers can do to make their conferences more accessible.
+
+* Another newly promoted Wikipedia Good Article: [Euclid's _Elements_](https://en.wikipedia.org/wiki/Euclid%27s_Elements) <span style="white-space:nowrap">([$$\mathbb{M}$$](https://mathstodon.xyz/@11011110/115257534507544671)).</span> You know, the ancient mathematics textbook.
+
+* Slides for my talk today at Graph Drawing, "[Stabbing Faces By a Convex Curve](https://ics.uci.edu/~eppstein/pubs/Epp-GD-25.pdf) <span style="white-space:nowrap">([$$\mathbb{M}$$](https://mathstodon.xyz/@11011110/115266796755464665)).</span> The main result is that for every planar graph $$G$$ and smooth convex curve $$C$$ you can draw $$G$$ so all its faces are crossed by $$C$$. I wrote about this briefly in [a recent blog post on a related topic, smooth curves with no convex arcs]({{site.baseurl}}{% post_url 2025-08-27-five-arc-fractal %}). The new talk slides are also fairly brief about the main result, instead going into more detail about its motivation in understanding what the shape of a point set tells you about the graphs that can be drawn planarly with its points as vertices.
+
+* [Stoker's conjecture proven by Cho & Kim](https://doi.org/10.1007/s00454-024-00670-w) <span style="white-space:nowrap">([$$\mathbb{M}$$](https://mathstodon.xyz/@JosephORourke/115271622042545985)):</span> every 3D polyhedron without partially-flat or collinear vertices is uniquely determined by its dihedral angles and edge lengths, even if nonconvex or self-intersecting.
+
+* [@n-gons and kids make a tensegrity table from popsicle sticks and twine](https://mathstodon.xyz/@ngons/115271672971801650).
+
+* [Good advice for this year's new university students](https://infosec.exchange/@0xabad1dea/115249367902202563): go to class, go to bed on time, do your homework, and ask others for help when you need it.
+
+* [A new proof smooths out the math of melting](https://www.quantamagazine.org/a-new-proof-smooths-out-the-math-of-melting-20250331/) <span style="white-space:nowrap">([$$\mathbb{M}$$](https://mathstodon.xyz/@11011110/115295768423879694)):</span> _Quanta_ on "[On the multiplicity one conjecture for mean curvature flows of surfaces](https://arxiv.org/abs/2312.02106)" by Bamler and Kleiner. Imagine melting a cylindrical piece of ice (like you get at many US restaurants). At some point melting will likely break through the cylinder, producing a crescent shape with two sharp points that gradually smooth as the ice continues to melt. That topology change is a singularity, where something discontinuous happens to the ice surface. If you somehow managed to keep your ice toroidal, the point when it becomes an infinitesimally thin ring and then vanishes would be a more complicated singularity.
+
+  Modeling continuously changing surfaces requires understanding their singularities. This paper is on a specific type of surface evolution called  [mean curvature flow](https://en.wikipedia.org/wiki/Mean_curvature_flow), and shows that its unavoidable singularities (the ones you can't eliminate by perturbing the starting surface) have only a few simple forms: like the kind where you break through a torus to produce two sharp points, unlike the kind where an infinitesimally thin ring vanishes or worse.
+
+  This is the same general area as the proof of the geometrization and Poincaré conjectures using Ricci flow. One difference is that mean curvature flow depends on how the given 2d surface is embedded in 3d; Ricci flow depends only on the intrinsic geometry of a surface, and not its embedding. Another difference is that this new work is on 2d surfaces, but the geometrization and Poincaré conjectures look one dimension higher, at 3d hypersurfaces. You can also look one dimension lower, at curves in the plane, where the mean curvature flow becomes the [curve-shortening flow](https://en.wikipedia.org/wiki/Curve-shortening_flow).
