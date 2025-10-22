@@ -1,0 +1,37 @@
+---
+layout: post
+title: Hamiltonian-paired graphs
+date: 2025-10-21 22:37
+---
+The five-vertex complete <span style="white-space:nowrap">graph $$K_5$$</span> is commonly drawn with its vertices on a regular polygon. In this layout, it is easy to find two Hamiltonian cycles that are complementary to each other, forming a [Hamiltonian decomposition](Hamiltonian decomposition): the outer pentagon and the inner pentagram. In fact in this graph every Hamiltonian cycle is complementary to another one: the complement graph must be 2-regular (because a Hamiltonian cycle uses exactly two of the four edges at each vertex, leaving another two) and the only two-regular graph on five vertices is a cycle.
+
+{: style="text-align:center"}
+![A five-vertex complete graph with its edges partitioned into two Hamiltonian cycles, an outer red pentagon and an inner blue pentagram. Public domain image from https://commons.wikimedia.org/wiki/File:2-colored_K5_without_a_monochromatic_K3.svg by Johannes Rössel.]({{site.baseurl}}/assets/2025/K5-ham.svg){: style="width:100%;max-width:360px" }
+
+But in large enough graphs, there is no reason to expect a 2-regular subgraph to be a Hamiltonian cycle (it is more likely to be a disjoint union of multiple cycles) and no reason to expect all Hamiltonian cycles to come in pairs like this. So it may come as more of a surprise to see the same Hamiltonian-paired property in the 10-vertex [Folkman graph](https://en.wikipedia.org/wiki/Folkman_graph): it has many Hamiltonian cycles, not all symmetric to each other, but each one is paired with a complementary Hamiltonian cycle.
+
+{: style="text-align:center"}
+![Two Hamiltonian cycles in the Folkman graph. Their complements (the thin blue edges) are also Hamiltonian cycles]({{site.baseurl}}/assets/2025/folk-sdd-ham.svg)
+
+My new preprint "Hamiltonian cycles in subdivided doubles" ([arXiv:2510.18359](http://arxiv.org/abs/2510.18359)) gives an explanation for why the Folkman graph has this property. It involves the "subdivided double", a construction for transforming 4-regular graphs into bigger 4-regular graphs by subdividing each edge and then doubling each of the original vertices of the graph (producing two copies of the vertex with the same four subdivision points as its neighbors). This was previously used as a way to turn arc-transitive graphs (graphs in which each ordered pair of adjacent vertices is symmetric to each other pair) into [semi-symmetric graphs](https://en.wikipedia.org/wiki/Semi-symmetric_graph) (graphs in which the edges are all symmetric to each other but the vertices are not). For instance the Folkman graph is semi-symmetric and can be constructed in this way. Here's another example, the subdivided double of the octahedral <span style="white-space:nowrap">graph $$K_{2,2,2}$$,</span> also showing the intermediate step where we subdivide the edges but before we double the vertices.
+
+{: style="text-align:center"}
+![The octahedral graph, its subdivision, and its subdivided double]({{site.baseurl}}/assets/2025/subdub-octahedron.svg)
+
+As the preprint proves, every subdivided double has this same property of having paired Hamiltonian cycles. To keep the preprint focused, I only included this construction for Hamiltonian-paired graphs, but I'm less concerned about keeping this blog focused so here's a sketch of two more constructions. First, you can make infinitely many Hamiltonian-paired graphs that are not subdivided doubles by gluing together certain components using an [SPQR tree](https://en.wikipedia.org/wiki/SPQR_tree). In the image below, the red "virtual edges" in each component are aligned with the red virtual edge of another component and then erased in the combined graph. The left side of the image shows a graph that can be constructed in this way from the components shown on the right.
+
+{: style="text-align:center"}
+![Construction for Hamiltonian-paired graphs using an SPQR tree]({{site.baseurl}}/assets/2025/hampan-spqr.svg)
+
+The property that each component needs to have is that, if you replace each red edge by a pair of parallel edges, then the resulting graph has paired Hamiltonian cycles additionally each Hamiltonian cycle uses exactly one edge from each red pair. You can get a component with this property from the subdivided double of a 4-regular graph with an articulation vertex (as shown in the upper right). But the components with triangles in them do not come from subdivided doubles.
+
+Subdivided doubles are always bipartite, and the graphs formed using SPQR trees  always have vertex connectivity 2. Here's another construction that forms non-bipartite Hamiltonian-paired graphs that can have higher connectivity: the [line graph](https://en.wikipedia.org/wiki/Line_graph). The line graph $$L(G)$$ of any <span style="white-space:nowrap">graph $$G$$</span> has one vertex for each edge <span style="white-space:nowrap">of $$G$$.</span> Two vertices are adjacent, <span style="white-space:nowrap">in $$L(G)$$,</span> if they come from edges <span style="white-space:nowrap">of $$G$$</span> that share an endpoint. If $$G$$ is 3-regular, its line graph $$L(G)$$ is 4-regular, and sometimes these 4-regular line graphs are Hamiltonian-paired. Below are two examples where they are in fact Hamiltonian-paired. The shaded triangles <span style="white-space:nowrap">in $$L(G)$$</span> are formed where three edges in $$G$$ share an endpoint; I included them to show the structure, but these triangles are not parts <span style="white-space:nowrap">of $$L(G)$$.</span>
+
+{: style="text-align:center"}
+![Two 3-regular graphs and their Hamiltonian-paired line graphs]({{site.baseurl}}/assets/2025/line-graphs.svg)
+
+The condition that needs to hold for $$L(G)$$ to be Hamiltonian-paired is that $$G$$ is 3-regular, Hamiltonian, and has no non-Hamiltonian cycles that are adjacent to all the vertices outside the cycle. One way to make a bigger graph with this property from a smaller one is to replace a single vertex by a copy of the complete bipartite <span style="white-space:nowrap">graph $$K_{2,3}$$.</span> In this copy, there are three vertices of degree two, one of which should be attached to each of the three edges incident to the replaced vertex. For instance, the lower of the two examples above can be constructed in this way <span style="white-space:nowrap">from $$K_{3,3}$$,</span> or by making two of these replacements to a multigraph with two vertices and three edges.
+
+Making this replacement to every vertex of an arbitrary 3-regular <span style="white-space:nowrap">graph $$G$$</span> will get rid of the non-Hamiltonian covering cycles. Then taking the line graph will produce a graph whose Hamiltonian cycles are paired, if any exist, but they will only exist if $$G$$ was Hamiltonian. Because of this construction, it's <span style="white-space:nowrap">$$\mathsf{NP}$$-hard</span> to distinguish Hamiltonian-paired graphs from 4-regular but non-Hamiltonian graphs.
+
+I'll finish with a question about Hamiltonian-paired graphs that I don't know the answer to: Are there any Hamiltonian-paired simple  planar graphs? (By simple, I merely mean not a multigraph: the multigraph with two vertices and four edges is planar and Hamiltonian-paired, but not simple.) If such a graph exists, it must include a triangle, because <span style="white-space:nowrap">$$n$$-vertex</span> triangle-free planar graphs have at most <span style="white-space:nowrap">$$2n-4$$ edges,</span> too few to be 4-regular. Therefore, if these graphs exist, they cannot be subdivided doubles.
