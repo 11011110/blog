@@ -64,3 +64,5 @@ Another question, motivated by the structure of Hamiltonian cycles in 3-peg Hano
 
 {: style="text-align:center"}
 ![Center-of-mass layout for a 4-peg 3-disk Hanoi graph, restricted to only allow moves to and from the peg containing the big disk.]({{site.baseurl}}/assets/2025/hanoi/4hanoi-restricted.svg)
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/115518260635104754))
