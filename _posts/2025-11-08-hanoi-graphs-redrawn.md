@@ -60,7 +60,7 @@ In these drawings, the vertices are arranged into four recursive tetrahedra at t
 
 I think it works better than I could reasonably expect for such a nonplanar and well-connected graph, and might be better yet with an interactive 3d view rather than a static projected 2d view. But I still have no idea how to effectively visualize Hanoi graphs with five or more pegs and three or more disks.
 
-Another question, motivated by the structure of Hamiltonian cycles in 3-peg Hanoi graphs: the Hanoi graph is not regular, but it can be made into a $$(p-1)$$-regular graph by only allowing moves to and from the peg containing the big disk. Because this peg is nonempty, each other peg will have exactly one allowed move to or from it. For two pegs, this gives a Hamiltonian cycle of the state space. What is the structure of these restricted Hanoi graphs for more than two pegs? Here's an example, the 3-regular 64-vertex restricted Hanoi graph for four pegs and three disks.
+Another question, motivated by the structure of Hamiltonian cycles in 3-peg Hanoi graphs: the Hanoi graph is not regular, but it can be made into a $$(p-1)$$-regular graph by only allowing moves to and from the peg containing the big disk. Because this peg is nonempty, each other peg will have exactly one allowed move to or from it. For three pegs, this gives a Hamiltonian cycle of the state space. What is the structure of these restricted Hanoi graphs for more than three pegs? Here's an example, the 3-regular 64-vertex restricted Hanoi graph for four pegs and three disks.
 
 {: style="text-align:center"}
 ![Center-of-mass layout for a 4-peg 3-disk Hanoi graph, restricted to only allow moves to and from the peg containing the big disk.]({{site.baseurl}}/assets/2025/hanoi/4hanoi-restricted.svg)
