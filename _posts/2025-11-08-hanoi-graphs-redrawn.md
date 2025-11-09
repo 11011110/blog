@@ -3,7 +3,7 @@ layout: post
 title: Hanoi graphs redrawn
 date: 2025-11-08 22:02
 ---
-A Hanoi graph is an abstract representation of the well-known [Tower of Hanoi](https://en.wikipedia.org/wiki/Tower_of_Hanoi) puzzle, in which one stacks disks of different sizes on several pegs (usually three peg). Initially the disks are all on one peg, and one must get them all to another peg by moving one disk at a time, without ever placing a bigger disk on a smaller disk. The vertices of the graph are all valid states of the puzzle: placements of disks on pegs in sorted order with the largest at the bottom and smallest at the top. Its edges represent valid moves of the puzzle. For any puzzle with $$p$$ pegs and $$n$$ disks, there is a Hanoi graph parameterized by $$p$$ and $$n$$, with $$p^n$$ vertices.
+A Hanoi graph is an abstract representation of the well-known [Tower of Hanoi](https://en.wikipedia.org/wiki/Tower_of_Hanoi) puzzle, in which one stacks disks of different sizes on several pegs (usually three pegs). Initially the disks are all on one peg, and one must get them all to another peg by moving one disk at a time, without ever placing a bigger disk on a smaller disk. The vertices of the graph are all valid states of the puzzle: placements of disks on pegs in sorted order with the largest at the bottom and smallest at the top. Its edges represent valid moves of the puzzle. For any puzzle with $$p$$ pegs and $$n$$ disks, there is a Hanoi graph parameterized by $$p$$ and $$n$$, with $$p^n$$ vertices.
 
 {: style="text-align:center"}
 ![Photo of a wooden Tower of Hanoi puzzle. CC-BY-SA 3.0 image by User:Evanherk from https://commons.wikimedia.org/wiki/File:Tower_of_Hanoi.jpeg]({{site.baseurl}}/assets/2025/hanoi/evanherk.jpg)
