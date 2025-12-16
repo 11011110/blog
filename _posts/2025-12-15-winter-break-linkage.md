@@ -1,0 +1,30 @@
+---
+layout: post
+title: Winter break linkage
+date: 2025-12-15 17:11
+---
+* [Elsevier is resisting a push by Australian and NZ academics to include its journals in a uniform open-access agreement](https://www.timeshighereducation.com/news/elsevier-boycott-looms-down-under) <span style="white-space:nowrap">([$$\mathbb{M}$$](https://mathstodon.xyz/@11011110/115645733296879272),</span> [archived](https://archive.is/I4bHQ), [via](https://en.wikipedia.org/wiki/Wikipedia_talk:WikiProject_Academic_Journals)), and especially resisting providing "pricing transparency". The situation may result in a boycott. As the article notes, the situation resembles past breakdowns in negotiations with Elsevier and ensuing boycotts including one from 2018 to 2023 in Germany and another from 2019 to 2021 in California.
+
+* [Vladan Majerech has found a one-dimensional spaceship in the Game of Life](https://conwaylife.com/forums/viewtopic.php?&p=222136#p222136) <span style="white-space:nowrap">([$$\mathbb{M}$$](https://mathstodon.xyz/@robinhouston/115653611515458376)).</span> It's $$3707300605$$ cells wide and moves at <span style="white-space:nowrap">speed $$2c/133076755768$$.</span>
+
+* [Finding papers before the web](https://blog.computationalcomplexity.org/2025/12/finding-papers-before-web.html) <span style="white-space:nowrap">([$$\mathbb{M}$$](https://fediscience.org/@fortnow/115664195156527591)).</span>
+
+* [RIES Inverse Symbolic Calculator](https://thomasahle.com/ries/) <span style="white-space:nowrap">([$$\mathbb{M}$$](https://xoxo.zone/@scruss/115645627390023973)).</span> Give it decimals like $$1.386$$ and it will generate equations for which these might be approximate solutions, like (in this case) <span style="white-space:nowrap">$$e^x=4$$.</span>
+
+* [14-year-old wins prize for origami that can hold 10,000 times its own weight](https://boingboing.net/2025/12/02/8th-grader-designs-origami-that-can-hold-over-9000-times-its-own-weight.html) <span style="white-space:nowrap">([$$\mathbb{M}$$](https://mathstodon.xyz/@11011110/115674048232261935),</span> [see also](https://www.sciencealert.com/14-year-old-wins-prize-for-origami-that-can-hold-10000-times-its-own-weight?utm_source=globalmuseum)). It's a Miura-ori, but with its shape parameters optimized for load bearing.
+
+* _Examples and Counterexamples in Graph Theory_ <span style="white-space:nowrap">([$$\mathbb{M}$$](https://mathstodon.xyz/@johncarlosbaez/115677612210126371)),</span> 1978 book by Michael Capobianco and John C. Molluzzo. I'm avoiding reposting the book link because it has all the appearance of being a pirate haven, and the linked discussion thread includes reports of malware on the site (not in the book). But with care it might lead to a free pdf copy.
+
+* [Diamond open-access publishing initiative from CNRS and the French Academy of Sciences](https://www.cnrs.fr/en/node/12218) <span style="white-space:nowrap">([$$\mathbb{M}$$](https://mathstodon.xyz/@kangmeister/115662883527481560)).</span>
+
+* [I hope this email finds you well](https://tldr.nettime.org/@aramba/115632618990933902). Crank-driven mechanical autotyper by Stoccafisso Design.
+
+* Congratulations to mathstodoner [@csk](https://mathstodon.xyz/@csk) (Craig S. Kaplan) for [being named an ACM Distinguished Member](https://www.acm.org/media-center/2025/december/distinguished-members-2025) <span style="white-space:nowrap">([$$\mathbb{M}$$](https://mathstodon.xyz/@11011110/115696544020252782))!</span>
+
+* [An aperiodic tiling of the hyperbolic plane by convex pentagons, found by Toimine](https://github.com/zenorogue/hyperrogue/blob/master/tessellations/sample/aperiodic_pentagons.tes) <span style="white-space:nowrap">([$$\mathbb{M}$$](https://mathstodon.xyz/@zenorogue/115700497585089211)),</span> breaking the previous record for smallest edge length of an equilateral convex hyperbolic tile held by 120° heptagons.
+
+* This week's espresso-making epiphany <span style="white-space:nowrap">([$$\mathbb{M}$$](https://mathstodon.xyz/@11011110/115708892360767254)):</span> I had been using double-walled glass espresso cups, but a few days ago they happened to all be dirty and I switched to a set of thick-walled low round ceramic demitasses that I also had. The result was much more flavorful espresso, repeatably. I'm guessing that the issue is temperature. The espresso comes out of its machine too hot to drink, and cools down quite slowly in the glasses, but more quickly in the demitasses (I assume because of the heat capacity and conductance of the materials; they are of roughly equal sizes). But most online sources say that our sense of taste works best for foods that are cool to lukewarm (near body temperature). Obviously I don't want cool espresso but there's plenty of room between its starting and optimal temperatures. So with the glasses I wasn't waiting long enough to start drinking and the espresso was still too hot; with the demitasses it cools enough for me to drink and enjoy it immediately.
+
+* [The Impact Factor as a measuring tool of the prestige of the journals in research assessment in mathematics](https://doi.org/10.1093/reseval/rvv041) <span style="white-space:nowrap">([$$\mathbb{M}$$](https://mathstodon.xyz/@highergeometer/115720219188467720)),</span> 2016 paper by Ferrer-Sapena et al. Conclusion: trying to rank mathematics journals by their impact factors is meaningless and unstable.
+
+* [Google's blog post about their experiment in providing STOC submitters with pre-deadline AI-generated feedback on their submissions](https://research.google/blog/gemini-provides-automated-feedback-for-theoretical-computer-scientists-at-stoc-2026/) <span style="white-space:nowrap">([$$\mathbb{M}$$](https://mathstodon.xyz/@11011110/115724977830043581)).</span> It's obviously quite promotionally written, so take with however big a grain of salt you prefer, but it does have quotes from submitters claiming that it was helpful for them. This sort of thing (critiquing rather than generating content) seems to me a much less problematic use of AI in research because the decision on what to do with the critique is left to the expert.
