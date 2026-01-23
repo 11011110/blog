@@ -14,3 +14,5 @@ The third part was about the [cores](https://en.wikipedia.org/wiki/Core_(game_th
 With his doctorate completed, Rohith is going into industry, working for a Bay Area startup in on-call debugging.
 
 Congratulations, Rohith!
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/115943049527383634))
