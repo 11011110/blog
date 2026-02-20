@@ -20,7 +20,7 @@ There are two reasons for the large number of Good Articles in this set. First, 
 
 * [Viète's formula](https://en.wikipedia.org/wiki/Vi%C3%A8te%27s_formula) ([$$\mathbb{M}$$](https://mathstodon.xyz/@11011110/106535094271822431)), an infinite product of nested roots evaluating to $$2/\pi$$, "the first formula of European mathematics to represent an infinite process". Good Article #2.
 
-* [The _New York Times_ on Erik and Marty Demaine's mathematical typefaces](https://www.nytimes.com/2021/06/25/science/puzzles-fonts-math-demaine.html) ([$$\mathbb{M}$$](https://mathstodon.xyz/@11011110/106545874983076062), [also](https://archive.ph/oJ8xG), [via](http://stormbear.com/carnival-of-mathematics-195-july-2021/)). 
+* [The _New York Times_ on Erik and Marty Demaine's mathematical typefaces](https://www.nytimes.com/2021/06/25/science/puzzles-fonts-math-demaine.html) ([$$\mathbb{M}$$](https://mathstodon.xyz/@11011110/106545874983076062), [via](http://stormbear.com/carnival-of-mathematics-195-july-2021/)). 
 
 * [Euclid–Euler theorem](https://en.wikipedia.org/wiki/Euclid%E2%80%93Euler_theorem) ([$$\mathbb{M}$$](https://mathstodon.xyz/@11011110/106554476459806645)). A 2-millenium-long collab in which Euclid proved that all Mersenne primes produce even perfect numbers, and Euler proved that all even perfect numbers come from Mersenne primes. But let's not forget [Ibn al-Haytham](https://en.wikipedia.org/wiki/Ibn_al-Haytham) (Alhazen), halfway between them in time, who conjectured Euler's result but couldn't prove it. Good Article #3.
 

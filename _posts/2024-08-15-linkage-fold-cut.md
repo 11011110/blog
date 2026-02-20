@@ -17,7 +17,7 @@ date: 2024-08-15 16:35
 
 * [Catherine Pfaff shows off some notes from her mathematics research](https://mathstodon.xyz/@PfaffCatherine/112917973612202651), writing "When one isn't sure of what's actually true, sometimes it helps to just compute it all, or at least it feels good to do so."
 
-* [Peter Rowlett in _New Scientist_ on connections between mathematics and poetry](https://www.newscientist.com/article/mg26335032-300-the-surprising-connections-between-maths-and-poetry/) <span style="white-space:nowrap">([$$\mathbb{M}$$](https://mathstodon.xyz/@peterrowlett/112942745504596039),</span> [archived](https://archive.is/4g0Ya)).
+* [Peter Rowlett in _New Scientist_ on connections between mathematics and poetry](https://www.newscientist.com/article/mg26335032-300-the-surprising-connections-between-maths-and-poetry/) <span style="white-space:nowrap">([$$\mathbb{M}$$](https://mathstodon.xyz/@peterrowlett/112942745504596039)).</span>
 
 * [Better Living Through Algorithms](https://clarkesworldmagazine.com/kritzer_05_23/), by Naomi Kritzer in _ClarkesWorld_, [just won the Hugo for short SF story](https://www.thehugoawards.org/hugo-history/2024-hugo-awards/) <span style="white-space:nowrap">([$$\mathbb{M}$$](https://mathstodon.xyz/@11011110/112946528954291440),</span> [via](https://www.metafilter.com/205049/The-Hugo-Awards-for-2024-and-Worldcon-site-selection-for-2026)), which put just enough pressure on me to actually read it (a little ironically given the story content; mild spoiler) and I'm happy I did.
 

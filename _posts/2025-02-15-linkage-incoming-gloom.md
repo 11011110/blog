@@ -18,7 +18,7 @@ date: 2025-02-15 16:59
 
 * [bit.ly adds advertising interstitials to its url shortcuts](https://en.osm.town/@zverik/113955801744738753). Or, why you should eschew url shorteners and un-shorten any old ones you might still be using.
 
-* [The master origami artist whose collection turned to ash in Altadena](https://www.newyorker.com/magazine/2025/01/27/the-master-origami-artist-whose-collection-turned-to-ash-in-altadena) <span style="white-space:nowrap">([$$\mathbb{M}$$](https://mathstodon.xyz/@11011110/113958957142333386),</span> [archived](https://archive.is/Y47q9)). Sad news about the collection of famous origamist (and coauthor) Robert Lang, from the New Yorker.
+* [The master origami artist whose collection turned to ash in Altadena](https://www.newyorker.com/magazine/2025/01/27/the-master-origami-artist-whose-collection-turned-to-ash-in-altadena) <span style="white-space:nowrap">([$$\mathbb{M}$$](https://mathstodon.xyz/@11011110/113958957142333386)).</span> Sad news about the collection of famous origamist (and coauthor) Robert Lang, from the New Yorker.
 
 * The lists of accepted papers are now public from the [2025 Symposium on Theory of Computing, STOC](https://acm-stoc.org/stoc2025/accepted-papers.html), to be held [late June in Prague](https://acm-stoc.org/stoc2025/), and from the [2025 Symposium on Computational Geometry, SoCG](https://docs.google.com/document/d/1CNcyz56XkgsYcDpAdDF0lDtugKofPFT4/edit), to be held [late June in Kanazawa](https://socg25.github.io/socg.html) <span style="white-space:nowrap">([$$\mathbb{M}$$](https://mathstodon.xyz/@11011110/113971038439581541)).</span>  My [integer distance paper]({{site.baseurl}}{% post_url 2024-01-14-integer-distances-floppy %}) got into SoCG, so that's where I'm heading.
 
