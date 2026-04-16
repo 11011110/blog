@@ -8,7 +8,7 @@ date: 2025-02-15 16:59
 * [Incoming gloom](https://ics.uci.edu/~eppstein/pix/uhfog/index.html) <span style="white-space:nowrap">([$$\mathbb{M}$$](https://mathstodon.xyz/@11011110/113937446161096236)):</span>
 
   {: style="text-align:center"}
-![The sun sets into a large fog bank, blowing in from the ocean. In the foreground, a few bare trees and a chain link fence screen the view of a highway with a car driving leftward (California Highway 73, as seen from University Hills, Irvine). In the middle distance, a higher ridge of land, topped by trees and a church spire (the Newport Beach California Temple of the LDS), fades into the fog.](https://www.ics.uci.edu/~eppstein/pix/uhfog/2-m.jpg){: style="border-style:solid;border-color:black" }
+![The sun sets into a large fog bank, blowing in from the ocean. In the foreground, a few bare trees and a chain link fence screen the view of a highway with a car driving leftward (California Highway 73, as seen from University Hills, Irvine). In the middle distance, a higher ridge of land, topped by trees and a church spire (the Newport Beach California Temple of the LDS), fades into the fog.](https://www.ics.uci.edu/~eppstein/pix/uhfog/2-m.jpg){: style="border-style:solid;border-color:black;background-color:black" }
 
 * [Origami Möbius double basket](https://mastodon.social/@foldsome/113932853404841664). Heading towards, but not quite reaching, the Sudanese Möbius strip, with a basketweave texture.
 

@@ -6,7 +6,7 @@ date: 2025-09-30 18:47
 * The season's first feijoas (aka pineapple guavas) fell from the trees in my front garden (that's how to tell they are ripe). They are the ones in the bowl on the right; other fruit included for scale <span style="white-space:nowrap">([$$\mathbb{M}$$](https://mathstodon.xyz/@11011110/115216169683098648)).</span> 
 
   {: style="text-align:center"}
-![Four ripe green feijoas sit in a small blue pottery bowl on a green marble surface. Next to the bowl are a large green mango, two magenta plums, and a yellow lemon. The largest of the feijoas is comparable in size to the lemon; the other four are smaller, closer to the size of the plums.](https://ics.uci.edu/~eppstein/pix/feijoas/Feijoas-m.jpg){: style="border-style:solid;border-color:black" }
+![Four ripe green feijoas sit in a small blue pottery bowl on a green marble surface. Next to the bowl are a large green mango, two magenta plums, and a yellow lemon. The largest of the feijoas is comparable in size to the lemon; the other four are smaller, closer to the size of the plums.](https://ics.uci.edu/~eppstein/pix/feijoas/Feijoas-m.jpg){: style="border-style:solid;border-color:black;background-color:black" }
 
 * The image for [the Wikipedia entry for The Dictionary of Old English](https://en.wikipedia.org/wiki/Dictionary_of_Old_English) <span style="white-space:nowrap">([$$\mathbb{M}$$](https://mastodon.social/@oschene/115140763797432896))</span> is a modular origami rhombicosidodecahedron, made of discarded research material.
 

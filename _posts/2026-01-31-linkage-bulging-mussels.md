@@ -20,7 +20,7 @@ Anyway, on to the links:
 * Warm winter weather and a holiday weekend made for a busy day at our local beach <span style="white-space:nowrap">([$$\mathbb{M}$$](https://mathstodon.xyz/@11011110/115924694344691990)).</span> [A few more photos](https://ics.uci.edu/~eppstein/pix/cc10/).
 
   {: style="text-align:center"}
-![Mussels exposed by the low tide dwarf the silhouetted beachgoers behind them at Crystal Cove State Park](https://ics.uci.edu/~eppstein/pix/cc10/1-m.jpg){: style="border-style:solid;border-color:black;" }
+![Mussels exposed by the low tide dwarf the silhouetted beachgoers behind them at Crystal Cove State Park](https://ics.uci.edu/~eppstein/pix/cc10/1-m.jpg){: style="border-style:solid;border-color:black;background-color:black" }
 
 * [A surprising fact about polyhedral self-duality](https://doi.org/10.1016/0012-365X(89)90144-1) <span style="white-space:nowrap">([$$\mathbb{M}$$](https://mathstodon.xyz/@robinhouston/115929002813972398)):</span> There exist self-dual polyhedra for which the duality is not a self-inverse permutation of the set of vertices and faces. Robin Houston makes [a 3d printable model](https://sketchfab.com/3d-models/jendrol-non-involutary-selfduality-complex-0f153bfb8b844768951a9d1043d556af).
 

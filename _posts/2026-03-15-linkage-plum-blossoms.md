@@ -24,7 +24,7 @@ tug.org/mactex/mactex-download.html) <span style="white-space:nowrap">([$$\mathb
 * It's that time of the year when the plum blossoms in the alley behind my office catch the late afternoon sunlight <span style="white-space:nowrap">([$$\mathbb{M}$$](https://mathstodon.xyz/@11011110/116195261184490930)).</span>
 
   {: style="text-align:center"}
-![A plum tree covered in pink flowers, espaliered against the brick wall of the CalIT2 building on the UC Irvine campus](https://ics.uci.edu/~eppstein/pix/lltd/lltd-m.jpg){: style="border-style:solid;border-color:black;" }
+![A plum tree covered in pink flowers, espaliered against the brick wall of the CalIT2 building on the UC Irvine campus](https://ics.uci.edu/~eppstein/pix/lltd/lltd-m.jpg){: style="border-style:solid;border-color:black;background-color:black" }
 
 * [Using Voronoi diagrams and minimum cuts to fill in the gaps in a partial outline of the British coastline](https://hachyderm.io/@simontatham/116199197526716498)
 
