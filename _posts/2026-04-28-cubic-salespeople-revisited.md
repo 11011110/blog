@@ -32,3 +32,5 @@ As far as I know, another problem from the same paper remains open. The paper co
 
 {: style="text-align:center"}
 ![Construction for a family of cubic graphs with many Hamiltonian cycles]({{site.baseurl}}/assets/2026/manyham.svg)
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/116485577355514561))
