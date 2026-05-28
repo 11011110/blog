@@ -23,3 +23,5 @@ In $$n$$-player games with two options per player, the slowdown is even worse. H
 Even more generally, he considered follow the regularized leader as a method for finding saddle points of smooth functions and showed that, in this general context, it does not even reach stationarity.
 
 Nikolas has still not settled on what to do next; he has a good postdoc offer but also has some conflicting geographic constraints. Regardless, he has produced a strong dissertation, and I was especially impressed at how clearly he explained these concepts that were in many cases not very familiar to me. Congratulations, Nikolas, and also, congratulations, Ioannis!
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/116650010777615970))
