@@ -3,6 +3,8 @@ layout: post
 title: Linkage with plum blossoms
 date: 2026-03-15 18:47
 ---
+...except they turn out not to be plum blossoms after all; see below.
+
 * [Remembering Joe Halpern](https://
 blog.arxiv.org/2026/02/27/remembering-joe-halpern/) <span style="white-space:nowrap">([$$\mathbb{M}$$](https://mathstodon.xyz/@11011110/116160788907064998))</span> focuses on Joe's pivotal role in founding and guiding the CS section of the arXiv.
 
@@ -21,10 +23,10 @@ tug.org/mactex/mactex-download.html) <span style="white-space:nowrap">([$$\mathb
 
 * [Indonesian government blocks Wikipedia  editors from logging in over lack of official registration of the site with the government](https://rri.co.id/voice-of-indonesia/technology/2233098/wikipedia-users-in-indonesia-now-cannot-log-in-why) <span style="white-space:nowrap">([$$\mathbb{M}$$](https://mathstodon.xyz/@11011110/116189061599697934)).</span>
 
-* It's that time of the year when the plum blossoms in the alley behind my office catch the late afternoon sunlight <span style="white-space:nowrap">([$$\mathbb{M}$$](https://mathstodon.xyz/@11011110/116195261184490930)).</span>
+* It's that time of the year when the <s>plum</s> [Judas tree](https://en.wikipedia.org/wiki/Cercis_siliquastrum) blossoms in the alley behind my office catch the late afternoon sunlight <span style="white-space:nowrap">([$$\mathbb{M}$$](https://mathstodon.xyz/@11011110/116195261184490930)).</span>
 
   {: style="text-align:center"}
-![A plum tree covered in pink flowers, espaliered against the brick wall of the CalIT2 building on the UC Irvine campus](https://ics.uci.edu/~eppstein/pix/lltd/lltd-m.jpg){: style="border-style:solid;border-color:black;background-color:black" }
+![A Judas tree covered in pink flowers, espaliered against the brick wall of the CalIT2 building on the UC Irvine campus](https://ics.uci.edu/~eppstein/pix/lltd/lltd-m.jpg){: style="border-style:solid;border-color:black;background-color:black" }
 
 * [Using Voronoi diagrams and minimum cuts to fill in the gaps in a partial outline of the British coastline](https://hachyderm.io/@simontatham/116199197526716498)
 
