@@ -16,7 +16,7 @@ There are two reasons for the large number of Good Articles in this set. First, 
 * I recently returned from a relaxing early-long-weekend mini-vacation to Avila Beach ([$$\mathbb{M}$$](https://mathstodon.xyz/@11011110/106532239057852428)), with seafood sunset beach dinners (the coast faces south so the sun sets over land), wine tasting (near the setting of Sideways), and sulphur springs hot tub soaks. The photo below is a garden in a field of rusted pylons in the flood basin of San Luis Obispo Creek. I liked its contrast of natural growth and regular artificial forms.
 
   {: style="text-align:center"}
-![Secret garden, Sycamore Springs Resort, Avila Beach](https://www.ics.uci.edu/~eppstein/pix/sycsprings/SecretGarden-m.jpg){: style="border-style:solid;border-color:black;"}
+![Secret garden, Sycamore Springs Resort, Avila Beach](https://www.ics.uci.edu/~eppstein/pix/sycsprings/SecretGarden-m.jpg){: style="border-style:solid;border-color:black;background-color:black"}
 
 * [Viète's formula](https://en.wikipedia.org/wiki/Vi%C3%A8te%27s_formula) ([$$\mathbb{M}$$](https://mathstodon.xyz/@11011110/106535094271822431)), an infinite product of nested roots evaluating to $$2/\pi$$, "the first formula of European mathematics to represent an infinite process". Good Article #2.
 

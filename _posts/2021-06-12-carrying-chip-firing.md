@@ -27,7 +27,7 @@ This can be thought of as a chip-firing game on a graph where there is a vertex 
 This is exactly what we are doing when we carry a term in binary addition: taking two powers of two from a column of the addition problem and fusing them into a single power of two in the next column. We can also think of this physically, using a one-dimensional array of cells with poker chips or coins on them, with a coin on cell $$i$$ representing the number $$2^i$$. The fusion rule takes two coins from any cell and replaces them by a single coin in the next cell. In binary addition of pairs of numbers, there are at most three coins per cell (the two that started out there and one carry), but you could use the same fusion rule for addition of more than two numbers, using an array of cells that can each contain a large pile of coins.
 
 {: style="text-align:center"}
-![Five stacks of coins. Image Money-2180330 1920.jpg on Wikimedia commons, uploaded by Stella Vogt from pixabay free images, described as "probably free" but tagged with a CC-BY-SA license.]({{site.baseurl}}/assets/2021/stacks-of-coins.jpg){: style="border-style:solid;border-color:black;" width="80%" }
+![Five stacks of coins. Image Money-2180330 1920.jpg on Wikimedia commons, uploaded by Stella Vogt from pixabay free images, described as "probably free" but tagged with a CC-BY-SA license.]({{site.baseurl}}/assets/2021/stacks-of-coins.jpg){: style="border-style:solid;border-color:black;background-color:black" width="80%" }
 
 Carrying the coin analogy further, we might imagine that the coins have values that are powers of two, and that we are making change by replacing pairs of small coins by a single larger coin of equal value.
 

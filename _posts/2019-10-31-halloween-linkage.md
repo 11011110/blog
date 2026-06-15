@@ -8,7 +8,7 @@ date: 2019-10-31 22:31
 * [Pen refill mishap added a little extra challenge to my daily newspaper sudoku](https://mathstodon.xyz/@11011110/102990451172061906).
 
   {: style="text-align:center"}
-![Ink blot on sudoku puzzle]({{site.baseurl}}/assets/2019/refill-mishap.jpg){: style="border-style:solid;border-color:black;" width="60%"}
+![Ink blot on sudoku puzzle]({{site.baseurl}}/assets/2019/refill-mishap.jpg){: style="border-style:solid;border-color:black;background-color:black" width="60%"}
 
 * [Thinking outside the plane](https://www.metafilter.com/183649/Thinking-Outside-the-Plane) ([$$\mathbb{M}$$](https://mathstodon.xyz/@11011110/103004338061916266)). Interesting roundup of 3d solutions to 2d problems, starting with Tarski's plank problem: Can you cover a diameter-$$n$$ disk with fewer than $$n$$ unit-width strips? Sadly, they missed [the 3d proof of Desargues' theorem](https://en.wikipedia.org/wiki/Desargues%27s_theorem#Three-dimensional_proof). There's also a [2d-3d connection with Miquel's six-circle theorem]({{site.baseurl}}{% post_url 2006-03-22-miquels-six-circles %}) but I think it goes the other way.
 

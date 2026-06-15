@@ -11,8 +11,8 @@ But Grünbaum describes a different, non-self-crossing non-convex octahedron, th
 
 <div><table style="margin-left:auto;margin-right:auto">
 <tr style="text-align:center;vertical-align:middle">
-<td style="padding:10px"><img src="http://www.ics.uci.edu/~eppstein/pix/jumping-octahedron/1-m.jpg" alt="Jumping octahedron" width="315" style="border-style:solid;border-color:black;" /></td>
-<td style="padding:10px"><img src="http://www.ics.uci.edu/~eppstein/pix/jumping-octahedron/2-m.jpg" alt="Jumping octahedron" width="315" style="border-style:solid;border-color:black;" /></td>
+<td style="padding:10px"><img src="http://www.ics.uci.edu/~eppstein/pix/jumping-octahedron/1-m.jpg" alt="Jumping octahedron" width="315" style="border-style:solid;border-color:black;background-color:black" /></td>
+<td style="padding:10px"><img src="http://www.ics.uci.edu/~eppstein/pix/jumping-octahedron/2-m.jpg" alt="Jumping octahedron" width="315" style="border-style:solid;border-color:black;background-color:black" /></td>
 </tr></table></div>
 
 My model makes an interesting squelchy sound when I twist it from the more upright shape to the more twisted one, because these two shapes have different volumes and the air has to get out through the cracks between the faces. If I had perfectly sealed all these cracks, the pressure change would prevent it from changing shape. This change in volume is a big contrast from the Bricard octahedra and other continuously-flexible polyhedra, which must maintain constant volume as they flex.

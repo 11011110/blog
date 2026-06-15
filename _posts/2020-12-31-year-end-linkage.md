@@ -37,7 +37,7 @@ date: 2020-12-31 21:32
 * [What winter looks like in different parts of the world](https://mathstodon.xyz/@christianp/105465163493715434). Long photo-thread responding to a request by Christian Lawson-Perfect's 3-year-old. Here's [my contribution](https://mathstodon.xyz/@11011110/105466532506211765), with prickly pears and the distant snow-topped San Gabriel mountains in Southern California:
 
   {: style="text-align:center"}
-![Coastal prickly pear (opuntia littoralis) with visible fruit in the University of California, Irvine Ecological Preserve, looking north towards the San Gabriel Mountains, covered in snow from a recent storm](https://www.ics.uci.edu/~eppstein/pix/pricklypearmountains/PricklyPearMountains-m.jpg){: style="border-style:solid;border-color:black;" width="80%" }
+![Coastal prickly pear (opuntia littoralis) with visible fruit in the University of California, Irvine Ecological Preserve, looking north towards the San Gabriel Mountains, covered in snow from a recent storm](https://www.ics.uci.edu/~eppstein/pix/pricklypearmountains/PricklyPearMountains-m.jpg){: style="border-style:solid;border-color:black;background-color:black" width="80%" }
 
 * [Game of Life running on Penrose tiles](https://boingboing.net/2020/12/29/game-of-life-running-on-penrose-tiles.html) ([$$\mathbb{M}$$](https://mathstodon.xyz/@11011110/105473798576179397)). With links to a _New York Times_ feature of "[short reflections from big thinkers on why Conway's famous cellular-automata gewgaw remains so fascinating](https://www.nytimes.com/2020/12/28/science/math-conway-game-of-life.html)". From which I found Kjetil Golid's generative-art [crosshatch automata](https://generated.space/sketch/crosshatch-automata/).
 

@@ -10,17 +10,17 @@ Conway's description is clear enough: start with a central regular octahedron (e
 <div><table style="margin-left:auto;margin-right:auto">
 <tr style="text-align:center;vertical-align:middle">
 <td style="padding:10px"><img
-src="https://www.ics.uci.edu/~eppstein/pix/triforce/1-m.jpg" style="border-style:solid;border-color:black;"
+src="https://www.ics.uci.edu/~eppstein/pix/triforce/1-m.jpg" style="border-style:solid;border-color:black;background-color:black"
 alt="Conway's triforce toroid, bumpy side of hole"></td>
 <td style="padding:10px"><img
-src="https://www.ics.uci.edu/~eppstein/pix/triforce/2-m.jpg" style="border-style:solid;border-color:black;"
+src="https://www.ics.uci.edu/~eppstein/pix/triforce/2-m.jpg" style="border-style:solid;border-color:black;background-color:black"
 alt="Conway's triforce toroid, triforce side of hole"></td></tr>
 <tr style="text-align:center;vertical-align:middle">
 <td style="padding:10px"><img
-src="https://www.ics.uci.edu/~eppstein/pix/triforce/3-m.jpg" style="border-style:solid;border-color:black;"
+src="https://www.ics.uci.edu/~eppstein/pix/triforce/3-m.jpg" style="border-style:solid;border-color:black;background-color:black"
 alt="Conway's triforce toroid, tetrahedral edge-on view, bumpy side up"></td>
 <td style="padding:10px"><img
-src="https://www.ics.uci.edu/~eppstein/pix/triforce/4-m.jpg" style="border-style:solid;border-color:black;"
+src="https://www.ics.uci.edu/~eppstein/pix/triforce/4-m.jpg" style="border-style:solid;border-color:black;background-color:black"
 alt="Conway's triforce toroid, octahedral edge-on view, triforce side up"></td></tr></table></div>
 
 The upper left view looks down the hole, from the side where the three octahedra glued onto the hole appear most prominently, looking like three square pyramids tilted slightly away from the central hole. On the upper right, we see the hole from the other side. The three triangular faces closest to the central hole in this view lie flat in the plane, in the shape of the [Triforce](https://en.wikipedia.org/wiki/Triforce) from the Zelda games. Extending beyond them, we see three sets of three coplanar triangles. The other two views are edge-on, near a tetrahedron and octahedron (respectively) glued onto the central octahedral hole.

@@ -10,35 +10,35 @@ In Guanajuato, the conference was held at [CIMAT, the Centro de Investigación e
 <div><table style="margin-left:auto;margin-right:auto">
 <tr style="text-align:center;vertical-align:middle">
 <td style="padding:10px"><a href="https://www.ics.uci.edu/~eppstein/pix/cimat/1.html"><img
-src="https://www.ics.uci.edu/~eppstein/pix/cimat/1-s.jpg" style="border-style:solid;border-color:black;" width=288 height=162
+src="https://www.ics.uci.edu/~eppstein/pix/cimat/1-s.jpg" style="border-style:solid;border-color:black;background-color:black" width=288 height=162
 alt="CIMAT"></a></td>
 <td style="padding:10px"><a href="https://www.ics.uci.edu/~eppstein/pix/cimat/2.html"><img
-src="https://www.ics.uci.edu/~eppstein/pix/cimat/2-s.jpg" style="border-style:solid;border-color:black;" width=193 height=256
+src="https://www.ics.uci.edu/~eppstein/pix/cimat/2-s.jpg" style="border-style:solid;border-color:black;background-color:black" width=193 height=256
 alt="CIMAT"></a></td>
 <td style="padding:10px"><a href="https://www.ics.uci.edu/~eppstein/pix/cimat/3.html"><img
-src="https://www.ics.uci.edu/~eppstein/pix/cimat/3-s.jpg" style="border-style:solid;border-color:black;" width=193 height=256
+src="https://www.ics.uci.edu/~eppstein/pix/cimat/3-s.jpg" style="border-style:solid;border-color:black;background-color:black" width=193 height=256
 alt="CIMAT"></a></td>
 </tr>
 <tr style="text-align:center;vertical-align:middle">
 <td style="padding:10px"><a href="https://www.ics.uci.edu/~eppstein/pix/cimat/4.html"><img
-src="https://www.ics.uci.edu/~eppstein/pix/cimat/4-s.jpg" style="border-style:solid;border-color:black;" width=250 height=199
+src="https://www.ics.uci.edu/~eppstein/pix/cimat/4-s.jpg" style="border-style:solid;border-color:black;background-color:black" width=250 height=199
 alt="CIMAT"></a></td>
 <td style="padding:10px"><a href="https://www.ics.uci.edu/~eppstein/pix/cimat/5.html"><img
-src="https://www.ics.uci.edu/~eppstein/pix/cimat/5-s.jpg" style="border-style:solid;border-color:black;" width=193 height=256
+src="https://www.ics.uci.edu/~eppstein/pix/cimat/5-s.jpg" style="border-style:solid;border-color:black;background-color:black" width=193 height=256
 alt="CIMAT"></a></td>
 <td style="padding:10px"><a href="https://www.ics.uci.edu/~eppstein/pix/cimat/6.html"><img
-src="https://www.ics.uci.edu/~eppstein/pix/cimat/6-s.jpg" style="border-style:solid;border-color:black;" width=193 height=256
+src="https://www.ics.uci.edu/~eppstein/pix/cimat/6-s.jpg" style="border-style:solid;border-color:black;background-color:black" width=193 height=256
 alt="CIMAT"></a></td>
 </tr>
 <tr style="text-align:center;vertical-align:middle">
 <td style="padding:10px"><a href="https://www.ics.uci.edu/~eppstein/pix/cimat/7.html"><img
-src="https://www.ics.uci.edu/~eppstein/pix/cimat/7-s.jpg" style="border-style:solid;border-color:black;" width=193 height=256
+src="https://www.ics.uci.edu/~eppstein/pix/cimat/7-s.jpg" style="border-style:solid;border-color:black;background-color:black" width=193 height=256
 alt="CIMAT"></a></td>
 <td style="padding:10px"><a href="https://www.ics.uci.edu/~eppstein/pix/cimat/8.html"><img
-src="https://www.ics.uci.edu/~eppstein/pix/cimat/8-s.jpg" style="border-style:solid;border-color:black;" width=287 height=162
+src="https://www.ics.uci.edu/~eppstein/pix/cimat/8-s.jpg" style="border-style:solid;border-color:black;background-color:black" width=287 height=162
 alt="CIMAT"></a></td>
 <td style="padding:10px"><a href="https://www.ics.uci.edu/~eppstein/pix/cimat/9.html"><img
-src="https://www.ics.uci.edu/~eppstein/pix/cimat/9-s.jpg" style="border-style:solid;border-color:black;" width=193 height=256
+src="https://www.ics.uci.edu/~eppstein/pix/cimat/9-s.jpg" style="border-style:solid;border-color:black;background-color:black" width=193 height=256
 alt="CIMAT"></a></td>
 </tr>
 </table></div>

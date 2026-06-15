@@ -10,9 +10,9 @@ What I like about these workshops is their collaborative nature: everyone works 
 
 <div><table style="margin-left:auto;margin-right:auto">
 <tr style="text-align:center;vertical-align:middle">
-<td style="padding:10px"><img src="http://www.ics.uci.edu/~eppstein/pix/bellairs18/22-m.jpg" alt="Erik Demaine, Andrew Winslow, Ryuhei Uehara, and Yushi Uno" width="320" style="border-style:solid;border-color:black;" /></td>
-<td style="padding:10px"><img src="http://www.ics.uci.edu/~eppstein/pix/bellairs18/16-m.jpg" alt="Tadashi Tokieda, Tomohiro Tachi, Tom Hull, and Ryuhei Uehara" width="360" style="border-style:solid;border-color:black;" /></td>
+<td style="padding:10px"><img src="http://www.ics.uci.edu/~eppstein/pix/bellairs18/22-m.jpg" alt="Erik Demaine, Andrew Winslow, Ryuhei Uehara, and Yushi Uno" width="320" style="border-style:solid;border-color:black;background-color:black" /></td>
+<td style="padding:10px"><img src="http://www.ics.uci.edu/~eppstein/pix/bellairs18/16-m.jpg" alt="Tadashi Tokieda, Tomohiro Tachi, Tom Hull, and Ryuhei Uehara" width="360" style="border-style:solid;border-color:black;background-color:black" /></td>
 </tr><tr style="text-align:center;vertical-align:middle">
-<td style="padding:10px"><img src="http://www.ics.uci.edu/~eppstein/pix/bellairs18/5-m.jpg" alt="Zuzana Masárová, Christiane Schmidt, Linda Kleist, and Marty Demaine" width="360" style="border-style:solid;border-color:black;" /></td>
-<td style="padding:10px"><img src="http://www.ics.uci.edu/~eppstein/pix/bellairs18/33-m.jpg" alt="Jason Ku and Irina Kostitsyna" width="320" style="border-style:solid;border-color:black;" /></td>
+<td style="padding:10px"><img src="http://www.ics.uci.edu/~eppstein/pix/bellairs18/5-m.jpg" alt="Zuzana Masárová, Christiane Schmidt, Linda Kleist, and Marty Demaine" width="360" style="border-style:solid;border-color:black;background-color:black" /></td>
+<td style="padding:10px"><img src="http://www.ics.uci.edu/~eppstein/pix/bellairs18/33-m.jpg" alt="Jason Ku and Irina Kostitsyna" width="320" style="border-style:solid;border-color:black;background-color:black" /></td>
 </tr></table></div>

@@ -7,7 +7,7 @@ Many car engines use a [serpentine belt](https://en.wikipedia.org/wiki/Serpentin
 The [Volvo bus engine](https://commons.wikimedia.org/wiki/File:Belt_drive_systen_01.JPG) below shows both of these belts:
 
 {: style="text-align:center"}
-![Timing and serpentine belts of a Volvo bus engine; CC-BY-SA photo by Miya.m from https://commons.wikimedia.org/wiki/File:Belt_drive_systen_01.JPG]({{site.baseurl}}/assets/2019/Volvo-bus-engine-belts.jpg){: style="border-style:solid;border-color:black;" width="60%"}
+![Timing and serpentine belts of a Volvo bus engine; CC-BY-SA photo by Miya.m from https://commons.wikimedia.org/wiki/File:Belt_drive_systen_01.JPG]({{site.baseurl}}/assets/2019/Volvo-bus-engine-belts.jpg){: style="border-style:solid;border-color:black;background-color:black" width="60%"}
 
 But suppose you encounter such an engine with its belt removed. How can you tell where to run the belt to connect it all back together again? There may be many different orderings in which you can connect a given set of wheels by a belt. On a real engine (such as the one in a Ford Escort on which I loosely modeled the top image below), you might get a little more information from which of the wheels are ribbed (inside the belt) and which are smooth (outside the belt) but even that extra information won't always give you a unique solution:
 

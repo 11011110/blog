@@ -6,7 +6,7 @@ date: 2018-05-17 21:25
 Look what arrived in the mail yesterday! It's both the hardback and paperback editions of my new book, [_Forbidden Configurations in Discrete Geometry_](https://www.cambridge.org/eppstein)!
 
 {: style="text-align:center"}
-![Forbidden Configurations in Discrete Geometry](http://www.ics.uci.edu/~eppstein/pix/forbidden-configurations/forbidden-configurations-m.jpg){: style="border-style:solid;border-color:black;"}
+![Forbidden Configurations in Discrete Geometry](http://www.ics.uci.edu/~eppstein/pix/forbidden-configurations/forbidden-configurations-m.jpg){: style="border-style:solid;border-color:black;background-color:black"}
 
 (The props don't have much to do with the content of the book. They're mostly there because I needed something to hold the books in place while I photographed them.)
 

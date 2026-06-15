@@ -8,7 +8,7 @@ date: 2021-12-15 18:35
 * [A sunset view from my neighborhood to the foggy flatlands below](https://www.ics.uci.edu/~eppstein/pix/foggy-uhills-sunset/index.html) <span style="white-space:nowrap">([$$\mathbb{M}$$](https://mathstodon.xyz/@11011110/107380531606566173)).</span>
 
   {: style="text-align:center"}
-![Sunset from University Hills, Irvine](https://www.ics.uci.edu/~eppstein/pix/foggy-uhills-sunset/foggy-uhills-sunset-m.jpg){: style="border-style:solid;border-color:black;" }
+![Sunset from University Hills, Irvine](https://www.ics.uci.edu/~eppstein/pix/foggy-uhills-sunset/foggy-uhills-sunset-m.jpg){: style="border-style:solid;border-color:black;background-color:black" }
 
 * [The Internet Freedom Foundation and a group of social science researchers weigh in on a publisher copyright suit](https://internetfreedom.in/social-science-researchers-move-delhi-high-court-to-protect-libgen-scihub/) <span style="white-space:nowrap">([$$\mathbb{M}$$](https://mathstodon.xyz/@11011110/107387353076211417), [via](https://news.ycombinator.com/item?id=29366621), [via2](https://www.trtworld.com/magazine/indian-academics-throw-weight-behind-sci-hub-and-libgen-in-landmark-case-51780)),</span> in India's Delhi High Court against LibGen and Sci-Hub, arguing that accessing published works for research or educational purposes is legal as fair dealing under Indian law.
 
@@ -22,7 +22,7 @@ date: 2021-12-15 18:35
 * [This month's conjunction of venus and the moon](https://www.ics.uci.edu/~eppstein/pix/conjunx/index.html) <span style="white-space:nowrap">([$$\mathbb{M}$$](https://mathstodon.xyz/@11011110/107410218362959232)).</span> It was difficult for me to decide to keep this, mostly because I have a much better crescent moon photo by Galen Rowell on my wall in line of sight of where I edit my photos. But here it is:
 
   {: style="text-align:center"}
-![Venus-moon conjunction with palm tree](https://www.ics.uci.edu/~eppstein/pix/conjunx/VenusMoonPalm-m.jpg){: style="border-style:solid;border-color:black;" width="80%" }
+![Venus-moon conjunction with palm tree](https://www.ics.uci.edu/~eppstein/pix/conjunx/VenusMoonPalm-m.jpg){: style="border-style:solid;border-color:black;background-color:black" width="80%" }
 
 * [On a density conjecture about unit fractions](https://arxiv.org/abs/2112.03726) <span style="white-space:nowrap">([$$\mathbb{M}$$](https://mathstodon.xyz/@11011110/107418642072585919), [via](https://twitter.com/wtgowers/status/1468634931115048960)),</span> Thomas F. Bloom. This is about the [Erdős–Graham problem on Egyptian fractions](https://en.wikipedia.org/wiki/Erd%C5%91s%E2%80%93Graham_problem). Erdős and Graham suggested that any partition of the integers into finitely many sets has a set containing the denominators of a sum of unit fractions equal to $$1$$, like $$1/2 + 1/3 + 1/6 = 1$$. The new paper proves more strongly that these sums exist for any positive-density set of integers.
 

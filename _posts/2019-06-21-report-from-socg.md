@@ -30,7 +30,7 @@ The invited talks on Wednesday and Friday were by Sanjoy Dasgupta and Bruce Dona
 Wednesday evening was the conference banquet, at the famed [Crystal Ballroom](https://en.wikipedia.org/wiki/Crystal_Ballroom_(Portland,_Oregon)), conveniently located near Powell's Books. Matthew Dickerson showed up (after many years absence from SoCG) and brought some musical family members for a live concert.
 
 {: style="text-align:center"}
-![Marquee for Michael Dickerson and Shaky Situation](http://www.ics.uci.edu/~eppstein/pix/portland/ShakySituation-m.jpg){: style="border-style:solid;border-color:black;"}
+![Marquee for Michael Dickerson and Shaky Situation](http://www.ics.uci.edu/~eppstein/pix/portland/ShakySituation-m.jpg){: style="border-style:solid;border-color:black;background-color:black"}
 
 On Thursday afternoon I stopped by the workshop on algebraic methods where I had the pleasure of seing Josh Zahl give his talk on a whiteboard instead of using prepared slides. It was on methods for proving bounds on the number of incidences among geometric objects by combining naive bounds based on forbidden complete bipartite subgraphs of the incidence graphs, cuttings of space into smaller regions within which one applies these naive bounds, and cuttings of the objects into pieces in order to make the forbidden subgraphs smaller.
 

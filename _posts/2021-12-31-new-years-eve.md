@@ -28,7 +28,7 @@ date: 2021-12-31 17:26
 * Ocean rain, Mendocino, Christmas afternoon <span style="white-space:nowrap">([$$\mathbb{M}$$](https://mathstodon.xyz/@11011110/107511339824111098)):</span>
 
   {: style="text-align:center"}
-![Ocean rain, Mendocino, Christmas afternoon](https://www.ics.uci.edu/~eppstein/pix/xmen/OceanRainMendocinoXmas-m.jpg){: style="border-style:solid;border-color:black;" }
+![Ocean rain, Mendocino, Christmas afternoon](https://www.ics.uci.edu/~eppstein/pix/xmen/OceanRainMendocinoXmas-m.jpg){: style="border-style:solid;border-color:black;background-color:black" }
 
 * [Square pyramidal number](https://en.wikipedia.org/wiki/Square_pyramidal_number) <span style="white-space:nowrap">([$$\mathbb{M}$$](https://mathstodon.xyz/@11011110/107516162974520461)),</span> another new Wikipedia Good Article. Some things I learned in working on this article:
 

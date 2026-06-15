@@ -6,7 +6,7 @@ date: 2018-04-17 21:38
 There's a [story going around](http://mathtourist.blogspot.com/2010/08/manhole-cover-geometry.html) in [mathematical circles](https://www.sciencenews.org/article/rolling-reuleaux), perhaps due to [a 1971 article of Victor Klee](https://doi.org/10.2307/3026963), that Reuleaux triangles make a good shape for manhole covers. This is because, like the more common circular manhole covers, they can't fall into the holes that they cover. However, circles have other useful properties: they roll more easily and you don't have to align them very carefully with their holes. I can't find any evidence that anyone anywhere has ever actually used a Reuleaux triangle shaped manhole cover.
 
 {: style="text-align:center"}
-![A rounded triangular (but not Reuleaux triangle) valve cover on the UC Irvine campus](http://www.ics.uci.edu/~eppstein/pix/uciutil/26-m.jpg){: style="border-style:solid;border-color:black;"}
+![A rounded triangular (but not Reuleaux triangle) valve cover on the UC Irvine campus](http://www.ics.uci.edu/~eppstein/pix/uciutil/26-m.jpg){: style="border-style:solid;border-color:black;background-color:black"}
 
 So what is that picture, you ask?
 I took it, and [a batch of related photos](http://www.ics.uci.edu/~eppstein/pix/uciutil/) from the UC Irvine campus, with the plan of replacing a similar photo that had been deleted from [the Wikipedia Reuleaux triangle article](https://en.wikipedia.org/wiki/Reuleaux_triangle) over some licensing snafu. But it's not a Reuleaux triangle manhole cover, for multiple reasons.
@@ -20,7 +20,7 @@ I took it, and [a batch of related photos](http://www.ics.uci.edu/~eppstein/pix/
 So I think it's far enough from being a good illustration of the manhole story that I'm not going to try to add it to the Wikipedia article. But I did at least find some pretty fallen Spring blossoms:
 
 {: style="text-align:center"}
-![Utility cover with fallen Spring blossoms on the UC Irvine campus](http://www.ics.uci.edu/~eppstein/pix/uciutil/40-m.jpg){: style="border-style:solid;border-color:black;"}
+![Utility cover with fallen Spring blossoms on the UC Irvine campus](http://www.ics.uci.edu/~eppstein/pix/uciutil/40-m.jpg){: style="border-style:solid;border-color:black;background-color:black"}
 
 If anyone does know of somewhere that uses actual Reuleaux triangle shaped manhole covers, please tell me where to find them.
 

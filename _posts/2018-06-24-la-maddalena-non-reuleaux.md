@@ -8,7 +8,7 @@ I recently returned from a trip to Europe, with a one-day stopover in Rome, a vi
 Despite being annoying to get to (an hour's drive and another half-hour ferry ride from the nearest minor airport), La Maddalena is a very pleasant place to hold a conference, with a beautiful coastline and great food. The hotel was a little quirky (for instance, no potable water in the taps) and just enough inland to not have an ocean view, but it was still comfortable enough. Here's what I could see from my hotel room:
 
 {: style="text-align:center"}
-![The view from La Neireidi, La Maddalena](http://www.ics.uci.edu/~eppstein/pix/lamaddalena/LaNereidi1-m.jpg){: style="border-style:solid;border-color:black;"}
+![The view from La Neireidi, La Maddalena](http://www.ics.uci.edu/~eppstein/pix/lamaddalena/LaNereidi1-m.jpg){: style="border-style:solid;border-color:black;background-color:black"}
 
 You might notice the little triangular patio table on the balcony. Like [several other kinds of rounded triangle]({{site.baseurl}}{% post_url 2018-04-17-mythical-reuleaux-manhole %}), this is not a Reuleaux triangle, even if one ignores the rounded-off corners. On a Reuleaux triangle, the tangents to the two circular arcs that meet at a vertex would form $$120^\circ$$ angles; here, the angle seems somewhat acute. And the distance from corner to corner is noticably larger than the distance from a corner to the middle of the opposite side. It's clearer in a top view:
 
@@ -20,4 +20,4 @@ Notice how much more room there is on the top and bottom margins of the square f
 [The rest of the gallery](https://www.ics.uci.edu/~eppstein/pix/lamaddalena/) is less about furniture geometry and more about pretty views, so check it out. The one below is from the end of the conference excursion, a boat trip to some nearby islands.
 
 {: style="text-align:center"}
-![La Maddalena at sunset](http://www.ics.uci.edu/~eppstein/pix/lamaddalena/SunsetJetty-m.jpg){: style="border-style:solid;border-color:black;"}
+![La Maddalena at sunset](http://www.ics.uci.edu/~eppstein/pix/lamaddalena/SunsetJetty-m.jpg){: style="border-style:solid;border-color:black;background-color:black"}

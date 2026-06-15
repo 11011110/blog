@@ -10,7 +10,7 @@ Like most of the rest of the world, I'm stuck at home for an indefinite duration
 I brought my camera along, but chose to focus on the nearby brush rather than the more distant views. Here's one of my shots:
 
 {: style="text-align:center"}
-![UCI Ecological Preserve](https://www.ics.uci.edu/~eppstein/pix/uciep/6-m.jpg){: style="border-style:solid;border-color:black;"}
+![UCI Ecological Preserve](https://www.ics.uci.edu/~eppstein/pix/uciep/6-m.jpg){: style="border-style:solid;border-color:black;background-color:black"}
 
 The rest are in [my online gallery](https://www.ics.uci.edu/~eppstein/pix/uciep/index.html).
 

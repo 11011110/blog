@@ -13,10 +13,10 @@ The service went well, mostly consisting of short speeches from many guests (rec
 <div><table style="margin-left:auto;margin-right:auto">
 <tr style="text-align:center;vertical-align:middle">
 <td style="padding:10px"><img
-src="https://www.ics.uci.edu/~eppstein/pix/menspr24/CommunityCenterSakura1-m.jpg" style="border-style:solid;border-color:black;"
+src="https://www.ics.uci.edu/~eppstein/pix/menspr24/CommunityCenterSakura1-m.jpg" style="border-style:solid;border-color:black;background-color:black"
 alt="Sakura at the Mendocino Community Center, April 2024"></td>
 <td style="padding:10px"><img
-src="https://www.ics.uci.edu/~eppstein/pix/menspr24/CommunityCenterSakura2-m.jpg" style="border-style:solid;border-color:black;"
+src="https://www.ics.uci.edu/~eppstein/pix/menspr24/CommunityCenterSakura2-m.jpg" style="border-style:solid;border-color:black;background-color:black"
 alt="Sakura at the Mendocino Community Center, April 2024"></td>
 </tr>
 </table></div>
