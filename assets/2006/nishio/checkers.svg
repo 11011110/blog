@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="274pt" height="274pt" viewBox="0 0 273 273">
+  <g fill="none" stroke="black" stroke-width="1.5">
+    <rect x="2" y="2" width="270" height="270" />
+    <line x1="2" y1="92" x2="272" y2="92" />
+    <line x1="92" y1="2" x2="92" y2="272" />
+    <line x1="2" y1="182" x2="272" y2="182" />
+    <line x1="182" y1="2" x2="182" y2="272" />
+  </g>
+  <g fill="none" stroke="black" stroke-width="0.5">
+    <line x1="2" y1="32" x2="272" y2="32" />
+    <line x1="32" y1="2" x2="32" y2="272" />
+    <line x1="2" y1="62" x2="272" y2="62" />
+    <line x1="62" y1="2" x2="62" y2="272" />
+    <line x1="2" y1="122" x2="272" y2="122" />
+    <line x1="122" y1="2" x2="122" y2="272" />
+    <line x1="2" y1="152" x2="272" y2="152" />
+    <line x1="152" y1="2" x2="152" y2="272" />
+    <line x1="2" y1="212" x2="272" y2="212" />
+    <line x1="212" y1="2" x2="212" y2="272" />
+    <line x1="2" y1="242" x2="272" y2="242" />
+    <line x1="242" y1="2" x2="242" y2="272" />
+  </g>
+  <g font-family="Times" font-size="24" fill="black" text-anchor="middle">
+    <text x="47" y="25">?</text>
+    <text x="107" y="25">?</text>
+    <text x="167" y="25">?</text>
+    <text x="227" y="25">?</text>
+    <text x="17" y="55">?</text>
+    <text x="77" y="55">?</text>
+    <text x="137" y="55">?</text>
+    <text x="197" y="55">?</text>
+    <text x="257" y="55">?</text>
+    <text x="47" y="85">?</text>
+    <text x="107" y="85">?</text>
+    <text x="167" y="85">?</text>
+    <text x="227" y="85">?</text>
+    <text x="17" y="115">?</text>
+    <text x="77" y="115">?</text>
+    <text x="137" y="115">?</text>
+    <text x="197" y="115">?</text>
+    <text x="257" y="115">?</text>
+    <text x="47" y="145">?</text>
+    <text x="107" y="145">?</text>
+    <text x="167" y="145">?</text>
+    <text x="227" y="145">?</text>
+    <text x="17" y="175">?</text>
+    <text x="77" y="175">?</text>
+    <text x="137" y="175">?</text>
+    <text x="197" y="175">?</text>
+    <text x="257" y="175">?</text>
+    <text x="47" y="205">?</text>
+    <text x="107" y="205">?</text>
+    <text x="167" y="205">?</text>
+    <text x="17" y="235">?</text>
+    <text x="77" y="235">?</text>
+    <text x="137" y="235">?</text>
+    <text x="47" y="265">?</text>
+    <text x="107" y="265">?</text>
+    <text x="167" y="265">?</text>
+    <text x="227" y="265">A</text>
+    <text x="257" y="265">B</text>
+  </g>
+</svg>
