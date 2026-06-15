@@ -25,7 +25,7 @@ For testing \( (3/2,2) \)-tightness, the pebble game starts out with three pebbl
 <p>Based on these rules, the algorithm for testing \( (3/2,2) \)-tightness performs the following steps. It initializes an empty graph with three pebbles per vertex. It then loops through the edges of the doubled graph (i.e. it considers each input edge twice). When considering an edge (\( u \),\( v \)), if there are not already enough (five) pebbles present at \( u \) and \( v \) to create the edge, it does a depth-first search on the outgoing edges from \( u \) and \( v \) to find more pebbles that can be moved to \( u \) and \( v \) (if necessary also rebalancing the pebbles between \( u \) and \( v \) to avoid putting too many on one vertex). If this search fails to find enough pebbles it rejects the graph. Then it creates the edge, choosing a direction for it arbitrarily and removing a pebble from the starting vertex of the directed edge. If this process succeeds in creating all the input edges (twice each), with exactly four pebbles left at the end, then the input graph is \( (3/2,2) \)-tight. This all takes at most \( O(n^2) \) time; Lee and Streinu go on to describe how to modify the algorithm to detect rigid components of a graph that may not itself be sparse, in the same running time.</p>
 
 <br /><br /><hr /><br />
-<h3>Comments:</h3>
+<h2>Comments:</h2>
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>chrishartman</b>: <br />
 <b>2013-12-15T03:15:49Z</b><br />

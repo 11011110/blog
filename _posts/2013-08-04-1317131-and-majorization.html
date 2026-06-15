@@ -17,7 +17,7 @@ tags:   [graph drawing, permutation patterns, papers]
 <p>This subsequence domination property wouldn't be so interesting by itself (the sequence 1,2,3,4,... has the same property) but the 1,3,1,7 sequence also has particularly small partial sums. The sum of the first \( n \) terms of the sequence can be calculated quickly (much more quickly than just computing the sum directly, for large \( n \)) by a simple trick: represent \( n \) as a sum of distinct powers of two (its binary representation), and sum up the numbers \( 2^i(i+1) \) for each of the powers \( 2^i \) appearing in this sum. For instance, 6 = 2<sup>2</sup> + 2<sup>2</sup> and the sixth partial sum, 16, equals 2<sup>2</sup>(2 + 1) + 2<sup>2</sup>(1 + 1). Using this formula, we can show that the \( n \)th partial sum is always between \( n\log_2 n - 2n \) and \( n\log_2 n + n \), solving a conjecture in <a href="http://oeis.org/A080277">OEIS A080277</a>. And every sequence with the subsequence domination property has partial sums at least proportional to \( n \log n \), so up to constant factors the sequence 1,3,1,7,... is optimal.</p>
 
 <br /><br /><hr /><br />
-<h3>Comments:</h3>
+<h2>Comments:</h2>
 
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>irishoak</b>: <br />

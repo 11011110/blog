@@ -15,7 +15,7 @@ tags:   [social networks, papers]
 <p>The Facebook paper is worth reading for other reasons, beyond this basic point. Its main results concern trying to sample uniformly from a large unknown <a href="http://en.wikipedia.org/wiki/Implicit_graph">implicit network</a> for which a direct download of all nodes is disallowed or infeasible. In Facebook, the authors found a trick for performing this sampling with perfect accuracy: generate a 32-bit id, ask Facebook whether it's valid, and repeat if not. However, there's no guarantee that such methods would be available for other networks nor that they'll remain available for Facebook. Typical methods for sampling from such networks instead involve performing a breadth-first search or a random walk from a small set of seed nodes, but these methods are biased towards high-degree nodes and as the authors show they can lead to erroneous conclusions — the larger figure from which I stole the figure above compares the actual degree distribution to the distribution one might infer from one of these biased sampling methods, and shows that the two distributions are quite far apart. As the authors describe, a Metropolis-Hastings correction that is standard in other contexts (essentially, a random walk with a rule to backtrack certain steps of the walk with a backtracking probability that depends on the degrees of the endpoints of the step) can be used to sample these graphs accurately, a necessary prerequisite to statistical inference.</p>
 
 <br /><br /><hr /><br />
-<h3>Comments:</h3>
+<h2>Comments:</h2>
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>arvindn</b>: <br />
 <b>2009-08-27T05:22:43Z</b><br />

@@ -28,7 +28,7 @@ tags:   [computational geometry, number theory]
 
 <p>Recall that we're trying to bound the number of equivalence classes of isosceles triangles, under translational equivalences, in a grid. Instead of fixing the apex of the triangle, let's fix the slope of its base to a number a/b. There are O(n/max(a,b)) possible base lengths with that slope; for each choice of base, the possible apexes are distributed along the perpendicular bisector, a line with slope -b/a that also has O(n/max(a,b)) points on it. Therefore, the total number of triangles we can form is O(∑<sub>0≤a≤b≤n</sub>(n/b)<sup>2</sup>) = O(n<sup>2</sup> ∑<sub>1≤b≤n</sub> 1/b )= O(n<sup>2</sup> log n).</p>
 <br /><br /><hr /><br />
-<h3>Comments:</h3>
+<h2>Comments:</h2>
 <div style="margin-left: 0em; padding-top: 1em;">
 <b>ext_73227</b>: <br />
 <b>2007-12-11T02:18:44Z</b><br />
