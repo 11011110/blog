@@ -20,7 +20,7 @@ This follows from the main lemma in the paper: if a system of spheres or hypersp
 {: style="text-align:center"}
 ![Soddy's hexlet, in the form of seven congruent spheres between two parallel planes]({{site.baseurl}}/assets/2023/hexlet.gif 'CC-BY-SA 3.0 image File:Hexlet annular opt.gif by WillowW from Wikimedia commons')
 
-So let's use the same lemma to construct a graph with no short odd cycles and small independent sets of neighbors for each vertex, that cannot be realized by spheres in $$\mathbb{R}^3$$. To do so, [blow up each vertex]({{site.baseurl}}{% post_url 2023-01-23-doubled-planar-drawings %}) of a $$k$$-cycle by replacing it with an independent set of three vertices. Here's a [confluent drawing for $$k=5$$ <span style="white-space:nowrap">and $$d=3$$</span>]({% post_url 2011-09-25-confluence-vs-lombardi %}):
+So let's use the same lemma to construct a graph with no short odd cycles and small independent sets of neighbors for each vertex, that cannot be realized by spheres in $$\mathbb{R}^3$$. To do so, [blow up each vertex]({{site.baseurl}}{% post_url 2023-01-23-doubled-planar-drawings %}) of a $$k$$-cycle by replacing it with an independent set of three vertices. Here's a [confluent drawing for $$k=5$$ <span style="white-space:nowrap">and $$d=3$$</span>]({{site.baseurl}}{% post_url 2011-09-25-confluence-vs-lombardi %}):
 
 {: style="text-align:center"}
 ![Confluent drawing of the graph obtained by blowing up each vertex of a pentagon into a three-vertex independent set]({{site.baseurl}}/assets/2011/gd11-contest-3.svg)
