@@ -44,3 +44,5 @@ When viewed top-down their shapes almost look like writing to me. You can see a 
 ![Top-down view of two ceramic orthogonal polyhedra](https://ics.uci.edu/~eppstein/pix/richterhedra/Letterforms-m.jpg){:  style="border-style:solid;border-color:black;background-color:black;width:100%;max-width:720px"}
 
 Richter also has a couple of papers on orthogonal polyhedra: "Generic Orthotopes" ([arXiv:2210.12012](https://arxiv.org/abs/2210.12012)) and "Ehrhart Polynomials of Generic Orthotopes" ([arXiv:2309.09026](https://arxiv.org/abs/2309.09026)).
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/116802184893062604))
