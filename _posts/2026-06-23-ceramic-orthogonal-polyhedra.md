@@ -3,7 +3,7 @@ layout: post
 title: Ceramic orthogonal polyhedra
 date: 2026-06-23 16:59
 ---
-David Richter, a mathematician at the University of Western Michigan, recently found himself with a surfeit of ceramic orthogonal polyhedra and, knowing of [my own interest in orthogonal polyhedra](https://www.ics.uci.edu/~eppstein/pubs/p-steinitz.html), generously offloaded two of them to me. They fit nicely in my office together with the paper and crochet orthogonal polyhedra I already had:
+David Richter, a mathematician at Western Michigan University, recently found himself with a surfeit of ceramic orthogonal polyhedra and, knowing of [my own interest in orthogonal polyhedra](https://www.ics.uci.edu/~eppstein/pubs/p-steinitz.html), generously offloaded two of them to me. They fit nicely in my office together with the paper and crochet orthogonal polyhedra I already had:
 
 {: style="text-align:center"}
 ![Four orthogonal polyhedra, two ceramic, one paper, and one crochet](https://ics.uci.edu/~eppstein/pix/richterhedra/FamilyPortrait-m.jpg){:  style="border-style:solid;border-color:black;background-color:black;width:100%;max-width:720px"}
