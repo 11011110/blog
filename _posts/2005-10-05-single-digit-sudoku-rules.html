@@ -9,39 +9,39 @@ tags:   [sudoku]
 
 <p>Both rules have the same purpose: looking only at the cells where a single digit may be placed, determine which of those cells can possibly be used in a solution to the puzzle, and eliminate the others. For example, suppose that (by other deduction rules) we have limited the locations for the digit 7 in four squares of a puzzle to the X's and Y's shown in the following diagram (with the 7's in the other five squares placed in positions compatible with these locations):</p>
 
-<p style="text-align:center"><img src="{{site.baseurl}}/assets/2006/nishio/xdigit.svg" /></p>
+<p style="text-align:center"><img src="{{site.baseurl}}/assets/2006/nishio/xdigit.svg" alt="A blank sudoku grid marked with an X in squares 16, 39, 75, and 77, and a Y in squares 17, 35, 76, 79, 86, and 89" /></p>
 
 <p>If we place a 7 at the X at bottom left, it eliminates the Y at top left,
 forcing the 7 in that square to be placed at X as well, and so on. By a sequence of similar deductions we find that if any 7 is placed on an X, all four squares must have their 7's placed at X's.  But the X's do not give a consistent solution to the puzzle (the bottom two are on the same row), so none of the 7's can be placed on any X.  We can deduce that the 7's may only be placed at the positions marked Y, and in particular we can immediately place 7's at the Y's in the top two squares.  We would like a deduction rule that quickly comes to this conclusion.</p>
 
-<h3>Perfect Matching</h3>
+<h2>Perfect Matching</h2>
 
 <p>The way my program attempts to make deductions like this involves perfect matching in graphs.
 It forms a bipartite graph, having 18 vertices, one for each row and one for each column of the puzzle.  We connect vertices Ri and Cj by an edge in the graph, exactly when cell RiCj is a potential placement for the digit 7.  Perfect matchings in this graph correspond to placements of 7's throughout the puzzle that cover each row and each column exactly once.  <a href="{{site.baseurl}}{% post_url 2005-07-20-updated-python-library %}">By finding a single perfect matching then performing strong connectivity analysis, we can quickly identify the edges that do not belong to a perfect matching</a>, and eliminate the corresponding cells as potential placements for the digit 7.</p>
 
 <p>In the example above, considering only the rows and columns involved in the marked cells, we get a graph with four perfect matchings:</p>
 
-<p style="text-align:center"><img src="{{site.baseurl}}/assets/2006/nishio/matchings.svg" /></p>
+<p style="text-align:center"><img src="{{site.baseurl}}/assets/2006/nishio/matchings.svg" alt="A graph with the rows and columns of a sudoku grid as vertices and the marked cells of the previous figure as edges, with one of its perfect matchings highlighted" /></p>
 
 <p>Unfortunately, only two of the matchings correspond to possible solutions of the puzzle.  The other two have two 7's in two of the four squares and none in the other two squares, leading to invalid solutions.  This is not detected by the matching algorithm because it only considers rows and columns, not squares.  So my program's rule fails to eliminate the X's as potential placements for the digit 7.</p>
 
-<h3>Nishio</h3>
+<h2>Nishio</h2>
 
 <p>Nishio, on the other hand, handles this example easily.  In this rule, which is controversial because it has more the flavor of trial-and-error than deductive reasoning, one tests each potential position for the digit separately. To test a position, we try placing the digit there, then expands the consequences of that placement until a contradiction is reached or a complete solution is found.  In its most simple form, "expand the consequences" means, eliminate positions that conflict with a placed digit, and place a digit whenever it is the only remaining position in its row, column, or square, and "contradiction" means that we have placed two digits in the same row, column, or square, or that we have eliminated all positions in some row, column, or square. If a contradiction is reached, we eliminate the original placement as a potential location for that digit.  When I am solving a Sudoku by hand and use this rule, I sometimes use more sophisticated deductions in the expansion phase: if a digit's placements in a square are limited to a single row or column, eliminate placements in the same row or column in other squares, and if a digit's placements in a row or column are limited to a single square, eliminate placements in the same square in other rows or columns.</p>
 
 <p>However, nishio is not omniscient.  For instance, suppose that the locations for the digit 4 in a puzzle have been limited to the marked cells below:</p>
 
-<p style="text-align:center"><img src="{{site.baseurl}}/assets/2006/nishio/checkers.svg" /></p>
+<p style="text-align:center"><img src="{{site.baseurl}}/assets/2006/nishio/checkers.svg" alt="A blank sudoku grid with question marks in cells whose row and column have different parity, except in the bottom right box, where cell 98 is marked with an A and cell 99 is marked with a B" /></p>
 
 <p>Can we place 4 at A or B?  As it turns out, B can be part of a valid solution.  However, if we place 4 at A, the remaining cells can be decomposed into two independent blocks, one with five columns and four rows, and the other with three columns and four rows; it is impossible to fill all the rows and columns of both blocks, so the placement at A should be eliminated.  The matching rule can detect this inconsistency, but nishio can't.</p>
 
-<h3>Other Single Digit Rules</h3>
+<h2>Other Single Digit Rules</h2>
 
 <p>One of the simpler rules my program implements is the one described above as part of the nishio expansion phase: if a digit's placements in a square are limited to a single row or column, my program eliminates placements in the same row or column in other squares, and if a digit's placements in a row or column are limited to a single square, my program eliminates placements in the same square in other rows or columns.  My program labels this the "align" rule. Because this rule involves squares as well as rows and columns, it can make deductions that my perfect matching based rule would be unable to make.  Another way to implement something resembling the align rule would be to look for perfect matchings in a graph with vertices corresponding to rows and squares (or columns and squares) instead of rows and columns; for 9x9 Sudoku this would merely make the rule more complicated without increasing its deductive power, but this matching based idea would be more powerful than the align rule for larger variants of Sudoku.</p>
 
 <p>Some other well known Sudoku rules such as the X-wing and Swordfish also consider only a single digit at a time.  In the X-wing rule, if the cells in two rows that can contain a digit are restricted to two columns, we can eliminate all other potential placements for that digit in those columns.  The Swordfish rule is similar, but for certain combinations of positions in three rows and columns.  Any deduction made by these rules will also be made by my perfect matching based rule, so my program doesn't implement them separately.  These rules are also subsumed by nishio but maybe worth including in a nishio-based solver anyway, since they should be faster and are certainly less controversial.</p>
 
-<h3>Omniscience</h3>
+<h2>Omniscience</h2>
 
 <p>Is it possible to find a single simple rule which combines the power of nishio and perfect matching, and solves perfectly all single-digit placement questions?  One could, for instance, imagine a "double nishio" technique which tries setting pairs of cells instead of single cells, discovers contradictions in the consequences of such placements, uses these contradictions to deduce implications among the different placements, and remembers and uses these implications in subsequent nishio expansion phases.  Or, one could add perfect matching based deductions to the expansion and contradiction phases of a nishio rule.  Would that be enough to solve all single-digit problems perfectly?</p>
 
@@ -61,9 +61,9 @@ It forms a bipartite graph, having 18 vertices, one for each row and one for eac
 We place three positions in each of these squares, so that a certain row R can only be covered if one of the variables is assigned true, and so that the other three rows used by these gadgets can always be covered.
 Finally we fill in the remaining squares of the board with positions of S not belonging to the rows and columns used by these gadgets.  A schematic view of this reduction is shown below.</p>
 
-<p style="text-align:center"><img src="{{site.baseurl}}/assets/2006/nishio/3sat.svg" /></p>
+<p style="text-align:center"><img src="{{site.baseurl}}/assets/2006/nishio/3sat.svg" alt="Reduction from 3SAT to Single-Digit Sudoku Deduction. Several boxes of a sudoku puzzle are shown, having either two or three cells marked with question marks, with gray edges connecting each one to another question mark on the same row or column." /></p>
 
-<h3>Where Do We Go From Here?</h3>
+<h2>Where Do We Go From Here?</h2>
 
 <p>We have seen that extending nishio until it reaches perfection is an ultimately futile goal.  And anyway I prefer to avoid adding anything resembling nishio to my program, as I prefer to stick to rules that can clearly be justified as pattern-matching-based deduction without trial and error.  But I would like my program to be able to solve the first example above.</p>
 
@@ -71,7 +71,7 @@ Finally we fill in the remaining squares of the board with positions of S not be
 
 <p>In the meantime I should add some of this material to <a href="http://arxiv.org/abs/cs.DS/0507053">my Sudoku paper</a>.  But probably in much more concise form, since it's off-topic for the graph path search and non-local Sudoku rule ideas in that paper.</p>
 
-<h3>ETA 2005-10-11:</h3>
+<h2>ETA 2005-10-11:</h2>
 
 <p>Via an email exchange with Robin Gatter, I realized that some of these issues can be solved by extending my <a href="http://arxiv.org/abs/cs.DS/0507053">nonrepetitive path analysis</a> to allow paths in the bilocal graph with odd numbers of repetitions.  E.g., in the first example above, the path R7C5-R3C5-R1C6-R1C7 (three repetitions of the same label) starts and ends with the same label, so the bilocal path rule allows us to eliminate the square R7C7 which conflicts with both endpoints of the path.  The single-digit versions of these rules would be:</p>
 <dl>
