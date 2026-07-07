@@ -3,7 +3,7 @@ layout: post
 title: Computational complexities of folding
 date: 2024-10-10 22:53
 ---
-I turned my talks at OSME and JCGCG<sup>3</sup> this summer into a paper: "Computational Complexities of Folding", [arXiv:2410.07666](https://arxiv.org/abs/2410.07666). It includes the following results:
+I turned my talks at OSME and JCGCG<sup>3</sup> this summer into a paper: "[Computational Complexities of Folding](https://ics.uci.edu/~eppstein/pubs/p-ccfold.html)", [arXiv:2410.07666](https://arxiv.org/abs/2410.07666). It includes the following results:
 
 * Flat-foldability of crease patterns can be tested in time polynomial in the pattern size, exponential in the treewidth of a certain arrangement graph, and factorial in the ply of the folded pattern. The exponential dependence on treewidth is necessary under the strong exponential time hypothesis. This is intended as the journal version of [my CCCG 2023 paper]({{site.baseurl}}{% post_url 2023-06-21-flat-folding-map %}).
 

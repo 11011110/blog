@@ -3,7 +3,7 @@ layout: post
 title: The widths of strict outerconfluent graphs
 date: 2023-08-08 17:37
 ---
-My newest preprint, "The widths of strict outerconfluent graphs", [arXiv:2308.03967](https://arxiv.org/abs/2308.03967), is centered on the graph drawn below, in a confluent style (meaning that two vertices are adjacent when there exists a smooth path connecting them through the drawing).
+My newest preprint, "[The widths of strict outerconfluent graphs](https://ics.uci.edu/~eppstein/pubs/p-outerconfwidth.html)", [arXiv:2308.03967](https://arxiv.org/abs/2308.03967), is centered on the graph drawn below, in a confluent style (meaning that two vertices are adjacent when there exists a smooth path connecting them through the drawing).
 
 {: style="text-align:center"}
 ![A strict outerconfluent graph, part of a construction of these graphs with unbounded clique-width]({{site.baseurl}}/assets/2023/non-tree-like.svg)

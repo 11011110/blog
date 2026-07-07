@@ -3,7 +3,7 @@ layout: post
 title: Spanners that don't change much
 date: 2024-03-06 23:11
 ---
-I have another preprint on the arXiv today with my student Hadi Khodabandeh: "Maintaining light spanners via minimal updates", [arXiv:2403.03290](https://arxiv.org/abs/2403.03290).
+I have another preprint on the arXiv today with my student Hadi Khodabandeh: "[Maintaining light spanners via minimal updates](https://ics.uci.edu/~eppstein/pubs/p-lightspan.html)", [arXiv:2403.03290](https://arxiv.org/abs/2403.03290).
 
 Like my other work with Hadi, this is on geometric spanners: sparse graphs on a given set of points in a metric space, whose shortest path distances accurately approximate the metric distances between the points. There are a lot of detailed properties spanners could be expected to have, and a lot of existing constructions that achieve some (but not all) of those properties:
 

@@ -3,7 +3,7 @@ layout: post
 title: Bandwidth vs breadth-first search
 date: 2025-05-20 23:41
 ---
-Another new preprint of mine recently appeared: "Bandwidth vs BFS width in matrix reordering, graph reconstruction, and graph drawing", [arXiv:2505.10789](https://arxiv.org/abs/2505.10789), with Mike Goodrich and his student Alfred Liu. For me, it started with a mistake.
+Another new preprint of mine recently appeared: "[Bandwidth vs BFS width in matrix reordering, graph reconstruction, and graph drawing](https://ics.uci.edu/~eppstein/pubs/p-bfswidth.html)", [arXiv:2505.10789](https://arxiv.org/abs/2505.10789), with Mike Goodrich and his student Alfred Liu. For me, it started with a mistake.
 
 Mike had worked with several past students, including [Pedro Matias]({{site.baseurl}}{% post_url 2021-05-07-congratulations-dr-matias %}), [Marta Osegueda]({{site.baseurl}}{% post_url 2022-05-21-congratulations-dr-osegueda %}), and [Ramtin Afshar]({{site.baseurl}}{% post_url 2023-02-17-congratulations-dr-afshar %}), on reconstructing the connectivity of an unknown network by queries that find distances or shortest paths between vertices, such as you can get for internet nodes using the [traceroute](https://en.wikipedia.org/wiki/Traceroute) program. Any $$n$$-vertex bounded-degree connected graph can be reconstructed with $$\tilde O(n^{3/2})$$ distance queries, but with unbounded degree the problem becomes [evasive](https://en.wikipedia.org/wiki/Aanderaa%E2%80%93Karp%E2%80%93Rosenberg_conjecture), unable to be solved with fewer than quadratic queries, because it is difficult to distinguish a star from a star plus one more edge: you cannot find the extra edge without querying its endpoints.
 
