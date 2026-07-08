@@ -30,3 +30,5 @@ Repeat for each color in each column of blocks, and you have a solved sudoku puz
 
 {: style="text-align:center"}
 ![Solved sudoku puzzle packed with nine 3x3 Latin squares]({{site.baseurl}}/assets/2026/sudoku-packed.svg)
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/116881760189593176))
