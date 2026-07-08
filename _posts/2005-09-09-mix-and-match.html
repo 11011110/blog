@@ -8,37 +8,37 @@ tags:   [arrangements, media theory, graph drawing]
 
 <p>Start with a simplicial arrangement, drawn with one line at infinity:</p>
 
-<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/junkyard/simplicial-arrangements/mixmatch/A-arr.png" /></p>
+<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/junkyard/simplicial-arrangements/mixmatch/A-arr.png" alt="Simplicial arrangement of five horizontal, five vertical, and six diagonal lines" /></p>
 
 <p>Draw the planar dual of the arrangement, as in <a href="http://arxiv.org/abs/cs.DS/0406020">my algorithm for drawing partial cubes as planar graphs with symmetric faces</a>, by making a vertex for each face and connecting the vertices for adjacent faces by a unit length edge perpendicular to the line separating the faces:</p>
 
-<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/junkyard/simplicial-arrangements/mixmatch/A-dual.png" /></p>
+<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/junkyard/simplicial-arrangements/mixmatch/A-dual.png" alt="The dual tiling of the first simplicial arrangement" /></p>
 
 <p>(Ignore the tilt of the drawing relative to the arrangement, it's an artifact of the fact that the program I used to make the drawing knows only the graph connectivity of the arrangement and not its actual geometry.)</p>
 
 <p>Make two copies of the drawing, one copy transformed by a central symmetry from the other (this symmetry doesn't make a visible difference in our example), and connect corresponding pairs of degree two boundary vertices:</p>
 
-<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/junkyard/simplicial-arrangements/mixmatch/A-pcube.png" /></p>
+<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/junkyard/simplicial-arrangements/mixmatch/A-pcube.png" alt="Two overlaid copies of the dual tiling, connected by edges at the corners" /></p>
 
 <p>Voila, a cubic partial cube!</p>
 
 <p>But wait, there's more.  Here's a different simplicial arrangement, that like the first one meets the line at infinity in the same way: four pencils of parallel lines, alternating three and five lines per pencil, separated at 45 degree intervals:</p>
 
-<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/junkyard/simplicial-arrangements/mixmatch/B-arr.png" /></p>
+<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/junkyard/simplicial-arrangements/mixmatch/B-arr.png" alt="A different simplicial arrangement of five horizontal, five vertical, and six diagonal lines" /></p>
 
 <p>This arrangement has a dual that looks a lot like the other one, but with some middle faces rotated by 45 degrees:</p>
 
-<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/junkyard/simplicial-arrangements/mixmatch/B-dual.png" /></p>
+<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/junkyard/simplicial-arrangements/mixmatch/B-dual.png" alt="The dual tiling for the second simplicial arrangement" /></p>
 
 <p>So what happens if we glue one copy of the first dual arrangement to one copy of the second?</p>
 
-<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/junkyard/simplicial-arrangements/mixmatch/AB.png" /></p>
+<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/junkyard/simplicial-arrangements/mixmatch/AB.png" alt="The two dual tilings, connected by edges at their corners" /></p>
 
 <p>It's also a cubic partial cube, but not one that comes from a single line arrangement!  17-dimensional hypercube labels for its 160 vertices can be found <a href="http://www.ics.uci.edu/~eppstein/junkyard/simplicial-arrangements/mixmatch/AB.txt">here</a>, and the code that verifies that these labels are an isometric embedding of a cubic partial cube is <a href="http://www.ics.uci.edu/~eppstein/junkyard/simplicial-arrangements/mixmatch/testiso.py">here</a>.</p>
 
 <p>ETA: The simpler example shown below can be glued to a 90 degree rotated copy of itself to produce a non-arrangement cubic partial cube.  Data for its 11-dimensional hypercube labels is <a href="http://www.ics.uci.edu/~eppstein/junkyard/simplicial-arrangements/mixmatch/QQ.txt">here</a>.</p>
 
-<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/junkyard/simplicial-arrangements/mixmatch/Q.png" /></p>
+<p style="text-align:center"><img src="http://www.ics.uci.edu/~eppstein/junkyard/simplicial-arrangements/mixmatch/Q.png" alt="A simplicial arrangement of three horizontal lines, three vertical lines, and four diagonal lines, and its dual tiling" /></p>
 
 <p>However, one must be careful, as gluing some pairs of arrangements, or rotating one side of an arrangement, can produce a graph that is not a partial cube; for instance, this happens for the 180 degree rotation of an arrangement of three lines with three crossing points (together with the line at infinity).</p>
 
