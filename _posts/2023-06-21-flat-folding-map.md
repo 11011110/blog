@@ -3,7 +3,7 @@ layout: post
 title: Flat folding and map folding
 date: 2023-06-21 18:34
 ---
-Another day, another new arXiv preprint. Today's is "A parameterized algorithm for flat folding" ([arXiv:2306.11939](https://arxiv.org/abs/2306.11939), to appear at CCCG 2023), a paper I mentioned in the last slide of my recent talk on [graph width parameters for parameterized geometric algorithms](https://www.ics.uci.edu/~eppstein/pubs/Epp-WPAGP-23.pdf).
+Another day, another new arXiv preprint. Today's is "[A parameterized algorithm for flat folding](https://ics.uci.edu/~eppstein/pubs/p-paramfold.html)" ([arXiv:2306.11939](https://arxiv.org/abs/2306.11939), to appear at CCCG 2023), a paper I mentioned in the last slide of my recent talk on [graph width parameters for parameterized geometric algorithms](https://www.ics.uci.edu/~eppstein/pubs/Epp-WPAGP-23.pdf).
 
 It's been known since the work of Marshall Bern and Barry Hayes in SODA 1996 that it's NP-complete to test whether a given origami pattern (with or without an assignment of a mountain or valley fold to each crease) can be folded flat. Of course, many origami structures are not intended to be flat, but they still often start with a flat base, and testing flatness is a prerequisite for any more complicated foldability question you might have. On the other hand, if a pattern does fold flat, it's very easy to determine where in plane each piece of paper folds to; the hard part is determining the above-below relation between different pieces of paper that fold to the same points.
 
