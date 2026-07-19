@@ -30,3 +30,5 @@ This naturally raises the question: what is the minimum number of vertices in a 
 $$\bigl((1+1+1+1+1)(1+1)+1\bigr)(1+1)+1.$$
 
 But there is a 10-vertex graph with 23 maximal cliques: Just remove any two edges from the complete bipartite graph $$K_{5,5}$$. So the largest numbers with given integer complexity can be obtained by clique-counting in arbitrary graphs, and the integer complexity can always be obtained by clique-counting in cographs, but some integer complexities are not the same as what you get by clique-counting in arbitrary graphs.
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/116948477791846477))
