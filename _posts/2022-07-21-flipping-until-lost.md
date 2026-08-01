@@ -3,7 +3,7 @@ layout: post
 title: Flipping until you are lost
 date: 2022-07-21 22:23
 ---
-Start with any triangulation of a convex polygon, and then repeatedly choose a random diagonal and flip it, replacing the two triangles it borders with two different triangles. Eventually, these random flips will cause your triangulation to be nearly equally likely to be any of the possible triangulations of the polygon. But how long is "eventually"? My student Daniel Frishberg has a new answer, in our preprint "Improved mixing for the convex polygon triangulation flip walk" ([arXiv:2207.09972](https://arxiv.org/abs/2207.09972)).
+Start with any triangulation of a convex polygon, and then repeatedly choose a random diagonal and flip it, replacing the two triangles it borders with two different triangles. Eventually, these random flips will cause your triangulation to be nearly equally likely to be any of the possible triangulations of the polygon. But how long is "eventually"? My student Daniel Frishberg has a new answer, in our preprint "[Improved mixing for the convex polygon triangulation flip walk](https://ics.uci.edu/~eppstein/pubs/p-flipmix.html)" ([arXiv:2207.09972](https://arxiv.org/abs/2207.09972)).
 
 {: style="text-align:center"}
 ![Flip graph of a hexagon]({{site.baseurl}}/assets/2006/fg6.png)

@@ -3,7 +3,7 @@ layout: post
 title: Isosceles polyhedra
 date: 2020-09-01 23:18
 ---
-My latest arXiv preprint is "On polyhedral realization with isosceles triangles", [arXiv:2009.00116](http://arxiv.org/abs/2009.00116). As the title suggests, it studies polyhedra whose faces are all isosceles triangles. Despite several new results in it, there's a lot I still don't know. The paper finds a sort-of-new[^1] infinite family of polyhedra with congruent isosceles faces, shown below, but I don't know if there are any more such families.
+My latest arXiv preprint is "[On polyhedral realization with isosceles triangles](https://ics.uci.edu/~eppstein/pubs/p-isosceles.html)", [arXiv:2009.00116](http://arxiv.org/abs/2009.00116). As the title suggests, it studies polyhedra whose faces are all isosceles triangles. Despite several new results in it, there's a lot I still don't know. The paper finds a sort-of-new[^1] infinite family of polyhedra with congruent isosceles faces, shown below, but I don't know if there are any more such families.
 
 {: style="text-align:center"}
 ![Twisted augmented bipyramid with isosceles-triangle faces]({{site.baseurl}}/assets/2020/twisted.svg)

@@ -3,7 +3,7 @@ layout: post
 title: Fast iterated exchange transformations via normal curves
 date: 2022-01-30 17:34
 ---
-Soon after I posted my preprint ["The Complexity of Iterated Reversible Computation" (arXiv:2112.11607)](https://arxiv.org/abs/2112.11607) last month (see [previous post "Raytracing diamonds"]({{site.baseurl}}{% post_url 2021-12-23-raytracing-diamonds %})), Mark Bell emailed me to observe that one of the problems I mentioned in it, iterated integer interval exchange transformations, could be solved in polynomial time by reinterpreting it as a problem on normal curves in triangulated surfaces and plugging in known results from computational topology. Here is a more detailed expansion of that observation.
+Soon after I posted my preprint "[The complexity of iterated reversible computation](https://ics.uci.edu/~eppstein/pubs/p-iterev.html)" ([arXiv:2112.11607](https://arxiv.org/abs/2112.11607)) last month (see [previous post "Raytracing diamonds"]({{site.baseurl}}{% post_url 2021-12-23-raytracing-diamonds %})), Mark Bell emailed me to observe that one of the problems I mentioned in it, iterated integer interval exchange transformations, could be solved in polynomial time by reinterpreting it as a problem on normal curves in triangulated surfaces and plugging in known results from computational topology. Here is a more detailed expansion of that observation.
 
 First, some terminology, with a picture to help make sense of it:
 

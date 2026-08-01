@@ -3,7 +3,7 @@ layout: post
 title: Spanners for unit ball graphs in doubling spaces
 date: 2021-07-09 09:06
 ---
-My student Hadi Khodabandeh had a paper with me on spanners earlier this year at SoCG, in which we showed that [the greedy spanner algorithm for points in the Euclidean plane produces graphs with few crossings and small separators]({{site.baseurl}}{% post_url 2020-02-17-spanners-have-sparse %}). Now we have another spanner preprint: ["Optimal spanners for unit ball graphs in doubling metrics", arXiv:2106.15234](https://arxiv.org/abs/2106.15234).
+My student Hadi Khodabandeh had a paper with me on spanners earlier this year at SoCG, in which we showed that [the greedy spanner algorithm for points in the Euclidean plane produces graphs with few crossings and small separators]({{site.baseurl}}{% post_url 2020-02-17-spanners-have-sparse %}). Now we have another spanner preprint: "[Optimal spanners for unit ball graphs in doubling metrics](https://ics.uci.edu/~eppstein/pubs/p-spanball.html)" ([arXiv:2106.15234](https://arxiv.org/abs/2106.15234)).
 
 [Doubling metrics](https://en.wikipedia.org/wiki/Doubling_space) are a generalization of Euclidean spaces. Like Euclidean spaces, they have a dimension, the _doubling dimension_, but it might not be an integer. Even the doubling dimension of the Euclidean plane itself is $$\log_2 7\approx 2.807355$$; this means that every circular disk of radius $$r$$ in the plane can be covered by seven closed disks of radius $$r/2$$.
 

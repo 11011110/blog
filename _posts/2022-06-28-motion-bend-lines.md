@@ -31,7 +31,7 @@ If you want to unknot it while keeping it smooth rather than crumpling it, you w
 
 On the other hand, this surface can be untied while keeping it smooth! The trick is that, after you have rolled up one of the disks to make a rigid cylinder, with the tied band at one end, you can twist the roll, so that its bend lines rotate around the disk. As you do, the point where the band is tied will slide from one end of the cylinder to the other. And you can make this sliding motion coincide with the motion of the cylinder through a hole in the tied band, untying it.
 
-This and similar examples are the focus of my third new CCCG preprint, "Locked and unlocked smooth embeddings of surfaces", [arXiv:2206.12989](https://arxiv.org/abs/2206.12989). In the phrasing of the title, the two disks with a tied center band, above, are unlocked: they can be reconfigured to a flat state while remaining smooth. My paper also shows that any compact shape with a continuous shrinking motion into itself, like the polygon below, is unlocked.
+This and similar examples are the focus of my third new CCCG preprint, "[Locked and unlocked smooth embeddings of surfaces](https://ics.uci.edu/~eppstein/pubs/p-locksmooth.html)", [arXiv:2206.12989](https://arxiv.org/abs/2206.12989). In the phrasing of the title, the two disks with a tied center band, above, are unlocked: they can be reconfigured to a flat state while remaining smooth. My paper also shows that any compact shape with a continuous shrinking motion into itself, like the polygon below, is unlocked.
 
 {: style="text-align:center"}
 ![Polygon with a continuous shrinking motion]({{site.baseurl}}/assets/2022/generalized-star.svg){: style="width:100%;max-width:600px" }

@@ -12,7 +12,7 @@ What about arc-triangles? Are their angles similarly constrained? What shape do 
 {: style="text-align:center"}
 ![Boscovich's cardioid]({{site.baseurl}}/assets/2021/boscovich.svg)
 
-Nevertheless, for a non-self-crossing arc-triangle, not all combinations of angles are possible. For instance, it's not possible to have one angle that is zero and two that are $$2\pi$$. My new preprint, "Angles of arc-polygons and lombardi drawings of cacti" ([arXiv:2107.03615
+Nevertheless, for a non-self-crossing arc-triangle, not all combinations of angles are possible. For instance, it's not possible to have one angle that is zero and two that are $$2\pi$$. My new preprint, "[Angles of arc-polygons and lombardi drawings of cacti](https://ics.uci.edu/~eppstein/pubs/p-arcgons.html)" ([arXiv:2107.03615
 ](https://arxiv.org/abs/2107.03615), with UCI students Daniel Frishberg and Martha Osegueda, to appear at CCCG) proves a precise characterization: beyond the obvious requirement that each angle $$\theta_i$$ be in the range $$0\le\theta_i\le 2\pi$$, we have only the additional inequalities
 
 $$-\pi < \frac{\pi - \theta_i + \theta_{i+1} - \theta_{i+2}}{2} < \pi$$

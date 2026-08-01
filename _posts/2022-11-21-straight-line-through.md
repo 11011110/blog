@@ -3,7 +3,7 @@ layout: post
 title: A straight line through every face
 date: 2022-11-21 22:08
 ---
-While updating my online publications list for something else I noticed that I had neglected to discuss one of my papers from earlier this fall: "Geodesic paths passing through all faces on a polyhedron" (with Demaine, Demaine, Ito, Katayama, Maruyama, and Uno), in the [booklet of abstracts from JCDCG<sup>3</sup> 2022](https://www.rs.tus.ac.jp/jcdcggg/JCDCG3-2022Proceedings(r2).pdf), the Japanese Conference on Discrete and Computational Geometry, Graphs, and Games.
+While updating my online publications list for something else I noticed that I had neglected to discuss one of my papers from earlier this fall: "[Geodesic paths passing through all faces on a polyhedron](https://ics.uci.edu/~eppstein/pubs/p-geotsp.html)" (with Demaine, Demaine, Ito, Katayama, Maruyama, and Uno), in the [booklet of abstracts from JCDCG<sup>3</sup> 2022](https://www.rs.tus.ac.jp/jcdcggg/JCDCG3-2022Proceedings(r2).pdf), the Japanese Conference on Discrete and Computational Geometry, Graphs, and Games.
 
 The paper is kind of telegraphic, but the question it considers is easily stated. On the surface of a polyhedron, the analogue of a straight line is a geodesic, the shortest curve between two points. Which polyhedra have geodesics that cross through all of their faces? Maybe the 2d version is easier to explain: any two points on a convex polygon split the polygon into two arcs, and a geodesic is the shorter of the two. Which polygons have at least one geodesic that includes a segment from each edge?
 
