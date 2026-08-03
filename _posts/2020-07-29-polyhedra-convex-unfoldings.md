@@ -3,7 +3,7 @@ layout: post
 title: Polyhedra with convex unfoldings
 date: 2020-07-29 22:18
 ---
-My newest arXiv preprint is "Acutely triangulated, stacked, and very ununfoldable polyhedra" with Erik and Martin Demaine ([arXiv:2007.14525](https://arxiv.org/abs/2007.14525)). It's about polyhedra with acute-triangle faces that cannot be unfolded without cutting their surface into many separate polygons. I [already posted a video for the paper]({{site.baseurl}}{% post_url 2020-07-22-three-cccg-videos %}) so see that for more information.
+My newest arXiv preprint is "[Acutely triangulated, stacked, and very ununfoldable polyhedra](https://ics.uci.edu/~eppstein/pubs/p-ununfold3.html)" with Erik and Martin Demaine ([arXiv:2007.14525](https://arxiv.org/abs/2007.14525)). It's about polyhedra with acute-triangle faces that cannot be unfolded without cutting their surface into many separate polygons. I [already posted a video for the paper]({{site.baseurl}}{% post_url 2020-07-22-three-cccg-videos %}) so see that for more information.
 
 Instead, I thought I'd go into a little more detail about a throwaway remark in the video and the paper (one that I already got an email query about). It says that [ideal hyperbolic polyhedra](https://en.wikipedia.org/wiki/Ideal_polyhedron) can always be unfolded (into the hyperbolic plane). These polyhedra are the hyperbolic convex hulls of finitely many limit points of the hyperbolic space; their faces are ideal polygons, glued together along entire hyperbolic lines. More strongly, if you cut an ideal polyhedron along any spanning tree of its vertices and edges, the result always unfolds into a convex ideal hyperbolic polygon. Here, for instance, is a net for an ideal cube:
 
