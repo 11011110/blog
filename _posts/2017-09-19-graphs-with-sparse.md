@@ -4,7 +4,7 @@ title: Graphs with sparse crossings
 date: 2017-09-19 23:07
 ---
 [ACM SIGSPATIAL 2017](http://sigspatial2017.sigspatial.org/) (to be held in Southern California in November) doesn't yet seem to have posted a list of accepted papers, but two of them are mine (one long, one short).
-I already posted about the short one, "[Defining Equitable Geographic Districts in Road Networks via Stable Matching]({{site.baseurl}}{% post_url 2017-06-29-stable-redistricting-in %})", so let me just say a little about the other one, now up on the arXiv: "Crossing Patterns in Nonplanar Road Networks" (with UCI grad student Sid Gupta, [arXiv:1709.06113](https://arxiv.org/abs/1709.06113)).
+I already posted about the short one, "[Defining equitable geographic districts in road networks via stable matching]({{site.baseurl}}{% post_url 2017-06-29-stable-redistricting-in %})", so let me just say a little about the other one, now up on the arXiv: "[Crossing patterns in nonplanar road networks](https://ics.uci.edu/~eppstein/pubs/p-crossroad.html)" (with UCI grad student Sid Gupta, [arXiv:1709.06113](https://arxiv.org/abs/1709.06113)).
 
 To begin with, road networks are graphs with a vertex at each intersection of roads and an edge for each segment of road between the intersections. We tend to think of them as being planar graphs, but they're not. Road segments cross each other, often without an intersection, when one segment is part of an overpass, underpass, or tunnel. Additionally, some pairs of road segments can look like they're crossing in our data, even when they don't cross in real life, because the data makes a segment of road look straight when actually it bends around the end of another road.
 
