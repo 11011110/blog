@@ -13,7 +13,7 @@ All 2-degenerate graphs do as well; these are the graphs that can be reduced to 
 {: style="text-align:center"}
 ![Grinberg's non-Hamiltonian planar cubic graph with cyclic edge-connectivity five]({{site.baseurl}}/assets/2019/Grinberg_5CEC_Nonhamiltonian_graph.svg)
 
-So anyway, my newest arXiv preprint is "Bipartite and series-parallel graphs without planar Lombardi drawings" ([arXiv:1906.04401](https://arxiv.org/abs/1906.04401), to appear at [CCCG](https://sites.ualberta.ca/~cccg2019/)). It is about some families of planar graphs that have Lombardi drawings (because they are 2-degenerate) but do not have planar Lombardi drawings. They include planar bipartite graphs like the one below (but with more edges and vertices):
+So anyway, my newest arXiv preprint is "[Bipartite and series-parallel graphs without planar Lombardi drawings](https://ics.uci.edu/~eppstein/pubs/p-nonlom.html)" ([arXiv:1906.04401](https://arxiv.org/abs/1906.04401), to appear at [CCCG](https://sites.ualberta.ca/~cccg2019/)). It is about some families of planar graphs that have Lombardi drawings (because they are 2-degenerate) but do not have planar Lombardi drawings. They include planar bipartite graphs like the one below (but with more edges and vertices):
 
 {: style="text-align:center"}
 ![Construction for a family of planar bipartite graphs with no planar Lombardi drawing ]({{site.baseurl}}/assets/2019/nested-K2n.svg)
