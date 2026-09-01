@@ -6,8 +6,8 @@ date: 2019-03-13 18:37
 As I said in [my previous post]({{site.baseurl}}{% post_url
 2019-03-12-counting-polygon-triangulations %}) my two SoCG papers both
 involved trying and failing to prove something else, and writing down
-what I could prove instead. For the one that appears today, "Cubic
-planar graphs that cannot be drawn on few lines" ([arXiv:1903.05256](http://arxiv.org/abs/1903.05256)),
+what I could prove instead. For the one that appears today, "[Cubic
+planar graphs that cannot be drawn on few lines](https://ics.uci.edu/~eppstein/pubs/p-manylines.html)" ([arXiv:1903.05256](http://arxiv.org/abs/1903.05256)),
 that something else was Open Problem 16.14 of my book, which can be
 rephrased as: does there exist a family of planar graphs that cannot be
 drawn planarly with all vertices on a constant number of convex curves?
