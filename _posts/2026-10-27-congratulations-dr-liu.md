@@ -18,3 +18,5 @@ The three topics of his doctoral dissertation are reconstructing graphs from sho
 * "Layer-respecting linear graph layouts" (by Alvin Chiu, me, Goodrich, and Alfred, CCCG 2026, [arXiv:2607.06968](https://arxiv.org/abs/2607.06968)) starts with a graph that has already been partitioned into layers, such as would be obtained by using BFS to approximate bandwidth or cutwidth. For several variations on graph drawing styles that draw the vertices in separate layers or in a single linear sequence with each layer contiguous, we use dynamic programming to optimally order the vertices within each layer in order to minimize the number of crossings in the drawing.
 
 Congratulations, Alfred!
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/117515804596967056))
