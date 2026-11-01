@@ -1,0 +1,39 @@
+---
+layout: post
+title: Linkage for a rainy Halloween
+date: 2026-10-31 18:15
+---
+* [Elliot Kienzle illustrates the AI proof of the Mahler conjecture](https://chessapig.github.io/Mahler) <span style="white-space:nowrap">([$$\mathbb{M}$$](https://mathstodon.xyz/@isomorphismes/117431237690940305))</span> on symplectic embeddings of a ball into the Cartesian product of a convex body and its dual, showing that the product's volume is always at least as large as the ball.
+
+* [On the generation of names of weevils and popes by L-systems](https://blog.plover.com/math/fibonacci-word.html) <span style="white-space:nowrap">([$$\mathbb{M}$$](https://mathstodon.xyz/@mjd/117328592759990849)).</span>
+
+* [Marginalia search](https://marginalia-search.com/) <span style="white-space:nowrap">([$$\mathbb{M}$$](https://hachyderm.io/@eliasulrich/117234902637900790)),</span> a web search engine that prioritizes the stuff the big ones don't: text-heavy, non-commercial pages, personal blogs, old university pages, and the like.
+
+* [Sudoku but you have to prove your answer before it's allowed](https://mathstodon.xyz/@olligobber/117465752345779218). Which raises the question: prove under what assumptions? Are you allowed to assume uniqueness in your proofs?
+
+* [Borromean hexagonal tilings](https://mathstodon.xyz/@timhutton/117468907728630557), embedded orthogonally in $$\mathbb{R}^3$$ in such a way that removing one of them allows the other two to be pulled apart.
+
+* [Lance Fortnow on reading messy proofs](https://blog.computationalcomplexity.org/2026/10/reading-messy-proofs.html) <span style="white-space:nowrap">([$$\mathbb{M}$$](https://fediscience.org/@fortnow/117480765375103920)).</span> He quotes Noam Nisan as saying that "reading a badly written proof leads to better understanding since you really need to figure out the details".
+
+* [Mathematics Genealogy Project temporarily offline](https://www.genealogy.math.ndsu.nodak.edu/) <span style="white-space:nowrap">([$$\mathbb{M}$$](https://mathstodon.xyz/@highergeometer/117487353017844398))</span> because of the recently-discovered security vulnerabilities in PHP. Unfortunately their software was incompatible with recent versions so it wasn't a matter of a simple upgrade. They're asking for donations to cover both a backend overhaul (estimated to cost more than half their typical annual budget) and catching up on their severe backlog of updates (almost a year deep).  
+
+* The [Perles configuration of nine points and nine lines](https://en.wikipedia.org/wiki/Perles_configuration) <span style="white-space:nowrap">([$$\mathbb{M}$$](https://mathstodon.xyz/@11011110/117492499320605502))</span> is based on a regular pentagon/pentagram; it cannot be realized by points with rational-number Cartesian coordinates, even in less-symmetrical arrangements of its points and lines. But there are stronger ways to be difficult to realize than irrationality. We can't hope for transcendentality: when a configuration can be realized it can always be realized using algebraic number coordinates. An intermediate step between these two is unconstructibility: can it be drawn with compass and straightedge? Because the Perles configuration is based on a regular pentagon, it is obviously constructible.
+
+  The [Grünbaum–Rigby configuration](https://en.wikipedia.org/wiki/Gr%C3%BCnbaum%E2%80%93Rigby_configuration) is based in a similar way on regular heptagons/heptagrams. Because these cannot be constructed with compass and straightedge, neither can the symmetric form of the Grünbaum–Rigby configuration. I suspect the same is true for any asymmetric forms it might have but I have no proof. (I did try asking a couple of advanced-model LLMs; one told me it had no idea and another told me it was unconstructible but retreated when pressed for details.) One property of the Perles configuration that helps prove its irrationality is projective uniqueness: any two realizations are related by a projective transformation, together with a permutation of the points and lines of the configuration. If this were true of the Grünbaum–Rigby configuration it would prove unconstructibility but I don't know whether it's true.
+
+  {: style="text-align:center"}
+![The Grünbaum–Rigby configuration in its symmetrical form; public domain image from https://commons.wikimedia.org/wiki/File:Gr%C3%BCnbaum-Rigby_configuration,_vector_graphics.svg]({{site.baseurl}}/assets/2026/grunbaum-rigby.svg){:  style="width:100%;max-width:540px"}
+
+* [3d-printed tiles from the aperiodic chair tiling snap together like Lego](https://www.youtube.com/watch?v=ZYnHqKfve0U) <span style="white-space:nowrap">([$$\mathbb{M}$$](https://mathstodon.xyz/@Ianagol/117497745623291776))</span> in this short (2:18) video by Bob Mackay explaining its recursive structure.
+
+* [LLMs still can't count](https://mastodon.nl/@jap/117495812146047462). A story about trying to count the teeth on a bicycle sprocket wheel, getting an answer that isn't a valid tooth count, asking the LLM to label the teeth on a photo, and getting back a replacement photo with more teeth that still aren't even counted correctly.
+
+* [OEIS A400K contest winners](https://oeis.org/wiki/A400K_Winners) <span style="white-space:nowrap">([$$\mathbb{M}$$](https://mastodon.moule.world/@MOULE/117504089290178833)).</span> The top entry: [A400000](https://oeis.org/A400000), the "city-building sequence" in which $$a(n)$$ is the height $$h$$ of the shortest building which can see exactly $$h$$ earlier buildings of heights $$a(i)$$, in an unobstructed line of site from its roof.
+
+* I updated the [talk slides for my talk "Computational complexities of folding"](https://ics.uci.edu/~eppstein/pubs/ACM-UCI-2026.pdf) <span style="white-space:nowrap">([$$\mathbb{M}$$](https://mathstodon.xyz/@11011110/117519758375263551)),</span> on connections between computational complexity theory and origami, for a presentation to a local student group. The updates included a last-minute change to a slide on the [exponential time hypothesis](https://en.wikipedia.org/wiki/Exponential_time_hypothesis) to take into account the OpenAI claimed disproof, but their result doesn't really change things for what I was using it for: if the exponential part of a time bound has an exponent that is linear in a certain parameter (as pre-disproof ETH would imply), or near-linear in it (consistent with the disproof), it's still a big time bound. Since I originally presented this material in 2024 I've published [a journal version](https://doi.org/10.2197/ipsjjip.33.954) detailing much of the talk; see also [my publication metadata page](https://ics.uci.edu/~eppstein/pubs/p-ccfold.html).
+
+* [The lattice of stable matchings](https://en.wikipedia.org/wiki/Lattice_of_stable_matchings) <span style="white-space:nowrap">([$$\mathbb{M}$$](https://mathstodon.xyz/@11011110/117524945882709612))</span> organizes the set of all solutions of a stable matching problem into a structure in which each two matchings have a least upper bound (giving all the participants on one side their preference among the two partners from the two matchings) and a greatest lower bound (the same for the participants on the other side). Its uses involve algorithms for finding weight-maximizing or regret-minimizing stable matchings. A little technical still, but now a Good Article on Wikipedia.
+
+* [Why Richard Elwes loves Stella](https://richardelwes.co.uk/2026/10/28/why-i-love-stella/) <span style="white-space:nowrap">([$$\mathbb{M}$$](https://mathstodon.xyz/@richardelwes/117524978755178210)),</span> software for constructing and visualizing polyhedra.
+
+* [How inappropriate it is for referees/editors to use AI to help review any original work](https://mathstodon.xyz/@normalsubgroup/117416107024329999). A computer can never be held accountable for breaching the confidentiality of submissions; therefore, a computer must never be given access to confidential submissions.
