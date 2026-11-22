@@ -16,3 +16,5 @@ The basic idea here is that of a cartogram, a distorted map of a geographic regi
 Alvin's paper on cartograms tries to ameliorate these problems with Dorling cartograms by relaxing their hard non-overlap constraints. Instead, he uses a force-based graph drawing system in which the vertices move to minimize an energy resulting from the combination of three forces: attractions between the vertices and their correct geographic locations, and between pairs of neighboring vertices, but repulsions between vertices whose circles overlap, depending on the degree of overlap. These are controlled by three parameters that set the scale of the circles and the relative strengths of these three forces. Their results are tested experimentally, showing that even when a cartogram with no overlap is desired as the eventual result, this method can significantly reduce the mixing of vertices from distinct regions, while paying for this by introducing smaller-scale edge crossings.
 
 Congratulations, Alvin!
+
+([Discuss on Mastodon](https://mathstodon.xyz/@11011110/117657678405446055))
